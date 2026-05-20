@@ -1,0 +1,282 @@
+﻿[
+    {
+        "rel":  "START_HERE_FOR_MAC_CODEX.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\START_HERE_FOR_MAC_CODEX.md",
+        "exists":  true
+    },
+    {
+        "rel":  "00_READ_ME_FIRST_FOR_MAC_MIGRATION.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\00_READ_ME_FIRST_FOR_MAC_MIGRATION.md",
+        "exists":  true
+    },
+    {
+        "rel":  "MAC_CODEX_READ_ORDER_ON_FIRST_OPEN.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\MAC_CODEX_READ_ORDER_ON_FIRST_OPEN.md",
+        "exists":  true
+    },
+    {
+        "rel":  "SHADOW_LIGHTWEIGHT_RUNTIME.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\SHADOW_LIGHTWEIGHT_RUNTIME.md",
+        "exists":  true
+    },
+    {
+        "rel":  "AGENT_OPERATING_GUIDE.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\AGENT_OPERATING_GUIDE.md",
+        "exists":  true
+    },
+    {
+        "rel":  "COPY_MANIFEST.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\COPY_MANIFEST.md",
+        "exists":  true
+    },
+    {
+        "rel":  "COPY_MANIFEST.json",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\COPY_MANIFEST.json",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\MAC_MIGRATION_MASTER_INDEX.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\MAC_MIGRATION_MASTER_INDEX.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\current_windows_environment\\CURRENT_WINDOWS_ENVIRONMENT_HANDOFF_INDEX.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\current_windows_environment\\CURRENT_WINDOWS_ENVIRONMENT_HANDOFF_INDEX.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\00_FINAL_HANDOUT_README.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\00_FINAL_HANDOUT_README.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\01_COMPLETE_BUILD_STATUS_END_TO_END.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\01_COMPLETE_BUILD_STATUS_END_TO_END.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\02_FOLDER_MAP_AND_PURPOSE_LEDGER.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\02_FOLDER_MAP_AND_PURPOSE_LEDGER.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\03_FILE_PURPOSE_LEDGER_IMPORTANT_FILES.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\03_FILE_PURPOSE_LEDGER_IMPORTANT_FILES.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\04_WAVE_HISTORY_AND_DECISION_LOG.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\04_WAVE_HISTORY_AND_DECISION_LOG.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\05_DRIFT_FAILURE_RECOVERY_LEDGER.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\05_DRIFT_FAILURE_RECOVERY_LEDGER.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\06_N8N_FULL_EXPORT_STATUS_AND_REUSE_BOUNDARY.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\06_N8N_FULL_EXPORT_STATUS_AND_REUSE_BOUNDARY.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\07_MAC_DEPLOYMENT_NEXT_PHASE_RUNBOOK.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\07_MAC_DEPLOYMENT_NEXT_PHASE_RUNBOOK.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\08_MAC_CODEX_FIRST_OPEN_INSTRUCTIONS.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\08_MAC_CODEX_FIRST_OPEN_INSTRUCTIONS.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\09_TRANSFER_PACKAGE_CONTENTS_AND_EXCLUSIONS.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\09_TRANSFER_PACKAGE_CONTENTS_AND_EXCLUSIONS.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\10_COMPONENT_READINESS_MATRIX.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\10_COMPONENT_READINESS_MATRIX.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\11_OPEN_GAPS_AND_NEEDS_CONFIRMATION.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\11_OPEN_GAPS_AND_NEEDS_CONFIRMATION.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\final_self_explaining_technical_handout\\12_FINAL_TECHNICAL_HANDOUT_STATUS.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\final_self_explaining_technical_handout\\12_FINAL_TECHNICAL_HANDOUT_STATUS.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_00_baseline\\MAC_00_BASELINE_AUDIT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_00_baseline\\MAC_00_BASELINE_AUDIT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_01_repo_transfer\\MAC_01_REPO_TRANSFER_AND_INTEGRITY.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_01_repo_transfer\\MAC_01_REPO_TRANSFER_AND_INTEGRITY.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_02_dependency_install\\MAC_02_DEPENDENCY_INSTALL_PLAN.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_02_dependency_install\\MAC_02_DEPENDENCY_INSTALL_PLAN.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_03_agent_setup\\MAC_03_CODEX_CLAUDE_KIMI_AGENT_SETUP.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_03_agent_setup\\MAC_03_CODEX_CLAUDE_KIMI_AGENT_SETUP.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_04_first_repo_proof\\MAC_04_FIRST_REPO_FIRST_DOSSIER_PROOF.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_04_first_repo_proof\\MAC_04_FIRST_REPO_FIRST_DOSSIER_PROOF.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_04_first_repo_proof\\FIRST_MAC_REPO_FIRST_PROOF_PROMPT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_04_first_repo_proof\\FIRST_MAC_REPO_FIRST_PROOF_PROMPT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_05_future_n8n_bus\\FUTURE_N8N_EXECUTION_BUS_DESIGN.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_05_future_n8n_bus\\FUTURE_N8N_EXECUTION_BUS_DESIGN.md",
+        "exists":  true
+    },
+    {
+        "rel":  "deployment\\mac_phase_06_provider_execution_later\\MAC_06_PROVIDER_EXECUTION_LATER.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\deployment\\mac_phase_06_provider_execution_later\\MAC_06_PROVIDER_EXECUTION_LATER.md",
+        "exists":  true
+    },
+    {
+        "rel":  "transfer_bundle\\MAC_TRANSFER_BUNDLE_PLAN.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\transfer_bundle\\MAC_TRANSFER_BUNDLE_PLAN.md",
+        "exists":  true
+    },
+    {
+        "rel":  "transfer_bundle\\MAC_TRANSFER_INCLUDE_EXCLUDE_RULES.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\transfer_bundle\\MAC_TRANSFER_INCLUDE_EXCLUDE_RULES.md",
+        "exists":  true
+    },
+    {
+        "rel":  "transfer_bundle\\MAC_SANITIZED_TRANSFER_MANIFEST.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\transfer_bundle\\MAC_SANITIZED_TRANSFER_MANIFEST.md",
+        "exists":  true
+    },
+    {
+        "rel":  "transfer_bundle\\MAC_SANITIZED_TRANSFER_MANIFEST.json",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\transfer_bundle\\MAC_SANITIZED_TRANSFER_MANIFEST.json",
+        "exists":  true
+    },
+    {
+        "rel":  "transfer_bundle\\checksums\\TRANSFER_CHECKSUM_PLAN.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\transfer_bundle\\checksums\\TRANSFER_CHECKSUM_PLAN.md",
+        "exists":  true
+    },
+    {
+        "rel":  "audits\\migration_readiness\\FINAL_MAC_TRANSFER_PACKAGE_SEAL.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\audits\\migration_readiness\\FINAL_MAC_TRANSFER_PACKAGE_SEAL.md",
+        "exists":  true
+    },
+    {
+        "rel":  "audits\\migration_readiness\\MIGRATION_READINESS_AUDIT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\audits\\migration_readiness\\MIGRATION_READINESS_AUDIT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "audits\\transfer_safety\\FINAL_FORBIDDEN_FILE_SCAN.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\audits\\transfer_safety\\FINAL_FORBIDDEN_FILE_SCAN.md",
+        "exists":  true
+    },
+    {
+        "rel":  "audits\\transfer_safety\\TRANSFER_SAFETY_AUDIT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\audits\\transfer_safety\\TRANSFER_SAFETY_AUDIT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\n8n_export_summary\\N8N_FULL_EXPORT_SUMMARY.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\n8n_export_summary\\N8N_FULL_EXPORT_SUMMARY.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\n8n_export_summary\\N8N_WORKFLOW_REUSE_STRATEGY.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\n8n_export_summary\\N8N_WORKFLOW_REUSE_STRATEGY.md",
+        "exists":  true
+    },
+    {
+        "rel":  "handoff\\n8n_export_summary\\N8N_IMPORT_WARNING.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\handoff\\n8n_export_summary\\N8N_IMPORT_WARNING.md",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\EXPORT_MANIFEST.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\EXPORT_MANIFEST.md",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\EXPORT_MANIFEST.json",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\EXPORT_MANIFEST.json",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\FINAL_EXPORT_VERIFICATION_REPORT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\FINAL_EXPORT_VERIFICATION_REPORT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\SANITIZED_EXPORT_SECRET_SCAN_REPORT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\SANITIZED_EXPORT_SECRET_SCAN_REPORT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\WORKFLOW_33_DB_ONLY_CLASSIFICATION_LOCK.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\WORKFLOW_33_DB_ONLY_CLASSIFICATION_LOCK.md",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\RAW_PRIVATE_EXPORT_HANDLING_RULES.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\RAW_PRIVATE_EXPORT_HANDLING_RULES.md",
+        "exists":  true
+    },
+    {
+        "rel":  "archive_reference\\n8n_full_environment_reference_20260518_v8\\SHA256SUMS_SANITIZED_REFERENCE.txt",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\archive_reference\\n8n_full_environment_reference_20260518_v8\\SHA256SUMS_SANITIZED_REFERENCE.txt",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\MISSION_CONTEXT_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\MISSION_CONTEXT_CONTRACT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\DIRECTOR_SELECTION_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\DIRECTOR_SELECTION_CONTRACT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\SKILL_SELECTION_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\SKILL_SELECTION_CONTRACT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\DOSSIER_OUTPUT_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\DOSSIER_OUTPUT_CONTRACT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\QUALITY_GATE_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\QUALITY_GATE_CONTRACT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\PROVIDER_HANDOFF_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\PROVIDER_HANDOFF_CONTRACT.md",
+        "exists":  true
+    },
+    {
+        "rel":  "runtime_contracts\\LINEAGE_CONTRACT.md",
+        "full":  "C:\\ShadowCreatorOS_Lightweight\\runtime_contracts\\LINEAGE_CONTRACT.md",
+        "exists":  true
+    }
+]

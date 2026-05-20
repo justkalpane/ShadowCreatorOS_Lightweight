@@ -1,0 +1,77 @@
+﻿{
+    "quarantine_timestamp":  "2026-05-15T11:29:46.3259007+05:30",
+    "source_repo":  "C:\\ShadowEmpire-Git_Restore_01",
+    "repo_branch":  "recovery/runtime-lock-20260506",
+    "repo_head":  "aca5c63235f567e985dadb13a49b0543ed1b45b5",
+    "git_status_summary":  {
+                               "staged_files_present":  false,
+                               "staged_files_count":  0,
+                               "modified_files_count":  50,
+                               "untracked_files_count":  270
+                           },
+    "n8n_profile":  "C:\\ShadowEmpire\\n8n_user_restore_01",
+    "n8n_database":  "C:\\ShadowEmpire\\n8n_user_restore_01\\.n8n\\database.sqlite",
+    "n8n_database_size_bytes":  235872256,
+    "n8n_binary_data":  "C:\\ShadowEmpire\\n8n_user_restore_01\\.n8n\\binaryData",
+    "n8n_binary_data_size_bytes":  0,
+    "operator_api_paths":  [
+                               "engine\\\\api\\\\operator.js",
+                               "operator\\\\provider_router.js",
+                               "operator\\\\skill_runtime.js",
+                               "operator\\\\task_router.js"
+                           ],
+    "openwebui_paths":  [
+                            "config\\\\openwebui_shadow_creator_os_direct_pipe.py"
+                        ],
+    "workflow_paths":  [
+                           "n8n\\\\workflows",
+                           "registries\\\\workflow_registry.yaml",
+                           "registries\\\\route_registry.yaml",
+                           "registries\\\\n8n_webhook_registry.yaml"
+                       ],
+    "governance_assets":  [
+                              "directors",
+                              "agents",
+                              "sub_agents",
+                              "skills",
+                              "registries",
+                              "schemas",
+                              "validators",
+                              "docs",
+                              "dossiers"
+                          ],
+    "known_blockers":  [
+                           "GEMINI_HTTP_429"
+                       ],
+    "strategic_decision":  "Heavy n8n/OpenWebUI/Gemini-first intelligence runtime is frozen as future enterprise infrastructure. New lightweight repo-first path will be created separately in Wave 2.",
+    "wave2_allowed_copy_assets":  [
+                                      "directors",
+                                      "agents",
+                                      "sub_agents",
+                                      "skills",
+                                      "registries",
+                                      "schemas",
+                                      "validators",
+                                      "docs",
+                                      "rules",
+                                      "workflow JSONs (reference only)",
+                                      "architecture/PRD/build-status docs",
+                                      "dossier templates"
+                                  ],
+    "wave2_disallowed_runtime_assets":  [
+                                            "C:\\\\ShadowEmpire\\\\n8n_user_restore_01",
+                                            "C:\\\\ShadowEmpire\\\\n8n_user_restore_01\\\\.n8n\\\\database.sqlite",
+                                            "C:\\\\ShadowEmpire\\\\n8n_user_restore_01\\\\.n8n\\\\binaryData",
+                                            "node_modules",
+                                            ".env and provider secrets",
+                                            "live workflow IDs as active truth",
+                                            "live webhook IDs as active truth",
+                                            "runtime caches/logs as active state",
+                                            "OpenWebUI runtime state DB/config as active truth",
+                                            "Gemini-first runtime state as default"
+                                        ],
+    "checksums_created":  true,
+    "checksum_file_path":  "C:\\ShadowEmpire_Quarantine\\quarantine_20260515_112944\\CRITICAL_FILE_CHECKSUMS.json",
+    "secrets_exposed":  false,
+    "source_repo_modified_by_quarantine":  false
+}

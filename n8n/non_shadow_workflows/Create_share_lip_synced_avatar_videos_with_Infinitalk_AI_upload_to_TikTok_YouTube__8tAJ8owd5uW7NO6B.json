@@ -1,0 +1,570 @@
+{
+  "id": "8tAJ8owd5uW7NO6B",
+  "name": "Create & share lip-synced avatar videos with Infinitalk AI & upload to TikTok/YouTube",
+  "active": false,
+  "isArchived": false,
+  "createdAt": "2026-05-05 20:05:02.710",
+  "updatedAt": "2026-05-05 20:13:19.409",
+  "versionId": "0e34227d-9be0-4be2-86e5-09ee4e733a1f",
+  "triggerCount": 0,
+  "nodes": [
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/infinitalk/requests/{{ $('Create Video').item.json.request_id }}/status ",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "168e2c77-bb94-4221-9c02-4e3bad48b1c3",
+      "name": "Get status",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1440,
+        1472
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "id": "d7db81ba-eee8-4d55-b651-e5c1b69da1a9",
+      "name": "Wait 60 sec.",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        1264,
+        1472
+      ],
+      "webhookId": "c435264b-c4e7-4a19-bf4d-79975b92d16d",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "content": "# Generates talking avatar video from a video and audio file.\n\nThis worflow generates a talking avatar video from an image and audio file. The avatar lip-syncs to the provided audio with natural facial expressions.\n\nThis workflow automates the process of generating and publishing a **talking avatar video**.\nIt takes a **video** and an **audio file** as inputs, then uses the Infinitalk API to create a lip-synced avatar that naturally matches the audio. Once generated, the video is:\n\n1. Retrieved and stored (Google Drive upload).\n2. Optimized with an **AI-generated YouTube title** for better SEO.\n3. Automatically uploaded to **YouTube** and **TikTok** via the Upload-Post API.",
+        "height": 360,
+        "width": 740,
+        "color": 3
+      },
+      "id": "71590a73-4289-47d0-ad80-6513f4b11e67",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "383d112e-2cc6-4dd4-8985-f09ce0bd1781",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1eb1de62-2d7a-40a7-836f-6d160d0ff7ff",
+      "name": "Completed?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1616,
+        1472
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "content": "## STEP 1 - GET API KEY (YOURAPIKEY)\nCreate an account [here](https://fal.ai/) and obtain API KEY.\nIn the node \"Create Image\" set \"Header Auth\" and set:\n- Name: \"Authorization\"\n- Value: \"Key YOURAPIKEY\"",
+        "height": 140,
+        "width": 740
+      },
+      "id": "7ae6c1ed-7ebf-4904-9576-e8ac5dd8d236",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Set API Key created in Step 1",
+        "height": 200,
+        "width": 180
+      },
+      "id": "5b8f0f56-3c8e-442c-b448-df7238b74f9a",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        848,
+        1408
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/infinitalk/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "1e90ad13-a5d5-446a-847c-b84884b5ad63",
+      "name": "Get Url Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        368,
+        1856
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Get Url Video').item.json.video.url }}",
+        "options": {}
+      },
+      "id": "8f5dfa2e-b463-448c-b2e4-8cf5c4ac30ff",
+      "name": "Get File Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        992,
+        1856
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "name": "={{ $now.format('yyyyLLddHHmmss') }}-{{ $('Get Url Video').item.json.video.file_name }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1aHRwLWyrqfzoVC8HoB-YMrBvQ4tLC-NZ",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1aHRwLWyrqfzoVC8HoB-YMrBvQ4tLC-NZ",
+          "cachedResultName": "Fal.run"
+        },
+        "options": {}
+      },
+      "id": "36331aa1-77a7-4f36-83f0-79ef138ad17b",
+      "name": "Upload Video",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        1280,
+        1728
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini",
+          "cachedResultName": "GPT-5-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Input: {{ $('Set data').item.json.prompt }}"
+            },
+            {
+              "content": "You are a YouTube SEO expert specialized in creating engaging and optimized titles.\n\nYour task is to generate an effective title for a YouTube video based on the user's video description.\n\nGUIDELINES:\n- Maximum 60 characters to avoid truncation\n- Use relevant keywords for SEO\n- Make the title catchy and clickable\n- Avoid excessive or misleading clickbait\n- Consider the target audience of the content\n- Use numbers, questions, or power words when appropriate\n- IMPORTANT: Generate the title in the same language as the input description\n\nOUTPUT FORMAT:\nProvide only the title, without additional explanations.\n\nEXAMPLE:\nInput: \"Tutorial video on how to cook perfect pasta carbonara\"\nOutput: \"PERFECT Carbonara in 10 Minutes - Chef's Secrets\"",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "faf2336b-611b-4edd-8710-252a482d877a",
+      "name": "Generate title",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        624,
+        1856
+      ],
+      "typeVersion": 1.8
+    },
+    {
+      "parameters": {
+        "content": "Set YOUR_USERNAME in Step 2",
+        "height": 408,
+        "width": 180
+      },
+      "id": "e0126877-c633-4a20-a01e-e22eab75a2ec",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1264,
+        1888
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## STEP 2 - Upload video on Youtube and TikTok\n- Find your API key in your [Upload-Post Manage Api Keys](https://www.upload-post.com/?linkId=lp_144414&sourceId=n3witalia&tenantId=upload-post-app) 10 FREE uploads per month\n- Set the the \"Auth Header\":\n-- Name: Authorization\n-- Value: Apikey YOUR_API_KEY_HERE\n- Create profiles to manage your social media accounts. The \"Profile\" you choose will be used in the field YOUR_USRNAME (eg. test1 or test2).  \n\n\nThe free plan allows uploads to all platforms except TikTok. To enable, please upgrade to a paid plan.",
+        "height": 232,
+        "width": 740
+      },
+      "id": "1cae72a1-48ad-43e3-a139-e37b39633f0b",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        816
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.upload-post.com/api/upload",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "={{ $('Generate title').item.json.message.content }}"
+            },
+            {
+              "name": "user",
+              "value": "YOUR_USERNAME"
+            },
+            {
+              "name": "platform[]",
+              "value": "tiktok"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "video",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0e8e3e1e-e5f5-4bb7-895b-3b819b2bda5d",
+      "name": "Upload on TikTok",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1280,
+        2144
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "content": "## Example On Form Submit\nPrompt:\nA woman with colorful hair talking on a podcast.\n\nVideo url:\nhttps://storage.googleapis.com/falserverless/model_tests/video_models/ref_video.mp4\n\nAudio url:\nhttps://v3.fal.media/files/penguin/PtiCYda53E9Dav25QmQYI_output.mp3\n\nResult:\nhttps://n3wstorage.b-cdn.net/n3witalia/video-talking.mp4",
+        "height": 272,
+        "width": 736,
+        "color": 4
+      },
+      "id": "549b8aff-9a5f-4ef5-8c77-0240c3469896",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        1088
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.upload-post.com/api/upload",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "={{ $('Generate title').item.json.message.content }}"
+            },
+            {
+              "name": "user",
+              "value": "YOUR_USERNAME"
+            },
+            {
+              "name": "platform[]",
+              "value": "youtube"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "video",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b8974e0c-ae8f-4cf4-8384-ae4f09becf2d",
+      "name": "Upload to Youtube",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1280,
+        1952
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "formTitle": "Video to Video",
+        "formDescription": "Infinitalk model generates a talking avatar video from a video and audio file. The avatar lip-syncs to the provided audio with natural facial expressions.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Video url",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Audio url",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Prompt",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d9c702c8-cfe0-4c2d-b4c6-3cddc68f4a7f",
+      "name": "On form submission1",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        368,
+        1472
+      ],
+      "webhookId": "3e1755d7-4963-4891-838a-46d301429da3",
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/infinitalk/video-to-video",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n     \"video_url\": \"{{ $json.video_url }}\",\n     \"audio_url\": \"{{ $json.audio_url }}\",\n     \"prompt\": \"{{ $json.prompt }}\",\n     \"num_frames\": 145,\n     \"resolution\": \"480p\",\n     \"seed\": 42,\n     \"acceleration\": \"regular\"\n   }",
+        "options": {}
+      },
+      "id": "0317f480-3e59-49b3-890c-7ad2ecbd806b",
+      "name": "Create Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        896,
+        1472
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c713d31f-9abd-496a-ac79-e8e2efe60aa0",
+              "name": "prompt",
+              "type": "string",
+              "value": "={{ $('On form submission1').item.json.Prompt }}"
+            },
+            {
+              "id": "2308096c-702f-4ed1-9de3-c77d9685609e",
+              "name": "video_url",
+              "type": "string",
+              "value": "={{ $json['Video url'] }}"
+            },
+            {
+              "id": "f5ccbf09-be9f-4132-8bed-5f492bcd7e65",
+              "name": "audio_url",
+              "type": "string",
+              "value": "={{ $json['Audio url'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "016f2fc7-3c3e-443f-ab67-962fc97a1ff5",
+      "name": "Set data",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        640,
+        1472
+      ],
+      "typeVersion": 3.4
+    }
+  ],
+  "connections": {
+    "Set data": {
+      "main": [
+        [
+          {
+            "node": "Create Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completed?": {
+      "main": [
+        [
+          {
+            "node": "Get Url Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 60 sec.",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get status": {
+      "main": [
+        [
+          {
+            "node": "Completed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Video": {
+      "main": [
+        [
+          {
+            "node": "Wait 60 sec.",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video": {
+      "main": [
+        []
+      ]
+    },
+    "Wait 60 sec.": {
+      "main": [
+        [
+          {
+            "node": "Get status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Url Video": {
+      "main": [
+        [
+          {
+            "node": "Generate title",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate title": {
+      "main": [
+        [
+          {
+            "node": "Get File Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File Video": {
+      "main": [
+        [
+          {
+            "node": "Upload Video",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload to Youtube",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload on TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to Youtube": {
+      "main": [
+        []
+      ]
+    },
+    "On form submission1": {
+      "main": [
+        [
+          {
+            "node": "Set data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "meta": {
+    "export_class": "NON_SHADOW_TEMPLATE_SUPPORT",
+    "expected_title_match": "Create & share lip-synced avatar videos with Infinitalk AI & upload to TikTok/YouTube",
+    "match_mode": "exact",
+    "credential_data_exported": false,
+    "execution_data_exported": false,
+    "binary_data_exported": false
+  }
+}

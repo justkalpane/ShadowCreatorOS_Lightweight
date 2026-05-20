@@ -1,0 +1,281 @@
+[
+  {
+    "parent_workflow": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_code": "WF-100",
+    "parent_id": "ecQoXsf2o3gyrDO1",
+    "execute_node": "Execute CWF-110 Topic Discovery",
+    "logical_child": "CWF-110",
+    "live_ref_id": "kDa9U4UqGWlG6g3O",
+    "live_ref_name": "CWF-110 Topic Discovery Canonical"
+  },
+  {
+    "parent_workflow": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_code": "WF-100",
+    "parent_id": "ecQoXsf2o3gyrDO1",
+    "execute_node": "Execute CWF-120 Topic Qualification",
+    "logical_child": "CWF-120",
+    "live_ref_id": "t1OGMmjxWkI9X7H6",
+    "live_ref_name": "CWF-120 Topic Qualification Canonical"
+  },
+  {
+    "parent_workflow": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_code": "WF-100",
+    "parent_id": "ecQoXsf2o3gyrDO1",
+    "execute_node": "Execute CWF-130 Topic Scoring",
+    "logical_child": "CWF-130",
+    "live_ref_id": "aMuFbh7x41Ztpdp4",
+    "live_ref_name": "CWF-130 Topic Scoring Canonical"
+  },
+  {
+    "parent_workflow": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_code": "WF-100",
+    "parent_id": "ecQoXsf2o3gyrDO1",
+    "execute_node": "Execute CWF-140 Research Synthesis",
+    "logical_child": "CWF-140",
+    "live_ref_id": "K8ffUF0eWIXiiQE8",
+    "live_ref_name": "CWF-140 Research Synthesis Canonical"
+  },
+  {
+    "parent_workflow": "WF-200 Script Intelligence Pack Canonical",
+    "parent_code": "WF-200",
+    "parent_id": "xkxwnQrS7RPeMOkI",
+    "execute_node": "Execute CWF-210 Script Generation",
+    "logical_child": "CWF-210",
+    "live_ref_id": "JkqH3MB9n7IWUSmT",
+    "live_ref_name": "CWF-210 Script Generation Canonical"
+  },
+  {
+    "parent_workflow": "WF-200 Script Intelligence Pack Canonical",
+    "parent_code": "WF-200",
+    "parent_id": "xkxwnQrS7RPeMOkI",
+    "execute_node": "Execute CWF-220 Script Debate",
+    "logical_child": "CWF-220",
+    "live_ref_id": "tzQPxC5HChpoevbL",
+    "live_ref_name": "CWF-220 Script Debate Canonical"
+  },
+  {
+    "parent_workflow": "WF-200 Script Intelligence Pack Canonical",
+    "parent_code": "WF-200",
+    "parent_id": "xkxwnQrS7RPeMOkI",
+    "execute_node": "Execute CWF-230 Script Refinement",
+    "logical_child": "CWF-230",
+    "live_ref_id": "JoLoaeTOdoe5c3ve",
+    "live_ref_name": "CWF-230 Script Refinement Canonical"
+  },
+  {
+    "parent_workflow": "WF-200 Script Intelligence Pack Canonical",
+    "parent_code": "WF-200",
+    "parent_id": "xkxwnQrS7RPeMOkI",
+    "execute_node": "Execute CWF-240 Final Script Shaping",
+    "logical_child": "CWF-240",
+    "live_ref_id": "GprQFnIiU74KKEpY",
+    "live_ref_name": "CWF-240 Final Script Shaping Canonical"
+  },
+  {
+    "parent_workflow": "WF-300 Context Engineering Pack Canonical",
+    "parent_code": "WF-300",
+    "parent_id": "UpkDyr7OSJoRu1XX",
+    "execute_node": "Execute CWF-310 Execution Context Builder",
+    "logical_child": "CWF-310",
+    "live_ref_id": "EZAmggQBwBAD3UdR",
+    "live_ref_name": "CWF-310 Execution Context Builder Canonical"
+  },
+  {
+    "parent_workflow": "WF-300 Context Engineering Pack Canonical",
+    "parent_code": "WF-300",
+    "parent_id": "UpkDyr7OSJoRu1XX",
+    "execute_node": "Execute CWF-320 Platform Packager",
+    "logical_child": "CWF-320",
+    "live_ref_id": "PPgdzUvZ3gpmmICi",
+    "live_ref_name": "CWF-320 Platform Packager Canonical"
+  },
+  {
+    "parent_workflow": "WF-300 Context Engineering Pack Canonical",
+    "parent_code": "WF-300",
+    "parent_id": "UpkDyr7OSJoRu1XX",
+    "execute_node": "Execute CWF-330 Asset Brief Generator",
+    "logical_child": "CWF-330",
+    "live_ref_id": "BlrDp37eCZ32JgdP",
+    "live_ref_name": "CWF-330 Asset Brief Generator Canonical"
+  },
+  {
+    "parent_workflow": "WF-300 Context Engineering Pack Canonical",
+    "parent_code": "WF-300",
+    "parent_id": "UpkDyr7OSJoRu1XX",
+    "execute_node": "Execute CWF-340 Lineage Validator",
+    "logical_child": "CWF-340",
+    "live_ref_id": "I1af7W2pkAFEn3z5",
+    "live_ref_name": "CWF-340 Lineage Validator Canonical"
+  },
+  {
+    "parent_workflow": "WF-400 Media Production Pack Canonical",
+    "parent_code": "WF-400",
+    "parent_id": "do0cZuzren68K4Tu",
+    "execute_node": "Execute CWF-410 Thumbnail Generator",
+    "logical_child": "CWF-410",
+    "live_ref_id": "dkyayq7YYDsBS9UY",
+    "live_ref_name": "CWF-410 Thumbnail Generator Canonical"
+  },
+  {
+    "parent_workflow": "WF-400 Media Production Pack Canonical",
+    "parent_code": "WF-400",
+    "parent_id": "do0cZuzren68K4Tu",
+    "execute_node": "Execute CWF-420 Visual Asset Planner",
+    "logical_child": "CWF-420",
+    "live_ref_id": "JQTFjmsn9dLVIdVu",
+    "live_ref_name": "CWF-420 Visual Asset Planner Canonical"
+  },
+  {
+    "parent_workflow": "WF-400 Media Production Pack Canonical",
+    "parent_code": "WF-400",
+    "parent_id": "do0cZuzren68K4Tu",
+    "execute_node": "Execute CWF-430 Audio Optimizer",
+    "logical_child": "CWF-430",
+    "live_ref_id": "ddLEG62Hkd9Gf2le",
+    "live_ref_name": "CWF-430 Audio Script Optimizer Canonical"
+  },
+  {
+    "parent_workflow": "WF-400 Media Production Pack Canonical",
+    "parent_code": "WF-400",
+    "parent_id": "do0cZuzren68K4Tu",
+    "execute_node": "Execute CWF-440 Media Finalizer",
+    "logical_child": "CWF-440",
+    "live_ref_id": "MeR3pzh84KpLMcNf",
+    "live_ref_name": "CWF-440 Media Package Finalizer Canonical"
+  },
+  {
+    "parent_workflow": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_code": "WF-500",
+    "parent_id": "nPFz46PDjqipVJIq",
+    "execute_node": "Execute CWF-510 Platform Metadata",
+    "logical_child": "CWF-510",
+    "live_ref_id": "AQLKHu7qnQTupqzi",
+    "live_ref_name": "CWF-510 Platform Metadata Generator Canonical"
+  },
+  {
+    "parent_workflow": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_code": "WF-500",
+    "parent_id": "nPFz46PDjqipVJIq",
+    "execute_node": "Execute CWF-520 Distribution Planner",
+    "logical_child": "CWF-520",
+    "live_ref_id": "QPtDu7W7eaDNKgeI",
+    "live_ref_name": "CWF-520 Distribution Planner Canonical"
+  },
+  {
+    "parent_workflow": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_code": "WF-500",
+    "parent_id": "nPFz46PDjqipVJIq",
+    "execute_node": "Execute CWF-530 Publish Readiness",
+    "logical_child": "CWF-530",
+    "live_ref_id": "nGqi7w4e4pxskC1I",
+    "live_ref_name": "CWF-530 Publish Readiness Checker Canonical"
+  },
+  {
+    "parent_workflow": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_code": "WF-600",
+    "parent_id": "VLB5LzxoiGFfWd3h",
+    "execute_node": "Execute CWF-610 Performance Metrics Collector",
+    "logical_child": "CWF-610",
+    "live_ref_id": "TtNZPHaQ0Jt7Qg84",
+    "live_ref_name": "CWF-610 Performance Metrics Collector Canonical"
+  },
+  {
+    "parent_workflow": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_code": "WF-600",
+    "parent_id": "VLB5LzxoiGFfWd3h",
+    "execute_node": "Execute CWF-620 Audience Feedback Aggregator",
+    "logical_child": "CWF-620",
+    "live_ref_id": "iqh4gVJjrsMnTvnR",
+    "live_ref_name": "CWF-620 Audience Feedback Aggregator Canonical"
+  },
+  {
+    "parent_workflow": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_code": "WF-600",
+    "parent_id": "VLB5LzxoiGFfWd3h",
+    "execute_node": "Execute CWF-630 Evolution Signal Synthesizer",
+    "logical_child": "CWF-630",
+    "live_ref_id": "O2qGFq562dfOB1rc",
+    "live_ref_name": "CWF-630 Evolution Signal Synthesizer Canonical"
+  },
+  {
+    "parent_workflow": "WF-020 Final Approval Canonical",
+    "parent_code": "WF-020",
+    "parent_id": "9Wvgfygw2wMqZcUD",
+    "execute_node": "Execute WF-500 Publishing",
+    "logical_child": "WF-500",
+    "live_ref_id": "nPFz46PDjqipVJIq",
+    "live_ref_name": "WF-500 Publishing Distribution Pack Canonical"
+  },
+  {
+    "parent_workflow": "WF-020 Final Approval Canonical",
+    "parent_code": "WF-020",
+    "parent_id": "9Wvgfygw2wMqZcUD",
+    "execute_node": "Execute WF-021 Replay",
+    "logical_child": "WF-021",
+    "live_ref_id": "Ih7yfJs1ON43xKmT",
+    "live_ref_name": "WF-021 Replay Remodify Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-100 Topic Intelligence",
+    "logical_child": "WF-100",
+    "live_ref_id": "ecQoXsf2o3gyrDO1",
+    "live_ref_name": "WF-100 Topic Intelligence Pack Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-200 Script Intelligence",
+    "logical_child": "WF-200",
+    "live_ref_id": "xkxwnQrS7RPeMOkI",
+    "live_ref_name": "WF-200 Script Intelligence Pack Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-300 Context Engineering",
+    "logical_child": "WF-300",
+    "live_ref_id": "UpkDyr7OSJoRu1XX",
+    "live_ref_name": "WF-300 Context Engineering Pack Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-400 Media Production",
+    "logical_child": "WF-400",
+    "live_ref_id": "do0cZuzren68K4Tu",
+    "live_ref_name": "WF-400 Media Production Pack Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-500 Publishing Distribution",
+    "logical_child": "WF-500",
+    "live_ref_id": "nPFz46PDjqipVJIq",
+    "live_ref_name": "WF-500 Publishing Distribution Pack Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-020 Final Approval",
+    "logical_child": "WF-020",
+    "live_ref_id": "9Wvgfygw2wMqZcUD",
+    "live_ref_name": "WF-020 Final Approval Canonical"
+  },
+  {
+    "parent_workflow": "WF-010 Parent Orchestrator Canonical",
+    "parent_code": "WF-010",
+    "parent_id": "oCLrZ3aWZkSBvrjn",
+    "execute_node": "Execute WF-600 Analytics Evolution",
+    "logical_child": "WF-600",
+    "live_ref_id": "VLB5LzxoiGFfWd3h",
+    "live_ref_name": "WF-600 Analytics Evolution Pack Canonical"
+  }
+]

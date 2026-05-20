@@ -1,0 +1,185 @@
+{
+  "phase": "R6D",
+  "timestamp": "2026-05-04T00:25:49.981812",
+  "status": "COMPLETE",
+  "summary": {
+    "total_workflows_imported": 37,
+    "expected": 37,
+    "match": true,
+    "reference_integrity_errors": 0,
+    "duplicates": 0,
+    "ready_for_r7": true
+  },
+  "detailed_answers": {
+    "1_workflows_imported_total": 37,
+    "2_expected_workflows": 37,
+    "3_counts_match": true,
+    "4_workflow_entity_count": 37,
+    "5_shared_workflow_count": 37,
+    "6_webhook_entity_count": 0,
+    "7_reference_errors": 0,
+    "8_duplicate_workflows": 0,
+    "9_import_order_dependency_safe": true,
+    "10_batch_import_completed": true,
+    "11_all_execute_references_valid": true,
+    "12_parent_workflows": 8,
+    "13_total_child_references": 31,
+    "14_all_workflow_names_imported": true,
+    "15_no_orphaned_workflows": true,
+    "16_database_integrity_verified": true,
+    "17_backup_created": true,
+    "18_import_log_generated": true,
+    "19_temp_package_cleanup_ready": true,
+    "20_ready_for_activation": true
+  },
+  "workflows": [
+    {
+      "id": "kDa9U4UqGWlG6g3O",
+      "name": "CWF-110 Topic Discovery Canonical"
+    },
+    {
+      "id": "t1OGMmjxWkI9X7H6",
+      "name": "CWF-120 Topic Qualification Canonical"
+    },
+    {
+      "id": "aMuFbh7x41Ztpdp4",
+      "name": "CWF-130 Topic Scoring Canonical"
+    },
+    {
+      "id": "K8ffUF0eWIXiiQE8",
+      "name": "CWF-140 Research Synthesis Canonical"
+    },
+    {
+      "id": "JkqH3MB9n7IWUSmT",
+      "name": "CWF-210 Script Generation Canonical"
+    },
+    {
+      "id": "tzQPxC5HChpoevbL",
+      "name": "CWF-220 Script Debate Canonical"
+    },
+    {
+      "id": "JoLoaeTOdoe5c3ve",
+      "name": "CWF-230 Script Refinement Canonical"
+    },
+    {
+      "id": "GprQFnIiU74KKEpY",
+      "name": "CWF-240 Final Script Shaping Canonical"
+    },
+    {
+      "id": "EZAmggQBwBAD3UdR",
+      "name": "CWF-310 Execution Context Builder Canonical"
+    },
+    {
+      "id": "PPgdzUvZ3gpmmICi",
+      "name": "CWF-320 Platform Packager Canonical"
+    },
+    {
+      "id": "BlrDp37eCZ32JgdP",
+      "name": "CWF-330 Asset Brief Generator Canonical"
+    },
+    {
+      "id": "I1af7W2pkAFEn3z5",
+      "name": "CWF-340 Lineage Validator Canonical"
+    },
+    {
+      "id": "dkyayq7YYDsBS9UY",
+      "name": "CWF-410 Thumbnail Generator Canonical"
+    },
+    {
+      "id": "JQTFjmsn9dLVIdVu",
+      "name": "CWF-420 Visual Asset Planner Canonical"
+    },
+    {
+      "id": "ddLEG62Hkd9Gf2le",
+      "name": "CWF-430 Audio Script Optimizer Canonical"
+    },
+    {
+      "id": "MeR3pzh84KpLMcNf",
+      "name": "CWF-440 Media Package Finalizer Canonical"
+    },
+    {
+      "id": "AQLKHu7qnQTupqzi",
+      "name": "CWF-510 Platform Metadata Generator Canonical"
+    },
+    {
+      "id": "QPtDu7W7eaDNKgeI",
+      "name": "CWF-520 Distribution Planner Canonical"
+    },
+    {
+      "id": "nGqi7w4e4pxskC1I",
+      "name": "CWF-530 Publish Readiness Checker Canonical"
+    },
+    {
+      "id": "TtNZPHaQ0Jt7Qg84",
+      "name": "CWF-610 Performance Metrics Collector Canonical"
+    },
+    {
+      "id": "iqh4gVJjrsMnTvnR",
+      "name": "CWF-620 Audience Feedback Aggregator Canonical"
+    },
+    {
+      "id": "O2qGFq562dfOB1rc",
+      "name": "CWF-630 Evolution Signal Synthesizer Canonical"
+    },
+    {
+      "id": "OhbVrpoiVgRV5IfL",
+      "name": "WF-000 Health Check Canonical"
+    },
+    {
+      "id": "BcbfnoGMbJmTPSIA",
+      "name": "WF-001 Dossier Create Canonical"
+    },
+    {
+      "id": "oCLrZ3aWZkSBvrjn",
+      "name": "WF-010 Parent Orchestrator Canonical"
+    },
+    {
+      "id": "9Wvgfygw2wMqZcUD",
+      "name": "WF-020 Final Approval Canonical"
+    },
+    {
+      "id": "Ih7yfJs1ON43xKmT",
+      "name": "WF-021 Replay Remodify Canonical"
+    },
+    {
+      "id": "wqM2V7L9hK4pT8xC",
+      "name": "WF-022 Provider Packet Bridge Canonical"
+    },
+    {
+      "id": "rN4bQ1Y6mJ8tC3vP",
+      "name": "WF-023 Downstream Resource Preparation Canonical"
+    },
+    {
+      "id": "ecQoXsf2o3gyrDO1",
+      "name": "WF-100 Topic Intelligence Pack Canonical"
+    },
+    {
+      "id": "xkxwnQrS7RPeMOkI",
+      "name": "WF-200 Script Intelligence Pack Canonical"
+    },
+    {
+      "id": "UpkDyr7OSJoRu1XX",
+      "name": "WF-300 Context Engineering Pack Canonical"
+    },
+    {
+      "id": "do0cZuzren68K4Tu",
+      "name": "WF-400 Media Production Pack Canonical"
+    },
+    {
+      "id": "nPFz46PDjqipVJIq",
+      "name": "WF-500 Publishing Distribution Pack Canonical"
+    },
+    {
+      "id": "VLB5LzxoiGFfWd3h",
+      "name": "WF-600 Analytics Evolution Pack Canonical"
+    },
+    {
+      "id": "jOkYRBMeyyMDHqJ3",
+      "name": "WF-900 Error Handler Canonical"
+    },
+    {
+      "id": "8aRUhR4IWrXPvhsB",
+      "name": "WF-901 Error Recovery Canonical"
+    }
+  ]
+}

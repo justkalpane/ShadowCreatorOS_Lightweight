@@ -1,0 +1,43 @@
+﻿{
+    "source_repo":  "C:\\ShadowEmpire-Git_Restore_01",
+    "destination_repo":  "C:\\ShadowCreatorOS_Lightweight",
+    "quarantine_reference":  "C:\\ShadowEmpire_Quarantine\\quarantine_20260515_112944",
+    "copy_timestamp":  "2026-05-15T19:01:32.0914908+05:30",
+    "copied_active_assets":  [
+                                 "directors",
+                                 "agents",
+                                 "sub_agents-\u003esubagents",
+                                 "skills",
+                                 "registries",
+                                 "schemas",
+                                 "validators",
+                                 "docs",
+                                 "rules-\u003econtext_engineering"
+                             ],
+    "copied_reference_assets":  [
+                                    "n8n_workflows_reference",
+                                    "operator_reference",
+                                    "openwebui_reference",
+                                    "old_quarantine_manifest"
+                                ],
+    "excluded_assets":  [
+                            "node_modules",
+                            ".git",
+                            ".env",
+                            ".env.*",
+                            "n8n profile/sqlite/binaryData",
+                            "secrets/tokens/cookies/session files",
+                            "runtime caches as active state",
+                            "old workflow/webhook IDs as active truth"
+                        ],
+    "secrets_copied":  false,
+    "source_repo_modified":  false,
+    "n8n_db_copied":  false,
+    "n8n_profile_copied":  false,
+    "old_workflow_ids_active":  false,
+    "old_webhook_ids_active":  false,
+    "openwebui_required":  false,
+    "n8n_required_for_intelligence":  false,
+    "safe_for_new_codex_chat":  true,
+    "gemini_default":  false
+}

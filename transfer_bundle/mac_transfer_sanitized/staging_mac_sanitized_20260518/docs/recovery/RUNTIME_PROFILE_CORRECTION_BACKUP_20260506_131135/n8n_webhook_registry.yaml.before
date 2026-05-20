@@ -1,0 +1,51 @@
+timestamp: RUNTIME_PROFILE_REALIGN_20260506
+n8n_base_url: http://127.0.0.1:5678
+webhooks:
+  WF-000:
+    name: WF-000 Health Check Canonical
+    workflow_id: kuO40cPrik6YjPVR
+    webhook_path: /webhook/kuO40cPrik6YjPVR/wf-000-health-check
+    path: wf-000-health-check
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/kuO40cPrik6YjPVR/wf-000-health-check
+    active: true
+  WF-001:
+    name: WF-001 Dossier Create Canonical
+    workflow_id: IG8PekK_Cn4qM6ve
+    webhook_path: /webhook/IG8PekK_Cn4qM6ve/trigger%2520node/wf-001-dossier-create
+    path: wf-001-dossier-create
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/IG8PekK_Cn4qM6ve/trigger%2520node/wf-001-dossier-create
+    active: true
+  WF-010:
+    name: WF-010 Parent Orchestrator Canonical
+    workflow_id: 5eWEDik6TqWnsMSH
+    webhook_path: /webhook/5eWEDik6TqWnsMSH/trigger%2520node/wf-010-parent-orchestrator
+    path: wf-010-parent-orchestrator
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/5eWEDik6TqWnsMSH/trigger%2520node/wf-010-parent-orchestrator
+    active: true
+  WF-020:
+    name: WF-020 Final Approval Canonical
+    workflow_id: AuEK7gW6QZuehjjg
+    webhook_path: /webhook/AuEK7gW6QZuehjjg/wf-020-final-approval
+    path: wf-020-final-approval
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/AuEK7gW6QZuehjjg/wf-020-final-approval
+    active: true
+  WF-021:
+    name: WF-021 Replay Remodify Canonical
+    workflow_id: XhNIZQFFvHcbTkgd
+    webhook_path: /webhook/XhNIZQFFvHcbTkgd/wf-021-replay-remodify
+    path: wf-021-replay-remodify
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/XhNIZQFFvHcbTkgd/wf-021-replay-remodify
+    active: true
+  WF-500:
+    name: WF-500 Publishing Distribution Pack Canonical
+    workflow_id: wlKgjjxmp5CVlK5Q
+    webhook_path: /webhook/wlKgjjxmp5CVlK5Q/wf-500-publishing-distribution
+    path: wf-500-publishing-distribution
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/wlKgjjxmp5CVlK5Q/wf-500-publishing-distribution
+    active: true

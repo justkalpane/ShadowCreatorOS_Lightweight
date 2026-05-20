@@ -1,0 +1,299 @@
+﻿[
+    {
+        "workflow_id":  "2HngibnKQxBY11OP",
+        "workflow_name":  "âœ¨ðŸ¤–Automate Multi-Platform Social Media Content Creation with AI 2",
+        "final_source_class":  "USER_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=USER_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "archived",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "publish"
+    },
+    {
+        "workflow_id":  "3U1Or361qbCgCe1I",
+        "workflow_name":  "General 3D presentation workflow with Midjourney, GPT-4o-image and Kling APIs",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "image"
+    },
+    {
+        "workflow_id":  "3ciLA697pqL3AruK",
+        "workflow_name":  "Generate social videos with AI avatars using VEED, Claude, and OpenAI",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "8tAJ8owd5uW7NO6B",
+        "workflow_name":  "Create \u0026 share lip-synced avatar videos with Infinitalk AI \u0026 upload to TikTok/YouTube",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "AHAk7SsgfgB98aMo",
+        "workflow_name":  "Automated YouTube video scheduling \u0026 AI metadata generation ðŸŽ¬",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "AqV6JbOCO2VAt0aE",
+        "workflow_name":  "Generate cinematic videos with OpenAI Sora and uploadtourl hosting 2",
+        "final_source_class":  "USER_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=USER_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "archived",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "B3QtC5lPGtnPkyJR",
+        "workflow_name":  "Create AI personalized video \u0026 voice outreach with HeyGen, ElevenLabs \u0026 Perplexity",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "voice"
+    },
+    {
+        "workflow_id":  "BqdEJfWweWhV3VrP",
+        "workflow_name":  "Automate AI video creation \u0026 multi-platform publishing with Gemini \u0026 Creatomate",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "CH70BvMePN6ofDNo",
+        "workflow_name":  "Hacker News to video content",
+        "final_source_class":  "UNKNOWN_NEEDS_MANUAL_REVIEW",
+        "reason":  "source_guess=UNKNOWN; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "NEEDS_MANUAL_REVIEW",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "DWYXAkTFi6r1n3im",
+        "workflow_name":  "Generate AI avatar videos from text with HeyGen and upload to YouTube",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "I7HWYJta1QQFwUaO",
+        "workflow_name":  "Generate AI avatar videos with GPT-5 \u0026 publish to social media platforms",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=UNKNOWN; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "J4Gmv5gkkSkjweaS",
+        "workflow_name":  "Automate AI news videos with GPT-4o, Heygen Avatars, and Blotato",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "J7rC466LserURUoG",
+        "workflow_name":  "AI YouTube trend finder based on niche",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "publish"
+    },
+    {
+        "workflow_id":  "KIN128ViolnkXhDI",
+        "workflow_name":  "Get a summary of each podcast in your YouTube playlist daily automatically free",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "publish"
+    },
+    {
+        "workflow_id":  "KTru6icuqaCikB7M",
+        "workflow_name":  "Create AI news avatar videos with Dumpling AI, GPT-4o and HeyGen",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "QnYM048NZQ2el0ti",
+        "workflow_name":  "AI content creation and publishing engine with Mistral, Creatomate, and YouTube",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "RJZfWpTnerY8dTXY",
+        "workflow_name":  "âš¡AI-powered YouTube video summarization \u0026 analysis",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "SBzxhyz7l2XlNlHJ",
+        "workflow_name":  "Generate text images from the Free DummyJSON API using the HTTP request node",
+        "final_source_class":  "UTILITY",
+        "reason":  "source_guess=UTILITY; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "image"
+    },
+    {
+        "workflow_id":  "VwsCYZg1glcyamPH",
+        "workflow_name":  "Generate text images from the Free DummyJSON API using the HTTP request node 2",
+        "final_source_class":  "UTILITY",
+        "reason":  "source_guess=UTILITY; rule_based_name_match",
+        "status":  "archived",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "image"
+    },
+    {
+        "workflow_id":  "YdBriWl8kjRqClva",
+        "workflow_name":  "Generate AI viral videos with NanoBanana \u0026 VEO3, shared on socials via Blotato",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "ZpSkncOwYzqXP8XL",
+        "workflow_name":  "Generate \u0026 auto-post tech news AI avatar videos to social media with Heygen and Blotato",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "ahRDTyqKrfJd8DUK",
+        "workflow_name":  "Fully automated AI video generation \u0026 multi-platform publishing",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=UNKNOWN; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "b3BIpRhfUUIf5Oco",
+        "workflow_name":  "AI-powered short-form video generator with OpenAI, Flux, Kling, and ElevenLabs",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "voice"
+    },
+    {
+        "workflow_id":  "bRQXDXVsPXQgCde8",
+        "workflow_name":  "Free AI image generator - n8n automation workflow with Gemini/ChatGPT",
+        "final_source_class":  "UNKNOWN_NEEDS_MANUAL_REVIEW",
+        "reason":  "source_guess=UNKNOWN; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "NEEDS_MANUAL_REVIEW",
+        "likely_future_n8n_bus_category":  "image"
+    },
+    {
+        "workflow_id":  "ckaieD5tNs2pgplr",
+        "workflow_name":  "Generate custom AI videos with Digital Avatars using HeyGen API",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "dOKm3qLjKtJDHK8N",
+        "workflow_name":  "Free YouTube video analyzer with AI-powered summaries \u0026 email alerts",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "eAYVX6zLUIVEuJiG",
+        "workflow_name":  "AI YouTube analytics agent: Comment analyzer \u0026 insights reporter",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "publish"
+    },
+    {
+        "workflow_id":  "fGsHM2nDtoZFRU72",
+        "workflow_name":  "Generate \u0026 publish AI news avatar videos with HeyGen and Blotato",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "gymxRXpGgeSakr3J",
+        "workflow_name":  "AI content creation and publishing engine with Mistral, Creatomate, and YouTube 2",
+        "final_source_class":  "USER_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=USER_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "pmOMvjAiU21q5eGs",
+        "workflow_name":  "Create \u0026 upload AI-generated ASMR YouTube Shorts with Seedance, Fal AI, and GPT-4",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    },
+    {
+        "workflow_id":  "rNCgf3NYvZR9RTNt",
+        "workflow_name":  "Create and publish AI avatar short videos with Gemini, HeyGen and Google Sheets",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "avatar"
+    },
+    {
+        "workflow_id":  "sbhS1zacj7Mje78U",
+        "workflow_name":  "âœ¨ðŸ¤–Automate Multi-Platform Social Media Content Creation with AI",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=UNKNOWN; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "publish"
+    },
+    {
+        "workflow_id":  "tu9FLv3Yq2WtPqWJ",
+        "workflow_name":  "Generate cinematic videos with OpenAI Sora and uploadtourl hosting",
+        "final_source_class":  "N8N_IMPORTED_TEMPLATE",
+        "reason":  "source_guess=N8N_IMPORTED_TEMPLATE; rule_based_name_match",
+        "status":  "inactive",
+        "recommended_future_action":  "REVIEW_FOR_REUSE",
+        "likely_future_n8n_bus_category":  "video"
+    }
+]

@@ -1,0 +1,289 @@
+{
+  "generated_at": "2026-05-18T20:48:37.651687",
+  "source_db_path": "C:\\ShadowEmpire\\n8n_user_restore_01\\.n8n\\database.sqlite",
+  "target_folder": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows",
+  "expected_count": 30,
+  "found_count": 30,
+  "exported_count": 30,
+  "missing_titles": [],
+  "variants_or_duplicates": [],
+  "exports": [
+    {
+      "workflow_id": "YdBriWl8kjRqClva",
+      "workflow_name": "Generate AI viral videos with NanoBanana & VEO3, shared on socials via Blotato",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_AI_viral_videos_with_NanoBanana_VEO3_shared_on_socials_via_Blotato__YdBriWl8kjRqClva.json",
+      "match_mode": "exact",
+      "expected_title": "Generate AI viral videos with NanoBanana & VEO3, shared on socials via Blotato"
+    },
+    {
+      "workflow_id": "dOKm3qLjKtJDHK8N",
+      "workflow_name": "Free YouTube video analyzer with AI-powered summaries & email alerts",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Free_YouTube_video_analyzer_with_AI_powered_summaries_email_alerts__dOKm3qLjKtJDHK8N.json",
+      "match_mode": "exact",
+      "expected_title": "Free YouTube video analyzer with AI-powered summaries & email alerts"
+    },
+    {
+      "workflow_id": "tu9FLv3Yq2WtPqWJ",
+      "workflow_name": "Generate cinematic videos with OpenAI Sora and uploadtourl hosting",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_cinematic_videos_with_OpenAI_Sora_and_uploadtourl_hosting__tu9FLv3Yq2WtPqWJ.json",
+      "match_mode": "exact",
+      "expected_title": "Generate cinematic videos with OpenAI Sora and uploadtourl hosting"
+    },
+    {
+      "workflow_id": "J4Gmv5gkkSkjweaS",
+      "workflow_name": "Automate AI news videos with GPT-4o, Heygen Avatars, and Blotato",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Automate_AI_news_videos_with_GPT_4o_Heygen_Avatars_and_Blotato__J4Gmv5gkkSkjweaS.json",
+      "match_mode": "exact",
+      "expected_title": "Automate AI news videos with GPT-4o, Heygen Avatars, and Blotato"
+    },
+    {
+      "workflow_id": "B3QtC5lPGtnPkyJR",
+      "workflow_name": "Create AI personalized video & voice outreach with HeyGen, ElevenLabs & Perplexity",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Create_AI_personalized_video_voice_outreach_with_HeyGen_ElevenLabs_Perplexity__B3QtC5lPGtnPkyJR.json",
+      "match_mode": "exact",
+      "expected_title": "Create AI personalized video & voice outreach with HeyGen, ElevenLabs & Perplexity"
+    },
+    {
+      "workflow_id": "b3BIpRhfUUIf5Oco",
+      "workflow_name": "AI-powered short-form video generator with OpenAI, Flux, Kling, and ElevenLabs",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\AI_powered_short_form_video_generator_with_OpenAI_Flux_Kling_and_ElevenLabs__b3BIpRhfUUIf5Oco.json",
+      "match_mode": "exact",
+      "expected_title": "AI-powered short-form video generator with OpenAI, Flux, Kling, and ElevenLabs"
+    },
+    {
+      "workflow_id": "3U1Or361qbCgCe1I",
+      "workflow_name": "General 3D presentation workflow with Midjourney, GPT-4o-image and Kling APIs",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\General_3D_presentation_workflow_with_Midjourney_GPT_4o_image_and_Kling_APIs__3U1Or361qbCgCe1I.json",
+      "match_mode": "exact",
+      "expected_title": "General 3D presentation workflow with Midjourney, GPT-4o-image and Kling APIs"
+    },
+    {
+      "workflow_id": "QnYM048NZQ2el0ti",
+      "workflow_name": "AI content creation and publishing engine with Mistral, Creatomate, and YouTube",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\AI_content_creation_and_publishing_engine_with_Mistral_Creatomate_and_YouTube__QnYM048NZQ2el0ti.json",
+      "match_mode": "exact",
+      "expected_title": "AI content creation and publishing engine with Mistral, Creatomate, and YouTube"
+    },
+    {
+      "workflow_id": "J7rC466LserURUoG",
+      "workflow_name": "AI YouTube trend finder based on niche",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\AI_YouTube_trend_finder_based_on_niche__J7rC466LserURUoG.json",
+      "match_mode": "exact",
+      "expected_title": "AI YouTube trend finder based on niche"
+    },
+    {
+      "workflow_id": "CH70BvMePN6ofDNo",
+      "workflow_name": "Hacker News to video content",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Hacker_News_to_video_content__CH70BvMePN6ofDNo.json",
+      "match_mode": "exact",
+      "expected_title": "Hacker News to video content"
+    },
+    {
+      "workflow_id": "pmOMvjAiU21q5eGs",
+      "workflow_name": "Create & upload AI-generated ASMR YouTube Shorts with Seedance, Fal AI, and GPT-4",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Create_upload_AI_generated_ASMR_YouTube_Shorts_with_Seedance_Fal_AI_and_GPT_4__pmOMvjAiU21q5eGs.json",
+      "match_mode": "exact",
+      "expected_title": "Create & upload AI-generated ASMR YouTube Shorts with Seedance, Fal AI, and GPT-4"
+    },
+    {
+      "workflow_id": "eAYVX6zLUIVEuJiG",
+      "workflow_name": "AI YouTube analytics agent: Comment analyzer & insights reporter",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\AI_YouTube_analytics_agent_Comment_analyzer_insights_reporter__eAYVX6zLUIVEuJiG.json",
+      "match_mode": "exact",
+      "expected_title": "AI YouTube analytics agent: Comment analyzer & insights reporter"
+    },
+    {
+      "workflow_id": "KIN128ViolnkXhDI",
+      "workflow_name": "Get a summary of each podcast in your YouTube playlist daily automatically free",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Get_a_summary_of_each_podcast_in_your_YouTube_playlist_daily_automatically_free__KIN128ViolnkXhDI.json",
+      "match_mode": "exact",
+      "expected_title": "Get a summary of each podcast in your YouTube playlist daily automatically free"
+    },
+    {
+      "workflow_id": "gymxRXpGgeSakr3J",
+      "workflow_name": "AI content creation and publishing engine with Mistral, Creatomate, and YouTube 2",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\AI_content_creation_and_publishing_engine_with_Mistral_Creatomate_and_YouTube_2__gymxRXpGgeSakr3J.json",
+      "match_mode": "exact",
+      "expected_title": "AI content creation and publishing engine with Mistral, Creatomate, and YouTube 2"
+    },
+    {
+      "workflow_id": "ahRDTyqKrfJd8DUK",
+      "workflow_name": "Fully automated AI video generation & multi-platform publishing",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Fully_automated_AI_video_generation_multi_platform_publishing__ahRDTyqKrfJd8DUK.json",
+      "match_mode": "exact",
+      "expected_title": "Fully automated AI video generation & multi-platform publishing"
+    },
+    {
+      "workflow_id": "SBzxhyz7l2XlNlHJ",
+      "workflow_name": "Generate text images from the Free DummyJSON API using the HTTP request node",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_text_images_from_the_Free_DummyJSON_API_using_the_HTTP_request_node__SBzxhyz7l2XlNlHJ.json",
+      "match_mode": "exact",
+      "expected_title": "Generate text images from the Free DummyJSON API using the HTTP request node"
+    },
+    {
+      "workflow_id": "bRQXDXVsPXQgCde8",
+      "workflow_name": "Free AI image generator - n8n automation workflow with Gemini/ChatGPT",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Free_AI_image_generator_n8n_automation_workflow_with_Gemini_ChatGPT__bRQXDXVsPXQgCde8.json",
+      "match_mode": "exact",
+      "expected_title": "Free AI image generator - n8n automation workflow with Gemini/ChatGPT"
+    },
+    {
+      "workflow_id": "rNCgf3NYvZR9RTNt",
+      "workflow_name": "Create and publish AI avatar short videos with Gemini, HeyGen and Google Sheets",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Create_and_publish_AI_avatar_short_videos_with_Gemini_HeyGen_and_Google_Sheets__rNCgf3NYvZR9RTNt.json",
+      "match_mode": "exact",
+      "expected_title": "Create and publish AI avatar short videos with Gemini, HeyGen and Google Sheets"
+    },
+    {
+      "workflow_id": "ZpSkncOwYzqXP8XL",
+      "workflow_name": "Generate & auto-post tech news AI avatar videos to social media with Heygen and Blotato",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_auto_post_tech_news_AI_avatar_videos_to_social_media_with_Heygen_and_Blotato__ZpSkncOwYzqXP8XL.json",
+      "match_mode": "exact",
+      "expected_title": "Generate & auto-post tech news AI avatar videos to social media with Heygen and Blotato"
+    },
+    {
+      "workflow_id": "I7HWYJta1QQFwUaO",
+      "workflow_name": "Generate AI avatar videos with GPT-5 & publish to social media platforms",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_AI_avatar_videos_with_GPT_5_publish_to_social_media_platforms__I7HWYJta1QQFwUaO.json",
+      "match_mode": "exact",
+      "expected_title": "Generate AI avatar videos with GPT-5 & publish to social media platforms"
+    },
+    {
+      "workflow_id": "DWYXAkTFi6r1n3im",
+      "workflow_name": "Generate AI avatar videos from text with HeyGen and upload to YouTube",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_AI_avatar_videos_from_text_with_HeyGen_and_upload_to_YouTube__DWYXAkTFi6r1n3im.json",
+      "match_mode": "exact",
+      "expected_title": "Generate AI avatar videos from text with HeyGen and upload to YouTube"
+    },
+    {
+      "workflow_id": "KTru6icuqaCikB7M",
+      "workflow_name": "Create AI news avatar videos with Dumpling AI, GPT-4o and HeyGen",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Create_AI_news_avatar_videos_with_Dumpling_AI_GPT_4o_and_HeyGen__KTru6icuqaCikB7M.json",
+      "match_mode": "exact",
+      "expected_title": "Create AI news avatar videos with Dumpling AI, GPT-4o and HeyGen"
+    },
+    {
+      "workflow_id": "fGsHM2nDtoZFRU72",
+      "workflow_name": "Generate & publish AI news avatar videos with HeyGen and Blotato",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_publish_AI_news_avatar_videos_with_HeyGen_and_Blotato__fGsHM2nDtoZFRU72.json",
+      "match_mode": "exact",
+      "expected_title": "Generate & publish AI news avatar videos with HeyGen and Blotato"
+    },
+    {
+      "workflow_id": "8tAJ8owd5uW7NO6B",
+      "workflow_name": "Create & share lip-synced avatar videos with Infinitalk AI & upload to TikTok/YouTube",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Create_share_lip_synced_avatar_videos_with_Infinitalk_AI_upload_to_TikTok_YouTube__8tAJ8owd5uW7NO6B.json",
+      "match_mode": "exact",
+      "expected_title": "Create & share lip-synced avatar videos with Infinitalk AI & upload to TikTok/YouTube"
+    },
+    {
+      "workflow_id": "3ciLA697pqL3AruK",
+      "workflow_name": "Generate social videos with AI avatars using VEED, Claude, and OpenAI",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_social_videos_with_AI_avatars_using_VEED_Claude_and_OpenAI__3ciLA697pqL3AruK.json",
+      "match_mode": "exact",
+      "expected_title": "Generate social videos with AI avatars using VEED, Claude, and OpenAI"
+    },
+    {
+      "workflow_id": "ckaieD5tNs2pgplr",
+      "workflow_name": "Generate custom AI videos with Digital Avatars using HeyGen API",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Generate_custom_AI_videos_with_Digital_Avatars_using_HeyGen_API__ckaieD5tNs2pgplr.json",
+      "match_mode": "exact",
+      "expected_title": "Generate custom AI videos with Digital Avatars using HeyGen API"
+    },
+    {
+      "workflow_id": "BqdEJfWweWhV3VrP",
+      "workflow_name": "Automate AI video creation & multi-platform publishing with Gemini & Creatomate",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Automate_AI_video_creation_multi_platform_publishing_with_Gemini_Creatomate__BqdEJfWweWhV3VrP.json",
+      "match_mode": "exact",
+      "expected_title": "Automate AI video creation & multi-platform publishing with Gemini & Creatomate"
+    },
+    {
+      "workflow_id": "RJZfWpTnerY8dTXY",
+      "workflow_name": "⚡AI-powered YouTube video summarization & analysis",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\AI_powered_YouTube_video_summarization_analysis__RJZfWpTnerY8dTXY.json",
+      "match_mode": "id_fix",
+      "expected_title": "?AI-powered YouTube video summarization & analysis"
+    },
+    {
+      "workflow_id": "AHAk7SsgfgB98aMo",
+      "workflow_name": "Automated YouTube video scheduling & AI metadata generation 🎬",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Automated_YouTube_video_scheduling_AI_metadata_generation__AHAk7SsgfgB98aMo.json",
+      "match_mode": "id_fix",
+      "expected_title": "Automated YouTube video scheduling & AI metadata generation ??"
+    },
+    {
+      "workflow_id": "sbhS1zacj7Mje78U",
+      "workflow_name": "✨🤖Automate Multi-Platform Social Media Content Creation with AI",
+      "active": false,
+      "archived": false,
+      "file": "C:\\ShadowCreatorOS_Lightweight\\n8n\\non_shadow_workflows\\Automate_Multi_Platform_Social_Media_Content_Creation_with_AI__sbhS1zacj7Mje78U.json",
+      "match_mode": "id_fix",
+      "expected_title": "???Automate Multi-Platform Social Media Content Creation with AI"
+    }
+  ],
+  "safety": {
+    "credentials_exported": false,
+    "execution_data_exported": false,
+    "binary_data_exported": false,
+    "secrets_printed": false,
+    "shadow_core_workflows_mixed": false
+  }
+}

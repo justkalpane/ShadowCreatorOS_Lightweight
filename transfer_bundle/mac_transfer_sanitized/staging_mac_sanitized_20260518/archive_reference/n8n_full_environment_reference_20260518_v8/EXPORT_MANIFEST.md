@@ -1,0 +1,27 @@
+# EXPORT MANIFEST
+
+- source_db_path: C:\ShadowEmpire\n8n_user_restore_01\.n8n\database.sqlite
+- snapshot_db_path: C:\ShadowCreatorOS_Lightweight\archive_reference\n8n_full_environment_reference_20260518_v8\PRIVATE_DB_SNAPSHOT_DO_NOT_USE_AS_RUNTIME\database.sqlite.copy
+- extraction_method: snapshot_copy_then_readonly_sqlite_query
+- export_timestamp: 2026-05-18T21:32:53.316081
+- full_workflow_count_from_db: 71
+- sanitized_workflow_exports_count: 71
+- raw_private_workflow_exports_count: 71
+- shadow_empire_guess_count: 38
+- non_shadow_or_template_guess_count: 28
+- unknown_guess_count: 5
+- active_count: 37
+- inactive_count: 34
+- archived_count: 3
+- wave2_reference_workflow_count: 38
+- newly_discovered_workflows_not_in_wave2_count: 33
+- credential_references_inventory_created: True
+- credentials_exported: False
+- executions_exported: False
+- binaryData_exported: False
+- old_db_copied_as_active_runtime: False
+- old_workflow_ids_active_truth: False
+- old_webhook_ids_active_truth: False
+- safe_for_later_diff: True
+- safe_for_mac_runtime_import: False
+- requires_manual_review_before_import: True

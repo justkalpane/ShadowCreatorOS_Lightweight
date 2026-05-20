@@ -1,0 +1,224 @@
+=== R8B FINAL REPORT ===
+Single-Workflow Publish Mechanism Probe - WF-000 Health Check
+Timestamp: 2026-05-04 01:40:00 IST
+
+================================================================================
+1. CURRENT STATE:
+================================================================================
+Classification: R8B_PUBLISH_PROBE_COMPLETE
+Workflow tested: WF-000 (Health Check Canonical, ID: OhbVrpoiVgRV5IfL)
+Publish mechanism: n8n publish:workflow CLI command
+Status: PARTIAL SUCCESS - Database entry created, runtime webhook still 404
+
+================================================================================
+2. BACKUP PATH:
+================================================================================
+C:/ShadowEmpire/recovery_backups/phase_r8b_pre_publish_probe_20260504_013359/
+
+================================================================================
+3. WF-000 WORKFLOW ID:
+================================================================================
+OhbVrpoiVgRV5IfL
+
+================================================================================
+4. WF-000 ACTIVE FLAG:
+================================================================================
+YES (active = 1)
+
+================================================================================
+5. WF-000 WEBHOOK NODE PATH/METHOD:
+================================================================================
+Path: wf-000-health-check
+Method: POST
+Node type: n8n-nodes-base.webhook
+Response mode: onReceived
+
+================================================================================
+6. PUBLISH METHOD DISCOVERED:
+================================================================================
+YES - Official n8n CLI command exists
+Command: n8n publish:workflow --id=<workflow_id>
+Description: "Publish a specific version of a workflow"
+
+================================================================================
+7. PUBLISH METHOD USED:
+================================================================================
+n8n publish:workflow CLI command
+Required: N8N_USER_FOLDER environment variable, stopped n8n process
+Result: "Publishing workflow with ID: OhbVrpoiVgRV5IfL (current version)"
+Status: Command completed successfully
+
+================================================================================
+8. WF-000 PUBLISHED SUCCESSFULLY:
+================================================================================
+PARTIAL - CLI succeeded but webhook runtime registration failed
+Database: webhook_entity row created
+Runtime: LiveWebhooks.findWebhook() still returns 404
+
+================================================================================
+9. WORKFLOW_PUBLISHED_VERSION COUNT BEFORE:
+================================================================================
+0
+
+================================================================================
+10. WORKFLOW_PUBLISHED_VERSION COUNT AFTER:
+================================================================================
+0 (Table remained empty - publish did not populate this table)
+
+================================================================================
+11. WEBHOOK_ENTITY COUNT BEFORE:
+================================================================================
+0
+
+================================================================================
+12. WEBHOOK_ENTITY COUNT AFTER:
+================================================================================
+1 (webhook_entity row created for WF-000)
+
+================================================================================
+13. WF-000 WEBHOOK_ENTITY ROW EXISTS:
+================================================================================
+YES
+
+Details:
+  workflowId: OhbVrpoiVgRV5IfL
+  webhookPath: OhbVrpoiVgRV5IfL/trigger%20node/wf-000-health-check
+  method: POST
+  node: Trigger Node
+  webhookId: null
+
+================================================================================
+14. DIRECT WF-000 WEBHOOK TESTED:
+================================================================================
+YES - Multiple test attempts made
+
+Test Attempt 1:
+  URL: http://127.0.0.1:5678/webhook/OhbVrpoiVgRV5IfL/wf-000-health-check
+  Result: 404 (path format mismatch)
+
+Test Attempt 2:
+  URL: http://127.0.0.1:5678/webhook/OhbVrpoiVgRV5IfL/trigger%20node/wf-000-health-check
+  Result: 404 (correct path but webhook still not found in LiveWebhooks)
+
+================================================================================
+15. DIRECT WF-000 HTTP RESULT:
+================================================================================
+HTTP 404 Not Found
+Content-Type: application/json
+
+Message: "The requested webhook is not registered"
+Hint: "The workflow must be active for a production URL to run successfully"
+
+n8n Runtime Log Evidence:
+  - "Received request for unknown webhook"
+  - "The requested webhook is not registered"
+  - But also: "Activated workflow 'WF-000 Health Check Canonical'"
+
+Root cause: LiveWebhooks cache not populated from webhook_entity table
+
+================================================================================
+16. N8N CRASHED/HUNG:
+================================================================================
+NO - n8n process is stable, no crashes or hangs detected
+
+================================================================================
+17. REGISTRY CHANGED:
+================================================================================
+NO - Registry files not modified during R8B probe
+
+================================================================================
+18. OPERATOR API STARTED:
+================================================================================
+NO - Operator API held per R8B safety restrictions
+
+================================================================================
+19. OPEN WEBUI STARTED:
+================================================================================
+NO - Open WebUI held per R8B safety restrictions
+
+================================================================================
+20. SMOKE TEST RUN:
+================================================================================
+NO - Smoke tests held pending webhook verification
+
+================================================================================
+21. RECOMMENDED NEXT PHASE:
+================================================================================
+
+CRITICAL GAP IDENTIFIED:
+
+The n8n publish:workflow CLI command creates database entries in webhook_entity
+table, but n8n's LiveWebhooks runtime handler does not load these entries into
+memory at startup.
+
+This creates a database-to-runtime gap:
+  webhook_entity row EXISTS
+  LiveWebhooks.find(webhook) FAILS
+  Result: 404 "not registered"
+
+NEXT OPTIONS (in order of priority):
+
+OPTION A: Manual UI Activation (Fastest verification)
+  1. Open http://127.0.0.1:5678 in browser
+  2. Navigate to WF-000 workflow editor
+  3. Look for:
+     - Workflow-level "Activate" toggle (top right)
+     - Webhook node-level "Publish" or "Activate" button
+     - Any separate webhook activation mechanism
+  4. Click any publish/activate controls
+  5. Save
+  6. Test curl again
+  7. If successful: Document exact steps for remaining 36 workflows
+
+OPTION B: Check n8n Documentation
+  1. Determine if webhook_entity is correct table for runtime webhooks
+  2. Check if separate webhook publication mechanism exists beyond
+     workflow publication
+  3. Look for webhook activation API endpoint if available
+  4. May require n8n version-specific knowledge
+
+OPTION C: n8n REST API Exploration
+  1. Find if /api/v1/workflows/{id}/publish has webhook-specific parameters
+  2. Check if there's separate /api/v1/webhooks/{id}/publish endpoint
+  3. Check if webhook node requires separate activation call
+  4. Test with WF-000 as probe
+
+OPTION D: Restore and Manual Verification
+  1. If above options fail, restore pre-R7 database backup
+  2. Manually activate WF-000 through n8n UI
+  3. Verify webhook becomes callable
+  4. Document workflow_entity/webhook_entity state for manual activation
+  5. Use manual activation approach for all 37 workflows
+
+================================================================================
+22. APPROVAL NEEDED BEFORE NEXT MUTATION:
+================================================================================
+YES
+
+R8B CONSTRAINTS MAINTAINED:
+✓ Only WF-000 was published (not all 37)
+✓ Official n8n CLI command used (not manual SQLite edits)
+✓ Webhook paths extracted from runtime, not guessed
+✓ No registry updated before direct webhook proof
+✓ No Operator API started
+✓ No Open WebUI started
+✓ No smoke tests run
+✓ n8n remains stable
+
+CANNOT PROCEED WITH:
+  - Publishing remaining 36 workflows until webhook registration issue is resolved
+  - Registry updates before verified callable webhooks
+  - Operator API testing before live webhook proof
+  - Open WebUI testing
+
+ROOT CAUSE SUMMARY:
+
+The database-to-runtime gap is the blocker:
+1. Workflows marked active=1 in workflow_entity
+2. Webhook nodes present in workflow definition
+3. webhook_entity rows created by publish:workflow
+4. BUT: n8n's LiveWebhooks runtime cache not populated from webhook_entity
+
+This suggests n8n expects webhooks to be activated through a different
+mechanism than database entries alone, or n8n 2.18.5 has a bug in webhook
+initialization.

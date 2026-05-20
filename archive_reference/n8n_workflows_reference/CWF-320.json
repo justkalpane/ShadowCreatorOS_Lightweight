@@ -1,0 +1,139 @@
+﻿{
+  "name": "CWF-320 Platform Packager Canonical",
+  "description": "Packages script into platform-specific format: YouTube, blog, podcast, email.",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "cwf320_trigger_node",
+      "name": "Trigger Node",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const contextPacket = $json.execution_context_packet || { payload: { target_platform: 'generic' } };\nconst platform = contextPacket.payload?.target_platform || 'generic';\nconst platformFormats = {\n  youtube: { metadata_fields: ['title', 'description', 'tags', 'chapters', 'thumbnail_description'], required_length: '5-3600_seconds', required_format: 'video_metadata' },\n  blog: { metadata_fields: ['title', 'excerpt', 'tags', 'category', 'featured_image_description'], required_format: 'markdown' },\n  podcast: { metadata_fields: ['episode_title', 'episode_description', 'show_notes', 'guest_names', 'duration'], required_format: 'audio_metadata' },\n  email: { metadata_fields: ['subject_line', 'preview_text', 'call_to_action', 'unsubscribe_link'], required_format: 'html_friendly' },\n  generic: { metadata_fields: ['title', 'description'], required_format: 'generic' }\n};\nconst platformConfig = platformFormats[platform] || platformFormats.generic;\nconst packagedOutput = {\n  platform,\n  metadata: { title: $json.final_script_packet?.payload?.title || 'Untitled', description: $json.final_script_packet?.payload?.summary || 'Content summary' },\n  format_applied: platformConfig.required_format,\n  metadata_fields: platformConfig.metadata_fields\n};\nreturn [{ json: { ...$json, platform_package: packagedOutput, platform_packaging_complete: true } }];"
+      },
+      "id": "cwf320_platform_packager_node",
+      "name": "Platform Packager Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const packet = {\n  instance_id: 'PKG-' + Date.now(),\n  artifact_family: 'platform_package_packet',\n  schema_version: '1.0.0',\n  producer_workflow: 'CWF-320',\n  dossier_ref: $json.dossier_id || 'DOSSIER-UNSPECIFIED',\n  created_at: new Date().toISOString(),\n  status: 'CREATED',\n  payload: {\n    platform_packaging_complete: true,\n    platform: $json.platform_package.platform,\n    metadata: $json.platform_package.metadata,\n    format_applied: $json.platform_package.format_applied,\n    metadata_fields_populated: $json.platform_package.metadata_fields.length\n  }\n};\nreturn [{ json: { ...$json, platform_package_packet: packet, packet_emitted: true } }];"
+      },
+      "id": "cwf320_packet_emission_node",
+      "name": "Packet Emission Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, cwf320_result: { status: 'COMPLETED', platform_package_packet: $json.platform_package_packet } } }];"
+      },
+      "id": "cwf320_completion_node",
+      "name": "Completion Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const workflowId = 'CWF-320';\n  const defaultSkillMap = {\n    'CWF-610': 'M-185',\n    'CWF-620': 'M-200',\n    'CWF-630': 'M-215'\n  };\n  const skillId = $json.skill_id || defaultSkillMap[workflowId] || 'M-001';\n  const dossierId = $json.body?.dossier_id || $json.dossier_context?.dossier_id || $json.dossier_id || 'DOSSIER-UNSPECIFIED';\n\n  const payload = {\n    dossier_id: dossierId,\n    dossier_ref: dossierId,\n    workflow_id: workflowId,\n    workflow_ref: workflowId,\n    skill_id: skillId,\n    source_node: 'Skill Execution Node',\n    route_id: $json.body?.route_id || $json.route_id || $json.dossier_context?.route || null,\n    task: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || 'MISSION_CONTEXT_MISSING',\n    context: {\n      topic: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || null,\n      mode: $json.body?.user_mode || $json.user_mode || $json.mode || 'creator', mission_context: $json.body?.mission_context || $json.mission_context || null\n    },\n    dossier: typeof $json.dossier === 'object' ? $json.dossier : {}\n  };\n\n  const result = await this.helpers.httpRequest({\n    method: 'POST',\n    url: 'http://127.0.0.1:5002/operator/skill-runtime',\n    headers: { 'content-type': 'application/json' },\n    body: payload,\n    json: true,\n    timeout: 120000\n  });\n  if (result.status !== 'SUCCESS' || !result.runtime_packet) {\n    throw new Error(String(result.error || 'skill-runtime returned no runtime_packet'));\n  }\n\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: workflowId,\n        skill_id: skillId,\n        status: 'SUCCESS',\n        had_error: false,\n        error_message: '',\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: result.runtime_packet,\n      skill_execution_result: result.skill_execution_result || result,\n      runtime: { had_error: false, error_message: '' }\n    }\n  }];\n} catch (error) {\n  const message = String(error && error.message ? error.message : error);\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: 'CWF-320',\n        skill_id: $json.skill_id || null,\n        status: 'ERROR',\n        had_error: true,\n        error_message: message,\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: null,\n      skill_execution_result: null,\n      runtime: { had_error: true, error_message: message }\n    }\n  }];\n}"
+      },
+      "id": "cwf_320_skill_runtime_probe_node",
+      "name": "Skill Runtime Probe Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Skill Runtime Probe Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Platform Packager Node": {
+      "main": [
+        [
+          {
+            "node": "Packet Emission Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Packet Emission Node": {
+      "main": [
+        [
+          {
+            "node": "Completion Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completion Node": {
+      "main": [
+        []
+      ]
+    },
+    "Skill Runtime Probe Node": {
+      "main": [
+        [
+          {
+            "node": "Platform Packager Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "workflow_id": "CWF-320",
+    "phase": "phase1",
+    "vein": "context_vein",
+    "purpose": "Platform packager.",
+    "implementation_depth": "production_grade",
+    "owner_director": "narada",
+    "next_workflow": "CWF-330",
+    "canonical_file": "n8n/workflows/CWF-320.json",
+    "wf900_error_route": "WF-900"
+  },
+  "active": true,
+  "id": "PPgdzUvZ3gpmmICi"
+}
+
+
+
+
+
+

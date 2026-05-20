@@ -1,0 +1,51 @@
+timestamp: R8_CORRECTED_20260504
+n8n_base_url: http://127.0.0.1:5678
+webhooks:
+  WF-000:
+    name: WF-000 Health Check Canonical
+    workflow_id: OhbVrpoiVgRV5IfL
+    webhook_path: /webhook/OhbVrpoiVgRV5IfL/wf-000-health-check
+    path: wf-000-health-check
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/OhbVrpoiVgRV5IfL/wf-000-health-check
+    active: true
+  WF-001:
+    name: WF-001 Dossier Create Canonical
+    workflow_id: BcbfnoGMbJmTPSIA
+    webhook_path: /webhook/BcbfnoGMbJmTPSIA/trigger%2520node/wf-001-dossier-create
+    path: wf-001-dossier-create
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/BcbfnoGMbJmTPSIA/trigger%2520node/wf-001-dossier-create
+    active: true
+  WF-010:
+    name: WF-010 Parent Orchestrator Canonical
+    workflow_id: oCLrZ3aWZkSBvrjn
+    webhook_path: /webhook/oCLrZ3aWZkSBvrjn/trigger%2520node/wf-010-parent-orchestrator
+    path: wf-010-parent-orchestrator
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/oCLrZ3aWZkSBvrjn/trigger%2520node/wf-010-parent-orchestrator
+    active: true
+  WF-020:
+    name: WF-020 Final Approval Canonical
+    workflow_id: 9Wvgfygw2wMqZcUD
+    webhook_path: /webhook/9Wvgfygw2wMqZcUD/wf-020-final-approval
+    path: wf-020-final-approval
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/9Wvgfygw2wMqZcUD/wf-020-final-approval
+    active: true
+  WF-021:
+    name: WF-021 Replay Remodify Canonical
+    workflow_id: Ih7yfJs1ON43xKmT
+    webhook_path: /webhook/Ih7yfJs1ON43xKmT/wf-021-replay-remodify
+    path: wf-021-replay-remodify
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/Ih7yfJs1ON43xKmT/wf-021-replay-remodify
+    active: true
+  WF-500:
+    name: WF-500 Publishing Distribution Pack Canonical
+    workflow_id: nPFz46PDjqipVJIq
+    webhook_path: /webhook/nPFz46PDjqipVJIq/wf-500-publishing-distribution
+    path: wf-500-publishing-distribution
+    method: POST
+    full_url: http://127.0.0.1:5678/webhook/nPFz46PDjqipVJIq/wf-500-publishing-distribution
+    active: true

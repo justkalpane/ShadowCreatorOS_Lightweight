@@ -1,0 +1,166 @@
+{
+  "exportDate": "2026-05-04T10:22:02.870Z",
+  "totalWorkflows": 37,
+  "currentIdMap": {
+    "CWF-110": "kDa9U4UqGWlG6g3O",
+    "CWF-120": "t1OGMmjxWkI9X7H6",
+    "CWF-130": "aMuFbh7x41Ztpdp4",
+    "CWF-140": "K8ffUF0eWIXiiQE8",
+    "CWF-210": "JkqH3MB9n7IWUSmT",
+    "CWF-220": "tzQPxC5HChpoevbL",
+    "CWF-230": "JoLoaeTOdoe5c3ve",
+    "CWF-240": "GprQFnIiU74KKEpY",
+    "CWF-310": "EZAmggQBwBAD3UdR",
+    "CWF-320": "PPgdzUvZ3gpmmICi",
+    "CWF-330": "BlrDp37eCZ32JgdP",
+    "CWF-340": "I1af7W2pkAFEn3z5",
+    "CWF-410": "dkyayq7YYDsBS9UY",
+    "CWF-420": "JQTFjmsn9dLVIdVu",
+    "CWF-430": "ddLEG62Hkd9Gf2le",
+    "CWF-440": "MeR3pzh84KpLMcNf",
+    "CWF-510": "AQLKHu7qnQTupqzi",
+    "CWF-520": "QPtDu7W7eaDNKgeI",
+    "CWF-530": "nGqi7w4e4pxskC1I",
+    "CWF-610": "TtNZPHaQ0Jt7Qg84",
+    "CWF-620": "iqh4gVJjrsMnTvnR",
+    "CWF-630": "O2qGFq562dfOB1rc",
+    "WF-000": "OhbVrpoiVgRV5IfL",
+    "WF-021": "Ih7yfJs1ON43xKmT",
+    "WF-022": "wqM2V7L9hK4pT8xC",
+    "WF-023": "rN4bQ1Y6mJ8tC3vP",
+    "WF-900": "jOkYRBMeyyMDHqJ3",
+    "WF-901": "8aRUhR4IWrXPvhsB",
+    "WF-100": "ecQoXsf2o3gyrDO1",
+    "WF-200": "xkxwnQrS7RPeMOkI",
+    "WF-300": "UpkDyr7OSJoRu1XX",
+    "WF-400": "do0cZuzren68K4Tu",
+    "WF-500": "nPFz46PDjqipVJIq",
+    "WF-600": "VLB5LzxoiGFfWd3h",
+    "WF-020": "9Wvgfygw2wMqZcUD",
+    "WF-010": "oCLrZ3aWZkSBvrjn",
+    "WF-001": "BcbfnoGMbJmTPSIA"
+  },
+  "brokenReferences": 20,
+  "corrections": [
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-100",
+      "brokenId": "dew5Cgkwi8MUtAH7",
+      "correctId": "ecQoXsf2o3gyrDO1"
+    },
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-200",
+      "brokenId": "2lhY0gkl83tII3CI",
+      "correctId": "xkxwnQrS7RPeMOkI"
+    },
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-300",
+      "brokenId": "xriY2ZiZST6jybeX",
+      "correctId": "UpkDyr7OSJoRu1XX"
+    },
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-400",
+      "brokenId": "kL9mZo3pQ2xJ5nBv",
+      "correctId": "do0cZuzren68K4Tu"
+    },
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-500",
+      "brokenId": "aB2cD4eF6gH8iJ0k",
+      "correctId": "nPFz46PDjqipVJIq"
+    },
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-020",
+      "brokenId": "xOeKLfjudlc8OFiB",
+      "correctId": "9Wvgfygw2wMqZcUD"
+    },
+    {
+      "parent": "WF-010",
+      "expectedChild": "WF-600",
+      "brokenId": "fXNkWYfVX214QC87",
+      "correctId": "VLB5LzxoiGFfWd3h"
+    },
+    {
+      "parent": "WF-100",
+      "expectedChild": "CWF-110",
+      "brokenId": "9aM3CMjyQbaO9XYE",
+      "correctId": "kDa9U4UqGWlG6g3O"
+    },
+    {
+      "parent": "WF-100",
+      "expectedChild": "CWF-120",
+      "brokenId": "8Nf7TvjLr5kbAyPp",
+      "correctId": "t1OGMmjxWkI9X7H6"
+    },
+    {
+      "parent": "WF-100",
+      "expectedChild": "CWF-130",
+      "brokenId": "i2bPLxrWTASjJg4f",
+      "correctId": "aMuFbh7x41Ztpdp4"
+    },
+    {
+      "parent": "WF-100",
+      "expectedChild": "CWF-140",
+      "brokenId": "2rvNjmctBuBQFw8A",
+      "correctId": "K8ffUF0eWIXiiQE8"
+    },
+    {
+      "parent": "WF-200",
+      "expectedChild": "CWF-210",
+      "brokenId": "7DWKkVe4kZxV9v4f",
+      "correctId": "JkqH3MB9n7IWUSmT"
+    },
+    {
+      "parent": "WF-200",
+      "expectedChild": "CWF-220",
+      "brokenId": "obzjkLoqdky5SR3t",
+      "correctId": "tzQPxC5HChpoevbL"
+    },
+    {
+      "parent": "WF-200",
+      "expectedChild": "CWF-230",
+      "brokenId": "uXXBXmiIuOBGY432",
+      "correctId": "JoLoaeTOdoe5c3ve"
+    },
+    {
+      "parent": "WF-200",
+      "expectedChild": "CWF-240",
+      "brokenId": "ZZeHgvfu5Na4N7TR",
+      "correctId": "GprQFnIiU74KKEpY"
+    },
+    {
+      "parent": "WF-500",
+      "expectedChild": "CWF-510",
+      "brokenId": "MkxxOEm3rM4pmZEA",
+      "correctId": "AQLKHu7qnQTupqzi"
+    },
+    {
+      "parent": "WF-500",
+      "expectedChild": "CWF-520",
+      "brokenId": "2FVWhblGpX90F59K",
+      "correctId": "QPtDu7W7eaDNKgeI"
+    },
+    {
+      "parent": "WF-500",
+      "expectedChild": "CWF-530",
+      "brokenId": "Zm4JTSfa4DfAwfDy",
+      "correctId": "nGqi7w4e4pxskC1I"
+    },
+    {
+      "parent": "WF-020",
+      "expectedChild": "WF-500",
+      "brokenId": "e48l3HifOTrE59Hf",
+      "correctId": "nPFz46PDjqipVJIq"
+    },
+    {
+      "parent": "WF-020",
+      "expectedChild": "WF-021",
+      "brokenId": "5fG18tfg8QkVJa4I",
+      "correctId": "Ih7yfJs1ON43xKmT"
+    }
+  ]
+}

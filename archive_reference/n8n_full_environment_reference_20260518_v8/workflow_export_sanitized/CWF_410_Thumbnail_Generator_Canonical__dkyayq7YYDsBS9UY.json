@@ -1,0 +1,94 @@
+{
+  "id": "dkyayq7YYDsBS9UY",
+  "name": "CWF-410 Thumbnail Generator Canonical",
+  "active": true,
+  "isArchived": false,
+  "createdAt": "2026-05-03 18:46:55.344",
+  "updatedAt": "2026-05-14 20:32:12.944",
+  "versionId": "192d42d0-b051-48a8-9261-3f657ec402c1",
+  "activeVersionId": "192d42d0-b051-48a8-9261-3f657ec402c1",
+  "triggerCount": 0,
+  "description": "Generates 3 thumbnail concept variants representing key themes.",
+  "settings": {},
+  "meta": {
+    "workflow_id": "CWF-410",
+    "phase": "phase4",
+    "vein": "media_vein",
+    "purpose": "Visual asset production (deferred).",
+    "implementation_depth": "phase_deferred_stub",
+    "owner_director": "narada",
+    "next_workflow": "CWF-420",
+    "canonical_file": "n8n/workflows/CWF-410.json",
+    "wf900_error_route": "WF-900"
+  },
+  "pinData": {},
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger",
+      "name": "Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const variants = [{variant: 1, theme: 'hook_visual', description: 'Bold, attention-grabbing primary visual'}, {variant: 2, theme: 'narrative_flow', description: 'Sequential story elements'}, {variant: 3, theme: 'emotional_impact', description: 'Emotional resonance visual'}];\nconst thumbnails = {instance_id: 'THUMB-' + Date.now(), artifact_family: 'thumbnail_concept_packet', schema_version: '1.0.0', producer_workflow: 'CWF-410', dossier_ref: $json.dossier_id || 'DOSSIER-UNSPECIFIED', created_at: new Date().toISOString(), status: 'CREATED', payload: {thumbnail_variants_count: 3, variants: variants, generation_complete: true}};\nreturn [{ json: { ...$json, cwf410_result: { status: 'COMPLETED', thumbnail_concept_packet: thumbnails } } }];"
+      },
+      "id": "builder",
+      "name": "Builder",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const workflowId = 'CWF-410';\n  const defaultSkillMap = {\n    'CWF-610': 'M-185',\n    'CWF-620': 'M-200',\n    'CWF-630': 'M-215'\n  };\n  const skillId = $json.skill_id || defaultSkillMap[workflowId] || 'M-001';\n  const dossierId = $json.body?.dossier_id || $json.dossier_context?.dossier_id || $json.dossier_id || 'DOSSIER-UNSPECIFIED';\n\n  const payload = {\n    dossier_id: dossierId,\n    dossier_ref: dossierId,\n    workflow_id: workflowId,\n    workflow_ref: workflowId,\n    skill_id: skillId,\n    source_node: 'Skill Execution Node',\n    route_id: $json.body?.route_id || $json.route_id || $json.dossier_context?.route || null,\n    task: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || 'MISSION_CONTEXT_MISSING',\n    context: {\n      topic: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || null,\n      mode: $json.body?.user_mode || $json.user_mode || $json.mode || 'creator', mission_context: $json.body?.mission_context || $json.mission_context || null\n    },\n    dossier: typeof $json.dossier === 'object' ? $json.dossier : {}\n  };\n\n  const result = await this.helpers.httpRequest({\n    method: 'POST',\n    url: 'http://127.0.0.1:5002/operator/skill-runtime',\n    headers: { 'content-type': 'application/json' },\n    body: payload,\n    json: true,\n    timeout: 120000\n  });\n  if (result.status !== 'SUCCESS' || !result.runtime_packet) {\n    throw new Error(String(result.error || 'skill-runtime returned no runtime_packet'));\n  }\n\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: workflowId,\n        skill_id: skillId,\n        status: 'SUCCESS',\n        had_error: false,\n        error_message: '',\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: result.runtime_packet,\n      skill_execution_result: result.skill_execution_result || result,\n      runtime: { had_error: false, error_message: '' }\n    }\n  }];\n} catch (error) {\n  const message = String(error && error.message ? error.message : error);\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: 'CWF-410',\n        skill_id: $json.skill_id || null,\n        status: 'ERROR',\n        had_error: true,\n        error_message: message,\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: null,\n      skill_execution_result: null,\n      runtime: { had_error: true, error_message: message }\n    }\n  }];\n}"
+      },
+      "id": "cwf_410_skill_runtime_probe_node",
+      "name": "Skill Runtime Probe Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger": {
+      "main": [
+        [
+          {
+            "node": "Skill Runtime Probe Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Builder": {
+      "main": [
+        []
+      ]
+    },
+    "Skill Runtime Probe Node": {
+      "main": [
+        [
+          {
+            "node": "Builder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

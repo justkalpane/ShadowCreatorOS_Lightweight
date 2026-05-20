@@ -1,0 +1,142 @@
+{
+  "id": "BlrDp37eCZ32JgdP",
+  "name": "CWF-330 Asset Brief Generator Canonical",
+  "active": true,
+  "isArchived": false,
+  "createdAt": "2026-05-03 18:46:33.319",
+  "updatedAt": "2026-05-14 20:32:12.729",
+  "versionId": "109f01df-c1f4-4119-988e-61e25f8679e2",
+  "activeVersionId": "109f01df-c1f4-4119-988e-61e25f8679e2",
+  "triggerCount": 0,
+  "description": "Generates downstream asset briefs: thumbnails, visuals, B-roll, captions, audio direction.",
+  "settings": {},
+  "meta": {
+    "workflow_id": "CWF-330",
+    "phase": "phase1",
+    "vein": "context_vein",
+    "purpose": "Asset brief builder.",
+    "implementation_depth": "production_grade",
+    "owner_director": "narada",
+    "next_workflow": "CWF-340",
+    "canonical_file": "n8n/workflows/CWF-330.json",
+    "wf900_error_route": "WF-900"
+  },
+  "pinData": {},
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "cwf330_trigger_node",
+      "name": "Trigger Node",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const platformPackage = $json.platform_package_packet || { payload: { metadata: {} } };\nconst scriptSections = $json.final_script_packet?.payload?.sections || [{ title: 'main', content: 'content summary' }];\nconst assetBrief = {\n  thumbnail_brief: { variants: 3, direction: 'Create 3 visual concepts representing key themes from the content', elements: ['hook_visual', 'text_overlay', 'color_palette'] },\n  broll_cues: scriptSections.map((s, i) => ({ section: s.title, timestamp: i * 30, visual_direction: 'supporting_visuals_for_' + s.title, estimated_duration: '10-20_seconds' })),\n  caption_brief: { language: 'en', requirements: ['speaker_identification', 'sound_effects_noted', 'emphasis_markers'], style: 'professional' },\n  audio_brief: { voiceover_style: 'clear_and_engaging', pacing: 'conversational', music_cues: ['intro_upbeat', 'transitions_smooth', 'outro_resolution'], sound_design: 'minimal_enhancement' }\n};\nreturn [{ json: { ...$json, asset_brief: assetBrief, asset_brief_ready: true } }];"
+      },
+      "id": "cwf330_asset_brief_generator_node",
+      "name": "Asset Brief Generator Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const packet = {\n  instance_id: 'BRIEF-' + Date.now(),\n  artifact_family: 'asset_brief_packet',\n  schema_version: '1.0.0',\n  producer_workflow: 'CWF-330',\n  dossier_ref: $json.dossier_id || 'DOSSIER-UNSPECIFIED',\n  created_at: new Date().toISOString(),\n  status: 'CREATED',\n  payload: {\n    asset_brief_ready: true,\n    thumbnail_brief: $json.asset_brief.thumbnail_brief,\n    broll_cues: $json.asset_brief.broll_cues,\n    caption_brief: $json.asset_brief.caption_brief,\n    audio_brief: $json.asset_brief.audio_brief,\n    total_sections: $json.asset_brief.broll_cues.length\n  }\n};\nreturn [{ json: { ...$json, asset_brief_packet: packet, packet_emitted: true } }];"
+      },
+      "id": "cwf330_packet_emission_node",
+      "name": "Packet Emission Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, cwf330_result: { status: 'COMPLETED', asset_brief_packet: $json.asset_brief_packet } } }];"
+      },
+      "id": "cwf330_completion_node",
+      "name": "Completion Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const workflowId = 'CWF-330';\n  const defaultSkillMap = {\n    'CWF-610': 'M-185',\n    'CWF-620': 'M-200',\n    'CWF-630': 'M-215'\n  };\n  const skillId = $json.skill_id || defaultSkillMap[workflowId] || 'M-001';\n  const dossierId = $json.body?.dossier_id || $json.dossier_context?.dossier_id || $json.dossier_id || 'DOSSIER-UNSPECIFIED';\n\n  const payload = {\n    dossier_id: dossierId,\n    dossier_ref: dossierId,\n    workflow_id: workflowId,\n    workflow_ref: workflowId,\n    skill_id: skillId,\n    source_node: 'Skill Execution Node',\n    route_id: $json.body?.route_id || $json.route_id || $json.dossier_context?.route || null,\n    task: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || 'MISSION_CONTEXT_MISSING',\n    context: {\n      topic: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || null,\n      mode: $json.body?.user_mode || $json.user_mode || $json.mode || 'creator', mission_context: $json.body?.mission_context || $json.mission_context || null\n    },\n    dossier: typeof $json.dossier === 'object' ? $json.dossier : {}\n  };\n\n  const result = await this.helpers.httpRequest({\n    method: 'POST',\n    url: 'http://127.0.0.1:5002/operator/skill-runtime',\n    headers: { 'content-type': 'application/json' },\n    body: payload,\n    json: true,\n    timeout: 120000\n  });\n  if (result.status !== 'SUCCESS' || !result.runtime_packet) {\n    throw new Error(String(result.error || 'skill-runtime returned no runtime_packet'));\n  }\n\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: workflowId,\n        skill_id: skillId,\n        status: 'SUCCESS',\n        had_error: false,\n        error_message: '',\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: result.runtime_packet,\n      skill_execution_result: result.skill_execution_result || result,\n      runtime: { had_error: false, error_message: '' }\n    }\n  }];\n} catch (error) {\n  const message = String(error && error.message ? error.message : error);\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: 'CWF-330',\n        skill_id: $json.skill_id || null,\n        status: 'ERROR',\n        had_error: true,\n        error_message: message,\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: null,\n      skill_execution_result: null,\n      runtime: { had_error: true, error_message: message }\n    }\n  }];\n}"
+      },
+      "id": "cwf_330_skill_runtime_probe_node",
+      "name": "Skill Runtime Probe Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Skill Runtime Probe Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Asset Brief Generator Node": {
+      "main": [
+        [
+          {
+            "node": "Packet Emission Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Packet Emission Node": {
+      "main": [
+        [
+          {
+            "node": "Completion Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completion Node": {
+      "main": [
+        []
+      ]
+    },
+    "Skill Runtime Probe Node": {
+      "main": [
+        [
+          {
+            "node": "Asset Brief Generator Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

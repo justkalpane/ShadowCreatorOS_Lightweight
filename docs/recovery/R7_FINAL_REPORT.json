@@ -1,0 +1,229 @@
+{
+  "phase": "R7 - ACTIVATE/PUBLISH ALL 37 WORKFLOWS",
+  "status": "COMPLETE",
+  "timestamp": "2026-05-04 post-activation",
+  "r7_answers": {
+    "1_total_workflows_activated": 37,
+    "2_expected_count": 37,
+    "3_counts_match": true,
+    "4_all_37_are_active": true,
+    "5_workflow_entity_count": 37,
+    "6_shared_workflow_count": 37,
+    "7_webhook_entity_count": 0,
+    "8_webhook_note": "Will be populated when n8n runtime processes activated workflows",
+    "9_reference_integrity_errors": 0,
+    "10_parent_workflows_count": 8,
+    "11_all_execute_references_valid": true,
+    "12_activation_order_respected": "Yes - CWF-*, isolated WF-*, parents, approval, orchestrator",
+    "13_pre_activation_backup": "Created at phase_r7_pre_activation_20260504_004032",
+    "14_database_integrity": "VERIFIED - ZERO ERRORS",
+    "15_no_activation_failures": true,
+    "16_no_duplicate_names_after_activation": true,
+    "17_no_duplicate_ids_after_activation": true,
+    "18_wf_001_activated": "Yes",
+    "19_wf_010_activated": "Yes",
+    "20_ready_for_r8_webhook_extraction": true
+  },
+  "activated_workflows": [
+    {
+      "name": "CWF-110 Topic Discovery Canonical",
+      "id": "kDa9U4UqGWlG6g3O",
+      "active": 1
+    },
+    {
+      "name": "CWF-120 Topic Qualification Canonical",
+      "id": "t1OGMmjxWkI9X7H6",
+      "active": 1
+    },
+    {
+      "name": "CWF-130 Topic Scoring Canonical",
+      "id": "aMuFbh7x41Ztpdp4",
+      "active": 1
+    },
+    {
+      "name": "CWF-140 Research Synthesis Canonical",
+      "id": "K8ffUF0eWIXiiQE8",
+      "active": 1
+    },
+    {
+      "name": "CWF-210 Script Generation Canonical",
+      "id": "JkqH3MB9n7IWUSmT",
+      "active": 1
+    },
+    {
+      "name": "CWF-220 Script Debate Canonical",
+      "id": "tzQPxC5HChpoevbL",
+      "active": 1
+    },
+    {
+      "name": "CWF-230 Script Refinement Canonical",
+      "id": "JoLoaeTOdoe5c3ve",
+      "active": 1
+    },
+    {
+      "name": "CWF-240 Final Script Shaping Canonical",
+      "id": "GprQFnIiU74KKEpY",
+      "active": 1
+    },
+    {
+      "name": "CWF-310 Execution Context Builder Canonical",
+      "id": "EZAmggQBwBAD3UdR",
+      "active": 1
+    },
+    {
+      "name": "CWF-320 Platform Packager Canonical",
+      "id": "PPgdzUvZ3gpmmICi",
+      "active": 1
+    },
+    {
+      "name": "CWF-330 Asset Brief Generator Canonical",
+      "id": "BlrDp37eCZ32JgdP",
+      "active": 1
+    },
+    {
+      "name": "CWF-340 Lineage Validator Canonical",
+      "id": "I1af7W2pkAFEn3z5",
+      "active": 1
+    },
+    {
+      "name": "CWF-410 Thumbnail Generator Canonical",
+      "id": "dkyayq7YYDsBS9UY",
+      "active": 1
+    },
+    {
+      "name": "CWF-420 Visual Asset Planner Canonical",
+      "id": "JQTFjmsn9dLVIdVu",
+      "active": 1
+    },
+    {
+      "name": "CWF-430 Audio Script Optimizer Canonical",
+      "id": "ddLEG62Hkd9Gf2le",
+      "active": 1
+    },
+    {
+      "name": "CWF-440 Media Package Finalizer Canonical",
+      "id": "MeR3pzh84KpLMcNf",
+      "active": 1
+    },
+    {
+      "name": "CWF-510 Platform Metadata Generator Canonical",
+      "id": "AQLKHu7qnQTupqzi",
+      "active": 1
+    },
+    {
+      "name": "CWF-520 Distribution Planner Canonical",
+      "id": "QPtDu7W7eaDNKgeI",
+      "active": 1
+    },
+    {
+      "name": "CWF-530 Publish Readiness Checker Canonical",
+      "id": "nGqi7w4e4pxskC1I",
+      "active": 1
+    },
+    {
+      "name": "CWF-610 Performance Metrics Collector Canonical",
+      "id": "TtNZPHaQ0Jt7Qg84",
+      "active": 1
+    },
+    {
+      "name": "CWF-620 Audience Feedback Aggregator Canonical",
+      "id": "iqh4gVJjrsMnTvnR",
+      "active": 1
+    },
+    {
+      "name": "CWF-630 Evolution Signal Synthesizer Canonical",
+      "id": "O2qGFq562dfOB1rc",
+      "active": 1
+    },
+    {
+      "name": "WF-000 Health Check Canonical",
+      "id": "OhbVrpoiVgRV5IfL",
+      "active": 1
+    },
+    {
+      "name": "WF-001 Dossier Create Canonical",
+      "id": "BcbfnoGMbJmTPSIA",
+      "active": 1
+    },
+    {
+      "name": "WF-010 Parent Orchestrator Canonical",
+      "id": "oCLrZ3aWZkSBvrjn",
+      "active": 1
+    },
+    {
+      "name": "WF-020 Final Approval Canonical",
+      "id": "9Wvgfygw2wMqZcUD",
+      "active": 1
+    },
+    {
+      "name": "WF-021 Replay Remodify Canonical",
+      "id": "Ih7yfJs1ON43xKmT",
+      "active": 1
+    },
+    {
+      "name": "WF-022 Provider Packet Bridge Canonical",
+      "id": "wqM2V7L9hK4pT8xC",
+      "active": 1
+    },
+    {
+      "name": "WF-023 Downstream Resource Preparation Canonical",
+      "id": "rN4bQ1Y6mJ8tC3vP",
+      "active": 1
+    },
+    {
+      "name": "WF-100 Topic Intelligence Pack Canonical",
+      "id": "ecQoXsf2o3gyrDO1",
+      "active": 1
+    },
+    {
+      "name": "WF-200 Script Intelligence Pack Canonical",
+      "id": "xkxwnQrS7RPeMOkI",
+      "active": 1
+    },
+    {
+      "name": "WF-300 Context Engineering Pack Canonical",
+      "id": "UpkDyr7OSJoRu1XX",
+      "active": 1
+    },
+    {
+      "name": "WF-400 Media Production Pack Canonical",
+      "id": "do0cZuzren68K4Tu",
+      "active": 1
+    },
+    {
+      "name": "WF-500 Publishing Distribution Pack Canonical",
+      "id": "nPFz46PDjqipVJIq",
+      "active": 1
+    },
+    {
+      "name": "WF-600 Analytics Evolution Pack Canonical",
+      "id": "VLB5LzxoiGFfWd3h",
+      "active": 1
+    },
+    {
+      "name": "WF-900 Error Handler Canonical",
+      "id": "jOkYRBMeyyMDHqJ3",
+      "active": 1
+    },
+    {
+      "name": "WF-901 Error Recovery Canonical",
+      "id": "8aRUhR4IWrXPvhsB",
+      "active": 1
+    }
+  ],
+  "parent_workflows": 8,
+  "reference_errors": [],
+  "next_phase": {
+    "phase": "R8 - EXTRACT LIVE WEBHOOK IDS AND UPDATE REGISTRY",
+    "requirements": [
+      "Start fresh n8n with isolated user folder",
+      "Allow n8n to process activated workflows (creates webhook_entity entries)",
+      "Query webhook_entity from live n8n database",
+      "Extract live webhook paths for webhook-triggered workflows",
+      "Update registries/n8n_webhook_registry.yaml with live IDs",
+      "Restart Operator API after registry update",
+      "Do NOT update registry based on guesses"
+    ],
+    "prerequisites_met": true
+  }
+}

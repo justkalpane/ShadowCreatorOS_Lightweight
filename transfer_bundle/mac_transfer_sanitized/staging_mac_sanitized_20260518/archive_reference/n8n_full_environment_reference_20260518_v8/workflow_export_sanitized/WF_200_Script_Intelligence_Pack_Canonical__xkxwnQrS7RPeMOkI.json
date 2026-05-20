@@ -1,0 +1,499 @@
+{
+  "id": "xkxwnQrS7RPeMOkI",
+  "name": "WF-200 Script Intelligence Pack Canonical",
+  "active": true,
+  "isArchived": false,
+  "createdAt": "2026-05-03 13:20:09.144",
+  "updatedAt": "2026-05-06 10:37:17",
+  "versionId": "04182f88-88d7-40a3-9d11-450ec8d9dd05",
+  "activeVersionId": "04182f88-88d7-40a3-9d11-450ec8d9dd05",
+  "triggerCount": 0,
+  "description": "Runs Phase-1 script intelligence lane: generation â†’ debate â†’ refinement â†’ final shaping.",
+  "settings": {},
+  "meta": {
+    "workflow_id": "WF-200",
+    "phase": "phase1",
+    "vein": "script_vein",
+    "purpose": "Script intelligence pack parent.",
+    "implementation_depth": "production_grade",
+    "owner_director": "narada",
+    "next_workflow": "WF-300",
+    "canonical_file": "n8n/workflows/WF-200.json",
+    "wf900_error_route": "WF-900",
+    "phase2_chaining": {
+      "applied_at": "2026-04-29",
+      "pattern": "children_first_then_validation",
+      "pack_id": "WF200",
+      "child_workflow_invocations": [
+        {
+          "name": "CWF-210 Script Generation Canonical",
+          "live_id": "7DWKkVe4kZxV9v4f",
+          "capture_field": "cwf210_result"
+        },
+        {
+          "name": "CWF-220 Script Debate Canonical",
+          "live_id": "obzjkLoqdky5SR3t",
+          "capture_field": "cwf220_result"
+        },
+        {
+          "name": "CWF-230 Script Refinement Canonical",
+          "live_id": "uXXBXmiIuOBGY432",
+          "capture_field": "cwf230_result"
+        },
+        {
+          "name": "CWF-240 Final Script Shaping Canonical",
+          "live_id": "ZZeHgvfu5Na4N7TR",
+          "capture_field": "cwf240_result"
+        }
+      ],
+      "notes": "Chain runs all children BEFORE Pack Validation. Capture nodes preserve sub-workflow outputs as cwfXXX_result fields."
+    }
+  },
+  "pinData": null,
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "wf200_trigger_node",
+      "name": "Trigger Node",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, dossier_context: { dossier_id: $json.dossier_id || 'DOSSIER-UNSPECIFIED', pack: 'WF-200', loaded_at: new Date().toISOString(), route: $json.route_id || 'ROUTE_PHASE1_STANDARD', topic_finalized: !!$json.topic_finalization_packet } } }];"
+      },
+      "id": "wf200_dossier_load_node",
+      "name": "Dossier Load Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, pack_context: { child_workflows: ['CWF-210-script-generation', 'CWF-220-script-debate', 'CWF-230-script-refinement', 'CWF-240-final-script-shaping'], primary_director: 'Vyasa', strategic_authority: 'Krishna', governance_authority: ['Yama', 'Kubera'] } } }];"
+      },
+      "id": "wf200_pack_initialization_node",
+      "name": "Pack Initialization Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const childWorkflows = ['CWF-210', 'CWF-220', 'CWF-230', 'CWF-240'];\nlet executionPlan = { workflows_to_execute: childWorkflows, current_index: 0, status: 'PLANNING', decisions: { quality_gate: true, governance_gate: true } };\nreturn [{ json: { ...$json, execution_plan: executionPlan, pack_orchestration: { started_at: new Date().toISOString(), expected_duration_seconds: 180 } } }];"
+      },
+      "id": "wf200_execution_planner_node",
+      "name": "Execution Planner Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "JkqH3MB9n7IWUSmT",
+          "mode": "id",
+          "cachedResultName": "CWF-210 Script Generation Canonical"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf200_execute_cwf210_node",
+      "name": "Execute CWF-210 Script Generation",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf210_result after sub-workflow CWF-210\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\n\nacc[\"cwf210_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf200_capture_cwf210_node",
+      "name": "Capture CWF-210 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1330,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "tzQPxC5HChpoevbL",
+          "mode": "id",
+          "cachedResultName": "CWF-220 Script Debate Canonical"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf200_execute_cwf220_node",
+      "name": "Execute CWF-220 Script Debate",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf220_result after sub-workflow CWF-220\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\ntry { const c = $('Capture CWF-210 Result').first(); if (c) acc[\"cwf210_result\"] = c.json[\"cwf210_result\"] || c.json; } catch(e) {}\nacc[\"cwf220_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf200_capture_cwf220_node",
+      "name": "Capture CWF-220 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1830,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "JoLoaeTOdoe5c3ve",
+          "mode": "id",
+          "cachedResultName": "CWF-230 Script Refinement Canonical"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf200_execute_cwf230_node",
+      "name": "Execute CWF-230 Script Refinement",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf230_result after sub-workflow CWF-230\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\ntry { const c = $('Capture CWF-210 Result').first(); if (c) acc[\"cwf210_result\"] = c.json[\"cwf210_result\"] || c.json; } catch(e) {}\n  try { const c = $('Capture CWF-220 Result').first(); if (c) acc[\"cwf220_result\"] = c.json[\"cwf220_result\"] || c.json; } catch(e) {}\nacc[\"cwf230_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf200_capture_cwf230_node",
+      "name": "Capture CWF-230 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2330,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "GprQFnIiU74KKEpY",
+          "mode": "id",
+          "cachedResultName": "CWF-240 Final Script Shaping Canonical"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf200_execute_cwf240_node",
+      "name": "Execute CWF-240 Final Script Shaping",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2580,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf240_result after sub-workflow CWF-240\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\ntry { const c = $('Capture CWF-210 Result').first(); if (c) acc[\"cwf210_result\"] = c.json[\"cwf210_result\"] || c.json; } catch(e) {}\n  try { const c = $('Capture CWF-220 Result').first(); if (c) acc[\"cwf220_result\"] = c.json[\"cwf220_result\"] || c.json; } catch(e) {}\n  try { const c = $('Capture CWF-230 Result').first(); if (c) acc[\"cwf230_result\"] = c.json[\"cwf230_result\"] || c.json; } catch(e) {}\nacc[\"cwf240_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf200_capture_cwf240_node",
+      "name": "Capture CWF-240 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2830,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Phase-2 chain validation: pass if all children returned SUCCESS/COMPLETED.\nconst childResults = {\n  CWF_210: $json.cwf210_result,\n  CWF_220: $json.cwf220_result,\n  CWF_230: $json.cwf230_result,\n  CWF_240: $json.cwf240_result\n};\nconst allHealthy = Object.values(childResults).every(r => r && (r.status === 'SUCCESS' || r.status === 'COMPLETED'));\nconst validationOk = allHealthy;\nreturn [{ json: { ...$json, pack_validation: { child_results_aggregated: childResults, all_children_healthy: allHealthy, validation_ok: validationOk, route_to_error: !validationOk, phase2_acceptance: 'chain_healthy_required' } } }];"
+      },
+      "id": "wf200_pack_validation_node",
+      "name": "Pack Validation Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    ...$json,\n    dossier_write: {\n      mutation_type: 'namespace_update',\n      target: 'dossier.script',\n      timestamp: new Date().toISOString(),\n      writer_id: 'WF-200',\n      pack_context: $json.pack_context,\n      child_results: $json.pack_validation.child_results_aggregated,\n      audit_entry: 'script-intelligence-pack-completion from WF-200'\n    }\n  }\n}];"
+      },
+      "id": "wf200_dossier_write_node",
+      "name": "Dossier Script Write Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3430,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    ...$json,\n    se_route_runs_write: {\n      operation: 'record_pack_execution',\n      pack_id: 'WF-200',\n      dossier_id: $json.dossier_id,\n      child_workflows_executed: ['CWF-210', 'CWF-220', 'CWF-230', 'CWF-240'],\n      execution_status: 'COMPLETED',\n      script_finalized: $json.pack_validation.script_finalized,\n      quality_approved: $json.pack_validation.quality_approved,\n      timestamp: new Date().toISOString()\n    }\n  }\n}];"
+      },
+      "id": "wf200_route_runs_write_node",
+      "name": "se_route_runs Write Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.pack_validation.route_to_error) return [];\nconst fs = require('fs');\nconst path = require('path');\n\nconst now = new Date().toISOString();\nconst completion_packet = {\n  instance_id: 'WF-200-COMP-' + Date.now(),\n  artifact_family: 'script_intelligence_result',\n  schema_version: '1.0.0',\n  producer_workflow: 'WF-200',\n  dossier_ref: $json.dossier_id,\n  created_at: now,\n  status: 'CREATED',\n  payload: {\n    pack_executed: 'WF-200',\n    script_finalized: $json.pack_validation.script_finalized,\n        quality_approved: $json.pack_validation.quality_approved,\n    next_workflow: 'WF-300',\n    child_packets: [\"CWF-210_output\",\"CWF-220_output\",\"CWF-230_output\",\"CWF-240_output\"]\n  }\n};\n\nconst repoRoot = 'C:/ShadowEmpire-Git_Restore_01';\nconst dataDir = path.join(repoRoot, 'data');\nconst packetIndexPath = path.join(dataDir, 'se_packet_index.json');\nif (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });\n\nlet index = { entries: [], total_entries: 0, last_updated: now };\nif (fs.existsSync(packetIndexPath)) {\n  const parsed = JSON.parse(fs.readFileSync(packetIndexPath, 'utf8'));\n  index = {\n    ...index,\n    ...parsed,\n    entries: Array.isArray(parsed.entries)\n      ? parsed.entries\n      : (Array.isArray(parsed.packets) ? parsed.packets : [])\n  };\n}\n\nindex.entries.push({\n  packet_id: completion_packet.instance_id,\n  instance_id: completion_packet.instance_id,\n  artifact_family: completion_packet.artifact_family,\n  schema_version: completion_packet.schema_version,\n  producer_workflow: completion_packet.producer_workflow,\n  dossier_ref: completion_packet.dossier_ref,\n  created_at: completion_packet.created_at,\n  status: completion_packet.status,\n  payload: completion_packet.payload\n});\nindex.total_entries = index.entries.length;\nindex.last_updated = now;\n\nfs.writeFileSync(packetIndexPath, JSON.stringify(index, null, 2), 'utf8');\n\nreturn [{\n  json: {\n    workflow_id: 'WF-200',\n    execution_status: 'SUCCESS',\n    completion_packet,\n    packet_persistence: {\n      packet_index_path: packetIndexPath,\n      packet_entries: index.entries.length,\n      persisted_at: now\n    }\n  }\n}];"
+      },
+      "id": "wf200_completion_packet_emission_node",
+      "name": "Completion Packet Emission Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3930,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if (!$json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    workflow_id: 'WF-200',\n    routing_decision: 'ERROR',\n    route_to_workflow: 'WF-900',\n    error_message: 'Pack validation failed or child workflow failed',\n    failure_context: $json.pack_validation,\n    child_results: $json.pack_validation.child_results_aggregated\n  }\n}];"
+      },
+      "id": "wf200_error_routing_node",
+      "name": "Error Routing WF-900 Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3430,
+        500
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Dossier Load Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dossier Load Node": {
+      "main": [
+        [
+          {
+            "node": "Pack Initialization Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pack Initialization Node": {
+      "main": [
+        [
+          {
+            "node": "Execution Planner Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execution Planner Node": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-210 Script Generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-210 Script Generation": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-210 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-210 Result": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-220 Script Debate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-220 Script Debate": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-220 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-220 Result": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-230 Script Refinement",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-230 Script Refinement": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-230 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-230 Result": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-240 Final Script Shaping",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-240 Final Script Shaping": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-240 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-240 Result": {
+      "main": [
+        [
+          {
+            "node": "Pack Validation Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pack Validation Node": {
+      "main": [
+        [
+          {
+            "node": "Dossier Script Write Node",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Routing WF-900 Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dossier Script Write Node": {
+      "main": [
+        [
+          {
+            "node": "se_route_runs Write Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "se_route_runs Write Node": {
+      "main": [
+        [
+          {
+            "node": "Completion Packet Emission Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completion Packet Emission Node": {
+      "main": [
+        []
+      ]
+    },
+    "Error Routing WF-900 Node": {
+      "main": [
+        []
+      ]
+    }
+  }
+}

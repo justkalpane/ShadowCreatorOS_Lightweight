@@ -1,0 +1,142 @@
+{
+  "id": "EZAmggQBwBAD3UdR",
+  "name": "CWF-310 Execution Context Builder Canonical",
+  "active": true,
+  "isArchived": false,
+  "createdAt": "2026-05-03 18:46:10.814",
+  "updatedAt": "2026-05-14 20:32:12.289",
+  "versionId": "8634227e-bfcf-4921-9bca-4eac4bcba2c3",
+  "activeVersionId": "8634227e-bfcf-4921-9bca-4eac4bcba2c3",
+  "triggerCount": 0,
+  "description": "Engineers runtime context envelope: allowed tools, execution constraints, platform-specific rules.",
+  "settings": {},
+  "meta": {
+    "workflow_id": "CWF-310",
+    "phase": "phase1",
+    "vein": "context_vein",
+    "purpose": "Context builder.",
+    "implementation_depth": "production_grade",
+    "owner_director": "narada",
+    "next_workflow": "CWF-320",
+    "canonical_file": "n8n/workflows/CWF-310.json",
+    "wf900_error_route": "WF-900"
+  },
+  "pinData": {},
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "cwf310_trigger_node",
+      "name": "Trigger Node",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const scriptPacket = $json.final_script_packet || { payload: { target_platform: 'generic', metadata: {} } };\nconst platforms = { youtube: { tools: ['video_editor', 'subtitle_generator'], constraints: ['max_length_4h', 'quality_1080p_min'] }, blog: { tools: ['markdown_renderer', 'image_optimizer'], constraints: ['plain_text_only', 'no_video'] }, podcast: { tools: ['audio_optimizer', 'transcript_generator'], constraints: ['audio_only', 'max_bitrate_192kbps'] }, email: { tools: ['html_renderer', 'link_tracker'], constraints: ['plain_text_fallback', 'max_width_600px'] } };\nconst platform = scriptPacket.payload?.target_platform || 'generic';\nconst allowedTools = platforms[platform]?.tools || ['generic_renderer'];\nconst constraints = platforms[platform]?.constraints || ['generic_constraints'];\nconst contextEnvelope = { instance_id: 'CTX-' + Date.now(), platform: platform, allowed_tools: allowedTools, forbidden_tools: ['shell_execution', 'external_api_call_untracked'], execution_constraints: constraints, quality_gates: { min_coherence: 0.85, min_accuracy: 0.90 } };\nreturn [{ json: { ...$json, context_envelope: contextEnvelope, execution_context_built: true } }];"
+      },
+      "id": "cwf310_context_builder_node",
+      "name": "Context Builder Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const packet = {\n  instance_id: $json.context_envelope.instance_id,\n  artifact_family: 'execution_context_packet',\n  schema_version: '1.0.0',\n  producer_workflow: 'CWF-310',\n  dossier_ref: $json.dossier_id || 'DOSSIER-UNSPECIFIED',\n  created_at: new Date().toISOString(),\n  status: 'CREATED',\n  payload: {\n    execution_context_built: true,\n    target_platform: $json.context_envelope.platform,\n    allowed_tools: $json.context_envelope.allowed_tools,\n    forbidden_tools: $json.context_envelope.forbidden_tools,\n    execution_constraints: $json.context_envelope.execution_constraints,\n    quality_gates: $json.context_envelope.quality_gates\n  }\n};\nreturn [{ json: { ...$json, execution_context_packet: packet, packet_emitted: true } }];"
+      },
+      "id": "cwf310_packet_emission_node",
+      "name": "Packet Emission Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, cwf310_result: { status: 'COMPLETED', execution_context_packet: $json.execution_context_packet } } }];"
+      },
+      "id": "cwf310_completion_node",
+      "name": "Completion Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const workflowId = 'CWF-310';\n  const defaultSkillMap = {\n    'CWF-610': 'M-185',\n    'CWF-620': 'M-200',\n    'CWF-630': 'M-215'\n  };\n  const skillId = $json.skill_id || defaultSkillMap[workflowId] || 'M-001';\n  const dossierId = $json.body?.dossier_id || $json.dossier_context?.dossier_id || $json.dossier_id || 'DOSSIER-UNSPECIFIED';\n\n  const payload = {\n    dossier_id: dossierId,\n    dossier_ref: dossierId,\n    workflow_id: workflowId,\n    workflow_ref: workflowId,\n    skill_id: skillId,\n    source_node: 'Skill Execution Node',\n    route_id: $json.body?.route_id || $json.route_id || $json.dossier_context?.route || null,\n    task: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || 'MISSION_CONTEXT_MISSING',\n    context: {\n      topic: $json.body?.topic || $json.body?.user_message || $json.body?.message || $json.topic || $json.user_message || $json.message || (($json.body?.mission_context || $json.mission_context) && (($json.body?.mission_context || $json.mission_context).normalized_topic || ($json.body?.mission_context || $json.mission_context).original_user_message)) || null,\n      mode: $json.body?.user_mode || $json.user_mode || $json.mode || 'creator', mission_context: $json.body?.mission_context || $json.mission_context || null\n    },\n    dossier: typeof $json.dossier === 'object' ? $json.dossier : {}\n  };\n\n  const result = await this.helpers.httpRequest({\n    method: 'POST',\n    url: 'http://127.0.0.1:5002/operator/skill-runtime',\n    headers: { 'content-type': 'application/json' },\n    body: payload,\n    json: true,\n    timeout: 120000\n  });\n  if (result.status !== 'SUCCESS' || !result.runtime_packet) {\n    throw new Error(String(result.error || 'skill-runtime returned no runtime_packet'));\n  }\n\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: workflowId,\n        skill_id: skillId,\n        status: 'SUCCESS',\n        had_error: false,\n        error_message: '',\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: result.runtime_packet,\n      skill_execution_result: result.skill_execution_result || result,\n      runtime: { had_error: false, error_message: '' }\n    }\n  }];\n} catch (error) {\n  const message = String(error && error.message ? error.message : error);\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: 'CWF-310',\n        skill_id: $json.skill_id || null,\n        status: 'ERROR',\n        had_error: true,\n        error_message: message,\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: null,\n      skill_execution_result: null,\n      runtime: { had_error: true, error_message: message }\n    }\n  }];\n}"
+      },
+      "id": "cwf_310_skill_runtime_probe_node",
+      "name": "Skill Runtime Probe Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Skill Runtime Probe Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Context Builder Node": {
+      "main": [
+        [
+          {
+            "node": "Packet Emission Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Packet Emission Node": {
+      "main": [
+        [
+          {
+            "node": "Completion Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completion Node": {
+      "main": [
+        []
+      ]
+    },
+    "Skill Runtime Probe Node": {
+      "main": [
+        [
+          {
+            "node": "Context Builder Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

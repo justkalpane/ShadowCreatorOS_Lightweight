@@ -1,0 +1,42 @@
+{
+  "WF-010": {
+    "total": 7,
+    "mismatch": 7,
+    "match": 0
+  },
+  "WF-020": {
+    "total": 2,
+    "mismatch": 2,
+    "match": 0
+  },
+  "WF-100": {
+    "total": 4,
+    "mismatch": 0,
+    "match": 4
+  },
+  "WF-200": {
+    "total": 4,
+    "mismatch": 0,
+    "match": 4
+  },
+  "WF-300": {
+    "total": 4,
+    "mismatch": 4,
+    "match": 0
+  },
+  "WF-400": {
+    "total": 4,
+    "mismatch": 4,
+    "match": 0
+  },
+  "WF-500": {
+    "total": 3,
+    "mismatch": 3,
+    "match": 0
+  },
+  "WF-600": {
+    "total": 3,
+    "mismatch": 3,
+    "match": 0
+  }
+}

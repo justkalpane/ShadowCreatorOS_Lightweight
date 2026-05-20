@@ -1,0 +1,344 @@
+[
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-100 Topic Intelligence",
+    "logical_child": "WF-100",
+    "repo_ref_id": "dew5Cgkwi8MUtAH7",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-200 Script Intelligence",
+    "logical_child": "WF-200",
+    "repo_ref_id": "2lhY0gkl83tII3CI",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-300 Context Engineering",
+    "logical_child": "WF-300",
+    "repo_ref_id": "xriY2ZiZST6jybeX",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-400 Media Production",
+    "logical_child": "WF-400",
+    "repo_ref_id": "kL9mZo3pQ2xJ5nBv",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-500 Publishing Distribution",
+    "logical_child": "WF-500",
+    "repo_ref_id": "aB2cD4eF6gH8iJ0k",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-020 Final Approval",
+    "logical_child": "WF-020",
+    "repo_ref_id": "xOeKLfjudlc8OFiB",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "parent_workflow_file": "WF-010.json",
+    "execute_node": "Execute WF-600 Analytics Evolution",
+    "logical_child": "WF-600",
+    "repo_ref_id": "fXNkWYfVX214QC87",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-020 Final Approval Canonical",
+    "parent_workflow_file": "WF-020.json",
+    "execute_node": "Internal Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-020 Final Approval Canonical",
+    "parent_workflow_file": "WF-020.json",
+    "execute_node": "Execute WF-500 Publishing",
+    "logical_child": "WF-500",
+    "repo_ref_id": "e48l3HifOTrE59Hf",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-020 Final Approval Canonical",
+    "parent_workflow_file": "WF-020.json",
+    "execute_node": "Execute WF-021 Replay",
+    "logical_child": "WF-021",
+    "repo_ref_id": "5fG18tfg8QkVJa4I",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-100.json",
+    "execute_node": "Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-100.json",
+    "execute_node": "Execute CWF-110 Topic Discovery",
+    "logical_child": "CWF-110",
+    "repo_ref_id": "kDa9U4UqGWlG6g3O",
+    "repo_ref_name": "CWF-110 Topic Discovery Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-100.json",
+    "execute_node": "Execute CWF-120 Topic Qualification",
+    "logical_child": "CWF-120",
+    "repo_ref_id": "t1OGMmjxWkI9X7H6",
+    "repo_ref_name": "CWF-120 Topic Qualification Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-100.json",
+    "execute_node": "Execute CWF-130 Topic Scoring",
+    "logical_child": "CWF-130",
+    "repo_ref_id": "aMuFbh7x41Ztpdp4",
+    "repo_ref_name": "CWF-130 Topic Scoring Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-100 Topic Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-100.json",
+    "execute_node": "Execute CWF-140 Research Synthesis",
+    "logical_child": "CWF-140",
+    "repo_ref_id": "K8ffUF0eWIXiiQE8",
+    "repo_ref_name": "CWF-140 Research Synthesis Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-200 Script Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-200.json",
+    "execute_node": "Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-200 Script Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-200.json",
+    "execute_node": "Execute CWF-210 Script Generation",
+    "logical_child": "CWF-210",
+    "repo_ref_id": "JkqH3MB9n7IWUSmT",
+    "repo_ref_name": "CWF-210 Script Generation Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-200 Script Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-200.json",
+    "execute_node": "Execute CWF-220 Script Debate",
+    "logical_child": "CWF-220",
+    "repo_ref_id": "tzQPxC5HChpoevbL",
+    "repo_ref_name": "CWF-220 Script Debate Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-200 Script Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-200.json",
+    "execute_node": "Execute CWF-230 Script Refinement",
+    "logical_child": "CWF-230",
+    "repo_ref_id": "JoLoaeTOdoe5c3ve",
+    "repo_ref_name": "CWF-230 Script Refinement Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-200 Script Intelligence Pack Canonical",
+    "parent_workflow_file": "WF-200.json",
+    "execute_node": "Execute CWF-240 Final Script Shaping",
+    "logical_child": "CWF-240",
+    "repo_ref_id": "GprQFnIiU74KKEpY",
+    "repo_ref_name": "CWF-240 Final Script Shaping Canonical",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-300 Context Engineering Pack Canonical",
+    "parent_workflow_file": "WF-300.json",
+    "execute_node": "Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-300 Context Engineering Pack Canonical",
+    "parent_workflow_file": "WF-300.json",
+    "execute_node": "Execute CWF-310 Execution Context Builder",
+    "logical_child": "CWF-310",
+    "repo_ref_id": "zCoztycz5rNiHhkq",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-300 Context Engineering Pack Canonical",
+    "parent_workflow_file": "WF-300.json",
+    "execute_node": "Execute CWF-320 Platform Packager",
+    "logical_child": "CWF-320",
+    "repo_ref_id": "v1Pla3fDXsirQQlz",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-300 Context Engineering Pack Canonical",
+    "parent_workflow_file": "WF-300.json",
+    "execute_node": "Execute CWF-330 Asset Brief Generator",
+    "logical_child": "CWF-330",
+    "repo_ref_id": "8PfhvzgGMA9SJkxf",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-300 Context Engineering Pack Canonical",
+    "parent_workflow_file": "WF-300.json",
+    "execute_node": "Execute CWF-340 Lineage Validator",
+    "logical_child": "CWF-340",
+    "repo_ref_id": "12i773gCwdlprMSF",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-400 Media Production Pack Canonical",
+    "parent_workflow_file": "WF-400.json",
+    "execute_node": "Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-400 Media Production Pack Canonical",
+    "parent_workflow_file": "WF-400.json",
+    "execute_node": "Execute CWF-410 Thumbnail Generator",
+    "logical_child": "CWF-410",
+    "repo_ref_id": "o4lBg1mtZURFtaqN",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-400 Media Production Pack Canonical",
+    "parent_workflow_file": "WF-400.json",
+    "execute_node": "Execute CWF-420 Visual Asset Planner",
+    "logical_child": "CWF-420",
+    "repo_ref_id": "132TdDgROIFwhcGj",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-400 Media Production Pack Canonical",
+    "parent_workflow_file": "WF-400.json",
+    "execute_node": "Execute CWF-430 Audio Optimizer",
+    "logical_child": "CWF-430",
+    "repo_ref_id": "8CKfOEoJF7Gn8wZ0",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-400 Media Production Pack Canonical",
+    "parent_workflow_file": "WF-400.json",
+    "execute_node": "Execute CWF-440 Media Finalizer",
+    "logical_child": "CWF-440",
+    "repo_ref_id": "XAXHS0oYmUanPInV",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_workflow_file": "WF-500.json",
+    "execute_node": "Internal Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_workflow_file": "WF-500.json",
+    "execute_node": "Execute CWF-510 Platform Metadata",
+    "logical_child": "CWF-510",
+    "repo_ref_id": "MkxxOEm3rM4pmZEA",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_workflow_file": "WF-500.json",
+    "execute_node": "Execute CWF-520 Distribution Planner",
+    "logical_child": "CWF-520",
+    "repo_ref_id": "2FVWhblGpX90F59K",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-500 Publishing Distribution Pack Canonical",
+    "parent_workflow_file": "WF-500.json",
+    "execute_node": "Execute CWF-530 Publish Readiness",
+    "logical_child": "CWF-530",
+    "repo_ref_id": "Zm4JTSfa4DfAwfDy",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_workflow_file": "WF-600.json",
+    "execute_node": "Trigger Node",
+    "logical_child": "",
+    "repo_ref_id": "",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflowTrigger"
+  },
+  {
+    "parent_workflow_name": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_workflow_file": "WF-600.json",
+    "execute_node": "Execute CWF-610 Performance Metrics Collector",
+    "logical_child": "CWF-610",
+    "repo_ref_id": "EO8sQt2MsVHuC4dN",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_workflow_file": "WF-600.json",
+    "execute_node": "Execute CWF-620 Audience Feedback Aggregator",
+    "logical_child": "CWF-620",
+    "repo_ref_id": "FdVr1pJc5hRAdfOa",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  },
+  {
+    "parent_workflow_name": "WF-600 Analytics Evolution Pack Canonical",
+    "parent_workflow_file": "WF-600.json",
+    "execute_node": "Execute CWF-630 Evolution Signal Synthesizer",
+    "logical_child": "CWF-630",
+    "repo_ref_id": "CCkijlf42XpHEcXM",
+    "repo_ref_name": "",
+    "node_type": "n8n-nodes-base.executeWorkflow"
+  }
+]

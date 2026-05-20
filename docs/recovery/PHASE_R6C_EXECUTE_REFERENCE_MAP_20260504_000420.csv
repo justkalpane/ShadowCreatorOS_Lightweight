@@ -1,0 +1,32 @@
+parent_file,parent_name,parent_id,node_name,old_ref_id,intended_child,new_ref_id,remapped
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-100 Topic Intelligence,dew5Cgkwi8MUtAH7,NOT_IN_MAP,NOT_FOUND,False
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-200 Script Intelligence,2lhY0gkl83tII3CI,NOT_IN_MAP,NOT_FOUND,False
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-300 Context Engineering,xriY2ZiZST6jybeX,NOT_IN_MAP,NOT_FOUND,False
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-400 Media Production,kL9mZo3pQ2xJ5nBv,NOT_IN_MAP,NOT_FOUND,False
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-500 Publishing Distribution,aB2cD4eF6gH8iJ0k,NOT_IN_MAP,NOT_FOUND,False
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-020 Final Approval,xOeKLfjudlc8OFiB,NOT_IN_MAP,NOT_FOUND,False
+WF-010.json,WF-010 Parent Orchestrator Canonical,oCLrZ3aWZkSBvrjn,Execute WF-600 Analytics Evolution,fXNkWYfVX214QC87,NOT_IN_MAP,NOT_FOUND,False
+WF-020.json,WF-020 Final Approval Canonical,9Wvgfygw2wMqZcUD,Execute WF-500 Publishing,e48l3HifOTrE59Hf,NOT_IN_MAP,NOT_FOUND,False
+WF-020.json,WF-020 Final Approval Canonical,9Wvgfygw2wMqZcUD,Execute WF-021 Replay,5fG18tfg8QkVJa4I,NOT_IN_MAP,NOT_FOUND,False
+WF-100.json,WF-100 Topic Intelligence Pack Canonical,ecQoXsf2o3gyrDO1,Execute CWF-110 Topic Discovery,9aM3CMjyQbaO9XYE,NOT_IN_MAP,NOT_FOUND,False
+WF-100.json,WF-100 Topic Intelligence Pack Canonical,ecQoXsf2o3gyrDO1,Execute CWF-120 Topic Qualification,8Nf7TvjLr5kbAyPp,NOT_IN_MAP,NOT_FOUND,False
+WF-100.json,WF-100 Topic Intelligence Pack Canonical,ecQoXsf2o3gyrDO1,Execute CWF-130 Topic Scoring,i2bPLxrWTASjJg4f,NOT_IN_MAP,NOT_FOUND,False
+WF-100.json,WF-100 Topic Intelligence Pack Canonical,ecQoXsf2o3gyrDO1,Execute CWF-140 Research Synthesis,2rvNjmctBuBQFw8A,NOT_IN_MAP,NOT_FOUND,False
+WF-200.json,WF-200 Script Intelligence Pack Canonical,xkxwnQrS7RPeMOkI,Execute CWF-210 Script Generation,7DWKkVe4kZxV9v4f,NOT_IN_MAP,NOT_FOUND,False
+WF-200.json,WF-200 Script Intelligence Pack Canonical,xkxwnQrS7RPeMOkI,Execute CWF-220 Script Debate,obzjkLoqdky5SR3t,NOT_IN_MAP,NOT_FOUND,False
+WF-200.json,WF-200 Script Intelligence Pack Canonical,xkxwnQrS7RPeMOkI,Execute CWF-230 Script Refinement,uXXBXmiIuOBGY432,NOT_IN_MAP,NOT_FOUND,False
+WF-200.json,WF-200 Script Intelligence Pack Canonical,xkxwnQrS7RPeMOkI,Execute CWF-240 Final Script Shaping,ZZeHgvfu5Na4N7TR,NOT_IN_MAP,NOT_FOUND,False
+WF-300.json,WF-300 Context Engineering Pack Canonical,UpkDyr7OSJoRu1XX,Execute CWF-310 Execution Context Builder,zCoztycz5rNiHhkq,NOT_IN_MAP,NOT_FOUND,False
+WF-300.json,WF-300 Context Engineering Pack Canonical,UpkDyr7OSJoRu1XX,Execute CWF-320 Platform Packager,v1Pla3fDXsirQQlz,NOT_IN_MAP,NOT_FOUND,False
+WF-300.json,WF-300 Context Engineering Pack Canonical,UpkDyr7OSJoRu1XX,Execute CWF-330 Asset Brief Generator,8PfhvzgGMA9SJkxf,NOT_IN_MAP,NOT_FOUND,False
+WF-300.json,WF-300 Context Engineering Pack Canonical,UpkDyr7OSJoRu1XX,Execute CWF-340 Lineage Validator,12i773gCwdlprMSF,NOT_IN_MAP,NOT_FOUND,False
+WF-400.json,WF-400 Media Production Pack Canonical,do0cZuzren68K4Tu,Execute CWF-410 Thumbnail Generator,o4lBg1mtZURFtaqN,NOT_IN_MAP,NOT_FOUND,False
+WF-400.json,WF-400 Media Production Pack Canonical,do0cZuzren68K4Tu,Execute CWF-420 Visual Asset Planner,132TdDgROIFwhcGj,NOT_IN_MAP,NOT_FOUND,False
+WF-400.json,WF-400 Media Production Pack Canonical,do0cZuzren68K4Tu,Execute CWF-430 Audio Optimizer,8CKfOEoJF7Gn8wZ0,NOT_IN_MAP,NOT_FOUND,False
+WF-400.json,WF-400 Media Production Pack Canonical,do0cZuzren68K4Tu,Execute CWF-440 Media Finalizer,XAXHS0oYmUanPInV,NOT_IN_MAP,NOT_FOUND,False
+WF-500.json,WF-500 Publishing Distribution Pack Canonical,nPFz46PDjqipVJIq,Execute CWF-510 Platform Metadata,MkxxOEm3rM4pmZEA,NOT_IN_MAP,NOT_FOUND,False
+WF-500.json,WF-500 Publishing Distribution Pack Canonical,nPFz46PDjqipVJIq,Execute CWF-520 Distribution Planner,2FVWhblGpX90F59K,NOT_IN_MAP,NOT_FOUND,False
+WF-500.json,WF-500 Publishing Distribution Pack Canonical,nPFz46PDjqipVJIq,Execute CWF-530 Publish Readiness,Zm4JTSfa4DfAwfDy,NOT_IN_MAP,NOT_FOUND,False
+WF-600.json,WF-600 Analytics Evolution Pack Canonical,VLB5LzxoiGFfWd3h,Execute CWF-610 Performance Metrics Collector,EO8sQt2MsVHuC4dN,NOT_IN_MAP,NOT_FOUND,False
+WF-600.json,WF-600 Analytics Evolution Pack Canonical,VLB5LzxoiGFfWd3h,Execute CWF-620 Audience Feedback Aggregator,FdVr1pJc5hRAdfOa,NOT_IN_MAP,NOT_FOUND,False
+WF-600.json,WF-600 Analytics Evolution Pack Canonical,VLB5LzxoiGFfWd3h,Execute CWF-630 Evolution Signal Synthesizer,CCkijlf42XpHEcXM,NOT_IN_MAP,NOT_FOUND,False

@@ -1,0 +1,45 @@
+R6D BATCH IMPORT LOG
+Workflows to import: 36
+Already imported: ['CWF-110.json']
+
+[R6D] Starting import: 36 remaining workflows
+[01] [FAILED] CWF-120.json
+[02] [FAILED] CWF-130.json
+[03] [FAILED] CWF-140.json
+[04] [FAILED] CWF-210.json
+[05] [FAILED] CWF-220.json
+[06] [FAILED] CWF-230.json
+[07] [FAILED] CWF-240.json
+[08] [FAILED] CWF-310.json
+[09] [FAILED] CWF-320.json
+[10] [FAILED] CWF-330.json
+[11] [FAILED] CWF-340.json
+[12] [FAILED] CWF-410.json
+[13] [FAILED] CWF-420.json
+[14] [FAILED] CWF-430.json
+[15] [FAILED] CWF-440.json
+[16] [FAILED] CWF-510.json
+[17] [FAILED] CWF-520.json
+[18] [FAILED] CWF-530.json
+[19] [FAILED] CWF-610.json
+[20] [FAILED] CWF-620.json
+[21] [FAILED] CWF-630.json
+[22] [FAILED] WF-000.json
+[23] [FAILED] WF-021.json
+[24] [FAILED] WF-022.json
+[25] [FAILED] WF-023.json
+[26] [FAILED] WF-900.json
+[27] [FAILED] WF-901.json
+[28] [FAILED] WF-100.json
+[29] [FAILED] WF-200.json
+[30] [FAILED] WF-300.json
+[31] [FAILED] WF-400.json
+[32] [FAILED] WF-500.json
+[33] [FAILED] WF-600.json
+[34] [FAILED] WF-020.json
+[35] [FAILED] WF-010.json
+[36] [FAILED] WF-001.json
+
+============================================================
+RESULTS: 0 success, 0 skipped, 36 failed
+============================================================

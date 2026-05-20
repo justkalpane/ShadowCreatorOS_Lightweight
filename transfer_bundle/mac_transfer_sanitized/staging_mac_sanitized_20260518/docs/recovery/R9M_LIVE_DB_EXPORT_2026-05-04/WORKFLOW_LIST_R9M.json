@@ -1,0 +1,187 @@
+[
+  {
+    "id": "kDa9U4UqGWlG6g3O",
+    "name": "CWF-110 Topic Discovery Canonical",
+    "active": 1
+  },
+  {
+    "id": "t1OGMmjxWkI9X7H6",
+    "name": "CWF-120 Topic Qualification Canonical",
+    "active": 1
+  },
+  {
+    "id": "aMuFbh7x41Ztpdp4",
+    "name": "CWF-130 Topic Scoring Canonical",
+    "active": 1
+  },
+  {
+    "id": "K8ffUF0eWIXiiQE8",
+    "name": "CWF-140 Research Synthesis Canonical",
+    "active": 1
+  },
+  {
+    "id": "JkqH3MB9n7IWUSmT",
+    "name": "CWF-210 Script Generation Canonical",
+    "active": 1
+  },
+  {
+    "id": "tzQPxC5HChpoevbL",
+    "name": "CWF-220 Script Debate Canonical",
+    "active": 1
+  },
+  {
+    "id": "JoLoaeTOdoe5c3ve",
+    "name": "CWF-230 Script Refinement Canonical",
+    "active": 1
+  },
+  {
+    "id": "GprQFnIiU74KKEpY",
+    "name": "CWF-240 Final Script Shaping Canonical",
+    "active": 1
+  },
+  {
+    "id": "EZAmggQBwBAD3UdR",
+    "name": "CWF-310 Execution Context Builder Canonical",
+    "active": 1
+  },
+  {
+    "id": "PPgdzUvZ3gpmmICi",
+    "name": "CWF-320 Platform Packager Canonical",
+    "active": 1
+  },
+  {
+    "id": "BlrDp37eCZ32JgdP",
+    "name": "CWF-330 Asset Brief Generator Canonical",
+    "active": 1
+  },
+  {
+    "id": "I1af7W2pkAFEn3z5",
+    "name": "CWF-340 Lineage Validator Canonical",
+    "active": 1
+  },
+  {
+    "id": "dkyayq7YYDsBS9UY",
+    "name": "CWF-410 Thumbnail Generator Canonical",
+    "active": 1
+  },
+  {
+    "id": "JQTFjmsn9dLVIdVu",
+    "name": "CWF-420 Visual Asset Planner Canonical",
+    "active": 1
+  },
+  {
+    "id": "ddLEG62Hkd9Gf2le",
+    "name": "CWF-430 Audio Script Optimizer Canonical",
+    "active": 1
+  },
+  {
+    "id": "MeR3pzh84KpLMcNf",
+    "name": "CWF-440 Media Package Finalizer Canonical",
+    "active": 1
+  },
+  {
+    "id": "AQLKHu7qnQTupqzi",
+    "name": "CWF-510 Platform Metadata Generator Canonical",
+    "active": 1
+  },
+  {
+    "id": "QPtDu7W7eaDNKgeI",
+    "name": "CWF-520 Distribution Planner Canonical",
+    "active": 1
+  },
+  {
+    "id": "nGqi7w4e4pxskC1I",
+    "name": "CWF-530 Publish Readiness Checker Canonical",
+    "active": 1
+  },
+  {
+    "id": "TtNZPHaQ0Jt7Qg84",
+    "name": "CWF-610 Performance Metrics Collector Canonical",
+    "active": 1
+  },
+  {
+    "id": "iqh4gVJjrsMnTvnR",
+    "name": "CWF-620 Audience Feedback Aggregator Canonical",
+    "active": 1
+  },
+  {
+    "id": "O2qGFq562dfOB1rc",
+    "name": "CWF-630 Evolution Signal Synthesizer Canonical",
+    "active": 1
+  },
+  {
+    "id": "OhbVrpoiVgRV5IfL",
+    "name": "WF-000 Health Check Canonical",
+    "active": 1
+  },
+  {
+    "id": "Ih7yfJs1ON43xKmT",
+    "name": "WF-021 Replay Remodify Canonical",
+    "active": 1
+  },
+  {
+    "id": "wqM2V7L9hK4pT8xC",
+    "name": "WF-022 Provider Packet Bridge Canonical",
+    "active": 1
+  },
+  {
+    "id": "rN4bQ1Y6mJ8tC3vP",
+    "name": "WF-023 Downstream Resource Preparation Canonical",
+    "active": 1
+  },
+  {
+    "id": "jOkYRBMeyyMDHqJ3",
+    "name": "WF-900 Error Handler Canonical",
+    "active": 1
+  },
+  {
+    "id": "8aRUhR4IWrXPvhsB",
+    "name": "WF-901 Error Recovery Canonical",
+    "active": 1
+  },
+  {
+    "id": "ecQoXsf2o3gyrDO1",
+    "name": "WF-100 Topic Intelligence Pack Canonical",
+    "active": 1
+  },
+  {
+    "id": "xkxwnQrS7RPeMOkI",
+    "name": "WF-200 Script Intelligence Pack Canonical",
+    "active": 1
+  },
+  {
+    "id": "UpkDyr7OSJoRu1XX",
+    "name": "WF-300 Context Engineering Pack Canonical",
+    "active": 1
+  },
+  {
+    "id": "do0cZuzren68K4Tu",
+    "name": "WF-400 Media Production Pack Canonical",
+    "active": 1
+  },
+  {
+    "id": "nPFz46PDjqipVJIq",
+    "name": "WF-500 Publishing Distribution Pack Canonical",
+    "active": 1
+  },
+  {
+    "id": "VLB5LzxoiGFfWd3h",
+    "name": "WF-600 Analytics Evolution Pack Canonical",
+    "active": 1
+  },
+  {
+    "id": "9Wvgfygw2wMqZcUD",
+    "name": "WF-020 Final Approval Canonical",
+    "active": 1
+  },
+  {
+    "id": "oCLrZ3aWZkSBvrjn",
+    "name": "WF-010 Parent Orchestrator Canonical",
+    "active": 1
+  },
+  {
+    "id": "BcbfnoGMbJmTPSIA",
+    "name": "WF-001 Dossier Create Canonical",
+    "active": 1
+  }
+]

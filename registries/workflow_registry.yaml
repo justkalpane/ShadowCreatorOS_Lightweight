@@ -1,0 +1,309 @@
+version: 3
+phase: phase1
+mode: n8n-first
+wave_p0_update_note: |
+  P0-A promotion adds WF-100 and WF-200 to canonical workflow registry.
+constitutional_authority_ref: docs/01-architecture/canonical_authority_precedence.md
+prompt_registry_interlock_ref: docs/01-architecture/prompt_registry_interlock_law.md
+empire_registry_ref: registries/empire_registry.instance.json
+decision_packet_register_ref: registries/decision_packet_register.yaml
+build_blocker_matrix_ref: registries/build_blocker_matrix.yaml
+repo_present_workflow_family_register: registries/repo_present_workflow_family.yaml
+not_yet_repo_present_workflow_pack_register: registries/not_yet_repo_present_workflow_packs.yaml
+workflows:
+  - workflow_id: WF-000
+    name: health_check
+    class: system
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-000.json
+    manifest_file: n8n/manifests/WF-000-health-check.manifest.yaml
+  - workflow_id: WF-900
+    name: error_handler
+    class: system
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-900.json
+    manifest_file: n8n/manifests/WF-900-error-handler.manifest.yaml
+  - workflow_id: WF-001
+    name: dossier_create
+    class: parent
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-001.json
+    manifest_file: n8n/manifests/WF-001-dossier-create.manifest.yaml
+  - workflow_id: WF-010
+    name: parent_orchestrator
+    class: parent
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-010.json
+    manifest_file: n8n/manifests/WF-010-parent-orchestrator.manifest.yaml
+  - workflow_id: WF-100
+    name: topic_intelligence_pack
+    class: parent_pack
+    artifact_status: repo_present
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-100.json
+    manifest_file: n8n/manifests/WF-100-topic-intelligence.manifest.yaml
+  - workflow_id: WF-200
+    name: script_intelligence_pack
+    class: parent_pack
+    artifact_status: repo_present
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-200.json
+    manifest_file: n8n/manifests/WF-200-script-intelligence.manifest.yaml
+  - workflow_id: WF-020
+    name: final_approval
+    class: governance
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-020.json
+    manifest_file: n8n/manifests/WF-020-final-approval.manifest.yaml
+  - workflow_id: WF-021
+    name: replay_remodify
+    class: governance
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-021.json
+    manifest_file: n8n/manifests/WF-021-replay-remodify.manifest.yaml
+  - workflow_id: WF-022
+    name: provider_packet_bridge
+    class: system_bridge
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-022.json
+    manifest_file: n8n/manifests/WF-022-provider-packet-bridge.manifest.yaml
+  - workflow_id: WF-023
+    name: downstream_resource_preparation
+    class: planning
+    artifact_status: starter_wired
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-023.json
+    manifest_file: n8n/manifests/WF-023-downstream-resource-prep.manifest.yaml
+  - workflow_id: WF-300
+    name: context_engineering_pack
+    class: parent_pack
+    artifact_status: repo_present
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-300.json
+    manifest_file: n8n/manifests/WF-300-context-engineering.manifest.yaml
+  - workflow_id: WF-400
+    name: media_production_pack
+    class: parent_pack
+    artifact_status: repo_present
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-400.json
+    manifest_file: n8n/manifests/WF-400-media-production.manifest.yaml
+  - workflow_id: WF-500
+    name: publishing_distribution_pack
+    class: parent_pack
+    artifact_status: repo_present
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-500.json
+    manifest_file: n8n/manifests/WF-500-publishing-distribution.manifest.yaml
+  - workflow_id: WF-600
+    name: analytics_evolution_pack
+    class: parent_pack
+    artifact_status: repo_present
+    runtime_status: not_built_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-600.json
+    manifest_file: n8n/manifests/WF-600-analytics-evolution.manifest.yaml
+  - workflow_id: WF-901
+    name: error_recovery
+    class: system
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/WF-901.json
+    manifest_file: n8n/manifests/WF-901-error-recovery.manifest.yaml
+  - workflow_id: CWF-110
+    name: topic_discovery
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-110.json
+    manifest_file: n8n/manifests/CWF-110-topic-discovery.manifest.yaml
+  - workflow_id: CWF-120
+    name: topic_qualification
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-120.json
+    manifest_file: n8n/manifests/CWF-120-topic-qualification.manifest.yaml
+  - workflow_id: CWF-130
+    name: topic_scoring
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-130.json
+    manifest_file: n8n/manifests/CWF-130-topic-scoring.manifest.yaml
+  - workflow_id: CWF-140
+    name: research_synthesis
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-140.json
+    manifest_file: n8n/manifests/CWF-140-research-synthesis.manifest.yaml
+  - workflow_id: CWF-210
+    name: script_generation
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-210.json
+    manifest_file: n8n/manifests/CWF-210-script-generation.manifest.yaml
+  - workflow_id: CWF-220
+    name: script_debate
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-220.json
+    manifest_file: n8n/manifests/CWF-220-script-debate.manifest.yaml
+  - workflow_id: CWF-230
+    name: script_refinement
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-230.json
+    manifest_file: n8n/manifests/CWF-230-script-refinement.manifest.yaml
+  - workflow_id: CWF-240
+    name: final_script_shaping
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-240.json
+    manifest_file: n8n/manifests/CWF-240-final-script-shaping.manifest.yaml
+  - workflow_id: CWF-310
+    name: execution_context_builder
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-310.json
+    manifest_file: n8n/manifests/CWF-310-execution-context-builder.manifest.yaml
+  - workflow_id: CWF-320
+    name: platform_packager
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-320.json
+    manifest_file: n8n/manifests/CWF-320-platform-packager.manifest.yaml
+  - workflow_id: CWF-330
+    name: asset_brief_generator
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-330.json
+    manifest_file: n8n/manifests/CWF-330-asset-brief-generator.manifest.yaml
+  - workflow_id: CWF-340
+    name: lineage_validator
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-340.json
+    manifest_file: n8n/manifests/CWF-340-lineage-validator.manifest.yaml
+  - workflow_id: CWF-410
+    name: thumbnail_generator
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-410.json
+    manifest_file: n8n/manifests/CWF-410-thumbnail-generator.manifest.yaml
+  - workflow_id: CWF-420
+    name: visual_asset_planner
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-420.json
+    manifest_file: n8n/manifests/CWF-420-visual-asset-planner.manifest.yaml
+  - workflow_id: CWF-430
+    name: audio_script_optimizer
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-430.json
+    manifest_file: n8n/manifests/CWF-430-audio-script-optimizer.manifest.yaml
+  - workflow_id: CWF-440
+    name: media_package_finalizer
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-440.json
+    manifest_file: n8n/manifests/CWF-440-media-package-finalizer.manifest.yaml
+  - workflow_id: CWF-510
+    name: platform_metadata_generator
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-510.json
+    manifest_file: n8n/manifests/CWF-510-platform-metadata-generator.manifest.yaml
+  - workflow_id: CWF-520
+    name: distribution_planner
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-520.json
+    manifest_file: n8n/manifests/CWF-520-distribution-planner.manifest.yaml
+  - workflow_id: CWF-530
+    name: publish_readiness_checker
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/CWF-530.json
+    manifest_file: n8n/manifests/CWF-530-publish-readiness-checker.manifest.yaml
+  - workflow_id: CWF-610
+    name: performance_metrics_collector
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/analytics/CWF-610-performance-metrics-collector.json
+    manifest_file: n8n/manifests/CWF-610-performance-metrics-collector.manifest.yaml
+  - workflow_id: CWF-620
+    name: audience_feedback_aggregator
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/analytics/CWF-620-audience-feedback-aggregator.json
+    manifest_file: n8n/manifests/CWF-620-audience-feedback-aggregator.manifest.yaml
+  - workflow_id: CWF-630
+    name: evolution_signal_synthesizer
+    class: child_pack
+    artifact_status: repo_present
+    runtime_status: deployed_live
+    validation_status: repo_checks_present
+    source_file: n8n/workflows/analytics/CWF-630-evolution-signal-synthesizer.json
+    manifest_file: n8n/manifests/CWF-630-evolution-signal-synthesizer.manifest.yaml

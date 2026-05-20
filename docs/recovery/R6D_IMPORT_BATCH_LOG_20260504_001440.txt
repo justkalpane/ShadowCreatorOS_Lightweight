@@ -1,0 +1,44 @@
+[1] [SUCCESS] CWF-120.json
+[2] [SUCCESS] CWF-130.json
+[3] [SUCCESS] CWF-140.json
+[4] [SUCCESS] CWF-210.json
+[5] [SUCCESS] CWF-220.json
+[6] [SUCCESS] CWF-230.json
+[7] [SUCCESS] CWF-240.json
+[8] [SUCCESS] CWF-310.json
+[9] [SUCCESS] CWF-320.json
+[10] [SUCCESS] CWF-330.json
+[11] [SUCCESS] CWF-340.json
+[12] [SUCCESS] CWF-410.json
+[13] [SUCCESS] CWF-420.json
+[14] [SUCCESS] CWF-430.json
+[15] [SUCCESS] CWF-440.json
+[16] [SUCCESS] CWF-510.json
+[17] [SUCCESS] CWF-520.json
+[18] [SUCCESS] CWF-530.json
+[19] [SUCCESS] CWF-610.json
+[20] [SUCCESS] CWF-620.json
+[21] [SUCCESS] CWF-630.json
+[22] [SUCCESS] WF-000.json
+[23] [SUCCESS] WF-021.json
+[24] [SUCCESS] WF-022.json
+[25] [SUCCESS] WF-023.json
+[26] [SUCCESS] WF-900.json
+[27] [SUCCESS] WF-901.json
+[28] [SUCCESS] WF-100.json
+[29] [SUCCESS] WF-200.json
+[30] [SUCCESS] WF-300.json
+[31] [SUCCESS] WF-400.json
+[32] [SUCCESS] WF-500.json
+[33] [SUCCESS] WF-600.json
+[34] [SUCCESS] WF-020.json
+[35] [SUCCESS] WF-010.json
+[36] [SUCCESS] WF-001.json
+
+==========================================
+IMPORT BATCH SUMMARY
+==========================================
+Total: 36
+Successful: 36
+Skipped: 0
+Failed: 0

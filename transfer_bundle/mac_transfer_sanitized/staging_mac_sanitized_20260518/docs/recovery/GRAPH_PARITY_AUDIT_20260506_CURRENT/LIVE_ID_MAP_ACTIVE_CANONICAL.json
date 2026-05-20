@@ -1,0 +1,298 @@
+[
+  {
+    "workflow_name": "CWF-110 Topic Discovery Canonical",
+    "workflow_code": "CWF-110",
+    "live_db_id": "kDa9U4UqGWlG6g3O",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 751
+  },
+  {
+    "workflow_name": "CWF-120 Topic Qualification Canonical",
+    "workflow_code": "CWF-120",
+    "live_db_id": "t1OGMmjxWkI9X7H6",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-130 Topic Scoring Canonical",
+    "workflow_code": "CWF-130",
+    "live_db_id": "aMuFbh7x41Ztpdp4",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-140 Research Synthesis Canonical",
+    "workflow_code": "CWF-140",
+    "live_db_id": "K8ffUF0eWIXiiQE8",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 55
+  },
+  {
+    "workflow_name": "CWF-210 Script Generation Canonical",
+    "workflow_code": "CWF-210",
+    "live_db_id": "JkqH3MB9n7IWUSmT",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 753
+  },
+  {
+    "workflow_name": "CWF-220 Script Debate Canonical",
+    "workflow_code": "CWF-220",
+    "live_db_id": "tzQPxC5HChpoevbL",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-230 Script Refinement Canonical",
+    "workflow_code": "CWF-230",
+    "live_db_id": "JoLoaeTOdoe5c3ve",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-240 Final Script Shaping Canonical",
+    "workflow_code": "CWF-240",
+    "live_db_id": "GprQFnIiU74KKEpY",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-310 Execution Context Builder Canonical",
+    "workflow_code": "CWF-310",
+    "live_db_id": "EZAmggQBwBAD3UdR",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 755
+  },
+  {
+    "workflow_name": "CWF-320 Platform Packager Canonical",
+    "workflow_code": "CWF-320",
+    "live_db_id": "PPgdzUvZ3gpmmICi",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 756
+  },
+  {
+    "workflow_name": "CWF-330 Asset Brief Generator Canonical",
+    "workflow_code": "CWF-330",
+    "live_db_id": "BlrDp37eCZ32JgdP",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 757
+  },
+  {
+    "workflow_name": "CWF-340 Lineage Validator Canonical",
+    "workflow_code": "CWF-340",
+    "live_db_id": "I1af7W2pkAFEn3z5",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 758
+  },
+  {
+    "workflow_name": "CWF-410 Thumbnail Generator Canonical",
+    "workflow_code": "CWF-410",
+    "live_db_id": "dkyayq7YYDsBS9UY",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 760
+  },
+  {
+    "workflow_name": "CWF-420 Visual Asset Planner Canonical",
+    "workflow_code": "CWF-420",
+    "live_db_id": "JQTFjmsn9dLVIdVu",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 761
+  },
+  {
+    "workflow_name": "CWF-430 Audio Script Optimizer Canonical",
+    "workflow_code": "CWF-430",
+    "live_db_id": "ddLEG62Hkd9Gf2le",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 762
+  },
+  {
+    "workflow_name": "CWF-440 Media Package Finalizer Canonical",
+    "workflow_code": "CWF-440",
+    "live_db_id": "MeR3pzh84KpLMcNf",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 763
+  },
+  {
+    "workflow_name": "CWF-510 Platform Metadata Generator Canonical",
+    "workflow_code": "CWF-510",
+    "live_db_id": "AQLKHu7qnQTupqzi",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-520 Distribution Planner Canonical",
+    "workflow_code": "CWF-520",
+    "live_db_id": "QPtDu7W7eaDNKgeI",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-530 Publish Readiness Checker Canonical",
+    "workflow_code": "CWF-530",
+    "live_db_id": "nGqi7w4e4pxskC1I",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "CWF-610 Performance Metrics Collector Canonical",
+    "workflow_code": "CWF-610",
+    "live_db_id": "TtNZPHaQ0Jt7Qg84",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 766
+  },
+  {
+    "workflow_name": "CWF-620 Audience Feedback Aggregator Canonical",
+    "workflow_code": "CWF-620",
+    "live_db_id": "iqh4gVJjrsMnTvnR",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 767
+  },
+  {
+    "workflow_name": "CWF-630 Evolution Signal Synthesizer Canonical",
+    "workflow_code": "CWF-630",
+    "live_db_id": "O2qGFq562dfOB1rc",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 768
+  },
+  {
+    "workflow_name": "WF-000 Health Check Canonical",
+    "workflow_code": "WF-000",
+    "live_db_id": "OhbVrpoiVgRV5IfL",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 392
+  },
+  {
+    "workflow_name": "WF-001 Dossier Create Canonical",
+    "workflow_code": "WF-001",
+    "live_db_id": "BcbfnoGMbJmTPSIA",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 748
+  },
+  {
+    "workflow_name": "WF-010 Parent Orchestrator Canonical",
+    "workflow_code": "WF-010",
+    "live_db_id": "oCLrZ3aWZkSBvrjn",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 749
+  },
+  {
+    "workflow_name": "WF-020 Final Approval Canonical",
+    "workflow_code": "WF-020",
+    "live_db_id": "9Wvgfygw2wMqZcUD",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 769
+  },
+  {
+    "workflow_name": "WF-021 Replay Remodify Canonical",
+    "workflow_code": "WF-021",
+    "live_db_id": "Ih7yfJs1ON43xKmT",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 281
+  },
+  {
+    "workflow_name": "WF-022 Provider Packet Bridge Canonical",
+    "workflow_code": "WF-022",
+    "live_db_id": "wqM2V7L9hK4pT8xC",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "WF-023 Downstream Resource Preparation Canonical",
+    "workflow_code": "WF-023",
+    "live_db_id": "rN4bQ1Y6mJ8tC3vP",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "WF-100 Topic Intelligence Pack Canonical",
+    "workflow_code": "WF-100",
+    "live_db_id": "ecQoXsf2o3gyrDO1",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 750
+  },
+  {
+    "workflow_name": "WF-200 Script Intelligence Pack Canonical",
+    "workflow_code": "WF-200",
+    "live_db_id": "xkxwnQrS7RPeMOkI",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 752
+  },
+  {
+    "workflow_name": "WF-300 Context Engineering Pack Canonical",
+    "workflow_code": "WF-300",
+    "live_db_id": "UpkDyr7OSJoRu1XX",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 754
+  },
+  {
+    "workflow_name": "WF-400 Media Production Pack Canonical",
+    "workflow_code": "WF-400",
+    "live_db_id": "do0cZuzren68K4Tu",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 759
+  },
+  {
+    "workflow_name": "WF-500 Publishing Distribution Pack Canonical",
+    "workflow_code": "WF-500",
+    "live_db_id": "nPFz46PDjqipVJIq",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 764
+  },
+  {
+    "workflow_name": "WF-600 Analytics Evolution Pack Canonical",
+    "workflow_code": "WF-600",
+    "live_db_id": "VLB5LzxoiGFfWd3h",
+    "active": 1,
+    "runtime_status": "success",
+    "last_execution_id": 765
+  },
+  {
+    "workflow_name": "WF-900 Error Handler Canonical",
+    "workflow_code": "WF-900",
+    "live_db_id": "jOkYRBMeyyMDHqJ3",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  },
+  {
+    "workflow_name": "WF-901 Error Recovery Canonical",
+    "workflow_code": "WF-901",
+    "live_db_id": "8aRUhR4IWrXPvhsB",
+    "active": 1,
+    "runtime_status": "unknown",
+    "last_execution_id": null
+  }
+]

@@ -1,0 +1,101 @@
+﻿MIGRATION_ORGANIZATION_STATUS=PASS
+
+root_path=C:\ShadowCreatorOS_Lightweight
+
+folders_created=
+- C:\ShadowCreatorOS_Lightweight\handoff\current_windows_environment
+- C:\ShadowCreatorOS_Lightweight\handoff\mac_deployment
+- C:\ShadowCreatorOS_Lightweight\handoff\technical_handoff
+- C:\ShadowCreatorOS_Lightweight\handoff\decision_history
+- C:\ShadowCreatorOS_Lightweight\handoff\n8n_export_summary
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_00_baseline
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_01_repo_transfer
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_02_dependency_install
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_03_agent_setup
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_04_first_repo_proof
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_05_future_n8n_bus
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_06_provider_execution_later
+- C:\ShadowCreatorOS_Lightweight\transfer_bundle
+- C:\ShadowCreatorOS_Lightweight\transfer_bundle\mac_transfer_sanitized
+- C:\ShadowCreatorOS_Lightweight\transfer_bundle\windows_only_do_not_transfer
+- C:\ShadowCreatorOS_Lightweight\transfer_bundle\checksums
+- C:\ShadowCreatorOS_Lightweight\audits\migration_readiness
+- C:\ShadowCreatorOS_Lightweight\audits\folder_structure
+- C:\ShadowCreatorOS_Lightweight\audits\transfer_safety
+
+docs_created=
+- C:\ShadowCreatorOS_Lightweight\00_READ_ME_FIRST_FOR_MAC_MIGRATION.md
+- C:\ShadowCreatorOS_Lightweight\handoff\current_windows_environment\CURRENT_WINDOWS_ENVIRONMENT_HANDOFF_INDEX.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_00_baseline\MAC_00_BASELINE_AUDIT.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_01_repo_transfer\MAC_01_REPO_TRANSFER_AND_INTEGRITY.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_02_dependency_install\MAC_02_DEPENDENCY_INSTALL_PLAN.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_03_agent_setup\MAC_03_CODEX_CLAUDE_KIMI_AGENT_SETUP.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_04_first_repo_proof\MAC_04_FIRST_REPO_FIRST_DOSSIER_PROOF.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_05_future_n8n_bus\MAC_05_FUTURE_N8N_EXECUTION_BUS.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_06_provider_execution_later\MAC_06_PROVIDER_EXECUTION_LATER.md
+- C:\ShadowCreatorOS_Lightweight\transfer_bundle\MAC_TRANSFER_BUNDLE_PLAN.md
+- C:\ShadowCreatorOS_Lightweight\transfer_bundle\MAC_TRANSFER_INCLUDE_EXCLUDE_RULES.md
+- C:\ShadowCreatorOS_Lightweight\handoff\n8n_export_summary\N8N_FULL_EXPORT_SUMMARY.md
+- C:\ShadowCreatorOS_Lightweight\handoff\n8n_export_summary\N8N_WORKFLOW_REUSE_STRATEGY.md
+- C:\ShadowCreatorOS_Lightweight\handoff\n8n_export_summary\N8N_IMPORT_WARNING.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_04_first_repo_proof\FIRST_MAC_REPO_FIRST_PROOF_PROMPT.md
+- C:\ShadowCreatorOS_Lightweight\deployment\mac_phase_05_future_n8n_bus\FUTURE_N8N_EXECUTION_BUS_DESIGN.md
+- C:\ShadowCreatorOS_Lightweight\audits\migration_readiness\MIGRATION_READINESS_AUDIT.md
+- C:\ShadowCreatorOS_Lightweight\audits\folder_structure\FOLDER_STRUCTURE_AUDIT.md
+- C:\ShadowCreatorOS_Lightweight\audits\transfer_safety\TRANSFER_SAFETY_AUDIT.md
+- C:\ShadowCreatorOS_Lightweight\handoff\MAC_MIGRATION_MASTER_INDEX.md
+
+current_windows_handoff_folder_ready=true
+mac_deployment_phase_docs_ready=true
+technical_handoff_folder_ready=true
+n8n_export_summary_ready=true
+transfer_bundle_plan_ready=true
+first_mac_proof_prompt_ready=true
+future_n8n_bus_doc_ready=true
+migration_readiness_audit_ready=true
+master_index_ready=true
+
+n8n_full_export_present=true
+sanitized_workflow_exports_count=71
+raw_private_workflow_exports_count=71
+secret_scan_pass=True
+checksum_manifest_present=True
+db_only_unknown_remaining_count=2
+
+raw_private_exports_excluded_from_default_transfer=true
+old_db_excluded_from_active_transfer=true
+old_profile_excluded_from_active_transfer=true
+binaryData_excluded_from_active_transfer=true
+secrets_excluded_from_active_transfer=true
+
+old_windows_repo_modified=false
+old_n8n_profile_modified=false
+old_sqlite_modified=false
+old_openwebui_modified=false
+old_operator_api_modified=false
+n8n_started=false
+workflow_imported=false
+workflow_activated=false
+workflow_executed=false
+gemini_called=false
+providers_called=false
+secrets_exposed=false
+
+safe_to_transfer_sanitized_repo_package_to_mac=true
+safe_to_transfer_raw_private_exports_to_mac=false
+safe_to_begin_mac_installation=false
+safe_to_start_first_mac_proof=false
+
+blockers_found=
+- none for organization scope
+high_risks_found=
+- 2 DB-only workflows remain UNKNOWN_NEEDS_MANUAL_REVIEW before any import/reuse plan
+medium_risks_found=
+- manual classification review required for execution-bus mapping confidence
+low_risks_found=
+- none
+needs_confirmation=
+- CH70BvMePN6ofDNo (Hacker News to video content)
+- bRQXDXVsPXQgCde8 (Free AI image generator - n8n automation workflow with Gemini/ChatGPT)
+
+NEXT_ACTION=Run MAC-0 baseline audit on target Mac host and stop before installation/runtime activation.

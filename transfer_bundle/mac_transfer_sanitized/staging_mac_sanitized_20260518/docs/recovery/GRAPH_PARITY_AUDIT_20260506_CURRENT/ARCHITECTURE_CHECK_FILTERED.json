@@ -1,0 +1,116 @@
+[
+  {
+    "parent": "WF-010",
+    "expected_children": [
+      "WF-100",
+      "WF-200",
+      "WF-300",
+      "WF-400",
+      "WF-500",
+      "WF-600",
+      "WF-020"
+    ],
+    "live_children": [
+      "WF-020",
+      "WF-100",
+      "WF-200",
+      "WF-300",
+      "WF-400",
+      "WF-500",
+      "WF-600"
+    ],
+    "match": true
+  },
+  {
+    "parent": "WF-100",
+    "expected_children": [
+      "CWF-110",
+      "CWF-120",
+      "CWF-130",
+      "CWF-140"
+    ],
+    "live_children": [
+      "CWF-110",
+      "CWF-120",
+      "CWF-130",
+      "CWF-140"
+    ],
+    "match": true
+  },
+  {
+    "parent": "WF-200",
+    "expected_children": [
+      "CWF-210",
+      "CWF-220",
+      "CWF-230",
+      "CWF-240"
+    ],
+    "live_children": [
+      "CWF-210",
+      "CWF-220",
+      "CWF-230",
+      "CWF-240"
+    ],
+    "match": true
+  },
+  {
+    "parent": "WF-300",
+    "expected_children": [
+      "CWF-310",
+      "CWF-320",
+      "CWF-330",
+      "CWF-340"
+    ],
+    "live_children": [
+      "CWF-310",
+      "CWF-320",
+      "CWF-330",
+      "CWF-340"
+    ],
+    "match": true
+  },
+  {
+    "parent": "WF-400",
+    "expected_children": [
+      "CWF-410",
+      "CWF-420",
+      "CWF-430",
+      "CWF-440"
+    ],
+    "live_children": [
+      "CWF-410",
+      "CWF-420",
+      "CWF-430",
+      "CWF-440"
+    ],
+    "match": true
+  },
+  {
+    "parent": "WF-500",
+    "expected_children": [
+      "CWF-510",
+      "CWF-520",
+      "CWF-530"
+    ],
+    "live_children": [
+      "CWF-510",
+      "CWF-520",
+      "CWF-530"
+    ],
+    "match": true
+  },
+  {
+    "parent": "WF-600",
+    "expected_children": [
+      "CWF-610",
+      "CWF-620",
+      "CWF-630"
+    ],
+    "live_children": [
+      "CWF-610",
+      "CWF-620",
+      "CWF-630"
+    ],
+    "match": true
+  }
+]

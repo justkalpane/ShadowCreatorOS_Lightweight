@@ -1,0 +1,52 @@
+﻿[
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\registries\\\\workflow_registry.yaml",
+        "algorithm":  "SHA256",
+        "hash":  "4777807571495A60E1C944266242DF6D3DB7C7F238EDDDA9CC2A49690EBE4C04"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\registries\\\\route_registry.yaml",
+        "algorithm":  "SHA256",
+        "hash":  "682475059BB12B01C6BFFE9CBA328434174F5A3B0F938D0B64C5BC28D7929CCA"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\registries\\\\skill_registry.yaml",
+        "algorithm":  "SHA256",
+        "hash":  "76CB5119DBAF725093AD780EC65E3626C3DFFF3BEA7FFE73FEA5EE537CEB4755"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\registries\\\\provider_registry.yaml",
+        "algorithm":  "SHA256",
+        "hash":  "9D02040C034965C345F2588244C72A1470145B7D0DC0A1586A5197EB40A14095"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\config\\\\provider_registry.yaml",
+        "algorithm":  "SHA256",
+        "hash":  "29BA280A47FEF3C6FB558A495E7E477720B1303ED3C0F339D19F45F5D3560958"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\operator\\\\task_router.js",
+        "algorithm":  "SHA256",
+        "hash":  "8599E2A8982274F8138AC43D9415FDEC5F40F9C312C22B8E8DA0735AAA5A8C90"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\operator\\\\provider_router.js",
+        "algorithm":  "SHA256",
+        "hash":  "9BBF294919D45642B437AA360F06B08DFDBFFDD10B9DE42144D080DAA2B8E577"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\operator\\\\skill_runtime.js",
+        "algorithm":  "SHA256",
+        "hash":  "F9F69CF4A630F992E570F6EBC03402B63FE9CE9A919D15CD0CEFC416AD8EDFB3"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\engine\\\\api\\\\operator.js",
+        "algorithm":  "SHA256",
+        "hash":  "C96899782D6233B2561D9AE0355F429CBD30DB262159B74048F1FCC8F2B85CE8"
+    },
+    {
+        "path":  "C:\\ShadowEmpire-Git_Restore_01\\config\\\\openwebui_shadow_creator_os_direct_pipe.py",
+        "algorithm":  "SHA256",
+        "hash":  "80A4EE0BC8CBB3304DF39424F0FC4DAE182E77890FD698D7E1469F5395D356F1"
+    }
+]

@@ -1,0 +1,12 @@
+﻿{
+    "original_user_message":  "",
+    "normalized_topic":  "",
+    "intent_id":  "",
+    "intent_family":  "",
+    "director_requested":  null,
+    "reference_dossier_id":  null,
+    "openwebui_chat_id":  null,
+    "mission_hash":  "",
+    "materialization_source":  "repo_first",
+    "created_at":  ""
+}

@@ -1,0 +1,1537 @@
+{
+  "id": "I7HWYJta1QQFwUaO",
+  "name": "Generate AI avatar videos with GPT-5 & publish to social media platforms",
+  "active": false,
+  "isArchived": false,
+  "createdAt": "2026-05-05 20:04:25.787",
+  "updatedAt": "2026-05-05 20:13:51.592",
+  "versionId": "480e273f-c7ef-4f37-b3d3-2a2f495410bd",
+  "activeVersionId": null,
+  "triggerCount": 0,
+  "description": null,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "meta": {
+    "templateId": "7715"
+  },
+  "pinData": {},
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2e9ea966-70fc-4477-b859-92c783610c6a",
+              "name": "id_avatar",
+              "type": "string",
+              "value": "={{ $json['ID AVATAR'] }}"
+            },
+            {
+              "id": "ea14b33c-a1cf-4000-bb1b-7bae0bad74ac",
+              "name": "voice_url",
+              "type": "string",
+              "value": "={{ $('TmpFiles: Upload Voice (Public URL)').item.json.data.url.replace('org/', 'org/dl/') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2db3bc49-9f08-4d3c-909f-eed7e09abbc1",
+      "name": "ID Avatar",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        864,
+        896
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "mediaUrl": "=https://drive.google.com/uc?export=download&id={{ $json.final_google_drive_url }}",
+        "resource": "media"
+      },
+      "id": "440c3c87-ca02-464c-abe7-1c7d868b20a6",
+      "name": "Upload Video to BLOTATO",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        496,
+        1616
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "youtube",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "8047",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/8047",
+          "cachedResultName": "DR FIRASS (Dr. Firas)"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postCreateYoutubeOptionTitle": "={{ $('Google Sheets - Read Post Data').item.json.Title }}",
+        "postCreateYoutubeOptionPrivacyStatus": "private",
+        "postCreateYoutubeOptionShouldNotifySubscribers": false
+      },
+      "id": "15274c58-baf4-485a-84e1-150e29d2c70f",
+      "name": "Youtube",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        1504,
+        1392
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "tiktok",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "9332",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/9332",
+          "cachedResultName": "docteur.firas"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "b82db960-143b-415b-845c-067681020db9",
+      "name": "Tiktok",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        928,
+        1216
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch",
+        "numberInputs": 9
+      },
+      "id": "9aa4aea3-b286-45b9-a18d-b279d78230fa",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        1888,
+        1296
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "linkedin",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1446",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1446",
+          "cachedResultName": "Samuel Amalric"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "b4f8f770-1372-403e-88a0-32a855f6196b",
+      "name": "Linkedin",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        1200,
+        1216
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "facebook",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1759",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1759",
+          "cachedResultName": "Firass Ben"
+        },
+        "facebookPageId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "101603614680195",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1759/subaccounts/101603614680195",
+          "cachedResultName": "Dr. Firas"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "3bdc5eb3-bf09-44b3-8a61-facaf90bac2f",
+      "name": "Facebook",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        1504,
+        1216
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {
+          "instagramMediaType": "reel"
+        },
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "7341",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/7341",
+          "cachedResultName": "doc.firass"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "62a23925-dd2e-4290-8f14-044630963873",
+      "name": "Instagram",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        928,
+        1392
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "threads",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "2280",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/2280",
+          "cachedResultName": "doc.firass"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "c83c16b9-2611-4400-a405-0ab01e399195",
+      "name": "Threads",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        928,
+        1584
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "bluesky",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "6012",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/6012",
+          "cachedResultName": "formationinternet.bsky.social"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "2ae7d7ea-e809-4c07-8147-34c8ff532270",
+      "name": "Bluesky",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        1200,
+        1584
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "pinterest",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "363",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/363",
+          "cachedResultName": "formationinternet2022"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "pinterestBoardId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1146658823815436667"
+        },
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "1d7e7c2c-fea3-4dda-9b47-9cbc47e0bead",
+      "name": "Pinterest",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        1504,
+        1584
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "options": {},
+        "platform": "twitter",
+        "accountId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1289",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1289",
+          "cachedResultName": "Docteur_Firas"
+        },
+        "postContentText": "={{ $('Google Sheets - Read Post Data').item.json.Caption }}",
+        "postContentMediaUrls": "={{ $json.url }}"
+      },
+      "id": "5f79c2a7-aa12-494d-91d1-ab2abc0aceef",
+      "name": "Twitter (X)",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "position": [
+        1200,
+        1392
+      ],
+      "typeVersion": 2,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1750d20-2f6e-4826-80b8-654d0985120d",
+              "name": "final_google_drive_url",
+              "type": "string",
+              "value": "={{ $json['URL VIDEO FINAL'].match(/https:\\/\\/drive\\.google\\.com\\/file\\/d\\/([A-Za-z0-9_-]+)/i)[1] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "be45a4af-f217-43c0-a82a-b8833c25b169",
+      "name": "Get Google Drive ID",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        496,
+        1408
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "columns": {
+          "value": {
+            "Status": "Posted",
+            "ID VOICE": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.voice.file_unique_id }}"
+          },
+          "schema": [
+            {
+              "id": "ID VOICE",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "ID VOICE",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL VOICE",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "URL VOICE",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Title",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "Title",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Caption",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "Caption",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL VIDEO FINAL",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "URL VIDEO FINAL",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Status",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "ID VOICE"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "be173270-8167-4dab-b04d-f9ef1f8f0a69",
+      "name": "Google Sheets - Update Status",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        2112,
+        1216
+      ],
+      "typeVersion": 4.5
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {
+          "language": "fr",
+          "temperature": 0
+        }
+      },
+      "id": "3642fb52-da0a-4036-9f31-ca7a4c755933",
+      "name": "OpenAI - Transcribe Video to Text",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        976,
+        336
+      ],
+      "typeVersion": 1.8
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {
+          "systemMessage": "=You will create a concise Title and a short Caption using ONLY the TRANSCRIPTION below. Do not invent new content. Detect the language from the TRANSCRIPTION and write in that same language. No emojis. No hashtags.\n\nRULES\n- Title: clear, compelling, faithful to the content. Aim ≤ 70 characters. No clickbait. No emojis/hashtags.\n- Caption: ≤ 200 characters (characters, not words). Crisp, adds context or a takeaway. No emojis/hashtags.\n- Keep facts aligned with the TRANSCRIPTION. No external info.\n- Output JSON only on a single line. No markdown, no explanations.\n\nFINAL OUTPUT (single line JSON):\n{\"title\":\"<TITLE>\", \"caption\":\"<CAPTION>\"}\n\nTRANSCRIPTION:\n{{ $json.text }}\n\nUse the Google Sheets tool to save the generated title and caption for this video.\n\n\n\n"
+        }
+      },
+      "id": "f5671039-1376-4edc-86bd-dd5dce7462ca",
+      "name": "AI Agent - Generate Title & Caption",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        1792,
+        336
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "options": {}
+      },
+      "id": "9487e768-6352-4135-9bf8-392a3363b594",
+      "name": "OpenAI Model GPT-5",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        1696,
+        576
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {},
+      "id": "359022f8-0f97-4b14-8c53-80b40a962d14",
+      "name": "LangChain - Think Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "position": [
+        1872,
+        576
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "columns": {
+          "value": {
+            "Title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}",
+            "Caption": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Caption', ``, 'string') }}",
+            "ID VOICE": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.voice.file_unique_id }}"
+          },
+          "schema": [
+            {
+              "id": "ID VOICE",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "ID VOICE",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL VOICE",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "URL VOICE",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Title",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Title",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Caption",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Caption",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL VIDEO FINAL",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "URL VIDEO FINAL",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "Status",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "type": "number",
+              "display": true,
+              "removed": true,
+              "readOnly": true,
+              "required": false,
+              "displayName": "row_number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "ID VOICE"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "523dab0e-f7a1-4fa5-b37c-6f97101f8747",
+      "name": "Google Sheets - Update Title & Caption",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "position": [
+        2096,
+        576
+      ],
+      "typeVersion": 4.6
+    },
+    {
+      "parameters": {
+        "content": "# Step 1 — Capture & Transcribe Voice Input",
+        "height": 512,
+        "width": 1040
+      },
+      "id": "1fb99f4c-f380-4458-a380-1cc6144c8cef",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# Step 2 — Generate Title & Caption with GPT‑5\n",
+        "height": 512,
+        "width": 912
+      },
+      "id": "16a947a8-f7e0-4c3d-b0c7-529736ba613a",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1440,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# Step 3 — Create AI Avatar Video (HeyGen)",
+        "height": 320,
+        "width": 1984,
+        "color": 4
+      },
+      "id": "3fa62cb8-37cb-4e3e-8d1a-6ba90ef72ac3",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        384,
+        784
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# 🚀 Step 4 — Auto-Publish to 9 Social Platforms",
+        "height": 664,
+        "width": 1976
+      },
+      "id": "a4b71152-9149-4e23-9617-679c735ae5e0",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        1136
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "d9a4a1d4-7003-4224-aeaf-14c51424e708",
+      "name": "Telegram Trigger: Receive Voice Message",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        448,
+        560
+      ],
+      "webhookId": "7e606c71-48b4-4613-acd5-81a4b6cdabe4",
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
+      },
+      "id": "19af066c-70cb-4b08-8d19-379fa55e3155",
+      "name": "Telegram: Download Voice",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        768,
+        560
+      ],
+      "webhookId": "9cfd6890-0e43-4023-a7d0-f24406865733",
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.voice.file_unique_id }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "options": {}
+      },
+      "id": "207d7876-9643-402f-987c-34a7ee23bebf",
+      "name": "Google Drive: Upload Voice",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        976,
+        560
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": ""
+        }
+      },
+      "id": "bedd5e5d-9640-4a68-88d3-4d7f73d0105f",
+      "name": "Google Sheets: Log Voice Metadata",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        1184,
+        560
+      ],
+      "typeVersion": 4.7
+    },
+    {
+      "parameters": {
+        "url": "https://api.heygen.com/v2/avatars",
+        "authentication": "***REDACTED_POSSIBLE_SECRET***",
+        "genericAuthType": "***REDACTED_POSSIBLE_SECRET***",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "77b47473-dd1c-40cd-8dde-a5026bfa2aa1",
+      "name": "HeyGen: List Avatars",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        464,
+        336
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "options": {}
+      },
+      "id": "333173a3-b228-408a-879a-68bf77e9e405",
+      "name": "Google Sheets: Read Avatar Config",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        656,
+        896
+      ],
+      "typeVersion": 4.7
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.heygen.com/v2/video/generate",
+        "authentication": "***REDACTED_POSSIBLE_SECRET***",
+        "genericAuthType": "***REDACTED_POSSIBLE_SECRET***",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"{{ $json.id_avatar }}\",\n        \"avatar_style\": \"normal\"\n      },\n      \"voice\": {\n        \"type\": \"audio\",\n        \"audio_url\": \"{{ $json.voice_url }}\"\n      }\n    }\n  ],\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  }\n} ",
+        "options": {}
+      },
+      "id": "d7e161d5-24f8-4edf-9b58-4e8f76b29a9f",
+      "name": "HeyGen: Generate Avatar Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1072,
+        896
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {},
+      "id": "1748dcb8-1d0e-4a6e-a0b7-1acae000354d",
+      "name": "Wait for Rendering",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        1296,
+        896
+      ],
+      "webhookId": "54427631-d41c-4be3-bbac-432587da639d",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "url": "=https://api.heygen.com/v1/video_status.get?video_id={{ $('HeyGen: Generate Avatar Video').item.json.data.video_id }}",
+        "authentication": "***REDACTED_POSSIBLE_SECRET***",
+        "genericAuthType": "***REDACTED_POSSIBLE_SECRET***",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f51b59d0-ba68-4ecf-913f-dc149aa681c5",
+      "name": "HeyGen: Check Video Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1488,
+        896
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "d5963870-0093-4333-b2a6-39ddd9803a6a",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "completed"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3e22c59e-9d6d-43c3-ad61-f87bfdf066c3",
+      "name": "If: Video Completed?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1712,
+        896
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://tmpfiles.org/api/v1/upload",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fe79be96-12a0-48c5-99ea-f8ae6b80f689",
+      "name": "TmpFiles: Upload Voice (Public URL)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        448,
+        896
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.video_url }}",
+        "options": {}
+      },
+      "id": "e0034420-7318-427a-9751-46014bbcb64f",
+      "name": "HTTP: Download Final Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1952,
+        896
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.voice.file_unique_id }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "options": {}
+      },
+      "id": "4ac46b2e-c880-4f9b-a321-2e17c2adc3c6",
+      "name": "Google Drive: Upload Final Video",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        2192,
+        896
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "columns": {
+          "value": {
+            "ID VOICE": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.voice.file_unique_id }}",
+            "row_number": 0,
+            "URL VIDEO FINAL": "={{ $json.webViewLink }}"
+          },
+          "schema": [
+            {
+              "id": "ID VOICE",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "ID VOICE",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL VOICE",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "required": false,
+              "displayName": "URL VOICE",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL VIDEO FINAL",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "URL VIDEO FINAL",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "type": "number",
+              "display": true,
+              "removed": false,
+              "readOnly": true,
+              "required": false,
+              "displayName": "row_number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "ID VOICE"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "7c598e65-3a06-4865-959c-31315105801e",
+      "name": "Google Sheets: Save Final Video URL",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        496,
+        1216
+      ],
+      "typeVersion": 4.7
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.chat.id }}",
+        "text": "Posted",
+        "additionalFields": {}
+      },
+      "id": "080a32d5-3f2a-4875-a1fa-1d896e29e026",
+      "name": "Telegram: Send Post Confirmation",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2112,
+        1424
+      ],
+      "webhookId": "d212f4eb-2a55-4b88-8172-a9c12487afc6",
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "content": "# 🎬 From Idea to Post: GPT-5 Video Automation for YouTube, TikTok & Instagram  \n\nTurn a simple idea into a **viral video** and auto-publish it across platforms using  \n**GPT-5**, **HeyGen**, **Blotato**, **Google Sheets**, and **n8n**.  \n\n---\n\n### 🎥 Full Tutorial  \n[![Watch on YouTube](https://img.youtube.com/vi/J13Mvv_qGd0/hqdefault.jpg)](https://youtu.be/J13Mvv_qGd0)  \n👉 [Click here to watch the full YouTube tutorial](https://youtu.be/J13Mvv_qGd0)\n\n---\n\n### 📘 Documentation  \nAccess detailed setup instructions, API config, platform connection guides, and workflow customization tips:\n\n📎 [Open the full documentation on Notion](https://automatisation.notion.site/Blotato-2473d6550fd980e19983f69611a80a0d?source=copy_link)\n\n---\n\n## ⚙️ Requirements\n\n1. ✅ **Create a [Blotato](https://blotato.com/?ref=firas) account** (Pro plan required for API access)  \n2. 🔑 **Generate your Blotato API Key** via: `Settings > API > Generate API Key`  \n3. 📦 **Enable “Verified Community Nodes”** in the n8n admin settings  \n4. 🧩 **Install the Blotato** verified community node in n8n  \n5. 🛠 **Create a Blotato API credential** inside your n8n credentials tab  \n6. 📄 **Duplicate this [Google Sheet template](https://docs.google.com/spreadsheets/d/1hZd1fuKeP8MnD7yZmWKzdmnUinZOl85E2PjoCFUaawE/edit?usp=sharing)**  \n7. ☁️ **Make sure your Google Drive folder is PUBLIC** (anyone with the link can access)  \n8. 📌 **Complete the 3 brown sticky note steps** inside the workflow editor\n\n",
+        "height": 1556,
+        "width": 508,
+        "color": 6
+      },
+      "id": "bdd96b94-5b10-4443-a6d9-e8d39e2d0584",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2400,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "ID VOICE",
+              "lookupValue": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.voice.file_unique_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "57733350-dbf6-44a2-8585-5391496c5ce7",
+      "name": "Google Sheets - Read Post Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        704,
+        1216
+      ],
+      "typeVersion": 4.7
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "={{ $('Telegram Trigger: Receive Voice Message').item.json.message.chat.id }}",
+        "file": "={{ $('Upload Video to BLOTATO').item.json.url }}",
+        "additionalFields": {}
+      },
+      "id": "ae564e1f-4081-4047-9524-4e609a2ca53e",
+      "name": "Telegram: Send Final Video",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2112,
+        1632
+      ],
+      "webhookId": "c2bf4b02-0db4-4089-be59-d04c55905ec2",
+      "typeVersion": 1.2
+    }
+  ],
+  "connections": {
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Update Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tiktok": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bluesky": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Threads": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "Youtube": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Facebook": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Linkedin": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "ID Avatar": {
+      "main": [
+        [
+          {
+            "node": "HeyGen: Generate Avatar Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Pinterest": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 8
+          }
+        ]
+      ]
+    },
+    "Twitter (X)": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "OpenAI Model GPT-5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent - Generate Title & Caption",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Rendering": {
+      "main": [
+        [
+          {
+            "node": "HeyGen: Check Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Google Drive ID": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to BLOTATO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If: Video Completed?": {
+      "main": [
+        [
+          {
+            "node": "HTTP: Download Final Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for Rendering",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LangChain - Think Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent - Generate Title & Caption",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to BLOTATO": {
+      "main": [
+        [
+          {
+            "node": "Tiktok",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Linkedin",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Facebook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Instagram",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Twitter (X)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Youtube",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Threads",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Bluesky",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Pinterest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram: Download Voice": {
+      "main": [
+        [
+          {
+            "node": "Google Drive: Upload Voice",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TmpFiles: Upload Voice (Public URL)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "OpenAI - Transcribe Video to Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive: Upload Voice": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets: Log Voice Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP: Download Final Video": {
+      "main": [
+        [
+          {
+            "node": "Google Drive: Upload Final Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HeyGen: Check Video Status": {
+      "main": [
+        [
+          {
+            "node": "If: Video Completed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Update Status": {
+      "main": [
+        [
+          {
+            "node": "Telegram: Send Post Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HeyGen: Generate Avatar Video": {
+      "main": [
+        [
+          {
+            "node": "Wait for Rendering",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Read Post Data": {
+      "main": [
+        [
+          {
+            "node": "Get Google Drive ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive: Upload Final Video": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets: Save Final Video URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram: Send Post Confirmation": {
+      "main": [
+        [
+          {
+            "node": "Telegram: Send Final Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets: Log Voice Metadata": {
+      "main": [
+        []
+      ]
+    },
+    "Google Sheets: Read Avatar Config": {
+      "main": [
+        [
+          {
+            "node": "ID Avatar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI - Transcribe Video to Text": {
+      "main": [
+        [
+          {
+            "node": "AI Agent - Generate Title & Caption",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent - Generate Title & Caption": {
+      "main": [
+        []
+      ]
+    },
+    "Google Sheets: Save Final Video URL": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Read Post Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TmpFiles: Upload Voice (Public URL)": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets: Read Avatar Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Update Title & Caption": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent - Generate Title & Caption",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger: Receive Voice Message": {
+      "main": [
+        [
+          {
+            "node": "Telegram: Download Voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

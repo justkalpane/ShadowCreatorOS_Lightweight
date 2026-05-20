@@ -1,0 +1,6 @@
+version: 2
+canonical_rule: this file is the only canonical ordered register of intended Phase-1 workflow packs that are not yet repo-present
+promotion_note: >
+  WF-300 through WF-600 are now repo-present with manifests and workflow JSON.
+  This register is intentionally empty until a new deferred pack is defined.
+not_yet_repo_present_packs: []

@@ -1,0 +1,439 @@
+{
+  "id": "DWYXAkTFi6r1n3im",
+  "name": "Generate AI avatar videos from text with HeyGen and upload to YouTube",
+  "active": false,
+  "isArchived": false,
+  "createdAt": "2026-05-05 20:04:38.219",
+  "updatedAt": "2026-05-05 20:13:44.161",
+  "versionId": "0bd5eccf-305a-4090-8845-c3f7467b18d8",
+  "activeVersionId": null,
+  "triggerCount": 0,
+  "description": null,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "meta": {
+    "templateId": "8622"
+  },
+  "pinData": {},
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Inbound trigger for external start. Validate secret; parse JSON; return 200 immediately."
+      },
+      "id": "4a993817-3909-4d2b-b7ef-f2b9f34dea76",
+      "name": "Sticky - Webhook Contract & Security",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "52048302-06bd-4eae-9b004c5ed17d",
+        "options": {}
+      },
+      "id": "ddb50403-dc30-4068-9c40-0022f222b748",
+      "name": "WebHook",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        608,
+        288
+      ],
+      "webhookId": "52048302-06bd-4eae-9aa2-9b004c5ed17d",
+      "typeVersion": 2.1
+    },
+    {
+      "parameters": {
+        "content": "Sanitize the video script to ensure HeyGen can use that correctly.",
+        "height": 224
+      },
+      "id": "2322ee6b-3f5a-46d4-95b2-3ac405711621",
+      "name": "Sticky - Normalize Text for TTS",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        736,
+        208
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const item = $input.item;\nreturn { json: { content: item.json.body.content.replaceAll(\"\\n\", \"\").replaceAll(\"\\r\", \"\"), title:item.json.body.title } };"
+      },
+      "id": "58891633-6f20-4d91-99f9-6f72cfd0336b",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        832,
+        288
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "Init vars (script, voice_id, avatar_id, aspect, sub=false); set defaults.",
+        "height": 320
+      },
+      "id": "2cc0fe4b-a229-4937-a8b7-d6ed766aee6b",
+      "name": "Sticky - Parameter Staging (Secrets & IDs)",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1008,
+        176
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "x-api-key"
+            },
+            {
+              "name": "voice_id"
+            },
+            {
+              "name": "avatar_id"
+            },
+            {
+              "name": "title",
+              "stringValue": "={{ $json.title }}"
+            },
+            {
+              "name": "content",
+              "stringValue": "={{ $json.content }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "86024350-5e49-43a6-a98f-f3cc0ad63abf",
+      "name": "Setup Heygen Parameters",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1088,
+        288
+      ],
+      "typeVersion": 3,
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "Submit video generation request to HeyGen using API: POST /v2/video/generate with params.",
+        "height": 288,
+        "width": 208
+      },
+      "id": "f1fa5816-f371-4a91-8eed-fca27399b46f",
+      "name": "Sticky - Create HeyGen Job (v2)",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1264,
+        176
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.heygen.com/v2/video/generate",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Api-Key",
+              "value": "={{ $json['x-api-key'] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"{{ $json.avatar_id }}\",\n        \"avatar_style\": \"normal\"\n      },\n      \"voice\": {\n        \"type\": \"text\",\n        \"input_text\": \"{{ $json.content }}\",\n        \"voice_id\": \"{{ $json.voice_id }}\",\n        \"speed\": 1.1\n      }\n    }\n  ],\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  }\n}",
+        "options": {}
+      },
+      "id": "970c4d5f-0ba5-4b3e-9b0b-d6edb8821f9b",
+      "name": "Create Avatar Video (HeyGen)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1312,
+        288
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "content": "Delay polling to avoid rate limits; increase wait for long video generations",
+        "height": 272,
+        "width": 208
+      },
+      "id": "ff31c0bd-26af-4065-8e7f-9910955e5326",
+      "name": "Sticky - Polling Cycle",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1488,
+        192
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "amount": 0.1,
+        "unit": "minutes"
+      },
+      "id": "2661127a-2c82-4a88-9336-0a04df5eddb3",
+      "name": "Wait for Video (HeyGen)",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        1536,
+        288
+      ],
+      "webhookId": "d9404622-0a06-4a65-959e-badd4fd87465",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "https://api.heygen.com/v1/video_status.get",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "video_id",
+              "value": "={{ $('Create Avatar Video (HeyGen)').item.json.data.video_id }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Api-Key",
+              "value": "={{ $('Setup Heygen Parameters').item.json['x-api-key'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36b2a0f9-84d4-4b1d-b61b-f2233b28ffe2",
+      "name": "Get Avatar Video Status (HeyGen)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1760,
+        288
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "2b0f3da8-9f60-4a14-af38-8064531cf6d4",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "processing"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "37a4815e-7562-4764-8883-03e2502a897a",
+      "name": "If Processing Completed",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1968,
+        288
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "content": "If status is not 'processing' -> Try to download; if download fails it means the video generation in HeyGen errored for whatever reason.",
+        "height": 256
+      },
+      "id": "7de09738-3b54-4b96-a46d-65c85767da8e",
+      "name": "Sticky - Download Result (Binary)",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2128,
+        176
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.video_url }}",
+        "options": {}
+      },
+      "id": "a97d12ea-8280-41bc-a415-42df2083c017",
+      "name": "Download Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2192,
+        288
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "content": "Upload the video (downloaded data) to Youtube.",
+        "height": 240,
+        "width": 224
+      },
+      "id": "d2f7447a-232a-4817-89ef-b2058d570643",
+      "name": "Sticky - YouTube Upload (Binary Property & Metadata)",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2384,
+        192
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Setup Heygen Parameters').item.json.title }}",
+        "regionCode": "US",
+        "categoryId": "28",
+        "options": {}
+      },
+      "id": "6056c5ef-2c7f-47fd-b75c-0cf3ad286997",
+      "name": "Upload a video",
+      "type": "n8n-nodes-base.youTube",
+      "position": [
+        2416,
+        288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Get status of the generated video from HeyGen.",
+        "height": 272,
+        "width": 208
+      },
+      "id": "2ee94e2e-531d-40d7-8d83-0a805b96b3b4",
+      "name": "Sticky - Polling Cycle1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1712,
+        192
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Setup Heygen Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WebHook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "Upload a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Processing Completed": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for Video (HeyGen)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setup Heygen Parameters": {
+      "main": [
+        [
+          {
+            "node": "Create Avatar Video (HeyGen)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Video (HeyGen)": {
+      "main": [
+        [
+          {
+            "node": "Get Avatar Video Status (HeyGen)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Avatar Video (HeyGen)": {
+      "main": [
+        [
+          {
+            "node": "Wait for Video (HeyGen)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Avatar Video Status (HeyGen)": {
+      "main": [
+        [
+          {
+            "node": "If Processing Completed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

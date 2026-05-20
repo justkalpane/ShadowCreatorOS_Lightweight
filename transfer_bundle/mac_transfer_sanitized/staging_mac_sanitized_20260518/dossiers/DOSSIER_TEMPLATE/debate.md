@@ -1,0 +1,5 @@
+﻿# Debate
+- strengths:
+- weaknesses:
+- counterpoints:
+

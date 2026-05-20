@@ -1,0 +1,32 @@
+# non_shadow
+
+- count: 28
+
+- ✨🤖Automate Multi-Platform Social Media Content Creation with AI 2 | id=2HngibnKQxBY11OP | file=workflow_export_sanitized/Automate_Multi_Platform_Social_Media_Content_Creation_with_AI_2__2HngibnKQxBY11OP.json
+- General 3D presentation workflow with Midjourney, GPT-4o-image and Kling APIs | id=3U1Or361qbCgCe1I | file=workflow_export_sanitized/General_3D_presentation_workflow_with_Midjourney_GPT_4o_image_and_Kling_APIs__3U1Or361qbCgCe1I.json
+- Generate social videos with AI avatars using VEED, Claude, and OpenAI | id=3ciLA697pqL3AruK | file=workflow_export_sanitized/Generate_social_videos_with_AI_avatars_using_VEED_Claude_and_OpenAI__3ciLA697pqL3AruK.json
+- Create & share lip-synced avatar videos with Infinitalk AI & upload to TikTok/YouTube | id=8tAJ8owd5uW7NO6B | file=workflow_export_sanitized/Create_share_lip_synced_avatar_videos_with_Infinitalk_AI_upload_to_TikTok_YouTube__8tAJ8owd5uW7NO6B.json
+- Automated YouTube video scheduling & AI metadata generation 🎬 | id=AHAk7SsgfgB98aMo | file=workflow_export_sanitized/Automated_YouTube_video_scheduling_AI_metadata_generation__AHAk7SsgfgB98aMo.json
+- Generate cinematic videos with OpenAI Sora and uploadtourl hosting 2 | id=AqV6JbOCO2VAt0aE | file=workflow_export_sanitized/Generate_cinematic_videos_with_OpenAI_Sora_and_uploadtourl_hosting_2__AqV6JbOCO2VAt0aE.json
+- Create AI personalized video & voice outreach with HeyGen, ElevenLabs & Perplexity | id=B3QtC5lPGtnPkyJR | file=workflow_export_sanitized/Create_AI_personalized_video_voice_outreach_with_HeyGen_ElevenLabs_Perplexity__B3QtC5lPGtnPkyJR.json
+- Automate AI video creation & multi-platform publishing with Gemini & Creatomate | id=BqdEJfWweWhV3VrP | file=workflow_export_sanitized/Automate_AI_video_creation_multi_platform_publishing_with_Gemini_Creatomate__BqdEJfWweWhV3VrP.json
+- Generate AI avatar videos from text with HeyGen and upload to YouTube | id=DWYXAkTFi6r1n3im | file=workflow_export_sanitized/Generate_AI_avatar_videos_from_text_with_HeyGen_and_upload_to_YouTube__DWYXAkTFi6r1n3im.json
+- Automate AI news videos with GPT-4o, Heygen Avatars, and Blotato | id=J4Gmv5gkkSkjweaS | file=workflow_export_sanitized/Automate_AI_news_videos_with_GPT_4o_Heygen_Avatars_and_Blotato__J4Gmv5gkkSkjweaS.json
+- AI YouTube trend finder based on niche | id=J7rC466LserURUoG | file=workflow_export_sanitized/AI_YouTube_trend_finder_based_on_niche__J7rC466LserURUoG.json
+- Get a summary of each podcast in your YouTube playlist daily automatically free | id=KIN128ViolnkXhDI | file=workflow_export_sanitized/Get_a_summary_of_each_podcast_in_your_YouTube_playlist_daily_automatically_free__KIN128ViolnkXhDI.json
+- Create AI news avatar videos with Dumpling AI, GPT-4o and HeyGen | id=KTru6icuqaCikB7M | file=workflow_export_sanitized/Create_AI_news_avatar_videos_with_Dumpling_AI_GPT_4o_and_HeyGen__KTru6icuqaCikB7M.json
+- AI content creation and publishing engine with Mistral, Creatomate, and YouTube | id=QnYM048NZQ2el0ti | file=workflow_export_sanitized/AI_content_creation_and_publishing_engine_with_Mistral_Creatomate_and_YouTube__QnYM048NZQ2el0ti.json
+- ⚡AI-powered YouTube video summarization & analysis | id=RJZfWpTnerY8dTXY | file=workflow_export_sanitized/AI_powered_YouTube_video_summarization_analysis__RJZfWpTnerY8dTXY.json
+- Generate text images from the Free DummyJSON API using the HTTP request node | id=SBzxhyz7l2XlNlHJ | file=workflow_export_sanitized/Generate_text_images_from_the_Free_DummyJSON_API_using_the_HTTP_request_node__SBzxhyz7l2XlNlHJ.json
+- Generate text images from the Free DummyJSON API using the HTTP request node 2 | id=VwsCYZg1glcyamPH | file=workflow_export_sanitized/Generate_text_images_from_the_Free_DummyJSON_API_using_the_HTTP_request_node_2__VwsCYZg1glcyamPH.json
+- Generate AI viral videos with NanoBanana & VEO3, shared on socials via Blotato | id=YdBriWl8kjRqClva | file=workflow_export_sanitized/Generate_AI_viral_videos_with_NanoBanana_VEO3_shared_on_socials_via_Blotato__YdBriWl8kjRqClva.json
+- Generate & auto-post tech news AI avatar videos to social media with Heygen and Blotato | id=ZpSkncOwYzqXP8XL | file=workflow_export_sanitized/Generate_auto_post_tech_news_AI_avatar_videos_to_social_media_with_Heygen_and_Blotato__ZpSkncOwYzqXP8XL.json
+- AI-powered short-form video generator with OpenAI, Flux, Kling, and ElevenLabs | id=b3BIpRhfUUIf5Oco | file=workflow_export_sanitized/AI_powered_short_form_video_generator_with_OpenAI_Flux_Kling_and_ElevenLabs__b3BIpRhfUUIf5Oco.json
+- Generate custom AI videos with Digital Avatars using HeyGen API | id=ckaieD5tNs2pgplr | file=workflow_export_sanitized/Generate_custom_AI_videos_with_Digital_Avatars_using_HeyGen_API__ckaieD5tNs2pgplr.json
+- Free YouTube video analyzer with AI-powered summaries & email alerts | id=dOKm3qLjKtJDHK8N | file=workflow_export_sanitized/Free_YouTube_video_analyzer_with_AI_powered_summaries_email_alerts__dOKm3qLjKtJDHK8N.json
+- AI YouTube analytics agent: Comment analyzer & insights reporter | id=eAYVX6zLUIVEuJiG | file=workflow_export_sanitized/AI_YouTube_analytics_agent_Comment_analyzer_insights_reporter__eAYVX6zLUIVEuJiG.json
+- Generate & publish AI news avatar videos with HeyGen and Blotato | id=fGsHM2nDtoZFRU72 | file=workflow_export_sanitized/Generate_publish_AI_news_avatar_videos_with_HeyGen_and_Blotato__fGsHM2nDtoZFRU72.json
+- AI content creation and publishing engine with Mistral, Creatomate, and YouTube 2 | id=gymxRXpGgeSakr3J | file=workflow_export_sanitized/AI_content_creation_and_publishing_engine_with_Mistral_Creatomate_and_YouTube_2__gymxRXpGgeSakr3J.json
+- Create & upload AI-generated ASMR YouTube Shorts with Seedance, Fal AI, and GPT-4 | id=pmOMvjAiU21q5eGs | file=workflow_export_sanitized/Create_upload_AI_generated_ASMR_YouTube_Shorts_with_Seedance_Fal_AI_and_GPT_4__pmOMvjAiU21q5eGs.json
+- Create and publish AI avatar short videos with Gemini, HeyGen and Google Sheets | id=rNCgf3NYvZR9RTNt | file=workflow_export_sanitized/Create_and_publish_AI_avatar_short_videos_with_Gemini_HeyGen_and_Google_Sheets__rNCgf3NYvZR9RTNt.json
+- Generate cinematic videos with OpenAI Sora and uploadtourl hosting | id=tu9FLv3Yq2WtPqWJ | file=workflow_export_sanitized/Generate_cinematic_videos_with_OpenAI_Sora_and_uploadtourl_hosting__tu9FLv3Yq2WtPqWJ.json

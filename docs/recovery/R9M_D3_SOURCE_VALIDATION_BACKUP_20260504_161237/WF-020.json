@@ -1,0 +1,476 @@
+﻿{
+  "name": "WF-020 Final Approval Canonical",
+  "description": "Canonical executable final approval workflow.",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "wf-020_internal_trigger_node",
+      "name": "Internal Trigger Node",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "path": "wf-020-final-approval",
+        "httpMethod": "POST",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "wf-020_trigger_node",
+      "name": "Trigger Node",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $json.body || {};\nconst dossierId = $json.dossier_id || body.dossier_id || 'DOSSIER-UNSPECIFIED';\nconst routeId = $json.route_id || body.route_id || 'ROUTE_PHASE1_STANDARD';\nconst decision = $json.approval_decision || body.approval_decision || $json.approval_status || body.approval_status || 'APPROVED';\nconst replayTarget = $json.replay_target_workflow || body.replay_target_workflow || 'CWF-210';\nreturn [{ json: { ...$json, dossier_id: dossierId, route_id: routeId, approval_decision: decision, replay_target_workflow: replayTarget, dossier_context: { dossier_id: dossierId, loaded_at: new Date().toISOString() } } }];"
+      },
+      "id": "wf-020_dossier_load_node",
+      "name": "Dossier Load Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, registry_lookup: { skill_registry: 'registries/skill_registry.yaml', workflow_bindings: 'registries/workflow_bindings.yaml', schema_registry: 'registries/schema_registry.yaml', director_binding: 'registries/director_binding.yaml' } } }];"
+      },
+      "id": "wf-020_registry_lookup_node",
+      "name": "Registry Lookup Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date().toISOString();\nconst dossierId = $json.dossier_id || 'DOSSIER-UNSPECIFIED';\nconst routeId = $json.route_id || 'WF-020-ROUTE';\nconst researchConfidence = Number($json.research_confidence_score ?? 0.90);\nconst approvalDecision = $json.approval_decision || 'APPROVED';\nconst packet = {\n  instance_id: 'WF-020-' + Date.now(),\n  artifact_family: 'approval_decision_packet',\n  schema_version: '1.0.0',\n  producer_workflow: 'WF-020',\n  dossier_ref: dossierId,\n  created_at: now,\n  status: 'CREATED',\n  payload: {\n    workflow_id: 'WF-020',\n    route_id: routeId,\n    research_confidence_score: researchConfidence,\n    approval_decision: approvalDecision\n  }\n};\nreturn [{ json: { ...$json, runtime_packet: packet, runtime: { had_error: false, error_message: '' } } }];"
+      },
+      "id": "wf-020_skill_execution_node",
+      "name": "Skill Execution Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const packet = $json.runtime_packet;\n  if (!packet || !packet.instance_id || !packet.artifact_family || !packet.dossier_ref) {\n    throw new Error('missing required runtime_packet fields');\n  }\n  return [{ json: { ...$json, validation_status: 'SUCCESS', route_to_error: false } }];\n} catch (error) {\n  return [{ json: { ...$json, validation_status: 'FAILED', route_to_error: true, validation_error: String(error.message || error) } }];\n}"
+      },
+      "id": "wf-020_packet_validation_node",
+      "name": "Packet Validation Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.route_to_error) return [];\nconst fs = require('fs');\nconst path = require('path');\n\nconst now = new Date().toISOString();\nconst packet = $json.runtime_packet || {};\nconst dossierId = packet.dossier_ref || $json.dossier_id || 'DOSSIER-UNSPECIFIED';\nconst approvalDecision = (packet.payload && packet.payload.approval_decision) || $json.approval_decision || 'APPROVED';\n\nconst repoRoot = 'C:/ShadowEmpire-Git_Restore_01';\nconst dossiersDir = path.join(repoRoot, 'dossiers');\nconst dataDir = path.join(repoRoot, 'data');\nconst dossierPath = path.join(dossiersDir, dossierId + '.json');\nconst indexPath = path.join(dataDir, 'se_dossier_index.json');\n\nif (!fs.existsSync(dossiersDir)) fs.mkdirSync(dossiersDir, { recursive: true });\nif (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });\n\nlet dossier = {\n  dossier_id: dossierId,\n  created_at: now,\n  status: 'active',\n  namespaces: {},\n  _version: 0,\n  _created_at: now,\n  _audit_trail: []\n};\nif (fs.existsSync(dossierPath)) {\n  try {\n    const parsed = JSON.parse(fs.readFileSync(dossierPath, 'utf8'));\n    dossier = {\n      ...dossier,\n      ...parsed,\n      namespaces: typeof parsed.namespaces === 'object' && parsed.namespaces ? parsed.namespaces : {},\n      _audit_trail: Array.isArray(parsed._audit_trail) ? parsed._audit_trail : []\n    };\n  } catch (e) {\n    throw new Error('WF-020 persistence failed: dossier parse error: ' + e.message);\n  }\n}\n\nconst approvalNs = (dossier.namespaces.approval && typeof dossier.namespaces.approval === 'object') ? dossier.namespaces.approval : {};\nconst decisions = Array.isArray(approvalNs.decisions) ? approvalNs.decisions : [];\ndecisions.push({\n  timestamp: now,\n  workflow_id: 'WF-020',\n  packet_id: packet.instance_id || null,\n  decision: approvalDecision,\n  route_next: ($json.routing_decision && $json.routing_decision.on_success_next_workflow) || null\n});\napprovalNs.decisions = decisions;\napprovalNs.latest_decision = approvalDecision;\napprovalNs.last_decision_at = now;\ndossier.namespaces.approval = approvalNs;\ndossier.last_updated = now;\ndossier.status = approvalDecision === 'APPROVED' ? 'APPROVED' : 'REJECTED';\ndossier._version = Number(dossier._version || 0) + 1;\ndossier._last_updated_at = now;\ndossier._audit_trail.push({\n  timestamp: now,\n  workflow_id: 'WF-020',\n  operation: 'APPROVAL_DECISION_APPEND',\n  decision: approvalDecision,\n  notes: 'append approval decision into dossier namespace'\n});\n\nfs.writeFileSync(dossierPath, JSON.stringify(dossier, null, 2), 'utf8');\n\nlet index = {\n  table: 'se_dossier_index',\n  description: 'Index of all dossiers; updated by WF-001 and dossier_writer.',\n  records: [],\n  created_at: now,\n  last_updated: now\n};\nif (fs.existsSync(indexPath)) {\n  index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));\n  index.records = Array.isArray(index.records) ? index.records : [];\n} else {\n  index.records = [];\n}\nconst existing = index.records.find((r) => r && r.dossier_id === dossierId);\nif (existing) {\n  existing.updated_at = now;\n  existing.status = dossier.status.toLowerCase();\n  existing.source_workflow = 'WF-020 Final Approval Canonical';\n} else {\n  index.records.push({\n    dossier_id: dossierId,\n    status: dossier.status.toLowerCase(),\n    created_at: now,\n    updated_at: now,\n    source_workflow: 'WF-020 Final Approval Canonical'\n  });\n}\nindex.last_updated = now;\nfs.writeFileSync(indexPath, JSON.stringify(index, null, 2), 'utf8');\n\nreturn [{\n  json: {\n    ...$json,\n    persistence: {\n      wf: 'WF-020',\n      dossier_path: dossierPath,\n      dossier_index_path: indexPath,\n      decision: approvalDecision,\n      dossier_version: dossier._version,\n      persisted_at: now\n    },\n    dossier_write: {\n      mutation_type: 'append_to_array',\n      target: 'dossier.runtime_packets',\n      timestamp: now,\n      writer_id: 'WF-020',\n      skill_id: 'WF-020',\n      instance_id: packet.instance_id || ('WF-020-' + Date.now()),\n      schema_version: packet.schema_version || '1.0.0',\n      lineage_reference: packet.producer_workflow || 'WF-020',\n      audit_entry: 'append-only dossier write from canonical workflow'\n    }\n  }\n}];"
+      },
+      "id": "wf-020_append_only_dossier_write_node",
+      "name": "Append-Only Dossier Write Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.route_to_error) return [];\nreturn [{\n  json: {\n    ...$json,\n    se_packet_index_write: {\n      operation: 'create_new_index_row',\n      packet_id: $json.runtime_packet.instance_id,\n      dossier_id: $json.runtime_packet.dossier_ref,\n      packet_family: $json.runtime_packet.artifact_family,\n      workflow_id: 'WF-020',\n      created_at: new Date().toISOString()\n    }\n  }\n}];"
+      },
+      "id": "wf-020_packet_index_write_node",
+      "name": "se_packet_index Write Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1520,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if (!$json.route_to_error) return [];\nreturn [{\n  json: {\n    workflow_id: 'WF-020',\n    routing_decision: 'ERROR',\n    route_to_workflow: 'WF-900',\n    error_message: $json.validation_error || $json.runtime?.error_message || 'unknown workflow error',\n    failure_packet: $json.runtime_packet || null\n  }\n}];"
+      },
+      "id": "wf-020_wf900_error_routing_node",
+      "name": "Error Routing WF-900 Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.route_to_error) return [];\nlet nextWorkflow = 'WF-300';\nlet decision = 'SUCCESS_PATH';\n\nif ('WF-020' === 'CWF-140') {\n  const confidence = Number($json.runtime_packet?.payload?.research_confidence_score ?? 1);\n  if (confidence < 0.85) {\n    nextWorkflow = 'CWF-140';\n    decision = 'RUN_PHASE1C_CONDITIONAL_RESEARCH';\n  } else {\n    nextWorkflow = 'CWF-210';\n    decision = 'SKIP_PHASE1C_PROCEED_SCRIPT';\n  }\n}\n\nif ('WF-020' === 'WF-020') {\n  const approval = String($json.runtime_packet?.payload?.approval_decision || 'APPROVED');\n  nextWorkflow = approval === 'APPROVED' ? 'WF-300' : 'WF-021';\n  decision = approval === 'APPROVED' ? 'APPROVED_FOR_PUBLISHING' : 'REJECTED_ROUTE_REPLAY';\n}\n\nif ('WF-020' === 'WF-021') {\n  nextWorkflow = $json.replay_target_workflow || 'CWF-210';\n  decision = 'REPLAY_TO_PRIOR_STAGE';\n}\n\nreturn [{\n  json: {\n    ...$json,\n    routing_decision: {\n      on_success_next_workflow: nextWorkflow,\n      on_error_workflow: 'WF-900',\n      decision,\n      wf900_bound: true\n    }\n  }\n}];"
+      },
+      "id": "wf-020_next_stage_routing_node",
+      "name": "Next-Stage Routing Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1740,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.route_to_error) return [];\nconst approvalDecision = $json.runtime_packet?.payload?.approval_decision || $json.approval_decision || 'APPROVED';\nreturn [{\n  json: {\n    workflow_id: 'WF-020',\n    execution_status: 'SUCCESS',\n    approval_decision: approvalDecision,\n    replay_target_workflow: $json.replay_target_workflow || 'CWF-210',\n    runtime_packet: $json.runtime_packet,\n    routing_decision: $json.routing_decision,\n    completion_packet: {\n      instance_id: 'WF-020-COMP-' + Date.now(),\n      artifact_family: 'workflow_completion_packet',\n      schema_version: '1.0.0',\n      producer_workflow: 'WF-020',\n      dossier_ref: $json.runtime_packet?.dossier_ref || 'DOSSIER-UNSPECIFIED',\n      created_at: new Date().toISOString(),\n      status: 'CREATED',\n      payload: {\n        source_packet_id: $json.runtime_packet?.instance_id || null,\n        next_workflow: $json.routing_decision?.on_success_next_workflow || 'WF-300',\n        route_to_wf900: 'WF-900',\n        approval_decision: approvalDecision\n      }\n    }\n  }\n}];"
+      },
+      "id": "wf-020_completion_packet_emission_node",
+      "name": "Completion Packet Emission Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1960,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Normalize approval route to single-output data for deterministic branching\nconst raw = (\n  $json.approval_status ||\n  $json.approval_decision ||\n  ($json.payload && $json.payload.approval_status) ||\n  ($json.completion_packet && $json.completion_packet.payload && $json.completion_packet.payload.approval_decision) ||\n  ($json.runtime_packet && $json.runtime_packet.payload && $json.runtime_packet.payload.approval_decision) ||\n  'approved'\n);\nconst status = String(raw).toLowerCase();\nconst approved = ['approved','approve','pass','default_approved'].includes(status);\nreturn [{ json: { ...$json, approval_status_normalized: approved ? 'approved' : 'rejected', branch: approved ? 'approved' : 'rejected' } }];"
+      },
+      "id": "wf020_approval_branch_node",
+      "name": "Approval Branch Switch",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1710,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "e48l3HifOTrE59Hf",
+          "mode": "id",
+          "cachedResultName": "WF-500 Publishing Distribution Pack Canonical"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf020_execute_wf500_node",
+      "name": "Execute WF-500 Publishing",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2060,
+        500
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "5fG18tfg8QkVJa4I",
+          "mode": "id",
+          "cachedResultName": "WF-021 Replay Remodify Canonical"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf020_execute_wf021_node",
+      "name": "Execute WF-021 Replay",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2060,
+        700
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "if (($json.approval_status_normalized || '').toLowerCase() !== 'approved') return [];\nreturn [{ json: { ...$json, branch: 'approved' } }];"
+      },
+      "id": "wf020_approved_filter_node",
+      "name": "Approved Route Filter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1880,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if (($json.approval_status_normalized || '').toLowerCase() === 'approved') return [];\nreturn [{ json: { ...$json, branch: 'rejected' } }];"
+      },
+      "id": "wf020_rejected_filter_node",
+      "name": "Rejected Route Filter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1880,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const packet = $json.runtime_packet || {};\nconst decision = String(packet.payload?.approval_decision || $json.approval_decision || 'APPROVED').toUpperCase();\nconst allowed = ['APPROVED','REJECTED','REVIEW','REQUIRES_REVIEW'];\nconst invalid = !packet.instance_id || !packet.dossier_ref || !allowed.includes(decision);\nreturn [{\n  json: {\n    ...$json,\n    parent_status_closure: {\n      workflow_id: 'WF-020',\n      closure_status: invalid ? 'FAILED' : 'SUCCESS',\n      checked_at: new Date().toISOString(),\n      approval_decision: decision,\n      reason: invalid ? 'Invalid approval packet/decision' : 'Approval closure healthy'\n    },\n    route_to_error: invalid,\n    validation_error: invalid ? 'WF-020 closure validation failed' : null\n  }\n}];"
+      },
+      "id": "wf020_parent_status_closure_node",
+      "name": "Parent Status Closure Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1850,
+        220
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Dossier Load Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dossier Load Node": {
+      "main": [
+        [
+          {
+            "node": "Registry Lookup Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registry Lookup Node": {
+      "main": [
+        [
+          {
+            "node": "Skill Execution Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Skill Execution Node": {
+      "main": [
+        [
+          {
+            "node": "Packet Validation Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Packet Validation Node": {
+      "main": [
+        [
+          {
+            "node": "Append-Only Dossier Write Node",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Routing WF-900 Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append-Only Dossier Write Node": {
+      "main": [
+        [
+          {
+            "node": "se_packet_index Write Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "se_packet_index Write Node": {
+      "main": [
+        [
+          {
+            "node": "Next-Stage Routing Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Next-Stage Routing Node": {
+      "main": [
+        [
+          {
+            "node": "Parent Status Closure Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completion Packet Emission Node": {
+      "main": [
+        [
+          {
+            "node": "Approval Branch Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approval Branch Switch": {
+      "main": [
+        [
+          {
+            "node": "Approved Route Filter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Rejected Route Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute WF-500 Publishing": {
+      "main": [
+        []
+      ]
+    },
+    "Execute WF-021 Replay": {
+      "main": [
+        []
+      ]
+    },
+    "Internal Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Dossier Load Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved Route Filter": {
+      "main": [
+        [
+          {
+            "node": "Execute WF-500 Publishing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rejected Route Filter": {
+      "main": [
+        [
+          {
+            "node": "Execute WF-021 Replay",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parent Status Closure Node": {
+      "main": [
+        [
+          {
+            "node": "Completion Packet Emission Node",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Routing WF-900 Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "workflow_id": "WF-020",
+    "phase": "phase1",
+    "vein": "approval_vein",
+    "purpose": "Final approval gate; routes approved dossiers to analytics or rejected to replay.",
+    "implementation_depth": "production_grade",
+    "owner_director": "narada",
+    "next_workflow": "WF-600",
+    "canonical_file": "n8n/workflows/WF-020.json",
+    "legacy_file": "n8n/workflows/approval/WF-020-final-approval.json",
+    "required_node_contract": [
+      "trigger_node",
+      "dossier_load_node",
+      "registry_lookup_node",
+      "skill_execution_node",
+      "packet_validation_node",
+      "append_only_dossier_write_node",
+      "packet_index_write_node",
+      "wf900_error_routing_node",
+      "next_stage_routing_node",
+      "completion_packet_emission_node"
+    ],
+    "wf900_error_route": "WF-900",
+    "next_workflow_on_reject": "WF-021",
+    "phase2_chaining": {
+      "applied_at": "2026-04-29",
+      "pattern": "approval_branch",
+      "branches": {
+        "approved": {
+          "wf": "WF-500",
+          "live_id": "e48l3HifOTrE59Hf"
+        },
+        "rejected": {
+          "wf": "WF-021",
+          "live_id": "5fG18tfg8QkVJa4I"
+        }
+      }
+    }
+  },
+  "active": true,
+  "settings": {}
+}

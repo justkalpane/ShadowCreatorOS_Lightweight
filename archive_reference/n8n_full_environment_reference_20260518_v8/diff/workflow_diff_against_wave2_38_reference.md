@@ -1,0 +1,46 @@
+# Workflow Diff Against Wave2 38 Reference
+
+- wave2_reference_workflow_count: 38
+- full_db_workflow_count: 71
+- overlap_count: 38
+- workflows_present_only_in_wave2_reference: 0
+- workflows_present_only_in_db_full_environment: 33
+- non_shadow_or_template_workflows_discovered_not_in_wave2: 28
+- active_workflows_missing_from_wave2: 0
+- inactive_workflows_missing_from_wave2: 30
+- archived_workflows_missing_from_wave2: 3
+
+## DB-only workflows (keyed by marker-or-id)
+- 2HngibnKQxBY11OP
+- 3U1Or361qbCgCe1I
+- 3ciLA697pqL3AruK
+- 8tAJ8owd5uW7NO6B
+- AHAk7SsgfgB98aMo
+- AqV6JbOCO2VAt0aE
+- B3QtC5lPGtnPkyJR
+- BqdEJfWweWhV3VrP
+- CH70BvMePN6ofDNo
+- DWYXAkTFi6r1n3im
+- I7HWYJta1QQFwUaO
+- J4Gmv5gkkSkjweaS
+- J7rC466LserURUoG
+- KIN128ViolnkXhDI
+- KTru6icuqaCikB7M
+- QnYM048NZQ2el0ti
+- RJZfWpTnerY8dTXY
+- SBzxhyz7l2XlNlHJ
+- VwsCYZg1glcyamPH
+- YdBriWl8kjRqClva
+- ZpSkncOwYzqXP8XL
+- ahRDTyqKrfJd8DUK
+- b3BIpRhfUUIf5Oco
+- bRQXDXVsPXQgCde8
+- ckaieD5tNs2pgplr
+- dOKm3qLjKtJDHK8N
+- eAYVX6zLUIVEuJiG
+- fGsHM2nDtoZFRU72
+- gymxRXpGgeSakr3J
+- pmOMvjAiU21q5eGs
+- rNCgf3NYvZR9RTNt
+- sbhS1zacj7Mje78U
+- tu9FLv3Yq2WtPqWJ

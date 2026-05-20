@@ -1,0 +1,118 @@
+Launching n8n with:
+  N8N_USER_FOLDER = C:\ShadowEmpire\n8n_user_restore_01
+  N8N_BINARY_DATA_STORAGE_PATH = C:\ShadowEmpire\n8n_user_restore_01\binaryData
+  N8N_HOST        = 127.0.0.1
+  N8N_PORT        = 5678
+  N8N_RUNNERS_ENABLED = false
+  NODE_FUNCTION_ALLOW_BUILTIN = fs,path
+  EXECUTIONS_DATA_SAVE_ON_SUCCESS = all
+  EXECUTIONS_DATA_SAVE_ON_ERROR   = all
+  EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS = true
+  EXECUTIONS_DATA_SAVE_ON_PROGRESS = true
+  EXECUTIONS_DATA_PRUNE = false
+
+Once running, in another shell:  npm run n8n:status
+
+Initializing n8n process
+n8n ready on ::, port 5678
+n8n Task Broker ready on 127.0.0.1, port 5679
+Failed to start Python task runner in internal mode. because its virtual environment is missing from this system. Launching a Python runner in internal mode is intended only for debugging and is not recommended for production. Users are encouraged to deploy in external mode. See: https://docs.n8n.io/hosting/configuration/task-runners/#setting-up-external-mode
+
+There are deprecations related to your environment variables. Please take the recommended actions to update your configuration:
+ - N8N_BINARY_DATA_STORAGE_PATH -> Use N8N_STORAGE_PATH instead.
+ - N8N_RUNNERS_ENABLED -> Remove this environment variable; it is no longer needed.
+
+[license SDK] Skipping renewal on init: license cert is not due for renewal
+Registered runner "JS Task Runner" (AKLvIQWUoKCDPtL26ktKz) 
+Version: 2.18.5
+Building workflow dependency index...
+Finished building workflow dependency index. Processed 0 draft workflows, 0 published workflows.
+Start Active Workflows:
+Execution is already being resumed by another process
+Activated workflow "CWF-110 Topic Discovery Canonical" (ID: kDa9U4UqGWlG6g3O)
+Task (HlvigWB4) rejected by Runner with reason "Offer expired - not accepted within validity window"
+Activated workflow "CWF-120 Topic Qualification Canonical" (ID: t1OGMmjxWkI9X7H6)
+Activated workflow "CWF-130 Topic Scoring Canonical" (ID: aMuFbh7x41Ztpdp4)
+Activated workflow "CWF-140 Research Synthesis Canonical" (ID: K8ffUF0eWIXiiQE8)
+Activated workflow "CWF-210 Script Generation Canonical" (ID: JkqH3MB9n7IWUSmT)
+Activated workflow "CWF-220 Script Debate Canonical" (ID: tzQPxC5HChpoevbL)
+Activated workflow "CWF-230 Script Refinement Canonical" (ID: JoLoaeTOdoe5c3ve)
+Activated workflow "CWF-240 Final Script Shaping Canonical" (ID: GprQFnIiU74KKEpY)
+Activated workflow "CWF-310 Execution Context Builder Canonical" (ID: EZAmggQBwBAD3UdR)
+Activated workflow "CWF-320 Platform Packager Canonical" (ID: PPgdzUvZ3gpmmICi)
+Activated workflow "CWF-330 Asset Brief Generator Canonical" (ID: BlrDp37eCZ32JgdP)
+Activated workflow "CWF-340 Lineage Validator Canonical" (ID: I1af7W2pkAFEn3z5)
+Activated workflow "CWF-410 Thumbnail Generator Canonical" (ID: dkyayq7YYDsBS9UY)
+Activated workflow "CWF-420 Visual Asset Planner Canonical" (ID: JQTFjmsn9dLVIdVu)
+Activated workflow "CWF-430 Audio Script Optimizer Canonical" (ID: ddLEG62Hkd9Gf2le)
+Activated workflow "CWF-440 Media Package Finalizer Canonical" (ID: MeR3pzh84KpLMcNf)
+Activated workflow "CWF-510 Platform Metadata Generator Canonical" (ID: AQLKHu7qnQTupqzi)
+Activated workflow "CWF-520 Distribution Planner Canonical" (ID: QPtDu7W7eaDNKgeI)
+Activated workflow "CWF-530 Publish Readiness Checker Canonical" (ID: nGqi7w4e4pxskC1I)
+Activated workflow "CWF-610 Performance Metrics Collector Canonical" (ID: TtNZPHaQ0Jt7Qg84)
+Activated workflow "CWF-620 Audience Feedback Aggregator Canonical" (ID: iqh4gVJjrsMnTvnR)
+Activated workflow "CWF-630 Evolution Signal Synthesizer Canonical" (ID: O2qGFq562dfOB1rc)
+Activated workflow "WF-000 Health Check Canonical" (ID: OhbVrpoiVgRV5IfL)
+Activated workflow "WF-021 Replay Remodify Canonical" (ID: Ih7yfJs1ON43xKmT)
+Activated workflow "WF-022 Provider Packet Bridge Canonical" (ID: wqM2V7L9hK4pT8xC)
+Activated workflow "WF-023 Downstream Resource Preparation Canonical" (ID: rN4bQ1Y6mJ8tC3vP)
+Activated workflow "WF-900 Error Handler Canonical" (ID: jOkYRBMeyyMDHqJ3)
+Activated workflow "WF-901 Error Recovery Canonical" (ID: 8aRUhR4IWrXPvhsB)
+Activated workflow "WF-100 Topic Intelligence Pack Canonical" (ID: ecQoXsf2o3gyrDO1)
+Activated workflow "WF-200 Script Intelligence Pack Canonical" (ID: xkxwnQrS7RPeMOkI)
+Activated workflow "WF-300 Context Engineering Pack Canonical" (ID: UpkDyr7OSJoRu1XX)
+Activated workflow "WF-400 Media Production Pack Canonical" (ID: do0cZuzren68K4Tu)
+Activated workflow "WF-500 Publishing Distribution Pack Canonical" (ID: nPFz46PDjqipVJIq)
+Activated workflow "WF-600 Analytics Evolution Pack Canonical" (ID: VLB5LzxoiGFfWd3h)
+Activated workflow "WF-020 Final Approval Canonical" (ID: 9Wvgfygw2wMqZcUD)
+Activated workflow "WF-010 Parent Orchestrator Canonical" (ID: oCLrZ3aWZkSBvrjn)
+Activated workflow "WF-001 Dossier Create Canonical" (ID: BcbfnoGMbJmTPSIA)
+
+Editor is now accessible via:
+http://127.0.0.1:5678
+Task (QqGTpKPT) rejected by Runner with reason "Offer expired - not accepted within validity window"
+Task (3s8BcyKu) rejected by Runner with reason "Offer expired - not accepted within validity window"
+Task (2Ublu2-r) rejected by Runner with reason "Offer expired - not accepted within validity window"
+(node:19000) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+2026-05-04T09:35:20.030Z [Rudder] error: Response error status: 520
+Response error code: ERR_BAD_RESPONSE
+aborted
+aborted
+Error while fetching community nodes: aborted
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+User attempted to access a workflow without permissions
+[31m404 Could not load the workflow - you can only access workflows owned by you[39m
+Received request for unknown webhook: The requested webhook "POST oCLrZ3aWZkSBvrjn/trigger%20node/wf-010-parent-orchestrator" is not registered.
+[31m404 The requested webhook "POST oCLrZ3aWZkSBvrjn/trigger%20node/wf-010-parent-orchestrator" is not registered.[39m
+Received request for unknown webhook: The requested webhook "POST oCLrZ3aWZkSBvrjn/trigger%20node/wf-010-parent-orchestrator" is not registered.
+[31m404 The requested webhook "POST oCLrZ3aWZkSBvrjn/trigger%20node/wf-010-parent-orchestrator" is not registered.[39m
+Received request for unknown webhook: The requested webhook "POST oCLrZ3aWZkSBvrjn/trigger%20node/wf-010-parent-orchestrator" is not registered.
+[31m404 The requested webhook "POST oCLrZ3aWZkSBvrjn/trigger%20node/wf-010-parent-orchestrator" is not registered.[39m

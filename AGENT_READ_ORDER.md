@@ -62,3 +62,15 @@ For each production mission, output one dossier containing:
 - `lineage.json`
 - `DOSSIER_README.md`
 
+## Phase F: Historical Source References
+
+Use these for deeper historical context only (not as active runtime commands):
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/Detailed_PRD_MASTERPIECE_v34_ZERO_LOSS_HARNESS_RESTRUCTURED.txt`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/latest Codex entire Build status.txt`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/latest Claude entire Build status.txt`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/handoff/current_windows_environment/CURRENT_WINDOWS_ENVIRONMENT_HANDOFF_INDEX.md`
+5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/handoff/mac_migration/MAC_MIGRATION_ZERO_GAP_TECHNICAL_HANDOFF_V4_COMBINED_MASTER.md`
+6. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/archive_reference/old_quarantine_manifest/FREEZE_MANIFEST.md`
+7. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/archive_reference/old_quarantine_manifest/QUARANTINE_STATUS.md`
+8. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/handoff/historical_source_docs/HISTORICAL_SOURCE_DOCS_INDEX.md`

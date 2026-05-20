@@ -27,3 +27,10 @@ Repo-first intelligence is the active path:
 
 n8n/provider layers are deferred execution infrastructure, not required for topic-to-context engineering.
 
+## Historical Context References
+
+Future agents should read historical source docs when deeper background is needed on PRD intent, quarantine decisions, and migration history.
+
+- Historical docs are reference context, not active runtime commands.
+- MAC-05 operating loop and runtime contracts remain active production law.
+- Old full Shadow OS remains quarantined unless explicitly approved for a separate execution phase.

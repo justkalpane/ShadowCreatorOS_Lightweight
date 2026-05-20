@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-05-20",
+  "repo_path": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "purpose": "Historical source document reconciliation for future coding-agent context",
+  "previously_missing_resolved": [
+    {
+      "requested_label": "latest Codex entire Build status",
+      "resolved_path": "latest Codex entire Build status.txt"
+    },
+    {
+      "requested_label": "latest Claude entire Build status",
+      "resolved_path": "latest Claude entire Build status.txt"
+    },
+    {
+      "requested_label": "Detailed PRD v34",
+      "resolved_path": "Detailed_PRD_MASTERPIECE_v34_ZERO_LOSS_HARNESS_RESTRUCTURED.txt"
+    },
+    {
+      "requested_label": "current Windows environment handoff",
+      "resolved_path": "handoff/current_windows_environment/CURRENT_WINDOWS_ENVIRONMENT_HANDOFF_INDEX.md"
+    },
+    {
+      "requested_label": "Mac migration handoff",
+      "resolved_path": "handoff/mac_migration/MAC_MIGRATION_ZERO_GAP_TECHNICAL_HANDOFF_V4_COMBINED_MASTER.md"
+    },
+    {
+      "requested_label": "quarantine reports",
+      "resolved_path": "archive_reference/old_quarantine_manifest/QUARANTINE_STATUS.md"
+    }
+  ],
+  "entries": [
+    {
+      "category": "A",
+      "category_name": "PRD / master architecture source",
+      "path": "Detailed_PRD_MASTERPIECE_v34_ZERO_LOSS_HARNESS_RESTRUCTURED.txt",
+      "confidence": "HIGH",
+      "reason": "Exact filename and PRD marker match",
+      "recommended_use": "Reference architecture and requirement intent",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": "NEEDS_REVIEW"
+    },
+    {
+      "category": "B",
+      "category_name": "Latest Codex build status source",
+      "path": "latest Codex entire Build status.txt",
+      "confidence": "HIGH",
+      "reason": "Exact filename match",
+      "recommended_use": "Implementation chronology and known constraints",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": "NEEDS_REVIEW"
+    },
+    {
+      "category": "C",
+      "category_name": "Latest Claude build status source",
+      "path": "latest Claude entire Build status.txt",
+      "confidence": "HIGH",
+      "reason": "Exact filename match",
+      "recommended_use": "Cross-agent status alignment and drift context",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": "NEEDS_REVIEW"
+    },
+    {
+      "category": "D",
+      "category_name": "Current Windows environment handoff",
+      "path": "handoff/current_windows_environment/CURRENT_WINDOWS_ENVIRONMENT_HANDOFF_INDEX.md",
+      "confidence": "HIGH",
+      "reason": "Direct handoff index for old runtime",
+      "recommended_use": "Legacy-environment boundary and reference map",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "E",
+      "category_name": "Mac migration handoff",
+      "path": "handoff/mac_migration/MAC_MIGRATION_ZERO_GAP_TECHNICAL_HANDOFF_V4_COMBINED_MASTER.md",
+      "confidence": "HIGH",
+      "reason": "Canonical migration handoff artifact",
+      "recommended_use": "Migration rationale and transition doctrine",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "F",
+      "category_name": "Quarantine/freeze reports",
+      "path": "archive_reference/old_quarantine_manifest/FREEZE_MANIFEST.md",
+      "confidence": "HIGH",
+      "reason": "Freeze policy source",
+      "recommended_use": "Why old runtime is quarantined and non-active",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "F",
+      "category_name": "Quarantine/freeze reports",
+      "path": "archive_reference/old_quarantine_manifest/QUARANTINE_STATUS.md",
+      "confidence": "HIGH",
+      "reason": "Quarantine inventory and status matrix",
+      "recommended_use": "Legacy asset classification boundaries",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": "NEEDS_REVIEW"
+    },
+    {
+      "category": "G",
+      "category_name": "n8n reference export / workflow archive docs",
+      "path": "handoff/n8n_export_summary/N8N_FULL_EXPORT_SUMMARY.md",
+      "confidence": "HIGH",
+      "reason": "Primary export summary",
+      "recommended_use": "Workflow corpus count and reuse boundaries",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "G",
+      "category_name": "n8n reference export / workflow archive docs",
+      "path": "archive_reference/n8n_full_environment_reference_20260518_v8/EXPORT_MANIFEST.md",
+      "confidence": "HIGH",
+      "reason": "Export manifest source",
+      "recommended_use": "Reference inventory and transfer-only context",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "H",
+      "category_name": "Transfer safety / migration readiness docs",
+      "path": "audits/migration_readiness/FINAL_MAC_TRANSFER_PACKAGE_SEAL.md",
+      "confidence": "HIGH",
+      "reason": "Final package seal report",
+      "recommended_use": "Readiness and integrity gate evidence",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "H",
+      "category_name": "Transfer safety / migration readiness docs",
+      "path": "audits/transfer_safety/TRANSFER_SAFETY_AUDIT.md",
+      "confidence": "HIGH",
+      "reason": "Transfer safety audit",
+      "recommended_use": "Safety constraints and transfer hygiene",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "I",
+      "category_name": "Agent startup doctrine docs",
+      "path": "START_HERE_FOR_AGENTS.md",
+      "confidence": "HIGH",
+      "reason": "Root entrypoint for future coding agents",
+      "recommended_use": "Startup control plane",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "I",
+      "category_name": "Agent startup doctrine docs",
+      "path": "AGENT_READ_ORDER.md",
+      "confidence": "HIGH",
+      "reason": "Canonical reading sequence",
+      "recommended_use": "Ordered context loading",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    },
+    {
+      "category": "J",
+      "category_name": "Unknown but potentially relevant",
+      "path": "handoff/NEW_CODEX_CHAT_STARTER_PROMPT.md",
+      "confidence": "MEDIUM",
+      "reason": "Historical prompt artifact",
+      "recommended_use": "Supplementary onboarding context if needed",
+      "safe_for_agent_read": true,
+      "contains_possible_secret": false
+    }
+  ]
+}
+

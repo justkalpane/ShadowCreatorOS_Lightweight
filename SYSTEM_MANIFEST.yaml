@@ -1,0 +1,136 @@
+version: 6
+manifest_type: system_manifest
+generated_at: "2026-04-26T07:44:00Z"
+generated_from_commit: "dfdcbfbaae19210b8180c0324226fd9adc7ac4a0"
+generated_from_branch: "main"
+status: PHASE1_ACCEPTANCE_CLOSURE_COMPLETE
+
+authority_documents:
+  handoff_contract: "C:/Users/Chethan/Downloads/CLAUDE - COMPREHENSIVE HANDOFF DOCUMENT FOR.txt"
+  supporting_prd: "C:/Users/Chethan/Downloads/Detailed_PRD_MASTERPIECE_v34_ZERO_LOSS_HARNESS_RESTRUCTURED (1).txt"
+  pre_build_audit: "PRE_BUILD_AUDIT.md"
+  build_execution_plan: "BUILD_EXECUTION_PLAN_FROM_HANDOFF.md"
+
+phase1_contract_targets:
+  total_skills_required: 218
+  director_bindings_required: 30
+  runtime_engines_required:
+    - skill_loader
+    - dossier
+    - packet
+    - approval
+  validators_required:
+    - workflow_validator
+    - schema_validator
+    - registry_validator
+    - runtime_validator
+  canonical_workflows_required:
+    - CWF-110
+    - CWF-120
+    - CWF-130
+    - CWF-140
+    - CWF-210
+    - CWF-220
+    - CWF-230
+    - CWF-240
+    - WF-020
+    - WF-021
+
+canonical_registry_refs:
+  skill_registry: registries/skill_registry.yaml
+  workflow_bindings: registries/workflow_bindings.yaml
+  schema_registry: registries/schema_registry.yaml
+  director_binding: registries/director_binding.yaml
+  provider_registry: registries/provider_registry.yaml
+  mode_registry: registries/mode_registry.yaml
+  governance_rules: registries/governance_rules.yaml
+
+canonical_registry_scope_snapshot:
+  skill_registry_entries: 218
+  workflow_bindings_entries: 218
+  schema_registry_entries: 218
+  director_binding_entries: 30
+  canonical_workflow_json_entries: 10
+  closure_mode: canonical_scope_only
+  excluded_legacy_skill_ids:
+    - M-091
+    - M-092
+    - M-093
+    - M-094
+    - M-095
+    - M-096
+    - M-097
+  closure_results:
+    missing_workflow_bindings_for_registered_skills: 0
+    missing_registered_skills_for_workflow_bindings: 0
+    missing_schema_ref_files: 0
+    missing_schema_registry_families: 0
+    missing_director_bindings_for_registered_skills: 0
+    missing_canonical_workflow_json_files: 0
+
+validation_snapshot:
+  js_registry_validator:
+    overall_valid: true
+    finding_count: 0
+    skill_registry_entries: 218
+    workflow_bindings_entries: 218
+    schema_registry_entries: 218
+    director_binding_entries: 30
+  js_workflow_validator:
+    overall_valid: true
+    finding_count: 1
+    warning_codes:
+      ALLOWED_REPLAY_CYCLE: 1
+    workflows_scanned: 47
+    valid_workflows: 47
+    invalid_workflows: 0
+  js_schema_validator:
+    overall_valid: true
+    finding_count: 0
+  js_runtime_engine_contract_scan:
+    overall_valid: true
+    finding_count: 0
+  js_runtime_repository_check:
+    overall_valid: true
+    finding_count: 0
+
+end_to_end_verification:
+  harness_script: tests/run_phase1_end_to_end_verification.js
+  harness_report: tests/reports/phase1_end_to_end_verification.json
+  status: PASSED
+  topic_intake_chain_to_wf020:
+    - CWF-110
+    - CWF-120
+    - CWF-130
+    - CWF-140
+    - CWF-210
+    - CWF-220
+    - CWF-230
+    - CWF-240
+    - WF-020
+  branch_checks:
+    cwf140_high_confidence_next: CWF-210
+    cwf140_low_confidence_next: CWF-140
+    wf020_approved_next: WF-300
+    wf020_rejected_next: WF-021
+    wf021_replay_next: CWF-220
+    wf020_error_route: WF-900
+    wf021_error_route: WF-900
+
+phase1_acceptance_gate:
+  all_218_skills_fully_defined: true
+  all_30_directors_fully_bound: true
+  all_skills_use_12_section_template: true
+  all_skills_have_18_plus_tests: true
+  required_workflow_jsons_exist: true
+  required_runtime_engines_exist: true
+  required_validators_exist: true
+  required_registries_exist: true
+  append_only_mutation_law_repo_wide: true
+  packets_schema_bound_for_218_skill_scope: true
+  wf900_failure_route_present_in_required_workflows: true
+  wf021_replay_route_present: true
+  end_to_end_topic_to_wf020_verified: true
+  phase1_complete: true
+
+remaining_blockers: []

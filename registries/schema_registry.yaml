@@ -1,0 +1,441 @@
+version: 3
+registry_id: schema_registry
+generated_at: "2026-04-26T07:41:29.127Z"
+status: COMPLETE_PHASE1_ACCEPTANCE_218_SCOPE
+schemas:
+  - artifact_family: m001_packet
+    schema_path: schemas/packets/m001_packet.schema.json
+  - artifact_family: m002_packet
+    schema_path: schemas/packets/m002_packet.schema.json
+  - artifact_family: m003_packet
+    schema_path: schemas/packets/m003_packet.schema.json
+  - artifact_family: m004_packet
+    schema_path: schemas/packets/m004_packet.schema.json
+  - artifact_family: m006_packet
+    schema_path: schemas/packets/m006_packet.schema.json
+  - artifact_family: m007_packet
+    schema_path: schemas/packets/m007_packet.schema.json
+  - artifact_family: m008_packet
+    schema_path: schemas/packets/m008_packet.schema.json
+  - artifact_family: m009_packet
+    schema_path: schemas/packets/m009_packet.schema.json
+  - artifact_family: m010_packet
+    schema_path: schemas/packets/m010_packet.schema.json
+  - artifact_family: m011_packet
+    schema_path: schemas/packets/m011_packet.schema.json
+  - artifact_family: m012_packet
+    schema_path: schemas/packets/m012_packet.schema.json
+  - artifact_family: m013_packet
+    schema_path: schemas/packets/m013_packet.schema.json
+  - artifact_family: m014_packet
+    schema_path: schemas/packets/m014_packet.schema.json
+  - artifact_family: m015_packet
+    schema_path: schemas/packets/m015_packet.schema.json
+  - artifact_family: m016_packet
+    schema_path: schemas/packets/m016_packet.schema.json
+  - artifact_family: m018_packet
+    schema_path: schemas/packets/m018_packet.schema.json
+  - artifact_family: m019_packet
+    schema_path: schemas/packets/m019_packet.schema.json
+  - artifact_family: m020_packet
+    schema_path: schemas/packets/m020_packet.schema.json
+  - artifact_family: m021_packet
+    schema_path: schemas/packets/m021_packet.schema.json
+  - artifact_family: m022_packet
+    schema_path: schemas/packets/m022_packet.schema.json
+  - artifact_family: m023_packet
+    schema_path: schemas/packets/m023_packet.schema.json
+  - artifact_family: m024_packet
+    schema_path: schemas/packets/m024_packet.schema.json
+  - artifact_family: m025_packet
+    schema_path: schemas/packets/m025_packet.schema.json
+  - artifact_family: m026_packet
+    schema_path: schemas/packets/m026_packet.schema.json
+  - artifact_family: m027_packet
+    schema_path: schemas/packets/m027_packet.schema.json
+  - artifact_family: m028_packet
+    schema_path: schemas/packets/m028_packet.schema.json
+  - artifact_family: m029_packet
+    schema_path: schemas/packets/m029_packet.schema.json
+  - artifact_family: m030_packet
+    schema_path: schemas/packets/m030_packet.schema.json
+  - artifact_family: m031_packet
+    schema_path: schemas/packets/m031_packet.schema.json
+  - artifact_family: m032_packet
+    schema_path: schemas/packets/m032_packet.schema.json
+  - artifact_family: m033_packet
+    schema_path: schemas/packets/m033_packet.schema.json
+  - artifact_family: m034_packet
+    schema_path: schemas/packets/m034_packet.schema.json
+  - artifact_family: m035_packet
+    schema_path: schemas/packets/m035_packet.schema.json
+  - artifact_family: m036_packet
+    schema_path: schemas/packets/m036_packet.schema.json
+  - artifact_family: m037_packet
+    schema_path: schemas/packets/m037_packet.schema.json
+  - artifact_family: m038_packet
+    schema_path: schemas/packets/m038_packet.schema.json
+  - artifact_family: m039_packet
+    schema_path: schemas/packets/m039_packet.schema.json
+  - artifact_family: m040_packet
+    schema_path: schemas/packets/m040_packet.schema.json
+  - artifact_family: m041_packet
+    schema_path: schemas/packets/m041_packet.schema.json
+  - artifact_family: m042_packet
+    schema_path: schemas/packets/m042_packet.schema.json
+  - artifact_family: m043_packet
+    schema_path: schemas/packets/m043_packet.schema.json
+  - artifact_family: m044_packet
+    schema_path: schemas/packets/m044_packet.schema.json
+  - artifact_family: m045_packet
+    schema_path: schemas/packets/m045_packet.schema.json
+  - artifact_family: m046_packet
+    schema_path: schemas/packets/m046_packet.schema.json
+  - artifact_family: m047_packet
+    schema_path: schemas/packets/m047_packet.schema.json
+  - artifact_family: m048_packet
+    schema_path: schemas/packets/m048_packet.schema.json
+  - artifact_family: m049_packet
+    schema_path: schemas/packets/m049_packet.schema.json
+  - artifact_family: m050_packet
+    schema_path: schemas/packets/m050_packet.schema.json
+  - artifact_family: m051_packet
+    schema_path: schemas/packets/m051_packet.schema.json
+  - artifact_family: m052_packet
+    schema_path: schemas/packets/m052_packet.schema.json
+  - artifact_family: m053_packet
+    schema_path: schemas/packets/m053_packet.schema.json
+  - artifact_family: m054_packet
+    schema_path: schemas/packets/m054_packet.schema.json
+  - artifact_family: m055_packet
+    schema_path: schemas/packets/m055_packet.schema.json
+  - artifact_family: m056_packet
+    schema_path: schemas/packets/m056_packet.schema.json
+  - artifact_family: m057_packet
+    schema_path: schemas/packets/m057_packet.schema.json
+  - artifact_family: m058_packet
+    schema_path: schemas/packets/m058_packet.schema.json
+  - artifact_family: m059_packet
+    schema_path: schemas/packets/m059_packet.schema.json
+  - artifact_family: m060_packet
+    schema_path: schemas/packets/m060_packet.schema.json
+  - artifact_family: m061_packet
+    schema_path: schemas/packets/m061_packet.schema.json
+  - artifact_family: m062_packet
+    schema_path: schemas/packets/m062_packet.schema.json
+  - artifact_family: m063_packet
+    schema_path: schemas/packets/m063_packet.schema.json
+  - artifact_family: m064_packet
+    schema_path: schemas/packets/m064_packet.schema.json
+  - artifact_family: m065_packet
+    schema_path: schemas/packets/m065_packet.schema.json
+  - artifact_family: m066_packet
+    schema_path: schemas/packets/m066_packet.schema.json
+  - artifact_family: m067_packet
+    schema_path: schemas/packets/m067_packet.schema.json
+  - artifact_family: m068_packet
+    schema_path: schemas/packets/m068_packet.schema.json
+  - artifact_family: m069_packet
+    schema_path: schemas/packets/m069_packet.schema.json
+  - artifact_family: m070_packet
+    schema_path: schemas/packets/m070_packet.schema.json
+  - artifact_family: m071_packet
+    schema_path: schemas/packets/m071_packet.schema.json
+  - artifact_family: m072_packet
+    schema_path: schemas/packets/m072_packet.schema.json
+  - artifact_family: m073_packet
+    schema_path: schemas/packets/m073_packet.schema.json
+  - artifact_family: m074_packet
+    schema_path: schemas/packets/m074_packet.schema.json
+  - artifact_family: m075_packet
+    schema_path: schemas/packets/m075_packet.schema.json
+  - artifact_family: m076_packet
+    schema_path: schemas/packets/m076_packet.schema.json
+  - artifact_family: m077_packet
+    schema_path: schemas/packets/m077_packet.schema.json
+  - artifact_family: m078_packet
+    schema_path: schemas/packets/m078_packet.schema.json
+  - artifact_family: m079_packet
+    schema_path: schemas/packets/m079_packet.schema.json
+  - artifact_family: m080_packet
+    schema_path: schemas/packets/m080_packet.schema.json
+  - artifact_family: m081_packet
+    schema_path: schemas/packets/m081_packet.schema.json
+  - artifact_family: m082_packet
+    schema_path: schemas/packets/m082_packet.schema.json
+  - artifact_family: m083_packet
+    schema_path: schemas/packets/m083_packet.schema.json
+  - artifact_family: m084_packet
+    schema_path: schemas/packets/m084_packet.schema.json
+  - artifact_family: m085_packet
+    schema_path: schemas/packets/m085_packet.schema.json
+  - artifact_family: m086_packet
+    schema_path: schemas/packets/m086_packet.schema.json
+  - artifact_family: m087_packet
+    schema_path: schemas/packets/m087_packet.schema.json
+  - artifact_family: m088_packet
+    schema_path: schemas/packets/m088_packet.schema.json
+  - artifact_family: m089_packet
+    schema_path: schemas/packets/m089_packet.schema.json
+  - artifact_family: m090_packet
+    schema_path: schemas/packets/m090_packet.schema.json
+  - artifact_family: m098_packet
+    schema_path: schemas/packets/m098_packet.schema.json
+  - artifact_family: m099_packet
+    schema_path: schemas/packets/m099_packet.schema.json
+  - artifact_family: m100_packet
+    schema_path: schemas/packets/m100_packet.schema.json
+  - artifact_family: m101_packet
+    schema_path: schemas/packets/m101_packet.schema.json
+  - artifact_family: m102_packet
+    schema_path: schemas/packets/m102_packet.schema.json
+  - artifact_family: m103_packet
+    schema_path: schemas/packets/m103_packet.schema.json
+  - artifact_family: m104_packet
+    schema_path: schemas/packets/m104_packet.schema.json
+  - artifact_family: m105_packet
+    schema_path: schemas/packets/m105_packet.schema.json
+  - artifact_family: m106_packet
+    schema_path: schemas/packets/m106_packet.schema.json
+  - artifact_family: m107_packet
+    schema_path: schemas/packets/m107_packet.schema.json
+  - artifact_family: m108_packet
+    schema_path: schemas/packets/m108_packet.schema.json
+  - artifact_family: m109_packet
+    schema_path: schemas/packets/m109_packet.schema.json
+  - artifact_family: m110_packet
+    schema_path: schemas/packets/m110_packet.schema.json
+  - artifact_family: m111_packet
+    schema_path: schemas/packets/m111_packet.schema.json
+  - artifact_family: m112_packet
+    schema_path: schemas/packets/m112_packet.schema.json
+  - artifact_family: m113_packet
+    schema_path: schemas/packets/m113_packet.schema.json
+  - artifact_family: m114_packet
+    schema_path: schemas/packets/m114_packet.schema.json
+  - artifact_family: m115_packet
+    schema_path: schemas/packets/m115_packet.schema.json
+  - artifact_family: m116_packet
+    schema_path: schemas/packets/m116_packet.schema.json
+  - artifact_family: m117_packet
+    schema_path: schemas/packets/m117_packet.schema.json
+  - artifact_family: m118_packet
+    schema_path: schemas/packets/m118_packet.schema.json
+  - artifact_family: m119_packet
+    schema_path: schemas/packets/m119_packet.schema.json
+  - artifact_family: m120_packet
+    schema_path: schemas/packets/m120_packet.schema.json
+  - artifact_family: m121_packet
+    schema_path: schemas/packets/m121_packet.schema.json
+  - artifact_family: m122_packet
+    schema_path: schemas/packets/m122_packet.schema.json
+  - artifact_family: m123_packet
+    schema_path: schemas/packets/m123_packet.schema.json
+  - artifact_family: m124_packet
+    schema_path: schemas/packets/m124_packet.schema.json
+  - artifact_family: m125_packet
+    schema_path: schemas/packets/m125_packet.schema.json
+  - artifact_family: m126_packet
+    schema_path: schemas/packets/m126_packet.schema.json
+  - artifact_family: m127_packet
+    schema_path: schemas/packets/m127_packet.schema.json
+  - artifact_family: m128_packet
+    schema_path: schemas/packets/m128_packet.schema.json
+  - artifact_family: m129_packet
+    schema_path: schemas/packets/m129_packet.schema.json
+  - artifact_family: m130_packet
+    schema_path: schemas/packets/m130_packet.schema.json
+  - artifact_family: m131_packet
+    schema_path: schemas/packets/m131_packet.schema.json
+  - artifact_family: m132_packet
+    schema_path: schemas/packets/m132_packet.schema.json
+  - artifact_family: m133_packet
+    schema_path: schemas/packets/m133_packet.schema.json
+  - artifact_family: m134_packet
+    schema_path: schemas/packets/m134_packet.schema.json
+  - artifact_family: m135_packet
+    schema_path: schemas/packets/m135_packet.schema.json
+  - artifact_family: m136_packet
+    schema_path: schemas/packets/m136_packet.schema.json
+  - artifact_family: m137_packet
+    schema_path: schemas/packets/m137_packet.schema.json
+  - artifact_family: m138_packet
+    schema_path: schemas/packets/m138_packet.schema.json
+  - artifact_family: m139_packet
+    schema_path: schemas/packets/m139_packet.schema.json
+  - artifact_family: m140_packet
+    schema_path: schemas/packets/m140_packet.schema.json
+  - artifact_family: m141_packet
+    schema_path: schemas/packets/m141_packet.schema.json
+  - artifact_family: m142_packet
+    schema_path: schemas/packets/m142_packet.schema.json
+  - artifact_family: m143_packet
+    schema_path: schemas/packets/m143_packet.schema.json
+  - artifact_family: m144_packet
+    schema_path: schemas/packets/m144_packet.schema.json
+  - artifact_family: m145_packet
+    schema_path: schemas/packets/m145_packet.schema.json
+  - artifact_family: m146_packet
+    schema_path: schemas/packets/m146_packet.schema.json
+  - artifact_family: m147_packet
+    schema_path: schemas/packets/m147_packet.schema.json
+  - artifact_family: m148_packet
+    schema_path: schemas/packets/m148_packet.schema.json
+  - artifact_family: m149_packet
+    schema_path: schemas/packets/m149_packet.schema.json
+  - artifact_family: m150_packet
+    schema_path: schemas/packets/m150_packet.schema.json
+  - artifact_family: m151_packet
+    schema_path: schemas/packets/m151_packet.schema.json
+  - artifact_family: m152_packet
+    schema_path: schemas/packets/m152_packet.schema.json
+  - artifact_family: m153_packet
+    schema_path: schemas/packets/m153_packet.schema.json
+  - artifact_family: m154_packet
+    schema_path: schemas/packets/m154_packet.schema.json
+  - artifact_family: m155_packet
+    schema_path: schemas/packets/m155_packet.schema.json
+  - artifact_family: m156_packet
+    schema_path: schemas/packets/m156_packet.schema.json
+  - artifact_family: m157_packet
+    schema_path: schemas/packets/m157_packet.schema.json
+  - artifact_family: m158_packet
+    schema_path: schemas/packets/m158_packet.schema.json
+  - artifact_family: m159_packet
+    schema_path: schemas/packets/m159_packet.schema.json
+  - artifact_family: m160_packet
+    schema_path: schemas/packets/m160_packet.schema.json
+  - artifact_family: m161_packet
+    schema_path: schemas/packets/m161_packet.schema.json
+  - artifact_family: m162_packet
+    schema_path: schemas/packets/m162_packet.schema.json
+  - artifact_family: m163_packet
+    schema_path: schemas/packets/m163_packet.schema.json
+  - artifact_family: m164_packet
+    schema_path: schemas/packets/m164_packet.schema.json
+  - artifact_family: m165_packet
+    schema_path: schemas/packets/m165_packet.schema.json
+  - artifact_family: m166_packet
+    schema_path: schemas/packets/m166_packet.schema.json
+  - artifact_family: m167_packet
+    schema_path: schemas/packets/m167_packet.schema.json
+  - artifact_family: m168_packet
+    schema_path: schemas/packets/m168_packet.schema.json
+  - artifact_family: m169_packet
+    schema_path: schemas/packets/m169_packet.schema.json
+  - artifact_family: m170_packet
+    schema_path: schemas/packets/m170_packet.schema.json
+  - artifact_family: m171_packet
+    schema_path: schemas/packets/m171_packet.schema.json
+  - artifact_family: m172_packet
+    schema_path: schemas/packets/m172_packet.schema.json
+  - artifact_family: m173_packet
+    schema_path: schemas/packets/m173_packet.schema.json
+  - artifact_family: m174_packet
+    schema_path: schemas/packets/m174_packet.schema.json
+  - artifact_family: m175_packet
+    schema_path: schemas/packets/m175_packet.schema.json
+  - artifact_family: m176_packet
+    schema_path: schemas/packets/m176_packet.schema.json
+  - artifact_family: m177_packet
+    schema_path: schemas/packets/m177_packet.schema.json
+  - artifact_family: m178_packet
+    schema_path: schemas/packets/m178_packet.schema.json
+  - artifact_family: m179_packet
+    schema_path: schemas/packets/m179_packet.schema.json
+  - artifact_family: m180_packet
+    schema_path: schemas/packets/m180_packet.schema.json
+  - artifact_family: m181_packet
+    schema_path: schemas/packets/m181_packet.schema.json
+  - artifact_family: m182_packet
+    schema_path: schemas/packets/m182_packet.schema.json
+  - artifact_family: m201_packet
+    schema_path: schemas/packets/m201_packet.schema.json
+  - artifact_family: m202_packet
+    schema_path: schemas/packets/m202_packet.schema.json
+  - artifact_family: m203_packet
+    schema_path: schemas/packets/m203_packet.schema.json
+  - artifact_family: m204_packet
+    schema_path: schemas/packets/m204_packet.schema.json
+  - artifact_family: m205_packet
+    schema_path: schemas/packets/m205_packet.schema.json
+  - artifact_family: m206_packet
+    schema_path: schemas/packets/m206_packet.schema.json
+  - artifact_family: m207_packet
+    schema_path: schemas/packets/m207_packet.schema.json
+  - artifact_family: m208_packet
+    schema_path: schemas/packets/m208_packet.schema.json
+  - artifact_family: m209_packet
+    schema_path: schemas/packets/m209_packet.schema.json
+  - artifact_family: m210_packet
+    schema_path: schemas/packets/m210_packet.schema.json
+  - artifact_family: m211_packet
+    schema_path: schemas/packets/m211_packet.schema.json
+  - artifact_family: m212_packet
+    schema_path: schemas/packets/m212_packet.schema.json
+  - artifact_family: m213_packet
+    schema_path: schemas/packets/m213_packet.schema.json
+  - artifact_family: m214_packet
+    schema_path: schemas/packets/m214_packet.schema.json
+  - artifact_family: m215_packet
+    schema_path: schemas/packets/m215_packet.schema.json
+  - artifact_family: m216_packet
+    schema_path: schemas/packets/m216_packet.schema.json
+  - artifact_family: m217_packet
+    schema_path: schemas/packets/m217_packet.schema.json
+  - artifact_family: m218_packet
+    schema_path: schemas/packets/m218_packet.schema.json
+  - artifact_family: m219_packet
+    schema_path: schemas/packets/m219_packet.schema.json
+  - artifact_family: m220_packet
+    schema_path: schemas/packets/m220_packet.schema.json
+  - artifact_family: m221_packet
+    schema_path: schemas/packets/m221_packet.schema.json
+  - artifact_family: m222_packet
+    schema_path: schemas/packets/m222_packet.schema.json
+  - artifact_family: m223_packet
+    schema_path: schemas/packets/m223_packet.schema.json
+  - artifact_family: m224_packet
+    schema_path: schemas/packets/m224_packet.schema.json
+  - artifact_family: m225_packet
+    schema_path: schemas/packets/m225_packet.schema.json
+  - artifact_family: m226_packet
+    schema_path: schemas/packets/m226_packet.schema.json
+  - artifact_family: m227_packet
+    schema_path: schemas/packets/m227_packet.schema.json
+  - artifact_family: m228_packet
+    schema_path: schemas/packets/m228_packet.schema.json
+  - artifact_family: m229_packet
+    schema_path: schemas/packets/m229_packet.schema.json
+  - artifact_family: m230_packet
+    schema_path: schemas/packets/m230_packet.schema.json
+  - artifact_family: m231_packet
+    schema_path: schemas/packets/m231_packet.schema.json
+  - artifact_family: m232_packet
+    schema_path: schemas/packets/m232_packet.schema.json
+  - artifact_family: m233_packet
+    schema_path: schemas/packets/m233_packet.schema.json
+  - artifact_family: m234_packet
+    schema_path: schemas/packets/m234_packet.schema.json
+  - artifact_family: m235_packet
+    schema_path: schemas/packets/m235_packet.schema.json
+  - artifact_family: m236_packet
+    schema_path: schemas/packets/m236_packet.schema.json
+  - artifact_family: m237_packet
+    schema_path: schemas/packets/m237_packet.schema.json
+  - artifact_family: m238_packet
+    schema_path: schemas/packets/m238_packet.schema.json
+  - artifact_family: m239_packet
+    schema_path: schemas/packets/m239_packet.schema.json
+  - artifact_family: m240_packet
+    schema_path: schemas/packets/m240_packet.schema.json
+  - artifact_family: m241_packet
+    schema_path: schemas/packets/m241_packet.schema.json
+  - artifact_family: m242_packet
+    schema_path: schemas/packets/m242_packet.schema.json
+  - artifact_family: m243_packet
+    schema_path: schemas/packets/m243_packet.schema.json
+  - artifact_family: m244_packet
+    schema_path: schemas/packets/m244_packet.schema.json
+  - artifact_family: m245_packet
+    schema_path: schemas/packets/m245_packet.schema.json

@@ -1,0 +1,158 @@
+{
+  "name": "WF-900 Error Handler",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual_trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { workflow_id: 'WF-900', phase: 'phase1', error_code: 'SE-P1-001', dossier_id: 'sample-dossier-001', replay_requested: true, source_workflow: 'WF-001' } }];"
+      },
+      "id": "normalize_error_envelope",
+      "name": "Normalize Error Envelope",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const errorMap = { 'SE-P1-001': { severity: 'warning', remediation: 'fix_missing_fields', replay_target: 'WF-001' }, 'SE-P1-002': { severity: 'critical', remediation: 'fix_runtime', replay_target: 'WF-000' }, 'SE-P1-003': { severity: 'warning', remediation: 'remodify_and_replay', replay_target: 'WF-010' } };\nconst resolved = errorMap[$json.error_code] || { severity: 'warning', remediation: 'manual_review', replay_target: 'WF-010' };\nreturn [{ json: { ...$json, ...resolved, replay_eligible: !!$json.replay_requested } }];"
+      },
+      "id": "resolve_error_family",
+      "name": "Resolve Error Family",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json[\"replay_eligible\"]}}",
+              "operation": "isTrue"
+            }
+          ]
+        }
+      },
+      "id": "replay_eligible_if",
+      "name": "Replay Eligible?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { workflow_id: 'WF-900', output_type: 'replay_instruction', writeback_target: 'approvals', writeback_namespace: 'approval', status: 'replay_ready', replay_target: $json.replay_target, details: $json } }];"
+      },
+      "id": "prepare_replay_instruction",
+      "name": "Prepare Replay Instruction",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { workflow_id: 'WF-900', output_type: 'manual_remediation', writeback_target: 'runtime_index', writeback_namespace: 'runtime', status: 'manual_review_required', details: $json } }];"
+      },
+      "id": "prepare_manual_remediation",
+      "name": "Prepare Manual Remediation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        380
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Normalize Error Envelope",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Error Envelope": {
+      "main": [
+        [
+          {
+            "node": "Resolve Error Family",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resolve Error Family": {
+      "main": [
+        [
+          {
+            "node": "Replay Eligible?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replay Eligible?": {
+      "main": [
+        [
+          {
+            "node": "Prepare Replay Instruction",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Manual Remediation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "workflow_id": "WF-900",
+    "phase": "phase1",
+    "purpose": "Normalize runtime failures, write error events, and route replay or remediation",
+    "writes": [
+      "namespaces.runtime",
+      "namespaces.approval"
+    ],
+    "implementation_depth": "production_grade",
+    "vein": "error_vein",
+    "owner_director": "Krishna",
+    "next_workflow": "WF-021",
+    "wf900_error_route": "WF-900"
+  },
+  "active": false,
+  "settings": {}
+}

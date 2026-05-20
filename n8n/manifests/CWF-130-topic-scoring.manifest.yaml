@@ -1,0 +1,54 @@
+workflow_id: CWF-130
+completion_packet_emission: required
+required_node_contract:
+  - trigger_node
+  - dossier_load_node
+  - registry_lookup_node
+  - skill_execution_node
+  - packet_validation_node
+  - append_only_dossier_write_node
+  - packet_index_write_node
+  - wf900_error_routing_node
+  - next_stage_routing_node
+  - completion_packet_emission_node
+wf900_error_route: WF-900
+execution_contract: executable_json_required
+legacy_workflow_json: n8n/workflows/topic/CWF-130-topic-scoring.json
+canonical_workflow_json: n8n/workflows/CWF-130.json
+name: cwf130_topic_scoring
+class: child
+parent_pack: WF-100
+purpose: score approved topics and rank the final candidates for research synthesis
+primary_owner: Krishna
+supporting_directors:
+  - Narada
+  - Chanakya
+  - Chandra
+inputs:
+  - topic_finalization_packet
+output_packet_family:
+  - topic_scorecard
+  - topic_finalization_packet
+writes:
+  - namespaces.discovery
+  - namespaces.runtime
+write_targets:
+  dossier_namespaces:
+    - discovery
+    - runtime
+score_dimensions:
+  - trend_strength
+  - search_demand
+  - content_gap
+  - audience_pain_match
+  - longevity
+  - governance_risk
+  - budget_fit
+done_criteria:
+  - scorecard emitted
+  - ranked shortlist emitted
+  - final promotable topic selected
+fallback_behavior:
+  on_no_topic_above_threshold:
+    - emit needs_research_expansion
+    - return to CWF-110

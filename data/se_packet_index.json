@@ -1,0 +1,4505 @@
+{
+  "entries": [
+    {
+      "packet_id": "packet-1777543372053-1",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "topic": "Create a YouTube script about why people procrastinate and give me thumbnail ideas.",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777543372053-2",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777543372053-3",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777543372053-4",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-1",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "topic": "Create a YouTube script about why people procrastinate and give me thumbnail ideas.",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-2",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-3",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-4",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-1",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "topic": "Create a YouTube script about why people procrastinate and give me thumbnail ideas",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-2",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-3",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-4",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-1",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination with thumbnail ideas",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-2",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-3",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-4",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-1",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination and thumbnail ideas",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-2",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-3",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-4",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777547649210-1",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.210Z",
+      "content": {
+        "topic": "Create a YouTube script about AI automation",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547649210-2",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.210Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547649210-3",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.210Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547649211-4",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.211Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777547655502-1",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.502Z",
+      "content": {
+        "topic": "Create a YouTube script about AI automation",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547655502-2",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.502Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547655502-3",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.502Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547655503-4",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.503Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-1",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "topic": "create the content",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-2",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-3",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-4",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549278916-1",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.916Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549278916-2",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.916Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549278916-3",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.916Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549278917-4",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.917Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-1",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-2",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-3",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-4",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-1",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "topic": "Create a YouTube script about AI trends",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-2",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-3",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-4",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-1",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "topic": "Create a YouTube script about time management",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-2",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-3",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-4",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-1",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-2",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-3",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-4",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777550810834-research",
+      "dossier_ref": "dossier-1777550810829-gddv89tvm",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:06:50.834Z",
+      "content": {
+        "research_topics": [
+          "Scientific studies on procrastination",
+          "Brain chemistry and motivation",
+          "Time management statistics"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ],
+        "key_findings": [
+          "Procrastination affects 20-25% of population chronically",
+          "Related to anxiety and task aversion",
+          "Breaks increase productivity by 15-25%"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551191855-topic",
+      "dossier_ref": "dossier-1777551191848-89sy88tlg",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:13:11.855Z",
+      "content": {
+        "topic": "procrastination",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming procrastination habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation",
+          "psychology"
+        ],
+        "audience": "YouTube viewers interested in self-improvement"
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-1",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-2",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-3",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-4",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-1",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-2",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-3",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-4",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-1",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-2",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-3",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-4",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-1",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "topic": "Create a YouTube script about AI",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-2",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-3",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-4",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-1",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "topic": "Create YouTube script about AI",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-2",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-3",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-4",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777562223367",
+      "instance_id": "WF-300-COMP-1777562223367",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:17:03.367Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777562224325",
+      "instance_id": "WF-500-COMP-1777562224325",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T15:17:04.325Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777562224376",
+      "instance_id": "WF-010-COMP-1777562224376",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T15:17:04.376Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:17:02.518Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:17:02.662Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777562223367",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T15:17:03.367Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:17:03.434Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777562224325",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T15:17:04.325Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:17:04.356Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777562223904",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T15:17:03.904Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:17:03.938Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777562653577",
+      "instance_id": "WF-300-COMP-1777562653577",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:24:13.577Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777562654510",
+      "instance_id": "WF-500-COMP-1777562654510",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T15:24:14.510Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777562654593",
+      "instance_id": "WF-010-COMP-1777562654593",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T15:24:14.593Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:24:12.755Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:24:12.920Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777562653577",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T15:24:13.577Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:24:13.647Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777562654510",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T15:24:14.510Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:24:14.567Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777562654046",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T15:24:14.046Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:24:14.069Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777563461596",
+      "instance_id": "WF-300-COMP-1777563461596",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:37:41.596Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777563462439",
+      "instance_id": "WF-500-COMP-1777563462439",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T15:37:42.439Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777563462501",
+      "instance_id": "WF-010-COMP-1777563462501",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T15:37:42.501Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:37:40.794Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:37:40.939Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777563461596",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T15:37:41.596Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:37:41.665Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777563462439",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T15:37:42.439Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:37:42.476Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777563462035",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T15:37:42.035Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:37:42.060Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777563605113",
+      "instance_id": "WF-300-COMP-1777563605113",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:40:05.113Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777563605994",
+      "instance_id": "WF-500-COMP-1777563605994",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T15:40:05.994Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777563606079",
+      "instance_id": "WF-010-COMP-1777563606079",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T15:40:06.079Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:40:04.355Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:40:04.494Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777563605113",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T15:40:05.113Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:40:05.168Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777563605994",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T15:40:05.994Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:40:06.057Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777563605589",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T15:40:05.589Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:40:05.613Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777563879967",
+      "instance_id": "WF-300-COMP-1777563879967",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:44:39.967Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777563880750",
+      "instance_id": "WF-500-COMP-1777563880750",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T15:44:40.750Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777563880813",
+      "instance_id": "WF-010-COMP-1777563880813",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T15:44:40.813Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:44:39.246Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:44:39.372Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777563879967",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T15:44:39.967Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:44:40.014Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777563880750",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T15:44:40.750Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:44:40.785Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777563880385",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T15:44:40.385Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:44:40.407Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777563978210",
+      "instance_id": "WF-300-COMP-1777563978210",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:46:18.210Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777563979045",
+      "instance_id": "WF-500-COMP-1777563979045",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T15:46:19.045Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777563979098",
+      "instance_id": "WF-010-COMP-1777563979098",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T15:46:19.098Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:46:17.493Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T15:46:17.626Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777563978210",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T15:46:18.210Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:46:18.258Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777563979045",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T15:46:19.045Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:46:19.078Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777563978665",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T15:46:18.665Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T15:46:18.689Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777569578415",
+      "instance_id": "WF-300-COMP-1777569578415",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T17:19:38.415Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777569579289",
+      "instance_id": "WF-500-COMP-1777569579289",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T17:19:39.289Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777569579361",
+      "instance_id": "WF-010-COMP-1777569579361",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T17:19:39.361Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T17:19:37.667Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T17:19:37.805Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777569578415",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T17:19:38.415Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:19:38.486Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777569579289",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T17:19:39.289Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:19:39.330Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777569578879",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T17:19:38.879Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:19:38.907Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777569610946",
+      "instance_id": "WF-300-COMP-1777569610946",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T17:20:10.946Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777569611771",
+      "instance_id": "WF-500-COMP-1777569611771",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T17:20:11.771Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777569611834",
+      "instance_id": "WF-010-COMP-1777569611834",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T17:20:11.833Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T17:20:10.269Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T17:20:10.402Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777569610946",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T17:20:10.946Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:20:10.996Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777569611771",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T17:20:11.771Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:20:11.809Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777569611363",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T17:20:11.363Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:20:11.386Z"
+          }
+        }
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777569620192",
+      "instance_id": "WF-500-COMP-1777569620192",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T17:20:20.192Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777569625468",
+      "instance_id": "WF-500-COMP-1777569625468",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T17:20:25.468Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777569627038",
+      "instance_id": "WF-500-COMP-1777569627038",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T17:20:27.038Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777571098595",
+      "instance_id": "WF-300-COMP-1777571098595",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T17:44:58.595Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-500-COMP-1777571099477",
+      "instance_id": "WF-500-COMP-1777571099477",
+      "artifact_family": "publishing_distribution_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-500",
+      "created_at": "2026-04-30T17:44:59.477Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-500",
+        "governance_approved": false,
+        "publish_ready": true,
+        "next_workflow": "WF-600",
+        "child_packets": [
+          "CWF-510_output",
+          "CWF-520_output",
+          "CWF-530_output"
+        ]
+      }
+    },
+    {
+      "packet_id": "WF-010-COMP-1777571099549",
+      "instance_id": "WF-010-COMP-1777571099549",
+      "artifact_family": "orchestration_decision",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-010",
+      "dossier_ref": "DOSSIER-UNSPECIFIED",
+      "created_at": "2026-04-30T17:44:59.549Z",
+      "status": "CREATED",
+      "payload": {
+        "route_selected": "ROUTE_PHASE1_STANDARD",
+        "next_workflow": "CWF-110",
+        "orchestration_decision": "STANDARD_TOPIC_INTELLIGENCE",
+        "approval_gates_pending": [
+          "topic_research_gate",
+          "script_approval_gate"
+        ],
+        "route_to_wf900": "WF-900",
+        "chain_results": {
+          "wf100": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T17:44:57.916Z"
+          },
+          "wf200": {
+            "status": "SUCCESS",
+            "payload": {},
+            "captured_at": "2026-04-30T17:44:58.044Z"
+          },
+          "wf300": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-300-COMP-1777571098595",
+              "artifact_family": "context_engineering_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-300",
+              "created_at": "2026-04-30T17:44:58.595Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-300",
+                "next_workflow": "WF-400",
+                "child_packets": [
+                  "CWF-310_output",
+                  "CWF-320_output",
+                  "CWF-330_output",
+                  "CWF-340_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:44:58.667Z"
+          },
+          "wf020": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-500-COMP-1777571099477",
+              "artifact_family": "publishing_distribution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-500",
+              "created_at": "2026-04-30T17:44:59.477Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-500",
+                "governance_approved": false,
+                "publish_ready": true,
+                "next_workflow": "WF-600",
+                "child_packets": [
+                  "CWF-510_output",
+                  "CWF-520_output",
+                  "CWF-530_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:44:59.524Z"
+          },
+          "wf600": {
+            "status": "SUCCESS",
+            "payload": {
+              "instance_id": "WF-600-COMP-1777571099089",
+              "artifact_family": "analytics_evolution_result",
+              "schema_version": "1.0.0",
+              "producer_workflow": "WF-600",
+              "created_at": "2026-04-30T17:44:59.089Z",
+              "status": "CREATED",
+              "payload": {
+                "pack_executed": "WF-600",
+                "child_packets": [
+                  "CWF-610_output",
+                  "CWF-620_output",
+                  "CWF-630_output"
+                ]
+              }
+            },
+            "captured_at": "2026-04-30T17:44:59.112Z"
+          }
+        }
+      }
+    }
+  ],
+  "total_entries": 104,
+  "last_updated": "2026-04-30T17:44:59.549Z",
+  "packets": [
+    {
+      "packet_id": "packet-1777543372053-1",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "topic": "Create a YouTube script about why people procrastinate and give me thumbnail ideas.",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777543372053-2",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777543372053-3",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777543372053-4",
+      "dossier_ref": "dossier-1777543371929-tjk69haej",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:02:52.053Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-1",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "topic": "Create a YouTube script about why people procrastinate and give me thumbnail ideas.",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-2",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-3",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777545505324-4",
+      "dossier_ref": "dossier-1777545505319-c8b9xts56",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:38:25.324Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-1",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "topic": "Create a YouTube script about why people procrastinate and give me thumbnail ideas",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-2",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-3",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546159351-4",
+      "dossier_ref": "dossier-1777546159342-hsg27u9z3",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:19.351Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-1",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination with thumbnail ideas",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-2",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-3",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546182033-4",
+      "dossier_ref": "dossier-1777546182030-gkcn1qyt5",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:49:42.033Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-1",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination and thumbnail ideas",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-2",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-3",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777546211541-4",
+      "dossier_ref": "dossier-1777546211538-xc06xd337",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T10:50:11.541Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777547649210-1",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.210Z",
+      "content": {
+        "topic": "Create a YouTube script about AI automation",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547649210-2",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.210Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547649210-3",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.210Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547649211-4",
+      "dossier_ref": "dossier-1777547649201-qmlwc72bm",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:09.211Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777547655502-1",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.502Z",
+      "content": {
+        "topic": "Create a YouTube script about AI automation",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547655502-2",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.502Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547655502-3",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.502Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547655503-4",
+      "dossier_ref": "dossier-1777547655494-uz4b074tu",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:14:15.503Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-1",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "topic": "create the content",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-2",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-3",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777547837992-4",
+      "dossier_ref": "dossier-1777547837983-wh5jvqqmp",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:17:17.992Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549278916-1",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.916Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549278916-2",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.916Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549278916-3",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.916Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549278917-4",
+      "dossier_ref": "dossier-1777549278906-2plmi329x",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:41:18.917Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-1",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "topic": "Create a YouTube script about procrastination",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-2",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-3",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549334826-4",
+      "dossier_ref": "dossier-1777549334814-bm28ocn4h",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:42:14.826Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-1",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "topic": "Create a YouTube script about AI trends",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-2",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-3",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549471813-4",
+      "dossier_ref": "dossier-1777549471800-u4vgo7dkm",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:31.813Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-1",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "topic": "Create a YouTube script about time management",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-2",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-3",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777549481629-4",
+      "dossier_ref": "dossier-1777549481616-j87nh1sb7",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T11:44:41.629Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-1",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-2",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-3",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777550729969-4",
+      "dossier_ref": "dossier-1777550729964-lhlvsdgvk",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:05:29.969Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777550810834-research",
+      "dossier_ref": "dossier-1777550810829-gddv89tvm",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:06:50.834Z",
+      "content": {
+        "research_topics": [
+          "Scientific studies on procrastination",
+          "Brain chemistry and motivation",
+          "Time management statistics"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ],
+        "key_findings": [
+          "Procrastination affects 20-25% of population chronically",
+          "Related to anxiety and task aversion",
+          "Breaks increase productivity by 15-25%"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551191855-topic",
+      "dossier_ref": "dossier-1777551191848-89sy88tlg",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:13:11.855Z",
+      "content": {
+        "topic": "procrastination",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming procrastination habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation",
+          "psychology"
+        ],
+        "audience": "YouTube viewers interested in self-improvement"
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-1",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-2",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-3",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777551645034-4",
+      "dossier_ref": "dossier-1777551645029-o6h4qq8u6",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:20:45.034Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-1",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-2",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-3",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553366788-4",
+      "dossier_ref": "dossier-1777553366781-tniz85adw",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:49:26.788Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-1",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "topic": "Create a YouTube script about a trending topic",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-2",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-3",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553420365-4",
+      "dossier_ref": "dossier-1777553420357-9zdb3lyrh",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:50:20.365Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-1",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "topic": "Create a YouTube script about AI",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-2",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-3",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553748110-4",
+      "dossier_ref": "dossier-1777553748105-mz29p7xog",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:55:48.110Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-1",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "topic_packet",
+      "artifact_type": "topic_analysis",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "topic": "Create YouTube script about AI",
+        "subtopics": [
+          "Why people procrastinate",
+          "Psychology of procrastination",
+          "Effects on productivity",
+          "Overcoming habits"
+        ],
+        "keywords": [
+          "procrastination",
+          "productivity",
+          "motivation"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-2",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "research_packet",
+      "artifact_type": "research_data",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "findings": [
+          "25% chronically affected",
+          "Related to anxiety",
+          "Breaks increase productivity by 15-25%"
+        ],
+        "sources": [
+          "Psychology Today",
+          "Harvard Business Review",
+          "Journal of Applied Psychology"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-3",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "script_packet",
+      "artifact_type": "video_script",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "title": "Why You Procrastinate (And How to Stop)",
+        "duration_seconds": 600,
+        "word_count": 1200,
+        "tone": "educational, engaging, conversational",
+        "sections": [
+          "Hook (15s)",
+          "Problem (120s)",
+          "Solution (180s)",
+          "Outro (30s)"
+        ]
+      }
+    },
+    {
+      "packet_id": "packet-1777553761238-4",
+      "dossier_ref": "dossier-1777553761235-cnann1pkv",
+      "artifact_family": "image_concept_packet",
+      "artifact_type": "thumbnail_concept",
+      "status": "generated",
+      "created_at": "2026-04-30T12:56:01.238Z",
+      "content": {
+        "concepts": [
+          {
+            "title": "Shocked Face with Clock",
+            "recommended": true
+          },
+          {
+            "title": "Brain Split Design"
+          },
+          {
+            "title": "Emotional Journey"
+          }
+        ],
+        "count": 3,
+        "recommended": "thumb-1"
+      }
+    },
+    {
+      "packet_id": "WF-300-COMP-1777562223367",
+      "instance_id": "WF-300-COMP-1777562223367",
+      "artifact_family": "context_engineering_result",
+      "schema_version": "1.0.0",
+      "producer_workflow": "WF-300",
+      "created_at": "2026-04-30T15:17:03.367Z",
+      "status": "CREATED",
+      "payload": {
+        "pack_executed": "WF-300",
+        "next_workflow": "WF-400",
+        "child_packets": [
+          "CWF-310_output",
+          "CWF-320_output",
+          "CWF-330_output",
+          "CWF-340_output"
+        ]
+      }
+    }
+  ]
+}

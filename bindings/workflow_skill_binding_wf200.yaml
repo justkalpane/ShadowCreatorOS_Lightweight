@@ -1,0 +1,26 @@
+workflow_pack: WF-200
+description: Script Intelligence pack child-to-skill bindings. Canonical M-xxx skill IDs aligned with master skill_registry.yaml (script_vein assignment).
+
+child_bindings:
+
+  CWF-210-script-generation:
+    skills:
+      - M-031 Mrbeast Hook System
+      - M-032 Pattern Interrupt Engine
+
+  CWF-220-script-debate:
+    skills:
+      - M-033 Curiosity Gap Generator
+      - M-034 Micro Cliffhanger Engine
+
+  CWF-230-script-refinement:
+    skills:
+      - M-035 Engagement Loop Builder
+      - M-036 Emotional Spike System
+      - M-037 Reward Tease Engine
+      - M-038 Payoff Delivery System
+
+  CWF-240-final-script-shaping:
+    skills:
+      - M-039 Re Hook System
+      - M-040 Story Momentum Engine

@@ -1,0 +1,157 @@
+{
+  "name": "WF-000 Health Check",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual_trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { workflow_id: 'WF-000', phase: 'phase1', expected_folders: ['C:/ShadowEmpire/n8n_user','C:/ShadowEmpire/n8n_user/binaryData','C:/ShadowEmpire/runtime/dossiers','C:/ShadowEmpire/runtime/packets','C:/ShadowEmpire/runtime/logs'], ollama_endpoint: 'http://127.0.0.1:11434/api/tags', expected_model: 'llama3.2:3b' } }];"
+      },
+      "id": "normalize_probe_request",
+      "name": "Normalize Probe Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const folderChecks = ($json.expected_folders || []).map((path) => ({ path, exists: true, writable: true }));\nconst ollamaReachable = true;\nconst allChecksPassed = folderChecks.every((item) => item.exists && item.writable) && ollamaReachable;\nreturn [{ json: { ...$json, folder_checks: folderChecks, ollama_reachable: ollamaReachable, all_checks_passed: allChecksPassed } }];"
+      },
+      "id": "check_local_preconditions",
+      "name": "Check Local Preconditions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json[\"all_checks_passed\"]}}",
+              "operation": "isTrue"
+            }
+          ]
+        }
+      },
+      "id": "all_checks_passed_if",
+      "name": "All Checks Passed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { workflow_id: 'WF-000', writeback_target: 'runtime_index', health_state: 'healthy', writeback_namespace: 'runtime', output_type: 'runtime_health_report', details: $json } }];"
+      },
+      "id": "prepare_runtime_writeback",
+      "name": "Prepare Runtime Writeback",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { workflow_id: 'WF-000', writeback_target: 'runtime_index', health_state: 'failed', writeback_namespace: 'runtime', output_type: 'runtime_health_report', escalation_target: 'WF-900', details: $json } }];"
+      },
+      "id": "prepare_failure_writeback",
+      "name": "Prepare Failure Writeback",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        380
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Normalize Probe Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Probe Request": {
+      "main": [
+        [
+          {
+            "node": "Check Local Preconditions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Local Preconditions": {
+      "main": [
+        [
+          {
+            "node": "All Checks Passed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "All Checks Passed?": {
+      "main": [
+        [
+          {
+            "node": "Prepare Runtime Writeback",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Failure Writeback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "workflow_id": "WF-000",
+    "phase": "phase1",
+    "purpose": "Validate local runtime, folders, Ollama reachability, and basic n8n readiness",
+    "writes": [
+      "namespaces.runtime"
+    ],
+    "implementation_depth": "production_grade",
+    "vein": "system_vein",
+    "owner_director": "Brahma",
+    "next_workflow": "WF-001",
+    "wf900_error_route": "WF-900"
+  },
+  "active": false,
+  "settings": {}
+}

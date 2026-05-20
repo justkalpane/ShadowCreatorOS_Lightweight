@@ -1,0 +1,50 @@
+workflow_id: CWF-210
+completion_packet_emission: required
+required_node_contract:
+  - trigger_node
+  - dossier_load_node
+  - registry_lookup_node
+  - skill_execution_node
+  - packet_validation_node
+  - append_only_dossier_write_node
+  - packet_index_write_node
+  - wf900_error_routing_node
+  - next_stage_routing_node
+  - completion_packet_emission_node
+wf900_error_route: WF-900
+execution_contract: executable_json_required
+legacy_workflow_json: n8n/workflows/script/CWF-210-script-generation.json
+canonical_workflow_json: n8n/workflows/CWF-210.json
+name: cwf210_script_generation
+class: child
+parent_pack: WF-200
+purpose: create the first structured script draft from the selected topic and research synthesis
+primary_owner: Vyasa
+supporting_directors:
+  - Saraswati
+  - Krishna
+inputs:
+  - topic_finalization_packet
+  - research_synthesis_packet
+output_packet_family:
+  - script_draft_packet
+writes:
+  - namespaces.script
+write_targets:
+  dossier_namespaces:
+    - script
+steps:
+  - normalize script brief
+  - derive title, hook, and section plan
+  - draft body from research synthesis
+  - attach evidence references
+  - emit script draft packet
+done_criteria:
+  - title generated
+  - hook generated
+  - section structure emitted
+  - evidence references attached
+fallback_behavior:
+  on_weak_draft:
+    - emit draft with status needs_debate
+    - request critique focus

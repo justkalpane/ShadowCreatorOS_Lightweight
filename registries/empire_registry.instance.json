@@ -1,0 +1,60 @@
+{
+  "empire_id": "shadow-creator-os-phase1-win-mid-16g",
+  "empire_name": "Shadow Creator OS — Phase 1 Local Estate",
+  "phase": "phase1",
+  "runtime_mode": "local",
+  "hardware_class": "WIN_MID_16G",
+  "active_directors": [
+    "Krishna",
+    "Aruna",
+    "Kubera",
+    "Yama",
+    "Ganesha",
+    "Vayu",
+    "Chitragupta",
+    "Narada",
+    "Chanakya",
+    "Vyasa",
+    "Saraswati",
+    "Chandra",
+    "Durga"
+  ],
+  "active_skill_packs": [
+    "topic_intelligence_wf100",
+    "script_intelligence_wf200"
+  ],
+  "active_routes": [
+    "ROUTE_PHASE1_STANDARD",
+    "ROUTE_PHASE1_FAST",
+    "ROUTE_PHASE1_REPLAY"
+  ],
+  "active_runtime_modes": [
+    "local",
+    "hybrid"
+  ],
+  "governance_kernel": {
+    "always_active": ["Krishna", "Aruna"],
+    "cost_gate": "Kubera",
+    "policy_gate": "Yama",
+    "hardware_gate": "Vayu",
+    "orchestration": "Krishna",
+    "audit": "Chitragupta"
+  },
+  "feature_flags": {
+    "heavy_media_enabled": false,
+    "premium_providers_enabled": false,
+    "autonomous_publish_enabled": false,
+    "analytics_loop_enabled": false,
+    "python_task_runner_available": false,
+    "context_engineering_pack_active": false,
+    "approval_governance_pack_active": false
+  },
+  "repo_source_of_truth": "https://github.com/justkalpane/Shadow-Creator-OS-Phase_01",
+  "local_repo_mirror_path": "C:\\ShadowEmpire\\Shadow-Creator-OS-Phase_01",
+  "unresolved_decision_packet_register": "registries/decision_packet_register.yaml",
+  "build_blocker_matrix_ref": "registries/build_blocker_matrix.yaml",
+  "release_blocker_matrix_ref": "registries/release_blocker_matrix.yaml",
+  "mode_registry_ref": "registries/mode_registry.yaml",
+  "provider_registry_ref": "registries/provider_registry.yaml",
+  "error_glossary_ref": "registries/error_registry.yaml"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "CWF-520 Distribution Planner Canonical",
+  "description": "Plans content distribution strategy and schedule across channels.",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger",
+      "name": "Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const distribution = {instance_id: 'DIST-' + Date.now(), artifact_family: 'distribution_plan_packet', schema_version: '1.0.0', producer_workflow: 'CWF-520', dossier_ref: $json.dossier_id, created_at: new Date().toISOString(), status: 'CREATED', payload: {distribution_plan_ready: true, channels_planned: ['youtube', 'blog', 'email', 'social'], publish_schedule: [{channel: 'youtube', publish_date: 'tomorrow_9am', priority: 1}, {channel: 'blog', publish_date: 'tomorrow_10am', priority: 2}, {channel: 'email', publish_date: 'tomorrow_11am', priority: 3}, {channel: 'social', publish_date: 'tomorrow_2pm', priority: 4}], cross_channel_strategy: 'synchronized_phased_rollout', resource_allocation: 'balanced'}};\nreturn [{ json: { ...$json, cwf520_result: { status: 'COMPLETED', distribution_plan_packet: distribution } } }];"
+      },
+      "id": "builder",
+      "name": "Builder",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const SkillLoader = require('../../../engine/skill_loader/skill_loader.js');\n  const loader = new SkillLoader();\n\n  if (!loader.skills_registry || Object.keys(loader.skills_registry).length === 0) {\n    const initResult = await loader.initialize();\n    if (initResult.status !== 'initialized') {\n      throw new Error('Failed to initialize SkillLoader');\n    }\n  }\n\n  const workflowId = 'CWF-520';\n  const defaultSkillMap = {\"CWF-310\":\"M-001\",\"CWF-320\":\"M-001\",\"CWF-330\":\"M-001\",\"CWF-340\":\"M-001\",\"CWF-410\":\"M-001\",\"CWF-420\":\"M-001\",\"CWF-430\":\"M-001\",\"CWF-440\":\"M-001\",\"CWF-510\":\"M-001\",\"CWF-520\":\"M-001\",\"CWF-530\":\"M-001\"};\n  const skillId = $json.skill_id || defaultSkillMap[workflowId] || 'M-001';\n  const dossierId = $json.dossier_context?.dossier_id || $json.dossier_id || 'DOSSIER-UNSPECIFIED';\n\n  const contextPacket = {\n    dossier_id: dossierId,\n    workflow_id: workflowId,\n    ...(typeof $json.user_context === 'object' ? $json.user_context : {}),\n    ...(typeof $json.route_context === 'object' ? $json.route_context : {})\n  };\n\n  const dossierState = typeof $json.dossier === 'object' ? $json.dossier : {};\n  const result = await loader.executeSkill(skillId, contextPacket, dossierState);\n\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: workflowId,\n        skill_id: skillId,\n        status: result.status,\n        had_error: result.status !== 'SUCCESS',\n        error_message: result.status === 'SUCCESS' ? '' : String(result.error || ''),\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: result.status === 'SUCCESS' ? (result.output || null) : null,\n      skill_execution_result: result.status === 'SUCCESS' ? result : null,\n      runtime: {\n        had_error: result.status !== 'SUCCESS',\n        error_message: result.status === 'SUCCESS' ? '' : String(result.error || '')\n      }\n    }\n  }];\n} catch (error) {\n  const message = String(error && error.message ? error.message : error);\n  return [{\n    json: {\n      ...$json,\n      phase8_runtime_probe: {\n        workflow_id: 'CWF-520',\n        skill_id: null,\n        status: 'ERROR',\n        had_error: true,\n        error_message: message,\n        timestamp: new Date().toISOString()\n      },\n      runtime_packet: null,\n      skill_execution_result: null,\n      runtime: { had_error: true, error_message: message }\n    }\n  }];\n}"
+      },
+      "id": "cwf_520_skill_runtime_probe_node",
+      "name": "Skill Runtime Probe Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger": {
+      "main": [
+        [
+          {
+            "node": "Skill Runtime Probe Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Builder": {
+      "main": [
+        []
+      ]
+    },
+    "Skill Runtime Probe Node": {
+      "main": [
+        [
+          {
+            "node": "Builder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "workflow_id": "CWF-520",
+    "phase": "phase5",
+    "vein": "publishing_vein",
+    "purpose": "Upload executor (deferred).",
+    "implementation_depth": "phase_deferred_stub",
+    "owner_director": "narada",
+    "next_workflow": "CWF-530",
+    "canonical_file": "n8n/workflows/CWF-520.json",
+    "wf900_error_route": "WF-900"
+  },
+  "active": true
+}

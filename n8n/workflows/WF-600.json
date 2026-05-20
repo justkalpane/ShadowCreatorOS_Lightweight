@@ -1,0 +1,426 @@
+{
+  "name": "WF-600 Analytics Evolution Pack Canonical",
+  "description": "Runs analytics lane: performance metrics → audience feedback → evolution signal synthesis.",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "wf600_trigger_node",
+      "name": "Trigger Node",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, dossier_context: { dossier_id: $json.dossier_id || 'DOSSIER-UNSPECIFIED', pack: 'WF-600', loaded_at: new Date().toISOString(), route: $json.route_id || 'ROUTE_PHASE1_ANALYTICS', publish_ready: !!$json.publish_ready_packet } } }];"
+      },
+      "id": "wf600_dossier_load_node",
+      "name": "Dossier Load Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { ...$json, pack_context: { child_workflows: ['CWF-610-performance-metrics-collector', 'CWF-620-audience-feedback-aggregator', 'CWF-630-evolution-signal-synthesizer'], primary_director: 'Chandra', strategic_authority: 'Chandra', governance_authority: ['Chitragupta', 'Yama'] } } }];"
+      },
+      "id": "wf600_pack_initialization_node",
+      "name": "Pack Initialization Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const childWorkflows = ['CWF-610', 'CWF-620', 'CWF-630'];\nlet executionPlan = { workflows_to_execute: childWorkflows, current_index: 0, status: 'PLANNING', async_collection_allowed: true, loop_closure_required: true };\nreturn [{ json: { ...$json, execution_plan: executionPlan, pack_orchestration: { started_at: new Date().toISOString(), expected_duration_seconds: 180 } } }];"
+      },
+      "id": "wf600_execution_planner_node",
+      "name": "Execution Planner Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "EO8sQt2MsVHuC4dN",
+          "mode": "id",
+          "cachedResultName": "CWF-610 Performance Metrics Collector"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf600_execute_cwf610_node",
+      "name": "Execute CWF-610 Performance Metrics Collector",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf610_result after sub-workflow CWF-610\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\n\nacc[\"cwf610_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf600_capture_cwf610_node",
+      "name": "Capture CWF-610 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1330,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "FdVr1pJc5hRAdfOa",
+          "mode": "id",
+          "cachedResultName": "CWF-620 Audience Feedback Aggregator"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf600_execute_cwf620_node",
+      "name": "Execute CWF-620 Audience Feedback Aggregator",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf620_result after sub-workflow CWF-620\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\ntry { const c = $('Capture CWF-610 Result').first(); if (c) acc[\"cwf610_result\"] = c.json[\"cwf610_result\"] || c.json; } catch(e) {}\nacc[\"cwf620_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf600_capture_cwf620_node",
+      "name": "Capture CWF-620 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1830,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "CCkijlf42XpHEcXM",
+          "mode": "id",
+          "cachedResultName": "CWF-630 Evolution Signal Synthesizer"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "wf600_execute_cwf630_node",
+      "name": "Execute CWF-630 Evolution Signal Synthesizer",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture cwf630_result after sub-workflow CWF-630\nconst subOutput = $json || {};\nlet parentCtx = {};\ntry { parentCtx = $('Execution Planner Node').first().json || {}; } catch(e) {}\nconst acc = { ...parentCtx };\ntry { const c = $('Capture CWF-610 Result').first(); if (c) acc[\"cwf610_result\"] = c.json[\"cwf610_result\"] || c.json; } catch(e) {}\n  try { const c = $('Capture CWF-620 Result').first(); if (c) acc[\"cwf620_result\"] = c.json[\"cwf620_result\"] || c.json; } catch(e) {}\nacc[\"cwf630_result\"] = {\n  status: subOutput.status || 'SUCCESS',\n  payload: subOutput.payload || subOutput,\n  captured_at: new Date().toISOString()\n};\nreturn [{ json: acc }];"
+      },
+      "id": "wf600_capture_cwf630_node",
+      "name": "Capture CWF-630 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2330,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Phase-2 chain validation: pass if all children returned SUCCESS/COMPLETED.\nconst childResults = {\n  CWF_610: $json.cwf610_result,\n  CWF_620: $json.cwf620_result,\n  CWF_630: $json.cwf630_result\n};\nconst allHealthy = Object.values(childResults).every(r => r && (r.status === 'SUCCESS' || r.status === 'COMPLETED'));\nconst validationOk = allHealthy;\nreturn [{ json: { ...$json, pack_validation: { child_results_aggregated: childResults, all_children_healthy: allHealthy, validation_ok: validationOk, route_to_error: !validationOk, phase2_acceptance: 'chain_healthy_required' } } }];"
+      },
+      "id": "wf600_pack_validation_node",
+      "name": "Pack Validation Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    ...$json,\n    dossier_write: {\n      mutation_type: 'namespace_update',\n      target: 'dossier.analytics',\n      timestamp: new Date().toISOString(),\n      writer_id: 'WF-600',\n      pack_context: $json.pack_context,\n      child_results: $json.pack_validation.child_results_aggregated,\n      audit_entry: 'analytics-evolution-pack-completion from WF-600'\n    }\n  }\n}];"
+      },
+      "id": "wf600_dossier_write_node",
+      "name": "Dossier Analytics Write Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2930,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    ...$json,\n    se_route_runs_write: {\n      operation: 'record_pack_execution',\n      pack_id: 'WF-600',\n      dossier_id: $json.dossier_id,\n      child_workflows_executed: ['CWF-610', 'CWF-620', 'CWF-630'],\n      execution_status: 'COMPLETED',\n      metrics_collected: $json.pack_validation.metrics_collected,\n      loop_closed: $json.pack_validation.loop_closed,\n      timestamp: new Date().toISOString()\n    }\n  }\n}];"
+      },
+      "id": "wf600_route_runs_write_node",
+      "name": "se_route_runs Write Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if ($json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    workflow_id: 'WF-600',\n    execution_status: 'SUCCESS',\n    completion_packet: {\n      instance_id: 'WF-600-COMP-' + Date.now(),\n      artifact_family: 'analytics_evolution_result',\n      schema_version: '1.0.0',\n      producer_workflow: 'WF-600',\n      dossier_ref: $json.dossier_id,\n      created_at: new Date().toISOString(),\n      status: 'CREATED',\n      payload: {\n        pack_executed: 'WF-600',\n        metrics_collected: $json.pack_validation.metrics_collected,\n        feedback_aggregated: $json.pack_validation.feedback_aggregated,\n        signals_synthesized: $json.pack_validation.signals_synthesized,\n        loop_closed: $json.pack_validation.loop_closed,\n        child_packets: ['CWF-610_output', 'CWF-620_output', 'CWF-630_output']\n      }\n    }\n  }\n}];"
+      },
+      "id": "wf600_completion_packet_emission_node",
+      "name": "Completion Packet Emission Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3430,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if (!$json.pack_validation.route_to_error) return [];\nreturn [{\n  json: {\n    workflow_id: 'WF-600',\n    routing_decision: 'ERROR',\n    route_to_workflow: 'WF-900',\n    error_message: 'Pack validation failed or analytics synthesis failed',\n    failure_context: $json.pack_validation,\n    child_results: $json.pack_validation.child_results_aggregated\n  }\n}];"
+      },
+      "id": "wf600_error_routing_node",
+      "name": "Error Routing WF-900 Node",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2930,
+        500
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger Node": {
+      "main": [
+        [
+          {
+            "node": "Dossier Load Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dossier Load Node": {
+      "main": [
+        [
+          {
+            "node": "Pack Initialization Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pack Initialization Node": {
+      "main": [
+        [
+          {
+            "node": "Execution Planner Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execution Planner Node": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-610 Performance Metrics Collector",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-610 Performance Metrics Collector": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-610 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-610 Result": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-620 Audience Feedback Aggregator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-620 Audience Feedback Aggregator": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-620 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-620 Result": {
+      "main": [
+        [
+          {
+            "node": "Execute CWF-630 Evolution Signal Synthesizer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute CWF-630 Evolution Signal Synthesizer": {
+      "main": [
+        [
+          {
+            "node": "Capture CWF-630 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture CWF-630 Result": {
+      "main": [
+        [
+          {
+            "node": "Pack Validation Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pack Validation Node": {
+      "main": [
+        [
+          {
+            "node": "Dossier Analytics Write Node",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Routing WF-900 Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dossier Analytics Write Node": {
+      "main": [
+        [
+          {
+            "node": "se_route_runs Write Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "se_route_runs Write Node": {
+      "main": [
+        [
+          {
+            "node": "Completion Packet Emission Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completion Packet Emission Node": {
+      "main": [
+        []
+      ]
+    },
+    "Error Routing WF-900 Node": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "meta": {
+    "workflow_id": "WF-600",
+    "phase": "phase1",
+    "vein": "analytics_vein",
+    "purpose": "Analytics evolution pack parent.",
+    "implementation_depth": "production_grade",
+    "owner_director": "narada",
+    "next_workflow": "WF-021",
+    "canonical_file": "n8n/workflows/WF-600.json",
+    "wf900_error_route": "WF-900",
+    "phase2_chaining": {
+      "applied_at": "2026-04-29",
+      "pattern": "children_first_then_validation",
+      "pack_id": "WF600",
+      "child_workflow_invocations": [
+        {
+          "name": "CWF-610 Performance Metrics Collector",
+          "live_id": "EO8sQt2MsVHuC4dN",
+          "capture_field": "cwf610_result"
+        },
+        {
+          "name": "CWF-620 Audience Feedback Aggregator",
+          "live_id": "FdVr1pJc5hRAdfOa",
+          "capture_field": "cwf620_result"
+        },
+        {
+          "name": "CWF-630 Evolution Signal Synthesizer",
+          "live_id": "CCkijlf42XpHEcXM",
+          "capture_field": "cwf630_result"
+        }
+      ],
+      "notes": "Chain runs all children BEFORE Pack Validation. Capture nodes preserve sub-workflow outputs as cwfXXX_result fields."
+    }
+  },
+  "active": true
+}

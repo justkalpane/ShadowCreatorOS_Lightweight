@@ -1,0 +1,16 @@
+{
+  "original_user_message": "Create production dossier #2: YouTube Shorts script on why most AI automation fails without human strategy, using MAC-05 repo-first loop with no n8n/providers/workflow execution.",
+  "normalized_topic": "Why most AI automation fails without human strategy",
+  "intent_id": "INTENT_MAC05_PROD_DOSSIER_02",
+  "intent_family": "repo_first_dossier_generation",
+  "mission_hash": "007b12565eac320b2c0662d8e2efb80b91318d1280b55f0e71653ed059b11e9c",
+  "created_at": "2026-05-20T20:14:09Z",
+  "dossier_id": "DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY",
+  "mission_id": "MIS_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY",
+  "platform": "YouTube Shorts",
+  "language": "English",
+  "format": "Short-form strategic script",
+  "target_duration": "60 seconds",
+  "runtime_used": "Codex repo-first"
+}
+

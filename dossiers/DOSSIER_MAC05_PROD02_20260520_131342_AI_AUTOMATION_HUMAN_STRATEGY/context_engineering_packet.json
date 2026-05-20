@@ -1,0 +1,58 @@
+{
+  "dossier_id": "DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY",
+  "topic": "Why most AI automation fails without human strategy",
+  "platform": "YouTube Shorts",
+  "target_format": "60-second strategic short",
+  "final_script_path": "dossiers/DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY/final_script.md",
+  "tone": "sharp, strategic, founder-style, simple but powerful",
+  "audience": [
+    "creators",
+    "startup builders",
+    "automation beginners",
+    "AI tool users"
+  ],
+  "scene_guidance": [
+    "Open with direct-to-camera urgency",
+    "Cut to simple whiteboard-style list for the 3 strategic questions",
+    "Use contrast cards: speed vs direction, volume vs traction",
+    "End on bold text lockup: Clarify first. Then multiply."
+  ],
+  "visual_guidance": [
+    "Minimalist, high-contrast typography",
+    "Fast cuts every 2-4 seconds",
+    "No fake dashboard screenshots or fabricated metrics"
+  ],
+  "voice_guidance": [
+    "Confident founder tone",
+    "Short punchy sentences",
+    "Emphasize warning on 'automate your confusion'"
+  ],
+  "edit_guidance": [
+    "Front-load first 5 seconds for retention",
+    "Use kinetic subtitles for key contrasts",
+    "Hold one beat before final line for emphasis"
+  ],
+  "thumbnail_direction": "Bold split phrase: 'Automation Fails' vs 'Strategy Wins' with clean face-forward expression.",
+  "metadata_direction": {
+    "title_options": [
+      "Why AI Automation Fails (Most People Miss This)",
+      "The Real Reason Your AI Workflows Don't Work",
+      "Automate Less. Think Better. Win More."
+    ],
+    "description_focus": "Strategy-first AI systems, quality gates, and founder execution model.",
+    "hashtag_cluster": [
+      "#AIAutomation",
+      "#StartupStrategy",
+      "#YouTubeShorts",
+      "#CreatorEconomy"
+    ]
+  },
+  "constraints": [
+    "No provider API calls",
+    "No n8n execution",
+    "No media artifact claim beyond planning guidance",
+    "Repo-first intelligence only"
+  ],
+  "lineage_reference": "dossiers/DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY/lineage.json"
+}
+

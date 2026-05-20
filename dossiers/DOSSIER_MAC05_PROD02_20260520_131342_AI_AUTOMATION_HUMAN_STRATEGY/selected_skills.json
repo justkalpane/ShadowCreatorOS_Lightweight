@@ -1,0 +1,81 @@
+[
+  {
+    "skill_id": "M-001",
+    "skill_name": "Intent Cortex",
+    "file_path": "skills/intelligence/M-001-intent-cortex.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-002",
+    "skill_name": "Context Analyzer",
+    "file_path": "skills/intelligence/M-002-context-analyzer.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-007",
+    "skill_name": "Algorithm Signal Monitor",
+    "file_path": "skills/topic_intelligence/M-007-algorithm-signal-monitor.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-016",
+    "skill_name": "Content Gap Finder",
+    "file_path": "skills/topic_intelligence/M-016-content-gap-finder.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-023",
+    "skill_name": "Trend Risk Evaluator",
+    "file_path": "skills/topic_intelligence/M-023-trend-risk-evaluator.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-029",
+    "skill_name": "Audience Analyzer",
+    "file_path": "skills/script_intelligence_army/M-029-audience-analyzer.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-031",
+    "skill_name": "Mrbeast Hook System",
+    "file_path": "skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-032",
+    "skill_name": "Pattern Interrupt Engine",
+    "file_path": "skills/script_intelligence_army/M-032-pattern-interrupt-engine.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-033",
+    "skill_name": "Curiosity Gap Generator",
+    "file_path": "skills/script_intelligence_army/M-033-curiosity-gap-generator.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-035",
+    "skill_name": "Engagement Loop Builder",
+    "file_path": "skills/script_intelligence_army/M-035-engagement-loop-builder.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-038",
+    "skill_name": "Payoff Delivery System",
+    "file_path": "skills/script_intelligence_army/M-038-payoff-delivery-system.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-040",
+    "skill_name": "Story Momentum Engine",
+    "file_path": "skills/script_intelligence_army/M-040-story-momentum-engine.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  },
+  {
+    "skill_id": "M-050",
+    "skill_name": "Platform Algorithm Adapter",
+    "file_path": "skills/script_intelligence_army/M-050-platform-algorithm-adapter.skill.md",
+    "registry_path": "registries/skill_registry.yaml"
+  }
+]
+

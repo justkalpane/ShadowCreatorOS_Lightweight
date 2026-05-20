@@ -1,0 +1,136 @@
+{
+  "dossier_id": "DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY",
+  "created_at": "2026-05-20T20:14:09Z",
+  "repo_path": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "git_baseline_commit": "f265db74d96fe3f63cb3ab9b3fd2907f5c806990",
+  "files_created": [
+    "mission.md",
+    "mission_context.json",
+    "selected_directors.json",
+    "selected_agents.json",
+    "selected_subagents.json",
+    "selected_skills.json",
+    "selected_subskills.json",
+    "research_brief.md",
+    "script_v1.md",
+    "debate.md",
+    "critique.md",
+    "final_script.md",
+    "context_engineering_packet.json",
+    "provider_handoff_packet.json",
+    "quality_gate_report.md",
+    "lineage.json",
+    "DOSSIER_README.md"
+  ],
+  "directors_selected": [
+    "narada",
+    "chanakya",
+    "valmiki",
+    "krishna"
+  ],
+  "agents_selected": [
+    "narada",
+    "chanakya",
+    "valmiki",
+    "krishna"
+  ],
+  "subagents_selected": [
+    "wf_100",
+    "wf_200",
+    "wf_300",
+    "cwf_110",
+    "cwf_210",
+    "cwf_220",
+    "cwf_230",
+    "cwf_240",
+    "cwf_310"
+  ],
+  "skills_selected": [
+    "M-001",
+    "M-002",
+    "M-007",
+    "M-016",
+    "M-023",
+    "M-029",
+    "M-031",
+    "M-032",
+    "M-033",
+    "M-035",
+    "M-038",
+    "M-040",
+    "M-050"
+  ],
+  "subskills_selected": [
+    "SS-220",
+    "SS-221",
+    "SS-222",
+    "SS-223",
+    "SS-224",
+    "SS-230",
+    "SS-234",
+    "SS-240"
+  ],
+  "needs_confirmation": [],
+  "selection_evidence": {
+    "directors": [
+      "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+      "registries/director_contracts/Narada-Contract.md",
+      "registries/director_contracts/Chanakya-Contract.md",
+      "registries/director_contracts/Valmiki-Contract.md",
+      "registries/director_contracts/Krishna-Contract.md"
+    ],
+    "agents": [
+      "agents/AGENT_RUNTIME_REGISTRY.yaml",
+      "agents/narada/narada_agent.py",
+      "agents/chanakya/chanakya_agent.py",
+      "agents/valmiki/valmiki_agent.py",
+      "agents/krishna/krishna_agent.py"
+    ],
+    "subagents": [
+      "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml",
+      "subagents/wf_100/wf_100_sub_agent.py",
+      "subagents/wf_200/wf_200_sub_agent.py",
+      "subagents/wf_300/wf_300_sub_agent.py",
+      "subagents/cwf_110/cwf_110_sub_agent.py",
+      "subagents/cwf_210/cwf_210_sub_agent.py",
+      "subagents/cwf_220/cwf_220_sub_agent.py",
+      "subagents/cwf_230/cwf_230_sub_agent.py",
+      "subagents/cwf_240/cwf_240_sub_agent.py",
+      "subagents/cwf_310/cwf_310_sub_agent.py"
+    ],
+    "skills": [
+      "registries/skill_registry.yaml",
+      "skills/intelligence/M-001-intent-cortex.skill.md",
+      "skills/intelligence/M-002-context-analyzer.skill.md",
+      "skills/topic_intelligence/M-007-algorithm-signal-monitor.skill.md",
+      "skills/topic_intelligence/M-016-content-gap-finder.skill.md",
+      "skills/topic_intelligence/M-023-trend-risk-evaluator.skill.md",
+      "skills/script_intelligence_army/M-029-audience-analyzer.skill.md",
+      "skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md",
+      "skills/script_intelligence_army/M-032-pattern-interrupt-engine.skill.md",
+      "skills/script_intelligence_army/M-033-curiosity-gap-generator.skill.md",
+      "skills/script_intelligence_army/M-035-engagement-loop-builder.skill.md",
+      "skills/script_intelligence_army/M-038-payoff-delivery-system.skill.md",
+      "skills/script_intelligence_army/M-040-story-momentum-engine.skill.md",
+      "skills/script_intelligence_army/M-050-platform-algorithm-adapter.skill.md"
+    ],
+    "subskills": [
+      "registries/subskill_runtime_registry.yaml",
+      "skills/sub_skills/SS-220-deep-research-agent.subskill.md",
+      "skills/sub_skills/SS-221-source-credibility-evaluator.subskill.md",
+      "skills/sub_skills/SS-222-fact-verification-engine.subskill.md",
+      "skills/sub_skills/SS-223-knowledge-synthesizer.subskill.md",
+      "skills/sub_skills/SS-224-contradiction-detector.subskill.md",
+      "skills/sub_skills/SS-230-content-angle-generator.subskill.md",
+      "skills/sub_skills/SS-234-platform-strategy-mapper.subskill.md",
+      "skills/sub_skills/SS-240-hook-variation-generator.subskill.md"
+    ]
+  },
+  "runtime_used": "Codex repo-first",
+  "n8n_used": false,
+  "gemini_used": false,
+  "providers_used": false,
+  "openwebui_used": false,
+  "old_windows_runtime_used": false
+}
+

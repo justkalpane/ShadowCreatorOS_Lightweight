@@ -1,0 +1,64 @@
+{
+  "dossier_id": "DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY",
+  "mission_id": "MIS_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY",
+  "platform": "YouTube Shorts",
+  "topic": "Why most AI automation fails without human strategy",
+  "script_path": "dossiers/DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY/final_script.md",
+  "context_packet_path": "dossiers/DOSSIER_MAC05_PROD02_20260520_131342_AI_AUTOMATION_HUMAN_STRATEGY/context_engineering_packet.json",
+  "voice_requirements": {
+    "style": "founder-strategic",
+    "pace": "fast-clear",
+    "emphasis": [
+      "automate your confusion",
+      "clarify first then multiply"
+    ]
+  },
+  "thumbnail_requirements": {
+    "concept": "Failure vs Strategy contrast",
+    "text_limit_words": 4,
+    "no_fake_metrics": true
+  },
+  "image_requirements": {
+    "supporting_frames": 3,
+    "style": "clean high contrast explanatory overlays"
+  },
+  "avatar_requirements": {
+    "needed": false,
+    "note": "Optional in later execution phase only"
+  },
+  "video_requirements": {
+    "duration_seconds": 60,
+    "aspect_ratio": "9:16",
+    "subtitle_required": true
+  },
+  "publishing_requirements": {
+    "platform": "YouTube Shorts",
+    "schedule_mode": "manual_approval_required"
+  },
+  "analytics_requirements": {
+    "primary_metrics": [
+      "3s_hold_rate",
+      "average_view_duration",
+      "completion_rate",
+      "shares"
+    ]
+  },
+  "provider_preferences": {
+    "execution_deferred": true,
+    "preferred_stack": [],
+    "note": "No provider execution in MAC-05 planning/production dossier stage"
+  },
+  "local_fallback_preferences": {
+    "text_only_operating_mode": true,
+    "manual_review_before_execution": true
+  },
+  "cost_gate": {
+    "max_cost_usd": 0,
+    "paid_execution_allowed": false
+  },
+  "execution_mode": "not_ready_reference_only",
+  "approval_required": true,
+  "artifact_output_root": "artifacts/dossier_mac05_prod02_ai_automation_human_strategy/",
+  "lineage_update_required": true
+}
+

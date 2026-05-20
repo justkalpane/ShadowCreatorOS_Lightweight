@@ -1,0 +1,48 @@
+[
+  {
+    "subagent_name": "wf_100",
+    "subagent_file": "subagents/wf_100/wf_100_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "wf_200",
+    "subagent_file": "subagents/wf_200/wf_200_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "wf_300",
+    "subagent_file": "subagents/wf_300/wf_300_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "cwf_110",
+    "subagent_file": "subagents/cwf_110/cwf_110_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "cwf_210",
+    "subagent_file": "subagents/cwf_210/cwf_210_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "cwf_220",
+    "subagent_file": "subagents/cwf_220/cwf_220_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "cwf_230",
+    "subagent_file": "subagents/cwf_230/cwf_230_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "cwf_240",
+    "subagent_file": "subagents/cwf_240/cwf_240_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  },
+  {
+    "subagent_name": "cwf_310",
+    "subagent_file": "subagents/cwf_310/cwf_310_sub_agent.py",
+    "registry_path": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml"
+  }
+]
+

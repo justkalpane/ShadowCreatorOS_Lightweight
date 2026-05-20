@@ -1,0 +1,27 @@
+[
+  {
+    "agent_name": "narada",
+    "agent_file": "agents/narada/narada_agent.py",
+    "registry_path": "agents/AGENT_RUNTIME_REGISTRY.yaml",
+    "selection_reason": "Distribution and optimization framing for automation strategy narrative."
+  },
+  {
+    "agent_name": "chanakya",
+    "agent_file": "agents/chanakya/chanakya_agent.py",
+    "registry_path": "agents/AGENT_RUNTIME_REGISTRY.yaml",
+    "selection_reason": "Strategic filtering and failure-mode diagnosis."
+  },
+  {
+    "agent_name": "valmiki",
+    "agent_file": "agents/valmiki/valmiki_agent.py",
+    "registry_path": "agents/AGENT_RUNTIME_REGISTRY.yaml",
+    "selection_reason": "Narrative shaping for concise Shorts pacing."
+  },
+  {
+    "agent_name": "krishna",
+    "agent_file": "agents/krishna/krishna_agent.py",
+    "registry_path": "agents/AGENT_RUNTIME_REGISTRY.yaml",
+    "selection_reason": "Synthesis and strategic closing position."
+  }
+]
+

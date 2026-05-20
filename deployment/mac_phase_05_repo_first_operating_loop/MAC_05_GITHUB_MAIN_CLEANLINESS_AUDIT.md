@@ -1,0 +1,47 @@
+MAC_05_GITHUB_MAIN_CLEANLINESS_AUDIT_STATUS=PASS
+
+local_clean=true
+origin_main_matches_local=true
+origin_main_matches_lightweight_branch=true
+main_is_lightweight_structure=true
+main_lightweight_markers_present=true
+old_style_markers_on_main_found=false
+
+backup_branch_exists=true
+backup_contains_old_structure=true
+
+metadata_old_origin_signal=true
+metadata_old_origin_summary=Repository metadata still references templateRepository Shadow-Creator-OS-Phase_01 even though main content is lightweight and active.
+
+local_branch=main
+local_head=fbe4b5e2f9a7d53eb90fdb009609d96219643f8e
+origin_main_head=fbe4b5e2f9a7d53eb90fdb009609d96219643f8e
+origin_lightweight_mac_prod_head=fbe4b5e2f9a7d53eb90fdb009609d96219643f8e
+backup_branch_name=backup-old-main-before-lightweight-promotion-20260520_134646
+
+origin_main_top_level=.gitignore,00_READ_ME_FIRST_FOR_MAC_MIGRATION.md,AGENT_OPERATING_GUIDE.md,COPY_MANIFEST.json,COPY_MANIFEST.md,MAC_BOOTSTRAP_START_REPORT.md,MAC_CODEX_READ_ORDER_ON_FIRST_OPEN.md,SHADOW_LIGHTWEIGHT_RUNTIME.md,START_HERE_FOR_MAC_CODEX.md,agents,archive_reference,audits,context_engineering,deployment,directors,docs,dossiers,examples,future_n8n_execution,handoff,n8n,prompts,registries,runtime_contracts,schemas,scripts,skills,subagents,subskills,tests,transfer_bundle,validators
+origin_lightweight_top_level=.gitignore,00_READ_ME_FIRST_FOR_MAC_MIGRATION.md,AGENT_OPERATING_GUIDE.md,COPY_MANIFEST.json,COPY_MANIFEST.md,MAC_BOOTSTRAP_START_REPORT.md,MAC_CODEX_READ_ORDER_ON_FIRST_OPEN.md,SHADOW_LIGHTWEIGHT_RUNTIME.md,START_HERE_FOR_MAC_CODEX.md,agents,archive_reference,audits,context_engineering,deployment,directors,docs,dossiers,examples,future_n8n_execution,handoff,n8n,prompts,registries,runtime_contracts,schemas,scripts,skills,subagents,subskills,tests,transfer_bundle,validators
+backup_old_main_top_level=.env.example,.github,.gitignore,BLOCKER_FIX_LEDGER.md,BUILD_EXECUTION_PLAN_FROM_HANDOFF.md,BUILD_STATUS.md,BUILD_STATUS_2026-04-20.md,CHATGPT_ANALYSIS_AND_STRATEGY.md,CODEX_TO_CLAUDE_HANDOFF_2026-04-28_RUNTIME_CONTINUATION.txt,COMPLETE_COMPONENT_DEPLOYMENT_AUDIT.md,COMPLETE_DEPLOYMENT_PHASE_FINAL.md,COMPREHENSIVE_GAP_CLOSURE_REPORT.md,CURRENT_STATE_REPORT.md,CURRENT_STATUS_SUMMARY.md,DEPLOYMENT_FINAL_VERIFICATION.md,...(old heavy structure preserved)
+
+old_style_markers_on_main=
+- none
+
+default_branch=main
+is_fork=false
+parent=null
+is_template=false
+template_repository=justkalpane/Shadow-Creator-OS-Phase_01
+
+clean_for_agent_use=true
+clean_for_user_visual_confidence=true
+
+recommended_action=
+- keep_current_repo
+- set_description_to_lightweight
+- delete_backup_branch_later
+
+n8n_started=false
+workflow_imported=false
+workflow_executed=false
+providers_called=false
+production_dossier_started=false

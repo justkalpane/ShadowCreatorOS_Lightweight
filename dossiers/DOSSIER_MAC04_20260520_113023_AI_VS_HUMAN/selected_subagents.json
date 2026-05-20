@@ -1,0 +1,63 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "selection_method": "workflow_pack_alignment",
+  "subagents_selected": [
+    {
+      "subagent_id": "wf_100",
+      "file_path": "subagents/wf_100/wf_100_sub_agent.py",
+      "purpose": "topic_intelligence_pack"
+    },
+    {
+      "subagent_id": "wf_200",
+      "file_path": "subagents/wf_200/wf_200_sub_agent.py",
+      "purpose": "script_intelligence_pack"
+    },
+    {
+      "subagent_id": "wf_300",
+      "file_path": "subagents/wf_300/wf_300_sub_agent.py",
+      "purpose": "context_engineering_pack"
+    },
+    {
+      "subagent_id": "cwf_110",
+      "file_path": "subagents/cwf_110/cwf_110_sub_agent.py",
+      "purpose": "topic_discovery"
+    },
+    {
+      "subagent_id": "cwf_140",
+      "file_path": "subagents/cwf_140/cwf_140_sub_agent.py",
+      "purpose": "research_synthesis"
+    },
+    {
+      "subagent_id": "cwf_210",
+      "file_path": "subagents/cwf_210/cwf_210_sub_agent.py",
+      "purpose": "script_generation"
+    },
+    {
+      "subagent_id": "cwf_220",
+      "file_path": "subagents/cwf_220/cwf_220_sub_agent.py",
+      "purpose": "script_debate"
+    },
+    {
+      "subagent_id": "cwf_230",
+      "file_path": "subagents/cwf_230/cwf_230_sub_agent.py",
+      "purpose": "script_refinement"
+    },
+    {
+      "subagent_id": "cwf_240",
+      "file_path": "subagents/cwf_240/cwf_240_sub_agent.py",
+      "purpose": "final_script_shaping"
+    },
+    {
+      "subagent_id": "cwf_310",
+      "file_path": "subagents/cwf_310/cwf_310_sub_agent.py",
+      "purpose": "execution_context_builder"
+    },
+    {
+      "subagent_id": "cwf_340",
+      "file_path": "subagents/cwf_340/cwf_340_sub_agent.py",
+      "purpose": "lineage_validation"
+    }
+  ],
+  "needs_confirmation": []
+}
+

@@ -1,0 +1,48 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "selection_method": "registry_first",
+  "directors_selected": [
+    {
+      "director_id": "narada",
+      "role": "research_discovery_and_signal_scan",
+      "rationale": "Preferred research lead and explicitly present in director registry/contract set.",
+      "evidence": [
+        "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+        "directors/strategy/narada.md",
+        "registries/director_contracts/Narada-Contract.md"
+      ]
+    },
+    {
+      "director_id": "chanakya",
+      "role": "flaw_finding_and_argument_stress_test",
+      "rationale": "Preferred critique and contradiction pressure role.",
+      "evidence": [
+        "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+        "directors/strategy/chanakya.md",
+        "registries/director_contracts/Chanakya-Contract.md"
+      ]
+    },
+    {
+      "director_id": "valmiki",
+      "role": "narrative_shaping_and_story_clarity",
+      "rationale": "Preferred storytelling and script shaping role.",
+      "evidence": [
+        "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+        "directors/research/valmiki.md",
+        "registries/director_contracts/Valmiki-Contract.md"
+      ]
+    },
+    {
+      "director_id": "krishna",
+      "role": "strategic_framing_and_synthesis",
+      "rationale": "Preferred strategy/framing and final synthesis role.",
+      "evidence": [
+        "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+        "directors/supreme_vision/krishna.md",
+        "registries/director_contracts/Krishna-Contract.md"
+      ]
+    }
+  ],
+  "needs_confirmation": []
+}
+

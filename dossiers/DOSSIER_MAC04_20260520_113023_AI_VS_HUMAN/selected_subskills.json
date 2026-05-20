@@ -1,0 +1,80 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "selection_method": "subskill_registry_alignment",
+  "subskills_selected": [
+    {
+      "subskill_id": "SS-001",
+      "name": "context_packet_sanitizer",
+      "runtime_file": "skills/sub_skills/SS-001-context-packet-sanitizer.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-220",
+      "name": "deep_research_agent",
+      "runtime_file": "skills/sub_skills/SS-220-deep-research-agent.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-221",
+      "name": "source_credibility_evaluator",
+      "runtime_file": "skills/sub_skills/SS-221-source-credibility-evaluator.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-222",
+      "name": "fact_verification_engine",
+      "runtime_file": "skills/sub_skills/SS-222-fact-verification-engine.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-223",
+      "name": "knowledge_synthesizer",
+      "runtime_file": "skills/sub_skills/SS-223-knowledge-synthesizer.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-224",
+      "name": "contradiction_detector",
+      "runtime_file": "skills/sub_skills/SS-224-contradiction-detector.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-240",
+      "name": "hook_variation_generator",
+      "runtime_file": "skills/sub_skills/SS-240-hook-variation-generator.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-241",
+      "name": "open_loop_generator",
+      "runtime_file": "skills/sub_skills/SS-241-open-loop-generator.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-242",
+      "name": "story_tension_builder",
+      "runtime_file": "skills/sub_skills/SS-242-story-tension-builder.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-243",
+      "name": "pacing_controller",
+      "runtime_file": "skills/sub_skills/SS-243-pacing-controller.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-244",
+      "name": "retention_loop_engine",
+      "runtime_file": "skills/sub_skills/SS-244-retention-loop-engine.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    },
+    {
+      "subskill_id": "SS-245",
+      "name": "cliffhanger_designer",
+      "runtime_file": "skills/sub_skills/SS-245-cliffhanger-designer.py",
+      "registry_evidence": "registries/subskill_runtime_registry.yaml"
+    }
+  ],
+  "needs_confirmation": []
+}
+

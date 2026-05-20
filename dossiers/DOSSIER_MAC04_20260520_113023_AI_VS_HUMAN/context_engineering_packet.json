@@ -1,0 +1,55 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "topic": "AI vs Human",
+  "platform": "YouTube",
+  "target_format": "long_form_commentary_script",
+  "final_script_path": "dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/final_script.md",
+  "tone": "high-clarity strategic commentary with emotional realism",
+  "audience": "creators, knowledge workers, and tech-curious general audience",
+  "scene_guidance": [
+    "Open with direct-to-camera tension line",
+    "Alternate between presenter close-up and kinetic B-roll about automation",
+    "Use on-screen contrast cards: AI Strength vs Human Strength",
+    "Hold final 20 seconds on steady close-up for conviction ending"
+  ],
+  "visual_guidance": [
+    "Contrast visual motif: grid/system imagery for AI, human interaction imagery for human judgment",
+    "Avoid dystopian cliches and robot stock tropes",
+    "Use clean typography overlays for three conflict risks"
+  ],
+  "voice_guidance": [
+    "Confident, grounded delivery",
+    "Short emphatic pauses at section transitions",
+    "Increase urgency through conflict section, resolve with calm authority in ending"
+  ],
+  "edit_guidance": [
+    "Cut every 2-4 seconds in first minute",
+    "Use pacing slowdown for accountability lines",
+    "Add subtle impact stings on contrast statements"
+  ],
+  "thumbnail_direction": "Split-frame concept: left 'AI SPEED' right 'HUMAN JUDGMENT' with presenter centered and conflict expression",
+  "metadata_direction": {
+    "title_options": [
+      "AI vs Human: The Real Fight Nobody Explains",
+      "AI Is Fast. Humans Are Responsible. Here Is Why That Matters",
+      "The Truth About AI vs Human Workflows"
+    ],
+    "description_focus": "Practical model for AI-human collaboration, accountability, and creator relevance.",
+    "tag_clusters": [
+      "AI vs human",
+      "future of work",
+      "creator strategy",
+      "AI productivity",
+      "human creativity"
+    ]
+  },
+  "constraints": [
+    "no_n8n_execution",
+    "no_provider_api_calls",
+    "no_gemini_calls",
+    "no_openwebui_runtime",
+    "no_fabricated_media_artifacts"
+  ],
+  "lineage_reference": "dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/lineage.json"
+}
+

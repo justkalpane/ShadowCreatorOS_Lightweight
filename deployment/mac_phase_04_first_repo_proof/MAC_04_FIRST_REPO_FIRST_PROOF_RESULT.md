@@ -1,0 +1,71 @@
+# MAC-04 First Repo-First Proof Result
+
+MAC_04_FIRST_REPO_FIRST_PROOF_STATUS=PASS
+
+repo_path=/Users/apple/Documents/ShadowCreatorOS_Lightweight
+git_baseline_commit=f265db74d96fe3f63cb3ab9b3fd2907f5c806990
+dossier_id=DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN
+dossier_path=/Users/apple/Documents/ShadowCreatorOS_Lightweight/dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN
+
+files_created=
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/mission.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/mission_context.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/selected_directors.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/selected_agents.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/selected_subagents.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/selected_skills.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/selected_subskills.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/research_brief.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/script_v1.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/debate.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/critique.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/final_script.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/context_engineering_packet.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/provider_handoff_packet.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/quality_gate_report.md
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/lineage.json
+- dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/DOSSIER_README.md
+
+director_selection_grounded=true
+agent_selection_grounded=true
+subagent_selection_grounded=true
+skill_selection_grounded=true
+subskill_selection_grounded=true
+
+needs_confirmation=
+- None
+
+topic="AI vs Human"
+topic_adherence_pass=true
+generic_output_detected=false
+final_script_created=true
+final_script_quality_pass=true
+
+context_packet_created=true
+context_packet_valid_json=true
+provider_handoff_packet_created=true
+provider_handoff_packet_valid_json=true
+quality_gate_passed=true
+lineage_written=true
+
+n8n_used=false
+workflow_imported=false
+workflow_executed=false
+gemini_called=false
+providers_called=false
+openwebui_used=false
+old_windows_runtime_used=false
+media_artifacts_claimed=false
+
+git_status_after=
+?? deployment/mac_phase_03_agent_setup/MAC_03_5_GIT_BASELINE_RESULT.md
+?? deployment/mac_phase_04_first_repo_proof/MAC_04_FIRST_REPO_FIRST_PROOF_RESULT.md
+?? dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/
+git_diff_stat=
+(no tracked file diff; working tree contains untracked files only)
+
+safe_to_review_first_proof=true
+safe_to_commit_first_proof_after_user_review=true
+safe_to_continue_to_MAC_05=false
+
+NEXT_ACTION=Review dossier content and grounded selection evidence, then approve commit if quality expectations are met.

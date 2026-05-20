@@ -1,0 +1,104 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "selection_method": "registry_first",
+  "skills_selected": [
+    {
+      "skill_id": "M-001",
+      "file_path": "skills/intelligence/M-001-intent-cortex.skill.md",
+      "workflow_pack": "WF-100",
+      "registry_evidence": "registries/skill_registry_wf100.yaml"
+    },
+    {
+      "skill_id": "M-016",
+      "file_path": "skills/topic_intelligence/M-016-content-gap-finder.skill.md",
+      "workflow_pack": "WF-100",
+      "registry_evidence": "registries/skill_registry_wf100.yaml"
+    },
+    {
+      "skill_id": "M-023",
+      "file_path": "skills/topic_intelligence/M-023-trend-risk-evaluator.skill.md",
+      "workflow_pack": "WF-100",
+      "registry_evidence": "registries/skill_registry_wf100.yaml"
+    },
+    {
+      "skill_id": "S-201",
+      "file_path": "skills/script_intelligence/S-201-research-to-script-brief.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-202",
+      "file_path": "skills/script_intelligence/S-202-first-draft-generation.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-203",
+      "file_path": "skills/script_intelligence/S-203-hook-structure-audit.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-204",
+      "file_path": "skills/script_intelligence/S-204-clarity-enhancer.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-205",
+      "file_path": "skills/script_intelligence/S-205-evidence-aligner.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-206",
+      "file_path": "skills/script_intelligence/S-206-clarity-retention-refinement.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-207",
+      "file_path": "skills/script_intelligence/S-207-narrative-flow-optimizer.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-209",
+      "file_path": "skills/script_intelligence/S-209-audience-alignment-mapper.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "S-210",
+      "file_path": "skills/script_intelligence/S-210-final-script-packager.skill.md",
+      "workflow_pack": "WF-200",
+      "registry_evidence": "registries/director_binding_wf200.yaml"
+    },
+    {
+      "skill_id": "P-301",
+      "file_path": "skills/context_engineering/P-301-execution-context-engineer.skill.md",
+      "workflow_pack": "WF-300",
+      "registry_evidence": "registries/skill_registry_wf300.yaml"
+    },
+    {
+      "skill_id": "P-302",
+      "file_path": "skills/context_engineering/P-302-platform-format-specialist.skill.md",
+      "workflow_pack": "WF-300",
+      "registry_evidence": "registries/skill_registry_wf300.yaml"
+    },
+    {
+      "skill_id": "P-304",
+      "file_path": "skills/context_engineering/P-304-lineage-chain-validator.skill.md",
+      "workflow_pack": "WF-300",
+      "registry_evidence": "registries/skill_registry_wf300.yaml"
+    },
+    {
+      "skill_id": "P-305",
+      "file_path": "skills/context_engineering/P-305-context-packet-finalizer.skill.md",
+      "workflow_pack": "WF-300",
+      "registry_evidence": "registries/skill_registry_wf300.yaml"
+    }
+  ],
+  "needs_confirmation": []
+}
+

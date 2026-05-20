@@ -1,0 +1,28 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "selection_method": "registry_first",
+  "agents_selected": [
+    {
+      "agent_slug": "narada",
+      "file_path": "agents/narada/narada_agent.py",
+      "registry_evidence": "agents/AGENT_RUNTIME_REGISTRY.yaml"
+    },
+    {
+      "agent_slug": "chanakya",
+      "file_path": "agents/chanakya/chanakya_agent.py",
+      "registry_evidence": "agents/AGENT_RUNTIME_REGISTRY.yaml"
+    },
+    {
+      "agent_slug": "valmiki",
+      "file_path": "agents/valmiki/valmiki_agent.py",
+      "registry_evidence": "agents/AGENT_RUNTIME_REGISTRY.yaml"
+    },
+    {
+      "agent_slug": "krishna",
+      "file_path": "agents/krishna/krishna_agent.py",
+      "registry_evidence": "agents/AGENT_RUNTIME_REGISTRY.yaml"
+    }
+  ],
+  "needs_confirmation": []
+}
+

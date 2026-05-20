@@ -1,0 +1,110 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "created_at": "2026-05-20T18:31:05Z",
+  "repo_path": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "git_baseline_commit": "f265db74d96fe3f63cb3ab9b3fd2907f5c806990",
+  "files_created": [
+    "mission.md",
+    "mission_context.json",
+    "selected_directors.json",
+    "selected_agents.json",
+    "selected_subagents.json",
+    "selected_skills.json",
+    "selected_subskills.json",
+    "research_brief.md",
+    "script_v1.md",
+    "debate.md",
+    "critique.md",
+    "final_script.md",
+    "context_engineering_packet.json",
+    "provider_handoff_packet.json",
+    "quality_gate_report.md",
+    "lineage.json",
+    "DOSSIER_README.md"
+  ],
+  "directors_selected": [
+    "narada",
+    "chanakya",
+    "valmiki",
+    "krishna"
+  ],
+  "agents_selected": [
+    "narada",
+    "chanakya",
+    "valmiki",
+    "krishna"
+  ],
+  "subagents_selected": [
+    "wf_100",
+    "wf_200",
+    "wf_300",
+    "cwf_110",
+    "cwf_140",
+    "cwf_210",
+    "cwf_220",
+    "cwf_230",
+    "cwf_240",
+    "cwf_310",
+    "cwf_340"
+  ],
+  "skills_selected": [
+    "M-001",
+    "M-016",
+    "M-023",
+    "S-201",
+    "S-202",
+    "S-203",
+    "S-204",
+    "S-205",
+    "S-206",
+    "S-207",
+    "S-209",
+    "S-210",
+    "P-301",
+    "P-302",
+    "P-304",
+    "P-305"
+  ],
+  "subskills_selected": [
+    "SS-001",
+    "SS-220",
+    "SS-221",
+    "SS-222",
+    "SS-223",
+    "SS-224",
+    "SS-240",
+    "SS-241",
+    "SS-242",
+    "SS-243",
+    "SS-244",
+    "SS-245"
+  ],
+  "needs_confirmation": [],
+  "selection_evidence": {
+    "directors": [
+      "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+      "registries/director_contracts/Narada-Contract.md",
+      "registries/director_contracts/Chanakya-Contract.md",
+      "registries/director_contracts/Valmiki-Contract.md",
+      "registries/director_contracts/Krishna-Contract.md"
+    ],
+    "agents": [
+      "agents/AGENT_RUNTIME_REGISTRY.yaml"
+    ],
+    "skills": [
+      "registries/skill_registry_wf100.yaml",
+      "registries/director_binding_wf200.yaml",
+      "registries/skill_registry_wf300.yaml"
+    ],
+    "subskills": [
+      "registries/subskill_runtime_registry.yaml"
+    ]
+  },
+  "runtime_used": "Codex repo-first",
+  "n8n_used": false,
+  "gemini_used": false,
+  "providers_used": false,
+  "openwebui_used": false,
+  "old_windows_runtime_used": false
+}
+

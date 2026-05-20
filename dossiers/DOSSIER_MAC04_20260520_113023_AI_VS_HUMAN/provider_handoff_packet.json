@@ -1,0 +1,67 @@
+{
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "mission_id": "MIS_MAC04_20260520_113023_AI_VS_HUMAN",
+  "platform": "YouTube",
+  "topic": "AI vs Human",
+  "script_path": "dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/final_script.md",
+  "context_packet_path": "dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/context_engineering_packet.json",
+  "voice_requirements": {
+    "style": "strategic, human, persuasive",
+    "tempo": "dynamic with controlled pauses",
+    "priority": "clarity over theatricality"
+  },
+  "thumbnail_requirements": {
+    "primary_concept": "AI SPEED vs HUMAN JUDGMENT split-frame",
+    "text_overlay_max_words": 4,
+    "emotion_target": "tension + authority"
+  },
+  "image_requirements": {
+    "broll_themes": [
+      "automation dashboards",
+      "human decision moments",
+      "collaboration scenes"
+    ],
+    "style_guardrails": [
+      "no generic robot cliche visuals",
+      "high contrast editorial lighting"
+    ]
+  },
+  "avatar_requirements": {
+    "required": false,
+    "fallback_mode": "presenter_real_footage_preferred"
+  },
+  "video_requirements": {
+    "aspect_ratio": "16:9",
+    "estimated_duration_seconds": 380,
+    "subtitle_required": true
+  },
+  "publishing_requirements": {
+    "title_generation_required": true,
+    "description_generation_required": true,
+    "tags_generation_required": true,
+    "publish_mode": "manual_approval_gate"
+  },
+  "analytics_requirements": {
+    "track_retention": true,
+    "track_ctr": true,
+    "track_comment_sentiment": true
+  },
+  "provider_preferences": {
+    "voice": "TBD_after_approval",
+    "thumbnail": "TBD_after_approval",
+    "video_generation": "TBD_after_approval"
+  },
+  "local_fallback_preferences": {
+    "use_local_tools_if_provider_unavailable": true,
+    "defer_execution_if_quality_uncertain": true
+  },
+  "cost_gate": {
+    "max_cost_usd": "NEEDS_CONFIRMATION",
+    "hard_stop_without_approval": true
+  },
+  "execution_mode": "not_ready_reference_only",
+  "approval_required": true,
+  "artifact_output_root": "dossiers/DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN/artifacts",
+  "lineage_update_required": true
+}
+

@@ -1,0 +1,13 @@
+{
+  "original_user_message": "Run MAC-04 First Repo-First Proof for topic AI vs Human using Codex only and create one complete dossier without n8n/providers.",
+  "normalized_topic": "AI vs Human",
+  "intent_id": "INTENT_MAC04_FIRST_REPO_FIRST_PROOF",
+  "intent_family": "repo_first_dossier_generation",
+  "mission_hash": "8bdca8467dbe66c9e55335fa5258e333898586b95b33dbd93e1fe0977e395612",
+  "created_at": "2026-05-20T18:31:05Z",
+  "dossier_id": "DOSSIER_MAC04_20260520_113023_AI_VS_HUMAN",
+  "mission_id": "MIS_MAC04_20260520_113023_AI_VS_HUMAN",
+  "platform": "YouTube",
+  "runtime_used": "Codex repo-first"
+}
+

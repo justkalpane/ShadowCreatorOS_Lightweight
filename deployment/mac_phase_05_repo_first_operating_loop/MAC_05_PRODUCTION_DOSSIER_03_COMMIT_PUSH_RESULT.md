@@ -12,7 +12,7 @@ dossier_commit_created=true
 dossier_commit_hash=4cf5ae2da3d57ebbc3544b7648af54655b3605c2
 
 report_commit_created=true
-report_commit_hash=TO_BE_FILLED_AFTER_COMMIT
+report_commit_hash=9e6a6420d1a5657da176561f5f0f7ef9154e2f94
 
 pushed_to_branch=main
 push_success=true
@@ -28,7 +28,7 @@ openwebui_used=false
 old_windows_runtime_used=false
 media_artifacts_created=false
 
-git_status_after=TO_BE_FILLED_AFTER_FINAL_PUSH
+git_status_after=clean
 safe_to_plan_multi_agent_review_lane=true
 safe_to_start_production_dossier_04=true
 safe_to_start_n8n_execution_bus=false

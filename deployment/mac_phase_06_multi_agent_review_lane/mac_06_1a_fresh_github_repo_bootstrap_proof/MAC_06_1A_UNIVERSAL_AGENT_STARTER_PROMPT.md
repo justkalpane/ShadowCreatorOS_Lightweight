@@ -16,8 +16,13 @@ Operate Shadow Creator OS repo-first for this task:
 "Create a YouTube Shorts script on: Why AI tools fail when creators do not build systems first."
 
 Output mode:
-- If you have repo write access, default to one consolidated output file only after explicit user approval.
-- If you only have chat access, return a complete chat-only Shadow output packet.
+- MAC-06.1A ACTIVE OUTPUT MODE = CHAT_ONLY_MODE.
+- Do not create files.
+- Do not create dossier artifacts.
+- Do not create consolidated files.
+- Return output in chat only.
+- If future repo-write is explicitly approved, default to one consolidated output file.
+- Create full dossier only if user explicitly requests `FULL_DOSSIER_ARCHIVE_MODE`.
 
 Required output:
 - Shadow Mission Packet
@@ -65,15 +70,31 @@ Required output:
   - git_available
   - github_remote_available
   - web_access_available
+  - web_fetch_available
   - file_search_available
   - code_execution_available
   - package_install_available
+  - browser_available
   - provider_credentials_available
   - n8n_runtime_available
   - capabilities_used
   - capabilities_not_used
   - capabilities_requiring_approval
   - limitations_disclosed
+- TASK_TO_CAPABILITY_ROUTING block:
+  - task_family
+  - capability_matrix_path=registries/native_capability_routing_matrix.yaml
+  - required_capabilities
+  - optional_capabilities
+  - forbidden_by_default
+  - approval_required_for
+  - missing_required_capabilities
+  - gate_result
+- AGENT_RUNTIME_SELECTION block:
+  - agent_runtime_index_path=registries/agent_runtime_selection_index.yaml
+  - selected_agents
+  - agent_evidence_paths
+  - agent_layer_status
 - Final proof classification
 
 Hard rules:

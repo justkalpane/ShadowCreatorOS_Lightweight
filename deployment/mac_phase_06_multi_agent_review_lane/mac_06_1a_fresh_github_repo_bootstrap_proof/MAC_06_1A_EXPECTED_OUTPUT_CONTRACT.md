@@ -66,6 +66,13 @@ current_data_required=true/false
 freshness_reason=
 tools_connectors_plugins_assessment_present=true/false
 native_agent_capability_assessment_present=true/false
+task_to_capability_routing_present=true/false
+capability_matrix_cited=true/false
+agent_runtime_selection_index_cited=true/false
+agent_layer_status=PROVEN_WITH_ACTIVE_INDEX/PARTIAL_NEEDS_INDEX/NEEDS_CONFIRMATION
+chat_only_mode_used=true/false
+files_created=false
+dossier_artifacts_created=false
 repo_read=true/false
 repo_write=true/false
 shell_available=true/false
@@ -114,6 +121,10 @@ limitations_disclosed=true/false
 - Tools/connectors/plugins assessment is present.
 - Native capability assessment is present.
 - Task-to-capability routing is present and references capability matrix.
+- `capability_matrix_cited=true`.
+- `agent_runtime_selection_index_cited=true` when agent layer is mandatory.
+- `chat_only_mode_used=true` and `files_created=false` for MAC-06.1A.
+- Output does not follow old dossier-first behavior.
 - Final proof status matches weakest required evidence layer.
 - No false n8n/provider/media claims.
 
@@ -128,6 +139,8 @@ limitations_disclosed=true/false
 - `agents_selected_with_evidence=false` unless output explicitly cites active contract section declaring agent layer optional.
 - Tool capability claimed without evidence/status.
 - Native capability assessment block is missing.
+- Task-to-capability routing block is missing.
+- Capability matrix or runtime index citation is missing for mandatory layers.
 
 ### `FAIL` Is Required If
 

@@ -108,3 +108,20 @@ The chat is the user-facing control UI.
 - Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 - Do not create dossier artifacts for MAC-06.1A chat-only proof.
 - Do not create file sprawl by default.
+
+## ACTIVE PRECEDENCE WARNING FOR FRESH AGENTS
+
+If any document conflicts, apply this order:
+
+1. User explicit instruction
+2. Runtime safety boundaries
+3. Current Lightweight Output Mode Override
+4. Native Capability Routing Contract
+5. Source-Aware Runtime Decision Protocol
+6. Chat Approval Gate Contract
+7. Proof Status Honesty Law
+8. MAC-06.1A Expected Output Contract
+9. MAC-05 full dossier contracts only when full dossier mode is explicitly approved
+10. Historical handoff docs are reference only
+
+Do not follow older dossier-first text for normal chat tasks.

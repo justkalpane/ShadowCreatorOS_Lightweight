@@ -18,7 +18,7 @@ This resolution checks active agent evidence for registry-first routing without 
 
 ## Classification
 
-`agent_layer_status=PROVEN_WITH_ACTIVE_INDEX`
+`agent_layer_status=PARTIAL_NEEDS_INDEX`
 
 ## MAC-06.1A Citation Guidance
 
@@ -31,4 +31,16 @@ For `directors/agents/subagents/skills/subskills` evidence in proof output:
 
 ## Index Status
 
-`registries/agent_runtime_selection_index.yaml` has been created from repo evidence to reduce repeated `NEEDS_CONFIRMATION` churn and provide explicit citation targets for MAC-06.1A proof outputs.
+- index path: `/Users/apple/Documents/ShadowCreatorOS_Lightweight/registries/agent_runtime_selection_index.yaml`
+- line_count: `728`
+- non_empty: `true`
+
+Sample entries (from current index):
+
+1. `agent_id=agastya`, `agent_name=agastya`
+2. `agent_id=agastyaagent`, `agent_name=AgastyaAgent`
+3. `agent_id=named_director`, `agent_name=named_director`
+4. `agent_id=agent_control_plane_001`, `agent_name=agent_control_plane_001`
+5. `agent_id=agentcontrolplane001agent`, `agent_name=AgentControlPlane001Agent`
+
+MAC-06.1A can cite this index for agent evidence paths, but classification remains `PARTIAL_NEEDS_INDEX` until entries are curated to stable runtime agent IDs and validated task-family bindings.

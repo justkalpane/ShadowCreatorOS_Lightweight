@@ -44,6 +44,14 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Are claimed capabilities aligned with environment evidence?
 - If current data is required but web is unavailable/unused, is gate set to `NEEDS_USER_APPROVAL` or `NEEDS_CONFIRMATION`?
 - If capability is missing, does output disclose limitation and gate impact?
+- Did output cite `registries/native_capability_routing_matrix.yaml`?
+- Did output cite `registries/agent_runtime_selection_index.yaml`?
+- Did output include `TASK_TO_CAPABILITY_ROUTING`?
+- Did output include `NATIVE_AGENT_CAPABILITY_ASSESSMENT`?
+- Did output include `AGENT_RUNTIME_SELECTION`?
+- Did output avoid file creation and dossier artifacts?
+- Did output use chat-only mode?
+- Did output avoid old dossier-first behavior?
 
 ## Verdict
 

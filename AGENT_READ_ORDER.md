@@ -64,6 +64,14 @@ For each production mission, output one dossier containing:
 
 Phase E applies only to approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit production dossier mode. For normal lightweight tasks, output-consolidation rules override Phase E: chat-only creates no files, and consolidated repo-write creates one mission output file unless full dossier mode is explicitly requested.
 
+## PHASE E OVERRIDE FOR CURRENT LIGHTWEIGHT DEFAULT
+
+- Phase E full dossier file list applies only to approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit MAC-05 production dossier mode.
+- For normal lightweight tasks, `CHAT_ONLY_MODE` is default and creates no files.
+- For approved repo-write tasks, `CONSOLIDATED_REPO_WRITE_MODE` creates one consolidated file only.
+- MAC-06.1A proof must not create files.
+- Output consolidation, chat approval gates, source-aware routing, and native capability routing override old dossier-first behavior for normal tasks.
+
 ## Phase F: Historical Source References
 
 Use these for deeper historical context only (not as active runtime commands):

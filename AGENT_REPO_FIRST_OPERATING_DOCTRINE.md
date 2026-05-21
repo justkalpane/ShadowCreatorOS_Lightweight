@@ -135,3 +135,12 @@ Default lightweight behavior must avoid file-sprawl.
 - Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 - Do not create dossier artifacts for MAC-06.1A chat-only proof.
 - Do not create file sprawl by default.
+
+## CURRENT LIGHTWEIGHT PRODUCT DOCTRINE OVERRIDE
+
+- In current lightweight operation, chat is the primary live output surface.
+- Repo is the constitution, memory, and routing brain.
+- Dossier artifacts are production truth only in explicit `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- Normal tasks must not create files by default.
+- Registry-first routing must still happen in chat-only mode.
+- Every output must include research mode, source disclosure, native capability assessment, tools/connectors/plugins assessment, quality gate, and lineage summary.

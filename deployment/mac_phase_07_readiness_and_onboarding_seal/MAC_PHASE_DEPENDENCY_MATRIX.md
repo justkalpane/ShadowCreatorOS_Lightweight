@@ -3,7 +3,8 @@
 | Phase | Depends On | Output | Onboarding-Critical |
 |---|---|---|---|
 | MAC-06 (commit) | MAC-05 complete + Dossier #3 pushed | Committed review-lane planning docs | Yes |
-| MAC-06.1 | MAC-06 commit | First reviewer proof packet on existing dossier | Yes |
+| MAC-06.0 | MAC-06 commit | Agentic chat runtime proof protocol | Yes |
+| MAC-06.1 | MAC-06.0 | First reviewer proof packet on existing dossier | Yes |
 | MAC-06.2 | MAC-06.1 | Codex-approved finalization proof | Yes |
 | MAC-07 | MAC-06.2 | Readiness seal | Yes |
 | MAC-08 | MAC-07 | Agent onboarding package | Yes |
@@ -15,4 +16,3 @@
 ## Dependency Rule
 
 Do not execute a phase before all its dependencies are complete and documented.
-

@@ -8,10 +8,17 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
 - Purpose: Define review lane structure only.
 - Execution: Not allowed in this phase.
 
+## MAC-06.0: Agentic chat runtime proof protocol
+
+- Status: Required before MAC-06.1.
+- Purpose: Define and prepare proof of the real lightweight operating model across Codex, Claude, ChatGPT, Kimi, DeepSeek, Perplexity, Gemini, Antigravity, and future repo-aware agents.
+- Output: Mission packet contract, repo context loader protocol, selector proof standard, chat output contract, execution bus handoff boundary, compatibility matrix, proof matrix.
+- Execution: Protocol only; no external agent proof yet.
+
 ## MAC-06.1: First controlled multi-agent review proof
 
 - Purpose: Run one reviewer-lane test against an existing dossier.
-- Gate: Allowed only after MAC-06 planning commit.
+- Gate: Allowed only after MAC-06.0 is committed.
 - Boundary: No n8n/providers/media execution.
 
 ## MAC-06.2: Codex reviewer-finalization proof
@@ -28,6 +35,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - Agent doctrine present and committed
   - Historical docs indexed and reconciled
   - Production Dossier #2 and #3 pushed
+  - MAC-06.0 protocol committed
   - MAC-06.1 and MAC-06.2 proven
   - Clean git state
   - No n8n/provider drift
@@ -67,6 +75,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
 
 - Required before lightweight onboarding declaration:
   - MAC-06 (commit)
+  - MAC-06.0
   - MAC-06.1
   - MAC-06.2
   - MAC-07
@@ -76,4 +85,3 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - MAC-10
   - MAC-11
   - MAC-12
-

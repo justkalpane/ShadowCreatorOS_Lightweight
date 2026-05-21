@@ -2,11 +2,33 @@
 
 ## Objective
 
-Define a controlled review lane where Codex remains the primary production operator and optional reviewer agents (Claude/Kimi/DeepSeek/others) improve dossier quality without violating repo-first doctrine.
+Define a controlled review lane where Codex remains the primary production operator and optional reviewer agents improve dossier quality without violating repo-first doctrine. MAC-06 also bridges toward proving the broader lightweight agentic operating model across repo-aware chat/coding agents.
 
 ## Scope
 
 Planning only. No review execution, no dossier creation, no n8n/provider/runtime actions.
+
+MAC-06.0 must define the full agentic chat runtime proof protocol before MAC-06.1 review execution continues.
+
+## Expanded Agent Universe
+
+- Codex
+- Claude
+- ChatGPT
+- Kimi
+- DeepSeek
+- Perplexity
+- Gemini chat/app
+- Antigravity
+- Generic future repo-aware coding agents
+
+## Proof Clarification
+
+- MAC-06 is not only a review lane.
+- It is the bridge toward proving multi-agent lightweight operation.
+- External reviewer proof is one part of the model.
+- Chat-output proof is also required before onboarding seal.
+- Codex local proof alone does not prove all agents.
 
 ## Workflow
 
@@ -65,4 +87,3 @@ Planning only. No review execution, no dossier creation, no n8n/provider/runtime
 - No JSON validation failures
 - No false execution/media claims
 - User approval before commit
-

@@ -52,3 +52,10 @@ Hard rules:
 - no commit/push unless explicitly approved
 ```
 
+## MAC-06.1B Governance Addendum
+
+- For MAC-06.1A chat proof, do not create files.
+- If a future repo-write proof is requested, default to one consolidated output file.
+- Full dossier mode requires explicit user approval.
+- Chat output must include approval gate blocks and blocker visibility.
+- User approval is required before file creation, full dossier creation, commit, push, or provider handoff.

@@ -32,3 +32,13 @@ providers_called=false
 media_artifacts_claimed=false
 ```
 
+## MAC-06.1B Governance Addendum
+
+For MAC-06.1A chat proof:
+
+- `repo_files_created=false`
+- `approval_gate_blocks_present=true/false`
+- `user_approval_required_before_file_creation=true`
+- `full_dossier_requested_explicitly=true/false`
+
+Future repo-write proofs must default to one consolidated output file unless full dossier mode is explicitly requested.

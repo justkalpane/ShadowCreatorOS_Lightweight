@@ -6,8 +6,9 @@
 2. `MAC-06.0` agentic chat runtime proof protocol complete
 3. `MAC-06.0B` universal single-agent runtime doctrine complete
 4. `MAC-06.1A` fresh GitHub repo bootstrap proof complete
-5. `MAC-07` readiness seal complete
-6. `MAC-08` onboarding package complete
+5. `MAC-06.1B` output consolidation and chat approval gate complete
+6. `MAC-07` readiness seal complete
+7. `MAC-08` onboarding package complete
 
 ## Gate Criteria
 
@@ -27,7 +28,17 @@ Do not require users to install every agent before using the lightweight OS. MAC
 ## Fresh Bootstrap Rule
 
 MAC-06.1A is the portable lightweight OS onboarding test. It proves that a fresh repo-aware agent can use GitHub `main`, read startup doctrine, route registry-first, and produce a quality-gated Shadow output packet.
-- Lineage truth remains mandatory.
+
+## Output Governance Rule
+
+MAC-06.1B is onboarding-critical. It enforces:
+
+- default chat-only mode with no file creation
+- default repo-write mode with one consolidated output file
+- full dossier mode explicit only
+- chat-visible approval gate blocks
+- user approval required before file creation, commit, or provider handoff
+- lineage truth remains mandatory
 
 ## Hard Exclusions During These Gates
 

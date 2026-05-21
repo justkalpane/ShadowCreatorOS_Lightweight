@@ -91,3 +91,13 @@ The lightweight OS must be usable by one capable repo-aware agent. A user should
 Portable operation is proven when a fresh agent receives the GitHub repo on branch `main`, reads `START_HERE_FOR_AGENTS.md`, follows `AGENT_READ_ORDER.md`, performs registry-first selection, and returns a complete Shadow output packet or repo dossier without relying on old chat memory.
 
 The agent must not use internet-first behavior before repo context. It must not execute n8n, providers, media, Gemini API, OpenWebUI, or old runtime by default.
+
+## Output Consolidation and Chat Approval Gates
+
+Default lightweight behavior must avoid file-sprawl.
+
+- Chat-only mode is default for web/chat LLMs.
+- Consolidated repo-write mode is default for coding agents with approved write access.
+- Full dossier archive mode is explicit only.
+- Gate failures and blocker decisions must be visible in chat.
+- User approval is required before file creation, full dossier creation, commit, push, or provider handoff.

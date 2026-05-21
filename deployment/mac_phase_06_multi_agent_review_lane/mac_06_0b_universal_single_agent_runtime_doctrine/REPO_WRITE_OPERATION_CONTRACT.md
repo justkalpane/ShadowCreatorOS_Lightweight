@@ -27,3 +27,9 @@ Commit only after:
 - quality gate pass
 - forbidden file scan pass
 
+## MAC-06.1B Governance Addendum
+
+- Future repo-write proof defaults to one consolidated output file, not multi-file dossier.
+- Full dossier mode requires explicit user approval.
+- Chat output must include approval gate blocks before file creation.
+- User approval is required before file creation, commit, push, or provider handoff.

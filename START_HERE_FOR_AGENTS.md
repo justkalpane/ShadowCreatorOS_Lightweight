@@ -53,3 +53,16 @@ Future agents must start from GitHub repo `main` and read this file before doing
 - Use registry-first selection with evidence paths.
 - Produce either a chat-only Shadow output packet or repo dossier files, depending on access.
 - Do not execute n8n/providers/media by default.
+
+## Output Consolidation and Chat Approval Gates
+
+The chat is the user-facing control UI.
+
+- Agents must show blockers, gates, recommendations, and approval options in chat.
+- Do not hide gate failures inside backend files.
+- Default output is chat-only.
+- Default repo-write creates one consolidated mission file.
+- Full multi-file dossier mode is explicit archive/production mode only.
+- Do not create per-subtask files by default.
+- Do not create director/agent/skill scratch files by default.
+- User must approve before file creation, full dossier creation, commit, push, or n8n/provider handoff.

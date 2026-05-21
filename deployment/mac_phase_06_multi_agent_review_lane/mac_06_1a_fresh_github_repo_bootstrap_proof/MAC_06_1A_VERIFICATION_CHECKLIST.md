@@ -17,10 +17,12 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did it produce the complete chat packet?
 - Did it pass quality gate?
 - Did it mark unsupported parts as `NOT_ACTIVE` or `NEEDS_CONFIRMATION`?
+- Did it include chat-visible approval gate blocks?
+- Did it avoid creating files in chat-only proof mode?
+- If files were created, did it have explicit user approval and use consolidated output mode?
 
 ## Verdict
 
 - `PASS`: complete proof packet, repo-first evidence, no drift.
 - `PARTIAL`: useful output but missing required fields or evidence.
 - `FAIL`: generic, invented, execution-drifted, or not repo-first.
-

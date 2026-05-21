@@ -49,3 +49,12 @@ The primary operating model is one capable repo-aware agent plus the repo brain.
 When operating from a fresh chat or agent session, start with GitHub `main`, read `START_HERE_FOR_AGENTS.md`, then follow `AGENT_READ_ORDER.md`.
 
 Do not begin with internet-first behavior. Load repo doctrine, registries, contracts, directors, agents, skills, and subskills first. Produce chat-only packets when no filesystem access exists; produce dossier files only when repo-write access exists and the active contract allows it.
+
+## Output Consolidation and Chat Approval Gates
+
+- Chat is the visible control surface for gate decisions.
+- Show blocker states and approval options in chat at each major stage.
+- Default mode is chat-only with no file creation.
+- Default repo-write mode is one consolidated mission output file.
+- Full dossier mode is explicit only.
+- User approval is required before creating files, creating full dossier artifacts, committing, pushing, or handing off to n8n/providers.

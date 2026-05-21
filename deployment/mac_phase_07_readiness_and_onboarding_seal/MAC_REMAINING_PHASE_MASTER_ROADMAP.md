@@ -29,6 +29,20 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
 - Output: Fresh-agent proof result.
 - Boundary: Do not require all agents to be installed before onboarding. n8n execution bus remains deferred.
 
+## MAC-06.1B: Output consolidation and chat approval gate
+
+- Status: Required after MAC-06.1A preparation and before final readiness seal.
+- Purpose: Ensure the lightweight OS does not create uncontrolled output-file sprawl and that all approval/blocker decisions are visible in chat.
+- Dependency: After MAC-06.1A preparation.
+- Onboarding-critical: true.
+- Readiness checks:
+  - default chat-only mode creates no files
+  - default repo-write mode creates one consolidated output file
+  - full dossier mode is explicit only
+  - approval gates appear in chat
+  - user approval is required before file creation, commit, or provider handoff
+  - no file sprawl by default
+
 ## MAC-06.1: First controlled multi-agent review proof
 
 - Purpose: Run one reviewer-lane test against an existing dossier.
@@ -52,6 +66,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - Production Dossier #2 and #3 pushed
   - MAC-06.0 protocol committed
   - MAC-06.0B single-agent doctrine committed
+  - MAC-06.1B output governance gate completed
   - MAC-06.1A fresh bootstrap proof completed
   - MAC-06.1 and MAC-06.2 completed if user keeps external review inside onboarding seal
   - Clean git state
@@ -95,6 +110,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - MAC-06.0
   - MAC-06.0B
   - MAC-06.1A
+  - MAC-06.1B
   - MAC-06.2
   - MAC-07
   - MAC-08

@@ -28,3 +28,9 @@ The user or Codex can later materialize chat-only output into repo files after r
 
 Chat-only output must clearly state it did not write repo files or execute providers.
 
+## MAC-06.1B Governance Addendum
+
+- For MAC-06.1A chat proof, no files are created.
+- Chat output must include visible approval gate blocks and blocker states.
+- Full dossier creation is explicit mode only and requires user approval.
+- User approval is required before any future file creation, commit, push, or provider handoff.

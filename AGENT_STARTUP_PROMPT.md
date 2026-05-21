@@ -77,3 +77,13 @@ Do not begin with internet-first behavior. Load repo doctrine, registries, contr
 - Default mode is chat-only with no file creation.
 - Consolidated repo-write mode requires user approval.
 - Full dossier mode is explicit-only.
+
+## Native Tools / Connectors / Plugins Capability Routing
+
+- Declare current-session capability inventory before execution claims.
+- Do not assume cross-platform parity across Codex/Claude/ChatGPT/Kimi/DeepSeek/Gemini/Perplexity/Antigravity.
+- Confirm repo read before route execution.
+- Confirm web capability before current-data claims.
+- Repo write/file creation, commit, and push are approval-gated.
+- n8n/provider/media execution is explicit-approval only.
+- If required capability is missing, raise gate and present user options.

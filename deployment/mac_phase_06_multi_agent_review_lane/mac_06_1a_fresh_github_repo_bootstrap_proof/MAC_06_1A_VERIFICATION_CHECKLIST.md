@@ -36,6 +36,13 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - If `agents_selected_with_evidence=false`, is final status `PARTIAL` unless optionality is explicitly cited?
 - Is context packet summary treated as valid only for chat-only mode?
 - Is final status aligned to the weakest required evidence layer?
+- Is `TASK_FRESHNESS_CLASSIFICATION` present and coherent?
+- Is `RESEARCH_MODE_DECISION` present and coherent?
+- Is `TOOLS_CONNECTORS_PLUGINS_ASSESSMENT` present?
+- Is `NATIVE_AGENT_CAPABILITY_ASSESSMENT` present?
+- Are claimed capabilities aligned with environment evidence?
+- If current data is required but web is unavailable/unused, is gate set to `NEEDS_USER_APPROVAL` or `NEEDS_CONFIRMATION`?
+- If capability is missing, does output disclose limitation and gate impact?
 
 ## Verdict
 

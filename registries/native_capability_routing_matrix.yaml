@@ -1,0 +1,190 @@
+task_families:
+  - task_family: topic_intake
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [file_search]
+    forbidden_by_default: [n8n_execution_bus, provider_api]
+    approval_required_for: []
+    source_research_required_when: "topic has current-event dependency"
+    output_mode: chat
+    notes: "Normalize request and constraints from repo-first doctrine."
+
+  - task_family: topic_qualification
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [web_search]
+    forbidden_by_default: [provider_api, workflow_execution]
+    approval_required_for: [web_search]
+    source_research_required_when: "latest/current claims appear"
+    output_mode: chat
+    notes: "Use Research Sufficiency Gate for freshness decisions."
+
+  - task_family: trend_research
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [web_search, web_fetch]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [web_search, web_fetch]
+    source_research_required_when: "task class is CURRENT_SENSITIVE or REALTIME_REQUIRED"
+    output_mode: chat
+    notes: "Must disclose research_mode and source list if web is used."
+
+  - task_family: script_generation
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [web_search]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [web_search]
+    source_research_required_when: "script depends on current facts"
+    output_mode: chat
+    notes: "Registry-first routing is mandatory."
+
+  - task_family: script_debate
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [web_search]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [web_search]
+    source_research_required_when: "debate claims require up-to-date evidence"
+    output_mode: chat
+    notes: "Debate outcomes must preserve source honesty."
+
+  - task_family: script_refinement
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [web_search]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [web_search]
+    source_research_required_when: "refinement introduces current claims"
+    output_mode: chat
+    notes: "Keep gate outputs chat-visible."
+
+  - task_family: context_engineering_packet
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [repo_write]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [repo_write]
+    source_research_required_when: "packet depends on live platform changes"
+    output_mode: chat_or_consolidated_file
+    notes: "In chat-only mode, summary packet is acceptable."
+
+  - task_family: provider_handoff_packet
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [repo_write]
+    forbidden_by_default: [provider_api_execution, n8n_execution_bus]
+    approval_required_for: [repo_write, provider_api_execution]
+    source_research_required_when: "provider behavior/price is current-sensitive"
+    output_mode: chat_or_consolidated_file
+    notes: "Reference-only by default."
+
+  - task_family: quality_gate
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [repo_write]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [repo_write]
+    source_research_required_when: "quality metrics depend on current external standards"
+    output_mode: chat_or_consolidated_file
+    notes: "Final status must match weakest mandatory evidence."
+
+  - task_family: lineage_summary
+    default_mode: CHAT_ONLY_MODE
+    required_capabilities: [repo_read, reasoning]
+    optional_capabilities: [repo_write]
+    forbidden_by_default: [provider_api, n8n_execution_bus]
+    approval_required_for: [repo_write]
+    source_research_required_when: "lineage includes current external evidence"
+    output_mode: chat_or_consolidated_file
+    notes: "No invented paths or claims."
+
+  - task_family: consolidated_output_creation
+    default_mode: CONSOLIDATED_REPO_WRITE_MODE
+    required_capabilities: [repo_write]
+    optional_capabilities: [git]
+    forbidden_by_default: [full_dossier_archive_mode]
+    approval_required_for: [file_creation, git_commit, git_push]
+    source_research_required_when: "output contains current claims"
+    output_mode: file
+    notes: "Create one mission output file by default."
+
+  - task_family: full_dossier_creation
+    default_mode: FULL_DOSSIER_ARCHIVE_MODE
+    required_capabilities: [repo_write]
+    optional_capabilities: [git]
+    forbidden_by_default: []
+    approval_required_for: [full_dossier_creation, git_commit, git_push]
+    source_research_required_when: "dossier includes current-sensitive assertions"
+    output_mode: multi_file_dossier
+    notes: "Explicit request only."
+
+  - task_family: github_sync
+    default_mode: CONSOLIDATED_REPO_WRITE_MODE
+    required_capabilities: [git, github]
+    optional_capabilities: []
+    forbidden_by_default: [force_push]
+    approval_required_for: [git_commit, git_push]
+    source_research_required_when: "not applicable"
+    output_mode: repo
+    notes: "Push is approval-gated."
+
+  - task_family: n8n_execution_bus
+    default_mode: DEFERRED_EXECUTION_MODE
+    required_capabilities: [workflow_execution, connector]
+    optional_capabilities: [provider]
+    forbidden_by_default: [unapproved_runtime_start]
+    approval_required_for: [runtime_start, workflow_import, workflow_execution, provider_call]
+    source_research_required_when: "workflow depends on current provider schema"
+    output_mode: execution_bus
+    notes: "NOT_ACTIVE by default."
+
+  - task_family: voice_generation
+    default_mode: DEFERRED_EXECUTION_MODE
+    required_capabilities: [provider]
+    optional_capabilities: [workflow_execution]
+    forbidden_by_default: [unapproved_provider_execution]
+    approval_required_for: [provider_call, credential_use]
+    source_research_required_when: "provider model/version changes matter"
+    output_mode: external_execution
+    notes: "Execution-gated."
+
+  - task_family: image_generation
+    default_mode: DEFERRED_EXECUTION_MODE
+    required_capabilities: [provider]
+    optional_capabilities: [workflow_execution]
+    forbidden_by_default: [unapproved_provider_execution]
+    approval_required_for: [provider_call, credential_use]
+    source_research_required_when: "provider availability or policy is current-sensitive"
+    output_mode: external_execution
+    notes: "Execution-gated."
+
+  - task_family: video_generation
+    default_mode: DEFERRED_EXECUTION_MODE
+    required_capabilities: [provider]
+    optional_capabilities: [workflow_execution]
+    forbidden_by_default: [unapproved_provider_execution]
+    approval_required_for: [provider_call, credential_use]
+    source_research_required_when: "provider availability or policy is current-sensitive"
+    output_mode: external_execution
+    notes: "Execution-gated."
+
+  - task_family: publishing
+    default_mode: DEFERRED_EXECUTION_MODE
+    required_capabilities: [provider, connector]
+    optional_capabilities: [workflow_execution]
+    forbidden_by_default: [unapproved_publish]
+    approval_required_for: [provider_call, connector_use, credential_use]
+    source_research_required_when: "platform policy/current requirements must be checked"
+    output_mode: external_execution
+    notes: "Approval and credential gates required."
+
+  - task_family: analytics_pull
+    default_mode: DEFERRED_EXECUTION_MODE
+    required_capabilities: [provider, connector]
+    optional_capabilities: [workflow_execution]
+    forbidden_by_default: [unapproved_provider_execution]
+    approval_required_for: [provider_call, connector_use, credential_use]
+    source_research_required_when: "metrics definitions changed recently"
+    output_mode: external_execution
+    notes: "Approval and lineage logging required."

@@ -120,3 +120,13 @@ Use these to enforce source-aware repo-first behavior:
 2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/RESEARCH_GATE_CONTRACT.md`
 3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
 4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+
+## Phase L: Native Capability Routing
+
+Use these to bind task routing to actual environment capabilities:
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
+5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/registries/native_capability_routing_matrix.yaml`

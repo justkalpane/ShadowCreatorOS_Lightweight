@@ -16,7 +16,7 @@ Operate Shadow Creator OS repo-first for this task:
 "Create a YouTube Shorts script on: Why AI tools fail when creators do not build systems first."
 
 Output mode:
-- If you have repo write access, create dossier artifacts only after confirming the active repo contract.
+- If you have repo write access, default to one consolidated output file only after explicit user approval.
 - If you only have chat access, return a complete chat-only Shadow output packet.
 
 Required output:
@@ -46,6 +46,34 @@ Required output:
   - source_list
   - current_fact_confidence
 - Research Sufficiency Gate block
+- Task freshness classification block:
+  - freshness_class
+  - current_data_required
+  - reason
+- Research mode decision block:
+  - research_mode
+  - web_access_available
+  - web_access_used
+  - real_time_sources_used
+  - source_list
+  - current_fact_confidence
+  - unsupported_claims
+- NATIVE_AGENT_CAPABILITY_ASSESSMENT block:
+  - repo_read
+  - repo_write
+  - shell_available
+  - git_available
+  - github_remote_available
+  - web_access_available
+  - file_search_available
+  - code_execution_available
+  - package_install_available
+  - provider_credentials_available
+  - n8n_runtime_available
+  - capabilities_used
+  - capabilities_not_used
+  - capabilities_requiring_approval
+  - limitations_disclosed
 - Final proof classification
 
 Hard rules:
@@ -60,6 +88,7 @@ Hard rules:
 - no commit/push unless explicitly approved
 - if claiming real-time sources, include source list
 - if no source list, set real_time_sources_used=false
+- include TOOLS_CONNECTORS_PLUGINS_ASSESSMENT with runtime statuses
 ```
 
 ## MAC-06.1B Governance Addendum

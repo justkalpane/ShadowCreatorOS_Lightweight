@@ -86,3 +86,15 @@ The chat is the user-facing control UI.
 - Normal default output is chat-only.
 - Consolidated repo-write output requires user approval.
 - Full dossier mode is explicit-only.
+
+## Native Tools / Connectors / Plugins Capability Routing
+
+- Every agent must declare capabilities available in the current environment.
+- Do not assume Codex/Claude/ChatGPT/Gemini/Perplexity/Kimi/DeepSeek/Antigravity have identical tools.
+- Confirm repo read before mission routing.
+- Confirm web research availability before claiming current data.
+- Repo write/file creation requires user approval.
+- Git commit/push requires user approval.
+- n8n/provider/media execution requires explicit approval.
+- Map task route to required capabilities before execution.
+- If required capability is missing, show chat gate and user options.

@@ -56,6 +56,11 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - realtime sources are cited if used
   - repo-only limitation is disclosed when web is not used
   - no fake current/realtime claims
+  - native agent capability inventory is defined and referenced by runtime docs
+  - task routing maps director/skill/subskill route to required capabilities
+  - web research is capability-gated
+  - repo write is approval-gated
+  - provider/n8n/media remain execution-gated
 
 ## MAC-06.1: First controlled multi-agent review proof
 
@@ -81,6 +86,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - MAC-06.0 protocol committed
   - MAC-06.0B single-agent doctrine committed
   - MAC-06.1B output governance gate completed
+  - MAC-06.1C capability/routing enforcement completed
   - MAC-06.1A fresh bootstrap proof completed
   - MAC-06.1 and MAC-06.2 completed if user keeps external review inside onboarding seal
   - Clean git state

@@ -57,6 +57,28 @@ current_fact_confidence=HIGH/MEDIUM/LOW/LIMITED
 research_sufficiency_gate_present=true/false
 ```
 
+Required capability/freshness blocks:
+
+```text
+freshness_class=EVERGREEN/CURRENT_SENSITIVE/REALTIME_REQUIRED/USER_SOURCE_REQUIRED/HIGH_STAKES_CURRENT
+current_data_required=true/false
+freshness_reason=
+tools_connectors_plugins_assessment_present=true/false
+native_agent_capability_assessment_present=true/false
+repo_read=true/false
+repo_write=true/false
+shell_available=true/false
+git_available=true/false
+github_remote_available=true/false
+file_search_available=true/false
+code_execution_available=true/false
+package_install_available=true/false
+provider_credentials_available=true/false
+n8n_runtime_available=true/false
+capabilities_requiring_approval_present=true/false
+limitations_disclosed=true/false
+```
+
 ## Proof Status Honesty Law
 
 ### `PASS` Requires
@@ -85,6 +107,11 @@ research_sufficiency_gate_present=true/false
 - Research Sufficiency Gate is present.
 - If task requires current web research and `web_access_used=false`, user explicitly approved repo-only continuation.
 - If `real_time_sources_used=true`, `source_list_present=true`.
+- Freshness classification is present.
+- Research mode decision is present.
+- Tools/connectors/plugins assessment is present.
+- Native capability assessment is present.
+- Final proof status matches weakest required evidence layer.
 - No false n8n/provider/media claims.
 
 ### `PARTIAL` Is Required If
@@ -96,6 +123,8 @@ research_sufficiency_gate_present=true/false
 - Context packet is summary-only when full packet is required in repo-write/full-dossier mode. In chat-only MAC-06.1A proof, summary is valid.
 - Task needs current web evidence but web was not used and repo-only approval is missing.
 - `agents_selected_with_evidence=false` unless output explicitly cites active contract section declaring agent layer optional.
+- Tool capability claimed without evidence/status.
+- Native capability assessment block is missing.
 
 ### `FAIL` Is Required If
 
@@ -104,3 +133,4 @@ research_sufficiency_gate_present=true/false
 - Output is generic and not registry-first.
 - Required proof sections are missing.
 - `real_time_sources_used=true` but source list is missing.
+- Capability claims are fabricated or contradictory to disclosed environment state.

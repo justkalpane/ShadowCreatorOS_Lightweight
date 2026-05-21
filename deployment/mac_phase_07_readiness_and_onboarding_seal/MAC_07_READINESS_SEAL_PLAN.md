@@ -18,6 +18,8 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 10. Final git state is clean at seal time.
 11. No n8n/provider/Gemini/OpenWebUI/old-runtime drift occurred during readiness proofs.
 12. MAC-06.0B single-agent doctrine confirms basic operation does not require multiple installed agents.
+13. MAC-06.1C native capability inventory and task-routing matrix are referenced by active runtime docs.
+14. MAC-06.1A rerun includes freshness classification, research gate output, and tools/connectors/plugins + native capability assessment.
 
 ## Seal Outcome Options
 

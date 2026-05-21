@@ -117,3 +117,11 @@ Default lightweight behavior must avoid file-sprawl.
 - Every output must disclose research mode, web access status, source usage, and confidence.
 - No source list means no real-time-source claim.
 - For default lightweight operation, chat-only output is preferred unless user approves repo-write.
+
+## Native Tools / Connectors / Plugins Capability Routing
+
+- Task routing must include capability assessment before execution claims.
+- Capability checks must include tools, connectors, plugins, local apps, and platform-native functions.
+- Required capability missing -> `NEEDS_CONFIRMATION` or `NEEDS_USER_APPROVAL` gate.
+- Optional capability missing -> proceed with disclosed limitation.
+- Provider/n8n/media capabilities stay execution-gated by default.

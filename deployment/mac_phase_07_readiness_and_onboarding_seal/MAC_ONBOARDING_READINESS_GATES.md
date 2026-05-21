@@ -52,6 +52,17 @@ MAC-06.1C is onboarding-critical. It enforces:
 - source list is required when realtime web sources are claimed
 - repo-only limitations are disclosed when web is not used
 
+## Native Capability Routing Rule
+
+MAC-06.1C must also prove runtime capability routing:
+
+- native agent capability inventory exists
+- task-to-capability routing matrix exists
+- tools/connectors/plugins assessment is mandatory in proof output
+- web research is capability-gated by task freshness class
+- repo write/commit/push are approval-gated
+- provider/n8n/media execution stays execution-gated
+
 ## Hard Exclusions During These Gates
 
 - n8n runtime start/install/import/execution

@@ -1,0 +1,16 @@
+{
+  "original_user_message": "Create production dossier #3: YouTube Shorts script on why creators should build AI systems, not just use AI tools, under MAC-05 repo-first loop.",
+  "normalized_topic": "Why creators should build AI systems, not just use AI tools",
+  "intent_id": "INTENT_MAC05_PROD_DOSSIER_03",
+  "intent_family": "repo_first_dossier_generation",
+  "mission_hash": "bb75ebbd484d8264a85a3beded7f5c772a0b12dee31f737a91d6d3d9e79ae2cc",
+  "created_at": "2026-05-20T21:36:32Z",
+  "dossier_id": "DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS",
+  "mission_id": "MIS_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS",
+  "platform": "YouTube Shorts",
+  "language": "English",
+  "format": "Short-form strategic script",
+  "target_duration": "60 seconds",
+  "runtime_used": "Codex repo-first"
+}
+

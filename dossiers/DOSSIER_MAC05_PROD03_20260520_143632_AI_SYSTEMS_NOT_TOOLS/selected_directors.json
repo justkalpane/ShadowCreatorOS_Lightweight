@@ -1,0 +1,31 @@
+[
+  {
+    "director_id": "DIR-STRTv1-002",
+    "name": "Narada",
+    "role": "Operations | Distribution | Optimization",
+    "evidence_path": "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+    "contract_path": "registries/director_contracts/Narada-Contract.md"
+  },
+  {
+    "director_id": "DIR-STRTv1-001",
+    "name": "Chanakya",
+    "role": "Strategic Filtering | Opportunity Selection",
+    "evidence_path": "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+    "contract_path": "registries/director_contracts/Chanakya-Contract.md"
+  },
+  {
+    "director_id": "DIR-RSRCHv1-001",
+    "name": "Valmiki",
+    "role": "Research Synthesis | Knowledge Structuring",
+    "evidence_path": "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+    "contract_path": "registries/director_contracts/Valmiki-Contract.md"
+  },
+  {
+    "director_id": "DIR-ORCHv1-001",
+    "name": "Krishna",
+    "role": "Orchestrator | Decision Arbiter | Multi-Domain Controller",
+    "evidence_path": "directors/DIRECTOR_REGISTRY_MANIFEST.yaml",
+    "contract_path": "registries/director_contracts/Krishna-Contract.md"
+  }
+]
+

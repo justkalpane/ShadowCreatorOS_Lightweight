@@ -1,0 +1,64 @@
+{
+  "dossier_id": "DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS",
+  "mission_id": "MIS_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS",
+  "platform": "YouTube Shorts",
+  "topic": "Why creators should build AI systems, not just use AI tools",
+  "script_path": "dossiers/DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS/final_script.md",
+  "context_packet_path": "dossiers/DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS/context_engineering_packet.json",
+  "voice_requirements": {
+    "style": "founder-practical",
+    "pace": "tight-clear",
+    "emphasis": [
+      "systems create leverage",
+      "strategy first system second tools third"
+    ]
+  },
+  "thumbnail_requirements": {
+    "concept": "Tool chaos vs system clarity",
+    "text_limit_words": 4,
+    "no_fake_metrics": true
+  },
+  "image_requirements": {
+    "supporting_frames": 3,
+    "style": "clean strategic overlays"
+  },
+  "avatar_requirements": {
+    "needed": false,
+    "note": "Optional in later approved execution phase"
+  },
+  "video_requirements": {
+    "duration_seconds": 60,
+    "aspect_ratio": "9:16",
+    "subtitles_required": true
+  },
+  "publishing_requirements": {
+    "platform": "YouTube Shorts",
+    "schedule_mode": "manual_approval_required"
+  },
+  "analytics_requirements": {
+    "primary_metrics": [
+      "3s_hold_rate",
+      "average_view_duration",
+      "completion_rate",
+      "shares"
+    ]
+  },
+  "provider_preferences": {
+    "execution_deferred": true,
+    "preferred_stack": [],
+    "note": "Provider execution remains deferred to approved future phase"
+  },
+  "local_fallback_preferences": {
+    "text_only_operating_mode": true,
+    "manual_review_before_execution": true
+  },
+  "cost_gate": {
+    "max_cost_usd": 0,
+    "paid_execution_allowed": false
+  },
+  "execution_mode": "not_ready_reference_only",
+  "approval_required": true,
+  "artifact_output_root": "artifacts/dossier_mac05_prod03_ai_systems_not_tools/",
+  "lineage_update_required": true
+}
+

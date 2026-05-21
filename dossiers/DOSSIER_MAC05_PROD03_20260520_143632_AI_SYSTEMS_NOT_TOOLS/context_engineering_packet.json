@@ -1,0 +1,58 @@
+{
+  "dossier_id": "DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS",
+  "topic": "Why creators should build AI systems, not just use AI tools",
+  "platform": "YouTube Shorts",
+  "target_format": "60-second strategic short",
+  "final_script_path": "dossiers/DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS/final_script.md",
+  "tone": "sharp, practical, founder-style, direct",
+  "audience": [
+    "creators",
+    "solo entrepreneurs",
+    "startup builders",
+    "AI beginners"
+  ],
+  "scene_guidance": [
+    "Open with direct challenge statement to camera",
+    "Use fast text overlays for 'strategy -> system -> tools'",
+    "Show contrast cards: random tools vs repeatable system",
+    "Close on one-line operating rule in bold subtitles"
+  ],
+  "visual_guidance": [
+    "Clean high-contrast edits",
+    "Short cuts with kinetic typography",
+    "No fake dashboards or fabricated analytics claims"
+  ],
+  "voice_guidance": [
+    "Confident and direct",
+    "Short declarative lines",
+    "Stress 'systems create leverage'"
+  ],
+  "edit_guidance": [
+    "Aggressive first 5-second retention hook",
+    "Highlight failure snapshot with quick pause",
+    "Land final line with 1-beat silence before end"
+  ],
+  "thumbnail_direction": "Simple contrast title: 'Tools vs Systems' with bold creator-facing framing.",
+  "metadata_direction": {
+    "title_options": [
+      "AI Tools Won't Save You (Build a System Instead)",
+      "Creators: Stop Collecting AI Tools",
+      "Why AI Systems Beat AI Tools Every Time"
+    ],
+    "description_focus": "Strategy-first creator systems, memory loops, quality gates, and repeatable AI workflows.",
+    "hashtag_cluster": [
+      "#AICreator",
+      "#CreatorSystems",
+      "#YouTubeShorts",
+      "#StartupStrategy"
+    ]
+  },
+  "constraints": [
+    "No provider execution",
+    "No n8n runtime execution",
+    "No media artifact claims",
+    "Repo-first intelligence only"
+  ],
+  "lineage_reference": "dossiers/DOSSIER_MAC05_PROD03_20260520_143632_AI_SYSTEMS_NOT_TOOLS/lineage.json"
+}
+

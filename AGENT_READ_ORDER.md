@@ -130,3 +130,13 @@ Use these to bind task routing to actual environment capabilities:
 3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
 4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
 5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/registries/native_capability_routing_matrix.yaml`
+
+## CURRENT LIGHTWEIGHT OUTPUT MODE OVERRIDE
+
+- `CHAT_ONLY_MODE` is default for normal user tasks.
+- Normal user tasks do not create files.
+- `CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+- `FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+- Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- Do not create dossier artifacts for MAC-06.1A chat-only proof.
+- Do not create file sprawl by default.

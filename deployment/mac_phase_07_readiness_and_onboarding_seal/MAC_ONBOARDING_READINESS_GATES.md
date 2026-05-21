@@ -62,6 +62,10 @@ MAC-06.1C must also prove runtime capability routing:
 - web research is capability-gated by task freshness class
 - repo write/commit/push are approval-gated
 - provider/n8n/media execution stays execution-gated
+- MAC-06.1A proof docs must include native capability assessment blocks
+- `registries/native_capability_routing_matrix.yaml` must exist
+- Agent selection evidence is not considered solved until `registries/agent_runtime_selection_index.yaml` exists or gap is explicitly marked `PARTIAL`
+- Do not rerun MAC-06.1A until all above conditions are true
 
 ## Hard Exclusions During These Gates
 

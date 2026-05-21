@@ -87,3 +87,13 @@ Do not begin with internet-first behavior. Load repo doctrine, registries, contr
 - Repo write/file creation, commit, and push are approval-gated.
 - n8n/provider/media execution is explicit-approval only.
 - If required capability is missing, raise gate and present user options.
+
+## CURRENT LIGHTWEIGHT OUTPUT MODE OVERRIDE
+
+- `CHAT_ONLY_MODE` is default for normal user tasks.
+- Normal user tasks do not create files.
+- `CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+- `FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+- Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- Do not create dossier artifacts for MAC-06.1A chat-only proof.
+- Do not create file sprawl by default.

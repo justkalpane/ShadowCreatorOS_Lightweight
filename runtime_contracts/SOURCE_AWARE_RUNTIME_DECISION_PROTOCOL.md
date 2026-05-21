@@ -69,6 +69,9 @@ Status set:
 - Inspect available native agent capabilities.
 - Inspect repo-defined tools/connectors/plugins.
 - Map task to required capabilities using `registries/native_capability_routing_matrix.yaml`.
+- Use `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md` for capability declaration format.
+- Use `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md` for mission-layer assessment output.
+- Use `registries/agent_runtime_selection_index.yaml` for agent-layer evidence binding when available.
 - If a required capability is missing, gate must be `NEEDS_CONFIRMATION` or `NEEDS_USER_APPROVAL`.
 - If an optional capability is unavailable, continue with disclosed limitation.
 - If provider/n8n/media execution is required, stop and request explicit approval.

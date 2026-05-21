@@ -125,3 +125,13 @@ Default lightweight behavior must avoid file-sprawl.
 - Required capability missing -> `NEEDS_CONFIRMATION` or `NEEDS_USER_APPROVAL` gate.
 - Optional capability missing -> proceed with disclosed limitation.
 - Provider/n8n/media capabilities stay execution-gated by default.
+
+## CURRENT LIGHTWEIGHT OUTPUT MODE OVERRIDE
+
+- `CHAT_ONLY_MODE` is default for normal user tasks.
+- Normal user tasks do not create files.
+- `CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+- `FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+- Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- Do not create dossier artifacts for MAC-06.1A chat-only proof.
+- Do not create file sprawl by default.

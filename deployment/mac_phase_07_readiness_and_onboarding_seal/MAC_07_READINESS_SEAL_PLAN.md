@@ -20,6 +20,7 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 12. MAC-06.0B single-agent doctrine confirms basic operation does not require multiple installed agents.
 13. MAC-06.1C native capability inventory and task-routing matrix are referenced by active runtime docs.
 14. MAC-06.1A rerun includes freshness classification, research gate output, and tools/connectors/plugins + native capability assessment.
+15. MAC-06.1A rerun must not execute until capability-routing artifacts exist (`native_capability_routing_matrix.yaml`, `agent_runtime_selection_index.yaml`) and are referenced by active contracts.
 
 ## Seal Outcome Options
 

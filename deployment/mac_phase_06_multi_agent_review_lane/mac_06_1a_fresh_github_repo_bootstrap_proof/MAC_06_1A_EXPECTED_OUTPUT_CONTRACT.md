@@ -50,6 +50,7 @@ Required fields:
 ```text
 research_mode=repo_only/repo_plus_static_knowledge/web_assisted/real_time_web/provider_api_assisted
 web_access_available=true/false/UNKNOWN
+web_fetch_available=true/false
 web_access_used=true/false
 real_time_sources_used=true/false
 source_list_present=true/false
@@ -73,6 +74,7 @@ github_remote_available=true/false
 file_search_available=true/false
 code_execution_available=true/false
 package_install_available=true/false
+browser_available=true/false
 provider_credentials_available=true/false
 n8n_runtime_available=true/false
 capabilities_requiring_approval_present=true/false
@@ -111,6 +113,7 @@ limitations_disclosed=true/false
 - Research mode decision is present.
 - Tools/connectors/plugins assessment is present.
 - Native capability assessment is present.
+- Task-to-capability routing is present and references capability matrix.
 - Final proof status matches weakest required evidence layer.
 - No false n8n/provider/media claims.
 

@@ -61,6 +61,9 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - web research is capability-gated
   - repo write is approval-gated
   - provider/n8n/media remain execution-gated
+  - MAC-06.1A proof docs include native capability assessment blocks
+  - `registries/native_capability_routing_matrix.yaml` exists
+  - agent selection evidence is backed by `registries/agent_runtime_selection_index.yaml` or explicitly marked PARTIAL
 
 ## MAC-06.1: First controlled multi-agent review proof
 

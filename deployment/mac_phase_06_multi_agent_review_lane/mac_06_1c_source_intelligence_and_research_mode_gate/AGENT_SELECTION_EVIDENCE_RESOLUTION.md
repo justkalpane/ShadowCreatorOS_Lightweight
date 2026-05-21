@@ -18,7 +18,7 @@ This resolution checks active agent evidence for registry-first routing without 
 
 ## Classification
 
-`agent_layer_status=PROVEN_BY_FILE_DISCOVERY`
+`agent_layer_status=PROVEN_WITH_ACTIVE_INDEX`
 
 ## MAC-06.1A Citation Guidance
 
@@ -27,7 +27,8 @@ For `directors/agents/subagents/skills/subskills` evidence in proof output:
 - cite matrix/registry path(s)
 - cite selected file path(s) under `agents/` and `subagents/` where applicable
 - cite contract standard path for selection method
+- cite `/Users/apple/Documents/ShadowCreatorOS_Lightweight/registries/agent_runtime_selection_index.yaml`
 
-## Recommendation
+## Index Status
 
-Build a dedicated `AGENT_RUNTIME_SELECTION_INDEX` synthesized from current `agents/`, `subagents/`, and registry matrices before final production seal to reduce repeated `NEEDS_CONFIRMATION` churn in proof runs.
+`registries/agent_runtime_selection_index.yaml` has been created from repo evidence to reduce repeated `NEEDS_CONFIRMATION` churn and provide explicit citation targets for MAC-06.1A proof outputs.

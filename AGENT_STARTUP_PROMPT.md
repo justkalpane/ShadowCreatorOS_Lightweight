@@ -35,3 +35,11 @@ This repo is the active production path for repo-first intelligence work. The ol
 
 No generic chatbot output. Every mission must yield grounded, contract-compliant dossier artifacts with JSON validity, quality-gate evidence, and truthful lineage.
 
+## Universal Single-Agent Operation
+
+The primary operating model is one capable repo-aware agent plus the repo brain. Codex is a proven runtime, but not the only valid runtime.
+
+- Chat-only agents may return complete Shadow output packets.
+- Repo-write agents may create dossier artifacts.
+- Multi-agent review is optional and preserved for quality improvement.
+- n8n/provider execution remains deferred until explicitly approved.

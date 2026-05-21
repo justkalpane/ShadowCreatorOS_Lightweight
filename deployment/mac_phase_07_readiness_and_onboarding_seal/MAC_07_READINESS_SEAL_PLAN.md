@@ -14,6 +14,7 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 6. MAC-06.2 Codex finalization proof completed.
 7. Final git state is clean at seal time.
 8. No n8n/provider/Gemini/OpenWebUI/old-runtime drift occurred during MAC-06.1 and MAC-06.2.
+9. MAC-06.0B single-agent doctrine confirms basic operation does not require multiple installed agents.
 
 ## Seal Outcome Options
 
@@ -25,3 +26,6 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 
 A MAC-07 PASS does not authorize n8n/provider execution bus phases. Those begin only in MAC-09+ with explicit approval.
 
+## Single-Agent Seal Interpretation
+
+MAC-07 readiness may validate repo-first onboarding through one representative single-agent repo-aware path. Multi-agent review remains preserved for stronger quality review, not as a forced dependency for normal use.

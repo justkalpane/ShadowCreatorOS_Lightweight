@@ -30,6 +30,16 @@ MAC-06.0 must define the full agentic chat runtime proof protocol before MAC-06.
 - Chat-output proof is also required before onboarding seal.
 - Codex local proof alone does not prove all agents.
 
+## Universal Single-Agent Clarification
+
+The primary runtime is a single capable repo-aware agent operating against the repo brain. Multi-agent reasoning/review remains optional future quality enhancement.
+
+- Codex alone already proved repo-write operation through Dossier #2 and Dossier #3.
+- A fresh Codex GitHub bootstrap proof will prove portability for one representative repo-aware agent path.
+- Web LLM chat proofs can prove chat-only operation.
+- The product must not depend on installing every agent.
+- Existing Claude/Kimi/DeepSeek/Perplexity/Gemini/Antigravity lanes remain preserved.
+
 ## Workflow
 
 1. Codex creates dossier under MAC-05 contract.

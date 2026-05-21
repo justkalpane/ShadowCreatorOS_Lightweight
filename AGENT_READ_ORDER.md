@@ -74,3 +74,13 @@ Use these for deeper historical context only (not as active runtime commands):
 6. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/archive_reference/old_quarantine_manifest/FREEZE_MANIFEST.md`
 7. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/archive_reference/old_quarantine_manifest/QUARANTINE_STATUS.md`
 8. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/handoff/historical_source_docs/HISTORICAL_SOURCE_DOCS_INDEX.md`
+
+## Phase G: Universal Single-Agent Runtime Doctrine
+
+Use these to understand the primary lightweight operating model:
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/UNIVERSAL_SINGLE_AGENT_RUNTIME_MODEL.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/SINGLE_AGENT_CAPABILITY_CONTRACT.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/CHAT_ONLY_OPERATION_CONTRACT.md`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/REPO_WRITE_OPERATION_CONTRACT.md`
+5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/MULTI_AGENT_REVIEW_IS_OPTIONAL.md`

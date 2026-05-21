@@ -16,3 +16,6 @@
 
 Codex local repo-write production is proven. Cross-agent chat and reviewer behavior still requires manual or integrated proof before onboarding seal.
 
+## Single-Agent Primary Interpretation
+
+Codex proves one representative repo-aware single-agent path. Other agents do not need to be installed together for basic operation; each can be tested progressively in chat-only or repo-write mode.

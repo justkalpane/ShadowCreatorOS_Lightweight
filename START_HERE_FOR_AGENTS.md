@@ -34,3 +34,12 @@ Future agents should read historical source docs when deeper background is neede
 - Historical docs are reference context, not active runtime commands.
 - MAC-05 operating loop and runtime contracts remain active production law.
 - Old full Shadow OS remains quarantined unless explicitly approved for a separate execution phase.
+
+## Universal Single-Agent Operation
+
+One capable repo-aware agent can operate the intelligence layer alone. Multi-agent review is optional quality enhancement, not mandatory for basic operation.
+
+- Chat-only agents can return complete Shadow Mission Packet and output bundles.
+- Repo-write agents can create dossier files and validation reports.
+- n8n/provider layers remain deferred external execution infrastructure.
+- Do not force users to install every agent before operating the lightweight OS.

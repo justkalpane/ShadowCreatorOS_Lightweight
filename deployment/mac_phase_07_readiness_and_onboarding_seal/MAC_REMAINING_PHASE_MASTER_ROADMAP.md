@@ -15,10 +15,17 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
 - Output: Mission packet contract, repo context loader protocol, selector proof standard, chat output contract, execution bus handoff boundary, compatibility matrix, proof matrix.
 - Execution: Protocol only; no external agent proof yet.
 
+## MAC-06.0B: Universal single-agent runtime doctrine
+
+- Status: Required after MAC-06.0 and before MAC-06.1A.
+- Purpose: Lock the truth that the lightweight OS can be operated by one capable repo-aware coding/chat agent without requiring multiple reasoning modules.
+- Output: Single-agent model, capability contract, chat-only contract, repo-write contract, compatibility model, universal bootstrap prompt.
+- Boundary: Multi-agent review remains preserved as optional quality enhancement, not basic operating dependency.
+
 ## MAC-06.1: First controlled multi-agent review proof
 
 - Purpose: Run one reviewer-lane test against an existing dossier.
-- Gate: Allowed only after MAC-06.0 is committed.
+- Gate: Allowed only after MAC-06.0B is committed.
 - Boundary: No n8n/providers/media execution.
 
 ## MAC-06.2: Codex reviewer-finalization proof
@@ -36,6 +43,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - Historical docs indexed and reconciled
   - Production Dossier #2 and #3 pushed
   - MAC-06.0 protocol committed
+  - MAC-06.0B single-agent doctrine committed
   - MAC-06.1 and MAC-06.2 proven
   - Clean git state
   - No n8n/provider drift
@@ -76,6 +84,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
 - Required before lightweight onboarding declaration:
   - MAC-06 (commit)
   - MAC-06.0
+  - MAC-06.0B
   - MAC-06.1
   - MAC-06.2
   - MAC-07

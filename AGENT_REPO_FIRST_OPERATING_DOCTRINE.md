@@ -76,3 +76,12 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 - Do not use backup branches for active production.
 - Keep backup/history branches as rollback evidence only.
 
+## Universal Single-Agent Operation
+
+The lightweight OS must be usable by one capable repo-aware agent. A user should not need to install every possible agent to get normal topic-to-context-engineering output.
+
+- Single-agent operation is the primary product path.
+- Multi-agent review/reasoning is an optional quality lane.
+- Chat-only agents can produce Shadow Mission Packets and output bundles.
+- Repo-write agents can create dossier files under MAC-05 contracts.
+- n8n and providers remain future external execution layers.

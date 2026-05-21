@@ -7,6 +7,7 @@
   - Production Dossier #2
   - Production Dossier #3
 - Requirement: Map proof evidence to full architecture pipeline before readiness seal.
+- Product implication: Successful Codex proof is enough to prove one representative single-agent repo-aware operation path.
 
 ## P-02 Cross-Agent Chat Proof
 
@@ -45,3 +46,4 @@
 
 MAC-06.0 defines the proof requirements. It does not complete cross-agent proof by itself.
 
+MAC-06.0B clarifies that cross-agent proof is progressive compatibility work. It must not be interpreted as a requirement to install every agent before normal lightweight OS use.

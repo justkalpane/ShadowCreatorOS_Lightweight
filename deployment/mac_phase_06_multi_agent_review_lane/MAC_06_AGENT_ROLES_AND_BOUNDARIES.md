@@ -71,3 +71,12 @@
 - User approval is required before finalization commit.
 - Chat-only agents may return packets without local repo writes.
 - External agents must not fake repo access, provider execution, or media artifacts.
+
+## Primary Product Boundary
+
+Single-agent repo-first operation is the default product path. Multi-agent review is optional and useful, but not required for basic Shadow Creator OS intelligence work.
+
+- Codex, Claude, ChatGPT, Kimi, DeepSeek, Gemini, Perplexity, Antigravity, or another capable repo-aware agent may operate the repo if it can load context and obey contracts.
+- Chat-only agents return output bundles.
+- Repo-write agents create dossier files.
+- No agent is mandatory except a capable agent with enough repo context for the requested mode.

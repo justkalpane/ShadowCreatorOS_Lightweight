@@ -4,10 +4,11 @@
 
 1. `MAC-06 commit` complete on `main`
 2. `MAC-06.0` agentic chat runtime proof protocol complete
-3. `MAC-06.1` first controlled multi-agent review proof complete
-4. `MAC-06.2` Codex finalization proof complete
-5. `MAC-07` readiness seal complete
-6. `MAC-08` onboarding package complete
+3. `MAC-06.0B` universal single-agent runtime doctrine complete
+4. `MAC-06.1` first controlled multi-agent review proof complete
+5. `MAC-06.2` Codex finalization proof complete
+6. `MAC-07` readiness seal complete
+7. `MAC-08` onboarding package complete
 
 ## Gate Criteria
 
@@ -16,7 +17,13 @@
 - Review packet contract and scorecard enforced.
 - Shadow Mission Packet and chat-output contracts defined.
 - Cross-agent compatibility matrix and proof matrix present.
+- Single-agent repo-first operation classified as the primary operating model.
+- Multi-agent review classified as optional quality enhancement.
 - JSON validation and quality gates remain mandatory.
+
+## Single-Agent Product Rule
+
+Do not require users to install every agent before using the lightweight OS. MAC-06.1 external reviewer proof remains valuable, but it is a quality/review lane unless the user explicitly keeps it inside a stricter onboarding seal.
 - Lineage truth remains mandatory.
 
 ## Hard Exclusions During These Gates

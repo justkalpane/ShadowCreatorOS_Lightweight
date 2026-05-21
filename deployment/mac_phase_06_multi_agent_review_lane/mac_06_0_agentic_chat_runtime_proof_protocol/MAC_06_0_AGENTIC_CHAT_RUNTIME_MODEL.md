@@ -38,3 +38,11 @@ Define the real lightweight Shadow Creator OS operating model across modern repo
 
 Topic-to-context engineering does not require n8n, provider APIs, OpenWebUI, old Windows runtime, or media tooling.
 
+## Primary Runtime Clarification
+
+The primary model is universal single-agent repo-first operation. One capable repo-aware agent should be able to complete most intelligence work alone.
+
+- Multi-agent review remains optional quality enhancement.
+- Codex local repo-write operation is already proven through Dossier #2 and Dossier #3.
+- Chat-only web/app agents can prove operation by returning complete Shadow output packets.
+- Users should not need to install every supported agent before using the lightweight OS.

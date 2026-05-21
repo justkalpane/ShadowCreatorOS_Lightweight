@@ -56,3 +56,6 @@
 - Do not fake n8n/provider/media execution.
 - Do not invent directors, agents, skills, subskills, or runtime status.
 
+## Single-Agent First Rule
+
+One capable repo-aware agent is enough for basic topic-to-context-engineering work. Multi-agent reasoning and review are preserved as optional quality layers, not required dependencies.

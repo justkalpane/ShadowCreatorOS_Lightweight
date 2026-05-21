@@ -84,3 +84,12 @@ Use these to understand the primary lightweight operating model:
 3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/CHAT_ONLY_OPERATION_CONTRACT.md`
 4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/REPO_WRITE_OPERATION_CONTRACT.md`
 5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_0b_universal_single_agent_runtime_doctrine/MULTI_AGENT_REVIEW_IS_OPTIONAL.md`
+
+## Phase H: Fresh GitHub Repo Bootstrap Proof
+
+Use these when testing whether a fresh agent can operate from GitHub `main`:
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_FRESH_GITHUB_REPO_BOOTSTRAP_PROOF_PLAN.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_UNIVERSAL_AGENT_STARTER_PROMPT.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_EXPECTED_OUTPUT_CONTRACT.md`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_VERIFICATION_CHECKLIST.md`

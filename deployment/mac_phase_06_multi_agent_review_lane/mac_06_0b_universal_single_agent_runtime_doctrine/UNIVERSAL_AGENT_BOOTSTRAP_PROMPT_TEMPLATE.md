@@ -44,3 +44,15 @@ Hard rules:
 - mark missing items NEEDS_CONFIRMATION
 ```
 
+## Fresh Web/Coding-Agent Bootstrap Addendum
+
+Before answering the user task, load repo context first:
+
+- Read `START_HERE_FOR_AGENTS.md`.
+- Follow `AGENT_READ_ORDER.md`.
+- Use registry-first selection with evidence paths.
+- Assess tools/connectors/plugins as `ACTIVE`, `PLANNED`, `NOT_ACTIVE`, or `NEEDS_CONFIRMATION`.
+- Split output mode:
+  - chat-only agents return a complete Shadow output packet
+  - repo-write agents create dossier artifacts only after confirming contract and access
+

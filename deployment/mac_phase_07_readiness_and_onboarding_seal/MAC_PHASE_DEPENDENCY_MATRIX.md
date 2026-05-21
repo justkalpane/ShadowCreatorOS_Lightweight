@@ -5,7 +5,8 @@
 | MAC-06 (commit) | MAC-05 complete + Dossier #3 pushed | Committed review-lane planning docs | Yes |
 | MAC-06.0 | MAC-06 commit | Agentic chat runtime proof protocol | Yes |
 | MAC-06.0B | MAC-06.0 | Universal single-agent runtime doctrine | Yes |
-| MAC-06.1 | MAC-06.0B | First reviewer proof packet on existing dossier | Yes |
+| MAC-06.1A | MAC-06.0B | Fresh GitHub repo bootstrap proof | Yes |
+| MAC-06.1 | MAC-06.1A | First reviewer proof packet on existing dossier | Optional quality lane unless user requires it |
 | MAC-06.2 | MAC-06.1 | Codex-approved finalization proof | Yes |
 | MAC-07 | MAC-06.2 | Readiness seal | Yes |
 | MAC-08 | MAC-07 | Agent onboarding package | Yes |

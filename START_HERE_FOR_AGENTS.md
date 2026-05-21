@@ -43,3 +43,13 @@ One capable repo-aware agent can operate the intelligence layer alone. Multi-age
 - Repo-write agents can create dossier files and validation reports.
 - n8n/provider layers remain deferred external execution infrastructure.
 - Do not force users to install every agent before operating the lightweight OS.
+
+## Fresh GitHub Repo Bootstrap Proof
+
+Future agents must start from GitHub repo `main` and read this file before doing the task. The agent must use repo-first behavior before internet-first behavior.
+
+- Start with `START_HERE_FOR_AGENTS.md`.
+- Follow `AGENT_READ_ORDER.md`.
+- Use registry-first selection with evidence paths.
+- Produce either a chat-only Shadow output packet or repo dossier files, depending on access.
+- Do not execute n8n/providers/media by default.

@@ -22,11 +22,19 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
 - Output: Single-agent model, capability contract, chat-only contract, repo-write contract, compatibility model, universal bootstrap prompt.
 - Boundary: Multi-agent review remains preserved as optional quality enhancement, not basic operating dependency.
 
+## MAC-06.1A: Fresh GitHub repo bootstrap proof
+
+- Status: Required after MAC-06.0B.
+- Purpose: Prove that a fresh repo-aware agent can load GitHub `main`, follow startup doctrine, use registry-first routing, select directors/agents/subagents/skills/subskills/tools/connectors/plugins where defined, and produce a quality-gated Shadow output packet.
+- Output: Fresh-agent proof result.
+- Boundary: Do not require all agents to be installed before onboarding. n8n execution bus remains deferred.
+
 ## MAC-06.1: First controlled multi-agent review proof
 
 - Purpose: Run one reviewer-lane test against an existing dossier.
-- Gate: Allowed only after MAC-06.0B is committed.
+- Gate: Allowed after MAC-06.1A unless user explicitly prioritizes review earlier.
 - Boundary: No n8n/providers/media execution.
+- Classification: Optional quality lane unless explicitly kept inside stricter onboarding seal.
 
 ## MAC-06.2: Codex reviewer-finalization proof
 
@@ -44,7 +52,8 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - Production Dossier #2 and #3 pushed
   - MAC-06.0 protocol committed
   - MAC-06.0B single-agent doctrine committed
-  - MAC-06.1 and MAC-06.2 proven
+  - MAC-06.1A fresh bootstrap proof completed
+  - MAC-06.1 and MAC-06.2 completed if user keeps external review inside onboarding seal
   - Clean git state
   - No n8n/provider drift
 
@@ -85,7 +94,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - MAC-06 (commit)
   - MAC-06.0
   - MAC-06.0B
-  - MAC-06.1
+  - MAC-06.1A
   - MAC-06.2
   - MAC-07
   - MAC-08

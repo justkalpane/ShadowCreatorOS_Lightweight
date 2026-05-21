@@ -43,3 +43,9 @@ The primary operating model is one capable repo-aware agent plus the repo brain.
 - Repo-write agents may create dossier artifacts.
 - Multi-agent review is optional and preserved for quality improvement.
 - n8n/provider execution remains deferred until explicitly approved.
+
+## Fresh GitHub Repo Bootstrap Proof
+
+When operating from a fresh chat or agent session, start with GitHub `main`, read `START_HERE_FOR_AGENTS.md`, then follow `AGENT_READ_ORDER.md`.
+
+Do not begin with internet-first behavior. Load repo doctrine, registries, contracts, directors, agents, skills, and subskills first. Produce chat-only packets when no filesystem access exists; produce dossier files only when repo-write access exists and the active contract allows it.

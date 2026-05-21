@@ -5,10 +5,9 @@
 1. `MAC-06 commit` complete on `main`
 2. `MAC-06.0` agentic chat runtime proof protocol complete
 3. `MAC-06.0B` universal single-agent runtime doctrine complete
-4. `MAC-06.1` first controlled multi-agent review proof complete
-5. `MAC-06.2` Codex finalization proof complete
-6. `MAC-07` readiness seal complete
-7. `MAC-08` onboarding package complete
+4. `MAC-06.1A` fresh GitHub repo bootstrap proof complete
+5. `MAC-07` readiness seal complete
+6. `MAC-08` onboarding package complete
 
 ## Gate Criteria
 
@@ -24,6 +23,10 @@
 ## Single-Agent Product Rule
 
 Do not require users to install every agent before using the lightweight OS. MAC-06.1 external reviewer proof remains valuable, but it is a quality/review lane unless the user explicitly keeps it inside a stricter onboarding seal.
+
+## Fresh Bootstrap Rule
+
+MAC-06.1A is the portable lightweight OS onboarding test. It proves that a fresh repo-aware agent can use GitHub `main`, read startup doctrine, route registry-first, and produce a quality-gated Shadow output packet.
 - Lineage truth remains mandatory.
 
 ## Hard Exclusions During These Gates

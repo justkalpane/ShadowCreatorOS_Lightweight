@@ -42,6 +42,17 @@
   - Provider handoff packet remains reference-only until explicit approval.
   - No n8n/provider/media execution occurs during repo-first proofs.
 
+## P-06 Fresh GitHub Repo Bootstrap Proof
+
+- Test:
+  - New agent receives GitHub repo URL and branch `main`.
+  - Agent reads `START_HERE_FOR_AGENTS.md`.
+  - Agent follows `AGENT_READ_ORDER.md`.
+  - Agent returns chat-only or repo-write Shadow output.
+  - Agent proves registry-first selection with evidence paths.
+  - Agent marks tools/connectors/plugins honestly.
+  - No n8n/provider/media execution occurs.
+
 ## Readiness Implication
 
 MAC-06.0 defines the proof requirements. It does not complete cross-agent proof by itself.

@@ -85,3 +85,9 @@ The lightweight OS must be usable by one capable repo-aware agent. A user should
 - Chat-only agents can produce Shadow Mission Packets and output bundles.
 - Repo-write agents can create dossier files under MAC-05 contracts.
 - n8n and providers remain future external execution layers.
+
+## Fresh GitHub Repo Bootstrap Proof
+
+Portable operation is proven when a fresh agent receives the GitHub repo on branch `main`, reads `START_HERE_FOR_AGENTS.md`, follows `AGENT_READ_ORDER.md`, performs registry-first selection, and returns a complete Shadow output packet or repo dossier without relying on old chat memory.
+
+The agent must not use internet-first behavior before repo context. It must not execute n8n, providers, media, Gemini API, OpenWebUI, or old runtime by default.

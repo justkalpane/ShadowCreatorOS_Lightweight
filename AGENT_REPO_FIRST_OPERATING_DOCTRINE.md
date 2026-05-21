@@ -109,3 +109,11 @@ Default lightweight behavior must avoid file-sprawl.
 - Agent mapping gaps must be surfaced as `PARTIAL` unless contracts declare that layer optional for the current proof.
 - Research mode must be explicit (`repo_only`, `web_assisted`, or `real_time_web`).
 - Repo-first behavior and live web research are separate claims and must not be conflated.
+
+## Repo-First + Source-Aware Research Rule
+
+- Repo-first sequencing is mandatory; internet-first execution is forbidden.
+- Source freshness is mandatory when task scope requires current facts.
+- Every output must disclose research mode, web access status, source usage, and confidence.
+- No source list means no real-time-source claim.
+- For default lightweight operation, chat-only output is preferred unless user approves repo-write.

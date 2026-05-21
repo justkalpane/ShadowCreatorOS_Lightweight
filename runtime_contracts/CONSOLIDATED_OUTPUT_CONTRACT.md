@@ -54,3 +54,20 @@ This contract prevents default file-sprawl behavior and keeps lightweight operat
 - User Approval Log
 - Next Action
 
+## Research and Source Disclosure Section
+
+Every chat output or consolidated output must include:
+
+- Research Mode Disclosure
+- Web Access Status
+- Source List
+- Current Fact Confidence
+- Unsupported Claims
+- Research Sufficiency Gate Result
+
+## Output Mode Clarification
+
+- `CHAT_ONLY_MODE` remains the default.
+- Normal chat tasks create no files.
+- `CONSOLIDATED_REPO_WRITE_MODE` requires user approval before file creation.
+- `FULL_DOSSIER_ARCHIVE_MODE` is explicit only.

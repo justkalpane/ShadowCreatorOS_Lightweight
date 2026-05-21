@@ -38,6 +38,14 @@ Required output:
 - Provider handoff boundary
 - Quality gate report
 - Lineage summary
+- Research mode disclosure:
+  - research_mode
+  - web_access_available
+  - web_access_used
+  - real_time_sources_used
+  - source_list
+  - current_fact_confidence
+- Research Sufficiency Gate block
 - Final proof classification
 
 Hard rules:
@@ -50,6 +58,8 @@ Hard rules:
 - if tools/connectors/plugins are not present or not runtime-active, mark NEEDS_CONFIRMATION or NOT_ACTIVE
 - output to chat if no filesystem write access
 - no commit/push unless explicitly approved
+- if claiming real-time sources, include source list
+- if no source list, set real_time_sources_used=false
 ```
 
 ## MAC-06.1B Governance Addendum

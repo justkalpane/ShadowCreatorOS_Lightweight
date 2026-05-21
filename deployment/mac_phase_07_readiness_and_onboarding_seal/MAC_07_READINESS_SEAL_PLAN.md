@@ -12,11 +12,12 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 4. Dossier #2 and #3 are committed and pushed.
 5. MAC-06.1A fresh GitHub repo bootstrap proof completed.
 6. MAC-06.1B output consolidation and chat approval gate completed.
-7. MAC-06.1 reviewer proof completed if user keeps external review inside onboarding seal.
-8. MAC-06.2 Codex finalization proof completed if MAC-06.1 is included in seal.
-9. Final git state is clean at seal time.
-10. No n8n/provider/Gemini/OpenWebUI/old-runtime drift occurred during readiness proofs.
-11. MAC-06.0B single-agent doctrine confirms basic operation does not require multiple installed agents.
+7. MAC-06.1C source intelligence and research mode gate completed.
+8. MAC-06.1 reviewer proof completed if user keeps external review inside onboarding seal.
+9. MAC-06.2 Codex finalization proof completed if MAC-06.1 is included in seal.
+10. Final git state is clean at seal time.
+11. No n8n/provider/Gemini/OpenWebUI/old-runtime drift occurred during readiness proofs.
+12. MAC-06.0B single-agent doctrine confirms basic operation does not require multiple installed agents.
 
 ## Seal Outcome Options
 

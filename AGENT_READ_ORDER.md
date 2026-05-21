@@ -62,6 +62,8 @@ For each production mission, output one dossier containing:
 - `lineage.json`
 - `DOSSIER_README.md`
 
+Phase E applies only to approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit production dossier mode. For normal lightweight tasks, output-consolidation rules override Phase E: chat-only creates no files, and consolidated repo-write creates one mission output file unless full dossier mode is explicitly requested.
+
 ## Phase F: Historical Source References
 
 Use these for deeper historical context only (not as active runtime commands):
@@ -109,3 +111,12 @@ Use these before classifying any bootstrap/review proof:
 1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_EXPECTED_OUTPUT_CONTRACT.md`
 2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_VERIFICATION_CHECKLIST.md`
 3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+
+## Phase K: Source Intelligence and Research Mode Gate
+
+Use these to enforce source-aware repo-first behavior:
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/SOURCE_INTELLIGENCE_AND_WEB_RESEARCH_CONTRACT.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/RESEARCH_GATE_CONTRACT.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`

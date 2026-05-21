@@ -28,6 +28,14 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - If internet/web research is used, are sources listed?
 - Does lineage include exact paths per selected director/agent/subagent/skill/subskill?
 - Does context engineering packet include platform, visual, voice, caption, retention, and provider handoff details?
+- Did output disclose `research_mode`?
+- Did output disclose `web_access_available` and `web_access_used`?
+- If `real_time_sources_used=true`, is a source list present?
+- If no sources are listed, does output avoid claiming real-time research?
+- If the task needs freshness and web was not used, was repo-only continuation explicitly approved?
+- If `agents_selected_with_evidence=false`, is final status `PARTIAL` unless optionality is explicitly cited?
+- Is context packet summary treated as valid only for chat-only mode?
+- Is final status aligned to the weakest required evidence layer?
 
 ## Verdict
 

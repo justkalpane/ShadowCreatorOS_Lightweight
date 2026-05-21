@@ -43,6 +43,20 @@ For MAC-06.1A chat proof:
 
 Future repo-write proofs must default to one consolidated output file unless full dossier mode is explicitly requested.
 
+## MAC-06.1C Source Intelligence Addendum
+
+Required fields:
+
+```text
+research_mode=repo_only/repo_plus_static_knowledge/web_assisted/real_time_web/provider_api_assisted
+web_access_available=true/false/UNKNOWN
+web_access_used=true/false
+real_time_sources_used=true/false
+source_list_present=true/false
+current_fact_confidence=HIGH/MEDIUM/LOW/LIMITED
+research_sufficiency_gate_present=true/false
+```
+
 ## Proof Status Honesty Law
 
 ### `PASS` Requires
@@ -67,6 +81,10 @@ Future repo-write proofs must default to one consolidated output file unless ful
   - `real_time_web`
 - If web sources are used, source list is included.
 - If web sources are not used, `real_time_sources_used=false`.
+- Research disclosure fields are present.
+- Research Sufficiency Gate is present.
+- If task requires current web research and `web_access_used=false`, user explicitly approved repo-only continuation.
+- If `real_time_sources_used=true`, `source_list_present=true`.
 - No false n8n/provider/media claims.
 
 ### `PARTIAL` Is Required If
@@ -75,7 +93,9 @@ Future repo-write proofs must default to one consolidated output file unless ful
 - `agents_selected_with_evidence=false` and agent layer is mandatory for this proof mode.
 - Gate statuses use non-contract values.
 - Lineage lacks exact evidence paths.
-- Context packet is summary-only when full packet is required.
+- Context packet is summary-only when full packet is required in repo-write/full-dossier mode. In chat-only MAC-06.1A proof, summary is valid.
+- Task needs current web evidence but web was not used and repo-only approval is missing.
+- `agents_selected_with_evidence=false` unless output explicitly cites active contract section declaring agent layer optional.
 
 ### `FAIL` Is Required If
 
@@ -83,3 +103,4 @@ Future repo-write proofs must default to one consolidated output file unless ful
 - Execution claims are false.
 - Output is generic and not registry-first.
 - Required proof sections are missing.
+- `real_time_sources_used=true` but source list is missing.

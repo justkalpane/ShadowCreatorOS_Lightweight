@@ -49,3 +49,12 @@ No custom gate statuses unless explicitly mapped to allowed statuses.
 - `READY_FOR_USER_DECISION` must be represented as `NEEDS_USER_APPROVAL`.
 - `PASS_WITH_NOTICE` must be represented as `NEEDS_CONFIRMATION`, or as `PASS` with a separate note.
 - `PASS_WITH_REFINEMENT` must be represented as `NEEDS_USER_APPROVAL`, or as `PASS` with an optional improvement note.
+
+## Research Sufficiency Status Rule
+
+If current/fresh web research is required but unavailable or unused, `Research Sufficiency Gate` must be:
+
+- `NEEDS_USER_APPROVAL`, or
+- `NEEDS_CONFIRMATION`
+
+It must not be `PASS`.

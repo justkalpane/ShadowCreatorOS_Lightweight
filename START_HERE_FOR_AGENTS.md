@@ -75,3 +75,14 @@ The chat is the user-facing control UI.
 - Research mode must be disclosed.
 - Repo-first behavior does not imply real-time web research was used.
 - Internet access must be explicitly confirmed before claiming current/live research.
+
+## Repo-First + Source-Aware Research Rule
+
+- Repo-first startup is mandatory.
+- Internet-first behavior is forbidden.
+- Real-time web research is required when freshness-critical tasks demand it.
+- Agent must disclose whether web access was available and whether it was used.
+- Agent must not claim source-backed current research unless sources were actually retrieved and listed.
+- Normal default output is chat-only.
+- Consolidated repo-write output requires user approval.
+- Full dossier mode is explicit-only.

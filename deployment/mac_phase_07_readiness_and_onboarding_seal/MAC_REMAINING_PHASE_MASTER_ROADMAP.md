@@ -43,6 +43,20 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - user approval is required before file creation, commit, or provider handoff
   - no file sprawl by default
 
+## MAC-06.1C: Source intelligence and research mode gate
+
+- Status: Required after MAC-06.1B and before readiness seal.
+- Purpose: Ensure the lightweight OS is repo-first but source-aware, and does not hallucinate current information or fake realtime research.
+- Dependency: After MAC-06.1B.
+- Onboarding-critical: true.
+- Readiness checks:
+  - repo-first remains primary
+  - research mode is disclosed
+  - web access availability is disclosed
+  - realtime sources are cited if used
+  - repo-only limitation is disclosed when web is not used
+  - no fake current/realtime claims
+
 ## MAC-06.1: First controlled multi-agent review proof
 
 - Purpose: Run one reviewer-lane test against an existing dossier.
@@ -111,6 +125,7 @@ This roadmap locks the remaining phase order and prevents shortcut drift.
   - MAC-06.0B
   - MAC-06.1A
   - MAC-06.1B
+  - MAC-06.1C
   - MAC-06.2
   - MAC-07
   - MAC-08

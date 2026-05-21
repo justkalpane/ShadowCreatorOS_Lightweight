@@ -7,8 +7,9 @@
 3. `MAC-06.0B` universal single-agent runtime doctrine complete
 4. `MAC-06.1A` fresh GitHub repo bootstrap proof complete
 5. `MAC-06.1B` output consolidation and chat approval gate complete
-6. `MAC-07` readiness seal complete
-7. `MAC-08` onboarding package complete
+6. `MAC-06.1C` source intelligence and research mode gate complete
+7. `MAC-07` readiness seal complete
+8. `MAC-08` onboarding package complete
 
 ## Gate Criteria
 
@@ -39,6 +40,17 @@ MAC-06.1B is onboarding-critical. It enforces:
 - chat-visible approval gate blocks
 - user approval required before file creation, commit, or provider handoff
 - lineage truth remains mandatory
+
+## Source Intelligence Rule
+
+MAC-06.1C is onboarding-critical. It enforces:
+
+- repo-first remains primary
+- internet-first behavior remains forbidden
+- research mode disclosure is mandatory
+- web access availability/usage disclosure is mandatory
+- source list is required when realtime web sources are claimed
+- repo-only limitations are disclosed when web is not used
 
 ## Hard Exclusions During These Gates
 

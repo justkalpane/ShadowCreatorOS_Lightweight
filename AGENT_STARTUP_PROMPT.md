@@ -18,7 +18,7 @@ This repo is the active production path for repo-first intelligence work. The ol
 2. Follow the MAC-05 repo-first loop.
 3. Use registry-first selection for directors/agents/subagents/skills/subskills.
 4. Never invent missing items; mark `NEEDS_CONFIRMATION`.
-5. Create exactly one dossier per mission unless user explicitly asks otherwise.
+5. Use output mode contracts: default chat-only, approved consolidated repo-write by default, and full dossier only when explicitly requested.
 6. Enforce quality gate and lineage on every production dossier.
 7. Commit only after user review approval.
 
@@ -67,3 +67,13 @@ Do not begin with internet-first behavior. Load repo doctrine, registries, contr
 - Research mode disclosure is required.
 - Repo-first output is not automatically real-time web research.
 - Confirm internet access and source list before claiming live/current research.
+
+## Repo-First + Source-Aware Research Rule
+
+- Repo-first behavior is mandatory and internet-first behavior is forbidden.
+- Realtime web research is required when the task demands freshness/current facts.
+- Always disclose `research_mode`, web access availability, web usage, and source status.
+- Do not claim real-time research when no sources were retrieved.
+- Default mode is chat-only with no file creation.
+- Consolidated repo-write mode requires user approval.
+- Full dossier mode is explicit-only.

@@ -66,3 +66,12 @@ The chat is the user-facing control UI.
 - Do not create per-subtask files by default.
 - Do not create director/agent/skill scratch files by default.
 - User must approve before file creation, full dossier creation, commit, push, or n8n/provider handoff.
+
+## Proof Status Honesty Rule
+
+- Final proof status must match the weakest required evidence layer.
+- Do not mark `PASS` if any mandatory evidence is missing.
+- If agent mapping is not proven and agent mapping is required, mark `PARTIAL`.
+- Research mode must be disclosed.
+- Repo-first behavior does not imply real-time web research was used.
+- Internet access must be explicitly confirmed before claiming current/live research.

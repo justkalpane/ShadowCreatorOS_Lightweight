@@ -42,3 +42,10 @@ SHADOW_GATE_STATUS
 - `CREATE_FULL_DOSSIER`
 - `HANDOFF_TO_N8N_LATER`
 
+## Status Normalization Rule
+
+No custom gate statuses unless explicitly mapped to allowed statuses.
+
+- `READY_FOR_USER_DECISION` must be represented as `NEEDS_USER_APPROVAL`.
+- `PASS_WITH_NOTICE` must be represented as `NEEDS_CONFIRMATION`, or as `PASS` with a separate note.
+- `PASS_WITH_REFINEMENT` must be represented as `NEEDS_USER_APPROVAL`, or as `PASS` with an optional improvement note.

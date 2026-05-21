@@ -58,3 +58,12 @@ Do not begin with internet-first behavior. Load repo doctrine, registries, contr
 - Default repo-write mode is one consolidated mission output file.
 - Full dossier mode is explicit only.
 - User approval is required before creating files, creating full dossier artifacts, committing, pushing, or handing off to n8n/providers.
+
+## Proof Status Honesty Rule
+
+- Final proof status must match the weakest required evidence layer.
+- Do not mark `PASS` when mandatory evidence is missing.
+- If agent mapping is unproven and required, classify `PARTIAL`.
+- Research mode disclosure is required.
+- Repo-first output is not automatically real-time web research.
+- Confirm internet access and source list before claiming live/current research.

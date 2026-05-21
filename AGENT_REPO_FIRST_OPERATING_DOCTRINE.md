@@ -101,3 +101,11 @@ Default lightweight behavior must avoid file-sprawl.
 - Full dossier archive mode is explicit only.
 - Gate failures and blocker decisions must be visible in chat.
 - User approval is required before file creation, full dossier creation, commit, push, or provider handoff.
+
+## Proof Status Honesty Rule
+
+- Proof classification must align to the weakest required evidence layer.
+- `PASS` is forbidden if mandatory evidence layers are unresolved.
+- Agent mapping gaps must be surfaced as `PARTIAL` unless contracts declare that layer optional for the current proof.
+- Research mode must be explicit (`repo_only`, `web_assisted`, or `real_time_web`).
+- Repo-first behavior and live web research are separate claims and must not be conflated.

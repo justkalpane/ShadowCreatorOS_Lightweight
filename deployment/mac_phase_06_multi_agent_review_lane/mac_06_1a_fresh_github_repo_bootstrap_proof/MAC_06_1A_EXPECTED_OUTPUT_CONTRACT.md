@@ -42,3 +42,44 @@ For MAC-06.1A chat proof:
 - `full_dossier_requested_explicitly=true/false`
 
 Future repo-write proofs must default to one consolidated output file unless full dossier mode is explicitly requested.
+
+## Proof Status Honesty Law
+
+### `PASS` Requires
+
+- Topic matches user request.
+- All required sections are present.
+- Directors selected with exact evidence.
+- Agents selected with exact evidence, or agent layer explicitly declared optional by active contract.
+- Subagents selected with exact evidence.
+- Skills selected with exact evidence.
+- Subskills selected with exact evidence or marked `NEEDS_CONFIRMATION`.
+- Tools/connectors/plugins are honestly assessed.
+- Chat gate statuses use only allowed values:
+  - `PASS`
+  - `BLOCKED`
+  - `NEEDS_USER_APPROVAL`
+  - `NEEDS_CONFIRMATION`
+- If final gate awaits decision, `waiting_for_user_approval=true`.
+- Research mode is disclosed:
+  - `repo_only`
+  - `web_assisted`
+  - `real_time_web`
+- If web sources are used, source list is included.
+- If web sources are not used, `real_time_sources_used=false`.
+- No false n8n/provider/media claims.
+
+### `PARTIAL` Is Required If
+
+- Any required evidence layer is `NEEDS_CONFIRMATION`.
+- `agents_selected_with_evidence=false` and agent layer is mandatory for this proof mode.
+- Gate statuses use non-contract values.
+- Lineage lacks exact evidence paths.
+- Context packet is summary-only when full packet is required.
+
+### `FAIL` Is Required If
+
+- Invented components are detected.
+- Execution claims are false.
+- Output is generic and not registry-first.
+- Required proof sections are missing.

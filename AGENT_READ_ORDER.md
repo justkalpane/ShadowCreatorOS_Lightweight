@@ -101,3 +101,11 @@ Use these to enforce output governance:
 1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
 2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
 3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/OUTPUT_RETENTION_AND_CLEANUP_POLICY.md`
+
+## Phase J: Proof Status Honesty
+
+Use these before classifying any bootstrap/review proof:
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_EXPECTED_OUTPUT_CONTRACT.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_VERIFICATION_CHECKLIST.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`

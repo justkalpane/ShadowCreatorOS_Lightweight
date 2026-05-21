@@ -20,6 +20,14 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did it include chat-visible approval gate blocks?
 - Did it avoid creating files in chat-only proof mode?
 - If files were created, did it have explicit user approval and use consolidated output mode?
+- Does final status match the weakest required evidence layer?
+- If `agents_selected_with_evidence=false`, is final status `PARTIAL` (unless agent layer is explicitly optional)?
+- Are gate statuses limited to `PASS / BLOCKED / NEEDS_USER_APPROVAL / NEEDS_CONFIRMATION`?
+- Does Final Approval Gate use `waiting_for_user_approval=true` when awaiting user decision?
+- Does research brief disclose `real_time_sources_used=true/false`?
+- If internet/web research is used, are sources listed?
+- Does lineage include exact paths per selected director/agent/subagent/skill/subskill?
+- Does context engineering packet include platform, visual, voice, caption, retention, and provider handoff details?
 
 ## Verdict
 

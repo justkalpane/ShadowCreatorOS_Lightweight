@@ -5,7 +5,7 @@
 - Do not answer with broad generic advice when production artifacts are requested.
 - Convert requests into contract outputs. Use chat output by default; file-backed artifacts require explicit approval.
 
-## Canonical Startup Order
+## CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER - ACTIVE LAW
 
 Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac references only.
 
@@ -30,10 +30,32 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac r
 - `CHAT_ONLY_MODE` is default for normal tasks.
 - Normal tasks create no files.
 - `CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+- If repo-write is approved, create exactly one consolidated file by default: `outputs/missions/<mission_id>/MISSION_OUTPUT.md`.
 - `FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
 - Older lines about every mission creating a dossier apply only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 - For content/video/script tasks, script-only output is `PARTIAL` unless user explicitly asks script-only.
 - For content/video/script tasks, `CONTENT_ENGINEERING_OUTPUT_CONTRACT.md` is mandatory.
+
+## CLAIM_EVIDENCE_STATUS LAW
+
+Every production-sensitive claim must be expressed as:
+
+```text
+claim=
+evidence=
+evidence_path=
+command_output_or_file_reference=
+status=PASS/PARTIAL/BLOCKED/NEEDS_CONFIRMATION
+```
+
+If evidence is missing, mark `NEEDS_CONFIRMATION`. Do not convert `NEEDS_CONFIRMATION` into `PASS`.
+
+## FRESH LAYMAN PROOF LAW
+
+The fresh-agent proof must use a plain layman request only.
+Do not use a giant forcing prompt for the primary proof.
+A detailed forcing prompt is allowed only after failure as diagnostic remediation.
+The proof passes only if the repo itself triggers orchestration through `AGENTS.md` and active startup docs.
 
 ## Rule 2: Registry-Only Selection
 

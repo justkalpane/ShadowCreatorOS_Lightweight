@@ -1,3 +1,8 @@
+---
+name: shadow-research-gate
+description: Activates for latest, current, trend, news, facts, tools, models, pricing, platform rules, citations, real-time, and statistics requests; requires freshness classification, web access disclosure, and source honesty.
+---
+
 # Shadow Research Gate
 
 Use this skill for any request involving:

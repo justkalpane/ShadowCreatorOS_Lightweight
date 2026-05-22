@@ -156,7 +156,7 @@ Default lightweight behavior must avoid file-sprawl.
 - Realtime/source-aware research must be used when current facts are required.
 - If web access is unavailable, disclose the limitation and gate.
 
-## CANONICAL STARTUP ORDER
+## CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER - ACTIVE LAW
 
 Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac references only.
 
@@ -175,3 +175,35 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac r
 13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
 14. `registries/native_capability_routing_matrix.yaml`
 15. `registries/agent_runtime_selection_index.yaml`
+
+## CURRENT LIGHTWEIGHT OUTPUT LAW - ACTIVE LAW
+
+`CHAT_ONLY_MODE` is default for normal user tasks.
+Normal user tasks create no files.
+`CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+If repo-write is approved, create exactly one consolidated file by default: `outputs/missions/<mission_id>/MISSION_OUTPUT.md`.
+`FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+Older instructions saying every mission creates a dossier apply only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+For content/video/script tasks, script-only output is `PARTIAL` unless the user explicitly asks for script-only.
+For content/video/script tasks, `CONTENT_ENGINEERING_OUTPUT_CONTRACT` is mandatory.
+
+## CLAIM_EVIDENCE_STATUS LAW
+
+Every production-sensitive claim must be expressed as:
+
+```text
+claim=
+evidence=
+evidence_path=
+command_output_or_file_reference=
+status=PASS/PARTIAL/BLOCKED/NEEDS_CONFIRMATION
+```
+
+If evidence is missing, mark `NEEDS_CONFIRMATION`. Do not convert `NEEDS_CONFIRMATION` into `PASS`.
+
+## FRESH LAYMAN PROOF LAW
+
+The fresh-agent proof must use a plain layman request only.
+Do not use a giant forcing prompt for the primary proof.
+A detailed forcing prompt is allowed only after failure as diagnostic remediation.
+The proof passes only if the repo itself triggers orchestration through `AGENTS.md` and active startup docs.

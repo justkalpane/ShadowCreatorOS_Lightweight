@@ -17,6 +17,12 @@ The agent receives:
 
 - It starts from the repo, not internet-first behavior.
 - It follows `START_HERE_FOR_AGENTS.md` and `AGENT_READ_ORDER.md`.
+- It detects and reads `AGENTS.md` before all other repo instructions when available.
+- It uses the canonical startup order from `AGENTS.md`.
+- It cites `registries/native_capability_routing_matrix.yaml`.
+- It cites `registries/agent_runtime_selection_index.yaml`.
+- For content/script/video tasks, it follows `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
+- It remains `CHAT_ONLY_MODE`; `files_created=false` and `dossier_artifacts_created=false`.
 - It creates a Shadow Mission Packet.
 - It loads repo context.
 - It routes registry-first.

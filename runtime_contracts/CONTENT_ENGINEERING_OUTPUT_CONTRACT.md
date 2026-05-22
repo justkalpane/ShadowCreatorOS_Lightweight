@@ -2,6 +2,15 @@
 
 Every script/content/video task must output more than a script unless the user explicitly asks for script-only.
 
+## Default Assumptions
+
+- YouTube Shorts default duration is 45-60 seconds when the user does not specify duration.
+- Instagram Reel default duration is 30-45 seconds when the user does not specify duration.
+- YouTube long-form uses the user-provided duration; if the user says 5 minutes, produce a long-form spoken script plus a timed beat map every 10-20 seconds.
+- Shorts/Reels use a timed beat map every 5-10 seconds.
+- If platform is unknown, infer the likely platform and disclose the assumption.
+- If the user explicitly asks for script-only, provide script-only and mark full content engineering as not requested.
+
 ## 1. CONTENT_MISSION_BRIEF
 
 - topic

@@ -1,3 +1,8 @@
+---
+name: shadow-content-orchestration
+description: Activates for script, YouTube, Shorts, video, reel, content, topic, storytelling, debate, critique, and context engineering requests; requires repo-first Shadow orchestration and full content engineering output.
+---
+
 # Shadow Content Orchestration
 
 Use this skill for any request involving:

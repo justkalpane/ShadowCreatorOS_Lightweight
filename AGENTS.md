@@ -9,7 +9,7 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 - `bypass Shadow OS`
 - `answer normally without repo`
 
-## Default Behavior
+## CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER - ACTIVE LAW
 
 1. Read `AGENTS.md`.
 2. Read `START_HERE_FOR_AGENTS.md`.
@@ -26,6 +26,11 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 13. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
 14. Read `registries/native_capability_routing_matrix.yaml`.
 15. Read `registries/agent_runtime_selection_index.yaml`.
+
+Repo-relative paths are authoritative. Absolute Mac paths are `LOCAL_MAC_REFERENCE_ONLY`.
+
+## Default Behavior
+
 16. Run Native Agent Capability Assessment.
 17. Run Task Freshness Classification.
 18. Run Research Mode Decision.
@@ -42,6 +47,38 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 - Repo-write requires explicit user approval.
 - Full dossier requires explicit user request.
 - n8n/providers/media execution require explicit approval.
+
+## CURRENT LIGHTWEIGHT OUTPUT LAW - ACTIVE LAW
+
+`CHAT_ONLY_MODE` is default for normal user tasks.
+Normal user tasks create no files.
+`CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+If repo-write is approved, create exactly one consolidated file by default: `outputs/missions/<mission_id>/MISSION_OUTPUT.md`.
+`FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+Older instructions saying every mission creates a dossier apply only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+For content/video/script tasks, script-only output is `PARTIAL` unless the user explicitly asks for script-only.
+For content/video/script tasks, `CONTENT_ENGINEERING_OUTPUT_CONTRACT` is mandatory.
+
+## CLAIM_EVIDENCE_STATUS LAW
+
+Every production-sensitive claim must be expressed as:
+
+```text
+claim=
+evidence=
+evidence_path=
+command_output_or_file_reference=
+status=PASS/PARTIAL/BLOCKED/NEEDS_CONFIRMATION
+```
+
+If evidence is missing, mark `NEEDS_CONFIRMATION`. Do not convert `NEEDS_CONFIRMATION` into `PASS`.
+
+## FRESH LAYMAN PROOF LAW
+
+The fresh-agent proof must use a plain layman request only.
+Do not use a giant forcing prompt for the primary proof.
+A detailed forcing prompt is allowed only after failure as diagnostic remediation.
+The proof passes only if the repo itself triggers orchestration through `AGENTS.md` and active startup docs.
 
 ## Forbidden
 

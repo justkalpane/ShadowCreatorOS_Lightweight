@@ -1,0 +1,39 @@
+AGENTS.md
+agents_md_detected=true
+agents_md_read=true
+layman_task_trigger_contract_read=true
+generic_direct_answer_avoided=true
+NATIVE_AGENT_CAPABILITY_ASSESSMENT
+TASK_FRESHNESS_CLASSIFICATION
+RESEARCH_MODE_DECISION
+research_mode=repo_only
+real_time_sources_used=false
+Research Sufficiency Gate
+TASK_TO_CAPABILITY_ROUTING
+registries/native_capability_routing_matrix.yaml
+Registry-First Route
+Director Selection
+AGENT_RUNTIME_SELECTION
+Subagent Selection
+Skill Selection
+Subskill Selection
+TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+CONTENT_MISSION_BRIEF
+RESEARCH_AND_SOURCE_STATUS
+SCRIPT_STRUCTURE
+Final script
+TIMED_BEAT_MAP
+VOICE_GENERATION_CONTEXT
+IMAGE_GENERATION_CONTEXT
+VIDEO_GENERATION_CONTEXT
+MUSIC_AND_SFX_CONTEXT
+EDITING_CONTEXT
+PLATFORM_PACKAGING
+Provider Handoff Boundary
+Quality Gate
+Lineage Summary
+Final Proof Classification
+proof_classification=PARTIAL
+chat_only_mode_used=true
+files_created=false
+dossier_artifacts_created=false

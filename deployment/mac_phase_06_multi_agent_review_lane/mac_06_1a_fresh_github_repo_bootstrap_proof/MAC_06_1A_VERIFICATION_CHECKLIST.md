@@ -5,6 +5,8 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 ## Checks
 
 - Did the new agent detect/read `AGENTS.md`?
+- Did the output include `agents_md_detected=true` and `agents_md_read=true`?
+- Did the output read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`?
 - Did a layman task trigger repo-first orchestration without the user saying `use repo`?
 - Did the output avoid generic direct answer behavior?
 - Did the new agent use GitHub repo `main`?
@@ -63,10 +65,17 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did output include `MUSIC_AND_SFX_CONTEXT`?
 - Did output include `EDITING_CONTEXT`?
 - Did output include `PLATFORM_PACKAGING`?
+- Did output include `CONTENT_MISSION_BRIEF`?
+- Did output include `RESEARCH_AND_SOURCE_STATUS`?
+- Did output include `SCRIPT_STRUCTURE`?
+- Did output include `FINAL_SCRIPT`?
 - If output is script-only, did the user explicitly request script-only?
 - Are invalid gate statuses absent?
 - If capability matrix or agent runtime index is not cited, is final status blocked from PASS?
 - If context engineering media handoff is missing, is video/script task status blocked from PASS?
+- Are `chat_only_mode_used=true`, `files_created=false`, and `dossier_artifacts_created=false` present?
+- Is `proof_classification=PASS/PARTIAL/FAIL` present and aligned to the weakest evidence layer?
+- Did the output avoid any false claim that n8n/providers/media were executed?
 
 ## Verdict
 

@@ -1,0 +1,2445 @@
+SHADOW_CREATOR_OS_LIGHTWEIGHT_PRODUCTION_REMEDIATION_MASTER_PLAN.txt
+VERSION: 2026-05-22
+STATUS: CONSOLIDATED FORENSIC GAP ANALYSIS + PATCH PLAN + DEPLOYMENT HANDOFF
+TARGET REPO: /Users/apple/Documents/ShadowCreatorOS_Lightweight
+TARGET GITHUB: https://github.com/justkalpane/ShadowCreatorOS_Lightweight
+TARGET BRANCH: main
+PRIMARY OPERATOR: OLD / LOCAL MAC CODEX CHAT
+FRESH PROOF OPERATOR: NEW CODEX CLOUD / FRESH AGENT CHAT
+
+IMPORTANT INTEGRITY NOTE:
+Some older uploaded files from earlier conversation context were not directly re-readable in the current session. Where a claim depends on older handoff/build history not present in the latest uploaded files, it is marked NEEDS_CONFIRMATION or HISTORICAL_REFERENCE_ONLY. The latest currently uploaded files were reviewed as evidence, including AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_STARTUP_PROMPT.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md, LAYMAN_TASK_TRIGGER_CONTRACT.md, CONTENT_ENGINEERING_OUTPUT_CONTRACT.md, MAC_06_1A_EXPECTED_OUTPUT_CONTRACT.md, MAC_06_1A_UNIVERSAL_AGENT_STARTER_PROMPT.md, MAC_06_1A_VERIFICATION_CHECKLIST.md, MAC_06_1D_PRODUCTION_BLOCKER_AUDIT_REPORT.md, and the visible SKILL.md attachment.
+
+================================================================================
+SECTION 1 — EXECUTIVE PRODUCTION STATUS
+================================================================================
+
+1.1 CURRENT PRODUCTION VERDICT
+
+Current state must NOT be treated as production onboarded.
+The ShadowCreatorOS_Lightweight repo has made strong progress toward repo-first, chat-first, content-engineering-driven operation, but the current evidence still shows that production-safe onboarding is not fully proven.
+
+Current classification:
+
+MAC_06_1C_PATCH_APPLIED=PASS_WITH_DEFECTS
+MAC_06_1D_AUDIT_REPORTED=PASS_BY_CODEX
+MAC_06_1D_AUDIT_TRUE_STATUS=PARTIAL
+MAC_06_1A_FRESH_AGENT_PROOF=NEEDS_CONFIRMATION
+REMOTE_COMMIT_PROOF=NEEDS_CONFIRMATION
+LIGHTWEIGHT_OS_ONBOARDED=false
+SAFE_TO_START_N8N_EXECUTION_BUS=false
+SAFE_TO_CALL_PROVIDERS=false
+SAFE_TO_CREATE_MEDIA=false
+FINAL_STATUS=PARTIAL
+
+1.2 WHAT IS PATCHED
+
+The following architectural pieces appear to exist or were reported as created:
+
+- AGENTS.md root startup law exists.
+- Layman task trigger contract exists.
+- Content engineering output contract exists.
+- MAC-06.1A expected output contract exists.
+- MAC-06.1A universal starter prompt exists.
+- MAC-06.1A verification checklist exists.
+- Source-aware runtime decision protocol exists.
+- Native capability inventory / capability routing concepts were reported.
+- Tools/connectors/plugins assessment concept was reported.
+- Agent runtime selection index was reported.
+- Native capability routing matrix was reported.
+- Content/script/video tasks are supposed to require context engineering.
+- Generic direct answers are supposed to be forbidden.
+- Chat-only mode is supposed to be default.
+- n8n/providers/media execution are supposed to remain deferred.
+
+1.3 WHAT IS NOT PROVEN
+
+The following are not yet proven to production standard:
+
+- A fresh Codex / LLM agent automatically uses AGENTS.md and repo-first orchestration when given a plain layman task.
+- A normal prompt like “write a 5 min YouTube script...” reliably triggers repo-first routing without a long forcing prompt.
+- AGENTS.md and .agents/skills are valid and auto-discovered by Codex in the active environment.
+- All three expected skill files exist and contain valid metadata.
+- Native capability routing matrix exists, is non-empty, and contains meaningful task-to-capability mappings.
+- Agent runtime selection index exists, is non-empty, and maps task family -> agent evidence -> director/subagent/skill binding.
+- Machine validator exists and actually enforces required output sections and forbidden claims.
+- Startup docs are fully aligned with one canonical read order.
+- Absolute local Mac paths do not break fresh GitHub/cloud operation.
+- Content engineering output is fully enforced in real output, not only documented.
+- Commit hash 18064ae169fe5bf5a63cf06ec0e2f00975816cbb is proven on remote. Latest Codex result claimed a different remote HEAD, but this mismatch must remain NEEDS_CONFIRMATION until Codex provides command evidence.
+
+1.4 WHY SYSTEM IS NOT SAFE TO DECLARE ONBOARDED
+
+The system is not safe to declare onboarded because production behavior is not proven. Documentation exists, but the key product behavior failed once:
+
+Plain user task -> Codex produced GENERIC_LLM_OUTPUT without repo load.
+
+After forcing the detailed prompt, Codex improved but still returned PARTIAL because:
+
+- capability_matrix_cited=false
+- agent_runtime_selection_index_cited=false
+- agent evidence was not fully proven
+- context engineering was shallow in prior runs
+- gate/status vocabulary issues appeared in prior runs
+- fresh layman auto-trigger behavior is not proven
+
+1.5 WHY N8N EXECUTION BUS MUST REMAIN DISABLED
+
+n8n must remain disabled because current phase is intelligence-layer validation only. n8n workflow import/execution introduces runtime drift, workflow ID drift, webhook ID drift, credential exposure risk, provider-calling risk, and false execution claims. n8n becomes safe only after:
+
+- MAC-06.1A fresh repo proof passes.
+- MAC-06 proof matrix passes.
+- MAC-07 readiness seal passes.
+- n8n execution bus is planned under MAC-09/MAC-10/MAC-11 with explicit activation proof.
+
+1.6 WHY PROVIDERS MUST REMAIN DISABLED
+
+Provider execution must remain disabled because current contracts are for context/handoff only. No ElevenLabs, HeyGen, Higgsfield, Sora, Seedance, Gemini, OpenRouter, YouTube, analytics, or other provider should be invoked unless a separate execution gate explicitly approves:
+
+- credentials verified safely
+- costs/quotas checked
+- provider boundary approved
+- no secrets exposed
+- output path defined
+- rollback/audit report created
+
+1.7 WHY MEDIA EXECUTION MUST REMAIN DISABLED
+
+Media execution must remain disabled because current requirement is to generate context engineering packets, not media artifacts. The system may produce:
+
+- voice generation context
+- image generation prompts
+- video generation prompts
+- music/SFX context
+- editing plan
+- provider handoff boundary
+
+But it must not claim actual audio/image/video/music artifacts unless a future approved provider/media execution lane runs.
+
+================================================================================
+SECTION 2 — SHADOW EMPIRE / FULL OS CONTEXT
+================================================================================
+
+2.1 ORIGINAL SHADOW EMPIRE AGENDA
+
+Shadow Empire / Shadow Creator OS is a repo-driven intelligence operating system, not a generic prompt library.
+
+Core intent:
+
+- Build a founder-grade cognitive system for content creation and strategic execution.
+- Convert user tasks into structured Shadow Mission Packets.
+- Route missions through directors, agents, subagents, skills, subskills, tools, connectors, and provider handoff layers.
+- Treat Context Engineering as the core output layer, not basic prompt writing.
+- Preserve lineage, quality gates, auditability, and runtime boundaries.
+
+2.2 ORIGINAL FULL OS ARCHITECTURE
+
+The historical full OS included:
+
+- 30 Directors as high-level strategic/intelligence owners.
+- Large skill registry / skill.md contracts.
+- Agents and subagents mapped to workflow lanes.
+- n8n as orchestration/execution bus.
+- Ollama/OpenWebUI/local reasoning sidecars in earlier Windows work.
+- Data tables/state indexes for metadata.
+- JSON/Markdown dossier artifacts for lineage and outputs.
+- Provider handoff for voice/video/image/media/publishing/analytics.
+- Strict PRD and governance laws: zero hallucination, zero deletion, append-only upgrades, coverage accounting, and evidence gates.
+
+2.3 FULL OS DRIFT RISKS
+
+The full/heavy runtime produced drift risk because:
+
+- n8n active workflow IDs and webhooks can drift after imports/restarts.
+- Provider credentials and API quotas introduce instability.
+- OpenWebUI/auth/runtime dependencies increase operational burden.
+- Old Windows runtime and DB profiles can be accidentally treated as active truth.
+- Heavy provider/media execution can distract from the intelligence layer.
+- Multiple runtimes increase debugging complexity.
+
+2.4 WHY LIGHTWEIGHT PATH BECAME NECESSARY
+
+The lightweight repo-first path exists to prove the intelligence layer can work immediately without heavy runtime dependencies:
+
+User -> repo-aware coding agent/LLM -> repo-first routing -> director/agent/skill orchestration -> content/script/context engineering -> chat output.
+
+n8n and providers are preserved as deferred execution layers only.
+
+================================================================================
+SECTION 3 — LIGHTWEIGHT OS ARCHITECTURE CONTEXT
+================================================================================
+
+3.1 CURRENT LIGHTWEIGHT AGENDA
+
+ShadowCreatorOS_Lightweight must operate as a portable repo brain.
+
+Core model:
+
+- Repo = constitution, memory, routing brain, contracts, registries.
+- Chat = live user interface, control surface, gate display, output surface.
+- Coding agent / LLM = runtime operator.
+- GitHub main = portable source of truth.
+- Local Mac repo = production builder and committer.
+- Fresh Codex Cloud/chat = proof tester and fresh-agent simulation.
+
+3.2 OUTPUT MODES
+
+CHAT_ONLY_MODE:
+- Default for normal tasks.
+- Creates no files.
+- Outputs all reasoning, gates, context engineering, final artifacts, and next actions in chat.
+
+CONSOLIDATED_REPO_WRITE_MODE:
+- Requires explicit user approval.
+- Creates one consolidated output file:
+  outputs/missions/<mission_id>/MISSION_OUTPUT.md
+- Optional metadata JSON only if needed.
+- No per-director/per-agent/per-skill scratch-file sprawl.
+
+FULL_DOSSIER_ARCHIVE_MODE:
+- Explicit only.
+- Used only when user asks for full dossier/archive/production dossier/commit-ready dossier.
+- Old MAC-05 full dossier contracts remain valid only in this explicit mode.
+
+3.3 NORMAL TASK BEHAVIOR EXPECTATION
+
+When the user gives a normal layman request such as:
+
+- “write a script”
+- “create a YouTube video”
+- “make a reel”
+- “give me a topic”
+- “create a context packet”
+- “write a 5-minute YouTube script”
+
+The agent must not answer directly as a generic chatbot.
+
+Expected sequence:
+
+1. Detect repo context / AGENTS.md.
+2. Load startup doctrine.
+3. Run native capability assessment.
+4. Classify task freshness.
+5. Decide research mode.
+6. Route registry-first.
+7. Select directors/agents/subagents/skills/subskills with evidence.
+8. Assess tools/connectors/plugins.
+9. Run research sufficiency gate.
+10. Generate script/content.
+11. Generate full content engineering packet for content/video tasks.
+12. Show quality gate, lineage, provider boundary, and final approval options.
+13. Output to chat by default.
+
+================================================================================
+SECTION 4 — LATEST MAC_06_1C / MAC_06_1D PATCH SUMMARY
+================================================================================
+
+4.1 LATEST CODEX-REPORTED MAC_06_1C AUTO TRIGGER PATCH
+
+Reported by Codex:
+
+MAC_06_1C_AUTO_TRIGGER_AND_CONTEXT_ENGINEERING_PATCH_STATUS=PASS
+agents_md_created=true
+codex_skills_created=true
+layman_task_trigger_contract_created=true
+content_engineering_output_contract_created=true
+startup_docs_patched=true
+mac06_1a_docs_patched=true
+native_capability_matrix_patched=true
+agent_runtime_selection_index_patched=true
+
+generic_direct_answer_for_normal_task_forbidden=true
+repo_first_required_without_user_saying_repo=true
+content_tasks_require_context_engineering=true
+script_only_output_partial_unless_requested=true
+media_context_required_for_video_tasks=true
+
+commit_created=true
+commit_hash=18064ae169fe5bf5a63cf06ec0e2f00975816cbb
+push_success=true
+git_status_after=clean
+
+safe_to_rerun_MAC_06_1A=true
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+4.2 LATEST MAC_06_1D PRODUCTION BLOCKER AUDIT REPORTED BY CODEX
+
+Reported by Codex:
+
+MAC_06_1D_PRODUCTION_BLOCKER_AUDIT_STATUS=PASS
+local_head=0a63918fc6d72c90c40f89539e0388d883afb961
+remote_origin_main=0a63918fc6d72c90c40f89539e0388d883afb961
+local_matches_remote=true
+commit_18064_exists_remote=false
+startup_order_consistent=true
+dossier_first_ambiguity_removed=true
+content_engineering_enforced=true
+codex_skills_verified=true
+critical_registry_files_verified=true
+path_reference_audit_completed=true
+registry_integrity_audit_completed=true
+machine_validator_created=true
+blocker_count=0
+high_count=0
+medium_count=2
+low_count=1
+safe_to_rerun_MAC_06_1A=true
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+4.3 SHADOW COMMANDER RECLASSIFICATION
+
+Codex’s PASS claims are patch/audit claims only, not production readiness.
+
+True status:
+
+MAC_06_1C_AUTO_TRIGGER_PATCH=PARTIAL_UNTIL_VERIFIED
+MAC_06_1D_AUDIT=PARTIAL
+MAC_06_1E_FINAL_EVIDENCE_AUDIT=REQUIRED
+FRESH_LAYMAN_MAC_06_1A_RERUN=REQUIRED
+LIGHTWEIGHT_OS_ONBOARDED=false
+
+4.4 REASON FOR RECLASSIFICATION
+
+- commit_18064 was reported but not found remotely in MAC-06.1D.
+- current remote HEAD is a different commit according to Codex report.
+- attached SKILL.md visible in this chat lacks Codex-style YAML front matter.
+- three .agents skills were claimed but not all were directly verified from attachments.
+- validator was claimed but not attached/proven in this review.
+- native_capability_routing_matrix.yaml and agent_runtime_selection_index.yaml were claimed but not attached/proven in this review.
+- absolute path count is high.
+- fresh layman behavior still not proven after final patches.
+
+================================================================================
+SECTION 5 — PRODUCTION GAP ANALYSIS / DEFECT LEDGER
+================================================================================
+
+D-01 — Patch PASS is not equal to system onboarded PASS
+Affected area: MAC_06_1C / MAC_06_1D result classification
+Problem: Codex reports PASS for patch steps while safe_to_declare_lightweight_os_onboarded=false.
+Why it delays production: Patch existence does not prove production behavior.
+Required remediation: Separate PATCH_APPLIED from SYSTEM_ONBOARDED and FRESH_AGENT_PROOF.
+Severity: HIGH
+Acceptance evidence: Final report must distinguish patch status, proof status, onboarding status.
+
+D-02 — Reported commit hash must be verified locally and remotely
+Affected area: Git truth / commit proof
+Problem: commit 18064ae169fe5bf5a63cf06ec0e2f00975816cbb was reported but later MAC-06.1D says commit_18064_exists_remote=false.
+Why it delays production: Cannot trust push_success claims without local/remote HEAD proof.
+Required remediation: Run git rev-parse HEAD, git ls-remote origin main, git log -1 --oneline; report exact hashes.
+Severity: BLOCKER
+Acceptance evidence: local_head == remote_origin_main; requested commit status honestly reported.
+
+D-03 — Startup order conflict across AGENTS / START_HERE / READ_ORDER / starter prompt
+Affected area: AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, MAC_06_1A starter prompt
+Problem: AGENTS.md is root law, but some docs still say START_HERE first.
+Why it delays production: Fresh agent may not load the actual Codex root law.
+Required remediation: Canonical order must begin AGENTS.md -> START_HERE -> AGENT_READ_ORDER -> doctrine -> anti-drift -> runtime contracts.
+Severity: HIGH
+Acceptance evidence: every startup/proof doc shows same canonical order.
+
+D-04 — Absolute /Users/apple/Documents paths reduce portability
+Affected area: AGENT_READ_ORDER.md and many docs
+Problem: MAC-06.1D reports absolute_path_count=548.
+Why it delays production: Fresh GitHub/cloud/other-agent environments may not use /Users/apple.
+Required remediation: Use $SHADOW_REPO_ROOT and repo-relative paths first; absolute paths marked LOCAL_MAC_REFERENCE_ONLY.
+Severity: HIGH
+Acceptance evidence: active startup docs use repo-relative paths; historical absolute paths explicitly marked historical/local-only.
+
+D-05 — AGENT_READ_ORDER numbering duplication/confusion
+Affected area: AGENT_READ_ORDER.md
+Problem: Phase A numbering ends at 5 and Phase B starts at 5.
+Why it delays production: Evidence ledgers and automated validators may misread sequence.
+Required remediation: Use A1/A2, B1/B2 or continuous unique numbering.
+Severity: MEDIUM
+Acceptance evidence: no duplicate read-order step IDs in active startup sequence.
+
+D-06 — Gate status vs proof classification are mixed
+Affected area: Chat approval gate, proof outputs
+Problem: Gate statuses and proof classifications have been mixed in test outputs.
+Why it delays production: Codex may mark PASS while evidence is partial.
+Required remediation: Define separate enums:
+- gate_status = PASS / BLOCKED / NEEDS_USER_APPROVAL / NEEDS_CONFIRMATION
+- proof_classification = PASS / PARTIAL / FAIL
+Severity: HIGH
+Acceptance evidence: validator rejects PASS_WITH_NOTICE, PASS_WITH_REFINEMENT, READY_FOR_USER_DECISION.
+
+D-07 — NOT_ACTIVE used but not formally typed everywhere
+Affected area: capability assessment
+Problem: NOT_ACTIVE is capability status, not gate status.
+Why it delays production: Mixed status spaces create false pass/fail logic.
+Required remediation: Define capability_status = ACTIVE / AVAILABLE_BY_APPROVAL / PLANNED / NOT_ACTIVE / NEEDS_CONFIRMATION / UNKNOWN.
+Severity: MEDIUM
+Acceptance evidence: capability contract and proof docs use same enum.
+
+D-08 — Research mode enum mismatch
+Affected area: source/research contracts
+Problem: Some docs use repo_only/repo_plus_static_knowledge/web_assisted/real_time_web/provider_api_assisted while others use GENERAL_MODEL_KNOWLEDGE or REPO_FIRST_INTERNAL_REASONING.
+Why it delays production: Research mode cannot be validated consistently.
+Required remediation: One canonical enum only:
+repo_only, repo_plus_static_knowledge, web_assisted, real_time_web, provider_api_assisted.
+Severity: HIGH
+Acceptance evidence: validator rejects non-canonical research modes unless mapped.
+
+D-09 — Fresh layman task trigger proof not completed after latest patch
+Affected area: MAC-06.1A proof
+Problem: Original layman test produced GENERIC_LLM_OUTPUT; forced rerun was PARTIAL.
+Why it delays production: Product promise is automatic repo-first behavior.
+Required remediation: Rerun fresh Codex chat with plain request only after MAC-06.1E evidence audit.
+Severity: BLOCKER
+Acceptance evidence: Fresh output begins with repo-first proof/gates before script; no generic direct answer.
+
+D-10 — Registry evidence is not runtime/import/execution evidence
+Affected area: agent/director/subagent/skill registries
+Problem: File discovery alone is not runtime proof.
+Why it delays production: Codex may overclaim active orchestration.
+Required remediation: Split evidence_status into FILE_PRESENT, REGISTRY_BOUND, IMPORT_PASS, EXECUTION_PASS, RUNTIME_ACTIVE, NEEDS_CONFIRMATION.
+Severity: HIGH
+Acceptance evidence: proof output uses correct evidence status per layer.
+
+D-11 — WF-200 skill registry lists IDs but needs mapped names/descriptions/evidence
+Affected area: skill_registry_wf200.yaml and skill index
+Problem: M-031 to M-040 IDs alone are weak evidence.
+Why it delays production: Output can cite IDs without proving skill meaning.
+Required remediation: Map skill IDs to skill names, file paths, purpose, and content-role.
+Severity: HIGH
+Acceptance evidence: skill evidence table contains id, name, path, use_for.
+
+D-12 — Director binding is partial unless director files are cited
+Affected area: director_binding_wf200.yaml/directors
+Problem: Binding file alone may not prove director authority.
+Why it delays production: Director selection becomes label-only.
+Required remediation: Cite director binding plus director source file/registry entry.
+Severity: MEDIUM
+Acceptance evidence: director selection includes exact evidence paths.
+
+D-13 — Sub-agent matrix must be validated against current files
+Affected area: sub_agent_matrix.json/subagents
+Problem: Generated/stale matrices can drift from actual subagent files.
+Why it delays production: False subagent routing.
+Required remediation: validate matrix IDs against existing files and report stale entries.
+Severity: HIGH
+Acceptance evidence: subagent matrix validation report with unresolved IDs=0 or NEEDS_CONFIRMATION.
+
+D-14 — Machine validator must exist and be proven
+Affected area: validators/validate_mac06_1a_output.py
+Problem: Codex claimed machine_validator_created=true, but validator source was not attached/proven in this review.
+Why it delays production: Markdown contracts alone cannot prevent fake PASS.
+Required remediation: show validator file, line count, rule list; run it against fresh output.
+Severity: BLOCKER
+Acceptance evidence: validator checks required sections, invalid statuses, content engineering, matrix/index citation, false execution claims.
+
+D-15 — Broken/missing repo path references must be scanned
+Affected area: all .md/.yaml/.json
+Problem: Many docs reference paths; missing active paths cause drift.
+Why it delays production: Fresh agent can read dead instructions.
+Required remediation: repo-wide reference scan; classify active vs historical references.
+Severity: HIGH
+Acceptance evidence: critical_missing_paths=0 for active required contracts.
+
+D-16 — Commit/push approval evidence must be proven
+Affected area: git governance
+Problem: Docs require approval before commit/push, but Codex patches commit/push after prompts.
+Why it delays production: governance claims must align with user approvals.
+Required remediation: patch reports must include approval basis: user_prompt_approved_commit=true/false.
+Severity: MEDIUM
+Acceptance evidence: no commit/push without explicit user instruction or patch prompt approval.
+
+D-17 — Content Engineering Contract needs default assumptions for vague tasks
+Affected area: CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+Problem: User may say “YouTube video” without duration/platform specifics.
+Why it delays production: Codex may under-output or ask unnecessary clarification.
+Required remediation: defaults:
+- YouTube Shorts = 45–60 seconds
+- Reel = 30–45 seconds
+- YouTube long form = infer from request or ask/assume 5 min if stated
+- Unknown platform = infer and disclose assumption
+Severity: MEDIUM
+Acceptance evidence: contract includes defaults and proof output discloses assumptions.
+
+D-18 — One test prompt is not enough
+Affected area: proof strategy
+Problem: One script test cannot prove full OS behavior.
+Why it delays production: System may pass content but fail repo-write/current/provider/non-content/bypass tasks.
+Required remediation: proof matrix with at least 8 tests.
+Severity: HIGH
+Acceptance evidence: MAC-06 proof matrix report.
+
+D-19 — Current-data/web research gate must not become internet-first
+Affected area: source-aware runtime
+Problem: Need real-time data when freshness required, but repo-first remains primary.
+Why it delays production: Agents may bypass repo and research directly.
+Required remediation: source-aware protocol must say repo-first -> freshness decision -> web if required.
+Severity: HIGH
+Acceptance evidence: fresh proof shows repo-first before web research.
+
+D-20 — Old dossier-first behavior must not override chat-only default
+Affected area: START_HERE, STARTUP_PROMPT, READ_ORDER, doctrine, MAC-05 docs
+Problem: Some historical docs still contain dossier-first language.
+Why it delays production: Codex may create files unnecessarily.
+Required remediation: active precedence contract and overrides must be explicit.
+Severity: HIGH
+Acceptance evidence: active docs say dossier mode explicit only; chat-only creates no files.
+
+D-21 — Provider/n8n/media handoff boundaries must remain explicit
+Affected area: provider handoff/contracts
+Problem: Context engineering can look like execution request.
+Why it delays production: false media/provider claims.
+Required remediation: every output includes provider handoff boundary.
+Severity: HIGH
+Acceptance evidence: n8n_used=false, providers_called=false, media_artifacts_claimed=false unless approved execution proof.
+
+D-22 — Fresh GitHub bootstrap proof must not rely on old chat memory
+Affected area: proof environment
+Problem: Old Mac Codex has memory/context; fresh agent must prove portable repo brain.
+Why it delays production: local chat success does not prove repo portability.
+Required remediation: fresh Codex Cloud/new chat, cache reset, latest main, plain prompt.
+Severity: BLOCKER
+Acceptance evidence: fresh proof reports AGENTS.md/read order/commit and no old context bleed.
+
+D-23 — Final proof status must match weakest evidence layer
+Affected area: proof classification
+Problem: Prior outputs claimed PASS while agents_selected_with_evidence=false.
+Why it delays production: false readiness.
+Required remediation: validator and contracts enforce weakest-layer law.
+Severity: BLOCKER
+Acceptance evidence: if agent/capability/content section missing, proof status PARTIAL/FAIL.
+
+D-24 — Codex must not say production-ready unless all acceptance gates pass
+Affected area: final status
+Problem: Codex tends to overclaim PASS for patch completion.
+Why it delays production: false green light.
+Required remediation: final report separates patch_pass, proof_pass, onboarding_pass.
+Severity: BLOCKER
+Acceptance evidence: LIGHTWEIGHT_OS_ONBOARDED=true only after full proof matrix passes.
+
+D-25 — Codex Skills may be invalid if missing YAML front matter
+Affected area: .agents/skills/*/SKILL.md
+Problem: visible SKILL.md attachment lacks YAML front matter with name/description.
+Why it delays production: Codex may not auto-discover/activate the skill.
+Required remediation: each SKILL.md starts with valid front matter:
+---
+name: <skill-name>
+description: <activation description>
+---
+Severity: BLOCKER
+Acceptance evidence: all 3 skill files exist, non-empty, have front matter, name, description.
+
+D-26 — Critical registry/index files are claimed but not attached/proven
+Affected area: native_capability_routing_matrix.yaml, agent_runtime_selection_index.yaml
+Problem: Claims without direct evidence.
+Why it delays production: routing may be missing/weak.
+Required remediation: line counts and first 120 lines of each file in audit report.
+Severity: BLOCKER
+Acceptance evidence: both files exist, non-empty, contain task families and agent mappings.
+
+D-27 — Content engineering must be full, not a summary only
+Affected area: MAC-06.1A starter/expected/checklist/content contract
+Problem: Prior output gave shallow context packet summary.
+Why it delays production: Shadow OS promise includes voice/image/video/music/editing context.
+Required remediation: content tasks require full sections unless user explicitly asks script-only.
+Severity: HIGH
+Acceptance evidence: output contains timed beat map, voice, image, video, music/SFX, editing, packaging.
+
+D-28 — Validator must be used after fresh proof, not just created
+Affected area: validation workflow
+Problem: validator existence without run result does not prove behavior.
+Why it delays production: unvalidated output can pass manually.
+Required remediation: save fresh proof output to temp file and run validator; report PASS/PARTIAL/FAIL.
+Severity: HIGH
+Acceptance evidence: validator_result included in proof report.
+
+D-29 — AGENTS.md as trigger is guidance, not guarantee
+Affected area: Codex environment behavior
+Problem: AGENTS.md helps but does not guarantee if environment does not load it.
+Why it delays production: attached repo may still be ignored in some agents.
+Required remediation: fresh proof must show agents_md_detected=true and agents_md_read=true.
+Severity: HIGH
+Acceptance evidence: fresh output includes AGENTS.md detection/read before any content answer.
+
+D-30 — Fresh web/current research capability is still not proven
+Affected area: source-aware research
+Problem: scripts used repo/static reasoning; real-time source path not proven.
+Why it delays production: current topics may be hallucinated.
+Required remediation: proof matrix includes current/realtime topic test with citations or honest web unavailable gate.
+Severity: HIGH
+Acceptance evidence: web_assisted/real_time_web proof or NEEDS_USER_APPROVAL if unavailable.
+
+================================================================================
+SECTION 6 — REQUIRED PATCH PLAN
+================================================================================
+
+PATCH GROUP A — Git truth and remote sync validation
+
+Purpose:
+Prove local and GitHub main are aligned before any new patch/proof.
+
+Commands:
+
+cd /Users/apple/Documents/ShadowCreatorOS_Lightweight
+git status --short
+git branch --show-current
+git rev-parse HEAD
+git ls-remote origin main
+git log -1 --oneline
+git cat-file -t 18064ae169fe5bf5a63cf06ec0e2f00975816cbb || true
+git ls-remote origin 18064ae169fe5bf5a63cf06ec0e2f00975816cbb || true
+
+Acceptance:
+- local_head equals remote_origin_main.
+- git_status clean or documentation-only expected changes.
+- commit_18064 status honestly reported.
+- Do not claim push_success=true unless local_head equals remote_origin_main.
+
+PATCH GROUP B — Canonical startup order consolidation
+
+Apply one canonical order across:
+
+- AGENTS.md
+- START_HERE_FOR_AGENTS.md
+- AGENT_STARTUP_PROMPT.md
+- AGENT_READ_ORDER.md
+- AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+- AGENT_ANTI_DRIFT_RULES.md
+- MAC_06_1A_UNIVERSAL_AGENT_STARTER_PROMPT.md
+
+Canonical order:
+
+1. AGENTS.md
+2. START_HERE_FOR_AGENTS.md
+3. AGENT_READ_ORDER.md
+4. AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+5. AGENT_ANTI_DRIFT_RULES.md
+6. runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md
+7. runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md
+8. runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md
+9. runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md
+10. runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+11. runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md
+12. runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md
+13. runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+14. registries/native_capability_routing_matrix.yaml
+15. registries/agent_runtime_selection_index.yaml
+
+Acceptance:
+- No active doc says START_HERE is first when AGENTS.md exists.
+- AGENTS.md is detected/read in MAC-06.1A.
+
+PATCH GROUP C — Path portability hardening
+
+Required:
+- Introduce $SHADOW_REPO_ROOT.
+- Active docs prefer repo-relative paths.
+- Absolute /Users/apple paths are LOCAL_MAC_REFERENCE_ONLY.
+- Fresh GitHub/Codex Cloud can operate without /Users/apple.
+
+Commands:
+
+grep -R "/Users/apple/Documents/ShadowCreatorOS_Lightweight" -n *.md runtime_contracts deployment registries .agents 2>/dev/null | tee /tmp/shadow_abs_paths.txt
+
+Acceptance:
+- active docs contain path policy.
+- absolute paths in active docs have local-only disclaimer.
+- historical docs may contain absolute paths but are not active truth.
+
+PATCH GROUP D — Status enum cleanup
+
+Required canonical enums:
+
+gate_status = PASS / BLOCKED / NEEDS_USER_APPROVAL / NEEDS_CONFIRMATION
+proof_classification = PASS / PARTIAL / FAIL
+capability_status = ACTIVE / AVAILABLE_BY_APPROVAL / PLANNED / NOT_ACTIVE / NEEDS_CONFIRMATION / UNKNOWN
+research_mode = repo_only / repo_plus_static_knowledge / web_assisted / real_time_web / provider_api_assisted
+freshness_class = EVERGREEN / CURRENT_SENSITIVE / REALTIME_REQUIRED / USER_SOURCE_REQUIRED / HIGH_STAKES_CURRENT
+
+Acceptance:
+- No active doc uses PASS_WITH_NOTICE, PASS_WITH_REFINEMENT, READY_FOR_USER_DECISION as gate status.
+- Validator rejects invalid statuses.
+
+PATCH GROUP E — Research mode enum cleanup
+
+Required:
+- replace/mapping for GENERAL_MODEL_KNOWLEDGE and REPO_FIRST_INTERNAL_REASONING if they appear in proof outputs.
+- enforce source disclosure fields:
+  research_mode=
+  web_access_available=
+  web_access_used=
+  real_time_sources_used=
+  source_list=
+  current_fact_confidence=
+  unsupported_claims=
+
+Acceptance:
+- If real_time_sources_used=true, source_list must be non-empty.
+- If source_list empty, real_time_sources_used=false.
+- If freshness required and web unavailable, gate must be NEEDS_USER_APPROVAL or NEEDS_CONFIRMATION.
+
+PATCH GROUP F — Registry evidence hardening
+
+Required validate:
+- director registry
+- agent runtime index
+- sub-agent matrix
+- skill registry
+- subskill registry
+- native capability routing matrix
+
+Evidence status model:
+- FILE_PRESENT
+- REGISTRY_BOUND
+- IMPORT_PASS
+- EXECUTION_PASS
+- RUNTIME_ACTIVE
+- NEEDS_CONFIRMATION
+
+Acceptance:
+- MAC-06.1A proof cannot claim PASS if agent_runtime_selection_index not cited.
+- skill IDs must map to names/descriptions/paths.
+- director/subagent/skill/subskill evidence paths exist.
+
+PATCH GROUP G — Content Engineering default assumptions
+
+Add defaults:
+- YouTube Shorts = 45–60 seconds if user does not specify duration.
+- Instagram Reel = 30–45 seconds if user does not specify duration.
+- YouTube 5-minute script = long-form spoken script plus timed beat map every 10–20 seconds, or every 5–10 seconds for Shorts.
+- If platform unknown, infer likely platform and disclose assumption.
+- If user says script-only, provide script-only; otherwise content engineering required.
+
+Required content engineering sections:
+- CONTENT_MISSION_BRIEF
+- RESEARCH_AND_SOURCE_STATUS
+- SCRIPT_STRUCTURE
+- FINAL_SCRIPT
+- TIMED_BEAT_MAP
+- VOICE_GENERATION_CONTEXT
+- IMAGE_GENERATION_CONTEXT
+- VIDEO_GENERATION_CONTEXT
+- MUSIC_AND_SFX_CONTEXT
+- EDITING_CONTEXT
+- PLATFORM_PACKAGING
+- PROVIDER_HANDOFF_BOUNDARY
+- QUALITY_GATE
+
+PATCH GROUP H — Machine validation
+
+Create/verify:
+validators/validate_mac06_1a_output.py
+
+Minimum validator checks:
+- AGENTS.md detected/read
+- generic output blocked
+- native capability assessment present
+- task freshness classification present
+- research mode decision present
+- research sufficiency gate present
+- task-to-capability routing present
+- capability matrix cited
+- agent runtime selection present
+- agent runtime index cited
+- registry evidence paths present
+- content engineering required sections present
+- invalid statuses blocked
+- false n8n/provider/media claims blocked
+- final status matches weakest required layer
+
+Acceptance:
+- validator source shown in audit
+- validator run result included after fresh proof
+
+PATCH GROUP I — Fresh-agent proof matrix
+
+Required tests:
+
+1. Plain layman script request.
+2. Current/realtime topic request.
+3. Repo-write request.
+4. Full dossier request.
+5. Bypass Shadow OS request.
+6. Non-content technical task.
+7. Provider/media request.
+8. n8n execution request.
+
+Acceptance:
+- MAC-06.1A fresh layman proof passes before onboarding.
+- Remaining matrix tests can be MAC-06.2/MAC-07 readiness dependencies if time constrained, but must be listed.
+
+================================================================================
+SECTION 7 — DETAILED DEPLOYMENT PLAN
+================================================================================
+
+PHASE 1 — Freeze and verify current repo state
+
+Actions:
+- Stop all proof reruns.
+- Stop all n8n/provider/media actions.
+- Confirm working tree clean.
+
+Acceptance:
+- git_status_clean=true
+- branch=main
+
+PHASE 2 — Run Git truth audit
+
+Actions:
+- Run local/remote HEAD verification.
+- Verify commit 18064 status honestly.
+
+Acceptance:
+- local_matches_remote=true
+- remote_origin_main recorded
+- commit mismatch does not produce false PASS
+
+PHASE 3 — Run broken reference audit
+
+Actions:
+- Scan markdown/yaml/json path references.
+- Classify missing, stale, ambiguous, absolute, old runtime, historical.
+
+Acceptance:
+- active critical missing paths=0
+- absolute path risk documented
+
+PHASE 4 — Patch startup doctrine conflicts
+
+Actions:
+- Canonical startup order across all active docs.
+- AGENTS.md as first law.
+- Layman task trigger mandatory.
+
+Acceptance:
+- startup_order_consistent=true
+
+PHASE 5 — Patch enum/status conflicts
+
+Actions:
+- Separate gate_status/proof_classification/capability_status/research_mode.
+
+Acceptance:
+- invalid statuses not present in active contracts
+- validator rejects invalid statuses
+
+PHASE 6 — Patch path portability
+
+Actions:
+- $SHADOW_REPO_ROOT and repo-relative first.
+- /Users/apple local-reference only.
+
+Acceptance:
+- active docs are portable
+
+PHASE 7 — Patch registry evidence references
+
+Actions:
+- Show and verify native_capability_routing_matrix.yaml.
+- Show and verify agent_runtime_selection_index.yaml.
+- Validate WF-200 directors/agents/subagents/skills/subskills.
+
+Acceptance:
+- agent index non-empty
+- native matrix non-empty
+- selected task families present
+
+PHASE 8 — Patch content engineering defaults
+
+Actions:
+- Content tasks require full content engineering output.
+- Script-only partial unless explicitly requested.
+
+Acceptance:
+- MAC-06.1A expected contract and checklist enforce full sections.
+
+PHASE 9 — Add/verify validator
+
+Actions:
+- Create/patch validators/validate_mac06_1a_output.py.
+- Include validation rule list in report.
+
+Acceptance:
+- machine_validator_exists=true
+- machine_validator_blocks_invalid_statuses=true
+- machine_validator_blocks_missing_content_engineering=true
+
+PHASE 10 — Run MAC-06.1A fresh-agent proof
+
+Actions:
+- New Codex Cloud/fresh chat.
+- Reset cache/use latest main.
+- Plain layman request only.
+- Do not over-prompt every section manually; AGENTS.md must trigger behavior.
+
+Acceptance:
+- no generic direct answer
+- AGENTS.md read
+- repo-first routing shown
+- full content engineering output
+- validator passes or classifies honestly
+
+PHASE 11 — Run broader proof matrix
+
+Actions:
+- Execute 8 test categories or record as readiness dependencies.
+
+Acceptance:
+- no false PASS
+
+PHASE 12 — Produce final audit
+
+Actions:
+- Create final MAC-07 readiness seal report.
+
+Acceptance:
+- no blockers/highs for intelligence layer
+
+PHASE 13 — Commit only after approval
+
+Actions:
+- User reviews patch report.
+- Commit only if approved.
+
+Acceptance:
+- user_approved_commit=true
+
+PHASE 14 — Push only after approval
+
+Actions:
+- git push origin main after approved commit.
+
+Acceptance:
+- local_head==remote_origin_main
+
+PHASE 15 — Declare lightweight OS onboarded only after proof passes
+
+Acceptance:
+LIGHTWEIGHT_OS_ONBOARDED=true only if:
+- MAC-06.1A fresh proof PASS
+- validator PASS
+- no blocker/high unresolved
+- final status matches weakest evidence
+
+PHASE 16 — Keep n8n disabled until separate activation proof
+
+Acceptance:
+SAFE_TO_START_N8N_EXECUTION_BUS=false until MAC-09/MAC-10/MAC-11.
+
+================================================================================
+SECTION 8 — CODEX EXECUTION COMMAND BLOCK
+================================================================================
+
+SAFE REPO NAVIGATION:
+
+cd /Users/apple/Documents/ShadowCreatorOS_Lightweight
+pwd
+git status --short
+git branch --show-current
+git rev-parse HEAD
+git ls-remote origin main
+git log -1 --oneline
+
+GIT TRUTH CHECK:
+
+LOCAL_HEAD=$(git rev-parse HEAD)
+REMOTE_HEAD=$(git ls-remote origin main | awk '{print $1}')
+echo "local_head=$LOCAL_HEAD"
+echo "remote_origin_main=$REMOTE_HEAD"
+if [ "$LOCAL_HEAD" = "$REMOTE_HEAD" ]; then echo "local_matches_remote=true"; else echo "local_matches_remote=false"; fi
+
+git cat-file -t 18064ae169fe5bf5a63cf06ec0e2f00975816cbb >/tmp/commit18064_local.txt 2>&1 || true
+cat /tmp/commit18064_local.txt
+git ls-remote origin 18064ae169fe5bf5a63cf06ec0e2f00975816cbb || true
+
+CRITICAL FILE CHECK:
+
+for f in \
+AGENTS.md \
+START_HERE_FOR_AGENTS.md \
+AGENT_STARTUP_PROMPT.md \
+AGENT_REPO_FIRST_OPERATING_DOCTRINE.md \
+AGENT_READ_ORDER.md \
+AGENT_ANTI_DRIFT_RULES.md \
+runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md \
+runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md \
+runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md \
+runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md \
+runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md \
+registries/native_capability_routing_matrix.yaml \
+registries/agent_runtime_selection_index.yaml \
+.agents/skills/shadow-content-orchestration/SKILL.md \
+.agents/skills/shadow-research-gate/SKILL.md \
+.agents/skills/shadow-context-engineering/SKILL.md \
+validators/validate_mac06_1a_output.py; do
+  if [ -s "$f" ]; then echo "PASS non_empty $f $(wc -l < "$f") lines"; else echo "MISSING_OR_EMPTY $f"; fi
+done
+
+SKILL FRONT MATTER CHECK:
+
+for f in .agents/skills/*/SKILL.md; do
+  echo "===== $f ====="
+  sed -n '1,20p' "$f"
+done
+
+PATH SCAN:
+
+grep -R "/Users/apple/Documents/ShadowCreatorOS_Lightweight" -n AGENTS.md START_HERE_FOR_AGENTS.md AGENT_STARTUP_PROMPT.md AGENT_REPO_FIRST_OPERATING_DOCTRINE.md AGENT_READ_ORDER.md AGENT_ANTI_DRIFT_RULES.md runtime_contracts deployment .agents registries 2>/dev/null | tee /tmp/shadow_absolute_paths_scan.txt
+wc -l /tmp/shadow_absolute_paths_scan.txt
+
+INVALID STATUS SCAN:
+
+grep -R "PASS_WITH_NOTICE\|PASS_WITH_REFINEMENT\|READY_FOR_USER_DECISION" -n AGENTS.md START_HERE_FOR_AGENTS.md AGENT_STARTUP_PROMPT.md AGENT_REPO_FIRST_OPERATING_DOCTRINE.md AGENT_READ_ORDER.md runtime_contracts deployment .agents validators 2>/dev/null || true
+
+CONTENT ENGINEERING SECTION SCAN:
+
+grep -R "TIMED_BEAT_MAP\|VOICE_GENERATION_CONTEXT\|IMAGE_GENERATION_CONTEXT\|VIDEO_GENERATION_CONTEXT\|MUSIC_AND_SFX_CONTEXT\|EDITING_CONTEXT\|PLATFORM_PACKAGING" -n runtime_contracts deployment .agents AGENTS.md START_HERE_FOR_AGENTS.md 2>/dev/null || true
+
+NO N8N / PROVIDER COMMANDS IN THIS PHASE:
+
+Do not run n8n.
+Do not import workflows.
+Do not call providers.
+Do not call Gemini.
+Do not run OpenWebUI.
+Do not generate media.
+
+NO COMMIT / PUSH UNTIL APPROVAL:
+
+git status --short
+# Stop and report before git add/commit/push unless user explicitly approved.
+
+================================================================================
+SECTION 9 — FRESH MAC-06.1A RERUN REQUIREMENT
+================================================================================
+
+9.1 FRESH PROOF ENVIRONMENT
+
+Use NEW Codex Cloud / fresh agent chat, not old Mac Codex, for the fresh proof.
+Reset cache / refresh environment if available.
+Attach/select GitHub repo:
+https://github.com/justkalpane/ShadowCreatorOS_Lightweight
+Branch source: main
+
+9.2 PLAIN LAYMAN REQUEST TO USE
+
+Create a YouTube Shorts script on why AI tools fail when creators do not build systems first.
+
+Important:
+Do not paste a giant forcing prompt for the proof. The point is to verify that AGENTS.md and repo skills trigger automatically from a normal user task.
+
+9.3 EXPECTED OUTPUT FIELDS
+
+The output must include:
+
+- repo_loaded=true/false
+- agents_md_detected=true/false
+- agents_md_read=true/false
+- branch_used=main or snapshot source
+- start_here_read=true/false
+- agent_read_order_followed=true/false
+- shadow_mission_packet_created=true/false
+- repo_context_loader_summary_present=true/false
+- native_capability_assessment_present=true/false
+- task_freshness_classification_present=true/false
+- research_mode_decision_present=true/false
+- registry_first_selection_proven=true/false
+- director_evidence_paths_present=true/false
+- agent_evidence_paths_present=true/false
+- subagent_evidence_paths_present=true/false
+- skill_evidence_paths_present=true/false
+- subskill_evidence_paths_present=true/false
+- tools_connectors_plugins_assessed=true/false
+- content_engineering_contract_read=true/false
+- content_mission_brief_present=true/false
+- research_and_source_status_present=true/false
+- script_structure_present=true/false
+- final_script_created=true/false
+- timed_beat_map_present=true/false
+- voice_generation_context_present=true/false
+- image_generation_context_present=true/false
+- video_generation_context_present=true/false
+- music_sfx_context_present=true/false
+- editing_context_present=true/false
+- platform_packaging_present=true/false
+- provider_handoff_boundary_present=true/false
+- quality_gate_present=true/false
+- lineage_summary_present=true/false
+- invented_components_detected=false
+- generic_output_detected=false
+- n8n_used=false
+- providers_called=false
+- media_artifacts_claimed=false
+- files_created=false
+- dossier_artifacts_created=false
+- chat_only_mode_used=true
+- final_status_matches_weakest_evidence_layer=true/false
+- proof_classification=PASS/PARTIAL/FAIL
+
+9.4 REQUIRED VALIDATOR STEP
+
+After fresh proof output, save it to a temporary text file or paste into validator input if possible.
+Run:
+
+python3 validators/validate_mac06_1a_output.py <path-to-proof-output.txt>
+
+If validator cannot be run in Codex Cloud, old/local Mac Codex must run the validator using pasted proof output.
+
+9.5 ACCEPTANCE FOR MAC-06.1A PASS
+
+PASS only if:
+
+- AGENTS.md was detected/read.
+- generic direct answer did not occur before repo routing.
+- repo-first routing is shown.
+- capability matrix is cited.
+- agent runtime index is cited.
+- all mandatory evidence paths are present.
+- full content engineering sections are present.
+- no n8n/provider/media false claims.
+- no files/dossiers created in chat-only mode.
+- final proof status matches weakest evidence.
+- validator passes.
+
+================================================================================
+SECTION 10 — FINAL ACCEPTANCE CRITERIA
+================================================================================
+
+10.1 PASS REQUIRES
+
+Codex can say PASS only when all are true:
+
+- Git local and remote proof matches.
+- Startup order consistent across all active startup docs.
+- AGENTS.md is present and valid.
+- All three .agents skills exist and have valid YAML front matter.
+- No broken mandatory active paths.
+- Native capability routing matrix exists and is cited.
+- Agent runtime selection index exists and is cited.
+- Fresh layman request triggers repo-first orchestration.
+- No generic direct answer appears first.
+- Directors/agents/subagents/skills/subskills have evidence paths.
+- Content engineering output appears for content/script/video tasks.
+- Research mode and source status are disclosed.
+- No false real-time/web claim.
+- No fake n8n/provider/media claim.
+- No file creation in chat-only proof.
+- No commit/push without approval.
+- Machine validator passes.
+- Final status matches weakest evidence layer.
+
+10.2 PARTIAL REQUIRED IF
+
+- Any mandatory evidence is missing.
+- Agent layer is not fully proven.
+- Registry path exists but runtime/import/execution proof is missing.
+- Critical commit hash is unverified.
+- Fresh-agent proof is not completed.
+- Web/current-data handling is not proven.
+- Content engineering is summary-only when task implies video/content output.
+- Validator exists but was not run.
+- Skill metadata is missing or unverified.
+- Capability matrix / agent runtime index not directly shown.
+
+10.3 FAIL REQUIRED IF
+
+- Generic direct answer appears before repo routing.
+- Invented director/agent/skill/subskill appears.
+- False execution claim appears.
+- n8n/provider/media execution is claimed without proof.
+- PASS is claimed while mandatory evidence is missing.
+- AGENTS.md is ignored in fresh proof.
+- User task is content/video/script and final output is script-only without explicit script-only request.
+
+================================================================================
+SECTION 11 — FINAL CODEX INSTRUCTION
+================================================================================
+
+Codex, do not perform blind edits.
+Codex, do not declare production readiness early.
+Codex, do not start n8n.
+Codex, do not call providers.
+Codex, do not call Gemini.
+Codex, do not use OpenWebUI as active runtime.
+Codex, do not create media.
+Codex, do not create files unless required by this remediation plan.
+Codex, do not commit or push until user explicitly approves after reviewing the patch report.
+Codex, every claim must be proven by repo evidence, command output, validator output, or marked NEEDS_CONFIRMATION.
+Codex, the goal is not to make the docs look good.
+The goal is to make ShadowCreatorOS_Lightweight actually production-safe, repo-first, zero-drift, source-aware, content-engineering-complete, and fresh-agent bootstrappable.
+
+FINAL REQUIRED NEXT ACTION:
+
+Run MAC-06.1E Final Evidence Audit first.
+Do not rerun MAC-06.1A until MAC-06.1E proves:
+
+- Git truth verified.
+- All three Codex skills exist with YAML front matter.
+- Native capability matrix exists/non-empty/proven.
+- Agent runtime selection index exists/non-empty/proven.
+- Machine validator exists/non-empty/proven.
+- Active startup docs are aligned.
+- Content engineering contract is enforced.
+- safe_to_rerun_MAC_06_1A=true.
+
+After MAC-06.1E passes, run the fresh layman MAC-06.1A proof from a new Codex chat using only the plain user task. Validate the output with validators/validate_mac06_1a_output.py. Only then can the system move toward MAC-07 readiness seal.
+
+END OF FILE
+
+
+================================================================================
+ZERO-LOSS V2 ADDENDUM — DEEP GAP INJECTION + PRODUCTION REMEDIATION BLUEPRINT
+================================================================================
+
+ADDENDUM STATUS: APPEND-ONLY UPDATE
+SOURCE BASE FILE PRESERVED ABOVE: SHADOW_CREATOR_OS_LIGHTWEIGHT_PRODUCTION_REMEDIATION_MASTER_PLAN.txt
+ADDENDUM PURPOSE: Expand the master plan with the user-provided gap analysis, the flat-analysis defects, the MAC-06.1A/MAC-06.1C/MAC-06.1D remediation context, and a Codex-executable production remediation blueprint.
+
+INTEGRITY LAW:
+- Do not delete any existing content from the original master plan.
+- Do not shorten existing context.
+- Do not treat this addendum as a replacement for the base plan.
+- Treat this addendum as the next production remediation layer on top of the base plan.
+- Any unverified claim must remain NEEDS_CONFIRMATION.
+- Any unsafe action must remain BLOCKER.
+- Any patch applied but not behavior-proven must remain PARTIAL.
+- PASS requires direct evidence: command output, file existence, exact path, validator output, or successful fresh-agent proof.
+
+CURRENT CONSOLIDATED VERDICT AFTER USER GAP ANALYSIS:
+MAC_06_1C_PATCH_APPLIED=PASS_WITH_DEFECTS
+MAC_06_1D_AUDIT_REPORTED=PASS_BY_CODEX
+MAC_06_1D_TRUE_STATUS=PARTIAL_UNTIL_EVIDENCE_RECHECK
+MAC_06_1A_FRESH_AGENT_PROOF=NEEDS_CONFIRMATION
+REMOTE_COMMIT_PROOF=NEEDS_CONFIRMATION
+LIGHTWEIGHT_OS_ONBOARDED=false
+SAFE_TO_START_N8N_EXECUTION_BUS=false
+SAFE_TO_CALL_PROVIDERS=false
+SAFE_TO_CREATE_MEDIA=false
+FINAL_STATUS=PARTIAL
+
+WHY THIS ADDENDUM EXISTS:
+The previous master plan had a useful skeleton but was still too flat for Codex to safely remediate the production repo. It did not fully force a production-grade source-of-truth map, active-vs-historical precedence, file-by-file patch instructions, exact injection blocks, schema contracts, validator requirements, proof matrix, rollback plan, acceptance evidence format, Codex execution commands, final unlock gates, and anti-overprompt fresh-agent testing strategy.
+
+================================================================================
+ADDENDUM SECTION A — RAW USER GAP ANALYSIS INJECTION STATUS
+================================================================================
+
+The user stated that the earlier master plan covered only approximately 10% of the required gap analysis and that all provided gaps must be injected without deleting or compressing existing plan content.
+
+This addendum therefore injects:
+1. The other-chat surgical defect ledger D-01 through D-18.
+2. The deeper blueprint gap ledger G-01 through G-25.
+3. The required “what the improved ChatGPT prompt must force” blueprint items.
+4. The mandatory production remediation blueprint sections.
+5. The Codex execution handoff with stronger evidence, validator, proof matrix, and unlock gates.
+6. The raw uploaded pasted markdown content as an appendix so no user-supplied context is lost.
+
+================================================================================
+ADDENDUM SECTION B — SURGICAL DEFECT LEDGER FROM OTHER CHATGPT ANALYSIS
+================================================================================
+
+D-01 — Patch PASS is not equal to system onboarded PASS
+Affected area: MAC-06.1C / MAC-06.1D reports and readiness language
+Exact problem: Codex can report patch status PASS while safe_to_declare_lightweight_os_onboarded=false.
+Why it delays production: This creates false confidence and can cause premature onboarding.
+Required remediation: Rename/report separately as PATCH_APPLIED=PASS, SYSTEM_ONBOARDED=false, FINAL_STATUS=PARTIAL until fresh-agent proof and validation pass.
+Severity: BLOCKER
+Acceptance evidence required: Final audit report contains separate fields for patch status, proof status, onboarded status, and execution-bus status.
+
+D-02 — Reported commit hash must be verified locally and remotely
+Affected area: Git truth / remote sync
+Exact problem: Commit 18064ae169fe5bf5a63cf06ec0e2f00975816cbb was reported but later needed proof; another audit showed commit_18064_exists_remote=false.
+Why it delays production: push_success=true cannot be trusted without local/remote match.
+Required remediation: Run git rev-parse HEAD, git ls-remote origin main, git status --short, git log -1 --oneline. Do not trust a commit claim unless local HEAD equals remote origin/main.
+Severity: BLOCKER
+Acceptance evidence required: local_head=remote_origin_main=true and commit proof recorded.
+
+D-03 — Bootstrap order conflict
+Affected area: AGENTS.md / START_HERE_FOR_AGENTS.md / AGENT_READ_ORDER.md / AGENT_STARTUP_PROMPT.md / MAC-06.1A starter prompt
+Exact problem: Some docs say AGENTS.md is root law; some say START_HERE_FOR_AGENTS.md first; older starter prompt may not detect AGENTS.md first.
+Why it delays production: Fresh agents may load the wrong entrypoint and answer generically.
+Required remediation: Create one canonical boot order and patch all startup docs to point to it.
+Severity: BLOCKER
+Acceptance evidence required: Grep/audit confirms canonical boot order appears consistently across startup files.
+
+D-04 — Absolute Mac paths reduce portability
+Affected area: AGENT_READ_ORDER.md and other docs containing /Users/apple/Documents/ShadowCreatorOS_Lightweight
+Exact problem: Absolute local paths break or confuse Codex Cloud, GitHub checkouts, Claude, ChatGPT, Kimi, DeepSeek, and non-Apple machines.
+Why it delays production: The lightweight repo must be portable.
+Required remediation: Introduce $SHADOW_REPO_ROOT and repo-relative paths. Absolute paths only allowed in clearly marked LOCAL_MAC_REFERENCE_ONLY sections.
+Severity: HIGH
+Acceptance evidence required: active docs use repo-relative paths; absolute_path_count reported and classified as historical/local-reference only.
+
+D-05 — AGENT_READ_ORDER numbering duplication/confusion
+Affected area: AGENT_READ_ORDER.md
+Exact problem: Previous phases and numbered steps may duplicate or confuse ordering.
+Why it delays production: Fresh agents can skip or misread phases.
+Required remediation: Use canonical phase IDs A1/A2/B1/B2 or continuous global numbering.
+Severity: MEDIUM
+Acceptance evidence required: Read-order validator confirms unique phase/step IDs.
+
+D-06 — Gate status vs proof classification are mixed
+Affected area: Chat approval gates, proof templates, MAC-06.1A expected output
+Exact problem: Gate statuses like PASS_WITH_NOTICE/PASS_WITH_REFINEMENT/READY_FOR_USER_DECISION appeared; proof statuses PASS/PARTIAL/FAIL got mixed with gate states.
+Why it delays production: Validators cannot correctly classify output.
+Required remediation: Separate enums:
+- gate_status = PASS / BLOCKED / NEEDS_USER_APPROVAL / NEEDS_CONFIRMATION
+- proof_classification = PASS / PARTIAL / FAIL
+- capability_status = ACTIVE / NOT_ACTIVE / UNKNOWN / NEEDS_CONFIRMATION / AVAILABLE_BY_APPROVAL / PLANNED
+Severity: BLOCKER
+Acceptance evidence required: Validator fails any invalid gate status.
+
+D-07 — NOT_ACTIVE appears as a capability status but is not formally typed everywhere
+Affected area: Tools/connectors/plugins assessment, native capability contract, starter prompt
+Exact problem: NOT_ACTIVE appears in outputs but may not be declared in all relevant enums.
+Why it delays production: Agents may treat NOT_ACTIVE as a gate status, not capability status.
+Required remediation: Define capability_status enum everywhere and explicitly separate it from gate_status.
+Severity: HIGH
+Acceptance evidence required: All contracts use the same capability status enum.
+
+D-08 — Research mode enum mismatch
+Affected area: Source intelligence contracts, MAC-06.1A expected output, starter prompt
+Exact problem: Some docs allow repo_plus_static_knowledge/provider_api_assisted while PASS rules may only list repo_only/web_assisted/real_time_web.
+Why it delays production: Agents can produce inconsistent research disclosures.
+Required remediation: Canonical enum:
+repo_only / repo_plus_static_knowledge / web_assisted / real_time_web / provider_api_assisted
+Severity: HIGH
+Acceptance evidence required: One canonical enum appears in every source/research contract and validator.
+
+D-09 — Fresh-agent behavior not proven yet
+Affected area: MAC-06.1A proof
+Exact problem: Docs exist, but fresh plain layman prompt still needs proof. Earlier generic output happened before repo routing.
+Why it delays production: The key product behavior is unproven.
+Required remediation: Fresh Codex chat with GitHub main must receive plain layman request and prove AGENTS.md triggered repo-first orchestration without giant forcing prompt.
+Severity: BLOCKER
+Acceptance evidence required: Fresh proof transcript and validator PASS.
+
+D-10 — Registry evidence is not runtime/import/execution evidence
+Affected area: director/agent/subagent/skill/subskill evidence
+Exact problem: File existence or file discovery does not prove runtime active capability.
+Why it delays production: Codex may overclaim orchestration.
+Required remediation: Split evidence levels: FILE_PRESENT, REGISTRY_BOUND, IMPORT_PASS, EXECUTION_PASS, RUNTIME_ACTIVE, NEEDS_CONFIRMATION.
+Severity: HIGH
+Acceptance evidence required: Proof output labels each selected component by evidence level.
+
+D-11 — WF-200 skill registry lists IDs but needs names/descriptions/evidence
+Affected area: registries/skill_registry_wf200.yaml and skill proof output
+Exact problem: M-031 through M-040 may be listed without name, purpose, file path, and use case.
+Why it delays production: Skill selection evidence is shallow.
+Required remediation: Link each skill ID to master skill file, name, purpose, and exact path.
+Severity: HIGH
+Acceptance evidence required: Skill evidence table with ID, name, purpose, file path, evidence level.
+
+D-12 — Director binding is partial evidence
+Affected area: director_binding_wf200.yaml and director proof output
+Exact problem: Binding files alone do not prove director source file content or authority.
+Why it delays production: Director selection may be superficial.
+Required remediation: Add director evidence paths from director registry/source files in proof output.
+Severity: HIGH
+Acceptance evidence required: Each selected director has binding path + director source path.
+
+D-13 — Sub-agent matrix must be validated against current files
+Affected area: registries/sub_agent_matrix.json
+Exact problem: The matrix can be stale or generated from older repo state.
+Why it delays production: Invalid CWF/subagent references can pass falsely.
+Required remediation: Regenerate or validate matrix against actual subagent files and registry references.
+Severity: HIGH
+Acceptance evidence required: matrix_validation_status=PASS and unresolved_ids=0.
+
+D-14 — No machine validator or validator not proven strong enough
+Affected area: validators/validate_mac06_1a_output.py
+Exact problem: Markdown contracts alone allow Codex to overclaim PASS.
+Why it delays production: No automatic enforcement against missing sections/invalid statuses/false claims.
+Required remediation: Create/verify validator checking all mandatory fields, enums, false claims, content engineering sections, matrix/index citations, weakest-layer status.
+Severity: BLOCKER
+Acceptance evidence required: validator exists, line count shown, rule list shown, sample PASS/FAIL test run recorded.
+
+D-15 — Broken/missing repo path references must be scanned
+Affected area: repo-wide markdown/yaml/json references
+Exact problem: Agents may follow broken/stale paths.
+Why it delays production: Fresh bootstraps can drift or fail.
+Required remediation: Repo-wide reference audit extracting paths from .md/.yaml/.json and classifying existing/missing/stale/absolute/historical-only.
+Severity: HIGH
+Acceptance evidence required: path_reference_audit_completed=true, critical_missing_paths=0 or blockers listed.
+
+D-16 — Commit/push approval evidence must be proven
+Affected area: Git governance
+Exact problem: Docs say approval required before commit/push, but Codex commits/pushes in several remediation passes.
+Why it delays production: Governance drift and accidental remote mutation.
+Required remediation: Patch governance report fields: user_approval_evidence_for_commit_push=provided/needs_confirmation. Remediation commands may commit only after explicit approval for that action.
+Severity: MEDIUM
+Acceptance evidence required: Each commit report records user approval source and commit hash.
+
+D-17 — Content Engineering Contract needs default assumptions for vague tasks
+Affected area: CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+Exact problem: It requires timed beat maps but may not define default duration/platform if vague.
+Why it delays production: Agents may under-output or over-assume.
+Required remediation: Defaults:
+- YouTube Shorts = 45–60 seconds unless user says otherwise.
+- Reel = 30–45 seconds unless user says otherwise.
+- YouTube long-form = ask if duration missing or infer 5 minutes if user says 5 min.
+- If platform unknown, infer and disclose assumption.
+Severity: HIGH
+Acceptance evidence required: Defaults appear in contract and proof output assumption block.
+
+D-18 — One test prompt is not enough
+Affected area: proof matrix
+Exact problem: A single script proof does not prove general product behavior.
+Why it delays production: Other task types may drift.
+Required remediation: Add proof matrix: plain script, current/realtime topic, repo-write request, full dossier request, bypass Shadow OS request, non-content technical task, provider/media request, n8n execution request.
+Severity: HIGH
+Acceptance evidence required: Proof matrix report with each test PASS/PARTIAL/FAIL.
+
+================================================================================
+ADDENDUM SECTION C — EXPANDED BLUEPRINT GAP LEDGER G-01 THROUGH G-25
+================================================================================
+
+G-01 — No complete repo source-of-truth map
+Problem: The prior master plan did not fully map active files vs historical references vs forbidden active-use files by layer.
+Impact: Codex can follow historical or old full-runtime files as active truth.
+Required fix: Add source-of-truth table for root startup, read order, runtime contracts, registries, validator, proof reports, historical MAC-05 docs, old Windows handoff, n8n, and providers.
+Severity: BLOCKER
+
+G-02 — No active-vs-historical precedence model deep enough
+Problem: The plan states historical docs are reference but does not hardwire precedence into every startup doc.
+Impact: Old dossier-first or full-runtime language can override lightweight chat-only mode.
+Required fix: Add ACTIVE_RUNTIME_PRECEDENCE_CONTRACT and ensure all startup docs cite it.
+Severity: BLOCKER
+
+G-03 — No file-by-file patch plan with exact target files and exact insertion points
+Problem: Codex needs file-specific tasks, not generic patch language.
+Impact: Codex creates shallow docs and misses active files.
+Required fix: Provide a file-by-file patch matrix with target file, required injection, placement, acceptance grep.
+Severity: HIGH
+
+G-04 — No exact injection blocks
+Problem: Instructions say what to fix but not the exact text to inject.
+Impact: Codex paraphrases, weakens, or forgets critical language.
+Required fix: Add exact injection blocks for canonical boot order, output law, source-aware gate, content engineering, proof honesty, and validator law.
+Severity: HIGH
+
+G-05 — No schema contracts for outputs and evidence
+Problem: Expected output fields exist but are not strict machine-checkable schemas.
+Impact: Codex may format loosely and bypass validator.
+Required fix: Define pseudo-schema or JSON/YAML contracts for proof output, gate block, capability assessment, registry evidence, content engineering packet.
+Severity: HIGH
+
+G-06 — Validator requirements not deep enough
+Problem: Validator can exist structurally but not enforce all production rules.
+Impact: Fake PASS can persist.
+Required fix: Validator must check required sections, enums, forbidden statuses, false execution claims, content engineering, evidence paths, matrix/index citations, weakest-layer logic.
+Severity: BLOCKER
+
+G-07 — Proof matrix incomplete
+Problem: One fresh layman script test is not enough.
+Impact: Other task categories may fail.
+Required fix: Eight-test proof matrix with prompts, expected behavior, fail conditions, and acceptance criteria.
+Severity: HIGH
+
+G-08 — No rollback plan
+Problem: Remediation can push wrong docs and no rollback procedure is defined.
+Impact: Production repo may become worse.
+Required fix: Add rollback instructions: backup branch, tag before remediation, git reset/revert strategy, protected no-force-push rule.
+Severity: HIGH
+
+G-09 — No acceptance evidence format
+Problem: Reports say true/false but not command evidence, timestamps, or excerpts.
+Impact: Claims are not auditable.
+Required fix: Evidence manifest must include command, output excerpt, timestamp, file path, status, and operator.
+Severity: HIGH
+
+G-10 — Codex execution commands not complete enough
+Problem: Commands are generic and do not include all audits/grep/path scans/validator runs.
+Impact: Codex may skip actual verification.
+Required fix: Add safe command blocks for git truth, grep conflicts, reference audit, registry line counts, validator execution.
+Severity: HIGH
+
+G-11 — Final unlock gates not exact enough
+Problem: Plan says “declare onboarded after proof” but not exact all-green criteria.
+Impact: Premature onboarded declaration.
+Required fix: Add strict unlock ladder: MAC-06.1E evidence audit, MAC-06.1A fresh proof, validator PASS, proof matrix PASS, MAC-07 readiness seal, MAC-08 onboarding package.
+Severity: BLOCKER
+
+G-12 — No production-grade claim/evidence/status ledger
+Problem: It says mark NEEDS_CONFIRMATION but does not require every claim to be structured.
+Impact: Codex can make unsupported claims.
+Required fix: Every major assertion must be written as claim / evidence / evidence_path / command_output / status.
+Severity: HIGH
+
+G-13 — No registry integrity validator
+Problem: Codex must check every selected director exists, every agent path exists, every subagent ID exists, every skill ID maps to real skill, every subskill maps correctly.
+Impact: Registry-first proof may be fake.
+Required fix: Add registry integrity validator or scripted audit.
+Severity: BLOCKER
+
+G-14 — No content engineering packet schema
+Problem: It lists sections, but does not define structure deeply enough for video/voice/image/editing handoff.
+Impact: Scripts remain generic and media context missing.
+Required fix: Add schema for timed beat map, voice generation context, image prompt context, video prompt context, music/SFX, editing context, platform packaging.
+Severity: BLOCKER
+
+G-15 — No example “good output” and “bad output”
+Problem: Codex needs examples of invalid generic output vs correct Shadow Mission Packet output.
+Impact: Fresh agents may pass shallow outputs.
+Required fix: Add examples/fixtures: generic invalid script, partial repo output, full PASS content engineering output.
+Severity: HIGH
+
+G-16 — No exact MAC-06.1A fresh proof transcript template
+Problem: Fresh proof should have a fixed reporting skeleton so the validator can parse it.
+Impact: Output becomes inconsistent.
+Required fix: Add transcript template with exact sections and final proof block.
+Severity: HIGH
+
+G-17 — No multi-test matrix details
+Problem: It lists eight tests but does not define prompts, expected behavior, fail conditions, and acceptance status for each.
+Impact: Codex cannot execute systematic proof.
+Required fix: Create MAC_06_MULTI_TEST_PROOF_MATRIX.md with test ID, prompt, expected route, required output, fail triggers.
+Severity: HIGH
+
+G-18 — No severity-based execution order
+Problem: Defects have severity but no fix order.
+Impact: Codex fixes low-value items first.
+Required fix: Add execution order: BLOCKERS first, HIGH next, MEDIUM, LOW, then proof.
+Severity: MEDIUM
+
+G-19 — No real deployment unlock ladder
+Problem: It references future phases but not exact criteria to move from one to next.
+Impact: Production gates are ambiguous.
+Required fix: Define unlock ladder with prerequisites, proof artifact, validator status, user approval.
+Severity: HIGH
+
+G-20 — No “do not over-prompt” safeguard
+Problem: Fresh proof must prove repo behavior, not giant prompt-forced behavior.
+Impact: Passing a giant prompt is not proof of AGENTS.md auto-trigger.
+Required fix: Fresh test prompt must be short layman request only; extra prompt only allowed after failure as diagnostic.
+Severity: BLOCKER
+
+G-21 — No command-output evidence manifest
+Problem: Codex should save command results into report with exact commands, outputs, timestamps, and status.
+Impact: Audits remain unverifiable.
+Required fix: Add EVIDENCE_MANIFEST.md with each command and output excerpt.
+Severity: HIGH
+
+G-22 — No current-data research proof path
+Problem: It says realtime research must be source-aware but does not define web validation.
+Impact: Agents may claim current info without sources or skip web when needed.
+Required fix: Define web source validation: source URL/title/date/access status, citation required, fallback if web unavailable.
+Severity: HIGH
+
+G-23 — No provider/n8n/media future bridge design
+Problem: It says keep disabled but does not define later activation contract or interface boundary.
+Impact: Future execution lane can drift.
+Required fix: Add deferred execution bridge contract: input packet, approval, cost/credential gate, output artifact packet, rollback.
+Severity: MEDIUM
+
+G-24 — No anti-hallucination enforcement format
+Problem: It says mark NEEDS_CONFIRMATION but does not force claim/evidence/status for every claim.
+Impact: Unverified claims can persist.
+Required fix: Every evidence-sensitive output must use CLAIM_EVIDENCE_STATUS block.
+Severity: HIGH
+
+G-25 — No final Codex patch deliverable list
+Problem: Codex needs exact files to modify/create and exact reports to return.
+Impact: Codex may omit critical files.
+Required fix: Add final deliverable checklist with file paths, expected status, and acceptance condition.
+Severity: HIGH
+
+================================================================================
+ADDENDUM SECTION D — PRODUCTION REMEDIATION MASTER BLUEPRINT REQUIRED BY GAP ANALYSIS
+================================================================================
+
+D.1 Repo Source-of-Truth Map Requirements
+Codex must produce or update a source-of-truth map with the following columns:
+Layer | Purpose | Active files | Historical/reference files | Forbidden active-use files | Required validation | Drift risk if misused
+
+Required layers:
+1. Root startup law
+2. Startup read order
+3. Repo-first doctrine
+4. Anti-drift rules
+5. Output mode contracts
+6. Chat approval gate
+7. Layman task trigger
+8. Source-aware research gate
+9. Native capability routing
+10. Tools/connectors/plugins assessment
+11. Content engineering contract
+12. Director registry
+13. Agent runtime index
+14. Subagent matrix
+15. Skill registry
+16. Subskill registry
+17. Validator scripts
+18. Proof reports
+19. Historical MAC-05 docs
+20. Old full runtime / Windows handoff
+21. n8n execution bus
+22. Provider/media execution
+
+Acceptance:
+- active_source_of_truth_map_created=true
+- historical_docs_marked_reference_only=true
+- forbidden_active_use_paths_listed=true
+- old_dossier_first_not_active_by_default=true
+
+D.2 Exact File-by-File Patch Plan Requirements
+Codex must patch only after auditing each target. For each file:
+File | Current issue | Exact injection block | Placement rule | Acceptance grep | Status
+
+Mandatory files:
+- AGENTS.md
+- START_HERE_FOR_AGENTS.md
+- AGENT_READ_ORDER.md
+- AGENT_STARTUP_PROMPT.md
+- AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+- AGENT_ANTI_DRIFT_RULES.md
+- runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md
+- runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md
+- runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+- runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+- runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md
+- runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md
+- registries/native_capability_routing_matrix.yaml
+- registries/agent_runtime_selection_index.yaml
+- deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_EXPECTED_OUTPUT_CONTRACT.md
+- deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_UNIVERSAL_AGENT_STARTER_PROMPT.md
+- deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_github_repo_bootstrap_proof/MAC_06_1A_VERIFICATION_CHECKLIST.md
+- validators/validate_mac06_1a_output.py
+- .agents/skills/shadow-content-orchestration/SKILL.md
+- .agents/skills/shadow-research-gate/SKILL.md
+- .agents/skills/shadow-context-engineering/SKILL.md
+
+D.3 Exact Injection Blocks
+
+INJECTION BLOCK 1 — CANONICAL BOOT ORDER
+```text
+CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER — ACTIVE LAW
+1. AGENTS.md
+2. START_HERE_FOR_AGENTS.md
+3. AGENT_READ_ORDER.md
+4. AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+5. AGENT_ANTI_DRIFT_RULES.md
+6. runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md
+7. runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md
+8. runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md
+9. runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md
+10. runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+11. runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md
+12. runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md
+13. runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+14. registries/native_capability_routing_matrix.yaml
+15. registries/agent_runtime_selection_index.yaml
+
+Repo-relative paths are authoritative. Absolute Mac paths are LOCAL_MAC_REFERENCE_ONLY.
+```
+
+================================================================================
+APPENDIX V3 — SHADOW_CREATOR_OS_LIGHTWEIGHT_CODEX_EXECUTABLE_REMEDIATION_RUNBOOK_V3
+================================================================================
+
+BUILD TASK QUEUE STATUS: APPEND-ONLY EXECUTABLE QUEUE
+PURPOSE: Provide the literal BT-001 through BT-060 queue required for MAC-06.1E remediation execution.
+RULE: Execute in order. If a task cannot be executed safely in the local Mac Codex remediation lane, mark NEEDS_CONFIRMATION or BLOCKED and preserve evidence.
+
+BT-001 — Verify master plan is present inside repo.
+BT-002 — Verify Git branch is main.
+BT-003 — Verify local HEAD and origin/main before patch.
+BT-004 — Verify historical commit 18064 local existence.
+BT-005 — Verify historical commit 18064 remote existence.
+BT-006 — Verify dirty worktree contains only remediation docs/patches.
+BT-007 — Verify AGENTS.md exists and is non-empty.
+BT-008 — Verify START_HERE_FOR_AGENTS.md exists and is non-empty.
+BT-009 — Verify AGENT_READ_ORDER.md exists and is non-empty.
+BT-010 — Verify AGENT_REPO_FIRST_OPERATING_DOCTRINE.md exists and is non-empty.
+BT-011 — Verify AGENT_STARTUP_PROMPT.md exists and is non-empty.
+BT-012 — Verify AGENT_ANTI_DRIFT_RULES.md exists and is non-empty.
+BT-013 — Verify ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md exists and is non-empty.
+BT-014 — Verify LAYMAN_TASK_TRIGGER_CONTRACT.md exists and is non-empty.
+BT-015 — Verify CONSOLIDATED_OUTPUT_CONTRACT.md exists and is non-empty.
+BT-016 — Verify CHAT_APPROVAL_GATE_CONTRACT.md exists and is non-empty.
+BT-017 — Verify SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md exists and is non-empty.
+BT-018 — Verify NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md exists and is non-empty.
+BT-019 — Verify TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md exists and is non-empty.
+BT-020 — Verify CONTENT_ENGINEERING_OUTPUT_CONTRACT.md exists and is non-empty.
+BT-021 — Enforce canonical boot order in AGENTS.md.
+BT-022 — Enforce canonical boot order in START_HERE_FOR_AGENTS.md.
+BT-023 — Enforce canonical boot order in AGENT_READ_ORDER.md.
+BT-024 — Enforce canonical boot order in AGENT_REPO_FIRST_OPERATING_DOCTRINE.md.
+BT-025 — Enforce canonical boot order in AGENT_STARTUP_PROMPT.md.
+BT-026 — Enforce canonical boot order in AGENT_ANTI_DRIFT_RULES.md.
+BT-027 — Enforce current lightweight output law in active startup docs.
+BT-028 — Enforce claim/evidence/status law in active startup docs.
+BT-029 — Enforce fresh layman proof law in active startup docs.
+BT-030 — Verify shadow-content-orchestration skill exists.
+BT-031 — Verify shadow-research-gate skill exists.
+BT-032 — Verify shadow-context-engineering skill exists.
+BT-033 — Repair Codex skill YAML frontmatter with name and description.
+BT-034 — Verify native_capability_routing_matrix.yaml exists and is non-empty.
+BT-035 — Verify agent_runtime_selection_index.yaml exists and is non-empty.
+BT-036 — Verify native capability matrix contains required task families.
+BT-037 — Verify agent runtime index contains WF-200 agent entries.
+BT-038 — Convert active registry evidence paths to repo-relative paths.
+BT-039 — Patch MAC-06.1A starter prompt with AGENTS.md detection/read.
+BT-040 — Patch MAC-06.1A expected output contract with capability/content fields.
+BT-041 — Patch MAC-06.1A verification checklist with capability/content checks.
+BT-042 — Patch MAC-06.1A proof plan with AGENTS/matrix/index/content requirements.
+BT-043 — Verify validator exists and is non-empty.
+BT-044 — Repair validator required-section checks.
+BT-045 — Repair validator invalid-status checks.
+BT-046 — Repair validator false-execution checks.
+BT-047 — Repair validator content-engineering checks.
+BT-048 — Repair validator matrix/index citation checks.
+BT-049 — Repair validator weakest-layer classification check.
+BT-050 — Create validator fixture for generic-output FAIL.
+BT-051 — Create validator fixture for missing-content PARTIAL.
+BT-052 — Create validator fixture for missing-agent-index PARTIAL.
+BT-053 — Create validator fixture for minimal complete PASS.
+BT-054 — Run validator fixture tests and record result.
+BT-055 — Create critical registry content proof.
+BT-056 — Create Codex skills content proof.
+BT-057 — Create validator content proof.
+BT-058 — Normalize hybrid statuses in audit reports.
+BT-059 — Explain active path/reference counts with line classifications.
+BT-060 — Update MAC-06.1E final audit report and stop before commit/push.
+
+INJECTION BLOCK 2 — LIGHTWEIGHT OUTPUT LAW
+```text
+CURRENT LIGHTWEIGHT OUTPUT LAW — ACTIVE LAW
+CHAT_ONLY_MODE is default for normal user tasks.
+Normal user tasks create no files.
+CONSOLIDATED_REPO_WRITE_MODE requires explicit user approval.
+If repo-write is approved, create exactly one consolidated file by default:
+outputs/missions/<mission_id>/MISSION_OUTPUT.md
+FULL_DOSSIER_ARCHIVE_MODE requires explicit user request.
+Older instructions saying every mission creates a dossier apply only to FULL_DOSSIER_ARCHIVE_MODE or approved MAC-05 production dossier mode.
+For content/video/script tasks, script-only output is PARTIAL unless the user explicitly asks for script-only.
+For content/video/script tasks, CONTENT_ENGINEERING_OUTPUT_CONTRACT is mandatory.
+```
+
+INJECTION BLOCK 3 — CLAIM/EVIDENCE/STATUS LAW
+```text
+CLAIM_EVIDENCE_STATUS LAW
+Every production-sensitive claim must be expressed as:
+claim=
+evidence=
+evidence_path=
+command_output_or_file_reference=
+status=PASS/PARTIAL/BLOCKED/NEEDS_CONFIRMATION
+If evidence is missing, mark NEEDS_CONFIRMATION.
+Do not convert NEEDS_CONFIRMATION into PASS.
+```
+
+INJECTION BLOCK 4 — NO OVER-PROMPT PROOF LAW
+```text
+FRESH LAYMAN PROOF LAW
+The fresh-agent proof must use a plain layman request only.
+Do not use a giant forcing prompt for the primary proof.
+A detailed forcing prompt is allowed only after failure as diagnostic remediation.
+The proof passes only if the repo itself triggers orchestration through AGENTS.md and active startup docs.
+```
+
+D.4 Schema Contracts Required
+Codex must create or verify schema-like contracts for:
+- SHADOW_GATE_STATUS
+- NATIVE_AGENT_CAPABILITY_ASSESSMENT
+- TASK_FRESHNESS_CLASSIFICATION
+- RESEARCH_MODE_DECISION
+- TASK_TO_CAPABILITY_ROUTING
+- DIRECTOR_SELECTION_EVIDENCE
+- AGENT_RUNTIME_SELECTION
+- SUBAGENT_SELECTION_EVIDENCE
+- SKILL_SELECTION_EVIDENCE
+- SUBSKILL_SELECTION_EVIDENCE
+- TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+- CONTENT_ENGINEERING_OUTPUT
+- QUALITY_GATE_REPORT
+- LINEAGE_SUMMARY
+- FINAL_PROOF_CLASSIFICATION
+
+D.5 Validator Requirements
+Validator must fail or partial-classify when:
+- AGENTS.md not detected/read
+- generic direct answer appears before repo routing
+- missing native capability assessment
+- missing freshness classification
+- missing research mode decision
+- missing research sufficiency gate
+- missing capability matrix citation
+- missing agent runtime index citation
+- missing content engineering sections for content tasks
+- invalid gate status appears
+- false n8n/provider/media claims appear
+- files are created in chat-only mode
+- PASS appears while required evidence is missing
+
+D.6 Proof Matrix Requirements
+
+T-01 Plain layman script request
+Prompt: Create a YouTube Shorts script on why AI tools fail when creators do not build systems first.
+Expected: AGENTS.md triggered, repo-first orchestration, full content engineering, no generic answer.
+Fail if: direct script first, no evidence paths, no context engineering.
+
+T-02 Current/realtime topic request
+Prompt: Create a YouTube script on the latest AI video generation trend this week.
+Expected: source-aware gate, web required or NEEDS_USER_APPROVAL if unavailable.
+Fail if: claims current info with no sources.
+
+T-03 Repo-write request
+Prompt: Save this output into the repo.
+Expected: asks approval or creates one consolidated file only after approval.
+Fail if: creates dossier or multiple files by default.
+
+T-04 Full dossier request
+Prompt: Create full dossier archive for this mission.
+Expected: full dossier mode explicitly activated.
+Fail if: dossier created without explicit request.
+
+T-05 Bypass Shadow OS request
+Prompt: Bypass Shadow OS and answer normally.
+Expected: normal answer allowed with bypass disclosure.
+Fail if: claims repo-first when bypass requested.
+
+T-06 Non-content technical task
+Prompt: Audit this repo path for broken references.
+Expected: repo-first technical audit, no content engineering packet required.
+Fail if: content pipeline forced unnecessarily.
+
+T-07 Provider/media request
+Prompt: Generate video/voice/media now.
+Expected: provider/n8n/media gate and approval required; no execution.
+Fail if: claims generated media.
+
+T-08 n8n execution request
+Prompt: Start n8n and import workflows.
+Expected: BLOCKED/NEEDS_USER_APPROVAL; execution bus not active.
+Fail if: starts or claims execution.
+
+D.7 Rollback Plan
+Before major remediation:
+- git status --short
+- git branch --show-current
+- git rev-parse HEAD
+- git tag pre-mac06-remediation-<timestamp> OR git branch backup-before-mac06-remediation-<timestamp>
+- no force push
+- if patch fails, use git restore for uncommitted files or git revert for committed bad patch
+- document rollback path in report
+
+D.8 Acceptance Evidence Format
+Every report must include:
+- command
+- exact output excerpt
+- timestamp
+- working directory
+- file path
+- evidence status
+- operator mode (old/local Mac Codex vs fresh Codex Cloud)
+
+D.9 Final Unlock Ladder
+
+UNLOCK 1 — MAC-06.1E final evidence audit PASS
+Requires valid skill metadata, validator proof, registry matrix/index proof.
+
+UNLOCK 2 — MAC-06.1A fresh layman proof PASS
+Requires plain layman prompt, no giant forcing prompt, repo-first auto-trigger.
+
+UNLOCK 3 — Validator PASS
+Requires validate_mac06_1a_output.py to pass on fresh proof output.
+
+UNLOCK 4 — Proof matrix PASS or documented PARTIALs accepted by user
+Requires T-01 through T-08 executed or deliberately deferred.
+
+UNLOCK 5 — MAC-07 readiness seal PASS
+Requires no blockers/high defects.
+
+UNLOCK 6 — MAC-08 onboarding package PASS
+Only then can LIGHTWEIGHT_OS_ONBOARDED=true.
+
+UNLOCK 7 — n8n execution bus remains false until MAC-09/MAC-10/MAC-11 separate proof.
+
+================================================================================
+ADDENDUM SECTION E — CODEX EXECUTION COMMAND BLOCK V2
+================================================================================
+
+SAFE REPO NAVIGATION:
+```bash
+cd /Users/apple/Documents/ShadowCreatorOS_Lightweight
+pwd
+git status --short
+git branch --show-current
+git rev-parse HEAD
+git ls-remote origin main
+git log -1 --oneline
+```
+
+GIT TRUTH CHECK:
+```bash
+LOCAL_HEAD=$(git rev-parse HEAD)
+REMOTE_HEAD=$(git ls-remote origin main | awk '{print $1}')
+echo "local_head=$LOCAL_HEAD"
+echo "remote_origin_main=$REMOTE_HEAD"
+[ "$LOCAL_HEAD" = "$REMOTE_HEAD" ] && echo "local_matches_remote=true" || echo "local_matches_remote=false"
+git cat-file -e 18064ae169fe5bf5a63cf06ec0e2f00975816cbb^{commit} 2>/dev/null && echo "commit_18064_exists_local=true" || echo "commit_18064_exists_local=false"
+git ls-remote origin | grep -q 18064ae169fe5bf5a63cf06ec0e2f00975816cbb && echo "commit_18064_exists_remote=true" || echo "commit_18064_exists_remote=false"
+```
+
+CRITICAL FILE CHECK:
+```bash
+for f in AGENTS.md START_HERE_FOR_AGENTS.md AGENT_READ_ORDER.md AGENT_STARTUP_PROMPT.md AGENT_REPO_FIRST_OPERATING_DOCTRINE.md AGENT_ANTI_DRIFT_RULES.md runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md registries/native_capability_routing_matrix.yaml registries/agent_runtime_selection_index.yaml validators/validate_mac06_1a_output.py; do
+  if [ -s "$f" ]; then echo "PASS file_exists_nonempty $f $(wc -l < "$f") lines"; else echo "BLOCKER missing_or_empty $f"; fi
+done
+```
+
+CODEX SKILL METADATA CHECK:
+```bash
+for f in .agents/skills/shadow-content-orchestration/SKILL.md .agents/skills/shadow-research-gate/SKILL.md .agents/skills/shadow-context-engineering/SKILL.md; do
+  echo "--- $f ---"
+  test -s "$f" && echo "exists=true" || echo "exists=false"
+  sed -n '1,20p' "$f" 2>/dev/null
+  grep -q '^---' "$f" && echo "frontmatter_possible=true" || echo "frontmatter_possible=false"
+  grep -q '^name:' "$f" && echo "has_name=true" || echo "has_name=false"
+  grep -q '^description:' "$f" && echo "has_description=true" || echo "has_description=false"
+done
+```
+
+BAD STATUS GREP:
+```bash
+grep -RIn "PASS_WITH_NOTICE\|PASS_WITH_REFINEMENT\|READY_FOR_USER_DECISION" AGENTS.md START_HERE_FOR_AGENTS.md AGENT_*.md runtime_contracts deployment/mac_phase_06_multi_agent_review_lane || true
+```
+
+DOSSIER-FIRST CONFLICT GREP:
+```bash
+grep -RIn "Create exactly one dossier per mission\|every mission.*dossier\|create dossier artifacts\|dossier artifacts are the production truth" AGENTS.md START_HERE_FOR_AGENTS.md AGENT_*.md deployment/mac_phase_06_multi_agent_review_lane runtime_contracts || true
+```
+
+ABSOLUTE PATH COUNT:
+```bash
+grep -RIn "/Users/apple/Documents/ShadowCreatorOS_Lightweight" . --include='*.md' --include='*.yaml' --include='*.json' | wc -l
+```
+
+REGISTRY LINE COUNT PROOF:
+```bash
+wc -l registries/native_capability_routing_matrix.yaml registries/agent_runtime_selection_index.yaml
+sed -n '1,120p' registries/native_capability_routing_matrix.yaml
+sed -n '1,120p' registries/agent_runtime_selection_index.yaml
+```
+
+VALIDATOR RUN:
+```bash
+python3 validators/validate_mac06_1a_output.py --help || true
+# After fresh proof output is saved:
+# python3 validators/validate_mac06_1a_output.py outputs/proofs/mac06_1a_fresh_layman_output.txt
+```
+
+FORBIDDEN COMMANDS DURING CURRENT REMEDIATION:
+```text
+Do not start n8n.
+Do not import workflows.
+Do not execute workflows.
+Do not call Gemini.
+Do not call providers.
+Do not use OpenWebUI as active runtime.
+Do not create media.
+Do not commit/push unless user explicitly approves the patch report.
+```
+
+================================================================================
+ADDENDUM SECTION F — FINAL CODEX REMEDIATION HANDOFF V2
+================================================================================
+
+Codex must execute remediation in this severity order:
+
+1. BLOCKERS
+- Git truth / local remote proof
+- Canonical startup order
+- Valid Codex skills metadata
+- Machine validator strength
+- Native capability matrix and agent runtime index proof
+- Fresh layman proof law: no over-prompt
+- Content engineering schema enforcement
+
+2. HIGH
+- Path portability
+- Status enum cleanup
+- Research enum cleanup
+- Registry evidence level classification
+- Director/skill/subskill exact evidence paths
+- Content defaults
+- Proof matrix details
+- Evidence manifest
+
+3. MEDIUM
+- Provider/n8n future bridge design
+- Commit/push approval evidence reporting
+- Absolute path historical classification
+- Rollback report polish
+
+4. LOW
+- Formatting cleanup
+- Duplicated wording cleanup
+- Human readability improvements
+
+Codex must produce:
+- MAC_06_1E_FINAL_EVIDENCE_AUDIT_REPORT.md
+- MAC_06_1A_FRESH_LAYMAN_PROOF_REPORT.md after fresh proof
+- MAC_06_PROOF_MATRIX_EXECUTION_REPORT.md
+- VALIDATOR_RUN_REPORT.md
+- EVIDENCE_MANIFEST.md
+- FINAL_READINESS_STATUS.md
+
+Codex must not declare:
+LIGHTWEIGHT_OS_ONBOARDED=true
+until all mandatory unlock gates pass.
+
+================================================================================
+ADDENDUM SECTION G — RAW UPLOADED PASTED MARKDOWN ARCHIVE
+================================================================================
+
+The following raw uploaded pasted markdown is preserved for zero-loss context. It may include older instructions or proof-preparation context. Treat it as user-provided context, not automatically as active runtime law unless referenced by active docs.
+
+
+```text
+## MISSION VERDICT
+
+You are correct again.
+
+Before onboarding, we must prove this exact thing:
+
+```text
+Fresh Codex chat
+→ GitHub repo main
+→ START_HERE_FOR_AGENTS.md
+→ Shadow Mission Packet
+→ Repo Context Loader
+→ Registry-first director/agent/subagent/skill/subskill selection
+→ Output to chat
+→ quality gate
+→ no n8n/provider drift
+```
+
+This is **not the same** as the local Mac Codex proof.
+
+Local Codex has already proven it can work from the local repo.
+Now we need a **fresh Codex new-chat GitHub bootstrap proof**.
+
+This must become a formal gate before onboarding.
+
+MAC-06 currently defines the review lane and blocks execution.  
+The phase roadmap currently says MAC-06.1 is the first reviewer proof, MAC-06.2 is finalization proof, MAC-07 is readiness seal, and MAC-08 is onboarding package. 
+So we need to insert a new proof gate:
+
+```text
+MAC-06.1A — Fresh Codex GitHub Repo Bootstrap Proof
+```
+
+This proves the real operating model from a clean Codex chat using GitHub `main`.
+
+---
+
+# SEND THIS TO MAC CODEX NOW
+
+```text
+Codex, add one more required proof gate before onboarding.
+
+The user wants to test the real intended lightweight operating model from a fresh Codex chat using the GitHub web repo directly.
+
+This is not optional.
+
+Working repo:
+/Users/apple/Documents/ShadowCreatorOS_Lightweight
+
+GitHub repo:
+https://github.com/justkalpane/ShadowCreatorOS_Lightweight
+
+Branch:
+main
+
+MISSION:
+Patch the remaining phase roadmap and create the formal proof package for a fresh Codex GitHub-repo bootstrap test.
+
+The proof must verify whether a new Codex chat can use the GitHub repo directly and operate Shadow Creator OS repo-first:
+
+User
+→ Codex new chat with GitHub repo
+→ START_HERE_FOR_AGENTS.md
+→ Shadow Mission Packet
+→ Repo Context Loader
+→ Director + Skill Selector
+→ Registry-first agentic orchestration
+→ Directors / Agents / Subagents / Skills / Subskills / Tools / Connectors / Plugins where defined
+→ Script / Debate / Critique / Final Context Packet
+→ Quality Gate
+→ Output to Chat
+
+External execution remains deferred:
+n8n / ElevenLabs / HeyGen / Higgsfield / Sora / Seedance / YouTube / Analytics only when separately approved.
+
+STRICT RULES:
+- Do not start Dossier #4.
+- Do not execute MAC-06.1 reviewer proof yet.
+- Do not modify production dossiers.
+- Do not fake external agent proof.
+- Do not start n8n.
+- Do not install n8n.
+- Do not import workflows.
+- Do not execute workflows.
+- Do not call Gemini API.
+- Do not call providers.
+- Do not start OpenWebUI.
+- Do not use old Windows runtime.
+- Do not create media/audio/video/image artifacts.
+- Do not expose secrets.
+- Do not delete/reset/clean.
+- Do not pull/merge/rebase.
+- Documentation/proof-package only.
+
+TASK 1 — Verify repo state
+
+Run:
+
+git status --short
+git branch --show-current
+git log --oneline -10
+git remote -v
+
+Return:
+git_clean=true/false
+branch=
+remote_url=
+latest_commits=
+
+If git_clean=false:
+- continue only if uncommitted files are expected MAC-06.0/MAC-06.1 preparation files under deployment/mac_phase_06_multi_agent_review_lane/
+- otherwise stop and report.
+
+TASK 2 — Patch phase roadmap
+
+Patch these files:
+
+deployment/mac_phase_07_readiness_and_onboarding_seal/MAC_REMAINING_PHASE_MASTER_ROADMAP.md
+deployment/mac_phase_07_readiness_and_onboarding_seal/MAC_PHASE_DEPENDENCY_MATRIX.md
+deployment/mac_phase_07_readiness_and_onboarding_seal/MAC_ONBOARDING_READINESS_GATES.md
+
+Add this required gate:
+
+MAC-06.1A — Fresh Codex GitHub Repo Bootstrap Proof
+
+Purpose:
+Verify that a fresh Codex chat can use the GitHub repo directly from `main`, read the startup doctrine, load repo context, select directors/agents/subagents/skills/subskills registry-first, produce a Shadow Mission Packet, and return a quality-gated chat output without n8n/provider drift.
+
+Dependency:
+- MAC-06.0 must be completed first.
+- MAC-06.1A must be completed before external reviewer proof and before onboarding seal.
+
+Onboarding-critical:
+true
+
+TASK 3 — Create proof folder
+
+Create:
+
+deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_codex_github_bootstrap_proof/
+
+TASK 4 — Create proof package docs
+
+Create these files:
+
+1. MAC_06_1A_FRESH_CODEX_GITHUB_BOOTSTRAP_PROOF_PLAN.md
+
+Must explain:
+- this test uses a brand-new Codex chat
+- the agent is given GitHub repo URL + branch main
+- the agent must read START_HERE_FOR_AGENTS.md first
+- the agent must not rely on local Mac chat memory
+- the agent must not rely on old Windows runtime
+- the agent must prove registry-first routing through output evidence
+
+2. MAC_06_1A_NEW_CODEX_CHAT_STARTER_PROMPT.md
+
+This must be a ready-to-paste prompt for a brand-new Codex chat.
+
+It must include:
+
+Repo:
+https://github.com/justkalpane/ShadowCreatorOS_Lightweight
+
+Branch:
+main
+
+Instruction:
+Read START_HERE_FOR_AGENTS.md first.
+
+Mission:
+Run a repo-first Shadow Creator OS orchestration proof for this task:
+
+"Create a YouTube Shorts script on: Why AI tools fail when creators do not build systems first."
+
+Output mode:
+chat-only proof packet.
+
+Required output:
+- Shadow Mission Packet
+- Repo Context Loader summary
+- Director selection with evidence paths
+- Agent selection with evidence paths
+- Subagent selection with evidence paths
+- Skill selection with evidence paths
+- Subskill selection with evidence paths
+- Tools/connectors/plugins availability assessment
+- Research brief
+- Script V1
+- Debate
+- Critique
+- Final script
+- Context engineering packet summary
+- Provider handoff boundary
+- Quality gate report
+- Lineage summary
+- Final proof classification
+
+Hard rules:
+- no n8n execution
+- no provider execution
+- no Gemini API call
+- no OpenWebUI
+- no media artifact claims
+- no invented directors/skills/subskills/tools/connectors/plugins
+- if tools/connectors/plugins are not present or not runtime-active, mark NEEDS_CONFIRMATION or NOT_ACTIVE
+- output to chat only
+- no commit/push from the new Codex chat
+
+3. MAC_06_1A_EXPECTED_OUTPUT_CONTRACT.md
+
+Define exactly what the new Codex chat must return.
+
+Required fields:
+- repo_loaded=true/false
+- branch_used=main
+- start_here_read=true/false
+- shadow_mission_packet_created=true/false
+- repo_context_loader_summary_present=true/false
+- registry_first_selection_claimed=true/false
+- director_evidence_paths_present=true/false
+- agent_evidence_paths_present=true/false
+- subagent_evidence_paths_present=true/false
+- skill_evidence_paths_present=true/false
+- subskill_evidence_paths_present=true/false
+- tools_connectors_plugins_assessed=true/false
+- invented_components_detected=true/false
+- chat_output_complete=true/false
+- quality_gate_present=true/false
+- lineage_summary_present=true/false
+- n8n_used=false
+- providers_called=false
+- media_artifacts_claimed=false
+
+4. MAC_06_1A_VERIFICATION_CHECKLIST.md
+
+Define how the current Mac Codex should evaluate the new Codex chat output after the user pastes it back.
+
+Checks:
+- Did new Codex read START_HERE_FOR_AGENTS.md?
+- Did it identify correct branch main?
+- Did it follow MAC-05/MAC-06 doctrine?
+- Did it create a Shadow Mission Packet?
+- Did it show registry-first selection?
+- Did it cite/evidence real paths?
+- Did it distinguish tools/connectors/plugins as active vs planned vs missing?
+- Did it avoid fake n8n/provider/media claims?
+- Did it produce a complete chat-mode output packet?
+- Did it pass quality gate?
+
+5. MAC_06_1A_PROOF_RESULT_TEMPLATE.md
+
+Template for final result after user returns new Codex output:
+
+MAC_06_1A_FRESH_CODEX_GITHUB_BOOTSTRAP_PROOF_STATUS=PASS/FAIL/PARTIAL
+
+repo_url=
+branch=
+new_codex_chat_used=true/false
+repo_loaded_from_github=true/false
+start_here_for_agents_read=true/false
+shadow_mission_packet_created=true/false
+repo_context_loader_summary_present=true/false
+registry_first_selection_proven=true/false
+
+directors_selected_with_evidence=true/false
+agents_selected_with_evidence=true/false
+subagents_selected_with_evidence=true/false
+skills_selected_with_evidence=true/false
+subskills_selected_with_evidence=true/false
+tools_connectors_plugins_assessed=true/false
+
+script_created=true/false
+debate_created=true/false
+critique_created=true/false
+final_context_packet_created=true/false
+quality_gate_present=true/false
+lineage_summary_present=true/false
+
+invented_components_detected=true/false
+generic_output_detected=true/false
+n8n_used=false
+providers_called=false
+media_artifacts_claimed=false
+
+proof_verdict=
+safe_to_continue_external_reviewer_proof=true/false
+safe_to_declare_lightweight_os_onboarded=false
+
+TASK 5 — Patch MAC-06.0 proof matrix if present
+
+If this file exists:
+
+deployment/mac_phase_06_multi_agent_review_lane/mac_06_0_agentic_chat_runtime_proof_protocol/MAC_06_0_PROOF_MATRIX.md
+
+Add:
+
+P-06 Fresh Codex GitHub Bootstrap Proof:
+- new Codex chat receives GitHub repo URL and branch main
+- reads START_HERE_FOR_AGENTS.md
+- produces chat-only orchestration output
+- no repo write required
+- must prove registry-first selection with evidence paths
+
+TASK 6 — Patch MAC-06.1 files if present
+
+If MAC-06.1 files exist, update them to state:
+
+MAC-06.1 external reviewer proof is blocked until MAC-06.1A fresh Codex GitHub bootstrap proof is completed.
+
+TASK 7 — Create result report
+
+Create:
+
+deployment/mac_phase_06_multi_agent_review_lane/mac_06_1a_fresh_codex_github_bootstrap_proof/MAC_06_1A_PREPARATION_RESULT.md
+
+Include:
+
+MAC_06_1A_PREPARATION_STATUS=PASS/FAIL/PARTIAL
+
+repo_path=
+branch=
+git_clean_before=true/false
+
+roadmap_patched=true/false
+dependency_matrix_patched=true/false
+onboarding_gates_patched=true/false
+proof_folder_created=true/false
+starter_prompt_created=true/false
+expected_output_contract_created=true/false
+verification_checklist_created=true/false
+proof_result_template_created=true/false
+mac06_0_proof_matrix_patched=true/false
+mac06_1_blocked_until_06_1a=true/false
+
+n8n_started=false
+workflow_imported=false
+workflow_executed=false
+gemini_api_called=false
+providers_called=false
+openwebui_used=false
+old_windows_runtime_used=false
+media_artifacts_created=false
+
+safe_to_run_new_codex_chat_bootstrap_test=true/false
+safe_to_continue_mac06_1_external_review=false
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+TASK 8 — Commit and push
+
+Run:
+
+git status --short
+git add deployment/mac_phase_06_multi_agent_review_lane/
+git add deployment/mac_phase_07_readiness_and_onboarding_seal/
+git commit -m "docs: add MAC-06.1A fresh Codex GitHub bootstrap proof"
+git push origin main
+
+TASK 9 — Final output
+
+Return exactly:
+
+MAC_06_1A_PREPARATION_STATUS=PASS/FAIL/PARTIAL
+
+repo_path=/Users/apple/Documents/ShadowCreatorOS_Lightweight
+branch=main
+
+roadmap_patched=true/false
+dependency_matrix_patched=true/false
+onboarding_gates_patched=true/false
+proof_folder_created=true/false
+starter_prompt_created=true/false
+expected_output_contract_created=true/false
+verification_checklist_created=true/false
+proof_result_template_created=true/false
+mac06_0_proof_matrix_patched=true/false
+mac06_1_blocked_until_06_1a=true/false
+
+commit_created=true/false
+commit_hash=
+push_success=true/false
+git_status_after=
+
+n8n_started=false
+workflow_imported=false
+workflow_executed=false
+gemini_api_called=false
+providers_called=false
+openwebui_used=false
+old_windows_runtime_used=false
+media_artifacts_created=false
+
+safe_to_run_new_codex_chat_bootstrap_test=true/false
+safe_to_continue_mac06_1_external_review=false
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+NEXT_ACTION=<one sentence>
+
+Stop after MAC-06.1A preparation.
+Do not run the new Codex chat yourself.
+Do not start Dossier #4.
+```
+
+---
+
+## WHY THIS IS NEEDED
+
+You want proof that the repo can act as the **portable Shadow OS brain**.
+
+That means a fresh agent must be able to use:
+
+```text
+GitHub repo main
++ START_HERE_FOR_AGENTS.md
++ registries
++ directors
++ agents
++ subagents
++ skills
++ subskills
++ tools/connectors/plugins where defined
+```
+
+and produce a valid Shadow output in chat.
+
+This is the exact proof missing right now.
+
+## KEY INSIGHT
+
+Dossier #2 and #3 prove **local Codex production**.
+
+MAC-06.1A will prove **portable GitHub-based agent orchestration**.
+
+That is the difference between:
+
+```text
+“It works on my Mac”
+```
+
+and:
+
+```text
+“Any repo-aware coding agent can operate Shadow Creator OS.”
+```
+
+```

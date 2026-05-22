@@ -6,6 +6,8 @@ The returned proof output must include these fields.
 repo_loaded=true/false
 agents_md_detected=true/false
 agents_md_read=true/false
+layman_task_trigger_contract_read=true/false
+generic_direct_answer_avoided=true/false
 branch_used=main
 start_here_read=true/false
 agent_read_order_followed=true/false
@@ -24,9 +26,26 @@ debate_created=true/false
 critique_created=true/false
 final_script_created=true/false
 context_packet_summary_created=true/false
+content_engineering_contract_read=true/false
+content_mission_brief_present=true/false
+research_and_source_status_present=true/false
+script_structure_present=true/false
+timed_beat_map_present=true/false
+voice_generation_context_present=true/false
+image_generation_context_present=true/false
+video_generation_context_present=true/false
+music_sfx_context_present=true/false
+editing_context_present=true/false
+platform_packaging_present=true/false
 provider_handoff_boundary_present=true/false
 quality_gate_present=true/false
 lineage_summary_present=true/false
+native_capability_routing_matrix_cited=true/false
+agent_runtime_selection_index_cited=true/false
+task_to_capability_routing_present=true/false
+chat_only_mode_used=true/false
+files_created=false
+dossier_artifacts_created=false
 invented_components_detected=true/false
 generic_output_detected=true/false
 n8n_used=false
@@ -108,6 +127,14 @@ limitations_disclosed=true/false
 
 ### `PASS` Requires
 
+- `agents_md_detected=true` and `agents_md_read=true`.
+- `layman_task_trigger_contract_read=true`.
+- `generic_direct_answer_avoided=true`.
+- `native_capability_routing_matrix_cited=true`.
+- `agent_runtime_selection_index_cited=true` when agent layer is mandatory.
+- `task_to_capability_routing_present=true`.
+- For MAC-06.1A, `chat_only_mode_used=true`, `files_created=false`, and `dossier_artifacts_created=false`.
+- For content/script/video tasks, `content_engineering_contract_read=true` and all required content engineering sections are present.
 - Topic matches user request.
 - All required sections are present.
 - Directors selected with exact evidence.
@@ -154,6 +181,8 @@ limitations_disclosed=true/false
 - Platform packaging is present.
 - Final proof status matches weakest required evidence layer.
 - No false n8n/provider/media claims.
+- PASS is impossible if generic direct answer occurs.
+- PASS is impossible if old dossier-first behavior is followed.
 
 ### `PARTIAL` Is Required If
 
@@ -172,6 +201,9 @@ limitations_disclosed=true/false
 - Invalid gate statuses appear.
 - Script-only output appears for a video/content task when user did not request script-only.
 - Any required content engineering section is missing for a content/script/video task.
+- `AGENTS.md` is not detected/read.
+- Capability matrix or agent runtime selection index is not cited for mandatory layers.
+- `files_created=true` or `dossier_artifacts_created=true` in MAC-06.1A chat-only proof.
 
 ### `FAIL` Is Required If
 

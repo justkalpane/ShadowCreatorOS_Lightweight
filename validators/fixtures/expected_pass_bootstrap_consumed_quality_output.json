@@ -1,0 +1,5 @@
+{
+  "expected_validation_status": "PASS",
+  "expected_hook_variants_count_min": 3,
+  "expected_consumption_ledgers_present": true
+}

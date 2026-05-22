@@ -1,0 +1,599 @@
+version: 1
+registry_id: task_intent_routing_matrix
+status: ACTIVE
+authority: local_repo_first
+benchmark_reference_only:
+  - /Users/apple/Desktop/Gumloop Conversation.txt
+
+global_rules:
+  - Read runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md before route output.
+  - Read runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md before content output.
+  - Use the full local repo estate as the source of truth.
+  - Gumloop references define quality patterns only; they do not define Shadow OS registry bindings.
+  - If any mandatory binding is missing, mark NEEDS_CONFIRMATION and set create_missing_registry_binding=true.
+  - Script/content output before consumption ledgers is FAIL.
+
+global_mandatory_registries:
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+  - registries/native_capability_routing_matrix.yaml
+  - registries/agent_runtime_selection_index.yaml
+
+routes:
+  - route_id: TOPIC_DISCOVERY
+    route_name: Topic Discovery
+    trigger_terms:
+      - find topic
+      - pick topic
+      - choose topic
+      - trending topic
+      - content idea
+      - viral idea
+    mandatory_directors:
+      - name: Krishna
+        path: directors/supreme_vision/krishna.md
+      - name: Aruna
+        path: directors/kernel/aruna.md
+      - name: Narada
+        path: directors/strategy/narada.md
+      - name: Chanakya
+        path: directors/strategy/chanakya.md
+      - name: Yudhishthira
+        path: directors/strategy/yudhishthira.md
+    mandatory_agents:
+      - agents/krishna/krishna_agent.py
+      - agents/aruna/aruna_agent.py
+      - agents/narada/narada_agent.py
+      - agents/chanakya/chanakya_agent.py
+      - agents/yudhishthira/yudhishthira_agent.py
+    mandatory_subagents:
+      - subagents/wf_100/wf_100_sub_agent.py
+      - subagents/cwf_110/cwf_110_sub_agent.py
+      - subagents/cwf_120/cwf_120_sub_agent.py
+      - subagents/cwf_130/cwf_130_sub_agent.py
+      - subagents/cwf_140/cwf_140_sub_agent.py
+    mandatory_skills:
+      - skills/topic_intelligence/M-001-global-trend-scanner.skill.md
+      - skills/topic_intelligence/M-002-topic-opportunity-miner.skill.md
+      - skills/topic_intelligence/M-008-topic-viability-scorer.skill.md
+      - skills/topic_intelligence/M-016-content-gap-finder.skill.md
+      - skills/system_intelligence/M-073-trend-prediction-engine.skill.md
+      - skills/system_intelligence/M-074-viral-opportunity-scanner.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-220-deep-research-agent.subskill.md
+      - skills/sub_skills/SS-221-source-credibility-evaluator.subskill.md
+      - skills/sub_skills/SS-222-fact-verification-engine.subskill.md
+      - skills/sub_skills/SS-223-knowledge-synthesizer.subskill.md
+      - skills/sub_skills/SS-224-contradiction-detector.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+      - runtime_contracts/RESEARCH_GATE_CONTRACT.md
+      - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+      - runtime_contracts/QUALITY_GATE_CONTRACT.md
+    mandatory_registries:
+      - registries/task_intent_registry.yaml
+      - registries/task_intent_routing_matrix.yaml
+      - registries/skill_registry_wf100.yaml
+    governance_directors:
+      - Chanakya
+      - Yudhishthira
+    required_output_blocks:
+      - ROUTE_ACTIVATION_PROOF
+      - TOPIC_QUALITY_GATE
+      - topic_options
+      - scores
+      - reason
+      - approval_gate
+      - DIRECTOR_CONSUMPTION_LEDGER
+      - SKILL_CONSUMPTION_LEDGER
+    pass_rules:
+      - At least one route selected before topic options.
+      - Topic scores disclose whether sources are fetched or estimated.
+      - Approval gate appears before downstream script generation.
+    fail_rules:
+      - no route selected
+      - no topic scores
+      - no consumption ledger
+      - source-backed claim without source evidence
+
+  - route_id: SCRIPT_GENERATION
+    route_name: Script Generation
+    trigger_terms:
+      - write script
+      - YouTube script
+      - Shorts script
+      - reel script
+      - voiceover script
+    mandatory_directors:
+      - name: Krishna
+        path: directors/supreme_vision/krishna.md
+      - name: Aruna
+        path: directors/kernel/aruna.md
+      - name: Vyasa
+        path: directors/research/vyasa.md
+      - name: Valmiki
+        path: directors/research/valmiki.md
+      - name: Saraswati
+        path: directors/distribution/saraswati.md
+      - name: Yama
+        path: directors/kernel/yama.md
+    mandatory_agents:
+      - agents/krishna/krishna_agent.py
+      - agents/aruna/aruna_agent.py
+      - agents/vyasa/vyasa_agent.py
+      - agents/valmiki/valmiki_agent.py
+      - agents/saraswati/saraswati_agent.py
+      - agents/yama/yama_agent.py
+    mandatory_subagents:
+      - subagents/wf_200/wf_200_sub_agent.py
+      - subagents/cwf_210/cwf_210_sub_agent.py
+      - subagents/cwf_220/cwf_220_sub_agent.py
+      - subagents/cwf_230/cwf_230_sub_agent.py
+      - subagents/cwf_240/cwf_240_sub_agent.py
+    mandatory_skills:
+      - skills/script_intelligence/S-201-hook-optimizer.skill.md
+      - skills/script_intelligence/S-202-first-draft-generation.skill.md
+      - skills/script_intelligence/S-203-retention-engineer.skill.md
+      - skills/script_intelligence/S-206-emotion-amplifier.skill.md
+      - skills/script_intelligence/S-208-governance-safety-checker.skill.md
+      - skills/script_intelligence/S-210-final-script-packager.skill.md
+      - skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
+      - skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+      - skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-230-content-angle-generator.subskill.md
+      - skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
+      - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+      - skills/sub_skills/SS-241-open-loop-generator.subskill.md
+      - skills/sub_skills/SS-242-story-tension-builder.subskill.md
+      - skills/sub_skills/SS-243-pacing-controller.subskill.md
+      - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+      - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+      - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+      - runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
+      - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+    mandatory_registries:
+      - registries/task_intent_routing_matrix.yaml
+      - registries/skill_registry_wf200.yaml
+      - registries/subskill_runtime_registry.yaml
+    governance_directors:
+      - Yama
+      - Saraswati
+    required_output_blocks:
+      - ROUTE_ACTIVATION_PROOF
+      - DIRECTOR_CONSUMPTION_LEDGER
+      - AGENT_CONSUMPTION_LEDGER
+      - SUBAGENT_CONSUMPTION_LEDGER
+      - SKILL_CONSUMPTION_LEDGER
+      - SUBSKILL_CONSUMPTION_LEDGER
+      - TOPIC_QUALITY_GATE
+      - HOOK_GENERATION_GATE
+      - SCRIPT_QUALITY_GATE
+      - LINE_BY_LINE_INFLUENCE_MAP
+      - FINAL_SCRIPT
+    pass_rules:
+      - 3 hook variants generated before final script.
+      - Script quality gate passes or rewrite is performed.
+      - Consumption ledgers appear before final script.
+    fail_rules:
+      - no task route selected
+      - no consumption ledger
+      - no 3 hook variants
+      - no quality scores
+      - no line-by-line influence map
+      - shallow repo routing only
+      - script generated before director/skill consumption
+
+  - route_id: SCRIPT_REFINEMENT
+    route_name: Script Refinement
+    trigger_terms:
+      - improve script
+      - refine script
+      - make it emotional
+      - make it viral
+      - make it cinematic
+      - rewrite
+    mandatory_directors:
+      - name: Vyasa
+        path: directors/research/vyasa.md
+      - name: Valmiki
+        path: directors/research/valmiki.md
+      - name: Saraswati
+        path: directors/distribution/saraswati.md
+      - name: Yama
+        path: directors/kernel/yama.md
+    mandatory_agents:
+      - agents/vyasa/vyasa_agent.py
+      - agents/valmiki/valmiki_agent.py
+      - agents/saraswati/saraswati_agent.py
+      - agents/yama/yama_agent.py
+    mandatory_subagents:
+      - subagents/cwf_220/cwf_220_sub_agent.py
+      - subagents/cwf_230/cwf_230_sub_agent.py
+      - subagents/cwf_240/cwf_240_sub_agent.py
+    mandatory_skills:
+      - skills/script_intelligence/S-203-hook-structure-audit.skill.md
+      - skills/script_intelligence/S-204-clarity-enhancer.skill.md
+      - skills/script_intelligence/S-206-clarity-retention-refinement.skill.md
+      - skills/script_intelligence/S-209-emotional-rhythm-tuning.skill.md
+      - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+      - skills/swarm_expansion/M-126-retention-repair-engine.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+      - skills/sub_skills/SS-242-story-tension-builder.subskill.md
+      - skills/sub_skills/SS-243-pacing-controller.subskill.md
+      - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+      - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+    mandatory_registries:
+      - registries/task_intent_routing_matrix.yaml
+      - registries/subskill_runtime_registry.yaml
+    governance_directors:
+      - Yama
+    required_output_blocks:
+      - ROUTE_ACTIVATION_PROOF
+      - consumption ledgers
+      - critique/debate
+      - rewrite decision
+      - SCRIPT_QUALITY_GATE
+    pass_rules:
+      - Existing script problems are diagnosed before rewrite.
+      - Rewrite changes cite consumed rules.
+    fail_rules:
+      - rewrite without critique
+      - no consumption ledger
+      - quality score missing
+
+  - route_id: CONTEXT_ENGINEERING
+    route_name: Context Engineering
+    trigger_terms:
+      - context engineering
+      - convert script to context
+      - production packet
+      - video generation prompt
+      - voice generation prompt
+      - avatar context
+      - image prompts
+      - edit plan
+    mandatory_directors:
+      - name: Brahma
+        path: directors/supreme_vision/brahma.md
+      - name: Vishwakarma
+        path: directors/production/vishwakarma.md
+      - name: Saraswati
+        path: directors/distribution/saraswati.md
+      - name: Nataraja
+        path: directors/cinematic/nataraja.md
+      - name: Varuna
+        path: directors/cinematic/varuna.md
+    mandatory_agents:
+      - agents/brahma/brahma_agent.py
+      - agents/vishwakarma/vishwakarma_agent.py
+      - agents/saraswati/saraswati_agent.py
+      - agents/nataraja/nataraja_agent.py
+      - agents/varuna/varuna_agent.py
+    mandatory_subagents:
+      - subagents/wf_300/wf_300_sub_agent.py
+      - subagents/cwf_310/cwf_310_sub_agent.py
+      - subagents/cwf_320/cwf_320_sub_agent.py
+      - subagents/wf_400/wf_400_sub_agent.py
+    mandatory_skills:
+      - skills/context_engineering/P-301-execution-context-engineer.skill.md
+      - skills/context_engineering/P-302-platform-format-specialist.skill.md
+      - skills/context_engineering/P-303-asset-brief-creator.skill.md
+      - skills/context_engineering/P-304-lineage-chain-validator.skill.md
+      - skills/context_engineering/P-305-context-packet-finalizer.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-001-context-packet-sanitizer.subskill.md
+      - skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md
+      - skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md
+      - skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md
+      - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+      - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+    mandatory_registries:
+      - registries/task_intent_routing_matrix.yaml
+      - registries/provider_registry.yaml
+    governance_directors:
+      - Yama
+      - Krishna
+    required_output_blocks:
+      - voice context
+      - image context
+      - video context
+      - edit context
+      - provider boundary
+      - lineage
+    pass_rules:
+      - Provider execution boundary is explicit.
+      - No media generation is claimed.
+    fail_rules:
+      - provider execution claim without approval
+      - missing context packet sections
+
+  - route_id: VOICE_CONTEXT
+    route_name: Voice and ElevenLabs Context
+    trigger_terms:
+      - ElevenLabs
+      - voice generation
+      - audio prompt
+      - SSML
+      - narration
+      - voice style
+    mandatory_directors:
+      - name: Saraswati
+        path: directors/distribution/saraswati.md
+      - name: Tumburu
+        path: directors/production/tumburu.md
+      - name: Varuna
+        path: directors/cinematic/varuna.md
+    mandatory_agents:
+      - agents/saraswati/saraswati_agent.py
+      - agents/tumburu/tumburu_agent.py
+      - agents/varuna/varuna_agent.py
+    mandatory_subagents:
+      - subagents/cwf_430/cwf_430_sub_agent.py
+      - subagents/wf_400/wf_400_sub_agent.py
+    mandatory_skills:
+      - skills/media_audio/M-231-voiceover-direction-script.skill.md
+      - skills/media_audio/M-238-compression-eq-specifications.skill.md
+      - skills/media_audio/M-240-audio-mixing-guide.skill.md
+      - skills/operations/M-162-voice-identity-cloner.skill.md
+      - skills/operations/M-163-speech-emotion-engine.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+    mandatory_registries:
+      - registries/provider_registry.yaml
+      - registries/subskill_runtime_registry.yaml
+    governance_directors:
+      - Yama
+    required_output_blocks:
+      - VOICE_GENERATION_CONTEXT
+      - SSML/emotion/prosody rules
+      - Provider Handoff Boundary
+    pass_rules:
+      - Voice context is generated without claiming provider execution.
+    fail_rules:
+      - audio generated claim without approval
+      - no SSML/prosody rules
+
+  - route_id: AVATAR_VIDEO_CONTEXT
+    route_name: Avatar and Video Context
+    trigger_terms:
+      - avatar
+      - HeyGen
+      - video generation
+      - Sora
+      - Seedance
+      - Higgsfield
+      - Kling
+      - Pika
+      - Runway
+      - visual scene
+      - cinematic prompt
+    mandatory_directors:
+      - name: Vishwakarma
+        path: directors/production/vishwakarma.md
+      - name: Nataraja
+        path: directors/cinematic/nataraja.md
+      - name: Brahma
+        path: directors/supreme_vision/brahma.md
+      - name: Maya
+        path: directors/production/maya.md
+      - name: Varuna
+        path: directors/cinematic/varuna.md
+    mandatory_agents:
+      - agents/vishwakarma/vishwakarma_agent.py
+      - agents/nataraja/nataraja_agent.py
+      - agents/brahma/brahma_agent.py
+      - agents/varuna/varuna_agent.py
+    mandatory_subagents:
+      - subagents/wf_400/wf_400_sub_agent.py
+      - subagents/cwf_410/cwf_410_sub_agent.py
+      - subagents/cwf_420/cwf_420_sub_agent.py
+      - subagents/cwf_440/cwf_440_sub_agent.py
+    mandatory_skills:
+      - skills/media_video/M-216-shot-list-generator.skill.md
+      - skills/media_video/M-217-b-roll-sourcing-strategy.skill.md
+      - skills/media_video/M-221-motion-graphics-storyboard.skill.md
+      - skills/media_video/M-229-video-performance-predictor.skill.md
+      - skills/operations/M-174-visual-asset-generator.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.subskill.md
+      - skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md
+      - skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md
+      - skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md
+      - skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+      - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+    mandatory_registries:
+      - registries/provider_registry.yaml
+      - registries/subskill_runtime_registry.yaml
+    governance_directors:
+      - Yama
+      - Nataraja
+    required_output_blocks:
+      - IMAGE_GENERATION_CONTEXT
+      - VIDEO_GENERATION_CONTEXT
+      - scene/gesture/facial/emotion rules
+      - Provider Handoff Boundary
+    pass_rules:
+      - Context is provider-ready but execution-disabled.
+    fail_rules:
+      - media artifact claim without execution approval
+      - missing scene/gesture/facial/emotion details
+
+  - route_id: EDITING_PACKAGING
+    route_name: Editing and Packaging
+    trigger_terms:
+      - edit plan
+      - captions
+      - thumbnail
+      - title
+      - description
+      - hashtags
+      - platform packaging
+    mandatory_directors:
+      - name: Garuda
+        path: directors/cinematic/garuda.md
+      - name: Agni
+        path: directors/production/agni.md
+      - name: Maya
+        path: directors/production/maya.md
+      - name: Saraswati
+        path: directors/distribution/saraswati.md
+    mandatory_agents:
+      - agents/garuda/garuda_agent.py
+      - agents/agni/agni_agent.py
+      - agents/saraswati/saraswati_agent.py
+    mandatory_subagents:
+      - subagents/wf_500/wf_500_sub_agent.py
+      - subagents/cwf_510/cwf_510_sub_agent.py
+      - subagents/cwf_520/cwf_520_sub_agent.py
+      - subagents/cwf_530/cwf_530_sub_agent.py
+    mandatory_skills:
+      - skills/media_video/M-218-video-editing-script.skill.md
+      - skills/media_video/M-223-pacing-rhythm-editor.skill.md
+      - skills/media_video/M-225-thumbnail-designer.skill.md
+      - skills/media_video/M-226-video-seo-optimizer.skill.md
+      - skills/media_video/M-227-captions-subtitle-generator.skill.md
+      - skills/media_video/M-230-platform-specific-video-adapter.skill.md
+      - skills/publishing/D-501-platform-metadata-generator.skill.md
+      - skills/publishing/D-502-seo-optimization-specialist.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-108-youtube-publish-oauth-guard.subskill.md
+      - skills/sub_skills/SS-234-platform-strategy-mapper.subskill.md
+      - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+      - runtime_contracts/QUALITY_GATE_CONTRACT.md
+      - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+    mandatory_registries:
+      - registries/skill_registry_wf500.yaml
+      - registries/provider_registry.yaml
+    governance_directors:
+      - Yama
+      - Garuda
+    required_output_blocks:
+      - EDITING_CONTEXT
+      - PLATFORM_PACKAGING
+      - thumbnail/title/description/hashtags
+      - quality gate
+    pass_rules:
+      - Packaging is platform-specific and scored.
+    fail_rules:
+      - no platform packaging
+      - publish/upload claim without approval
+
+  - route_id: FULL_VIDEO_PIPELINE
+    route_name: Full Video Pipeline
+    trigger_terms:
+      - make complete video
+      - full pipeline
+      - generate complete content package
+    mandatory_directors:
+      - name: Krishna
+        path: directors/supreme_vision/krishna.md
+      - name: Aruna
+        path: directors/kernel/aruna.md
+      - name: Narada
+        path: directors/strategy/narada.md
+      - name: Vyasa
+        path: directors/research/vyasa.md
+      - name: Valmiki
+        path: directors/research/valmiki.md
+      - name: Saraswati
+        path: directors/distribution/saraswati.md
+      - name: Brahma
+        path: directors/supreme_vision/brahma.md
+      - name: Vishwakarma
+        path: directors/production/vishwakarma.md
+      - name: Nataraja
+        path: directors/cinematic/nataraja.md
+      - name: Garuda
+        path: directors/cinematic/garuda.md
+      - name: Yama
+        path: directors/kernel/yama.md
+    mandatory_agents:
+      - agents/krishna/krishna_agent.py
+      - agents/aruna/aruna_agent.py
+      - agents/narada/narada_agent.py
+      - agents/vyasa/vyasa_agent.py
+      - agents/valmiki/valmiki_agent.py
+      - agents/saraswati/saraswati_agent.py
+      - agents/brahma/brahma_agent.py
+      - agents/vishwakarma/vishwakarma_agent.py
+      - agents/nataraja/nataraja_agent.py
+      - agents/garuda/garuda_agent.py
+      - agents/yama/yama_agent.py
+    mandatory_subagents:
+      - subagents/wf_010/wf_010_sub_agent.py
+      - subagents/wf_100/wf_100_sub_agent.py
+      - subagents/wf_200/wf_200_sub_agent.py
+      - subagents/wf_300/wf_300_sub_agent.py
+      - subagents/wf_400/wf_400_sub_agent.py
+      - subagents/wf_500/wf_500_sub_agent.py
+    mandatory_skills:
+      - .agents/skills/shadow-content-orchestration/SKILL.md
+      - .agents/skills/shadow-research-gate/SKILL.md
+      - .agents/skills/shadow-context-engineering/SKILL.md
+      - skills/operations/M-168-content-factory-controller.skill.md
+      - skills/operations/M-173-script-automation-engine.skill.md
+      - skills/operations/M-174-visual-asset-generator.skill.md
+      - skills/operations/M-175-video-assembly-engine.skill.md
+      - skills/operations/M-176-post-production-automation.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-001-context-packet-sanitizer.subskill.md
+      - skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md
+      - skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.subskill.md
+      - skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md
+      - skills/sub_skills/SS-108-youtube-publish-oauth-guard.subskill.md
+      - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+      - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+      - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+      - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+      - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+      - runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md
+    mandatory_registries:
+      - registries/task_intent_routing_matrix.yaml
+      - registries/workflow_registry.yaml
+      - registries/workflow_bindings.yaml
+      - registries/provider_registry.yaml
+    governance_directors:
+      - Krishna
+      - Aruna
+      - Yama
+      - Garuda
+    required_output_blocks:
+      - full route activation proof
+      - all consumption ledgers
+      - all content engineering sections
+      - human approval checkpoints
+      - provider boundary gate
+      - final verdict
+    pass_rules:
+      - All lanes planned.
+      - Human approval checkpoints are explicit.
+      - No provider/media execution occurs unless separately approved.
+    fail_rules:
+      - skipped lane without disclosure
+      - no approval checkpoints
+      - provider/media execution claim without approval

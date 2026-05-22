@@ -51,6 +51,26 @@ lineage_summary_present=true/false
 native_capability_routing_matrix_cited=true/false
 agent_runtime_selection_index_cited=true/false
 task_to_capability_routing_present=true/false
+task_intent_classified=true/false
+route_id=
+task_intent_routing_matrix_cited=true/false
+director_skill_consumption_protocol_read=true/false
+script_quality_enforcement_contract_read=true/false
+gumloop_benchmark_output_standard_read=true/false
+director_consumption_ledger_present=true/false
+agent_consumption_ledger_present=true/false
+subagent_consumption_ledger_present=true/false
+skill_consumption_ledger_present=true/false
+subskill_consumption_ledger_present=true/false
+line_by_line_influence_map_present=true/false
+topic_quality_gate_present=true/false
+hook_generation_gate_present=true/false
+hook_variants_count=
+script_quality_gate_present=true/false
+script_overall_score=
+script_pass_threshold=
+rewrite_performed_if_needed=true/false
+shallow_repo_routing_detected=true/false
 chat_only_mode_used=true/false
 files_created=false
 dossier_artifacts_created=false
@@ -146,6 +166,16 @@ limitations_disclosed=true/false
 - `native_capability_routing_matrix_cited=true`.
 - `agent_runtime_selection_index_cited=true` when agent layer is mandatory.
 - `task_to_capability_routing_present=true`.
+- `task_intent_classified=true`.
+- `route_id` is present.
+- `task_intent_routing_matrix_cited=true`.
+- `director_skill_consumption_protocol_read=true`.
+- `script_quality_enforcement_contract_read=true`.
+- `gumloop_benchmark_output_standard_read=true`.
+- Consumption ledgers are present for directors, agents, subagents, skills, and subskills.
+- `line_by_line_influence_map_present=true`.
+- For script/content tasks, topic quality gate, hook generation gate, and script quality gate are present.
+- For script/content tasks, `hook_variants_count` is at least 3.
 - For MAC-06.1A, `chat_only_mode_used=true`, `files_created=false`, and `dossier_artifacts_created=false`.
 - For content/script/video tasks, `content_engineering_contract_read=true` and all required content engineering sections are present.
 - Topic matches user request.
@@ -202,6 +232,14 @@ limitations_disclosed=true/false
 - PASS is impossible if `AGENTS.md` is not detected/read.
 - PASS is impossible if internet-first behavior occurred before repo routing.
 - PASS is impossible if `platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`.
+- PASS is impossible if no task route is selected.
+- PASS is impossible if `registries/task_intent_routing_matrix.yaml` is not cited.
+- PASS is impossible if no consumption ledger is present.
+- PASS is impossible if a script/content task has no 3 hook variants.
+- PASS is impossible if quality scores are missing.
+- PASS is impossible if line-by-line influence map is missing.
+- PASS is impossible if shallow repo routing only is detected.
+- PASS is impossible if script is generated before director/skill consumption.
 - Native auto-trigger test and bootstrap-required test are separate proof paths.
 - If native auto-trigger fails, do not declare native onboarding.
 - If bootstrap-required passes after native auto-trigger fails, classify the platform as `BOOTSTRAP_REQUIRED_COMPATIBLE` only.
@@ -230,6 +268,10 @@ limitations_disclosed=true/false
 - `AGENTS.md` is not detected/read.
 - Capability matrix or agent runtime selection index is not cited for mandatory layers.
 - `files_created=true` or `dossier_artifacts_created=true` in MAC-06.1A chat-only proof.
+- Task intent route is missing.
+- Any mandatory consumption ledger is missing.
+- Script quality gate is incomplete.
+- Hook variants are fewer than 3 but the output is not otherwise shallow/generic.
 
 ### `FAIL` Is Required If
 
@@ -243,3 +285,6 @@ limitations_disclosed=true/false
 - Capability claims are fabricated or contradictory to disclosed environment state.
 - Internet-first behavior appears before repo routing.
 - `web_access_used_before_repo_route=true`.
+- `SHALLOW_REPO_ROUTING_ONLY` is present.
+- `DIRECTOR_CONSUMPTION_LEDGER=NONE_SELECTED` or equivalent appears for a mandatory route.
+- Script output appears before director/skill consumption.

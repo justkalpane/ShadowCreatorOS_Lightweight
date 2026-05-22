@@ -50,6 +50,48 @@ Native onboarding requires either:
 
 Codex Cloud currently requires compatibility validation before onboarding.
 
+## TASK ROUTING + CONSUMPTION LAW
+
+Every task after `SHADOW_BOOT_CONFIRMATION` must be classified through:
+
+- `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+- `registries/task_intent_routing_matrix.yaml`
+
+Every selected director, agent, subagent, skill, and subskill must be consumed through:
+
+- `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+
+For script/content tasks, output must satisfy:
+
+- `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+- `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+- `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+
+Selecting is not enough.
+Citing is not enough.
+A script cannot be generated until consumption ledgers are complete.
+
+Required before final output:
+
+- `task_intent_classified=true`
+- `route_id=`
+- `task_intent_routing_matrix_cited=true`
+- `director_consumption_ledger_present=true`
+- `agent_consumption_ledger_present=true`
+- `subagent_consumption_ledger_present=true`
+- `skill_consumption_ledger_present=true`
+- `subskill_consumption_ledger_present=true`
+- `line_by_line_influence_map_present=true`
+- `topic_quality_gate_present=true`
+- `hook_generation_gate_present=true`
+- `hook_variants_count>=3`
+- `script_quality_gate_present=true`
+
+Shallow repo routing is `FAIL`.
+Generic output after bootstrap is `FAIL`.
+Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
+If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
+
 You are operating inside ShadowCreatorOS_Lightweight.
 
 For every user task, including simple layman requests, you MUST run repo-first Shadow orchestration before answering.
@@ -67,15 +109,22 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 4. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`.
 5. Read `AGENT_ANTI_DRIFT_RULES.md`.
 6. Read `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`.
-7. Read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`.
-8. Read `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`.
-9. Read `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`.
-10. Read `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`.
-11. Read `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`.
-12. Read `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`.
-13. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
-14. Read `registries/native_capability_routing_matrix.yaml`.
-15. Read `registries/agent_runtime_selection_index.yaml`.
+7. Read `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`.
+8. Read `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`.
+9. Read `registries/task_intent_routing_matrix.yaml`.
+10. Read `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`.
+11. Read `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`.
+12. Read `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`.
+13. Read `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`.
+14. Read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`.
+15. Read `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`.
+16. Read `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`.
+17. Read `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`.
+18. Read `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`.
+19. Read `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`.
+20. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
+21. Read `registries/native_capability_routing_matrix.yaml`.
+22. Read `registries/agent_runtime_selection_index.yaml`.
 
 Repo-relative paths are authoritative. Absolute Mac paths are `LOCAL_MAC_REFERENCE_ONLY`.
 

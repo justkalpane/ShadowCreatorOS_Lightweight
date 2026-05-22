@@ -19,15 +19,22 @@ Canonical boot order:
 4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
 5. `AGENT_ANTI_DRIFT_RULES.md`
 6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
-7. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
-8. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
-9. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
-10. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
-11. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
-12. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
-13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
-14. `registries/native_capability_routing_matrix.yaml`
-15. `registries/agent_runtime_selection_index.yaml`
+7. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
+8. `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+9. `registries/task_intent_routing_matrix.yaml`
+10. `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+11. `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+12. `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+13. `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`
+14. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+15. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+16. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+17. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+18. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+19. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+20. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+21. `registries/native_capability_routing_matrix.yaml`
+22. `registries/agent_runtime_selection_index.yaml`
 
 Mission:
 Operate Shadow Creator OS repo-first for this task:
@@ -137,6 +144,38 @@ Required output:
   - approval_required_for
   - missing_required_capabilities
   - gate_result
+- TASK_INTENT_ROUTING block:
+  - task_intent_classified=true/false
+  - route_id=
+  - task_intent_routing_matrix_path=registries/task_intent_routing_matrix.yaml
+  - task_intent_routing_matrix_cited=true/false
+  - mandatory_directors
+  - mandatory_agents
+  - mandatory_subagents
+  - mandatory_skills
+  - mandatory_subskills
+  - missing_route_evidence
+  - create_missing_registry_binding=true/false
+- DIRECTOR_SKILL_CONSUMPTION block:
+  - director_skill_consumption_protocol_read=true/false
+  - DIRECTOR_CONSUMPTION_LEDGER
+  - AGENT_CONSUMPTION_LEDGER
+  - SUBAGENT_CONSUMPTION_LEDGER
+  - SKILL_CONSUMPTION_LEDGER
+  - SUBSKILL_CONSUMPTION_LEDGER
+  - MISSED_REPO_RULES
+  - LINE_BY_LINE_INFLUENCE_MAP
+- SCRIPT_QUALITY_ENFORCEMENT block:
+  - script_quality_enforcement_contract_read=true/false
+  - gumloop_benchmark_output_standard_read=true/false
+  - TOPIC_QUALITY_GATE
+  - HOOK_GENERATION_GATE
+  - hook_variants_count=
+  - SCRIPT_QUALITY_GATE
+  - script_overall_score=
+  - script_pass_threshold=
+  - rewrite_performed_if_needed=true/false
+  - shallow_repo_routing_detected=true/false
 - AGENT_RUNTIME_SELECTION block:
   - agent_runtime_index_path=registries/agent_runtime_selection_index.yaml
   - selected_agents
@@ -176,6 +215,14 @@ Hard rules:
 - PASS is impossible if first visible output is not `SHADOW_BOOT_CONFIRMATION`
 - PASS is impossible if internet-first behavior occurred before repo routing
 - PASS is impossible if `platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- PASS is impossible if no task route is selected
+- PASS is impossible if `registries/task_intent_routing_matrix.yaml` is not cited
+- PASS is impossible if no consumption ledger is present
+- PASS is impossible if no 3 hook variants are present for script/content tasks
+- PASS is impossible if quality scores are missing
+- PASS is impossible if line-by-line influence map is missing
+- PASS is impossible if shallow repo routing only is detected
+- PASS is impossible if script is generated before director/skill consumption
 - If Test A fails but Test B passes, classify platform as `BOOTSTRAP_REQUIRED_COMPATIBLE`, not `NATIVE_AUTO_TRIGGER_COMPATIBLE`
 ```
 

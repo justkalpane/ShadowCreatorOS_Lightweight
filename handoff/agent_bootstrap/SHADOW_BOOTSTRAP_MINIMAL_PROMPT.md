@@ -1,5 +1,8 @@
 # Shadow Bootstrap Minimal Prompt
 
+Use `handoff/agent_bootstrap/SHADOW_BOOTSTRAP_OPERATING_MODE_PROMPT.md` for production.
+Use this minimal prompt only for quick compatibility checks.
+
 ```text
 SHADOW_BOOT
 

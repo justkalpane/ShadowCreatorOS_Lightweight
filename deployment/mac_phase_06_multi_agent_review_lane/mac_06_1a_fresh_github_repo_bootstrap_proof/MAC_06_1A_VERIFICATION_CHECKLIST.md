@@ -62,6 +62,27 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did output cite `registries/native_capability_routing_matrix.yaml`?
 - Did output cite `registries/agent_runtime_selection_index.yaml`?
 - Did output include `TASK_TO_CAPABILITY_ROUTING`?
+- Did output include `task_intent_classified=true`?
+- Did output include a non-empty `route_id`?
+- Did output cite `registries/task_intent_routing_matrix.yaml`?
+- Did output read `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`?
+- Did output read `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`?
+- Did output read `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`?
+- Is `DIRECTOR_CONSUMPTION_LEDGER` present and not `NONE_SELECTED`?
+- Is `AGENT_CONSUMPTION_LEDGER` present and not `NONE_SELECTED`?
+- Is `SUBAGENT_CONSUMPTION_LEDGER` present and not `NONE_SELECTED`?
+- Is `SKILL_CONSUMPTION_LEDGER` present and not `NONE_SELECTED`?
+- Is `SUBSKILL_CONSUMPTION_LEDGER` present and not `NONE_SELECTED`?
+- Is `LINE_BY_LINE_INFLUENCE_MAP` present?
+- Is `TOPIC_QUALITY_GATE` present?
+- Is `HOOK_GENERATION_GATE` present?
+- Are at least 3 hook variants present?
+- Is `SCRIPT_QUALITY_GATE` present?
+- Are `script_overall_score` and `script_pass_threshold` present?
+- If script score is below threshold, was rewrite performed before final?
+- Did output include `shallow_repo_routing_detected=false`?
+- Is shallow repo routing blocked from PASS?
+- Did script generation wait until director/skill consumption completed?
 - Did output include `NATIVE_AGENT_CAPABILITY_ASSESSMENT`?
 - Did output include `AGENT_RUNTIME_SELECTION`?
 - Did output avoid file creation and dossier artifacts?
@@ -101,6 +122,14 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - If `web_access_used_before_repo_route=true`, is verdict set to `FAIL`?
 - If `platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`, did the proof block onboarding?
 - A script, summary, advice, or web-sourced answer before `SHADOW_BOOT_CONFIRMATION` is `FAIL`.
+- No task route selected is `FAIL`.
+- Missing `registries/task_intent_routing_matrix.yaml` citation is `FAIL`.
+- No consumption ledger is `FAIL`.
+- No 3 hook variants for script/content task is `FAIL`.
+- No quality scores is `FAIL`.
+- No line-by-line influence map is `FAIL`.
+- Shallow repo routing only is `FAIL`.
+- Script generated before director/skill consumption is `FAIL`.
 
 ## Verdict
 

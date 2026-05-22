@@ -1,0 +1,60 @@
+# Validator Routing Consumption Proof
+
+VALIDATOR_ROUTING_CONSUMPTION_PROOF_STATUS=PASS
+
+validator_path=validators/validate_mac06_1a_output.py
+validator_line_count=382
+validator_compile_result=PASS
+
+## Checks Present
+
+task_intent_classified_check_present=true
+route_id_check_present=true
+task_intent_routing_matrix_cited_check_present=true
+director_consumption_ledger_check_present=true
+agent_consumption_ledger_check_present=true
+subagent_consumption_ledger_check_present=true
+skill_consumption_ledger_check_present=true
+subskill_consumption_ledger_check_present=true
+line_by_line_influence_map_check_present=true
+topic_quality_gate_check_present=true
+hook_generation_gate_check_present=true
+hook_variants_gte_3_check_present=true
+script_quality_gate_check_present=true
+script_overall_score_check_present=true
+script_pass_threshold_check_present=true
+shallow_repo_routing_detection_present=true
+shallow_repo_routing_detected_false_field_check_present=true
+script_before_consumption_detection_present=true
+
+## Fixture List
+
+- validators/fixtures/mac06_1a_fail_generic_output.txt
+- validators/fixtures/mac06_1a_fail_internet_first_before_repo.txt
+- validators/fixtures/mac06_1a_fail_no_shadow_boot_confirmation.txt
+- validators/fixtures/mac06_1a_fail_shallow_repo_routing_only.txt
+- validators/fixtures/mac06_1a_partial_missing_agent_index.txt
+- validators/fixtures/mac06_1a_partial_missing_content_engineering.txt
+- validators/fixtures/mac06_1a_partial_missing_skill_consumption.txt
+- validators/fixtures/mac06_1a_pass_bootstrap_consumed_quality_output.txt
+- validators/fixtures/mac06_1a_pass_minimal_complete.txt
+
+## Fixture Results
+
+mac06_1a_fail_generic_output expected=FAIL actual=FAIL result=OK
+mac06_1a_fail_internet_first_before_repo expected=FAIL actual=FAIL result=OK
+mac06_1a_fail_no_shadow_boot_confirmation expected=FAIL actual=FAIL result=OK
+mac06_1a_fail_shallow_repo_routing_only expected=FAIL actual=FAIL result=OK
+mac06_1a_partial_missing_agent_index expected=PARTIAL actual=PARTIAL result=OK
+mac06_1a_partial_missing_content_engineering expected=PARTIAL actual=PARTIAL result=OK
+mac06_1a_partial_missing_skill_consumption expected=PARTIAL actual=PARTIAL result=OK
+mac06_1a_pass_bootstrap_consumed_quality_output expected=PASS actual=PASS result=OK
+mac06_1a_pass_minimal_complete expected=PASS actual=PASS result=OK
+
+validator_fixtures_passed=true
+
+## Boundary
+
+No MAC-06.1A rerun was performed.
+No Test B rerun was performed.
+No n8n, provider, Gemini, OpenWebUI, media, commit, or push action was performed.

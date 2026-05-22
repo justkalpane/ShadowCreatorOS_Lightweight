@@ -29,6 +29,22 @@ REQUIRED_SECTIONS = [
     "Research Sufficiency Gate",
     "TASK_TO_CAPABILITY_ROUTING",
     "registries/native_capability_routing_matrix.yaml",
+    "task_intent_classified",
+    "route_id",
+    "registries/task_intent_routing_matrix.yaml",
+    "director_skill_consumption_protocol_read",
+    "script_quality_enforcement_contract_read",
+    "gumloop_benchmark_output_standard_read",
+    "DIRECTOR_CONSUMPTION_LEDGER",
+    "AGENT_CONSUMPTION_LEDGER",
+    "SUBAGENT_CONSUMPTION_LEDGER",
+    "SKILL_CONSUMPTION_LEDGER",
+    "SUBSKILL_CONSUMPTION_LEDGER",
+    "LINE_BY_LINE_INFLUENCE_MAP",
+    "TOPIC_QUALITY_GATE",
+    "HOOK_GENERATION_GATE",
+    "SCRIPT_QUALITY_GATE",
+    "shallow_repo_routing_detected",
     "Registry-First Route",
     "Director Selection",
     "AGENT_RUNTIME_SELECTION",
@@ -77,6 +93,22 @@ INTERNET_FIRST_MARKERS = [
     "internet_first_behavior_detected=true",
 ]
 
+SHALLOW_ROUTING_MARKERS = [
+    "SHALLOW_REPO_ROUTING_ONLY",
+    "DIRECTOR_CONSUMPTION_LEDGER=NONE_SELECTED",
+    "DIRECTOR_CONSUMPTION_LEDGER = NONE_SELECTED",
+    "AGENT_CONSUMPTION_LEDGER=NONE_SELECTED",
+    "AGENT_CONSUMPTION_LEDGER = NONE_SELECTED",
+    "SUBAGENT_CONSUMPTION_LEDGER=NONE_SELECTED",
+    "SUBAGENT_CONSUMPTION_LEDGER = NONE_SELECTED",
+    "SKILL_CONSUMPTION_LEDGER=NONE_SELECTED",
+    "SKILL_CONSUMPTION_LEDGER = NONE_SELECTED",
+    "SUBSKILL_CONSUMPTION_LEDGER=NONE_SELECTED",
+    "SUBSKILL_CONSUMPTION_LEDGER = NONE_SELECTED",
+    "skills_named_not_opened=true",
+    "skill_files_named_but_not_read=true",
+]
+
 GENERIC_OUTPUT_MARKERS = [
     "Here is a script",
     "Here's a script",
@@ -108,6 +140,23 @@ REQUIRED_TRUE_KEYS = [
     "agents_md_read",
     "repo_first_orchestration_started",
     "generic_direct_answer_avoided",
+    "task_intent_classified",
+    "task_intent_routing_matrix_cited",
+    "director_skill_consumption_protocol_read",
+    "script_quality_enforcement_contract_read",
+    "gumloop_benchmark_output_standard_read",
+    "director_consumption_ledger_present",
+    "agent_consumption_ledger_present",
+    "subagent_consumption_ledger_present",
+    "skill_consumption_ledger_present",
+    "subskill_consumption_ledger_present",
+    "line_by_line_influence_map_present",
+    "topic_quality_gate_present",
+    "hook_generation_gate_present",
+    "script_quality_gate_present",
+]
+REQUIRED_FALSE_KEYS = [
+    "shallow_repo_routing_detected",
 ]
 
 
@@ -141,6 +190,29 @@ def has_sources_before_repo_route(text: str) -> bool:
     return bool(re.search(r"(?im)^\s*(source_list|sources?)\s*[:=]\s*(https?://|\[?https?://)", before_route))
 
 
+def has_script_before_consumption_ledger(text: str) -> bool:
+    script_markers = ["FINAL_SCRIPT", "Final script", "final_script_created=true"]
+    ledger_markers = ["DIRECTOR_CONSUMPTION_LEDGER", "SKILL_CONSUMPTION_LEDGER"]
+    script_positions = [text.find(marker) for marker in script_markers if text.find(marker) >= 0]
+    ledger_positions = [text.find(marker) for marker in ledger_markers if text.find(marker) >= 0]
+    if not script_positions or not ledger_positions:
+        return False
+    return min(script_positions) < min(ledger_positions)
+
+
+def count_hook_variants(text: str) -> int:
+    explicit = find_key_value(text, "hook_variants_count")
+    if explicit and explicit.isdigit():
+        return int(explicit)
+    variants = set(re.findall(r"(?i)\bhook_variant[_ -]?([123])\b", text))
+    return len(variants)
+
+
+def missing_or_false(text: str, key: str) -> bool:
+    value = find_key_value(text, key)
+    return value is None or value.lower() != "true"
+
+
 def collect_invalid_research_modes(text: str) -> list[str]:
     modes = re.findall(r"(?im)^\s*[-*]?\s*`?research_mode`?\s*=\s*([A-Za-z0-9_]+)", text)
     return [mode for mode in modes if mode not in CANONICAL_RESEARCH_MODES]
@@ -168,13 +240,34 @@ def main() -> int:
     invalid_research_modes = collect_invalid_research_modes(text)
     false_claims = [claim for claim in FALSE_EXECUTION_CLAIMS if claim in text]
     internet_first_markers = [marker for marker in INTERNET_FIRST_MARKERS if marker in text]
+    shallow_routing_markers = [marker for marker in SHALLOW_ROUTING_MARKERS if marker in text]
     boot_signature_present = "SHADOW_BOOT_CONFIRMATION" in text
     content_before_boot_signature = has_content_before_boot_signature(text)
     sources_before_repo_route = has_sources_before_repo_route(text)
+    script_before_consumption_ledger = has_script_before_consumption_ledger(text)
+    hook_variant_count = count_hook_variants(text)
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
     index_missing = "registries/agent_runtime_selection_index.yaml" not in text
+    task_intent_matrix_missing = "registries/task_intent_routing_matrix.yaml" not in text
+    route_id_missing = find_key_value(text, "route_id") in {None, ""}
+    hook_variants_insufficient = hook_variant_count < 3
+    script_scores_missing = find_key_value(text, "script_overall_score") is None or find_key_value(text, "script_pass_threshold") is None
+    consumption_ledger_missing = any(
+        marker not in text
+        for marker in [
+            "DIRECTOR_CONSUMPTION_LEDGER",
+            "AGENT_CONSUMPTION_LEDGER",
+            "SUBAGENT_CONSUMPTION_LEDGER",
+            "SKILL_CONSUMPTION_LEDGER",
+            "SUBSKILL_CONSUMPTION_LEDGER",
+        ]
+    )
+    quality_gate_missing = any(
+        marker not in text
+        for marker in ["TOPIC_QUALITY_GATE", "HOOK_GENERATION_GATE", "SCRIPT_QUALITY_GATE"]
+    )
     files_created = re.search(r"(?im)^\s*[-*]?\s*`?files_created`?\s*=\s*true\b", text) is not None
     dossier_created = re.search(r"(?im)^\s*[-*]?\s*`?dossier_artifacts_created`?\s*=\s*true\b", text) is not None
     source_claim_without_list = (
@@ -189,6 +282,13 @@ def main() -> int:
             required_true_failures.append(f"{key}=MISSING")
         elif value.lower() != "true":
             required_true_failures.append(f"{key}={value}")
+    required_false_failures: list[str] = []
+    for key in REQUIRED_FALSE_KEYS:
+        value = find_key_value(text, key)
+        if value is None:
+            required_false_failures.append(f"{key}=MISSING")
+        elif value.lower() != "false":
+            required_false_failures.append(f"{key}={value}")
 
     shadow_mode = find_key_value(text, "shadow_mode")
     shadow_mode_invalid = shadow_mode not in {"CHAT_ONLY_MODE"}
@@ -202,6 +302,8 @@ def main() -> int:
         or content_before_boot_signature
         or internet_first_markers
         or sources_before_repo_route
+        or shallow_routing_markers
+        or script_before_consumption_ledger
     ):
         status = "FAIL"
     elif (
@@ -210,9 +312,16 @@ def main() -> int:
         or invalid_research_modes
         or matrix_missing
         or index_missing
+        or task_intent_matrix_missing
+        or route_id_missing
+        or hook_variants_insufficient
+        or script_scores_missing
+        or consumption_ledger_missing
+        or quality_gate_missing
         or files_created
         or dossier_created
         or required_true_failures
+        or required_false_failures
         or shadow_mode_invalid
     ):
         status = "PARTIAL"
@@ -235,16 +344,31 @@ def main() -> int:
     print(f"internet_first_marker_count={len(internet_first_markers)}")
     for item in internet_first_markers:
         print(f"internet_first_marker={item}")
+    print(f"shallow_repo_routing_marker_count={len(shallow_routing_markers)}")
+    for item in shallow_routing_markers:
+        print(f"shallow_repo_routing_marker={item}")
     print(f"sources_before_repo_route={str(sources_before_repo_route).lower()}")
+    print(f"script_before_consumption_ledger={str(script_before_consumption_ledger).lower()}")
     print(f"generic_output_detected={str(generic_detected).lower()}")
     print(f"shadow_boot_confirmation_present={str(boot_signature_present).lower()}")
     print(f"content_before_shadow_boot_confirmation={str(content_before_boot_signature).lower()}")
     print(f"required_true_field_failure_count={len(required_true_failures)}")
     for item in required_true_failures:
         print(f"required_true_field_failure={item}")
+    print(f"required_false_field_failure_count={len(required_false_failures)}")
+    for item in required_false_failures:
+        print(f"required_false_field_failure={item}")
     print(f"shadow_mode_chat_only={str(not shadow_mode_invalid).lower()}")
     print(f"capability_matrix_cited={str(not matrix_missing).lower()}")
     print(f"agent_runtime_selection_index_cited={str(not index_missing).lower()}")
+    print(f"task_intent_routing_matrix_cited={str(not task_intent_matrix_missing).lower()}")
+    print(f"route_id_present={str(not route_id_missing).lower()}")
+    print(f"consumption_ledgers_present={str(not consumption_ledger_missing).lower()}")
+    print(f"topic_quality_gate_present={str('TOPIC_QUALITY_GATE' in text).lower()}")
+    print(f"hook_generation_gate_present={str('HOOK_GENERATION_GATE' in text).lower()}")
+    print(f"hook_variants_count={hook_variant_count}")
+    print(f"script_quality_gate_present={str('SCRIPT_QUALITY_GATE' in text).lower()}")
+    print(f"script_scores_present={str(not script_scores_missing).lower()}")
     print(f"files_created_in_chat_only={str(files_created).lower()}")
     print(f"dossier_artifacts_created_in_chat_only={str(dossier_created).lower()}")
     print(f"source_claim_without_source_list={str(source_claim_without_list).lower()}")

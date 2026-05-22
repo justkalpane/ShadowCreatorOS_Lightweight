@@ -28,7 +28,16 @@ The agent receives:
 - It creates a Shadow Mission Packet.
 - It loads repo context.
 - It routes registry-first.
+- It classifies task intent using `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`.
+- It selects `route_id` from `registries/task_intent_routing_matrix.yaml`.
+- It reads `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`.
+- It reads `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`.
+- It reads `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`.
 - It selects directors, agents, subagents, skills, and subskills with real evidence paths.
+- It includes director, agent, subagent, skill, and subskill consumption ledgers.
+- It includes `MISSED_REPO_RULES` and `LINE_BY_LINE_INFLUENCE_MAP`.
+- For script/content tasks, it includes topic quality gate, 3 hook variants, hook generation gate, script quality gate, and rewrite if needed.
+- It reports `shallow_repo_routing_detected=false`.
 - It assesses tools/connectors/plugins honestly as `ACTIVE`, `PLANNED`, `NOT_ACTIVE`, or `NEEDS_CONFIRMATION`.
 - It produces research, script, debate, critique, final script, and context engineering packet.
 - It runs a quality gate.
@@ -38,6 +47,19 @@ The agent receives:
 ## Fail-Fast Rule
 
 If a plain content task returns any final answer/script/summary/outline/advice before `SHADOW_BOOT_CONFIRMATION`, classify `FAIL`.
+
+If a script/content task routes shallowly by naming directors or skills without reading and consuming their files, classify `FAIL`.
+
+PASS is impossible if:
+
+- no task route is selected
+- `registries/task_intent_routing_matrix.yaml` is not cited
+- no consumption ledger is present
+- no 3 hook variants are present for script/content tasks
+- no quality scores are present
+- no line-by-line influence map is present
+- shallow repo routing only is detected
+- script is generated before director/skill consumption
 
 ## Environment Compatibility Split
 

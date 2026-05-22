@@ -26,6 +26,48 @@ Native onboarding requires either:
 
 Codex Cloud currently requires compatibility validation before onboarding.
 
+## TASK ROUTING + CONSUMPTION LAW
+
+Every task after `SHADOW_BOOT_CONFIRMATION` must be classified through:
+
+- `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+- `registries/task_intent_routing_matrix.yaml`
+
+Every selected director, agent, subagent, skill, and subskill must be consumed through:
+
+- `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+
+For script/content tasks, output must satisfy:
+
+- `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+- `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+- `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+
+Selecting is not enough.
+Citing is not enough.
+A script cannot be generated until consumption ledgers are complete.
+
+Required before final output:
+
+- `task_intent_classified=true`
+- `route_id=`
+- `task_intent_routing_matrix_cited=true`
+- `director_consumption_ledger_present=true`
+- `agent_consumption_ledger_present=true`
+- `subagent_consumption_ledger_present=true`
+- `skill_consumption_ledger_present=true`
+- `subskill_consumption_ledger_present=true`
+- `line_by_line_influence_map_present=true`
+- `topic_quality_gate_present=true`
+- `hook_generation_gate_present=true`
+- `hook_variants_count>=3`
+- `script_quality_gate_present=true`
+
+Shallow repo routing is `FAIL`.
+Generic output after bootstrap is `FAIL`.
+Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
+If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
+
 ## Rule 1: No Generic Chatbot Mode
 
 - Do not answer with broad generic advice when production artifacts are requested.
@@ -42,15 +84,21 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac r
 5. `AGENT_ANTI_DRIFT_RULES.md`
 6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
 7. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
-8. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
-9. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
-10. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
-11. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
-12. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
-13. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
-14. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
-15. `registries/native_capability_routing_matrix.yaml`
-16. `registries/agent_runtime_selection_index.yaml`
+8. `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+9. `registries/task_intent_routing_matrix.yaml`
+10. `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+11. `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+12. `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+13. `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`
+14. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+15. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+16. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+17. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+18. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+19. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+20. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+21. `registries/native_capability_routing_matrix.yaml`
+22. `registries/agent_runtime_selection_index.yaml`
 
 ## CURRENT LIGHTWEIGHT OUTPUT LAW
 

@@ -40,13 +40,13 @@ TOPIC_QUALITY_GATE
 topic_quality_gate_present=true
 HOOK_GENERATION_GATE
 hook_generation_gate_present=true
-hook_variant_1=Open with the creator chasing tools.
-hook_variant_2=Open with the system missing.
-hook_variant_3=Open with the output failure.
+hook_variant_1=The tool was not the problem.
+hook_variant_2=The creator had apps, not a system.
+hook_variant_3=Every new AI tool exposed the same broken workflow.
 hook_variants_count=3
 SCRIPT_QUALITY_GATE
 script_quality_gate_present=true
-script_overall_score=8.6
+script_overall_score=8.9
 script_pass_threshold=8.0
 rewrite_performed_if_needed=true
 shallow_repo_routing_detected=false

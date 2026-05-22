@@ -58,6 +58,48 @@ Native onboarding requires either:
 
 Codex Cloud currently requires compatibility validation before onboarding.
 
+## TASK ROUTING + CONSUMPTION LAW
+
+Every task after `SHADOW_BOOT_CONFIRMATION` must be classified through:
+
+- `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+- `registries/task_intent_routing_matrix.yaml`
+
+Every selected director, agent, subagent, skill, and subskill must be consumed through:
+
+- `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+
+For script/content tasks, output must satisfy:
+
+- `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+- `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+- `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+
+Selecting is not enough.
+Citing is not enough.
+A script cannot be generated until consumption ledgers are complete.
+
+Required before final output:
+
+- `task_intent_classified=true`
+- `route_id=`
+- `task_intent_routing_matrix_cited=true`
+- `director_consumption_ledger_present=true`
+- `agent_consumption_ledger_present=true`
+- `subagent_consumption_ledger_present=true`
+- `skill_consumption_ledger_present=true`
+- `subskill_consumption_ledger_present=true`
+- `line_by_line_influence_map_present=true`
+- `topic_quality_gate_present=true`
+- `hook_generation_gate_present=true`
+- `hook_variants_count>=3`
+- `script_quality_gate_present=true`
+
+Shallow repo routing is `FAIL`.
+Generic output after bootstrap is `FAIL`.
+Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
+If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
+
 ## Startup Instruction
 
 You are operating the Shadow Creator OS lightweight production repository.

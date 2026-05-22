@@ -12,10 +12,10 @@ boot_signature_fixture_created=true
 boot_signature_fixture_test_passed=true
 all_validator_fixtures_passed=true
 
-commit_created=false
-commit_hash=
-push_success=false
-git_status_after=DIRTY_UNCOMMITTED_PATCH
+commit_created=true
+commit_hash=344db5b33723e6636bfb70567ed59f309860a081
+push_success=true
+git_status_after=CLEAN
 
 n8n_started=false
 providers_called=false
@@ -24,8 +24,8 @@ openwebui_used=false
 media_artifacts_created=false
 dossier_4_started=false
 
-safe_to_rerun_MAC_06_1A=false
+safe_to_rerun_MAC_06_1A=true
 safe_to_declare_lightweight_os_onboarded=false
 safe_to_start_n8n_execution_bus=false
 
-NEXT_ACTION=Commit and push this validated hardening patch, then run fresh Codex Cloud MAC-06.1A layman proof.
+NEXT_ACTION=Run a fresh Codex Cloud MAC-06.1A plain layman test and require SHADOW_BOOT_CONFIRMATION as the first visible output.

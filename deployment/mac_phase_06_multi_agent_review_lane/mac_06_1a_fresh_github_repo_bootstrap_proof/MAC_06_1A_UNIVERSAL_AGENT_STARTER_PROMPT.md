@@ -25,6 +25,8 @@ Output mode:
 - Create full dossier only if user explicitly requests `FULL_DOSSIER_ARCHIVE_MODE`.
 
 Required output:
+- AGENTS.md detection/read confirmation
+- Layman task trigger confirmation
 - Shadow Mission Packet
 - Repo Context Loader summary
 - Registry-first route summary
@@ -110,6 +112,12 @@ Hard rules:
 - if claiming real-time sources, include source list
 - if no source list, set real_time_sources_used=false
 - include TOOLS_CONNECTORS_PLUGINS_ASSESSMENT with runtime statuses
+- generic direct answer is forbidden
+- content/script/video tasks must include the Content Engineering Output Contract
+- script-only output is PARTIAL unless user explicitly requested script-only
+- invalid gate statuses cause PARTIAL or FAIL
+- if capability matrix or agent runtime index is not cited, status cannot be PASS
+- if media/context engineering handoff is missing, status cannot be PASS for video/script tasks
 ```
 
 ## MAC-06.1B Governance Addendum
@@ -119,3 +127,7 @@ Hard rules:
 - Full dossier mode requires explicit user approval.
 - Chat output must include approval gate blocks and blocker visibility.
 - User approval is required before file creation, full dossier creation, commit, push, or provider handoff.
+
+## Always-On Trigger Addendum
+
+MAC-06.1A must prove that normal layman task language triggers Shadow OS orchestration. If the output answers directly before repo routing, classify as `FAIL`.

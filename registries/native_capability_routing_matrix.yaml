@@ -31,13 +31,13 @@ task_families:
 
   - task_family: script_generation
     default_mode: CHAT_ONLY_MODE
-    required_capabilities: [repo_read, reasoning]
-    optional_capabilities: [web_search]
-    forbidden_by_default: [provider_api, n8n_execution_bus]
-    approval_required_for: [web_search]
+    required_capabilities: [repo_read, reasoning, registry_lookup, agent_runtime_index_lookup, skill_registry_lookup, subskill_registry_lookup, native_capability_assessment, tools_connectors_plugins_assessment, source_research_gate, content_engineering_contract]
+    optional_capabilities: [web_search, web_fetch]
+    forbidden_by_default: [n8n_execution, provider_api, media_generation, commit_push]
+    approval_required_for: [web_search, web_fetch, repo_write, commit_push, provider_handoff, n8n_handoff]
     source_research_required_when: "script depends on current facts"
     output_mode: chat
-    notes: "Registry-first routing is mandatory."
+    notes: "Registry-first routing and content engineering output are mandatory unless user requests script-only."
 
   - task_family: script_debate
     default_mode: CHAT_ONLY_MODE
@@ -61,13 +61,13 @@ task_families:
 
   - task_family: context_engineering_packet
     default_mode: CHAT_ONLY_MODE
-    required_capabilities: [repo_read, reasoning]
-    optional_capabilities: [repo_write]
-    forbidden_by_default: [provider_api, n8n_execution_bus]
-    approval_required_for: [repo_write]
+    required_capabilities: [repo_read, reasoning, registry_lookup, agent_runtime_index_lookup, skill_registry_lookup, subskill_registry_lookup, native_capability_assessment, tools_connectors_plugins_assessment, source_research_gate, content_engineering_contract]
+    optional_capabilities: [repo_write, web_search, web_fetch]
+    forbidden_by_default: [n8n_execution, provider_api, media_generation, commit_push]
+    approval_required_for: [repo_write, web_search, web_fetch, commit_push, provider_handoff, n8n_handoff]
     source_research_required_when: "packet depends on live platform changes"
     output_mode: chat_or_consolidated_file
-    notes: "In chat-only mode, summary packet is acceptable."
+    notes: "In chat-only mode, context engineering must include voice, visual, image, video, music/SFX, editing, captions, packaging, and provider boundary."
 
   - task_family: provider_handoff_packet
     default_mode: CHAT_ONLY_MODE

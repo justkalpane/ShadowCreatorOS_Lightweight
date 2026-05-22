@@ -6,10 +6,11 @@ Repo root: `/Users/apple/Documents/ShadowCreatorOS_Lightweight`
 
 ## Phase A: Startup Doctrine
 
-1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/START_HERE_FOR_AGENTS.md`
-2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_STARTUP_PROMPT.md`
-3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
-4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_ANTI_DRIFT_RULES.md`
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENTS.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/START_HERE_FOR_AGENTS.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_STARTUP_PROMPT.md`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
+5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_ANTI_DRIFT_RULES.md`
 
 ## Phase B: Core Runtime Context
 
@@ -42,7 +43,7 @@ Repo root: `/Users/apple/Documents/ShadowCreatorOS_Lightweight`
 
 ## Phase E: Mission Execution Rule
 
-For each production mission, output one dossier containing:
+For approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit MAC-05 production dossier mode only, output one dossier containing:
 
 - `mission.md`
 - `mission_context.json`
@@ -139,6 +140,16 @@ Use these to bind task routing to actual environment capabilities:
 4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
 5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/registries/native_capability_routing_matrix.yaml`
 
+## Phase M: Always-On Task Trigger and Content Engineering
+
+Use these for normal layman content/script/video tasks:
+
+1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+2. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+3. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/.agents/skills/shadow-content-orchestration/SKILL.md`
+4. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/.agents/skills/shadow-research-gate/SKILL.md`
+5. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/.agents/skills/shadow-context-engineering/SKILL.md`
+
 ## CURRENT LIGHTWEIGHT OUTPUT MODE OVERRIDE
 
 - `CHAT_ONLY_MODE` is default for normal user tasks.
@@ -148,3 +159,14 @@ Use these to bind task routing to actual environment capabilities:
 - Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 - Do not create dossier artifacts for MAC-06.1A chat-only proof.
 - Do not create file sprawl by default.
+
+## ALWAYS-ON SHADOW ORCHESTRATION TRIGGER
+
+- Normal user task language must still trigger repo-first Shadow OS.
+- Do not wait for the user to say `use repo`.
+- Do not wait for the user to provide the repo URL if this repo is already attached.
+- Do not answer from general model knowledge first.
+- For content tasks, script alone is insufficient.
+- Content tasks must include content engineering output unless user asks for script-only.
+- Realtime/source-aware research must be used when current facts are required.
+- If web access is unavailable, disclose the limitation and gate.

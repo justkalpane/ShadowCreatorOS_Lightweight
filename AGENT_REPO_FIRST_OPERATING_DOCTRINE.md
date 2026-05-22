@@ -15,7 +15,7 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 
 - GitHub repo is the constitution/brain.
 - Coding agents are the reasoning/runtime operators.
-- Dossier artifacts are the production truth.
+- Chat output is the live product surface by default; dossier artifacts are production truth only in explicit archive/production dossier mode.
 - n8n and providers are deferred execution layers, not intelligence prerequisites.
 
 ## Active Production Loop (MAC-05)
@@ -41,7 +41,7 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 - Read repo first and obey `main` branch doctrine.
 - Follow runtime contracts in `runtime_contracts/`.
 - Use registry-backed selections only.
-- Build dossier outputs exactly to contract.
+- Build chat, consolidated, or dossier outputs exactly to the active output-mode contract.
 - Validate JSON packet files before commit.
 - Stop on drift, missing evidence, or invalid packets.
 
@@ -83,12 +83,12 @@ The lightweight OS must be usable by one capable repo-aware agent. A user should
 - Single-agent operation is the primary product path.
 - Multi-agent review/reasoning is an optional quality lane.
 - Chat-only agents can produce Shadow Mission Packets and output bundles.
-- Repo-write agents can create dossier files under MAC-05 contracts.
+- Repo-write agents create one consolidated output file by default after approval; dossier files require explicit full dossier mode.
 - n8n and providers remain future external execution layers.
 
 ## Fresh GitHub Repo Bootstrap Proof
 
-Portable operation is proven when a fresh agent receives the GitHub repo on branch `main`, reads `START_HERE_FOR_AGENTS.md`, follows `AGENT_READ_ORDER.md`, performs registry-first selection, and returns a complete Shadow output packet or repo dossier without relying on old chat memory.
+Portable operation is proven when a fresh agent receives the GitHub repo on branch `main`, reads `START_HERE_FOR_AGENTS.md`, follows `AGENT_READ_ORDER.md`, performs registry-first selection, and returns a complete Shadow output packet without relying on old chat memory. Repo files are created only after explicit approval.
 
 The agent must not use internet-first behavior before repo context. It must not execute n8n, providers, media, Gemini API, OpenWebUI, or old runtime by default.
 
@@ -144,3 +144,14 @@ Default lightweight behavior must avoid file-sprawl.
 - Normal tasks must not create files by default.
 - Registry-first routing must still happen in chat-only mode.
 - Every output must include research mode, source disclosure, native capability assessment, tools/connectors/plugins assessment, quality gate, and lineage summary.
+
+## ALWAYS-ON SHADOW ORCHESTRATION TRIGGER
+
+- Normal user task language must still trigger repo-first Shadow OS.
+- Do not wait for the user to say `use repo`.
+- Do not wait for the user to provide the repo URL if this repo is already attached.
+- Do not answer from general model knowledge first.
+- For content tasks, script alone is insufficient.
+- Content tasks must include content engineering output unless user asks for script-only.
+- Realtime/source-aware research must be used when current facts are required.
+- If web access is unavailable, disclose the limitation and gate.

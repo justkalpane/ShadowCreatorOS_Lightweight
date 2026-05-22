@@ -19,7 +19,7 @@ This repo is the active production path for repo-first intelligence work. The ol
 3. Use registry-first selection for directors/agents/subagents/skills/subskills.
 4. Never invent missing items; mark `NEEDS_CONFIRMATION`.
 5. Use output mode contracts: default chat-only, approved consolidated repo-write by default, and full dossier only when explicitly requested.
-6. Enforce quality gate and lineage on every production dossier.
+6. Enforce quality gate and lineage on every output.
 7. Commit only after user review approval.
 
 ## Hard Boundaries (Default)
@@ -33,14 +33,14 @@ This repo is the active production path for repo-first intelligence work. The ol
 
 ## Deliverable Standard
 
-No generic chatbot output. Every mission must yield grounded, contract-compliant dossier artifacts with JSON validity, quality-gate evidence, and truthful lineage.
+No generic chatbot output. Every mission must yield grounded, contract-compliant chat output by default, with quality-gate evidence and truthful lineage. Dossier artifacts are explicit-only.
 
 ## Universal Single-Agent Operation
 
 The primary operating model is one capable repo-aware agent plus the repo brain. Codex is a proven runtime, but not the only valid runtime.
 
 - Chat-only agents may return complete Shadow output packets.
-- Repo-write agents may create dossier artifacts.
+- Repo-write agents create one consolidated output file by default after approval.
 - Multi-agent review is optional and preserved for quality improvement.
 - n8n/provider execution remains deferred until explicitly approved.
 
@@ -48,7 +48,7 @@ The primary operating model is one capable repo-aware agent plus the repo brain.
 
 When operating from a fresh chat or agent session, start with GitHub `main`, read `START_HERE_FOR_AGENTS.md`, then follow `AGENT_READ_ORDER.md`.
 
-Do not begin with internet-first behavior. Load repo doctrine, registries, contracts, directors, agents, skills, and subskills first. Produce chat-only packets when no filesystem access exists; produce dossier files only when repo-write access exists and the active contract allows it.
+Do not begin with internet-first behavior. Load repo doctrine, registries, contracts, directors, agents, skills, and subskills first. Produce chat-only packets by default; create repo files only after explicit approval.
 
 ## Output Consolidation and Chat Approval Gates
 
@@ -97,3 +97,14 @@ Do not begin with internet-first behavior. Load repo doctrine, registries, contr
 - Any older instruction saying `create one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 - Do not create dossier artifacts for MAC-06.1A chat-only proof.
 - Do not create file sprawl by default.
+
+## ALWAYS-ON SHADOW ORCHESTRATION TRIGGER
+
+- Normal user task language must still trigger repo-first Shadow OS.
+- Do not wait for the user to say `use repo`.
+- Do not wait for the user to provide the repo URL if this repo is already attached.
+- Do not answer from general model knowledge first.
+- For content tasks, script alone is insufficient.
+- Content tasks must include content engineering output unless user asks for script-only.
+- Realtime/source-aware research must be used when current facts are required.
+- If web access is unavailable, disclose the limitation and gate.

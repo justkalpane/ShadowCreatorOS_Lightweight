@@ -4,6 +4,8 @@ The returned proof output must include these fields.
 
 ```text
 repo_loaded=true/false
+agents_md_detected=true/false
+agents_md_read=true/false
 branch_used=main
 start_here_read=true/false
 agent_read_order_followed=true/false
@@ -73,6 +75,12 @@ agent_layer_status=PROVEN_WITH_ACTIVE_INDEX/PARTIAL_NEEDS_INDEX/NEEDS_CONFIRMATI
 chat_only_mode_used=true/false
 files_created=false
 dossier_artifacts_created=false
+layman_task_trigger_verified=true/false
+generic_direct_answer_detected=true/false
+content_engineering_contract_present=true/false
+script_only_output_detected=true/false
+invalid_gate_status_detected=true/false
+media_context_engineering_present=true/false
 repo_read=true/false
 repo_write=true/false
 shell_available=true/false
@@ -125,6 +133,10 @@ limitations_disclosed=true/false
 - `agent_runtime_selection_index_cited=true` when agent layer is mandatory.
 - `chat_only_mode_used=true` and `files_created=false` for MAC-06.1A.
 - Output does not follow old dossier-first behavior.
+- `AGENTS.md` is detected/read.
+- Layman task trigger is verified.
+- Content tasks include `CONTENT_ENGINEERING_OUTPUT_CONTRACT` sections unless user explicitly asks script-only.
+- For video/script tasks, media context engineering handoff is present.
 - Final proof status matches weakest required evidence layer.
 - No false n8n/provider/media claims.
 
@@ -141,6 +153,9 @@ limitations_disclosed=true/false
 - Native capability assessment block is missing.
 - Task-to-capability routing block is missing.
 - Capability matrix or runtime index citation is missing for mandatory layers.
+- Generic direct answer appears before repo routing.
+- Invalid gate statuses appear.
+- Script-only output appears for a video/content task when user did not request script-only.
 
 ### `FAIL` Is Required If
 

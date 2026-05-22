@@ -4,6 +4,9 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 
 ## Checks
 
+- Did the new agent detect/read `AGENTS.md`?
+- Did a layman task trigger repo-first orchestration without the user saying `use repo`?
+- Did the output avoid generic direct answer behavior?
 - Did the new agent use GitHub repo `main`?
 - Did it read `START_HERE_FOR_AGENTS.md`?
 - Did it follow `AGENT_READ_ORDER.md`?
@@ -52,6 +55,11 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did output avoid file creation and dossier artifacts?
 - Did output use chat-only mode?
 - Did output avoid old dossier-first behavior?
+- Did a content/script/video task include the Content Engineering Output Contract?
+- If output is script-only, did the user explicitly request script-only?
+- Are invalid gate statuses absent?
+- If capability matrix or agent runtime index is not cited, is final status blocked from PASS?
+- If context engineering media handoff is missing, is video/script task status blocked from PASS?
 
 ## Verdict
 

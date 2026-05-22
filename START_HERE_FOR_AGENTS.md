@@ -4,11 +4,12 @@ If you are a coding agent working in this repository, start here before any prod
 
 ## Mandatory Startup Steps
 
-1. Read `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_STARTUP_PROMPT.md`
-2. Read `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_READ_ORDER.md`
-3. Operate on branch `main`
-4. Follow MAC-05 repo-first operating loop
-5. Enforce quality gate and lineage for every production dossier
+1. Read `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENTS.md`
+2. Read `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_STARTUP_PROMPT.md`
+3. Read `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENT_READ_ORDER.md`
+4. Operate on branch `main`
+5. Follow repo-first Shadow orchestration before answering
+6. Enforce quality gate and lineage for every output
 
 ## Hard Boundaries
 
@@ -40,7 +41,7 @@ Future agents should read historical source docs when deeper background is neede
 One capable repo-aware agent can operate the intelligence layer alone. Multi-agent review is optional quality enhancement, not mandatory for basic operation.
 
 - Chat-only agents can return complete Shadow Mission Packet and output bundles.
-- Repo-write agents can create dossier files and validation reports.
+- Repo-write agents create one consolidated output file by default after approval; dossier files require explicit full dossier mode.
 - n8n/provider layers remain deferred external execution infrastructure.
 - Do not force users to install every agent before operating the lightweight OS.
 
@@ -51,7 +52,7 @@ Future agents must start from GitHub repo `main` and read this file before doing
 - Start with `START_HERE_FOR_AGENTS.md`.
 - Follow `AGENT_READ_ORDER.md`.
 - Use registry-first selection with evidence paths.
-- Produce either a chat-only Shadow output packet or repo dossier files, depending on access.
+- Produce a chat-only Shadow output packet by default. Create repo files only after explicit approval.
 - Do not execute n8n/providers/media by default.
 
 ## Output Consolidation and Chat Approval Gates
@@ -125,3 +126,14 @@ If any document conflicts, apply this order:
 10. Historical handoff docs are reference only
 
 Do not follow older dossier-first text for normal chat tasks.
+
+## ALWAYS-ON SHADOW ORCHESTRATION TRIGGER
+
+- Normal user task language must still trigger repo-first Shadow OS.
+- Do not wait for the user to say `use repo`.
+- Do not wait for the user to provide the repo URL if this repo is already attached.
+- Do not answer from general model knowledge first.
+- For content tasks, script alone is insufficient.
+- Content tasks must include content engineering output unless user asks for script-only.
+- Realtime/source-aware research must be used when current facts are required.
+- If web access is unavailable, disclose the limitation and gate.

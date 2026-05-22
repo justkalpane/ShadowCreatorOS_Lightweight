@@ -4,10 +4,14 @@ The returned proof output must include these fields.
 
 ```text
 repo_loaded=true/false
+shadow_boot_confirmation_present=true/false
+first_visible_output_is_boot_confirmation=true/false
 agents_md_detected=true/false
 agents_md_read=true/false
+repo_first_orchestration_started=true/false
 layman_task_trigger_contract_read=true/false
 generic_direct_answer_avoided=true/false
+shadow_mode=CHAT_ONLY_MODE
 branch_used=main
 start_here_read=true/false
 agent_read_order_followed=true/false
@@ -127,7 +131,10 @@ limitations_disclosed=true/false
 
 ### `PASS` Requires
 
+- `shadow_boot_confirmation_present=true`.
+- `first_visible_output_is_boot_confirmation=true`.
 - `agents_md_detected=true` and `agents_md_read=true`.
+- `repo_first_orchestration_started=true`.
 - `layman_task_trigger_contract_read=true`.
 - `generic_direct_answer_avoided=true`.
 - `native_capability_routing_matrix_cited=true`.
@@ -183,6 +190,7 @@ limitations_disclosed=true/false
 - No false n8n/provider/media claims.
 - PASS is impossible if generic direct answer occurs.
 - PASS is impossible if old dossier-first behavior is followed.
+- PASS is impossible if any final answer/script/summary/outline/advice appears before `SHADOW_BOOT_CONFIRMATION`.
 
 ### `PARTIAL` Is Required If
 
@@ -210,6 +218,8 @@ limitations_disclosed=true/false
 - Invented components are detected.
 - Execution claims are false.
 - Output is generic and not registry-first.
+- `SHADOW_BOOT_CONFIRMATION` is missing.
+- Any final answer/script/summary/outline/advice appears before `SHADOW_BOOT_CONFIRMATION`.
 - Required proof sections are missing.
 - `real_time_sources_used=true` but source list is missing.
 - Capability claims are fabricated or contradictory to disclosed environment state.

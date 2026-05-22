@@ -1,5 +1,29 @@
 # Shadow Creator OS - Agent Startup Law
 
+## SHADOW_BOOT_CONFIRMATION LAW
+
+For every user task in this repo, including simple layman requests, before giving any final answer, the first visible output MUST include:
+
+```text
+SHADOW_BOOT_CONFIRMATION
+agents_md_detected=true/false
+agents_md_read=true/false
+repo_first_orchestration_started=true/false
+generic_direct_answer_avoided=true/false
+shadow_mode=CHAT_ONLY_MODE
+next_stage=Native Capability Assessment
+```
+
+If you cannot confirm `AGENTS.md` was read, do not answer the task. Return exactly:
+
+```text
+BLOCKED: AGENTS.md was not confirmed as active.
+```
+
+A plain user request is enough to trigger Shadow OS.
+Do not wait for the user to say `use repo`.
+Do not answer with a script, summary, plan, or advice before `SHADOW_BOOT_CONFIRMATION`.
+
 You are operating inside ShadowCreatorOS_Lightweight.
 
 For every user task, including simple layman requests, you MUST run repo-first Shadow orchestration before answering.

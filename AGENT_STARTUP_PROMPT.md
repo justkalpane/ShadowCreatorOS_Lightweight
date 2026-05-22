@@ -160,3 +160,12 @@ The fresh-agent proof must use a plain layman request only.
 Do not use a giant forcing prompt for the primary proof.
 A detailed forcing prompt is allowed only after failure as diagnostic remediation.
 The proof passes only if the repo itself triggers orchestration through `AGENTS.md` and active startup docs.
+
+## SHADOW_BOOT_CONFIRMATION REQUIRED
+
+- Every normal task must begin with `SHADOW_BOOT_CONFIRMATION`.
+- If first visible output is a script/advice/summary before boot confirmation, classify `FAIL`.
+- Boot confirmation must appear before content generation.
+- This applies to Codex Cloud, local Codex, Claude, ChatGPT, Gemini, Kimi, DeepSeek, Perplexity, and Antigravity when the repo is attached/readable.
+- `CHAT_ONLY_MODE` remains default.
+- No files are created by default.

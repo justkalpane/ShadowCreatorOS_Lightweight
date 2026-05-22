@@ -1,0 +1,17 @@
+VALIDATION_STATUS=PASS
+missing_required_sections_count=0
+invalid_gate_status_count=0
+invalid_research_mode_count=0
+false_execution_claim_count=0
+generic_output_detected=false
+shadow_boot_confirmation_present=true
+content_before_shadow_boot_confirmation=false
+required_true_field_failure_count=0
+shadow_mode_chat_only=true
+capability_matrix_cited=true
+agent_runtime_selection_index_cited=true
+files_created_in_chat_only=false
+dossier_artifacts_created_in_chat_only=false
+source_claim_without_source_list=false
+final_proof_classification=PASS
+final_status_matches_weakest_evidence_layer=true

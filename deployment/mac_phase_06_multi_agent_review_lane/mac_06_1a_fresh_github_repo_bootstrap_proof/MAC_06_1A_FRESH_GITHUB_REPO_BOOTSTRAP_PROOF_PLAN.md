@@ -15,6 +15,8 @@ The agent receives:
 
 ## What The Agent Must Prove
 
+- The first visible output is `SHADOW_BOOT_CONFIRMATION`, before any script/summary/advice.
+- It reports `shadow_boot_confirmation_present=true` and `first_visible_output_is_boot_confirmation=true`.
 - It starts from the repo, not internet-first behavior.
 - It follows `START_HERE_FOR_AGENTS.md` and `AGENT_READ_ORDER.md`.
 - It detects and reads `AGENTS.md` before all other repo instructions when available.
@@ -32,6 +34,10 @@ The agent receives:
 - It runs a quality gate.
 - It returns output to chat or repo depending on access.
 - It does not execute n8n, providers, media, Gemini API, OpenWebUI, or old runtime.
+
+## Fail-Fast Rule
+
+If a plain content task returns any final answer/script/summary/outline/advice before `SHADOW_BOOT_CONFIRMATION`, classify `FAIL`.
 
 ## Supported Agent Types
 

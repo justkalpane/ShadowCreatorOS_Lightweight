@@ -1,0 +1,35 @@
+# MAC-06.1F Trigger Failure Audit Result
+
+MAC_06_1F_TRIGGER_FAILURE_AUDIT_STATUS=PARTIAL
+
+cloud_plain_layman_test_failed=true
+generic_direct_answer_detected=true
+agents_md_auto_trigger_proven=false
+skills_auto_trigger_proven=false
+repo_first_orchestration_proven=false
+
+local_repo_matches_remote=true
+local_head=57108525e3382c7288233629284f1f41270f1019
+remote_origin_main=57108525e3382c7288233629284f1f41270f1019
+
+agents_md_auto_trigger_strength=MEDIUM
+skills_implicit_trigger_strength=MEDIUM
+
+local_manual_simulation_created=true
+
+root_cause_primary=Codex_Cloud_did_not_apply_repo_startup_law_to_plain_chat_task
+root_cause_secondary=No_hard_boot_signature_required_in_first_visible_output
+
+patch_required=true
+patch_ready_for_user_review=true
+
+commit_performed=false
+push_performed=false
+
+safe_to_patch_after_user_approval=true
+safe_to_rerun_MAC_06_1A=false
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+NEXT_ACTION=Review `PATCH_PROPOSAL.md` and approve (or reject) the hardening patch before rerunning the fresh Codex Cloud layman test.
+

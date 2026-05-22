@@ -1,6 +1,6 @@
 ---
 name: shadow-context-engineering
-description: Activates for script, video, audio, image, music, media output, provider handoff, and context packet requests; requires voice, visual, video, music, editing, platform, and provider-boundary context.
+description: "Automatically use this skill whenever a script, video, audio, image, music, media, voiceover, provider handoff, or context packet is requested. Requires SHADOW_BOOT_CONFIRMATION, timed beat map, voice context, image prompts, video prompts, music/SFX, editing plan, platform packaging, and provider boundary."
 ---
 
 # Shadow Context Engineering

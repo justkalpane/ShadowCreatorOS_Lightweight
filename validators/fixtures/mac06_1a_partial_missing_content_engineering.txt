@@ -1,8 +1,13 @@
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
 AGENTS.md
 agents_md_detected=true
 agents_md_read=true
+repo_first_orchestration_started=true
 layman_task_trigger_contract_read=true
 generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
 NATIVE_AGENT_CAPABILITY_ASSESSMENT
 TASK_FRESHNESS_CLASSIFICATION
 RESEARCH_MODE_DECISION

@@ -13,11 +13,16 @@ from pathlib import Path
 
 
 REQUIRED_SECTIONS = [
+    "SHADOW_BOOT_CONFIRMATION",
+    "shadow_boot_confirmation_present",
+    "first_visible_output_is_boot_confirmation",
     "AGENTS.md",
     "agents_md_detected",
     "agents_md_read",
+    "repo_first_orchestration_started",
     "layman_task_trigger_contract_read",
     "generic_direct_answer_avoided",
+    "shadow_mode=CHAT_ONLY_MODE",
     "NATIVE_AGENT_CAPABILITY_ASSESSMENT",
     "TASK_FRESHNESS_CLASSIFICATION",
     "RESEARCH_MODE_DECISION",
@@ -91,6 +96,14 @@ GATE_STATUSES = {
 }
 
 PROOF_CLASSIFICATIONS = {"PASS", "PARTIAL", "FAIL"}
+REQUIRED_TRUE_KEYS = [
+    "shadow_boot_confirmation_present",
+    "first_visible_output_is_boot_confirmation",
+    "agents_md_detected",
+    "agents_md_read",
+    "repo_first_orchestration_started",
+    "generic_direct_answer_avoided",
+]
 
 
 def contains(text: str, needle: str) -> bool:
@@ -100,6 +113,13 @@ def contains(text: str, needle: str) -> bool:
 def find_key_value(text: str, key: str) -> str | None:
     match = re.search(rf"(?im)^\s*[-*]?\s*`?{re.escape(key)}`?\s*=\s*([A-Za-z0-9_./:-]+)", text)
     return match.group(1) if match else None
+
+
+def has_content_before_boot_signature(text: str) -> bool:
+    boot_index = text.find("SHADOW_BOOT_CONFIRMATION")
+    if boot_index < 0:
+        return True
+    return bool(text[:boot_index].strip())
 
 
 def collect_invalid_research_modes(text: str) -> list[str]:
@@ -128,6 +148,8 @@ def main() -> int:
     invalid_statuses.extend(collect_invalid_gate_values(text))
     invalid_research_modes = collect_invalid_research_modes(text)
     false_claims = [claim for claim in FALSE_EXECUTION_CLAIMS if claim in text]
+    boot_signature_present = "SHADOW_BOOT_CONFIRMATION" in text
+    content_before_boot_signature = has_content_before_boot_signature(text)
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -139,9 +161,25 @@ def main() -> int:
         and not re.search(r"(?im)^\s*[-*]?\s*`?source_list(?:_present)?`?\s*=\s*(true|\[|http)", text)
     )
     final_proof = find_key_value(text, "proof_classification") or find_key_value(text, "final_proof_classification")
+    required_true_failures: list[str] = []
+    for key in REQUIRED_TRUE_KEYS:
+        value = find_key_value(text, key)
+        if value is None:
+            required_true_failures.append(f"{key}=MISSING")
+        elif value.lower() != "true":
+            required_true_failures.append(f"{key}={value}")
+
+    shadow_mode = find_key_value(text, "shadow_mode")
+    shadow_mode_invalid = shadow_mode not in {"CHAT_ONLY_MODE"}
 
     status = "PASS"
-    if false_claims or generic_detected or source_claim_without_list:
+    if (
+        false_claims
+        or generic_detected
+        or source_claim_without_list
+        or not boot_signature_present
+        or content_before_boot_signature
+    ):
         status = "FAIL"
     elif (
         missing
@@ -151,6 +189,8 @@ def main() -> int:
         or index_missing
         or files_created
         or dossier_created
+        or required_true_failures
+        or shadow_mode_invalid
     ):
         status = "PARTIAL"
 
@@ -170,6 +210,12 @@ def main() -> int:
     for item in false_claims:
         print(f"false_execution_claim={item}")
     print(f"generic_output_detected={str(generic_detected).lower()}")
+    print(f"shadow_boot_confirmation_present={str(boot_signature_present).lower()}")
+    print(f"content_before_shadow_boot_confirmation={str(content_before_boot_signature).lower()}")
+    print(f"required_true_field_failure_count={len(required_true_failures)}")
+    for item in required_true_failures:
+        print(f"required_true_field_failure={item}")
+    print(f"shadow_mode_chat_only={str(not shadow_mode_invalid).lower()}")
     print(f"capability_matrix_cited={str(not matrix_missing).lower()}")
     print(f"agent_runtime_selection_index_cited={str(not index_missing).lower()}")
     print(f"files_created_in_chat_only={str(files_created).lower()}")

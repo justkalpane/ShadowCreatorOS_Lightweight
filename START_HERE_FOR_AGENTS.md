@@ -138,6 +138,15 @@ Do not follow older dossier-first text for normal chat tasks.
 - Do not wait for the user to provide the repo URL if this repo is already attached.
 - Do not answer from general model knowledge first.
 - For content tasks, script alone is insufficient.
+
+## SHADOW_BOOT_CONFIRMATION REQUIRED
+
+- Every normal task must begin with `SHADOW_BOOT_CONFIRMATION`.
+- If first visible output is a script/advice/summary before boot confirmation, classify `FAIL`.
+- Boot confirmation must appear before content generation.
+- This applies to Codex Cloud, local Codex, Claude, ChatGPT, Gemini, Kimi, DeepSeek, Perplexity, and Antigravity when the repo is attached/readable.
+- `CHAT_ONLY_MODE` remains default.
+- No files are created by default.
 - Content tasks must include content engineering output unless user asks for script-only.
 - Realtime/source-aware research must be used when current facts are required.
 - If web access is unavailable, disclose the limitation and gate.

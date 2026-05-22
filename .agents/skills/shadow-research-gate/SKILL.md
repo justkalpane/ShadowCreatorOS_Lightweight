@@ -1,6 +1,6 @@
 ---
 name: shadow-research-gate
-description: Activates for latest, current, trend, news, facts, tools, models, pricing, platform rules, citations, real-time, and statistics requests; requires freshness classification, web access disclosure, and source honesty.
+description: "Automatically use this skill whenever the task involves latest, current, trend, news, facts, tools, models, pricing, platform rules, citations, real-time claims, statistics, or source-backed output. Requires SHADOW_BOOT_CONFIRMATION, freshness classification, web access disclosure, source list if web used, and no fake realtime claims."
 ---
 
 # Shadow Research Gate

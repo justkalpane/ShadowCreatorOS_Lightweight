@@ -42,10 +42,15 @@ Output mode:
 - Create full dossier only if user explicitly requests `FULL_DOSSIER_ARCHIVE_MODE`.
 
 Required output:
+- SHADOW_BOOT_CONFIRMATION
+- shadow_boot_confirmation_present=true/false
+- first_visible_output_is_boot_confirmation=true/false
 - agents_md_detected=true/false
 - agents_md_read=true/false
+- repo_first_orchestration_started=true/false
 - layman_task_trigger_contract_read=true/false
 - generic_direct_answer_avoided=true/false
+- shadow_mode=CHAT_ONLY_MODE
 - AGENTS.md detection/read confirmation
 - Layman task trigger confirmation
 - Shadow Mission Packet
@@ -150,6 +155,7 @@ Hard rules:
 - if claiming real-time sources, include source list
 - if no source list, set real_time_sources_used=false
 - include TOOLS_CONNECTORS_PLUGINS_ASSESSMENT with runtime statuses
+- if any final answer/script/summary/outline/advice appears before `SHADOW_BOOT_CONFIRMATION`, classify `FAIL`
 - generic direct answer is forbidden
 - content/script/video tasks must include the Content Engineering Output Contract
 - script-only output is PARTIAL unless user explicitly requested script-only

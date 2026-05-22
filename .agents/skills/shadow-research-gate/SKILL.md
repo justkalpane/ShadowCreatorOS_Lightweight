@@ -30,3 +30,9 @@ Allowed gate statuses only:
 - `BLOCKED`
 - `NEEDS_USER_APPROVAL`
 - `NEEDS_CONFIRMATION`
+
+## Proof Implications
+
+- `PASS`: freshness classification, research mode decision, source disclosure, and valid gate status are present.
+- `PARTIAL`: source limitation exists but is disclosed and gated.
+- `FAIL`: fake realtime/source claims, missing source list for web research, or invalid gate status.

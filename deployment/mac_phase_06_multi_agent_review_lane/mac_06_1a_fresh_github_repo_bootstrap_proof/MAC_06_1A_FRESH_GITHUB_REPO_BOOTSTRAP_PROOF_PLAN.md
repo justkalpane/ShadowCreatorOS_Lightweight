@@ -10,7 +10,7 @@ The agent receives:
 
 - GitHub repo: `https://github.com/justkalpane/ShadowCreatorOS_Lightweight`
 - Branch: `main`
-- Instruction: read `START_HERE_FOR_AGENTS.md` first
+- Instruction: detect/read `AGENTS.md` first if available, then read `START_HERE_FOR_AGENTS.md`
 - Simple user task: create a YouTube Shorts script on the requested topic
 
 ## What The Agent Must Prove
@@ -32,4 +32,3 @@ The agent receives:
 The proof may be run with Codex, Claude, ChatGPT, Kimi, DeepSeek, Gemini, Perplexity, Antigravity, local LLM apps, or other repo-aware LLM/coding agents.
 
 A successful Codex proof is the first representative proof, not the only possible future proof. Other agents can be progressively tested later. Users must not be forced to install all agents.
-

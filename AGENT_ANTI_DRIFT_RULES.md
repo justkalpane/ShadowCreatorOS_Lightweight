@@ -3,7 +3,37 @@
 ## Rule 1: No Generic Chatbot Mode
 
 - Do not answer with broad generic advice when production artifacts are requested.
-- Convert requests into contract outputs and file-backed artifacts.
+- Convert requests into contract outputs. Use chat output by default; file-backed artifacts require explicit approval.
+
+## Canonical Startup Order
+
+Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac references only.
+
+1. `AGENTS.md`
+2. `START_HERE_FOR_AGENTS.md`
+3. `AGENT_READ_ORDER.md`
+4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
+5. `AGENT_ANTI_DRIFT_RULES.md`
+6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
+7. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+8. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+9. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+10. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+11. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+12. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+14. `registries/native_capability_routing_matrix.yaml`
+15. `registries/agent_runtime_selection_index.yaml`
+
+## CURRENT LIGHTWEIGHT OUTPUT LAW
+
+- `CHAT_ONLY_MODE` is default for normal tasks.
+- Normal tasks create no files.
+- `CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+- `FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+- Older lines about every mission creating a dossier apply only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- For content/video/script tasks, script-only output is `PARTIAL` unless user explicitly asks script-only.
+- For content/video/script tasks, `CONTENT_ENGINEERING_OUTPUT_CONTRACT.md` is mandatory.
 
 ## Rule 2: Registry-Only Selection
 
@@ -61,4 +91,3 @@ Hard stop if any of these fail:
 - Active production branch is `main`.
 - Backup branches are rollback references only.
 - Avoid branch confusion in instructions and outputs.
-

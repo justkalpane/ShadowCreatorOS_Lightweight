@@ -78,6 +78,14 @@ dossier_artifacts_created=false
 layman_task_trigger_verified=true/false
 generic_direct_answer_detected=true/false
 content_engineering_contract_present=true/false
+content_engineering_contract_read=true/false
+timed_beat_map_present=true/false
+voice_generation_context_present=true/false
+image_generation_context_present=true/false
+video_generation_context_present=true/false
+music_sfx_context_present=true/false
+editing_context_present=true/false
+platform_packaging_present=true/false
 script_only_output_detected=true/false
 invalid_gate_status_detected=true/false
 media_context_engineering_present=true/false
@@ -137,6 +145,13 @@ limitations_disclosed=true/false
 - Layman task trigger is verified.
 - Content tasks include `CONTENT_ENGINEERING_OUTPUT_CONTRACT` sections unless user explicitly asks script-only.
 - For video/script tasks, media context engineering handoff is present.
+- Timed beat map is present.
+- Voice generation context is present.
+- Image generation context is present.
+- Video generation context is present.
+- Music/SFX context is present.
+- Editing context is present.
+- Platform packaging is present.
 - Final proof status matches weakest required evidence layer.
 - No false n8n/provider/media claims.
 
@@ -156,6 +171,7 @@ limitations_disclosed=true/false
 - Generic direct answer appears before repo routing.
 - Invalid gate statuses appear.
 - Script-only output appears for a video/content task when user did not request script-only.
+- Any required content engineering section is missing for a content/script/video task.
 
 ### `FAIL` Is Required If
 

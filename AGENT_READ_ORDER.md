@@ -4,6 +4,26 @@ All future coding-agent sessions must read in this order before production work.
 
 Repo root: `/Users/apple/Documents/ShadowCreatorOS_Lightweight`
 
+Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac references only.
+
+## Canonical Startup Order
+
+1. `AGENTS.md`
+2. `START_HERE_FOR_AGENTS.md`
+3. `AGENT_READ_ORDER.md`
+4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
+5. `AGENT_ANTI_DRIFT_RULES.md`
+6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
+7. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+8. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+9. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+10. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+11. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+12. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+14. `registries/native_capability_routing_matrix.yaml`
+15. `registries/agent_runtime_selection_index.yaml`
+
 ## Phase A: Startup Doctrine
 
 1. `/Users/apple/Documents/ShadowCreatorOS_Lightweight/AGENTS.md`

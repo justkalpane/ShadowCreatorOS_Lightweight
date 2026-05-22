@@ -8,7 +8,7 @@ Branch:
 main
 
 Instruction:
-Read `START_HERE_FOR_AGENTS.md` first.
+Detect/read `AGENTS.md` first if available. Then read `START_HERE_FOR_AGENTS.md`.
 
 Mission:
 Operate Shadow Creator OS repo-first for this task:
@@ -41,7 +41,20 @@ Required output:
 - Debate
 - Critique
 - Final script
-- Context engineering packet summary
+- Full Content Engineering Output Contract sections:
+  - CONTENT_MISSION_BRIEF
+  - RESEARCH_AND_SOURCE_STATUS
+  - SCRIPT_STRUCTURE
+  - FINAL_SCRIPT
+  - TIMED_BEAT_MAP
+  - VOICE_GENERATION_CONTEXT
+  - IMAGE_GENERATION_CONTEXT
+  - VIDEO_GENERATION_CONTEXT
+  - MUSIC_AND_SFX_CONTEXT
+  - EDITING_CONTEXT
+  - PLATFORM_PACKAGING
+  - PROVIDER_HANDOFF_BOUNDARY
+  - QUALITY_GATE
 - Provider handoff boundary
 - Quality gate report
 - Lineage summary

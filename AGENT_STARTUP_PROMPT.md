@@ -46,7 +46,7 @@ The primary operating model is one capable repo-aware agent plus the repo brain.
 
 ## Fresh GitHub Repo Bootstrap Proof
 
-When operating from a fresh chat or agent session, start with GitHub `main`, read `START_HERE_FOR_AGENTS.md`, then follow `AGENT_READ_ORDER.md`.
+When operating from a fresh chat or agent session, start with GitHub `main`, detect/read `AGENTS.md` first, then read `START_HERE_FOR_AGENTS.md` and follow `AGENT_READ_ORDER.md`.
 
 Do not begin with internet-first behavior. Load repo doctrine, registries, contracts, directors, agents, skills, and subskills first. Produce chat-only packets by default; create repo files only after explicit approval.
 
@@ -108,3 +108,23 @@ Do not begin with internet-first behavior. Load repo doctrine, registries, contr
 - Content tasks must include content engineering output unless user asks for script-only.
 - Realtime/source-aware research must be used when current facts are required.
 - If web access is unavailable, disclose the limitation and gate.
+
+## CANONICAL STARTUP ORDER
+
+Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac references only.
+
+1. `AGENTS.md`
+2. `START_HERE_FOR_AGENTS.md`
+3. `AGENT_READ_ORDER.md`
+4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
+5. `AGENT_ANTI_DRIFT_RULES.md`
+6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
+7. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+8. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+9. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+10. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+11. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+12. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+14. `registries/native_capability_routing_matrix.yaml`
+15. `registries/agent_runtime_selection_index.yaml`

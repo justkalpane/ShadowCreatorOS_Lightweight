@@ -44,3 +44,16 @@ For script/video/content tasks, include:
 - Content engineering packet
 - Quality gate
 - Lineage summary
+
+## Forbidden Behavior
+
+- Do not answer directly with generic script output before repo routing.
+- Do not skip `AGENTS.md`.
+- Do not skip capability routing or registry evidence.
+- Do not create files unless explicitly approved.
+
+## Proof Implications
+
+- `PASS`: full repo-first route, registry evidence, content engineering, gates, and lineage are present.
+- `PARTIAL`: useful content but missing agent/capability/source/context engineering evidence.
+- `FAIL`: generic direct answer, invented registry items, false execution claims, or skipped repo startup.

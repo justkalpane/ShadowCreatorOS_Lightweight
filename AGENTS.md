@@ -11,17 +11,29 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 
 ## Default Behavior
 
-1. Read `START_HERE_FOR_AGENTS.md`.
-2. Read `AGENT_READ_ORDER.md`.
-3. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`.
-4. Run Native Agent Capability Assessment.
-5. Run Task Freshness Classification.
-6. Run Research Mode Decision.
-7. Run registry-first routing.
-8. Select directors / agents / subagents / skills / subskills with evidence.
-9. Assess tools / connectors / plugins.
-10. If the task is content/script/video/media related, run the Shadow Content Engineering Output Standard.
-11. Output to chat by default.
+1. Read `AGENTS.md`.
+2. Read `START_HERE_FOR_AGENTS.md`.
+3. Read `AGENT_READ_ORDER.md`.
+4. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`.
+5. Read `AGENT_ANTI_DRIFT_RULES.md`.
+6. Read `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`.
+7. Read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`.
+8. Read `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`.
+9. Read `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`.
+10. Read `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`.
+11. Read `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`.
+12. Read `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`.
+13. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
+14. Read `registries/native_capability_routing_matrix.yaml`.
+15. Read `registries/agent_runtime_selection_index.yaml`.
+16. Run Native Agent Capability Assessment.
+17. Run Task Freshness Classification.
+18. Run Research Mode Decision.
+19. Run registry-first routing.
+20. Select directors / agents / subagents / skills / subskills with evidence.
+21. Assess tools / connectors / plugins.
+22. If the task is content/script/video/media related, run the Shadow Content Engineering Output Standard.
+23. Output to chat by default.
 
 ## Mandatory Mode
 

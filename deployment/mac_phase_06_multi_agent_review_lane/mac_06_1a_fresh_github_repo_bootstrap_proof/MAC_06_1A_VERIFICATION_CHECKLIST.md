@@ -56,6 +56,13 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did output use chat-only mode?
 - Did output avoid old dossier-first behavior?
 - Did a content/script/video task include the Content Engineering Output Contract?
+- Did output include `TIMED_BEAT_MAP`?
+- Did output include `VOICE_GENERATION_CONTEXT`?
+- Did output include `IMAGE_GENERATION_CONTEXT`?
+- Did output include `VIDEO_GENERATION_CONTEXT`?
+- Did output include `MUSIC_AND_SFX_CONTEXT`?
+- Did output include `EDITING_CONTEXT`?
+- Did output include `PLATFORM_PACKAGING`?
 - If output is script-only, did the user explicitly request script-only?
 - Are invalid gate statuses absent?
 - If capability matrix or agent runtime index is not cited, is final status blocked from PASS?

@@ -8,7 +8,9 @@ Branch:
 main
 
 Instruction:
-Detect/read `AGENTS.md` first if available. Then read `START_HERE_FOR_AGENTS.md`.
+Detect and read `AGENTS.md` first.
+The first visible output must be `SHADOW_BOOT_CONFIRMATION`.
+Then read `START_HERE_FOR_AGENTS.md` and `AGENT_READ_ORDER.md`.
 
 Canonical boot order:
 1. `AGENTS.md`

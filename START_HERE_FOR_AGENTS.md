@@ -1,5 +1,11 @@
 # START HERE FOR AGENTS
 
+## ROOT INSTRUCTION WARNING
+
+`AGENTS.md` is the canonical root instruction. If this file is read first, immediately return to `AGENTS.md` and apply `SHADOW_BOOT_CONFIRMATION` before any task output.
+
+Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`, not portable startup law.
+
 If you are a coding agent working in this repository, start here before any production action.
 
 ## Mandatory Startup Steps

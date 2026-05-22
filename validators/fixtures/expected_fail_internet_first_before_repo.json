@@ -1,0 +1,5 @@
+{
+  "expected_validation_status": "FAIL",
+  "expected_internet_first_behavior_detected": true,
+  "expected_sources_before_repo_route": true
+}

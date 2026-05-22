@@ -52,6 +52,10 @@ Required output:
 - repo_first_orchestration_started=true/false
 - layman_task_trigger_contract_read=true/false
 - generic_direct_answer_avoided=true/false
+- environment_trigger_compatibility_checked=true/false
+- platform_current_classification=NATIVE_AUTO_TRIGGER_COMPATIBLE/BOOTSTRAP_REQUIRED_COMPATIBLE/REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE/NOT_COMPATIBLE/NEEDS_CONFIRMATION
+- internet_first_behavior_detected=true/false
+- web_access_used_before_repo_route=true/false
 - shadow_mode=CHAT_ONLY_MODE
 - AGENTS.md detection/read confirmation
 - Layman task trigger confirmation
@@ -168,6 +172,11 @@ Hard rules:
 - PASS is impossible if `registries/native_capability_routing_matrix.yaml` is not cited
 - PASS is impossible if `registries/agent_runtime_selection_index.yaml` is not cited
 - PASS is impossible if generic direct answer occurs before repo routing
+- PASS is impossible if `SHADOW_BOOT_CONFIRMATION` is missing
+- PASS is impossible if first visible output is not `SHADOW_BOOT_CONFIRMATION`
+- PASS is impossible if internet-first behavior occurred before repo routing
+- PASS is impossible if `platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- If Test A fails but Test B passes, classify platform as `BOOTSTRAP_REQUIRED_COMPATIBLE`, not `NATIVE_AUTO_TRIGGER_COMPATIBLE`
 ```
 
 ## MAC-06.1B Governance Addendum

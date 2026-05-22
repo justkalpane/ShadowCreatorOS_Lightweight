@@ -8,8 +8,9 @@
 4. `MAC-06.1A` fresh GitHub repo bootstrap proof complete
 5. `MAC-06.1B` output consolidation and chat approval gate complete
 6. `MAC-06.1C` source intelligence and research mode gate complete
-7. `MAC-07` readiness seal complete
-8. `MAC-08` onboarding package complete
+7. `MAC-06.1G` environment trigger compatibility gate complete
+8. `MAC-07` readiness seal complete
+9. `MAC-08` onboarding package complete
 
 ## Gate Criteria
 
@@ -29,6 +30,23 @@ Do not require users to install every agent before using the lightweight OS. MAC
 ## Fresh Bootstrap Rule
 
 MAC-06.1A is the portable lightweight OS onboarding test. It proves that a fresh repo-aware agent can use GitHub `main`, read startup doctrine, route registry-first, and produce a quality-gated Shadow output packet.
+
+Native auto-trigger and bootstrap-required compatibility are separate. If native auto-trigger fails, do not declare native onboarding. If bootstrap-required mode passes, classify that platform as `BOOTSTRAP_REQUIRED_COMPATIBLE` only.
+
+No platform may be declared onboarded until `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md` classifies it as either `NATIVE_AUTO_TRIGGER_COMPATIBLE` or user-approved `BOOTSTRAP_REQUIRED_COMPATIBLE`.
+
+## MAC-06.1G Environment Trigger Compatibility Gate
+
+Required before onboarding:
+
+- Test A Native Auto Trigger result.
+- Test B Bootstrap Required result if Test A fails.
+- `platform_current_classification` recorded.
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE` blocks onboarding.
+- `NOT_COMPATIBLE` blocks onboarding.
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` allows only bootstrap-required onboarding, not native auto-trigger onboarding.
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE` allows native layman-task onboarding.
+- n8n/provider/media execution remains disabled.
 
 ## Output Governance Rule
 
@@ -74,6 +92,7 @@ MAC-06.1C must also prove runtime capability routing:
 - OpenWebUI dependency
 - old Windows runtime activation
 - false media artifact claims
+- media execution
 
 ## Not Required For Repo-first Onboarding
 

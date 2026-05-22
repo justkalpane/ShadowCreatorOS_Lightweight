@@ -1,5 +1,60 @@
 # AGENT REPO-FIRST OPERATING DOCTRINE
 
+## CURRENT LIGHTWEIGHT PRODUCT DOCTRINE - ACTIVE
+
+- Chat is the live output surface.
+- Repo is the constitution, routing brain, registry source, and governance layer.
+- Dossier artifacts are production truth only in explicit `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- Normal tasks do not create files.
+- Script/content/video tasks require full content engineering unless user explicitly asks script-only.
+- n8n/provider/media execution remains disabled unless explicitly approved.
+
+## SHADOW_BOOT_CONFIRMATION REQUIRED
+
+Before any task output, the first visible output must be:
+
+```text
+SHADOW_BOOT_CONFIRMATION
+agents_md_detected=true/false
+agents_md_read=true/false
+repo_first_orchestration_started=true/false
+generic_direct_answer_avoided=true/false
+shadow_mode=CHAT_ONLY_MODE
+next_stage=Native Capability Assessment
+```
+
+If `AGENTS.md` is not confirmed active, return:
+
+```text
+BLOCKED: AGENTS.md was not confirmed as active.
+```
+
+## ENVIRONMENT TRIGGER COMPATIBILITY LAW
+
+Repo presence is not equal to active behavioral control.
+
+If a platform sees the repo but does not output `SHADOW_BOOT_CONFIRMATION` before the first answer, classify:
+
+```text
+platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+```
+
+Do not continue producing scripts, advice, summaries, or web-sourced answers after this failure.
+
+Compatibility levels:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`
+- `BOOTSTRAP_REQUIRED_COMPATIBLE`
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- `NOT_COMPATIBLE`
+
+Native onboarding requires either:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`, or
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
+
+Codex Cloud currently requires compatibility validation before onboarding.
+
 ## Why This Lightweight Path Exists
 
 The old ShadowEmpire full-runtime lane was quarantined because it was too heavy for immediate production intelligence work:
@@ -15,7 +70,7 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 
 - GitHub repo is the constitution/brain.
 - Coding agents are the reasoning/runtime operators.
-- Chat output is the live product surface by default; dossier artifacts are production truth only in explicit archive/production dossier mode.
+- Chat output is the live product surface by default; dossier artifacts are production truth only in explicit `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 - n8n and providers are deferred execution layers, not intelligence prerequisites.
 
 ## Active Production Loop (MAC-05)
@@ -42,6 +97,7 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 - Follow runtime contracts in `runtime_contracts/`.
 - Use registry-backed selections only.
 - Build chat, consolidated, or dossier outputs exactly to the active output-mode contract.
+- Build dossier outputs exactly to contract only in `FULL_DOSSIER_ARCHIVE_MODE ONLY` or approved MAC-05 dossier mode.
 - Validate JSON packet files before commit.
 - Stop on drift, missing evidence, or invalid packets.
 
@@ -164,6 +220,7 @@ Default lightweight behavior must avoid file-sprawl.
 - This applies to Codex Cloud, local Codex, Claude, ChatGPT, Gemini, Kimi, DeepSeek, Perplexity, and Antigravity when the repo is attached/readable.
 - `CHAT_ONLY_MODE` remains default.
 - No files are created by default.
+
 
 ## CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER - ACTIVE LAW
 

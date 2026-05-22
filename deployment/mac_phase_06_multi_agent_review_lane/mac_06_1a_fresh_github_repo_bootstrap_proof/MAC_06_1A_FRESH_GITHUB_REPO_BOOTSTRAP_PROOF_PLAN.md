@@ -39,6 +39,21 @@ The agent receives:
 
 If a plain content task returns any final answer/script/summary/outline/advice before `SHADOW_BOOT_CONFIRMATION`, classify `FAIL`.
 
+## Environment Compatibility Split
+
+Test A - Native Auto Trigger:
+
+- Plain layman task must produce `SHADOW_BOOT_CONFIRMATION` as the first visible output.
+- PASS means platform classification may be `NATIVE_AUTO_TRIGGER_COMPATIBLE`.
+
+Test B - Bootstrap Required:
+
+- Run only if Test A fails.
+- Use `handoff/agent_bootstrap/SHADOW_BOOTSTRAP_MINIMAL_PROMPT.md`.
+- PASS means platform classification is `BOOTSTRAP_REQUIRED_COMPATIBLE`, not `NATIVE_AUTO_TRIGGER_COMPATIBLE`.
+
+If Test A and Test B both fail, classify the platform as `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE` or `NOT_COMPATIBLE`.
+
 ## Supported Agent Types
 
 The proof may be run with Codex, Claude, ChatGPT, Kimi, DeepSeek, Gemini, Perplexity, Antigravity, local LLM apps, or other repo-aware LLM/coding agents.

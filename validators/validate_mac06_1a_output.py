@@ -72,6 +72,11 @@ FALSE_EXECUTION_CLAIMS = [
     "gemini_api_called=true",
 ]
 
+INTERNET_FIRST_MARKERS = [
+    "web_access_used_before_repo_route=true",
+    "internet_first_behavior_detected=true",
+]
+
 GENERIC_OUTPUT_MARKERS = [
     "Here is a script",
     "Here's a script",
@@ -122,6 +127,20 @@ def has_content_before_boot_signature(text: str) -> bool:
     return bool(text[:boot_index].strip())
 
 
+def has_sources_before_repo_route(text: str) -> bool:
+    route_markers = [
+        "TASK_TO_CAPABILITY_ROUTING",
+        "Registry-First Route",
+        "registries/native_capability_routing_matrix.yaml",
+    ]
+    route_positions = [text.find(marker) for marker in route_markers if text.find(marker) >= 0]
+    if not route_positions:
+        return False
+    route_index = min(route_positions)
+    before_route = text[:route_index]
+    return bool(re.search(r"(?im)^\s*(source_list|sources?)\s*[:=]\s*(https?://|\[?https?://)", before_route))
+
+
 def collect_invalid_research_modes(text: str) -> list[str]:
     modes = re.findall(r"(?im)^\s*[-*]?\s*`?research_mode`?\s*=\s*([A-Za-z0-9_]+)", text)
     return [mode for mode in modes if mode not in CANONICAL_RESEARCH_MODES]
@@ -148,8 +167,10 @@ def main() -> int:
     invalid_statuses.extend(collect_invalid_gate_values(text))
     invalid_research_modes = collect_invalid_research_modes(text)
     false_claims = [claim for claim in FALSE_EXECUTION_CLAIMS if claim in text]
+    internet_first_markers = [marker for marker in INTERNET_FIRST_MARKERS if marker in text]
     boot_signature_present = "SHADOW_BOOT_CONFIRMATION" in text
     content_before_boot_signature = has_content_before_boot_signature(text)
+    sources_before_repo_route = has_sources_before_repo_route(text)
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -179,6 +200,8 @@ def main() -> int:
         or source_claim_without_list
         or not boot_signature_present
         or content_before_boot_signature
+        or internet_first_markers
+        or sources_before_repo_route
     ):
         status = "FAIL"
     elif (
@@ -209,6 +232,10 @@ def main() -> int:
     print(f"false_execution_claim_count={len(false_claims)}")
     for item in false_claims:
         print(f"false_execution_claim={item}")
+    print(f"internet_first_marker_count={len(internet_first_markers)}")
+    for item in internet_first_markers:
+        print(f"internet_first_marker={item}")
+    print(f"sources_before_repo_route={str(sources_before_repo_route).lower()}")
     print(f"generic_output_detected={str(generic_detected).lower()}")
     print(f"shadow_boot_confirmation_present={str(boot_signature_present).lower()}")
     print(f"content_before_shadow_boot_confirmation={str(content_before_boot_signature).lower()}")

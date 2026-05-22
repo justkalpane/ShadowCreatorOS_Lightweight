@@ -1,25 +1,62 @@
 # START HERE FOR AGENTS
 
-## ROOT INSTRUCTION WARNING
+## ROOT INSTRUCTION WARNING - ACTIVE
 
-`AGENTS.md` is the canonical root instruction. If this file is read first, immediately return to `AGENTS.md` and apply `SHADOW_BOOT_CONFIRMATION` before any task output.
+`AGENTS.md` is the canonical root instruction.
+
+If this file is read first, immediately return to `AGENTS.md`, apply `SHADOW_BOOT_CONFIRMATION`, and only then continue.
+
+Do not produce scripts, advice, summaries, plans, or web-sourced answers before `SHADOW_BOOT_CONFIRMATION`.
 
 Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`, not portable startup law.
+
+Normal tasks use `CHAT_ONLY_MODE` by default and create no files.
+
+Full dossier mode requires explicit user request.
+
+## ENVIRONMENT TRIGGER COMPATIBILITY LAW
+
+Repo presence is not equal to active behavioral control.
+
+If a platform sees the repo but does not output `SHADOW_BOOT_CONFIRMATION` before the first answer, classify:
+
+```text
+platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+```
+
+Do not continue producing scripts, advice, summaries, or web-sourced answers after this failure.
+
+Compatibility levels:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`
+- `BOOTSTRAP_REQUIRED_COMPATIBLE`
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- `NOT_COMPATIBLE`
+
+Native onboarding requires either:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`, or
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
+
+Codex Cloud currently requires compatibility validation before onboarding.
 
 If you are a coding agent working in this repository, start here before any production action.
 
 ## Mandatory Startup Steps
 
-1. Read `AGENTS.md`
-2. Read `START_HERE_FOR_AGENTS.md`
-3. Read `AGENT_READ_ORDER.md`
-4. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
-5. Read `AGENT_ANTI_DRIFT_RULES.md`
-6. Operate on branch `main`
-7. Follow repo-first Shadow orchestration before answering
-8. Enforce quality gate and lineage for every output
+1. First authority is `AGENTS.md`.
+2. Output `SHADOW_BOOT_CONFIRMATION` before task output.
+3. Read `START_HERE_FOR_AGENTS.md`.
+4. Read `AGENT_READ_ORDER.md`.
+5. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`.
+6. Read `AGENT_ANTI_DRIFT_RULES.md`.
+7. Operate on branch `main`.
+8. Follow repo-first Shadow orchestration before answering.
+9. Enforce quality gate and lineage for every output.
 
 Repo-relative paths are authoritative. Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`.
+Any old absolute Mac startup path is `LOCAL_REFERENCE_ONLY`, not portable startup law.
+Any production dossier language applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 dossier mode.
 
 ## Hard Boundaries
 
@@ -153,6 +190,7 @@ Do not follow older dossier-first text for normal chat tasks.
 - This applies to Codex Cloud, local Codex, Claude, ChatGPT, Gemini, Kimi, DeepSeek, Perplexity, and Antigravity when the repo is attached/readable.
 - `CHAT_ONLY_MODE` remains default.
 - No files are created by default.
+
 - Content tasks must include content engineering output unless user asks for script-only.
 - Realtime/source-aware research must be used when current facts are required.
 - If web access is unavailable, disclose the limitation and gate.

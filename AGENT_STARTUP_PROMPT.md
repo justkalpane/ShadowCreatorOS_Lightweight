@@ -2,6 +2,62 @@
 
 Use this prompt at the beginning of any Codex/Claude/Kimi/DeepSeek coding-agent session for this repo.
 
+## SHADOW_BOOT_CONFIRMATION REQUIRED - ACTIVE
+
+Before any task output, the first visible output must be:
+
+```text
+SHADOW_BOOT_CONFIRMATION
+agents_md_detected=true/false
+agents_md_read=true/false
+repo_first_orchestration_started=true/false
+generic_direct_answer_avoided=true/false
+shadow_mode=CHAT_ONLY_MODE
+next_stage=Native Capability Assessment
+```
+
+If `AGENTS.md` is not confirmed active, return:
+
+```text
+BLOCKED: AGENTS.md was not confirmed as active.
+```
+
+## CURRENT LIGHTWEIGHT OUTPUT LAW - ACTIVE
+
+- `CHAT_ONLY_MODE` is default for normal tasks.
+- Normal tasks create no files.
+- `CONSOLIDATED_REPO_WRITE_MODE` requires explicit user approval.
+- `FULL_DOSSIER_ARCHIVE_MODE` requires explicit user request.
+- Any older instruction saying `create exactly one dossier per mission` applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
+- For content/video/script tasks, script-only output is `PARTIAL` unless user explicitly asks script-only.
+- `CONTENT_ENGINEERING_OUTPUT_CONTRACT` is mandatory for content/video/script tasks.
+
+## ENVIRONMENT TRIGGER COMPATIBILITY LAW
+
+Repo presence is not equal to active behavioral control.
+
+If a platform sees the repo but does not output `SHADOW_BOOT_CONFIRMATION` before the first answer, classify:
+
+```text
+platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+```
+
+Do not continue producing scripts, advice, summaries, or web-sourced answers after this failure.
+
+Compatibility levels:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`
+- `BOOTSTRAP_REQUIRED_COMPATIBLE`
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- `NOT_COMPATIBLE`
+
+Native onboarding requires either:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`, or
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
+
+Codex Cloud currently requires compatibility validation before onboarding.
+
 ## Startup Instruction
 
 You are operating the Shadow Creator OS lightweight production repository.
@@ -33,7 +89,7 @@ This repo is the active production path for repo-first intelligence work. The ol
 
 ## Deliverable Standard
 
-No generic chatbot output. Every mission must yield grounded, contract-compliant chat output by default, with quality-gate evidence and truthful lineage. Dossier artifacts are explicit-only.
+No generic chatbot output. Every normal task must yield grounded, contract-compliant chat output by default, with quality-gate evidence and truthful lineage. Dossier artifacts are explicit-only and require `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 
 ## Universal Single-Agent Operation
 

@@ -21,6 +21,16 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 13. MAC-06.1C native capability inventory and task-routing matrix are referenced by active runtime docs.
 14. MAC-06.1A rerun includes freshness classification, research gate output, and tools/connectors/plugins + native capability assessment.
 15. MAC-06.1A rerun must not execute until capability-routing artifacts exist (`native_capability_routing_matrix.yaml`, `agent_runtime_selection_index.yaml`) and are referenced by active contracts.
+16. MAC-06.1G Environment Trigger Compatibility Gate completed.
+17. Native auto-trigger test and bootstrap-required test are separated by `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`.
+18. Test A Native Auto Trigger result is recorded.
+19. Test B Bootstrap Required result is recorded if Test A fails.
+20. `platform_current_classification` is recorded.
+21. `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE` blocks onboarding.
+22. `NOT_COMPATIBLE` blocks onboarding.
+23. `BOOTSTRAP_REQUIRED_COMPATIBLE` allows only bootstrap-required onboarding, not native auto-trigger onboarding.
+24. `NATIVE_AUTO_TRIGGER_COMPATIBLE` allows native layman-task onboarding.
+25. n8n/provider/media execution remains disabled.
 
 ## Seal Outcome Options
 
@@ -31,6 +41,8 @@ Issue a strict readiness seal only after multi-agent review flow is proven and r
 ## Explicit Boundary
 
 A MAC-07 PASS does not authorize n8n/provider execution bus phases. Those begin only in MAC-09+ with explicit approval.
+
+n8n execution, provider execution, and media execution remain disabled during MAC-07 readiness validation.
 
 ## Single-Agent Seal Interpretation
 

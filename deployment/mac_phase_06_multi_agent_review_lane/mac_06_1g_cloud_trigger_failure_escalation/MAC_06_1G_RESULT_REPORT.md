@@ -1,0 +1,32 @@
+# MAC-06.1G Result Report
+
+MAC_06_1G_PATCH_PACKAGE_STATUS=PASS
+CLOUD_NATIVE_AUTO_TRIGGER_STATUS=FAIL
+PLATFORM_CURRENT_CLASSIFICATION=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+LOCAL_REPO_CONTROLLED_REPRODUCTION_STATUS=PASS
+
+cloud_native_auto_trigger_failed=true
+cloud_internet_first_behavior_detected=true
+cloud_agents_md_present_but_not_active=true
+
+environment_compatibility_contract_created=true
+bootstrap_minimal_prompt_created=true
+codex_cloud_compatibility_test_protocol_created=true
+local_repo_controlled_reproduction_created=true
+local_reproduction_validator_run=true
+local_reproduction_validator_classification=PASS
+
+validator_internet_first_check_present=true
+proof_docs_updated=true
+readiness_gates_updated=true
+
+COMMIT_PERFORMED=false
+PUSH_PERFORMED=false
+
+safe_to_test_native_auto_trigger_again=false
+safe_to_test_bootstrap_required_mode=false
+SAFE_TO_TEST_AFTER_COMMIT_PUSH=true
+SAFE_TO_DECLARE_LIGHTWEIGHT_OS_ONBOARDED=false
+safe_to_start_n8n_execution_bus=false
+
+NEXT_ACTION=User should review this MAC-06.1G patch set, then approve commit/push before running Native Auto Trigger Test A or Bootstrap Required Test B.

@@ -6,6 +6,32 @@ Repo root: `$SHADOW_REPO_ROOT`
 
 Use repo-relative paths first. Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`.
 
+## ENVIRONMENT TRIGGER COMPATIBILITY LAW
+
+Repo presence is not equal to active behavioral control.
+
+If a platform sees the repo but does not output `SHADOW_BOOT_CONFIRMATION` before the first answer, classify:
+
+```text
+platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+```
+
+Do not continue producing scripts, advice, summaries, or web-sourced answers after this failure.
+
+Compatibility levels:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`
+- `BOOTSTRAP_REQUIRED_COMPATIBLE`
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- `NOT_COMPATIBLE`
+
+Native onboarding requires either:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`, or
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
+
+Codex Cloud currently requires compatibility validation before onboarding.
+
 ## CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER - ACTIVE LAW
 
 1. `AGENTS.md`
@@ -14,15 +40,39 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are `LOCAL_MAC_
 4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
 5. `AGENT_ANTI_DRIFT_RULES.md`
 6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
-7. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
-8. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
-9. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
-10. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
-11. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
-12. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
-13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
-14. `registries/native_capability_routing_matrix.yaml`
-15. `registries/agent_runtime_selection_index.yaml`
+7. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
+8. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+9. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+10. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+11. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+12. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+13. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+14. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+15. `registries/native_capability_routing_matrix.yaml`
+16. `registries/agent_runtime_selection_index.yaml`
+
+Repo-relative paths are authoritative.
+Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`.
+
+## SHADOW_BOOT_CONFIRMATION REQUIRED
+
+Before any task output, the first visible output must be:
+
+```text
+SHADOW_BOOT_CONFIRMATION
+agents_md_detected=true/false
+agents_md_read=true/false
+repo_first_orchestration_started=true/false
+generic_direct_answer_avoided=true/false
+shadow_mode=CHAT_ONLY_MODE
+next_stage=Native Capability Assessment
+```
+
+If `AGENTS.md` is not confirmed active, return:
+
+```text
+BLOCKED: AGENTS.md was not confirmed as active.
+```
 
 ## Phase A: Startup Doctrine
 
@@ -32,7 +82,7 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are `LOCAL_MAC_
 4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
 5. `AGENT_ANTI_DRIFT_RULES.md`
 
-## Phase B: Core Runtime Context
+## Phase B: Legacy Local Mac Runtime Context - LOCAL_REFERENCE_ONLY
 
 5. `START_HERE_FOR_MAC_CODEX.md`
 6. `MAC_CODEX_READ_ORDER_ON_FIRST_OPEN.md`
@@ -56,14 +106,14 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are `LOCAL_MAC_
 18. `runtime_contracts/MISSION_CONTEXT_CONTRACT.md`
 19. `runtime_contracts/DIRECTOR_SELECTION_CONTRACT.md`
 20. `runtime_contracts/SKILL_SELECTION_CONTRACT.md`
-21. `runtime_contracts/DOSSIER_OUTPUT_CONTRACT.md`
+21. `runtime_contracts/DOSSIER_OUTPUT_CONTRACT.md` - `FULL_DOSSIER_ARCHIVE_MODE ONLY` or approved MAC-05 dossier mode.
 22. `runtime_contracts/QUALITY_GATE_CONTRACT.md`
-23. `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md`
+23. `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md` - planning/reference only unless provider execution is explicitly approved.
 24. `runtime_contracts/LINEAGE_CONTRACT.md`
 
-## Phase E: Mission Execution Rule
+## Phase E: Mission Execution Rule - FULL_DOSSIER_ARCHIVE_MODE ONLY
 
-For approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit MAC-05 production dossier mode only, output one dossier containing:
+For approved `FULL_DOSSIER_ARCHIVE_MODE ONLY` or explicit MAC-05 production dossier mode only, output one dossier containing:
 
 - `mission.md`
 - `mission_context.json`
@@ -83,7 +133,7 @@ For approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit MAC-05 production dossier m
 - `lineage.json`
 - `DOSSIER_README.md`
 
-Phase E applies only to approved `FULL_DOSSIER_ARCHIVE_MODE` or explicit production dossier mode. For normal lightweight tasks, output-consolidation rules override Phase E: chat-only creates no files, and consolidated repo-write creates one mission output file unless full dossier mode is explicitly requested.
+Phase E applies only to approved `FULL_DOSSIER_ARCHIVE_MODE ONLY` or explicit production dossier mode. It is not default chat mode. For normal lightweight tasks, output-consolidation rules override Phase E: chat-only creates no files, and consolidated repo-write creates one mission output file unless full dossier mode is explicitly requested.
 
 ## PHASE E OVERRIDE FOR CURRENT LIGHTWEIGHT DEFAULT
 

@@ -11,6 +11,11 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Did the new agent detect/read `AGENTS.md`?
 - Did the output include `agents_md_detected=true` and `agents_md_read=true`?
 - Did output include `repo_first_orchestration_started=true`?
+- Did output include `generic_direct_answer_avoided=true`?
+- Did output include `environment_trigger_compatibility_checked=true`?
+- Did output record `platform_current_classification`?
+- Did output include `internet_first_behavior_detected=false`?
+- Did output include `web_access_used_before_repo_route=false`?
 - Did the output read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`?
 - Did a layman task trigger repo-first orchestration without the user saying `use repo`?
 - Did the output avoid generic direct answer behavior?
@@ -82,6 +87,20 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Is `proof_classification=PASS/PARTIAL/FAIL` present and aligned to the weakest evidence layer?
 - Did the output avoid any false claim that n8n/providers/media were executed?
 - If a plain content task returned any final answer/script/summary/outline/advice before `SHADOW_BOOT_CONFIRMATION`, is verdict set to `FAIL`?
+- Did the proof separate Native Auto Trigger Test from Bootstrap Required Test?
+- If native auto-trigger failed, did the output avoid declaring native onboarding?
+- If bootstrap-required mode passed, did it classify the platform as `BOOTSTRAP_REQUIRED_COMPATIBLE` only?
+- Test A - Native Auto Trigger: Did a plain layman task produce `SHADOW_BOOT_CONFIRMATION` as the first visible output?
+- Test B - Bootstrap Required: If Test A failed, did the minimal bootstrap prompt produce repo-first behavior and validator PASS?
+- If Test A fails and Test B passes, is platform classification exactly `BOOTSTRAP_REQUIRED_COMPATIBLE`?
+- If both tests fail, is platform classification `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE` or `NOT_COMPATIBLE`?
+- Did it keep n8n execution disabled?
+- Did it keep providers disabled?
+- Did it keep media execution disabled?
+- If `internet_first_behavior_detected=true`, is verdict set to `FAIL`?
+- If `web_access_used_before_repo_route=true`, is verdict set to `FAIL`?
+- If `platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`, did the proof block onboarding?
+- A script, summary, advice, or web-sourced answer before `SHADOW_BOOT_CONFIRMATION` is `FAIL`.
 
 ## Verdict
 

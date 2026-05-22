@@ -22,7 +22,33 @@ BLOCKED: AGENTS.md was not confirmed as active.
 
 A plain user request is enough to trigger Shadow OS.
 Do not wait for the user to say `use repo`.
-Do not answer with a script, summary, plan, or advice before `SHADOW_BOOT_CONFIRMATION`.
+Do not answer with a script, summary, plan, advice, or web-sourced answer before `SHADOW_BOOT_CONFIRMATION`.
+
+## ENVIRONMENT TRIGGER COMPATIBILITY LAW
+
+Repo presence is not equal to active behavioral control.
+
+If a platform sees the repo but does not output `SHADOW_BOOT_CONFIRMATION` before the first answer, classify:
+
+```text
+platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+```
+
+Do not continue producing scripts, advice, summaries, or web-sourced answers after this failure.
+
+Compatibility levels:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`
+- `BOOTSTRAP_REQUIRED_COMPATIBLE`
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- `NOT_COMPATIBLE`
+
+Native onboarding requires either:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`, or
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
+
+Codex Cloud currently requires compatibility validation before onboarding.
 
 You are operating inside ShadowCreatorOS_Lightweight.
 
@@ -55,14 +81,19 @@ Repo-relative paths are authoritative. Absolute Mac paths are `LOCAL_MAC_REFEREN
 
 ## Default Behavior
 
-16. Run Native Agent Capability Assessment.
-17. Run Task Freshness Classification.
-18. Run Research Mode Decision.
-19. Run registry-first routing.
-20. Select directors / agents / subagents / skills / subskills with evidence.
-21. Assess tools / connectors / plugins.
-22. If the task is content/script/video/media related, run the Shadow Content Engineering Output Standard.
-23. Output to chat by default.
+1. Confirm `AGENTS.md` is active.
+2. Output `SHADOW_BOOT_CONFIRMATION`.
+3. Read `START_HERE_FOR_AGENTS.md`.
+4. Read `AGENT_READ_ORDER.md`.
+5. Continue canonical boot order.
+6. Run Native Agent Capability Assessment.
+7. Run Task Freshness Classification.
+8. Run Research Mode Decision.
+9. Run registry-first routing.
+10. Select directors / agents / subagents / skills / subskills with evidence.
+11. Assess tools / connectors / plugins.
+12. If the task is content/script/video/media related, run the Shadow Content Engineering Output Standard.
+13. Output to chat by default.
 
 ## Mandatory Mode
 

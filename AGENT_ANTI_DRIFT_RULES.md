@@ -1,5 +1,31 @@
 # AGENT ANTI-DRIFT RULES
 
+## ENVIRONMENT TRIGGER COMPATIBILITY LAW
+
+Repo presence is not equal to active behavioral control.
+
+If a platform sees the repo but does not output `SHADOW_BOOT_CONFIRMATION` before the first answer, classify:
+
+```text
+platform_current_classification=REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
+```
+
+Do not continue producing scripts, advice, summaries, or web-sourced answers after this failure.
+
+Compatibility levels:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`
+- `BOOTSTRAP_REQUIRED_COMPATIBLE`
+- `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`
+- `NOT_COMPATIBLE`
+
+Native onboarding requires either:
+
+- `NATIVE_AUTO_TRIGGER_COMPATIBLE`, or
+- `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
+
+Codex Cloud currently requires compatibility validation before onboarding.
+
 ## Rule 1: No Generic Chatbot Mode
 
 - Do not answer with broad generic advice when production artifacts are requested.
@@ -15,15 +41,16 @@ Use repo-relative paths first. Absolute `/Users/apple/...` paths are local Mac r
 4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
 5. `AGENT_ANTI_DRIFT_RULES.md`
 6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
-7. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
-8. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
-9. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
-10. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
-11. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
-12. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
-13. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
-14. `registries/native_capability_routing_matrix.yaml`
-15. `registries/agent_runtime_selection_index.yaml`
+7. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
+8. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+9. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+10. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+11. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+12. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+13. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+14. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+15. `registries/native_capability_routing_matrix.yaml`
+16. `registries/agent_runtime_selection_index.yaml`
 
 ## CURRENT LIGHTWEIGHT OUTPUT LAW
 
@@ -66,6 +93,7 @@ The proof passes only if the repo itself triggers orchestration through `AGENTS.
 - `CHAT_ONLY_MODE` remains default.
 - No files are created by default.
 
+
 ## Rule 2: Registry-Only Selection
 
 - Directors/agents/subagents/skills/subskills must be selected from repo registries/files.
@@ -79,10 +107,12 @@ Always enforce:
 - `runtime_contracts/MISSION_CONTEXT_CONTRACT.md`
 - `runtime_contracts/DIRECTOR_SELECTION_CONTRACT.md`
 - `runtime_contracts/SKILL_SELECTION_CONTRACT.md`
-- `runtime_contracts/DOSSIER_OUTPUT_CONTRACT.md`
+- `runtime_contracts/DOSSIER_OUTPUT_CONTRACT.md` only in `FULL_DOSSIER_ARCHIVE_MODE ONLY` or approved MAC-05 production dossier mode.
 - `runtime_contracts/QUALITY_GATE_CONTRACT.md`
-- `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md`
+- `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md` as planning/reference only unless provider execution is explicitly approved.
 - `runtime_contracts/LINEAGE_CONTRACT.md`
+
+Normal `CHAT_ONLY_MODE` tasks create no files, no dossier artifacts, and no provider execution.
 
 ## Rule 4: n8n/Provider Execution Is Off by Default
 

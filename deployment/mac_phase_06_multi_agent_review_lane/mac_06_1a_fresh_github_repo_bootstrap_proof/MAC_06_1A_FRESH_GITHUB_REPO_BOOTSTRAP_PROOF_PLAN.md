@@ -48,6 +48,12 @@ The agent receives:
 - It reports `script_generated_after_all_locks=true`.
 - It reports `loaded_true_but_not_consumed_detected=false`.
 - It reports `manual_rerun_structured_but_partial_detected=false` for any PASS claim.
+- If Codex Cloud is wrapper-required, it reports `shadow_task_execution_wrapper_read=true`.
+- If Codex Cloud is wrapper-required, it reports `wrapper_required_mode_used=true`.
+- It reports `codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE`.
+- It reports `direct_script_after_bootstrap_without_wrapper=false`.
+- It reports `wrapper_missing_when_required=false`.
+- It reports `wrapper_used_but_locks_missing=false`.
 - It assesses tools/connectors/plugins honestly as `ACTIVE`, `PLANNED`, `NOT_ACTIVE`, or `NEEDS_CONFIRMATION`.
 - It produces research, script, debate, critique, final script, and context engineering packet.
 - It runs a quality gate.
@@ -77,6 +83,9 @@ PASS is impossible if:
 - governance lock is missing
 - source/current claims appear before source lock
 - content engineering is present but consumption, influence, or quality proof is missing
+- wrapper-required mode is declared but the wrapper is not read
+- direct script appears after bootstrap without wrapper
+- wrapper is used but required locks are missing
 
 ## Environment Compatibility Split
 

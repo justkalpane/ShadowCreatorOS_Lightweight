@@ -1,0 +1,53 @@
+# Shadow Task Execution Wrapper Compact
+
+Paste this before or with each task in Codex Cloud when post-bootstrap persistence is unreliable.
+
+```text
+SHADOW_TASK_EXECUTION_WRAPPER
+
+Use Shadow OS for this task. Do not answer directly.
+
+Read:
+- AGENTS.md
+- handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md
+- registries/task_intent_routing_matrix.yaml
+- selected route_manifest_path
+- runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+- runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+- runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+- runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+
+Output in this order:
+SHADOW_BOOT_CONFIRMATION
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+CONSUMPTION_LOCK
+SOURCE_RESEARCH_LOCK
+QUALITY_LOCK
+GOVERNANCE_LOCK
+DIRECTOR_CONSUMPTION_LEDGER
+AGENT_CONSUMPTION_LEDGER
+SUBAGENT_CONSUMPTION_LEDGER
+SKILL_CONSUMPTION_LEDGER
+SUBSKILL_CONSUMPTION_LEDGER
+TOPIC_QUALITY_GATE
+HOOK_GENERATION_GATE
+SCRIPT_QUALITY_GATE
+FINAL_SCRIPT
+CONTENT_ENGINEERING_PACKET
+LINE_BY_LINE_INFLUENCE_MAP
+PROVIDER_HANDOFF_BOUNDARY
+FINAL_PROOF_CLASSIFICATION
+
+Required fields:
+shadow_task_execution_wrapper_read=true
+route_id=
+route_manifest_path=
+route_manifest_read=true
+route_scope_complete=true
+mandatory_files_read_before_output=true
+all_locks_status=PASS
+wrapper_required_mode_used=true
+
+If any lock or route file proof is missing, return BLOCKED_BEFORE_OUTPUT instead of a script.
+```

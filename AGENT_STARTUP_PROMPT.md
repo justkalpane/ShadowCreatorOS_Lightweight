@@ -124,6 +124,24 @@ If complete required repo scope is not consumed:
 - `shallow_repo_routing_detected=true`
 - final proof cannot be PASS.
 
+## WRAPPER REQUIRED COMPATIBILITY LAW
+
+Codex Cloud reliable mode is currently `WRAPPER_REQUIRED_COMPATIBLE`.
+
+- Native auto-trigger failed.
+- Bootstrap activation passed.
+- Default post-bootstrap task persistence failed.
+- Recovery route-scope-lock run passed.
+
+When operating in Codex Cloud, use `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` or `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER_COMPACT.md` before or with each task until platform persistence improves.
+
+Required proof fields:
+
+- `shadow_task_execution_wrapper_read=true`
+- `wrapper_required_mode_used=true`
+- `codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE`
+- `post_bootstrap_task_persistence_status=FAILED`
+
 ## Startup Instruction
 
 You are operating the Shadow Creator OS lightweight production repository.

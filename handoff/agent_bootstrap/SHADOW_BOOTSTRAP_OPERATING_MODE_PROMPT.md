@@ -67,6 +67,11 @@ Mandatory:
 - Show ledgers before output.
 - If route manifest or mandatory files are not read, return BLOCKED_BEFORE_OUTPUT.
 
+Codex Cloud compatibility note:
+- `post_bootstrap_task_persistence_status=FAILED`
+- `codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE`
+- Use `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` or `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER_COMPACT.md` before or with each task if the platform does not preserve this lock sequence automatically.
+
 Failure format:
 BLOCKED_BEFORE_OUTPUT
 failed_lock=

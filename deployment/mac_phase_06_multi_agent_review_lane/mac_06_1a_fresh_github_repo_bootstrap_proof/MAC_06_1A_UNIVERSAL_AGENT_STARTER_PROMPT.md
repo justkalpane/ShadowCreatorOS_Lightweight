@@ -202,6 +202,15 @@ Required output:
   - script_generated_after_all_locks=true/false
   - loaded_true_but_not_consumed_detected=true/false
   - manual_rerun_structured_but_partial_detected=true/false
+- WRAPPER_REQUIRED_MODE block:
+  - plain_post_bootstrap_task_attempted=true/false
+  - plain_post_bootstrap_task_failed=true/false
+  - shadow_task_execution_wrapper_read=true/false
+  - wrapper_required_mode_used=true/false
+  - direct_script_after_bootstrap_without_wrapper=true/false
+  - wrapper_missing_when_required=true/false
+  - wrapper_used_but_locks_missing=true/false
+  - codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
 - AGENT_RUNTIME_SELECTION block:
   - agent_runtime_index_path=registries/agent_runtime_selection_index.yaml
   - selected_agents
@@ -256,6 +265,10 @@ Hard rules:
 - PASS is impossible if governance lock is missing
 - PASS is impossible if source/current claims appear before source lock
 - PASS is impossible if content engineering is present but consumption, influence, or quality proof is missing
+- PASS is impossible in wrapper-required mode if `shadow_task_execution_wrapper_read=true` is missing
+- PASS is impossible if `direct_script_after_bootstrap_without_wrapper=true`
+- PASS is impossible if `wrapper_missing_when_required=true`
+- PASS is impossible if `wrapper_used_but_locks_missing=true`
 - If Test A fails but Test B passes, classify platform as `BOOTSTRAP_REQUIRED_COMPATIBLE`, not `NATIVE_AUTO_TRIGGER_COMPATIBLE`
 ```
 

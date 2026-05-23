@@ -88,6 +88,14 @@ governance_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
 script_generated_after_all_locks=true/false
 loaded_true_but_not_consumed_detected=true/false
 manual_rerun_structured_but_partial_detected=true/false
+plain_post_bootstrap_task_attempted=true/false
+plain_post_bootstrap_task_failed=true/false
+shadow_task_execution_wrapper_read=true/false
+wrapper_required_mode_used=true/false
+direct_script_after_bootstrap_without_wrapper=true/false
+wrapper_missing_when_required=true/false
+wrapper_used_but_locks_missing=true/false
+codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
 chat_only_mode_used=true/false
 files_created=false
 dossier_artifacts_created=false
@@ -264,6 +272,10 @@ limitations_disclosed=true/false
 - PASS is impossible if `GOVERNANCE_LOCK` is missing.
 - PASS is impossible if current/source claims appear before `SOURCE_RESEARCH_LOCK`.
 - PASS is impossible if content engineering is present but consumption, influence, or quality proof is missing.
+- PASS is impossible for Codex Cloud wrapper-required mode if `shadow_task_execution_wrapper_read=true` is missing.
+- PASS is impossible if `direct_script_after_bootstrap_without_wrapper=true`.
+- PASS is impossible if `wrapper_missing_when_required=true`.
+- PASS is impossible if `wrapper_used_but_locks_missing=true`.
 - Native auto-trigger test and bootstrap-required test are separate proof paths.
 - If native auto-trigger fails, do not declare native onboarding.
 - If bootstrap-required passes after native auto-trigger fails, classify the platform as `BOOTSTRAP_REQUIRED_COMPATIBLE` only.

@@ -321,6 +321,23 @@ def main() -> int:
     )
     quality_gate_without_threshold = "SCRIPT_QUALITY_GATE" in text and find_key_value(text, "script_pass_threshold") is None
     selected_components_without_read_before_output = explicit_true(text, "selected_components_without_read_before_output")
+    wrapper_required_mode_used = explicit_true(text, "wrapper_required_mode_used")
+    wrapper_required_compatible = find_key_value(text, "codex_cloud_reliable_mode") == "WRAPPER_REQUIRED_COMPATIBLE"
+    shadow_task_execution_wrapper_read = explicit_true(text, "shadow_task_execution_wrapper_read")
+    plain_post_bootstrap_task_failed = explicit_true(text, "plain_post_bootstrap_task_failed")
+    direct_script_after_bootstrap_without_wrapper = explicit_true(text, "direct_script_after_bootstrap_without_wrapper")
+    wrapper_missing_when_required = explicit_true(text, "wrapper_missing_when_required") or (
+        wrapper_required_compatible and not shadow_task_execution_wrapper_read
+    )
+    wrapper_used_but_locks_missing = explicit_true(text, "wrapper_used_but_locks_missing") or (
+        wrapper_required_mode_used
+        and (
+            route_manifest_missing
+            or route_dependency_expansion_lock_missing
+            or route_scope_incomplete
+            or mandatory_files_not_read
+        )
+    )
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -392,6 +409,9 @@ def main() -> int:
         or final_classification_before_governance_lock
         or hook_variants_without_scores
         or selected_components_without_read_before_output
+        or direct_script_after_bootstrap_without_wrapper
+        or wrapper_missing_when_required
+        or wrapper_used_but_locks_missing
     ):
         status = "FAIL"
     elif (
@@ -460,6 +480,12 @@ def main() -> int:
     print(f"hook_variants_without_scores={str(hook_variants_without_scores).lower()}")
     print(f"quality_gate_without_threshold={str(quality_gate_without_threshold).lower()}")
     print(f"selected_components_without_read_before_output={str(selected_components_without_read_before_output).lower()}")
+    print(f"plain_post_bootstrap_task_failed={str(plain_post_bootstrap_task_failed).lower()}")
+    print(f"shadow_task_execution_wrapper_read={str(shadow_task_execution_wrapper_read).lower()}")
+    print(f"wrapper_required_mode_used={str(wrapper_required_mode_used).lower()}")
+    print(f"direct_script_after_bootstrap_without_wrapper={str(direct_script_after_bootstrap_without_wrapper).lower()}")
+    print(f"wrapper_missing_when_required={str(wrapper_missing_when_required).lower()}")
+    print(f"wrapper_used_but_locks_missing={str(wrapper_used_but_locks_missing).lower()}")
     print(f"generic_output_detected={str(generic_detected).lower()}")
     print(f"shadow_boot_confirmation_present={str(boot_signature_present).lower()}")
     print(f"content_before_shadow_boot_confirmation={str(content_before_boot_signature).lower()}")

@@ -20,6 +20,14 @@ Repo visibility is not the same as active behavioral control. `AGENTS.md` can be
 - After bootstrap, repo-first behavior can be enforced in-session.
 - This is acceptable only if disclosed to the user.
 
+### WRAPPER_REQUIRED_COMPATIBLE
+
+- Native auto-trigger failed.
+- Bootstrap activation succeeds.
+- Default post-bootstrap task persistence fails.
+- A compact per-task execution wrapper is required before or with each task.
+- This is the reliable Codex Cloud mode until platform behavior improves.
+
 ### REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE
 
 - Repo files are visible.
@@ -40,3 +48,15 @@ Do not declare `ShadowCreatorOS_Lightweight` onboarded on any platform until tha
 - `BOOTSTRAP_REQUIRED_COMPATIBLE` with user-approved bootstrap workflow.
 
 If a platform is `REPO_VISIBLE_BUT_NOT_BEHAVIOR_ACTIVE`, classify native auto-trigger as failed and run the bootstrap-required compatibility test before any onboarding claim.
+
+## Codex Cloud MAC-06.1M Compatibility Note
+
+```text
+native_auto_trigger_status=FAILED
+bootstrap_activation_status=PASS
+post_bootstrap_task_persistence_status=FAILED
+recovery_route_scope_lock_run_status=PASS
+codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
+```
+
+Do not declare default bootstrap mode onboarded for Codex Cloud while post-bootstrap layman tasks can still skip route locks, route manifests, consumption ledgers, source lock, quality lock, or governance lock.

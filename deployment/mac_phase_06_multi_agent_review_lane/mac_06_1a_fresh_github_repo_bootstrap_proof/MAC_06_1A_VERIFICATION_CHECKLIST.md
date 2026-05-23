@@ -154,6 +154,17 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Missing governance lock blocks `PASS`.
 - Source/current claims before `SOURCE_RESEARCH_LOCK` are `FAIL`.
 - Content engineering without consumption, influence, and quality proof blocks `PASS`.
+- If Codex Cloud is `WRAPPER_REQUIRED_COMPATIBLE`, did output include `shadow_task_execution_wrapper_read=true`?
+- Did output include `wrapper_required_mode_used=true`?
+- Did output include `codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE`?
+- Did output include `plain_post_bootstrap_task_attempted=true/false`?
+- Did output include `plain_post_bootstrap_task_failed=true/false`?
+- Did output include `direct_script_after_bootstrap_without_wrapper=false`?
+- Did output include `wrapper_missing_when_required=false`?
+- Did output include `wrapper_used_but_locks_missing=false`?
+- Direct script after bootstrap without wrapper is `FAIL`.
+- Missing wrapper when wrapper-required mode is declared is `FAIL`.
+- Wrapper used but required locks missing is `FAIL`.
 
 ## Verdict
 

@@ -57,6 +57,12 @@ bootstrap_activation_status=PASS
 post_bootstrap_task_persistence_status=FAILED
 recovery_route_scope_lock_run_status=PASS
 codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
+wrapper_required_live_test_status=PASS_WITH_NOTICE
+wrapper_required_mode_chat_only_content_tasks_usable=true
+default_bootstrap_mode_onboarded=false
+lightweight_os_onboarded=false
 ```
 
 Do not declare default bootstrap mode onboarded for Codex Cloud while post-bootstrap layman tasks can still skip route locks, route manifests, consumption ledgers, source lock, quality lock, or governance lock.
+
+Wrapper-required mode is usable for chat-only content tasks with notice: the route-lock structure passed, source breadth was repaired, and exact rule-consumption evidence still needs MAC-06.1N hardening.

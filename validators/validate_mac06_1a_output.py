@@ -45,6 +45,25 @@ REQUIRED_SECTIONS = [
     "HOOK_GENERATION_GATE",
     "SCRIPT_QUALITY_GATE",
     "shallow_repo_routing_detected",
+    "runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md",
+    "runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md",
+    "TASK_ROUTE_LOCK",
+    "ROUTE_DEPENDENCY_EXPANSION_LOCK",
+    "CONSUMPTION_LOCK",
+    "SOURCE_RESEARCH_LOCK",
+    "QUALITY_LOCK",
+    "GOVERNANCE_LOCK",
+    "route_manifest_path",
+    "route_manifest_read",
+    "route_dependency_expansion_lock_status",
+    "route_scope_complete",
+    "mandatory_files_read_before_output",
+    "task_route_lock_status",
+    "consumption_lock_status",
+    "source_research_lock_status",
+    "quality_lock_status",
+    "governance_lock_status",
+    "script_generated_after_all_locks",
     "Registry-First Route",
     "Director Selection",
     "AGENT_RUNTIME_SELECTION",
@@ -145,6 +164,13 @@ REQUIRED_TRUE_KEYS = [
     "director_skill_consumption_protocol_read",
     "script_quality_enforcement_contract_read",
     "gumloop_benchmark_output_standard_read",
+    "task_execution_state_machine_contract_read",
+    "route_dependency_expansion_protocol_read",
+    "route_manifest_read",
+    "route_dependency_expansion_lock_present",
+    "route_scope_complete",
+    "mandatory_files_read_before_output",
+    "script_generated_after_all_locks",
     "director_consumption_ledger_present",
     "agent_consumption_ledger_present",
     "subagent_consumption_ledger_present",
@@ -157,6 +183,8 @@ REQUIRED_TRUE_KEYS = [
 ]
 REQUIRED_FALSE_KEYS = [
     "shallow_repo_routing_detected",
+    "loaded_true_but_not_consumed_detected",
+    "manual_rerun_structured_but_partial_detected",
 ]
 
 
@@ -198,6 +226,24 @@ def has_script_before_consumption_ledger(text: str) -> bool:
     if not script_positions or not ledger_positions:
         return False
     return min(script_positions) < min(ledger_positions)
+
+
+def marker_before(text: str, first_markers: list[str], second_markers: list[str]) -> bool:
+    first_positions = [text.find(marker) for marker in first_markers if text.find(marker) >= 0]
+    second_positions = [text.find(marker) for marker in second_markers if text.find(marker) >= 0]
+    if not first_positions or not second_positions:
+        return False
+    return min(first_positions) < min(second_positions)
+
+
+def explicit_false(text: str, key: str) -> bool:
+    value = find_key_value(text, key)
+    return value is not None and value.lower() == "false"
+
+
+def explicit_true(text: str, key: str) -> bool:
+    value = find_key_value(text, key)
+    return value is not None and value.lower() == "true"
 
 
 def count_hook_variants(text: str) -> int:
@@ -246,6 +292,35 @@ def main() -> int:
     sources_before_repo_route = has_sources_before_repo_route(text)
     script_before_consumption_ledger = has_script_before_consumption_ledger(text)
     hook_variant_count = count_hook_variants(text)
+    script_markers = ["FINAL_SCRIPT", "Final script", "Final Script", "final_script_created=true"]
+    route_manifest_unread = explicit_false(text, "route_manifest_read")
+    route_manifest_missing = find_key_value(text, "route_manifest_path") in {None, ""} or route_manifest_unread
+    route_dependency_expansion_lock_missing = "ROUTE_DEPENDENCY_EXPANSION_LOCK" not in text or explicit_false(text, "route_dependency_expansion_lock_present")
+    route_scope_incomplete = explicit_false(text, "route_scope_complete")
+    mandatory_files_not_read = explicit_false(text, "mandatory_files_read_before_output")
+    bootstrap_loaded_true_but_no_route_lock = explicit_true(text, "bootstrap_loaded") and "TASK_ROUTE_LOCK" not in text
+    script_before_task_route_lock = marker_before(text, script_markers, ["TASK_ROUTE_LOCK"])
+    script_before_route_dependency_expansion_lock = marker_before(text, script_markers, ["ROUTE_DEPENDENCY_EXPANSION_LOCK"])
+    script_before_consumption_lock = marker_before(text, script_markers, ["CONSUMPTION_LOCK"])
+    final_script_before_quality_lock = marker_before(text, script_markers, ["QUALITY_LOCK"])
+    final_classification_before_governance_lock = marker_before(
+        text,
+        ["Final Proof Classification", "proof_classification", "final_proof_classification"],
+        ["GOVERNANCE_LOCK"],
+    )
+    source_lock_index = text.find("SOURCE_RESEARCH_LOCK")
+    latest_claims_before_source_research_lock = False
+    latest_match = re.search(r"(?i)\b(latest|current|this week|new update|today|2026|watch this week)\b", text)
+    if latest_match and (source_lock_index < 0 or latest_match.start() < source_lock_index):
+        latest_claims_before_source_research_lock = True
+    manual_structured_output_missing_ledgers = explicit_true(text, "manual_rerun_structured_but_partial_detected")
+    content_markers_present = any(marker in text for marker in ["TIMED_BEAT_MAP", "VOICE_GENERATION_CONTEXT", "CONTENT_MISSION_BRIEF"])
+    content_engineering_present_but_no_consumption = content_markers_present and consumption_ledger_missing if "consumption_ledger_missing" in locals() else False
+    hook_variants_without_scores = "HOOK_GENERATION_GATE" in text and hook_variant_count >= 3 and not (
+        "score_each" in text or explicit_true(text, "hook_scores_present")
+    )
+    quality_gate_without_threshold = "SCRIPT_QUALITY_GATE" in text and find_key_value(text, "script_pass_threshold") is None
+    selected_components_without_read_before_output = explicit_true(text, "selected_components_without_read_before_output")
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -264,6 +339,7 @@ def main() -> int:
             "SUBSKILL_CONSUMPTION_LEDGER",
         ]
     )
+    content_engineering_present_but_no_consumption = content_markers_present and consumption_ledger_missing
     quality_gate_missing = any(
         marker not in text
         for marker in ["TOPIC_QUALITY_GATE", "HOOK_GENERATION_GATE", "SCRIPT_QUALITY_GATE"]
@@ -304,6 +380,18 @@ def main() -> int:
         or sources_before_repo_route
         or shallow_routing_markers
         or script_before_consumption_ledger
+        or route_scope_incomplete
+        or route_manifest_unread
+        or mandatory_files_not_read
+        or bootstrap_loaded_true_but_no_route_lock
+        or script_before_task_route_lock
+        or script_before_route_dependency_expansion_lock
+        or script_before_consumption_lock
+        or latest_claims_before_source_research_lock
+        or final_script_before_quality_lock
+        or final_classification_before_governance_lock
+        or hook_variants_without_scores
+        or selected_components_without_read_before_output
     ):
         status = "FAIL"
     elif (
@@ -323,6 +411,12 @@ def main() -> int:
         or required_true_failures
         or required_false_failures
         or shadow_mode_invalid
+        or route_manifest_missing
+        or route_dependency_expansion_lock_missing
+        or manual_structured_output_missing_ledgers
+        or content_engineering_present_but_no_consumption
+        or hook_variants_without_scores
+        or quality_gate_without_threshold
     ):
         status = "PARTIAL"
 
@@ -349,6 +443,23 @@ def main() -> int:
         print(f"shallow_repo_routing_marker={item}")
     print(f"sources_before_repo_route={str(sources_before_repo_route).lower()}")
     print(f"script_before_consumption_ledger={str(script_before_consumption_ledger).lower()}")
+    print(f"route_manifest_missing={str(route_manifest_missing).lower()}")
+    print(f"route_manifest_unread={str(route_manifest_unread).lower()}")
+    print(f"route_dependency_expansion_lock_missing={str(route_dependency_expansion_lock_missing).lower()}")
+    print(f"route_scope_incomplete={str(route_scope_incomplete).lower()}")
+    print(f"mandatory_files_not_read={str(mandatory_files_not_read).lower()}")
+    print(f"bootstrap_loaded_true_but_no_route_lock={str(bootstrap_loaded_true_but_no_route_lock).lower()}")
+    print(f"script_before_task_route_lock={str(script_before_task_route_lock).lower()}")
+    print(f"script_before_route_dependency_expansion_lock={str(script_before_route_dependency_expansion_lock).lower()}")
+    print(f"script_before_consumption_lock={str(script_before_consumption_lock).lower()}")
+    print(f"latest_claims_before_source_research_lock={str(latest_claims_before_source_research_lock).lower()}")
+    print(f"final_script_before_quality_lock={str(final_script_before_quality_lock).lower()}")
+    print(f"final_classification_before_governance_lock={str(final_classification_before_governance_lock).lower()}")
+    print(f"manual_structured_output_missing_ledgers={str(manual_structured_output_missing_ledgers).lower()}")
+    print(f"content_engineering_present_but_no_consumption={str(content_engineering_present_but_no_consumption).lower()}")
+    print(f"hook_variants_without_scores={str(hook_variants_without_scores).lower()}")
+    print(f"quality_gate_without_threshold={str(quality_gate_without_threshold).lower()}")
+    print(f"selected_components_without_read_before_output={str(selected_components_without_read_before_output).lower()}")
     print(f"generic_output_detected={str(generic_detected).lower()}")
     print(f"shadow_boot_confirmation_present={str(boot_signature_present).lower()}")
     print(f"content_before_shadow_boot_confirmation={str(content_before_boot_signature).lower()}")

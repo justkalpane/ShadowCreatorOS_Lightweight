@@ -1,0 +1,27 @@
+route_id: FULL_VIDEO_PIPELINE
+route_name: Full Video Pipeline
+trigger_terms: [make complete video, full pipeline, generate complete content package]
+status: PARTIAL
+partial_reason: Provider/media/n8n activation remains disabled until separately proven and approved.
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md, runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md, runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/full_video_pipeline.yaml, registries/workflow_registry.yaml, registries/workflow_bindings.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml, registries/provider_registry.yaml]
+mandatory_directors: [directors/supreme_vision/krishna.md, directors/kernel/aruna.md, directors/strategy/narada.md, directors/research/vyasa.md, directors/research/valmiki.md, directors/distribution/saraswati.md, directors/supreme_vision/brahma.md, directors/production/vishwakarma.md, directors/cinematic/nataraja.md, directors/cinematic/garuda.md, directors/kernel/yama.md]
+mandatory_agents: [agents/krishna/krishna_agent.py, agents/aruna/aruna_agent.py, agents/narada/narada_agent.py, agents/vyasa/vyasa_agent.py, agents/valmiki/valmiki_agent.py, agents/saraswati/saraswati_agent.py, agents/brahma/brahma_agent.py, agents/vishwakarma/vishwakarma_agent.py, agents/nataraja/nataraja_agent.py, agents/garuda/garuda_agent.py, agents/yama/yama_agent.py]
+mandatory_subagents: [subagents/wf_010/wf_010_sub_agent.py, subagents/wf_100/wf_100_sub_agent.py, subagents/wf_200/wf_200_sub_agent.py, subagents/wf_300/wf_300_sub_agent.py, subagents/wf_400/wf_400_sub_agent.py, subagents/wf_500/wf_500_sub_agent.py]
+mandatory_skills: [.agents/skills/shadow-content-orchestration/SKILL.md, .agents/skills/shadow-research-gate/SKILL.md, .agents/skills/shadow-context-engineering/SKILL.md, skills/operations/M-168-content-factory-controller.skill.md, skills/operations/M-173-script-automation-engine.skill.md, skills/operations/M-174-visual-asset-generator.skill.md, skills/operations/M-175-video-assembly-engine.skill.md, skills/operations/M-176-post-production-automation.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-001-context-packet-sanitizer.subskill.md, skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md, skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.subskill.md, skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md, skills/sub_skills/SS-108-youtube-publish-oauth-guard.subskill.md, skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md, skills/sub_skills/SS-240-hook-variation-generator.subskill.md]
+mandatory_governance: [directors/supreme_vision/krishna.md, directors/kernel/aruna.md, directors/kernel/yama.md, directors/cinematic/garuda.md, runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, all content engineering sections, approval checkpoints, provider boundary]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [always for current tools/platform claims]
+provider_boundary_required_when: [always]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [provider/media/n8n execution claim without approval, skipped lane without disclosure, no approval checkpoints]
+partial_rules: [execution not approved, provider availability unproven]
+pass_rules: [all planning locks pass, boundaries explicit, execution disabled unless separately approved]
+create_missing_registry_binding: false

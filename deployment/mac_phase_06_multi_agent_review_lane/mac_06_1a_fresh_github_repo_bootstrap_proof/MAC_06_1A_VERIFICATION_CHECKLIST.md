@@ -130,6 +130,30 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - No line-by-line influence map is `FAIL`.
 - Shallow repo routing only is `FAIL`.
 - Script generated before director/skill consumption is `FAIL`.
+- Did output read `runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md`?
+- Did output read `runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md`?
+- Did output include `route_manifest_path=`?
+- Did output include `route_manifest_read=true`?
+- Did output include `ROUTE_DEPENDENCY_EXPANSION_LOCK`?
+- Did output include `route_dependency_expansion_lock_status=PASS` or disclosed blocker status?
+- Did output include `route_scope_complete=true`?
+- Did output include `mandatory_files_read_before_output=true`?
+- Did output include `missing_mandatory_files=`?
+- Did output include `task_route_lock_status=PASS`?
+- Did output include `consumption_lock_status=PASS`?
+- Did output include `source_research_lock_status=PASS` or a valid limited-mode blocker?
+- Did output include `quality_lock_status=PASS`?
+- Did output include `governance_lock_status=PASS`?
+- Did output include `script_generated_after_all_locks=true`?
+- Did output include `loaded_true_but_not_consumed_detected=false`?
+- Did output include `manual_rerun_structured_but_partial_detected=false` for a PASS claim?
+- Route manifest not read is `FAIL`.
+- Mandatory route files not read before output is `FAIL`.
+- Incomplete route scope blocks `PASS`.
+- Output before required locks is `FAIL`.
+- Missing governance lock blocks `PASS`.
+- Source/current claims before `SOURCE_RESEARCH_LOCK` are `FAIL`.
+- Content engineering without consumption, influence, and quality proof blocks `PASS`.
 
 ## Verdict
 

@@ -1,0 +1,64 @@
+route_id: TOPIC_DISCOVERY
+route_name: Topic Discovery
+trigger_terms: [find topic, pick topic, choose topic, trending topic, content idea, viral idea]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/RESEARCH_GATE_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SOURCE_INTELLIGENCE_AND_WEB_RESEARCH_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+mandatory_registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/topic_discovery.yaml
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+mandatory_directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/strategy/narada.md
+  - directors/strategy/chanakya.md
+  - directors/strategy/yudhishthira.md
+mandatory_agents:
+  - agents/krishna/krishna_agent.py
+  - agents/aruna/aruna_agent.py
+  - agents/narada/narada_agent.py
+  - agents/chanakya/chanakya_agent.py
+  - agents/yudhishthira/yudhishthira_agent.py
+mandatory_subagents:
+  - subagents/wf_100/wf_100_sub_agent.py
+  - subagents/cwf_110/cwf_110_sub_agent.py
+  - subagents/cwf_120/cwf_120_sub_agent.py
+  - subagents/cwf_130/cwf_130_sub_agent.py
+  - subagents/cwf_140/cwf_140_sub_agent.py
+mandatory_skills:
+  - skills/topic_intelligence/M-001-global-trend-scanner.skill.md
+  - skills/topic_intelligence/M-002-topic-opportunity-miner.skill.md
+  - skills/topic_intelligence/M-008-topic-viability-scorer.skill.md
+  - skills/topic_intelligence/M-016-content-gap-finder.skill.md
+mandatory_subskills:
+  - skills/sub_skills/SS-220-deep-research-agent.subskill.md
+  - skills/sub_skills/SS-221-source-credibility-evaluator.subskill.md
+  - skills/sub_skills/SS-222-fact-verification-engine.subskill.md
+  - skills/sub_skills/SS-223-knowledge-synthesizer.subskill.md
+  - skills/sub_skills/SS-224-contradiction-detector.subskill.md
+mandatory_governance: [directors/strategy/chanakya.md, directors/strategy/yudhishthira.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, GOVERNANCE_LOCK, topic_options, scores, reason, approval_gate]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [trending, latest, current, this week, today, 2026]
+provider_boundary_required_when: [downstream execution referenced]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [route manifest not read, mandatory files not read, selected component not consumed, source claims before source lock]
+partial_rules: [web unavailable with user-approved limited mode, optional subskill missing]
+pass_rules: [all required locks pass, topic scores include basis, approval gate present]
+create_missing_registry_binding: false

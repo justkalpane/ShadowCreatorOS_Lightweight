@@ -71,6 +71,23 @@ script_overall_score=
 script_pass_threshold=
 rewrite_performed_if_needed=true/false
 shallow_repo_routing_detected=true/false
+task_execution_state_machine_contract_read=true/false
+route_dependency_expansion_protocol_read=true/false
+route_manifest_path=
+route_manifest_read=true/false
+route_dependency_expansion_lock_present=true/false
+route_dependency_expansion_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+route_scope_complete=true/false
+mandatory_files_read_before_output=true/false
+missing_mandatory_files=
+task_route_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+consumption_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+source_research_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+quality_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+governance_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+script_generated_after_all_locks=true/false
+loaded_true_but_not_consumed_detected=true/false
+manual_rerun_structured_but_partial_detected=true/false
 chat_only_mode_used=true/false
 files_created=false
 dossier_artifacts_created=false
@@ -240,6 +257,13 @@ limitations_disclosed=true/false
 - PASS is impossible if line-by-line influence map is missing.
 - PASS is impossible if shallow repo routing only is detected.
 - PASS is impossible if script is generated before director/skill consumption.
+- PASS is impossible if the selected route manifest is not read.
+- PASS is impossible if mandatory route files are not read before output.
+- PASS is impossible if route scope is incomplete.
+- PASS is impossible if content output appears before required locks.
+- PASS is impossible if `GOVERNANCE_LOCK` is missing.
+- PASS is impossible if current/source claims appear before `SOURCE_RESEARCH_LOCK`.
+- PASS is impossible if content engineering is present but consumption, influence, or quality proof is missing.
 - Native auto-trigger test and bootstrap-required test are separate proof paths.
 - If native auto-trigger fails, do not declare native onboarding.
 - If bootstrap-required passes after native auto-trigger fails, classify the platform as `BOOTSTRAP_REQUIRED_COMPATIBLE` only.
@@ -288,3 +312,9 @@ limitations_disclosed=true/false
 - `SHALLOW_REPO_ROUTING_ONLY` is present.
 - `DIRECTOR_CONSUMPTION_LEDGER=NONE_SELECTED` or equivalent appears for a mandatory route.
 - Script output appears before director/skill consumption.
+- Route manifest is missing or unread.
+- Mandatory route files are not read before output.
+- Route dependency expansion lock is missing.
+- Route scope is incomplete.
+- Final output appears before task route, route dependency expansion, consumption, quality, or governance locks.
+- Current/latest claims appear before `SOURCE_RESEARCH_LOCK`.

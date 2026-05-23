@@ -82,6 +82,30 @@ Generic output after bootstrap is `FAIL`.
 Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
 If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
 
+## COMPLETE REQUIRED REPO SCOPE LAW
+
+Every task must use the complete required repo scope for its selected route.
+
+Complete required repo scope is determined by:
+
+- `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+- `registries/task_intent_routing_matrix.yaml`
+- selected `route_manifest_path`
+- `runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md`
+- `runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md`
+
+Do not read only startup docs.
+Do not read only bootstrap docs.
+Do not read only `.agents` skills.
+Do not copy Gumloop route names as source truth.
+Do not generate content until route manifest and mandatory files are consumed.
+
+If complete required repo scope is not consumed:
+
+- `route_scope_status=FAIL`
+- `shallow_repo_routing_detected=true`
+- final proof cannot be PASS.
+
 If you are a coding agent working in this repository, start here before any production action.
 
 ## Mandatory Startup Steps

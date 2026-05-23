@@ -20,35 +20,63 @@ task_intent_classified=true
 route_id=SCRIPT_GENERATION
 registries/task_intent_routing_matrix.yaml
 task_intent_routing_matrix_cited=true
+runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+TASK_ROUTE_LOCK
+task_route_lock_status=PASS
+route_manifest_path=registries/route_manifests/script_generation.yaml
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_dependency_expansion_lock_status=PASS
+route_scope_complete=true
+mandatory_files_read_before_output=true
+missing_mandatory_files=none
 director_skill_consumption_protocol_read=true
 script_quality_enforcement_contract_read=true
 gumloop_benchmark_output_standard_read=true
+CONSUMPTION_LOCK
+consumption_lock_status=PASS
 DIRECTOR_CONSUMPTION_LEDGER
 director_consumption_ledger_present=true
 AGENT_CONSUMPTION_LEDGER
 agent_consumption_ledger_present=true
 SUBAGENT_CONSUMPTION_LEDGER
 subagent_consumption_ledger_present=true
+SKILL_CONSUMPTION_LEDGER
+skill_consumption_ledger_present=true
 SUBSKILL_CONSUMPTION_LEDGER
 subskill_consumption_ledger_present=true
 MISSED_REPO_RULES
 LINE_BY_LINE_INFLUENCE_MAP
 line_by_line_influence_map_present=true
+SOURCE_RESEARCH_LOCK
+source_research_lock_status=PASS
 TOPIC_QUALITY_GATE
 topic_quality_gate_present=true
 HOOK_GENERATION_GATE
 hook_generation_gate_present=true
-hook_variant_1=Tool chase failure.
-hook_variant_2=System gap failure.
-hook_variant_3=Creator workflow failure.
+hook_variant_1=System beats tools.
+hook_variant_2=Apps expose broken process.
+hook_variant_3=Creators need repeatable loops.
 hook_variants_count=3
-score_each=7.4,7.8,8.1
+score_each=8.2,8.6,8.9
 hook_scores_present=true
+selected_hook_reason_present=true
 SCRIPT_QUALITY_GATE
 script_quality_gate_present=true
-script_overall_score=8.4
+script_overall_score=8.9
 script_pass_threshold=8.0
 rewrite_performed_if_needed=true
+QUALITY_LOCK
+quality_lock_status=PASS
+GOVERNANCE_LOCK
+governance_lock_status=PASS
+script_generated_after_all_locks=true
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
 shallow_repo_routing_detected=false
 Registry-First Route
 Director Selection
@@ -73,7 +101,7 @@ Provider Handoff Boundary
 Quality Gate
 Lineage Summary
 Final Proof Classification
-proof_classification=PARTIAL
+proof_classification=PASS
 chat_only_mode_used=true
 files_created=false
 dossier_artifacts_created=false

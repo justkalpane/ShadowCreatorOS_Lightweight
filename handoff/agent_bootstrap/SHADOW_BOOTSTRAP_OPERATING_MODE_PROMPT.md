@@ -35,10 +35,14 @@ Before answering any task, read:
 15. subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
 16. registries/skill_registry.yaml
 17. registries/subskill_runtime_registry.yaml
+18. runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+19. runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
 
 Every task must:
 - classify task intent
 - select route_id from registries/task_intent_routing_matrix.yaml
+- read the selected route_manifest_path before output generation
+- expand the complete required repo scope before output generation
 - read selected director/agent/subagent/skill/subskill files before output generation
 - extract at least 3 concrete rules per selected mandatory asset class
 - include consumption ledgers before final output
@@ -46,6 +50,29 @@ Every task must:
 - include LINE_BY_LINE_INFLUENCE_MAP
 - include governance gate
 - preserve CHAT_ONLY_MODE by default
+
+For every future user task, after bootstrap and before any final answer, run:
+1. TASK_ROUTE_LOCK
+2. ROUTE_DEPENDENCY_EXPANSION_LOCK
+3. CONSUMPTION_LOCK
+4. SOURCE_RESEARCH_LOCK when required
+5. QUALITY_LOCK
+6. GOVERNANCE_LOCK
+
+Mandatory:
+- Read registries/task_intent_routing_matrix.yaml per task.
+- Read selected route_manifest_path per task.
+- Read all mandatory files listed in the route manifest.
+- Extract rules from selected directors/agents/subagents/skills/subskills.
+- Show ledgers before output.
+- If route manifest or mandatory files are not read, return BLOCKED_BEFORE_OUTPUT.
+
+Failure format:
+BLOCKED_BEFORE_OUTPUT
+failed_lock=
+reason=
+missing_files=
+next_required_action=
 
 For script/content/video tasks, also include:
 - TOPIC_QUALITY_GATE

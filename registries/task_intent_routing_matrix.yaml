@@ -25,6 +25,17 @@ global_mandatory_registries:
 routes:
   - route_id: TOPIC_DISCOVERY
     route_name: Topic Discovery
+    route_manifest_path: registries/route_manifests/topic_discovery.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - find topic
       - pick topic
@@ -102,6 +113,24 @@ routes:
 
   - route_id: SCRIPT_GENERATION
     route_name: Script Generation
+    route_manifest_path: registries/route_manifests/script_generation.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
+    required_locks:
+      - TASK_ROUTE_LOCK
+      - ROUTE_DEPENDENCY_EXPANSION_LOCK
+      - CONSUMPTION_LOCK
+      - SOURCE_RESEARCH_LOCK if latest/current terms are present
+      - QUALITY_LOCK
+      - GOVERNANCE_LOCK
     trigger_terms:
       - write script
       - YouTube script
@@ -193,6 +222,17 @@ routes:
 
   - route_id: SCRIPT_REFINEMENT
     route_name: Script Refinement
+    route_manifest_path: registries/route_manifests/script_refinement.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - improve script
       - refine script
@@ -254,6 +294,17 @@ routes:
 
   - route_id: CONTEXT_ENGINEERING
     route_name: Context Engineering
+    route_manifest_path: registries/route_manifests/context_engineering.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - context engineering
       - convert script to context
@@ -323,6 +374,17 @@ routes:
 
   - route_id: VOICE_CONTEXT
     route_name: Voice and ElevenLabs Context
+    route_manifest_path: registries/route_manifests/voice_context.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - ElevenLabs
       - voice generation
@@ -372,6 +434,17 @@ routes:
 
   - route_id: AVATAR_VIDEO_CONTEXT
     route_name: Avatar and Video Context
+    route_manifest_path: registries/route_manifests/avatar_video_context.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - avatar
       - HeyGen
@@ -440,6 +513,17 @@ routes:
 
   - route_id: EDITING_PACKAGING
     route_name: Editing and Packaging
+    route_manifest_path: registries/route_manifests/editing_packaging.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - edit plan
       - captions
@@ -502,6 +586,17 @@ routes:
 
   - route_id: FULL_VIDEO_PIPELINE
     route_name: Full Video Pipeline
+    route_manifest_path: registries/route_manifests/full_video_pipeline.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
     trigger_terms:
       - make complete video
       - full pipeline

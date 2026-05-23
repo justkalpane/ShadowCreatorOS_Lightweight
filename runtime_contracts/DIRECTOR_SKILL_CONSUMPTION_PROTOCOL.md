@@ -50,3 +50,19 @@ status=USED/NEEDS_CONFIRMATION/BLOCKED
 - `READ_BUT_NO_RULES_EXTRACTED` is partial at best.
 - `READ_BUT_NO_OUTPUT_INFLUENCE` is partial at best.
 - Script/content output before consumption ledger is `FAIL`.
+
+## Route Manifest Driven Consumption Law
+
+- Consumption must be driven by the selected `route_manifest_path`.
+- Every selected director, agent, subagent, skill, and subskill must have:
+  - `source_path=`
+  - `read_before_output=true`
+  - `exact_rules_extracted>=3` unless the file is too small to contain three rules
+  - `output_decisions_changed_by_rules=`
+  - `missed_rules=`
+- A ledger is invalid if `exact_rules_extracted` is blank.
+- A ledger is invalid if `output_decisions_changed_by_rules` is blank.
+- Selected-but-not-read component evidence is `FAIL` or `PARTIAL` according to route criticality.
+- Missing subskill evidence is `PARTIAL` unless the route manifest declares the subskill optional.
+- Missing governance director evidence is `FAIL` for production content tasks.
+- `loaded=true` without route-scoped consumption evidence is not proof of use.

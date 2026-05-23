@@ -35,6 +35,8 @@ Canonical boot order:
 20. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
 21. `registries/native_capability_routing_matrix.yaml`
 22. `registries/agent_runtime_selection_index.yaml`
+23. `runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md`
+24. `runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md`
 
 Mission:
 Operate Shadow Creator OS repo-first for this task:
@@ -149,6 +151,8 @@ Required output:
   - route_id=
   - task_intent_routing_matrix_path=registries/task_intent_routing_matrix.yaml
   - task_intent_routing_matrix_cited=true/false
+  - route_manifest_path=
+  - route_manifest_read=true/false
   - mandatory_directors
   - mandatory_agents
   - mandatory_subagents
@@ -176,6 +180,28 @@ Required output:
   - script_pass_threshold=
   - rewrite_performed_if_needed=true/false
   - shallow_repo_routing_detected=true/false
+- TASK_EXECUTION_LOCKS block:
+  - task_execution_state_machine_contract_read=true/false
+  - route_dependency_expansion_protocol_read=true/false
+  - TASK_ROUTE_LOCK
+  - task_route_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - route_dependency_expansion_lock_present=true/false
+  - route_dependency_expansion_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+  - route_scope_complete=true/false
+  - mandatory_files_read_before_output=true/false
+  - missing_mandatory_files=
+  - CONSUMPTION_LOCK
+  - consumption_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+  - SOURCE_RESEARCH_LOCK
+  - source_research_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+  - QUALITY_LOCK
+  - quality_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+  - GOVERNANCE_LOCK
+  - governance_lock_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION
+  - script_generated_after_all_locks=true/false
+  - loaded_true_but_not_consumed_detected=true/false
+  - manual_rerun_structured_but_partial_detected=true/false
 - AGENT_RUNTIME_SELECTION block:
   - agent_runtime_index_path=registries/agent_runtime_selection_index.yaml
   - selected_agents
@@ -223,6 +249,13 @@ Hard rules:
 - PASS is impossible if line-by-line influence map is missing
 - PASS is impossible if shallow repo routing only is detected
 - PASS is impossible if script is generated before director/skill consumption
+- PASS is impossible if route manifest is not read
+- PASS is impossible if mandatory route files are not read before output
+- PASS is impossible if route scope is incomplete
+- PASS is impossible if output appears before required locks
+- PASS is impossible if governance lock is missing
+- PASS is impossible if source/current claims appear before source lock
+- PASS is impossible if content engineering is present but consumption, influence, or quality proof is missing
 - If Test A fails but Test B passes, classify platform as `BOOTSTRAP_REQUIRED_COMPATIBLE`, not `NATIVE_AUTO_TRIGGER_COMPATIBLE`
 ```
 

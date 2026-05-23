@@ -48,3 +48,9 @@ passed=true/false
 - If emotional strength is weak, route to emotion rewrite.
 - If creator specificity is weak, route to audience/persona skill.
 - Do not label script output final until the gate passes or the user explicitly approves limited mode.
+- Hook variants require scores and rejection reasons.
+- Quality gate requires scores plus `pass_threshold`.
+- Rewrite is required if `overall_score < pass_threshold`.
+- Governance lock must approve the final script.
+- Final output cannot classify as `PASS` if `SCRIPT_QUALITY_GATE` is missing.
+- Manual structured output without a quality scorecard is `PARTIAL`, not `PASS`.

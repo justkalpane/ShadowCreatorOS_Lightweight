@@ -1,0 +1,25 @@
+route_id: CONTEXT_ENGINEERING
+route_name: Context Engineering
+trigger_terms: [context engineering, convert script to context, production packet, video generation prompt, voice generation prompt, avatar context, image prompts, edit plan]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/context_engineering.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml, registries/provider_registry.yaml]
+mandatory_directors: [directors/supreme_vision/brahma.md, directors/production/vishwakarma.md, directors/distribution/saraswati.md, directors/cinematic/nataraja.md, directors/cinematic/varuna.md]
+mandatory_agents: [agents/brahma/brahma_agent.py, agents/vishwakarma/vishwakarma_agent.py, agents/saraswati/saraswati_agent.py, agents/nataraja/nataraja_agent.py, agents/varuna/varuna_agent.py]
+mandatory_subagents: [subagents/wf_300/wf_300_sub_agent.py, subagents/cwf_310/cwf_310_sub_agent.py, subagents/cwf_320/cwf_320_sub_agent.py, subagents/wf_400/wf_400_sub_agent.py]
+mandatory_skills: [skills/context_engineering/P-301-execution-context-engineer.skill.md, skills/context_engineering/P-302-platform-format-specialist.skill.md, skills/context_engineering/P-303-asset-brief-creator.skill.md, skills/context_engineering/P-304-lineage-chain-validator.skill.md, skills/context_engineering/P-305-context-packet-finalizer.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-001-context-packet-sanitizer.subskill.md, skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md, skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md, skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md, skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md]
+mandatory_governance: [directors/kernel/yama.md, directors/supreme_vision/krishna.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, VOICE_GENERATION_CONTEXT, IMAGE_GENERATION_CONTEXT, VIDEO_GENERATION_CONTEXT, EDITING_CONTEXT, PROVIDER_HANDOFF_BOUNDARY]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [latest, current, provider update]
+provider_boundary_required_when: [always]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [provider execution claim without approval, context output before route manifest, missing provider boundary]
+partial_rules: [missing provider availability disclosed]
+pass_rules: [all locks pass, provider boundary explicit, no execution claim]
+create_missing_registry_binding: false

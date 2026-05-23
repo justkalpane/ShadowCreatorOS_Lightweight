@@ -1,0 +1,25 @@
+route_id: EDITING_PACKAGING
+route_name: Editing and Packaging
+trigger_terms: [edit plan, captions, thumbnail, title, description, hashtags, platform packaging]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/editing_packaging.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml]
+mandatory_directors: [directors/cinematic/garuda.md, directors/production/agni.md, directors/production/maya.md, directors/distribution/saraswati.md]
+mandatory_agents: [agents/garuda/garuda_agent.py, agents/agni/agni_agent.py, agents/saraswati/saraswati_agent.py]
+mandatory_subagents: [subagents/wf_500/wf_500_sub_agent.py, subagents/cwf_510/cwf_510_sub_agent.py, subagents/cwf_520/cwf_520_sub_agent.py, subagents/cwf_530/cwf_530_sub_agent.py]
+mandatory_skills: [skills/media_video/M-218-video-editing-script.skill.md, skills/media_video/M-223-pacing-rhythm-editor.skill.md, skills/media_video/M-225-thumbnail-designer.skill.md, skills/media_video/M-226-video-seo-optimizer.skill.md, skills/media_video/M-227-captions-subtitle-generator.skill.md, skills/media_video/M-230-platform-specific-video-adapter.skill.md, skills/publishing/D-501-platform-metadata-generator.skill.md, skills/publishing/D-502-seo-optimization-specialist.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-108-youtube-publish-oauth-guard.subskill.md, skills/sub_skills/SS-234-platform-strategy-mapper.subskill.md, skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md]
+mandatory_governance: [directors/kernel/yama.md, directors/cinematic/garuda.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, EDITING_CONTEXT, PLATFORM_PACKAGING]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [current platform rules, latest algorithm, today]
+provider_boundary_required_when: [publish or upload referenced]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [upload claim without approval, no platform packaging, mandatory packaging component not read]
+partial_rules: [platform current data unavailable and disclosed]
+pass_rules: [all locks pass, packaging scored, no publish claim]
+create_missing_registry_binding: false

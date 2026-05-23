@@ -1,0 +1,25 @@
+route_id: SCRIPT_REFINEMENT
+route_name: Script Refinement
+trigger_terms: [improve script, refine script, make it emotional, make it viral, make it cinematic, rewrite]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/script_refinement.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml]
+mandatory_directors: [directors/research/vyasa.md, directors/research/valmiki.md, directors/distribution/saraswati.md, directors/kernel/yama.md]
+mandatory_agents: [agents/vyasa/vyasa_agent.py, agents/valmiki/valmiki_agent.py, agents/saraswati/saraswati_agent.py, agents/yama/yama_agent.py]
+mandatory_subagents: [subagents/cwf_220/cwf_220_sub_agent.py, subagents/cwf_230/cwf_230_sub_agent.py, subagents/cwf_240/cwf_240_sub_agent.py]
+mandatory_skills: [skills/script_intelligence/S-203-hook-structure-audit.skill.md, skills/script_intelligence/S-204-clarity-enhancer.skill.md, skills/script_intelligence/S-206-clarity-retention-refinement.skill.md, skills/script_intelligence/S-209-emotional-rhythm-tuning.skill.md, skills/script_intelligence_army/M-039-re-hook-system.skill.md, skills/swarm_expansion/M-126-retention-repair-engine.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-240-hook-variation-generator.subskill.md, skills/sub_skills/SS-242-story-tension-builder.subskill.md, skills/sub_skills/SS-243-pacing-controller.subskill.md, skills/sub_skills/SS-244-retention-loop-engine.subskill.md]
+mandatory_governance: [directors/kernel/yama.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, critique, rewrite_decision, SCRIPT_QUALITY_GATE]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [latest, current, source update]
+provider_boundary_required_when: [provider execution referenced]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [rewrite before route manifest, rewrite without critique, selected component not consumed]
+partial_rules: [missing optional subskill with disclosure]
+pass_rules: [all locks pass, rewrite decisions mapped to consumed rules]
+create_missing_registry_binding: false

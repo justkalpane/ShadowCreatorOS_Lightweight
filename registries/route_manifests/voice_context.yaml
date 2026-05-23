@@ -1,0 +1,25 @@
+route_id: VOICE_CONTEXT
+route_name: Voice and ElevenLabs Context
+trigger_terms: [ElevenLabs, voice generation, audio prompt, SSML, narration, voice style]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/voice_context.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml, registries/provider_registry.yaml]
+mandatory_directors: [directors/distribution/saraswati.md, directors/production/tumburu.md, directors/cinematic/varuna.md]
+mandatory_agents: [agents/saraswati/saraswati_agent.py, agents/tumburu/tumburu_agent.py, agents/varuna/varuna_agent.py]
+mandatory_subagents: [subagents/cwf_430/cwf_430_sub_agent.py, subagents/wf_400/wf_400_sub_agent.py]
+mandatory_skills: [skills/media_audio/M-231-voiceover-direction-script.skill.md, skills/media_audio/M-238-compression-eq-specifications.skill.md, skills/media_audio/M-240-audio-mixing-guide.skill.md, skills/operations/M-162-voice-identity-cloner.skill.md, skills/operations/M-163-speech-emotion-engine.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md]
+mandatory_governance: [directors/kernel/yama.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, GOVERNANCE_LOCK, VOICE_GENERATION_CONTEXT, PROVIDER_HANDOFF_BOUNDARY]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [latest, current, new voice model]
+provider_boundary_required_when: [always]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [audio generation claim without approval, no provider boundary, selected voice component not read]
+partial_rules: [provider availability unknown but disclosed]
+pass_rules: [voice context complete, provider boundary explicit, no execution claim]
+create_missing_registry_binding: false

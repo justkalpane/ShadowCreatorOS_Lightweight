@@ -1,0 +1,59 @@
+# MAC-06.1J/K Route Scope Lock Patch Report
+
+MAC_06_1J_K_ROUTE_SCOPE_LOCK_PATCH_STATUS=PASS
+
+dual_failure_report_created=true
+route_dependency_expansion_protocol_created=true
+route_manifests_created=true
+route_scope_manifest_proof_created=true
+task_intent_routing_matrix_patched=true
+task_execution_state_machine_contract_created=true
+bootstrap_operating_prompt_patched=true
+startup_docs_patched=true
+director_skill_consumption_protocol_patched=true
+source_research_contracts_patched=true
+script_quality_contract_patched=true
+mac06_1a_docs_patched=true
+validator_patched=true
+validator_fixtures_created=true
+validator_fixtures_passed=true
+
+complete_required_repo_scope_law_present=true
+route_dependency_expansion_required=true
+route_manifest_required=true
+mandatory_files_read_required=true
+locks_required_before_output=true
+route_lock_required=true
+route_dependency_expansion_lock_required=true
+consumption_lock_required=true
+source_research_lock_required=true
+quality_lock_required=true
+governance_lock_required=true
+script_before_locks_blocks_pass=true
+loaded_true_but_not_consumed_blocks_pass=true
+manual_structured_but_missing_ledgers_classified_partial=true
+
+route_family_status_summary=
+- TOPIC_DISCOVERY=PASS
+- SCRIPT_GENERATION=PASS
+- SCRIPT_REFINEMENT=PASS
+- CONTEXT_ENGINEERING=PASS
+- VOICE_CONTEXT=PASS
+- AVATAR_VIDEO_CONTEXT=PASS
+- EDITING_PACKAGING=PASS
+- FULL_VIDEO_PIPELINE=PARTIAL
+
+FULL_VIDEO_PIPELINE_PARTIAL_REASON=provider/media/n8n activation remains disabled until separately proven and approved.
+
+validator_fixture_result=17/17 passed
+git_diff_check_pass=true
+
+commit_performed=false
+push_performed=false
+
+safe_to_commit_after_user_review=true
+safe_to_rerun_test_b_after_commit_push=true
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+NEXT_ACTION=User must review MAC-06.1J/K route scope lock patch before commit.

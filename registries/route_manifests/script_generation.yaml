@@ -1,0 +1,74 @@
+route_id: SCRIPT_GENERATION
+route_name: Script Generation
+trigger_terms: [write script, YouTube script, Shorts script, reel script, voiceover script]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+  - runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+mandatory_registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/script_generation.yaml
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+mandatory_directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/research/vyasa.md
+  - directors/research/valmiki.md
+  - directors/distribution/saraswati.md
+  - directors/kernel/yama.md
+mandatory_agents:
+  - agents/krishna/krishna_agent.py
+  - agents/aruna/aruna_agent.py
+  - agents/vyasa/vyasa_agent.py
+  - agents/valmiki/valmiki_agent.py
+  - agents/saraswati/saraswati_agent.py
+  - agents/yama/yama_agent.py
+mandatory_subagents:
+  - subagents/wf_200/wf_200_sub_agent.py
+  - subagents/cwf_210/cwf_210_sub_agent.py
+  - subagents/cwf_220/cwf_220_sub_agent.py
+  - subagents/cwf_230/cwf_230_sub_agent.py
+  - subagents/cwf_240/cwf_240_sub_agent.py
+mandatory_skills:
+  - skills/script_intelligence/S-201-hook-optimizer.skill.md
+  - skills/script_intelligence/S-202-first-draft-generation.skill.md
+  - skills/script_intelligence/S-203-retention-engineer.skill.md
+  - skills/script_intelligence/S-206-emotion-amplifier.skill.md
+  - skills/script_intelligence/S-208-governance-safety-checker.skill.md
+  - skills/script_intelligence/S-210-final-script-packager.skill.md
+  - skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
+  - skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+  - skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
+mandatory_subskills:
+  - skills/sub_skills/SS-230-content-angle-generator.subskill.md
+  - skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
+  - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+  - skills/sub_skills/SS-241-open-loop-generator.subskill.md
+  - skills/sub_skills/SS-242-story-tension-builder.subskill.md
+  - skills/sub_skills/SS-243-pacing-controller.subskill.md
+  - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+  - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
+mandatory_governance: [directors/kernel/yama.md, directors/distribution/saraswati.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, TOPIC_QUALITY_GATE, HOOK_GENERATION_GATE, SCRIPT_QUALITY_GATE, FINAL_SCRIPT]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [latest, current, this week, new update, today, 2026, watch this week]
+provider_boundary_required_when: [voice, video, image, avatar, provider, generation prompt]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [route manifest not read, mandatory files not read, selected component not consumed, script before locks, hook variants without scores, quality gate without threshold]
+partial_rules: [manual structured output missing ledgers, web unavailable with limited mode approval]
+pass_rules: [all locks pass, at least 3 scored hook variants, quality threshold met or rewrite completed, governance lock passed]
+create_missing_registry_binding: false

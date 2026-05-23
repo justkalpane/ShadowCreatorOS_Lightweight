@@ -1,0 +1,25 @@
+route_id: AVATAR_VIDEO_CONTEXT
+route_name: Avatar and Video Context
+trigger_terms: [avatar, HeyGen, video generation, Sora, Seedance, Higgsfield, Kling, Pika, Runway, visual scene, cinematic prompt]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/avatar_video_context.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml, registries/provider_registry.yaml]
+mandatory_directors: [directors/production/vishwakarma.md, directors/cinematic/nataraja.md, directors/supreme_vision/brahma.md, directors/production/maya.md, directors/cinematic/varuna.md]
+mandatory_agents: [agents/vishwakarma/vishwakarma_agent.py, agents/nataraja/nataraja_agent.py, agents/brahma/brahma_agent.py, agents/varuna/varuna_agent.py]
+mandatory_subagents: [subagents/wf_400/wf_400_sub_agent.py, subagents/cwf_410/cwf_410_sub_agent.py, subagents/cwf_420/cwf_420_sub_agent.py, subagents/cwf_440/cwf_440_sub_agent.py]
+mandatory_skills: [skills/media_video/M-216-shot-list-generator.skill.md, skills/media_video/M-217-b-roll-sourcing-strategy.skill.md, skills/media_video/M-221-motion-graphics-storyboard.skill.md, skills/media_video/M-229-video-performance-predictor.skill.md, skills/operations/M-174-visual-asset-generator.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.subskill.md, skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md, skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md, skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md, skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md]
+mandatory_governance: [directors/kernel/yama.md, directors/cinematic/nataraja.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, GOVERNANCE_LOCK, IMAGE_GENERATION_CONTEXT, VIDEO_GENERATION_CONTEXT, PROVIDER_HANDOFF_BOUNDARY]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [latest, current, new model, 2026]
+provider_boundary_required_when: [always]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+fail_rules: [media artifact claim without approval, no provider boundary, mandatory video component not read]
+partial_rules: [provider/model availability unknown but disclosed]
+pass_rules: [video context complete, provider boundary explicit, no execution claim]
+create_missing_registry_binding: false

@@ -48,8 +48,36 @@ SCRIPT_QUALITY_GATE
 script_quality_gate_present=true
 script_overall_score=8.6
 script_pass_threshold=8.0
+score_each=8.1,8.4,8.6
+hook_scores_present=true
+selected_hook_reason_present=true
 rewrite_performed_if_needed=true
 shallow_repo_routing_detected=false
+runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+TASK_ROUTE_LOCK
+task_route_lock_status=PASS
+route_manifest_path=registries/route_manifests/script_generation.yaml
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_dependency_expansion_lock_status=PASS
+route_scope_complete=true
+mandatory_files_read_before_output=true
+missing_mandatory_files=none
+CONSUMPTION_LOCK
+consumption_lock_status=PASS
+SOURCE_RESEARCH_LOCK
+source_research_lock_status=PASS
+QUALITY_LOCK
+quality_lock_status=PASS
+GOVERNANCE_LOCK
+governance_lock_status=PASS
+script_generated_after_all_locks=true
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
 Registry-First Route
 Director Selection
 AGENT_RUNTIME_SELECTION

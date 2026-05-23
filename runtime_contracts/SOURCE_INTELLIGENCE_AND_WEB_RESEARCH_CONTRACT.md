@@ -58,3 +58,14 @@ Every output must include:
 - If `source_list` is empty, set `real_time_sources_used=false`.
 - If internet is unavailable, do not invent citations.
 - If using repo-only reasoning, explicitly disclose repo-only mode.
+
+## SOURCE_RESEARCH_LOCK FOR CURRENT PROMPTS
+
+For prompts containing latest, current, this week, new update, today, 2026, or watch this week:
+
+- `SOURCE_RESEARCH_LOCK` is mandatory.
+- `sources_used_before_output=true` is required for `PASS`.
+- A source list must be present before latest/current claims.
+- `unsupported_claims` must be listed.
+- If web access is unavailable, ask the user to continue limited mode or provide sources.
+- Do not invent latest tools, updates, sources, dates, or claims.

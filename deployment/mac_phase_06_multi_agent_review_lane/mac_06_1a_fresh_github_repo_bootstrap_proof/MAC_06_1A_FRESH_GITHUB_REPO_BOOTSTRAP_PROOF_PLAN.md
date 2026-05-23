@@ -38,6 +38,16 @@ The agent receives:
 - It includes `MISSED_REPO_RULES` and `LINE_BY_LINE_INFLUENCE_MAP`.
 - For script/content tasks, it includes topic quality gate, 3 hook variants, hook generation gate, script quality gate, and rewrite if needed.
 - It reports `shallow_repo_routing_detected=false`.
+- It reads `runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md`.
+- It reads `runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md`.
+- It reports `route_manifest_path=`.
+- It reports `route_manifest_read=true`.
+- It includes `TASK_ROUTE_LOCK`, `ROUTE_DEPENDENCY_EXPANSION_LOCK`, `CONSUMPTION_LOCK`, `SOURCE_RESEARCH_LOCK` when required, `QUALITY_LOCK`, and `GOVERNANCE_LOCK`.
+- It reports `route_scope_complete=true`.
+- It reports `mandatory_files_read_before_output=true`.
+- It reports `script_generated_after_all_locks=true`.
+- It reports `loaded_true_but_not_consumed_detected=false`.
+- It reports `manual_rerun_structured_but_partial_detected=false` for any PASS claim.
 - It assesses tools/connectors/plugins honestly as `ACTIVE`, `PLANNED`, `NOT_ACTIVE`, or `NEEDS_CONFIRMATION`.
 - It produces research, script, debate, critique, final script, and context engineering packet.
 - It runs a quality gate.
@@ -60,6 +70,13 @@ PASS is impossible if:
 - no line-by-line influence map is present
 - shallow repo routing only is detected
 - script is generated before director/skill consumption
+- route manifest is not read
+- mandatory route files are not read before output
+- route scope is incomplete
+- output appears before task route, route dependency expansion, consumption, quality, or governance locks
+- governance lock is missing
+- source/current claims appear before source lock
+- content engineering is present but consumption, influence, or quality proof is missing
 
 ## Environment Compatibility Split
 

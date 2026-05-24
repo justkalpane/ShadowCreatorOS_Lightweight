@@ -1,0 +1,22 @@
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+AGENTS.md
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+layman_command_gateway_used=true
+shadow_command_alias_detected=true
+shadow_command_alias=Shadow script:
+raw_user_task_preserved=true
+internal_wrapper_applied=false
+output_mode=OPERATOR_MODE
+operator_mode_used=true
+operator_mode_compact_proof_present=false
+Final script
+proof_classification=FAIL
+files_created=false
+dossier_artifacts_created=false
+

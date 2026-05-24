@@ -1,0 +1,94 @@
+version: MAC-06.1O
+purpose: "Resolve simple Shadow commands to route IDs and internal wrapper-required execution."
+
+aliases:
+  shadow_task:
+    prefixes:
+      - "Shadow task:"
+      - "Shadow:"
+      - "Run Shadow:"
+    route_mode: AUTO_CLASSIFY
+    internal_wrapper_required: true
+
+  shadow_script:
+    prefixes:
+      - "Shadow script:"
+      - "Script:"
+      - "Write script:"
+    route_id: SCRIPT_GENERATION
+    internal_wrapper_required: true
+
+  shadow_topic:
+    prefixes:
+      - "Shadow topic:"
+      - "Topic:"
+      - "Find topic:"
+      - "Pick topic:"
+    route_id: TOPIC_DISCOVERY
+    internal_wrapper_required: true
+
+  shadow_refine:
+    prefixes:
+      - "Shadow refine:"
+      - "Refine script:"
+      - "Improve script:"
+    route_id: SCRIPT_REFINEMENT
+    internal_wrapper_required: true
+
+  shadow_context:
+    prefixes:
+      - "Shadow context:"
+      - "Context engineering:"
+      - "Create production packet:"
+    route_id: CONTEXT_ENGINEERING
+    internal_wrapper_required: true
+
+  shadow_voice:
+    prefixes:
+      - "Shadow voice:"
+      - "ElevenLabs context:"
+      - "Voice prompt:"
+    route_id: VOICE_CONTEXT
+    internal_wrapper_required: true
+
+  shadow_video:
+    prefixes:
+      - "Shadow video:"
+      - "Avatar video:"
+      - "Video prompt:"
+      - "Sora prompt:"
+      - "Runway prompt:"
+      - "Kling prompt:"
+      - "Pika prompt:"
+    route_id: AVATAR_VIDEO_CONTEXT
+    internal_wrapper_required: true
+
+  shadow_package:
+    prefixes:
+      - "Shadow package:"
+      - "Packaging:"
+      - "Thumbnail:"
+      - "Metadata:"
+    route_id: EDITING_PACKAGING
+    internal_wrapper_required: true
+
+  shadow_full:
+    prefixes:
+      - "Shadow full:"
+      - "Full pipeline:"
+      - "Complete content package:"
+    route_id: FULL_VIDEO_PIPELINE
+    internal_wrapper_required: true
+    execution_boundary: planning_only_no_provider_execution
+
+gateway_rules:
+  preserve_raw_user_task: true
+  apply_shadow_task_execution_wrapper: true
+  raw_plain_task_production_proof: false
+  default_output_mode: OPERATOR_MODE
+  proof_mode_requested_by_terms:
+    - "proof mode"
+    - "show proof"
+    - "audit"
+    - "validator proof"
+

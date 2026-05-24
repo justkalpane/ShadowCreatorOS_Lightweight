@@ -357,3 +357,13 @@ The fresh-agent proof must use a plain layman request only.
 Do not use a giant forcing prompt for the primary proof.
 A detailed forcing prompt is allowed only after failure as diagnostic remediation.
 The proof passes only if the repo itself triggers orchestration through `AGENTS.md` and active startup docs.
+
+## Layman Command Gateway Law
+
+Codex Cloud reliable production usage:
+
+1. Activate bootstrap once.
+2. Use `Shadow <command>:` aliases for each production task.
+3. Alias internally applies wrapper-required route locks.
+4. Raw plain messages remain non-production proof until native persistence is proven.
+5. Operator mode may hide details, but execution locks remain mandatory.

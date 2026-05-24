@@ -242,3 +242,13 @@ Hard stop if any of these fail:
 - Active production branch is `main`.
 - Backup branches are rollback references only.
 - Avoid branch confusion in instructions and outputs.
+
+## Layman Command Gateway Law
+
+Codex Cloud reliable production usage:
+
+1. Activate bootstrap once.
+2. Use `Shadow <command>:` aliases for each production task.
+3. Alias internally applies wrapper-required route locks.
+4. Raw plain messages remain non-production proof until native persistence is proven.
+5. Operator mode may hide details, but execution locks remain mandatory.

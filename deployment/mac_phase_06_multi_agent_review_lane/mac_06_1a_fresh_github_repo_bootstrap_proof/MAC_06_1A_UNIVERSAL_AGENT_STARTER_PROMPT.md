@@ -301,3 +301,36 @@ Hard rules:
 ## Always-On Trigger Addendum
 
 MAC-06.1A must prove that normal layman task language triggers Shadow OS orchestration. If the output answers directly before repo routing, classify as `FAIL`.
+
+## MAC-06.1O Layman Command Gateway Addendum
+
+After bootstrap activation, Codex Cloud users may use:
+
+```text
+Shadow script: <normal task>
+Shadow topic: <normal task>
+Shadow context: <normal task>
+Shadow voice: <normal task>
+Shadow video: <normal task>
+Shadow package: <normal task>
+Shadow full: <normal task>
+```
+
+Required fields:
+
+```text
+layman_command_gateway_used=true/false
+shadow_command_alias_detected=true/false
+shadow_command_alias=
+raw_user_task_preserved=true/false
+internal_wrapper_applied=true/false
+output_mode=PROOF_MODE/OPERATOR_MODE/DEBUG_MODE
+operator_mode_used=true/false
+proof_mode_requested=true/false
+```
+
+PASS rules:
+
+- Shadow command alias can PASS only if internal wrapper locks are executed.
+- Plain post-bootstrap raw task cannot prove production readiness unless all locks execute automatically.
+- Operator mode can PASS only if compact proof confirms all locks passed internally.

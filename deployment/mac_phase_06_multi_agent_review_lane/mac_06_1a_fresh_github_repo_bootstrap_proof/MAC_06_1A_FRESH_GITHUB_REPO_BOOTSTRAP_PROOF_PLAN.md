@@ -123,3 +123,30 @@ If Test A and Test B both fail, classify the platform as `REPO_VISIBLE_BUT_NOT_B
 The proof may be run with Codex, Claude, ChatGPT, Kimi, DeepSeek, Gemini, Perplexity, Antigravity, local LLM apps, or other repo-aware LLM/coding agents.
 
 A successful Codex proof is the first representative proof, not the only possible future proof. Other agents can be progressively tested later. Users must not be forced to install all agents.
+
+## MAC-06.1O Layman Command Gateway Proof Path
+
+After bootstrap activation, Codex Cloud production proof may use a simple Shadow command instead of the long wrapper:
+
+```text
+Shadow script: <normal task>
+```
+
+Required fields:
+
+```text
+layman_command_gateway_used=true/false
+shadow_command_alias_detected=true/false
+shadow_command_alias=
+raw_user_task_preserved=true/false
+internal_wrapper_applied=true/false
+output_mode=PROOF_MODE/OPERATOR_MODE/DEBUG_MODE
+operator_mode_used=true/false
+proof_mode_requested=true/false
+```
+
+PASS rules:
+
+- Shadow command alias can PASS only if internal wrapper locks are executed.
+- Plain post-bootstrap raw task cannot prove production readiness unless all locks execute automatically.
+- Operator mode can PASS only if compact proof confirms all locks passed internally.

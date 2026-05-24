@@ -187,3 +187,16 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - `PASS`: complete proof packet, repo-first evidence, no drift.
 - `PARTIAL`: useful output but missing required fields or evidence.
 - `FAIL`: generic, invented, execution-drifted, or not repo-first.
+
+## MAC-06.1O Layman Command Gateway Checks
+
+- Is `layman_command_gateway_used=true/false` present?
+- Is `shadow_command_alias_detected=true/false` present?
+- Is `shadow_command_alias=` present when an alias is detected?
+- Is `raw_user_task_preserved=true` present for Shadow commands?
+- Is `internal_wrapper_applied=true` present for Shadow commands?
+- Is `output_mode=PROOF_MODE/OPERATOR_MODE/DEBUG_MODE` valid?
+- If `operator_mode_used=true`, is compact proof present?
+- Shadow command alias without internal locks is `FAIL`.
+- Operator mode claiming `PASS` without lock summary is `FAIL`.
+- Raw plain task claimed as production proof remains `FAIL` unless automatic locks are proven.

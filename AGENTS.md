@@ -241,3 +241,13 @@ Allowed gate statuses only:
 - `BLOCKED`
 - `NEEDS_USER_APPROVAL`
 - `NEEDS_CONFIRMATION`
+
+## Layman Command Gateway Law
+
+Codex Cloud reliable production usage:
+
+1. Activate bootstrap once.
+2. Use `Shadow <command>:` aliases for each production task.
+3. Alias internally applies wrapper-required route locks.
+4. Raw plain messages remain non-production proof until native persistence is proven.
+5. Operator mode may hide details, but execution locks remain mandatory.

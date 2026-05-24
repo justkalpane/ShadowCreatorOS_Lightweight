@@ -151,6 +151,7 @@ GATE_STATUSES = {
 }
 
 PROOF_CLASSIFICATIONS = {"PASS", "PASS_WITH_NOTICE", "PARTIAL", "FAIL"}
+VALID_OUTPUT_MODES = {"PROOF_MODE", "OPERATOR_MODE", "DEBUG_MODE"}
 REQUIRED_TRUE_KEYS = [
     "shadow_boot_confirmation_present",
     "first_visible_output_is_boot_confirmation",
@@ -385,6 +386,27 @@ def main() -> int:
         and (find_key_value(text, "proof_classification") == "PASS")
         and not explicit_true(text, "final_status_downgraded_if_depth_weak")
     )
+    layman_command_gateway_used = explicit_true(text, "layman_command_gateway_used")
+    shadow_command_alias_detected = explicit_true(text, "shadow_command_alias_detected")
+    raw_user_task_preserved = explicit_true(text, "raw_user_task_preserved")
+    internal_wrapper_applied = explicit_true(text, "internal_wrapper_applied")
+    output_mode = find_key_value(text, "output_mode")
+    output_mode_valid = output_mode in VALID_OUTPUT_MODES
+    operator_mode_used = explicit_true(text, "operator_mode_used") or output_mode == "OPERATOR_MODE"
+    operator_mode_compact_proof_present = (
+        explicit_true(text, "operator_mode_compact_proof_present")
+        or all(marker in text for marker in ["Shadow Boot / Route Summary", "Gate Summary", "Compact Final Proof"])
+    )
+    source_summary_missing_in_operator_mode = operator_mode_used and "Source Summary" not in text and not explicit_true(
+        text, "source_summary_present"
+    )
+    shadow_alias_without_internal_locks = shadow_command_alias_detected and not internal_wrapper_applied
+    operator_mode_claims_pass_without_lock_summary = (
+        operator_mode_used
+        and (find_key_value(text, "proof_classification") == "PASS")
+        and not operator_mode_compact_proof_present
+    )
+    raw_plain_task_claimed_production_proof = explicit_true(text, "raw_plain_task_claimed_production_proof")
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -463,6 +485,9 @@ def main() -> int:
         or source_breadth_lock_fail
         or broad_watchlist_one_vendor_only
         or named_tool_without_source_map
+        or shadow_alias_without_internal_locks
+        or operator_mode_claims_pass_without_lock_summary
+        or raw_plain_task_claimed_production_proof
     ):
         status = "FAIL"
     elif (
@@ -501,6 +526,9 @@ def main() -> int:
         or exact_rule_evidence_missing
         or exact_rule_lineage_map_missing
         or final_status_not_downgraded_when_evidence_weak
+        or (layman_command_gateway_used and not output_mode_valid)
+        or (shadow_command_alias_detected and not raw_user_task_preserved)
+        or source_summary_missing_in_operator_mode
     ):
         status = "PARTIAL"
 
@@ -561,6 +589,18 @@ def main() -> int:
     print(f"role_summary_only_detected={str(role_summary_only_detected).lower()}")
     print(f"exact_rule_lineage_map_missing={str(exact_rule_lineage_map_missing).lower()}")
     print(f"final_status_not_downgraded_when_evidence_weak={str(final_status_not_downgraded_when_evidence_weak).lower()}")
+    print(f"layman_command_gateway_used={str(layman_command_gateway_used).lower()}")
+    print(f"shadow_command_alias_detected={str(shadow_command_alias_detected).lower()}")
+    print(f"raw_user_task_preserved={str(raw_user_task_preserved).lower()}")
+    print(f"internal_wrapper_applied={str(internal_wrapper_applied).lower()}")
+    print(f"output_mode={output_mode or 'MISSING'}")
+    print(f"output_mode_valid={str(output_mode_valid).lower()}")
+    print(f"operator_mode_used={str(operator_mode_used).lower()}")
+    print(f"operator_mode_compact_proof_present={str(operator_mode_compact_proof_present).lower()}")
+    print(f"source_summary_missing_in_operator_mode={str(source_summary_missing_in_operator_mode).lower()}")
+    print(f"shadow_alias_without_internal_locks={str(shadow_alias_without_internal_locks).lower()}")
+    print(f"operator_mode_claims_pass_without_lock_summary={str(operator_mode_claims_pass_without_lock_summary).lower()}")
+    print(f"raw_plain_task_claimed_production_proof={str(raw_plain_task_claimed_production_proof).lower()}")
     print(f"all_core_locks_pass={str(all_core_locks_pass).lower()}")
     print(f"per_tool_source_map_count={per_tool_source_map_count}")
     print(f"non_openai_tool_sources_count={non_openai_tool_sources_count}")

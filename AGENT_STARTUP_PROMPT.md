@@ -309,3 +309,13 @@ The proof passes only if the repo itself triggers orchestration through `AGENTS.
 - This applies to Codex Cloud, local Codex, Claude, ChatGPT, Gemini, Kimi, DeepSeek, Perplexity, and Antigravity when the repo is attached/readable.
 - `CHAT_ONLY_MODE` remains default.
 - No files are created by default.
+
+## Layman Command Gateway Law
+
+Codex Cloud reliable production usage:
+
+1. Activate bootstrap once.
+2. Use `Shadow <command>:` aliases for each production task.
+3. Alias internally applies wrapper-required route locks.
+4. Raw plain messages remain non-production proof until native persistence is proven.
+5. Operator mode may hide details, but execution locks remain mandatory.

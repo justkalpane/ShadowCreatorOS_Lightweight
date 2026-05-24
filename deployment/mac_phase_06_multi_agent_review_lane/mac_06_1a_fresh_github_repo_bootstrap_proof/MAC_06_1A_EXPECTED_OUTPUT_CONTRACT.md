@@ -345,3 +345,24 @@ limitations_disclosed=true/false
 - Route scope is incomplete.
 - Final output appears before task route, route dependency expansion, consumption, quality, or governance locks.
 - Current/latest claims appear before `SOURCE_RESEARCH_LOCK`.
+
+## MAC-06.1O Layman Command Gateway Fields
+
+Required fields for Shadow command proofs:
+
+```text
+layman_command_gateway_used=true/false
+shadow_command_alias_detected=true/false
+shadow_command_alias=
+raw_user_task_preserved=true/false
+internal_wrapper_applied=true/false
+output_mode=PROOF_MODE/OPERATOR_MODE/DEBUG_MODE
+operator_mode_used=true/false
+proof_mode_requested=true/false
+```
+
+PASS rules:
+
+- Shadow command alias can PASS only if internal wrapper locks are executed.
+- Plain post-bootstrap raw task cannot prove production readiness unless all locks execute automatically.
+- Operator mode can PASS only if compact proof confirms all locks passed internally.

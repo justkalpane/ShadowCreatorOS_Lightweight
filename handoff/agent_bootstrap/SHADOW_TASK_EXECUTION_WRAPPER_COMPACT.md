@@ -58,3 +58,24 @@ corrected_status_if_depth_weak=PASS_WITH_NOTICE/PARTIAL/FAIL
 
 If any lock or route file proof is missing, return BLOCKED_BEFORE_OUTPUT instead of a script.
 ```
+
+## Layman Command Gateway
+
+After bootstrap activation, the user may use simple Shadow commands instead of pasting the full wrapper.
+
+Examples:
+- Shadow script: <task>
+- Shadow topic: <task>
+- Shadow context: <task>
+- Shadow voice: <task>
+- Shadow video: <task>
+- Shadow package: <task>
+- Shadow full: <task>
+
+When a Shadow command is detected:
+1. Preserve the raw user task.
+2. Resolve alias through `registries/layman_command_alias_matrix.yaml`.
+3. Internally apply `SHADOW_TASK_EXECUTION_WRAPPER`.
+4. Execute all locks before output.
+5. Use compact operator output unless user requests proof mode.
+6. Never treat raw plain message without Shadow prefix as production-proof in Codex Cloud.

@@ -96,3 +96,12 @@ For prompts containing latest, current, this week, new update, today, 2026, or w
 - `unsupported_claims` must be listed.
 - If web access is unavailable, ask the user to continue limited mode or provide sources.
 - Do not invent latest tools, updates, sources, dates, or claims.
+
+## MULTI-TOOL SOURCE BREADTH REQUIREMENT
+
+Latest/current/multi-tool watchlist prompts require `PER_TOOL_SOURCE_MAP` from `runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md`.
+
+- Broad watchlists cannot `PASS` with one-vendor-only sources.
+- Every named tool claim must map to a source entry.
+- Unsupported tool claims must be listed.
+- `source_breadth_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL` must be reported.

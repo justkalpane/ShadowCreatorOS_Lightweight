@@ -11,8 +11,9 @@ shadow_mode=CHAT_ONLY_MODE
 NATIVE_AGENT_CAPABILITY_ASSESSMENT
 TASK_FRESHNESS_CLASSIFICATION
 RESEARCH_MODE_DECISION
-research_mode=repo_only
-real_time_sources_used=false
+research_mode=real_time_web
+real_time_sources_used=true
+source_list_present=true
 Research Sufficiency Gate
 TASK_TO_CAPABILITY_ROUTING
 registries/native_capability_routing_matrix.yaml
@@ -33,12 +34,25 @@ route_dependency_expansion_lock_present=true
 route_dependency_expansion_lock_status=PASS
 route_scope_complete=true
 mandatory_files_read_before_output=true
-missing_mandatory_files=none
 director_skill_consumption_protocol_read=true
 script_quality_enforcement_contract_read=true
 gumloop_benchmark_output_standard_read=true
 CONSUMPTION_LOCK
 consumption_lock_status=PASS
+SOURCE_RESEARCH_LOCK
+source_research_lock_status=PASS
+source_breadth_lock_status=PASS
+PER_TOOL_SOURCE_MAP
+source_list_present=true
+per_tool_source_map_present=true
+per_tool_source_map_count=4
+non_openai_tool_sources_count=3
+named_tool_claims_all_mapped=true
+unsupported_tool_claims=none
+QUALITY_LOCK
+quality_lock_status=PASS
+GOVERNANCE_LOCK
+governance_lock_status=PASS
 DIRECTOR_CONSUMPTION_LEDGER
 director_consumption_ledger_present=true
 AGENT_CONSUMPTION_LEDGER
@@ -50,48 +64,47 @@ skill_consumption_ledger_present=true
 SUBSKILL_CONSUMPTION_LEDGER
 subskill_consumption_ledger_present=true
 MISSED_REPO_RULES
-LINE_BY_LINE_INFLUENCE_MAP
-line_by_line_influence_map_present=true
-SOURCE_RESEARCH_LOCK
-source_research_lock_status=PASS
+RULE_CONSUMPTION_EVIDENCE_LEDGER
+evidence_depth=ROLE_SUMMARY
+role_summary_only_detected=true
+rule_consumption_evidence_lock_status=PASS_WITH_NOTICE
+exact_rule_evidence_present=false
 TOPIC_QUALITY_GATE
 topic_quality_gate_present=true
 HOOK_GENERATION_GATE
 hook_generation_gate_present=true
-hook_variant_1=System beats tools.
-hook_variant_2=Apps expose broken process.
-hook_variant_3=Creators need repeatable loops.
+hook_variant_1=A
+hook_variant_2=B
+hook_variant_3=C
 hook_variants_count=3
-score_each=8.2,8.6,8.9
+score_each=8.2,8.4,8.8
 hook_scores_present=true
-selected_hook_reason_present=true
 SCRIPT_QUALITY_GATE
 script_quality_gate_present=true
-script_overall_score=8.9
+script_overall_score=8.8
 script_pass_threshold=8.0
 rewrite_performed_if_needed=true
-QUALITY_LOCK
-quality_lock_status=PASS
-GOVERNANCE_LOCK
-governance_lock_status=PASS
+FINAL_SCRIPT
+Final script
 script_generated_after_all_locks=true
-loaded_true_but_not_consumed_detected=false
-manual_rerun_structured_but_partial_detected=false
-shallow_repo_routing_detected=false
-source_breadth_lock_status=PASS
-per_tool_source_map_present=false
-per_tool_source_map_count=0
-non_openai_tool_sources_count=0
-named_tool_claims_all_mapped=true
-unsupported_tool_claims=none
-rule_consumption_evidence_lock_status=PASS
-RULE_CONSUMPTION_EVIDENCE_LEDGER
-exact_rule_id_or_text=section-level fixture rule
-exact_rule_evidence_present=true
-role_summary_only_detected=false
+CONTENT_ENGINEERING_PACKET
+CONTENT_MISSION_BRIEF
+RESEARCH_AND_SOURCE_STATUS
+SCRIPT_STRUCTURE
+TIMED_BEAT_MAP
+VOICE_GENERATION_CONTEXT
+IMAGE_GENERATION_CONTEXT
+VIDEO_GENERATION_CONTEXT
+MUSIC_AND_SFX_CONTEXT
+EDITING_CONTEXT
+PLATFORM_PACKAGING
+LINE_BY_LINE_INFLUENCE_MAP
+line_by_line_influence_map_present=true
 EXACT_RULE_LINEAGE_MAP
-exact_rule_lineage_map_present=true
-final_status_downgraded_if_depth_weak=false
+exact_rule_lineage_map_present=false
+final_status_downgraded_if_depth_weak=true
+PROVIDER_HANDOFF_BOUNDARY
+Provider Handoff Boundary
 Registry-First Route
 Director Selection
 AGENT_RUNTIME_SELECTION
@@ -100,22 +113,13 @@ Subagent Selection
 Skill Selection
 Subskill Selection
 TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
-CONTENT_MISSION_BRIEF
-RESEARCH_AND_SOURCE_STATUS
-SCRIPT_STRUCTURE
-Final script
-TIMED_BEAT_MAP
-VOICE_GENERATION_CONTEXT
-IMAGE_GENERATION_CONTEXT
-VIDEO_GENERATION_CONTEXT
-MUSIC_AND_SFX_CONTEXT
-EDITING_CONTEXT
-PLATFORM_PACKAGING
-Provider Handoff Boundary
 Quality Gate
 Lineage Summary
 Final Proof Classification
-proof_classification=PASS
+proof_classification=PASS_WITH_NOTICE
 chat_only_mode_used=true
 files_created=false
 dossier_artifacts_created=false
+shallow_repo_routing_detected=false
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false

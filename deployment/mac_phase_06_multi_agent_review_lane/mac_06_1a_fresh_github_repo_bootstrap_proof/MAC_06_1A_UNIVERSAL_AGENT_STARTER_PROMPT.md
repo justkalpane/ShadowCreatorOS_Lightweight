@@ -211,6 +211,20 @@ Required output:
   - wrapper_missing_when_required=true/false
   - wrapper_used_but_locks_missing=true/false
   - codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
+- SOURCE_BREADTH_AND_RULE_EVIDENCE block:
+  - source_breadth_lock_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL
+  - per_tool_source_map_present=true/false
+  - per_tool_source_map_count=
+  - non_openai_tool_sources_count=
+  - named_tool_claims_all_mapped=true/false
+  - unsupported_tool_claims=
+  - rule_consumption_evidence_lock_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL
+  - RULE_CONSUMPTION_EVIDENCE_LEDGER
+  - exact_rule_evidence_present=true/false
+  - role_summary_only_detected=true/false
+  - EXACT_RULE_LINEAGE_MAP
+  - exact_rule_lineage_map_present=true/false
+  - final_status_downgraded_if_depth_weak=true/false
 - AGENT_RUNTIME_SELECTION block:
   - agent_runtime_index_path=registries/agent_runtime_selection_index.yaml
   - selected_agents
@@ -269,6 +283,10 @@ Hard rules:
 - PASS is impossible if `direct_script_after_bootstrap_without_wrapper=true`
 - PASS is impossible if `wrapper_missing_when_required=true`
 - PASS is impossible if `wrapper_used_but_locks_missing=true`
+- PASS is impossible if latest multi-tool claims have no per-tool source map
+- PASS is impossible if source breadth is one-vendor-only for a broad watchlist
+- PASS is impossible if component ledgers are role summaries only
+- PASS is impossible if exact rule lineage is absent for selected critical route components
 - If Test A fails but Test B passes, classify platform as `BOOTSTRAP_REQUIRED_COMPATIBLE`, not `NATIVE_AUTO_TRIGGER_COMPATIBLE`
 ```
 

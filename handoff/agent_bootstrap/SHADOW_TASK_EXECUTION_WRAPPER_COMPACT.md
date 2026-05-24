@@ -16,6 +16,7 @@ Read:
 - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
 - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
 - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+- runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md
 
 Output in this order:
 SHADOW_BOOT_CONFIRMATION
@@ -33,9 +34,12 @@ SUBSKILL_CONSUMPTION_LEDGER
 TOPIC_QUALITY_GATE
 HOOK_GENERATION_GATE
 SCRIPT_QUALITY_GATE
+PER_TOOL_SOURCE_MAP when latest/current/watchlist terms are present
+RULE_CONSUMPTION_EVIDENCE_LEDGER
 FINAL_SCRIPT
 CONTENT_ENGINEERING_PACKET
 LINE_BY_LINE_INFLUENCE_MAP
+EXACT_RULE_LINEAGE_MAP
 PROVIDER_HANDOFF_BOUNDARY
 FINAL_PROOF_CLASSIFICATION
 
@@ -48,6 +52,9 @@ route_scope_complete=true
 mandatory_files_read_before_output=true
 all_locks_status=PASS
 wrapper_required_mode_used=true
+source_breadth_lock_status=
+rule_consumption_evidence_lock_status=
+corrected_status_if_depth_weak=PASS_WITH_NOTICE/PARTIAL/FAIL
 
 If any lock or route file proof is missing, return BLOCKED_BEFORE_OUTPUT instead of a script.
 ```

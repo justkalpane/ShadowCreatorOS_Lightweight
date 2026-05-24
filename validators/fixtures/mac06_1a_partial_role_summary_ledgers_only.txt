@@ -1,0 +1,20 @@
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+AGENTS.md
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+TASK_ROUTE_LOCK
+task_intent_classified=true
+route_id=SCRIPT_GENERATION
+DIRECTOR_CONSUMPTION_LEDGER
+director_consumption_ledger_present=true
+director=Krishna role=vision framing consumed=true
+RULE_CONSUMPTION_EVIDENCE_LEDGER
+evidence_depth=ROLE_SUMMARY
+role_summary_only_detected=true
+rule_consumption_evidence_lock_status=PARTIAL
+proof_classification=PARTIAL

@@ -1,0 +1,34 @@
+# MAC-06.1N Source Breadth + Rule Evidence Hardening Report
+
+MAC_06_1N_SOURCE_BREADTH_RULE_EVIDENCE_HARDENING_STATUS=PASS
+
+source_breadth_and_rule_evidence_contract_created=true
+wrapper_docs_patched=true
+routing_matrix_patched=true
+script_generation_manifest_patched=true
+source_research_contracts_patched=true
+director_skill_consumption_protocol_patched=true
+mac06_1a_docs_patched=true
+validator_patched=true
+validator_fixtures_created=true
+validator_fixtures_passed=true
+
+per_tool_source_map_required=true
+broad_watchlist_one_vendor_only_blocks_pass=true
+named_tool_claims_require_source_mapping=true
+exact_rule_evidence_required=true
+role_summary_only_blocks_full_pass=true
+pass_with_notice_supported_for_all_locks_but_partial_depth=true
+
+validator_fixture_result=22/22 passed
+
+commit_performed=false
+push_performed=false
+
+safe_to_commit_after_user_review=true
+safe_to_run_wrapper_test_after_commit_push=true
+safe_to_declare_default_bootstrap_mode_onboarded=false
+safe_to_declare_lightweight_os_onboarded=false
+safe_to_start_n8n_execution_bus=false
+
+NEXT_ACTION=User must review MAC-06.1N hardening patch before commit.

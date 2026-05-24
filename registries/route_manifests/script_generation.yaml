@@ -11,6 +11,7 @@ mandatory_runtime_contracts:
   - runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
   - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
   - runtime_contracts/QUALITY_GATE_CONTRACT.md
+  - runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md
 mandatory_registries:
   - registries/task_intent_routing_matrix.yaml
   - registries/route_manifests/script_generation.yaml
@@ -59,8 +60,8 @@ mandatory_subskills:
   - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
   - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
 mandatory_governance: [directors/kernel/yama.md, directors/distribution/saraswati.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
-mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, TOPIC_QUALITY_GATE, HOOK_GENERATION_GATE, SCRIPT_QUALITY_GATE, FINAL_SCRIPT]
-required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, SOURCE_BREADTH_LOCK, RULE_CONSUMPTION_EVIDENCE_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, PER_TOOL_SOURCE_MAP, RULE_CONSUMPTION_EVIDENCE_LEDGER, EXACT_RULE_LINEAGE_MAP, TOPIC_QUALITY_GATE, HOOK_GENERATION_GATE, SCRIPT_QUALITY_GATE, FINAL_SCRIPT]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, SOURCE_BREADTH_LOCK when latest/current/watchlist terms are present, RULE_CONSUMPTION_EVIDENCE_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
 freshness_gate_required_when: [latest, current, this week, new update, today, 2026, watch this week]
 provider_boundary_required_when: [voice, video, image, avatar, provider, generation prompt]
 chat_only_allowed: true
@@ -68,7 +69,7 @@ repo_write_allowed_after_approval: true
 full_dossier_allowed_after_explicit_request: true
 n8n_allowed_after_approval: false
 provider_execution_allowed_after_approval: false
-fail_rules: [route manifest not read, mandatory files not read, selected component not consumed, script before locks, hook variants without scores, quality gate without threshold]
-partial_rules: [manual structured output missing ledgers, web unavailable with limited mode approval]
-pass_rules: [all locks pass, at least 3 scored hook variants, quality threshold met or rewrite completed, governance lock passed]
+fail_rules: [route manifest not read, mandatory files not read, selected component not consumed, script before locks, hook variants without scores, quality gate without threshold, latest multi-tool claim without PER_TOOL_SOURCE_MAP, one-vendor-only source map for broad watchlist]
+partial_rules: [manual structured output missing ledgers, web unavailable with limited mode approval, role-summary-only component consumption evidence]
+pass_rules: [all locks pass, at least 3 scored hook variants, quality threshold met or rewrite completed, governance lock passed, PER_TOOL_SOURCE_MAP complete when required, RULE_CONSUMPTION_EVIDENCE_LEDGER uses exact rule or section-level evidence]
 create_missing_registry_binding: false

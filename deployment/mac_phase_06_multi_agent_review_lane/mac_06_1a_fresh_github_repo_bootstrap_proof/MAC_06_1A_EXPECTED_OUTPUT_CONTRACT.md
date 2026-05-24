@@ -96,6 +96,17 @@ direct_script_after_bootstrap_without_wrapper=true/false
 wrapper_missing_when_required=true/false
 wrapper_used_but_locks_missing=true/false
 codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
+source_breadth_lock_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL
+per_tool_source_map_present=true/false
+per_tool_source_map_count=
+non_openai_tool_sources_count=
+named_tool_claims_all_mapped=true/false
+unsupported_tool_claims=
+rule_consumption_evidence_lock_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL
+exact_rule_evidence_present=true/false
+role_summary_only_detected=true/false
+exact_rule_lineage_map_present=true/false
+final_status_downgraded_if_depth_weak=true/false
 chat_only_mode_used=true/false
 files_created=false
 dossier_artifacts_created=false
@@ -276,6 +287,10 @@ limitations_disclosed=true/false
 - PASS is impossible if `direct_script_after_bootstrap_without_wrapper=true`.
 - PASS is impossible if `wrapper_missing_when_required=true`.
 - PASS is impossible if `wrapper_used_but_locks_missing=true`.
+- PASS is impossible if a latest multi-tool claim has no `PER_TOOL_SOURCE_MAP`.
+- PASS is impossible if source breadth is one-vendor-only for a broad watchlist.
+- PASS is impossible if component ledgers are role summaries only.
+- PASS is impossible if exact rule lineage is absent for selected critical route components.
 - Native auto-trigger test and bootstrap-required test are separate proof paths.
 - If native auto-trigger fails, do not declare native onboarding.
 - If bootstrap-required passes after native auto-trigger fails, classify the platform as `BOOTSTRAP_REQUIRED_COMPATIBLE` only.

@@ -66,3 +66,16 @@ status=USED/NEEDS_CONFIRMATION/BLOCKED
 - Missing subskill evidence is `PARTIAL` unless the route manifest declares the subskill optional.
 - Missing governance director evidence is `FAIL` for production content tasks.
 - `loaded=true` without route-scoped consumption evidence is not proof of use.
+
+## Exact Rule Evidence Law
+
+- `consumed=true` is invalid unless exact rule evidence is present.
+- `evidence_depth` must be one of:
+  - `EXACT_RULE`
+  - `SECTION_LEVEL`
+  - `ROLE_SUMMARY`
+  - `MISSING`
+- Production content full `PASS` requires key route components to be `EXACT_RULE` or `SECTION_LEVEL`.
+- `ROLE_SUMMARY` only allows `PASS_WITH_NOTICE` or `PARTIAL`.
+- Every selected component must feed `RULE_CONSUMPTION_EVIDENCE_LEDGER`.
+- Every critical output line must feed `EXACT_RULE_LINEAGE_MAP`.

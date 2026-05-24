@@ -54,6 +54,18 @@ The agent receives:
 - It reports `direct_script_after_bootstrap_without_wrapper=false`.
 - It reports `wrapper_missing_when_required=false`.
 - It reports `wrapper_used_but_locks_missing=false`.
+- For latest/current/multi-tool watchlist tasks, it includes `PER_TOOL_SOURCE_MAP`.
+- It reports `source_breadth_lock_status=`.
+- It reports `per_tool_source_map_present=true`.
+- It reports `per_tool_source_map_count=`.
+- It reports `non_openai_tool_sources_count=`.
+- It reports `named_tool_claims_all_mapped=true`.
+- It reports `RULE_CONSUMPTION_EVIDENCE_LEDGER`.
+- It reports `rule_consumption_evidence_lock_status=`.
+- It reports `exact_rule_evidence_present=true`.
+- It reports `role_summary_only_detected=false` for full PASS.
+- It reports `EXACT_RULE_LINEAGE_MAP`.
+- It reports `final_status_downgraded_if_depth_weak=true/false`.
 - It assesses tools/connectors/plugins honestly as `ACTIVE`, `PLANNED`, `NOT_ACTIVE`, or `NEEDS_CONFIRMATION`.
 - It produces research, script, debate, critique, final script, and context engineering packet.
 - It runs a quality gate.
@@ -86,6 +98,10 @@ PASS is impossible if:
 - wrapper-required mode is declared but the wrapper is not read
 - direct script appears after bootstrap without wrapper
 - wrapper is used but required locks are missing
+- latest multi-tool claim has no per-tool source map
+- broad watchlist source breadth is one-vendor-only
+- selected critical route components have role-summary-only evidence
+- exact rule lineage map is absent
 
 ## Environment Compatibility Split
 

@@ -94,7 +94,6 @@ REQUIRED_SECTIONS = [
 ]
 
 INVALID_GATE_STATUSES = [
-    "PASS_WITH_NOTICE",
     "PASS_WITH_REFINEMENT",
     "READY_FOR_USER_DECISION",
 ]
@@ -151,7 +150,7 @@ GATE_STATUSES = {
     "NEEDS_CONFIRMATION",
 }
 
-PROOF_CLASSIFICATIONS = {"PASS", "PARTIAL", "FAIL"}
+PROOF_CLASSIFICATIONS = {"PASS", "PASS_WITH_NOTICE", "PARTIAL", "FAIL"}
 REQUIRED_TRUE_KEYS = [
     "shadow_boot_confirmation_present",
     "first_visible_output_is_boot_confirmation",
@@ -246,6 +245,11 @@ def explicit_true(text: str, key: str) -> bool:
     return value is not None and value.lower() == "true"
 
 
+def explicit_status(text: str, key: str) -> str | None:
+    value = find_key_value(text, key)
+    return value.upper() if value else None
+
+
 def count_hook_variants(text: str) -> int:
     explicit = find_key_value(text, "hook_variants_count")
     if explicit and explicit.isdigit():
@@ -338,6 +342,49 @@ def main() -> int:
             or mandatory_files_not_read
         )
     )
+    latest_or_watchlist_task = bool(
+        re.search(r"(?i)\b(latest|current|this week|new update|today|2026|watchlist|tools to watch)\b", text)
+    )
+    source_breadth_status = explicit_status(text, "source_breadth_lock_status") or explicit_status(text, "source_breadth_status")
+    rule_consumption_evidence_status = explicit_status(text, "rule_consumption_evidence_lock_status")
+    per_tool_source_map_present = explicit_true(text, "per_tool_source_map_present") or "PER_TOOL_SOURCE_MAP" in text
+    per_tool_source_map_count_value = find_key_value(text, "per_tool_source_map_count")
+    per_tool_source_map_count = int(per_tool_source_map_count_value) if per_tool_source_map_count_value and per_tool_source_map_count_value.isdigit() else 0
+    non_openai_value = find_key_value(text, "non_openai_tool_sources_count")
+    non_openai_tool_sources_count = int(non_openai_value) if non_openai_value and non_openai_value.isdigit() else 0
+    per_tool_source_map_missing = latest_or_watchlist_task and not per_tool_source_map_present
+    source_breadth_lock_missing = latest_or_watchlist_task and source_breadth_status is None
+    source_breadth_lock_fail = source_breadth_status == "FAIL"
+    broad_watchlist_one_vendor_only = latest_or_watchlist_task and per_tool_source_map_present and non_openai_tool_sources_count == 0
+    named_tool_without_source_map = explicit_false(text, "named_tool_claims_all_mapped")
+    unsupported_tool_claims_missing = "unsupported_tool_claims" not in text and latest_or_watchlist_task
+    exact_rule_evidence_missing = explicit_false(text, "exact_rule_evidence_present") or (
+        "RULE_CONSUMPTION_EVIDENCE_LEDGER" not in text and "exact_rule_id_or_text" not in text
+    )
+    role_summary_only_detected = explicit_true(text, "role_summary_only_detected") or "evidence_depth=ROLE_SUMMARY" in text
+    exact_rule_lineage_map_missing = explicit_false(text, "exact_rule_lineage_map_present") or "EXACT_RULE_LINEAGE_MAP" not in text
+    rule_consumption_evidence_lock_missing = rule_consumption_evidence_status is None
+    all_core_locks_pass = all(
+        find_key_value(text, key) == "PASS"
+        for key in [
+            "task_route_lock_status",
+            "route_dependency_expansion_lock_status",
+            "consumption_lock_status",
+            "source_research_lock_status",
+            "quality_lock_status",
+            "governance_lock_status",
+        ]
+    )
+    depth_weak_but_downgraded = (
+        (role_summary_only_detected or exact_rule_evidence_missing or exact_rule_lineage_map_missing)
+        and all_core_locks_pass
+        and explicit_true(text, "final_status_downgraded_if_depth_weak")
+    )
+    final_status_not_downgraded_when_evidence_weak = (
+        (role_summary_only_detected or exact_rule_lineage_map_missing)
+        and (find_key_value(text, "proof_classification") == "PASS")
+        and not explicit_true(text, "final_status_downgraded_if_depth_weak")
+    )
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -412,8 +459,18 @@ def main() -> int:
         or direct_script_after_bootstrap_without_wrapper
         or wrapper_missing_when_required
         or wrapper_used_but_locks_missing
+        or per_tool_source_map_missing
+        or source_breadth_lock_fail
+        or broad_watchlist_one_vendor_only
+        or named_tool_without_source_map
     ):
         status = "FAIL"
+    elif (
+        depth_weak_but_downgraded
+        or source_breadth_status == "PASS_WITH_NOTICE"
+        or rule_consumption_evidence_status == "PASS_WITH_NOTICE"
+    ):
+        status = "PASS_WITH_NOTICE"
     elif (
         missing
         or invalid_statuses
@@ -437,6 +494,13 @@ def main() -> int:
         or content_engineering_present_but_no_consumption
         or hook_variants_without_scores
         or quality_gate_without_threshold
+        or source_breadth_lock_missing
+        or rule_consumption_evidence_lock_missing
+        or unsupported_tool_claims_missing
+        or role_summary_only_detected
+        or exact_rule_evidence_missing
+        or exact_rule_lineage_map_missing
+        or final_status_not_downgraded_when_evidence_weak
     ):
         status = "PARTIAL"
 
@@ -486,6 +550,20 @@ def main() -> int:
     print(f"direct_script_after_bootstrap_without_wrapper={str(direct_script_after_bootstrap_without_wrapper).lower()}")
     print(f"wrapper_missing_when_required={str(wrapper_missing_when_required).lower()}")
     print(f"wrapper_used_but_locks_missing={str(wrapper_used_but_locks_missing).lower()}")
+    print(f"per_tool_source_map_missing={str(per_tool_source_map_missing).lower()}")
+    print(f"broad_watchlist_one_vendor_only={str(broad_watchlist_one_vendor_only).lower()}")
+    print(f"named_tool_without_source_map={str(named_tool_without_source_map).lower()}")
+    print(f"unsupported_tool_claims_missing={str(unsupported_tool_claims_missing).lower()}")
+    print(f"source_breadth_lock_missing={str(source_breadth_lock_missing).lower()}")
+    print(f"source_breadth_lock_fail={str(source_breadth_lock_fail).lower()}")
+    print(f"rule_consumption_evidence_lock_missing={str(rule_consumption_evidence_lock_missing).lower()}")
+    print(f"exact_rule_evidence_missing={str(exact_rule_evidence_missing).lower()}")
+    print(f"role_summary_only_detected={str(role_summary_only_detected).lower()}")
+    print(f"exact_rule_lineage_map_missing={str(exact_rule_lineage_map_missing).lower()}")
+    print(f"final_status_not_downgraded_when_evidence_weak={str(final_status_not_downgraded_when_evidence_weak).lower()}")
+    print(f"all_core_locks_pass={str(all_core_locks_pass).lower()}")
+    print(f"per_tool_source_map_count={per_tool_source_map_count}")
+    print(f"non_openai_tool_sources_count={non_openai_tool_sources_count}")
     print(f"generic_output_detected={str(generic_detected).lower()}")
     print(f"shadow_boot_confirmation_present={str(boot_signature_present).lower()}")
     print(f"content_before_shadow_boot_confirmation={str(content_before_boot_signature).lower()}")
@@ -512,7 +590,7 @@ def main() -> int:
     print(f"final_proof_classification={final_proof or 'MISSING'}")
     print(f"final_status_matches_weakest_evidence_layer={str(final_status_matches_weakest).lower()}")
 
-    return 0 if status == "PASS" and final_status_matches_weakest else 1
+    return 0 if status in {"PASS", "PASS_WITH_NOTICE"} and final_status_matches_weakest else 1
 
 
 if __name__ == "__main__":

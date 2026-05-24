@@ -165,6 +165,22 @@ Use this checklist after the user pastes the fresh-agent result back into Codex.
 - Direct script after bootstrap without wrapper is `FAIL`.
 - Missing wrapper when wrapper-required mode is declared is `FAIL`.
 - Wrapper used but required locks missing is `FAIL`.
+- For latest/current/multi-tool watchlist tasks, is `PER_TOOL_SOURCE_MAP` present?
+- Does `per_tool_source_map_count` cover at least 3 non-identical tool ecosystems unless scope is narrowed?
+- Is `non_openai_tool_sources_count` greater than 0 for broad watchlists?
+- Are all named tool claims mapped with `named_tool_claims_all_mapped=true`?
+- Are unsupported tool claims listed?
+- Is `source_breadth_lock_status` present?
+- Is `RULE_CONSUMPTION_EVIDENCE_LEDGER` present?
+- Is `rule_consumption_evidence_lock_status` present?
+- Is exact rule evidence present for critical directors/agents/subagents/skills/subskills?
+- Is `role_summary_only_detected=false` for a full PASS?
+- Is `EXACT_RULE_LINEAGE_MAP` present?
+- If source/rule depth is weak, was final status downgraded to `PASS_WITH_NOTICE` or `PARTIAL`?
+- Latest multi-tool claim without `PER_TOOL_SOURCE_MAP` is `FAIL`.
+- One-vendor-only source breadth for a broad watchlist blocks `PASS`.
+- Role-summary-only component ledgers block full `PASS`.
+- Missing exact rule lineage for selected critical route components blocks `PASS`.
 
 ## Verdict
 

@@ -31,6 +31,9 @@ For every wrapped task, output in this exact order:
 19. `PROVIDER_HANDOFF_BOUNDARY`
 20. `FINAL_PROOF_CLASSIFICATION`
 
+For latest/current/watchlist tasks, include `PER_TOOL_SOURCE_MAP` before final output.
+For every consumed component, include exact rule evidence, not only role summaries.
+
 ## Required Execution Proof
 
 Before `FINAL_SCRIPT`, prove:
@@ -47,6 +50,12 @@ consumption_lock_status=PASS
 source_research_lock_status=PASS
 quality_lock_status=PASS
 governance_lock_status=PASS
+source_breadth_lock_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL
+rule_consumption_evidence_lock_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL
+per_tool_source_map_present=true/false
+exact_rule_evidence_present=true/false
+exact_rule_lineage_map_present=true/false
+corrected_status_if_depth_weak=PASS_WITH_NOTICE/PARTIAL/FAIL
 ```
 
 If any lock cannot pass, do not generate the final script. Return:
@@ -68,6 +77,9 @@ MAC_06_1J_K_TEST_B_RECOVERY_RUN_STATUS=PASS/PARTIAL/FAIL
 default_task_execution_previously_failed=true
 recovery_prompt_required=true
 wrapper_required_mode_used=true
+source_breadth_lock_status=
+rule_consumption_evidence_lock_status=
+corrected_status_if_depth_weak=PASS_WITH_NOTICE/PARTIAL/FAIL
 safe_to_declare_default_bootstrap_mode_onboarded=false
 ```
 

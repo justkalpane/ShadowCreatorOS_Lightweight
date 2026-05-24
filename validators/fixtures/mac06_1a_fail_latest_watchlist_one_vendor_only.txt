@@ -1,0 +1,21 @@
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+AGENTS.md
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+TASK_ROUTE_LOCK
+task_intent_classified=true
+route_id=SCRIPT_GENERATION
+Latest AI video tools watchlist
+PER_TOOL_SOURCE_MAP
+per_tool_source_map_present=true
+per_tool_source_map_count=3
+non_openai_tool_sources_count=0
+named_tool_claims_all_mapped=true
+unsupported_tool_claims=none
+source_breadth_lock_status=PASS
+proof_classification=FAIL

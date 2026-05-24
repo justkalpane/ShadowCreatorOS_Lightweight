@@ -129,6 +129,8 @@ routes:
       - ROUTE_DEPENDENCY_EXPANSION_LOCK
       - CONSUMPTION_LOCK
       - SOURCE_RESEARCH_LOCK if latest/current terms are present
+      - SOURCE_BREADTH_LOCK when latest/current/watchlist terms are present
+      - RULE_CONSUMPTION_EVIDENCE_LOCK
       - QUALITY_LOCK
       - GOVERNANCE_LOCK
     trigger_terms:
@@ -188,6 +190,7 @@ routes:
       - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
       - runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
       - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+      - runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md
     mandatory_registries:
       - registries/task_intent_routing_matrix.yaml
       - registries/skill_registry_wf200.yaml
@@ -205,6 +208,9 @@ routes:
       - TOPIC_QUALITY_GATE
       - HOOK_GENERATION_GATE
       - SCRIPT_QUALITY_GATE
+      - PER_TOOL_SOURCE_MAP
+      - RULE_CONSUMPTION_EVIDENCE_LEDGER
+      - EXACT_RULE_LINEAGE_MAP
       - LINE_BY_LINE_INFLUENCE_MAP
       - FINAL_SCRIPT
     pass_rules:
@@ -219,6 +225,9 @@ routes:
       - no line-by-line influence map
       - shallow repo routing only
       - script generated before director/skill consumption
+      - latest multi-tool claim without PER_TOOL_SOURCE_MAP
+      - source breadth one-vendor-only for broad watchlist
+      - component ledgers are role summaries only
 
   - route_id: SCRIPT_REFINEMENT
     route_name: Script Refinement

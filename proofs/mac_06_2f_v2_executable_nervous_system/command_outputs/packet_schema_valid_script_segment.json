@@ -1,0 +1,7 @@
+{
+  "errors": [],
+  "packet": "tests/shadow_runtime/fixtures/packets/valid/script_segment_packet.valid.json",
+  "pass": true,
+  "schema": "schemas/packets/script_segment_packet.schema.json",
+  "validator": "packet_schema_validator"
+}

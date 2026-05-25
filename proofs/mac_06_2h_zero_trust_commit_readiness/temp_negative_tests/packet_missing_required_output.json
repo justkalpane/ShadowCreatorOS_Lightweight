@@ -1,0 +1,15 @@
+{
+  "errors": [
+    "missing_required:route_id",
+    "missing_required:producer_component_id",
+    "missing_required:consumer_component_ids",
+    "missing_required:lineage",
+    "missing_required:validation_status",
+    "missing_required:segments",
+    "missing_required:total_duration_sec"
+  ],
+  "packet": "/Users/apple/Documents/ShadowCreatorOS_Lightweight/proofs/mac_06_2h_zero_trust_commit_readiness/temp_negative_tests/script_segment_missing_required.json",
+  "pass": false,
+  "schema": "schemas/packets/script_segment_packet.schema.json",
+  "validator": "packet_schema_validator"
+}

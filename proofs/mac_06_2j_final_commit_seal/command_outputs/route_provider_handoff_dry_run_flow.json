@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route provider_handoff",
+  "name": "route_provider_handoff_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"provider_handoff_packet\",\n    \"script_segment_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"provider_handoff\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"script_segment_packet\"\n      ],\n      \"node_id\": \"ph_001\"\n    },\n    {\n      \"component_id\": \"DIRECTOR:_KAMA\",\n      \"consumed\": [\n        \"script_segment_packet\"\n      ],\n      \"emitted\": [\n        \"provider_handoff_packet\"\n      ],\n      \"node_id\": \"ph_002\"\n    }\n  ]\n}\n"
+}

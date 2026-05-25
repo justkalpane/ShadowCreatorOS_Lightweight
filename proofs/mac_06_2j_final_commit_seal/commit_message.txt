@@ -1,0 +1,11 @@
+MAC-06.2B-2I: Add executable Shadow runtime enforcement baseline
+
+- Add component contract scaffolding and route-specific depth metadata across Directors, Agents, Sub Agents, Skills, and Sub Skills.
+- Narrow lifecycle activation so the executable core is DAG-consumed and weak/unproven components remain inactive.
+- Add route DAG execution validation, route graph building, communication vein validation, and packet flow dry-runs.
+- Add canonical packet schema governance, packet schema validation, and schema rationalization for generated schemas.
+- Add provider boundary enforcement with n8n/provider/media execution disabled unless explicitly approved.
+- Add quality scorecard runtime plus lineage and approval local state enforcement.
+- Harden validators with structural checks, negative fixtures, and command-backed runtime proof.
+- Close gap-to-patch coverage for the accepted MAC-06.2I blocker scope.
+- Keep n8n/provider/media disabled and Lightweight OS onboarding false.

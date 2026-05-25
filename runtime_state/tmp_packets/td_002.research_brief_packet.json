@@ -1,0 +1,16 @@
+{
+  "packet_id": "research_brief_packet",
+  "route_id": "topic_discovery",
+  "producer_component_id": "S-201-research-to-script-brief",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "brief": "x",
+  "source_evidence_refs": [
+    "x"
+  ]
+}

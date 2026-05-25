@@ -1,0 +1,63 @@
+{
+  "route_dags_total": 16,
+  "route_dags_non_empty": 16,
+  "route_dags_complete": 16,
+  "route_dags_empty_remaining": 0,
+  "active_core_after": 10,
+  "active_support_after": 0,
+  "dormant_future_after": 37,
+  "duplicate_candidates_after": 114,
+  "quarantine_review_after": 577,
+  "historical_reference_after": 2,
+  "unknown_281_counts": {
+    "QUARANTINE_REVIEW": 162,
+    "ACTIVE_CORE": 1,
+    "DUPLICATE_CANDIDATE": 96,
+    "DORMANT_FUTURE": 22
+  },
+  "duplicate_candidates_active_after": 0,
+  "active_components_not_consumed_by_dag": 0,
+  "validator": {
+    "fixtures_total": 62,
+    "fixtures_passed": 62,
+    "fixtures_failed": 0,
+    "failed_fixtures": []
+  },
+  "routes": {
+    "routes_tested": 16,
+    "routes_passed": 16,
+    "routes_partial": 0,
+    "routes_failed": 0,
+    "failed_routes": []
+  },
+  "operator_packet_status": "PASS",
+  "native_executable_depth_proven": true,
+  "route_manifests_executable_as_dag": true,
+  "media_pipeline_dry_run_executable": true,
+  "validator_reality_upgrade_status": "PASS",
+  "text_only_validator_rules_remaining": 0,
+  "safe_to_commit_after_user_review": true,
+  "safe_to_run_non_codex_operator_proof_after_commit": true,
+  "operator_fields": {
+    "route_resolved": true,
+    "dag_validated": true,
+    "packet_flow_validated": true,
+    "provider_boundary_validated": true,
+    "lineage_fields_present": true,
+    "approval_fields_present": true,
+    "quality_fields_present": true,
+    "final_content_generated": false,
+    "external_calls": false
+  },
+  "exits": {
+    "preflight": true,
+    "lifecycle": true,
+    "route": true,
+    "veins": true,
+    "packets": true,
+    "dry": true,
+    "provider": true,
+    "operator": true,
+    "tests": true
+  }
+}

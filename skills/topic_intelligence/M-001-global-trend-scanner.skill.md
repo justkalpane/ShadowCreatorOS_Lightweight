@@ -1,4 +1,4 @@
-﻿# SKL-PH1-GLOBAL-TREND-SCANNER
+# SKL-PH1-GLOBAL-TREND-SCANNER
 
 ## 1. Skill Identity
 - **Skill ID:** M-001
@@ -56,50 +56,50 @@ STEP 1: VALIDATE INPUTS & LOAD CREATOR CONTEXT
     * creator_audience_age_range, geography, language
     * primary_platforms (where to scout trends)
     * performance_trend (declining/stable/growing — affect opportunity scoring)
-  
+
   Validation: If intent_envelope missing primary_lane or target_platforms → escalate clarification
   Confidence floor: >=0.7 to proceed; else flag "context_insufficient"
 
 STEP 2: QUERY MULTI-SOURCE TREND FEEDS
   - Query 5+ data sources in parallel:
-    
+
     A) SOCIAL_MEDIA_FEEDS:
        - Twitter/X API: trending topics by geography + category
        - TikTok: trending sounds, hashtags, audio clips (platform_defaults.recommended_format)
        - Instagram: trending hashtags, reels trends, explore page signals
        - YouTube: trending videos by category, music trends, shorts trends
        Each source returns: [trend_name, trend_category, current_volume, 7d_growth_rate, peak_momentum]
-    
+
     B) SEARCH_INTELLIGENCE:
        - Google Trends: search volume spikes, related searches, rising queries
        - YouTube Search: autocomplete popularity, search volume by time window
        - Filters: locale (from creator_profile), language (from audience_profile)
        Returns: [query, search_volume, growth_trend, search_category]
-    
+
     C) NICHE_COMMUNITIES:
        - Reddit: subreddit_rising_posts (by creator's known communities)
        - Discord/Slack community signals (if available)
        - Forums, blogs, wikis in creator's genre
        Returns: [topic, community_name, engagement_score, trend_velocity]
-    
+
     D) MUSIC & AUDIO:
        - Spotify: trending songs, viral clips (for music/audio genres)
        - Apple Music Charts
        - SoundCloud: trending tracks
        Returns: [audio_asset_name, genre, trend_velocity, platform_presence]
-    
+
     E) CULTURAL_SIGNALS:
        - News aggregators: breaking stories, viral news themes
        - Meme tracking (if audience aligned): emerging meme formats
        - Celebrity/influencer triggers: major announcements, controversies
        Returns: [event_name, cultural_impact_score, media_coverage, meme_velocity]
-  
+
   Timeout per source: 5s (fallback: skip missing source, mark "degraded")
   Aggregation: Deduplicate by trend_name (case-insensitive), merge volume signals
 
 STEP 3: APPLY CONTEXT FILTERS
   For each trend from aggregated sources:
-    
+
     A) AUDIENCE_ALIGNMENT_FILTER:
        - Check trend against creator_audience_profile (age, location, interests)
        - Filter out: trends with mismatched demographic signals
@@ -107,7 +107,7 @@ STEP 3: APPLY CONTEXT FILTERS
        - Scoring: +10 if geography matches creator_primary_locale
        - Scoring: +5 if language match
        - Threshold: trend_relevance_score >= 5 (soft filter, allow some diversity)
-    
+
     B) PLATFORM_ALIGNMENT_FILTER:
        - For each target_platform:
          * Check if trend_source compatible with platform
@@ -115,7 +115,7 @@ STEP 3: APPLY CONTEXT FILTERS
          * Example: Twitter topics → compatible with most platforms
        - Scoring: +15 for native format, +5 for adaptable format
        - Threshold: platform_compatibility_score >= 5
-    
+
     C) CREATOR_GENRE_FILTER:
        - Extract trend_category from source data
        - Compare to creator_genre_affinities from content_patterns
@@ -123,7 +123,7 @@ STEP 3: APPLY CONTEXT FILTERS
        - Scoring: +10 if trend_category in broader_niche
        - Scoring: -15 if trend_category is known non-creator genre
        - Threshold: genre_alignment >= 0 (allow exploration outside comfort zone)
-    
+
     D) RECENCY_FILTER:
        - Exclude trends older than 72 hours (unless part of broader macro trend)
        - Extract trend_first_seen_time from source metadata
@@ -131,43 +131,43 @@ STEP 3: APPLY CONTEXT FILTERS
        - Scoring: +15 if emerged in last 48h
        - Scoring: +10 if emerged in last 72h
        - Scoring: 0 if older (but don't filter completely)
-  
+
   Result: Filtered trend list with individual filter scores
 
 STEP 4: CLASSIFY TREND LIFECYCLE
   For each filtered trend, determine lifecycle stage:
-    
+
     IF trend_volume >= all_time_peak:
       lifecycle_stage = "PEAK_MOMENTUM"
       urgency_signal = +25 (must act NOW)
-    
+
     ELSE IF trend_growth_rate >= 50% (per day):
       lifecycle_stage = "ACCELERATING"
       urgency_signal = +20 (window closing soon)
       growth_days_remaining = estimate based on historical patterns (typically 3-7 days)
-    
+
     ELSE IF trend_growth_rate >= 10%:
       lifecycle_stage = "EMERGING"
       urgency_signal = +10 (opportunity window open)
       growth_days_remaining = 7-14 days typical
-    
+
     ELSE IF trend_volume stable (±10%):
       lifecycle_stage = "SUSTAINED"
       urgency_signal = 0 (no time pressure)
       sustainability = "indefinite or slowly declining"
-    
+
     ELSE IF trend_growth_rate < -5%:
       lifecycle_stage = "DECLINING"
       urgency_signal = -20 (avoid unless unique angle)
       time_to_irrelevance = estimate weeks/months
-    
+
     Metadata: include historical_peak_date, current_volume, 7d_growth_curve
 
 STEP 5: SCORE TRENDS BY OPPORTUNITY
   For each classified trend, compute opportunity_score (0-100):
-    
+
     base_score = 50
-    
+
     # Growth momentum (0-30 points)
     + growth_momentum_signal:
       IF lifecycle_stage == ACCELERATING: +25
@@ -175,7 +175,7 @@ STEP 5: SCORE TRENDS BY OPPORTUNITY
       ELSE IF lifecycle_stage == PEAK_MOMENTUM: +20 (declining urgency)
       ELSE IF lifecycle_stage == SUSTAINED: +10
       ELSE (DECLINING): 0
-    
+
     # Audience size & engagement (0-25 points)
     + audience_signal:
       IF trend_volume >= 1M impressions/day: +25
@@ -183,7 +183,7 @@ STEP 5: SCORE TRENDS BY OPPORTUNITY
       ELSE IF trend_volume >= 10K: +15
       ELSE IF trend_volume >= 1K: +10
       ELSE: +5
-    
+
     # Underserved niche bonus (0-20 points)
     + underserved_niche_signal:
       count_existing_creators_covering_trend = query trend_coverage_index
@@ -192,25 +192,25 @@ STEP 5: SCORE TRENDS BY OPPORTUNITY
       ELSE IF count < 200: +10 (moderate coverage)
       ELSE IF count < 1000: +5 (well-covered)
       ELSE: 0 (saturated)
-    
+
     # Creator alignment (0-15 points)
     + genre_alignment_score (from STEP 3) normalized to 0-15
-    
+
     # Platform compatibility (0-10 points)
     + platform_compatibility_score (from STEP 3) normalized to 0-10
-    
+
     # Viral potential (0-15 points)
     + viral_potential_signal:
       IF trend has meme/format_replicability: +15
       ELSE IF trend is sound/audio with high_engagement: +12
       ELSE IF trend is visual_format: +10
       ELSE IF trend is text_only: +5
-    
+
     # Creator performance context (-20 to +10)
     - (IF creator_performance_trend == DECLINING: +10)
     - (IF creator_performance_trend == STABLE: 0)
     + (IF creator_performance_trend == GROWING: +5)
-    
+
     # Cap at 0-100
     opportunity_score = min(100, max(0, base_score))
 
@@ -266,7 +266,7 @@ STEP 8: VALIDATION & EMIT
   - Each trend object has minimum required fields
   - opportunity_score values in 0-100 range
   - Timestamp in ISO format
-  
+
   IF validation passes AND discovery_confidence >= 0.8:
     status = "CREATED"
   ELSE IF trends_curated_top_20 non-empty AND discovery_confidence >= 0.6:
@@ -275,7 +275,7 @@ STEP 8: VALIDATION & EMIT
   ELSE IF data_sources_failed > 3 OR no trends found:
     status = "EMPTY"
     escalate to WF-900 with escalation_type = "trend_discovery_failed"
-  
+
   Emit packet with deterministic lineage metadata
   Write dossier.discovery_vein.global-trend-scanner (append_only)
   Register in se_packet_index with discovery_confidence, source=M-001, trend_count
@@ -501,3 +501,56 @@ STEP 8: VALIDATION & EMIT
 - ✅ Discovery confidence score calculated from source success rate + trend_quality ratio (formula documented)
 - ✅ Test suite covers happy path + all 4 failure modes + edge cases (timeout, no_trends, restrictive_filters, missing_angle)
 - ✅ Deterministic replay guaranteed within 24h (same input = same ranked trend list)
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: M-001-global-trend-scanner.skill
+component_layer: SKILL
+component_name: M 001 Global Trend Scanner.Skill
+route_families: [lineage_summary, approval_gate]
+activation_triggers: route_family in [script_generation, trend_research, topic_discovery, music_sfx_context] or explicit registry selection; mark lineage_profile only when route_family is unknown.
+upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
+downstream_outputs: [lineage_packet, approval_packet]
+required_input_packets: [media_quality_gate_packet, lineage_packet, approval_packet]
+emitted_output_packets: [lineage_packet, approval_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+quality_gates: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
+validator_bindings: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
+fallback_behavior: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
+lineage_fields: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
+provider_boundary: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve, revise_segment, regenerate_media, reject]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+production_score_fields: [lineage_score, approval_clarity_score, risk_score]
+skill_activation_contract: Activated by skill_activation_packet from subagent or route manifest.
+input_schema: Must declare atomic input fields before use; lineage_profile if absent upstream.
+output_schema: Must emit atomic output packet with evidence path and validation status.
+subskill_hooks: May call subskills only through atomic_task_packet.
+quality_metric: Must emit skill_quality_score and quality_threshold.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: lineage_profile
+route_family_resolved: [lineage_summary, approval_gate]
+activation_triggers_resolved: [lineage, trace, decision log]
+required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
+emitted_output_packets_resolved: [lineage_packet, approval_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+validator_bindings_resolved: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
+quality_gates_resolved: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
+fallback_behavior_resolved: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
+lineage_fields_resolved: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
+provider_boundary_resolved: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution; approval_packet_required_for_any_execution
+handoff_targets_resolved: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+production_score_fields_resolved: [lineage_score, approval_clarity_score, risk_score]
+human_approval_points_resolved: [approve, revise_segment, regenerate_media, reject]
+status_limits_resolved: [no silent approval, no execution without explicit approval]
+evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/topic_intelligence/M-001-global-trend-scanner.skill.md; component_id=M-001-global-trend-scanner.skill
+remaining_unknowns: none

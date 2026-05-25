@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "required": [
+    "route_id",
+    "proof_fields",
+    "validation_status",
+    "provider_execution_allowed"
+  ]
+}

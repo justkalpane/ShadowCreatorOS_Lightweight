@@ -176,7 +176,7 @@ FUNCTION parashara.analyze_trends(context):
      quality = (Signal_Strength × 0.20) + (Pattern_Confidence × 0.20) +
                (Forecast_Confidence × 0.20) + (Audience_Alignment × 0.20) +
                (Competitive_Advantage × 0.20)
-     
+
      IF quality <50%:
        → MARK as weak signal (low priority)
      ELSE:
@@ -456,3 +456,55 @@ System works without Parashara (topic selection can be manual), but significantl
 - **Next Step**: Integration with Narada (data feed) and Chanakya (opportunity scoring)
 - **Real-Time Requirement**: Must process signals within 60 seconds of market change detection
 - **Continuous Monitoring**: Runs 24/7 to detect emerging trends early
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: DIRECTOR:_PARASHARA
+component_layer: DIRECTOR
+component_name: Parashara
+route_families: [script_generation]
+activation_triggers: route_family in [script_generation, trend_research, topic_discovery, avatar_video_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
+upstream_inputs: [research_brief_packet, script_strategy_packet, source_evidence_packet]
+downstream_outputs: [script_v1_packet, script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet]
+required_input_packets: [research_brief_packet, script_strategy_packet, source_evidence_packet]
+emitted_output_packets: [script_v1_packet, script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_RESEARCH_SCRIPT, PTR_SCRIPT_DEBATE, PTR_FINAL_SCRIPT_VOICE, PTR_FINAL_SCRIPT_IMAGE, PTR_FINAL_SCRIPT_VIDEO]
+quality_gates: [hook_generation_gate, retention_gate, script_quality_gate]
+validator_bindings: [script_segment_packet_present, voice_context_packet_present, visual_context_packet_present, video_context_packet_present, quality_scores_present]
+fallback_behavior: BLOCKED_BEFORE_OUTPUT when research_brief_packet or script_segment_packet cannot be produced.
+lineage_fields: [research_brief_packet_id, script_v1_packet_id, script_segment_packet_id, line_number]
+provider_boundary: provider_execution_allowed=false; content planning only; provider/media execution disabled unless approval_packet authorizes handoff
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_script, revise_hook, regenerate_segment, reject_script]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [script_v1_packet, script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_RESEARCH_SCRIPT, PTR_SCRIPT_DEBATE, PTR_FINAL_SCRIPT_VOICE, PTR_FINAL_SCRIPT_IMAGE, PTR_FINAL_SCRIPT_VIDEO]
+production_score_fields: [script_score, hook_score, retention_score, evidence_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: script_generation_profile
+route_family_resolved: [script_generation]
+activation_triggers_resolved: [script request, content writing route]
+required_input_packets_resolved: [research_brief_packet, script_strategy_packet, source_evidence_packet]
+emitted_output_packets_resolved: [script_v1_packet, script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_RESEARCH_SCRIPT, PTR_SCRIPT_DEBATE, PTR_FINAL_SCRIPT_VOICE, PTR_FINAL_SCRIPT_IMAGE, PTR_FINAL_SCRIPT_VIDEO]
+validator_bindings_resolved: [script_segment_packet_present, voice_context_packet_present, visual_context_packet_present, video_context_packet_present, quality_scores_present]
+quality_gates_resolved: [hook_generation_gate, retention_gate, script_quality_gate]
+fallback_behavior_resolved: BLOCKED_BEFORE_OUTPUT when research_brief_packet or script_segment_packet cannot be produced.
+lineage_fields_resolved: [research_brief_packet_id, script_v1_packet_id, script_segment_packet_id, line_number]
+provider_boundary_resolved: provider_execution_allowed=false; content planning only; provider/media execution disabled unless approval_packet authorizes handoff
+handoff_targets_resolved: [script_v1_packet, script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_RESEARCH_SCRIPT, PTR_SCRIPT_DEBATE, PTR_FINAL_SCRIPT_VOICE, PTR_FINAL_SCRIPT_IMAGE, PTR_FINAL_SCRIPT_VIDEO]
+production_score_fields_resolved: [script_score, hook_score, retention_score, evidence_score, lineage_score]
+human_approval_points_resolved: [approve_script, revise_hook, regenerate_segment, reject_script]
+status_limits_resolved: [script-only output is PARTIAL unless explicitly requested, no media execution]
+evidence_used_for_resolution: path/pre-contract keyword: script/hook/retention; component_path=directors/research/parashara.md; component_id=DIRECTOR:_PARASHARA
+remaining_unknowns: none

@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route script_refinement",
+  "name": "route_script_refinement_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"debate_critique_packet\",\n    \"refinement_delta_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"script_refinement\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"debate_critique_packet\"\n      ],\n      \"node_id\": \"sr_001\"\n    },\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"debate_critique_packet\"\n      ],\n      \"emitted\": [\n        \"refinement_delta_packet\"\n      ],\n      \"node_id\": \"sr_002\"\n    }\n  ]\n}\n"
+}

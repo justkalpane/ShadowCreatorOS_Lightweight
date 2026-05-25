@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/validator_integrity_scanner.py",
+  "name": "validator_integrity_scanner",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"always_pass_logic_remaining\": 0,\n  \"hardcoded_success_remaining\": 0,\n  \"ignored_exceptions_remaining\": 0,\n  \"issues\": [],\n  \"pass\": true,\n  \"text_only_critical_checks_remaining\": 0\n}\n"
+}

@@ -1,0 +1,8 @@
+{
+  "contract_only_veins_remaining": 0,
+  "dag_connected_veins": 2,
+  "issues": [],
+  "pass": true,
+  "route_id": "provider_handoff",
+  "veins_validated": 2
+}

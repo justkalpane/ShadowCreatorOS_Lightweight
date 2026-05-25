@@ -1,0 +1,14 @@
+{
+  "packet_id": "final_script_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "demo_component",
+  "consumer_component_ids": [
+    "demo_consumer"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "final_script_text": "x",
+  "cta": "x"
+}

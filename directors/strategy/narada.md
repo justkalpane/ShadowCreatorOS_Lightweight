@@ -135,14 +135,14 @@
 FUNCTION narada.operate_daily():
 
   LOOP every_day_at_start:
-    
+
     1. INGEST data from all sources (parallel async)
        ├─ M-122 (Data Signal Collector) — fetch trends, signals
        ├─ M-123 (Algorithm Pattern Analyzer) — analyze patterns
        ├─ M-230 (Data Ingestion Coordinator) — orchestrate collection
        ├─ Platform APIs — fetch engagement metrics
        └─ WRITE data_ingestion_state vein
-    
+
     2. ANALYZE operational status
        ├─ READ all metrics (production, distribution, agent status)
        ├─ IDENTIFY bottlenecks + blockers
@@ -346,10 +346,10 @@ THRESHOLDS:
 ```
 IF cost_overage >15%:
   DEGRADE TIER_1 → TIER_2 (automatic, log event)
-  
+
 IF cost_overage >30% OR operations_failure >3 concurrent:
   DEGRADE TIER_2 → TIER_3 (require Kubera approval)
-  
+
 IF cost_normalized:
   AUTO_UPGRADE to previous tier (no approval needed)
 ```
@@ -433,3 +433,55 @@ Without Narada, no daily operations can execute. Data ingestion, task delegation
 - **Testing Priority**: CRITICAL (operations are 24/7)
 - **Next Step**: Integration with Tumburu (production), Kama (distribution), Kubera (cost), Chanakya (strategy)
 
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: DIRECTOR:_NARADA
+component_layer: DIRECTOR
+component_name: Narada
+route_families: [quality_gate, full_video_pipeline]
+activation_triggers: route_family in [script_generation, trend_research, topic_discovery, voice_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
+upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+downstream_outputs: [media_quality_gate_packet, lineage_packet]
+required_input_packets: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+emitted_output_packets: [media_quality_gate_packet, lineage_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+quality_gates: [script_score_gate, voice_score_gate, visual_score_gate, video_score_gate, audio_score_gate, editing_score_gate]
+validator_bindings: [media_quality_gate_packet_present, quality_scores_present, final_status_matches_weakest_evidence_layer]
+fallback_behavior: BLOCKED_BEFORE_OUTPUT if critical score is below threshold or missing.
+lineage_fields: [quality_gate_id, upstream_packet_ids, score_reason, failure_id]
+provider_boundary: provider_execution_allowed=false; quality gate reviews packets/artifacts only; no provider execution
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_quality_gate, revise_segment, reject_output]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [media_quality_gate_packet, lineage_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+production_score_fields: [script_score, hook_score, retention_score, voice_score, visual_score, video_score, audio_score, editing_score, platform_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: media_quality_gate_profile
+route_family_resolved: [quality_gate, full_video_pipeline]
+activation_triggers_resolved: [quality, validation, compliance]
+required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+validator_bindings_resolved: [media_quality_gate_packet_present, quality_scores_present, final_status_matches_weakest_evidence_layer]
+quality_gates_resolved: [script_score_gate, voice_score_gate, visual_score_gate, video_score_gate, audio_score_gate, editing_score_gate]
+fallback_behavior_resolved: BLOCKED_BEFORE_OUTPUT if critical score is below threshold or missing.
+lineage_fields_resolved: [quality_gate_id, upstream_packet_ids, score_reason, failure_id]
+provider_boundary_resolved: provider_execution_allowed=false; quality gate reviews packets/artifacts only; no provider execution; approval_packet_required_for_any_execution
+handoff_targets_resolved: [media_quality_gate_packet, lineage_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+production_score_fields_resolved: [script_score, hook_score, retention_score, voice_score, visual_score, video_score, audio_score, editing_score, platform_score, lineage_score]
+human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_output]
+status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
+evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/strategy/narada.md; component_id=DIRECTOR:_NARADA
+remaining_unknowns: none

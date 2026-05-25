@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route topic_discovery",
+  "name": "route_topic_discovery_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"research_brief_packet\",\n    \"topic_intake_packet\",\n    \"trend_signal_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"topic_discovery\",\n  \"steps\": [\n    {\n      \"component_id\": \"agastya_agent\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"trend_signal_packet\"\n      ],\n      \"node_id\": \"td_001\"\n    },\n    {\n      \"component_id\": \"S-201-research-to-script-brief\",\n      \"consumed\": [\n        \"trend_signal_packet\"\n      ],\n      \"emitted\": [\n        \"research_brief_packet\"\n      ],\n      \"node_id\": \"td_002\"\n    }\n  ]\n}\n"
+}

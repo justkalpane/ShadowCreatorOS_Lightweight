@@ -1,0 +1,10 @@
+{
+  "errors": [
+    "const_violation:provider_execution_allowed:False",
+    "provider_execution_allowed_without_explicit_approval_packet"
+  ],
+  "packet": "/Users/apple/Documents/ShadowCreatorOS_Lightweight/proofs/mac_06_2i_zero_trust_blocker_remediation/music_sfx_packet_unauthorized_true.json",
+  "pass": false,
+  "schema": "schemas/packets/music_sfx_packet.schema.json",
+  "validator": "packet_schema_validator"
+}

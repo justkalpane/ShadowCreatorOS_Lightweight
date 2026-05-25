@@ -1,0 +1,76 @@
+negative_test,previous_status,root_cause,patch_applied,actual_result_after_patch,passed,evidence
+empty ordered_nodes must fail,FAIL,route_graph_builder accepted unsafe DAG state,route_graph_builder structural checks,REJECTED,True,"{
+  ""issues"": [
+    ""ordered_nodes_empty""
+  ],
+  ""pass"": false,
+  ""route_id"": ""script_generation""
+}
+"
+DUPLICATE_CANDIDATE component in DAG must fail,PASS,lifecycle unsafe component,route_graph_builder structural checks,REJECTED,True,"{
+  ""issues"": [
+    ""invalid_lifecycle:agents/agent_control_plane_001/agent_control_plane_001_agent.py:DUPLICATE_CANDIDATE"",
+    ""next_node_target_missing:sg_001->sg_002""
+  ],
+  ""ordered_nodes"": [
+    {
+      ""approval_required"": false,
+   "
+QUARANTINE_REVIEW component in DAG must fail,PASS,lifecycle unsafe component,route_graph_builder structural checks,REJECTED,True,"{
+  ""issues"": [
+    ""invalid_lifecycle:directors/DIRECTORS_05_TO_30_COMPLETE_SPECS.md:QUARANTINE_REVIEW"",
+    ""next_node_target_missing:sg_001->sg_002""
+  ],
+  ""ordered_nodes"": [
+    {
+      ""approval_required"": false,
+      ""communication_p"
+packet missing required field must fail,PASS,schema required field enforcement,packet_schema_validator,REJECTED,True,"{
+  ""errors"": [
+    ""missing_required:segments""
+  ],
+  ""packet"": ""tests/shadow_runtime/fixtures/packets/invalid/script_segment_packet.missing_fields.json"",
+  ""pass"": false,
+  ""schema"": ""schemas/packets/script_segment_packet.schema.json"",
+  "
+provider execution enabled without approval must fail,PASS,provider boundary authorization,provider_boundary_validator explicit approval packet rule,REJECTED,True,"{
+  ""false_execution_claim_detected"": false,
+  ""issues"": [
+    ""provider_execution_without_explicit_approval_packet""
+  ],
+  ""pass"": false,
+  ""provider_execution_disabled"": false,
+  ""unauthorized_provider_execution_blocked"": false
+}
+"
+quality scorecard false PASS must fail,PASS,quality threshold false pass,quality_scorecard_runtime,REJECTED,True,"{
+  ""errors"": [
+    ""critical_below_threshold:script_score,voice_score"",
+    ""false_pass_with_low_critical_scores""
+  ],
+  ""low_scores"": [
+    ""script_score"",
+    ""voice_score""
+  ],
+  ""pass"": false,
+  ""status"": ""FAIL"",
+  ""threshold"": 70
+}
+"
+communication vein not connected to DAG must fail,PASS,route graph invalid so vein not connected,communication_vein_validator,REJECTED,True,"{
+  ""contract_only_veins_remaining"": null,
+  ""dag_connected_veins"": 0,
+  ""issues"": [
+    ""route_graph_invalid"",
+    ""route_not_found""
+  ],
+  ""pass"": false,
+  ""route_id"": ""non_existing""
+}
+"
+operator output without local enforcement packet must fail,PASS,missing proof fields,non_codex_operator_harness,REJECTED,True,"{
+  ""issues"": [
+    ""proof_field_missing_or_false:shadow_command_alias_detected"",
+    ""proof_field_missing_or_false:route_manifest_loaded"",
+    ""proof_field_missing_or_false:internal_wrapper_applied"",
+    ""proof_field_missing_or_false:route"

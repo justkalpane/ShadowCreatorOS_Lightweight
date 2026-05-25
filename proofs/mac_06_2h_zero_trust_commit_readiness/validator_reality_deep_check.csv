@@ -1,0 +1,13 @@
+file_path,always_pass_logic_found,text_only_critical_rules_found,ignored_exceptions_found,hardcoded_success_found,structure_validation_present,status,gap
+validators/validate_mac06_1a_output.py,False,True,False,False,False,PARTIAL,critical_checks_use_explicit_true_text_claims
+tools/shadow_runtime/common.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/communication_vein_validator.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/lineage_approval_store.py,True,False,False,False,True,PASS,
+tools/shadow_runtime/non_codex_operator_harness.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/packet_flow_runner.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/packet_schema_validator.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/provider_boundary_validator.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/quality_scorecard_runtime.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/route_graph_builder.py,False,False,False,False,True,PASS,
+tools/shadow_runtime/shadow_cli.py,False,False,False,True,True,PARTIAL,hardcoded_success_or_misnamed_test_detected
+tests/shadow_runtime/run_shadow_runtime_tests.py,False,False,False,True,True,PARTIAL,hardcoded_success_or_misnamed_test_detected

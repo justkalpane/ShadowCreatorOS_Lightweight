@@ -1,0 +1,80 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_FINAL_SCRIPT_EDITING"
+      ],
+      "component_id": "S-210-final-script-packager",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+      "emitted_output_packets": [
+        "script_segment_packet"
+      ],
+      "fallback_routes": [
+        "final_script_shaping"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "ce_002"
+      ],
+      "node_id": "ce_001",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_segment_quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_QUALITY_LINEAGE"
+      ],
+      "component_id": "P-301-execution-context-engineer",
+      "component_layer": "SKILL",
+      "component_path": "skills/context_engineering/P-301-execution-context-engineer.py",
+      "emitted_output_packets": [
+        "lineage_packet"
+      ],
+      "fallback_routes": [
+        "final_script_shaping"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "ce_002",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "lineage_integrity_gate"
+      ],
+      "required_input_packets": [
+        "script_segment_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "lineage_packet",
+    "script_segment_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "context_engineering"
+}

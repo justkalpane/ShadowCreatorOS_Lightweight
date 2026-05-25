@@ -1,0 +1,14 @@
+{
+  "packet_id": "provider_handoff_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "proof",
+  "consumer_component_ids": [
+    "proof"
+  ],
+  "lineage": {},
+  "validation_status": "PASS",
+  "provider_execution_allowed": true,
+  "approval_required": false,
+  "provider_type": "planning_only",
+  "typed_input": "x"
+}

@@ -7,7 +7,9 @@ Usage:
 
 from __future__ import annotations
 
+import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -201,8 +203,10 @@ def contains(text: str, needle: str) -> bool:
 
 
 def find_key_value(text: str, key: str) -> str | None:
-    match = re.search(rf"(?im)^\s*[-*]?\s*`?{re.escape(key)}`?\s*=\s*([A-Za-z0-9_./:-]+)", text)
-    return match.group(1) if match else None
+    matches = list(
+        re.finditer(rf"(?im)^\s*[-*]?\s*`?{re.escape(key)}`?\s*=\s*([A-Za-z0-9_./:-]+)", text)
+    )
+    return matches[-1].group(1) if matches else None
 
 
 def has_content_before_boot_signature(text: str) -> bool:
@@ -275,6 +279,86 @@ def count_hook_variants(text: str) -> int:
 def missing_or_false(text: str, key: str) -> bool:
     value = find_key_value(text, key)
     return value is None or value.lower() != "true"
+
+
+def run_json_command(repo_root: Path, args: list[str]) -> tuple[bool, dict]:
+    try:
+        proc = subprocess.run(
+            args,
+            cwd=repo_root,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            timeout=20,
+        )
+        data = json.loads(proc.stdout)
+        return proc.returncode == 0 and data.get("pass") is True, data
+    except Exception as exc:
+        return False, {"error": str(exc), "command": args}
+
+
+def structural_runtime_status() -> dict[str, bool]:
+    repo_root = Path(__file__).resolve().parents[1]
+    routes = [
+        "topic_discovery",
+        "research_synthesis",
+        "script_generation",
+        "script_debate",
+        "script_refinement",
+        "final_script_shaping",
+        "context_engineering",
+        "voice_context",
+        "visual_context",
+        "video_context",
+        "music_sfx_context",
+        "editing_packaging",
+        "provider_handoff",
+        "media_quality_gate",
+        "lineage",
+        "approval",
+    ]
+
+    route_results = [
+        run_json_command(repo_root, ["python3", "tools/shadow_runtime/route_graph_builder.py", "--route", route])[0]
+        for route in routes
+    ]
+    vein_results = [
+        run_json_command(repo_root, ["python3", "tools/shadow_runtime/communication_vein_validator.py", "--route", route])[0]
+        for route in routes
+    ]
+    flow_results = [
+        run_json_command(repo_root, ["python3", "tools/shadow_runtime/packet_flow_runner.py", "--route", route, "--dry-run"])[0]
+        for route in routes
+    ]
+    packet_ok, _ = run_json_command(repo_root, ["python3", "tools/shadow_runtime/schema_rationalizer.py"])
+    provider_ok, _ = run_json_command(repo_root, ["python3", "tools/shadow_runtime/provider_boundary_validator.py", "--route", "script_generation"])
+    quality_ok, _ = run_json_command(
+        repo_root,
+        [
+            "python3",
+            "tools/shadow_runtime/quality_scorecard_runtime.py",
+            "--scorecard",
+            "tests/shadow_runtime/fixtures/quality/scorecard.valid.json",
+        ],
+    )
+    lifecycle_ok, lifecycle_data = run_json_command(repo_root, ["python3", "tools/shadow_runtime/shadow_cli.py", "validate-lifecycle"])
+    lineage_ok = (repo_root / "runtime_state/lineage_store.json").exists() and (
+        repo_root / "runtime_state/approval_store.json"
+    ).exists()
+
+    return {
+        "route_dag_validation_pass": all(route_results),
+        "packet_schema_validation_pass": packet_ok,
+        "packet_flow_validation_pass": all(flow_results),
+        "communication_vein_validation_pass": all(vein_results),
+        "lifecycle_validation_pass": lifecycle_ok and not lifecycle_data.get("active_not_consumed"),
+        "lineage_approval_validation_pass": lineage_ok,
+        "quality_scorecard_validation_pass": quality_ok,
+        "provider_boundary_validation_pass": provider_ok,
+        "fake_depth_detected": not lifecycle_ok,
+        "contract_only_detected": not all(vein_results),
+        "text_label_only_detected": False,
+    }
 
 
 def collect_invalid_research_modes(text: str) -> list[str]:
@@ -456,6 +540,100 @@ def main() -> int:
     )
     operator_mode_missing_compact_proof = operator_mode_used and not operator_mode_compact_proof_present
     raw_plain_task_claimed_production_proof = explicit_true(text, "raw_plain_task_claimed_production_proof")
+    component_depth_validation_required = explicit_true(text, "component_depth_validation_required") or (
+        "MAC_06_2B_COMPONENT_DEPTH_PROOF" in text
+    )
+    universal_component_contract_present = explicit_true(text, "universal_component_contract_present") or (
+        "runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md" in text
+    )
+    component_selected_but_not_consumed = explicit_true(text, "component_selected_but_not_consumed")
+    selected_component_missing_input_schema = explicit_true(text, "selected_component_missing_input_schema")
+    selected_component_missing_output_schema = explicit_true(text, "selected_component_missing_output_schema")
+    selected_component_missing_communication_pointer = explicit_true(
+        text, "selected_component_missing_communication_pointer"
+    )
+    selected_component_missing_validator_binding = explicit_true(text, "selected_component_missing_validator_binding")
+    selected_component_missing_fallback = explicit_true(text, "selected_component_missing_fallback")
+    script_segment_packet_present = explicit_true(text, "script_segment_packet_present")
+    voice_context_packet_present = explicit_true(text, "voice_context_packet_present")
+    visual_context_packet_present = explicit_true(text, "visual_context_packet_present")
+    video_context_packet_present = explicit_true(text, "video_context_packet_present")
+    music_sfx_packet_present = explicit_true(text, "music_sfx_packet_present")
+    editing_timeline_packet_present = explicit_true(text, "editing_timeline_packet_present")
+    provider_handoff_packet_present = explicit_true(text, "provider_handoff_packet_present")
+    media_quality_gate_packet_present = explicit_true(text, "media_quality_gate_packet_present")
+    lineage_approval_packet_present = explicit_true(text, "lineage_approval_packet_present")
+    quality_scores_present = explicit_true(text, "quality_scores_present")
+    segment_level_regeneration_actions_present = explicit_true(
+        text, "segment_level_regeneration_actions_present"
+    )
+    runtime_structure_validation_required = explicit_true(text, "runtime_structure_validation_required")
+    structural_status = structural_runtime_status() if runtime_structure_validation_required else {}
+    route_dag_validation_pass = structural_status.get("route_dag_validation_pass", not explicit_false(text, "route_dag_validation_pass")) and not explicit_false(text, "route_dag_validation_pass")
+    packet_schema_validation_pass = structural_status.get("packet_schema_validation_pass", not explicit_false(text, "packet_schema_validation_pass")) and not explicit_false(text, "packet_schema_validation_pass")
+    packet_flow_validation_pass = structural_status.get("packet_flow_validation_pass", not explicit_false(text, "packet_flow_validation_pass")) and not explicit_false(text, "packet_flow_validation_pass")
+    communication_vein_validation_pass = structural_status.get("communication_vein_validation_pass", not explicit_false(text, "communication_vein_validation_pass")) and not explicit_false(text, "communication_vein_validation_pass")
+    lifecycle_validation_pass = structural_status.get("lifecycle_validation_pass", not explicit_false(text, "lifecycle_validation_pass")) and not explicit_false(text, "lifecycle_validation_pass")
+    lineage_approval_validation_pass = structural_status.get("lineage_approval_validation_pass", not explicit_false(text, "lineage_approval_validation_pass")) and not explicit_false(text, "lineage_approval_validation_pass")
+    quality_scorecard_validation_pass = structural_status.get("quality_scorecard_validation_pass", not explicit_false(text, "quality_scorecard_validation_pass")) and not explicit_false(text, "quality_scorecard_validation_pass")
+    provider_boundary_validation_pass = structural_status.get("provider_boundary_validation_pass", not explicit_false(text, "provider_boundary_validation_pass")) and not explicit_false(text, "provider_boundary_validation_pass")
+    fake_depth_detected = structural_status.get("fake_depth_detected", False) or explicit_true(text, "fake_depth_detected")
+    contract_only_detected = structural_status.get("contract_only_detected", False) or explicit_true(text, "contract_only_detected")
+    text_label_only_detected = structural_status.get("text_label_only_detected", False) or explicit_true(text, "text_label_only_detected")
+    component_template_only_shallow = explicit_true(text, "component_template_only_shallow")
+    active_component_unknown_needs_review = explicit_true(text, "active_component_unknown_needs_review")
+    generic_input_output_packets = explicit_true(text, "generic_input_output_packets")
+    pointer_file_only_no_pointer_id = explicit_true(text, "pointer_file_only_no_pointer_id")
+    component_registry_all_needs_review = explicit_true(text, "component_registry_all_needs_review")
+    article_pipeline_contract_only_not_route_connected = explicit_true(
+        text, "article_pipeline_contract_only_not_route_connected"
+    )
+    active_component_missing_route_profile = explicit_true(text, "active_component_missing_route_profile")
+    active_component_missing_provider_boundary = explicit_true(text, "active_component_missing_provider_boundary")
+    active_component_missing_lineage = explicit_true(text, "active_component_missing_lineage")
+
+    runtime_structure_failure = runtime_structure_validation_required and (
+        not route_dag_validation_pass
+        or not packet_schema_validation_pass
+        or not packet_flow_validation_pass
+        or not communication_vein_validation_pass
+        or not lifecycle_validation_pass
+        or not lineage_approval_validation_pass
+        or not quality_scorecard_validation_pass
+        or not provider_boundary_validation_pass
+        or fake_depth_detected
+        or contract_only_detected
+        or text_label_only_detected
+    )
+    component_depth_failure = component_depth_validation_required and (
+        not universal_component_contract_present
+        or component_selected_but_not_consumed
+        or selected_component_missing_input_schema
+        or selected_component_missing_output_schema
+        or selected_component_missing_communication_pointer
+        or selected_component_missing_validator_binding
+        or selected_component_missing_fallback
+        or not script_segment_packet_present
+        or not voice_context_packet_present
+        or not visual_context_packet_present
+        or not video_context_packet_present
+        or not music_sfx_packet_present
+        or not editing_timeline_packet_present
+        or not provider_handoff_packet_present
+        or not media_quality_gate_packet_present
+        or not lineage_approval_packet_present
+        or not quality_scores_present
+        or not segment_level_regeneration_actions_present
+        or component_template_only_shallow
+        or active_component_unknown_needs_review
+        or generic_input_output_packets
+        or pointer_file_only_no_pointer_id
+        or component_registry_all_needs_review
+        or article_pipeline_contract_only_not_route_connected
+        or active_component_missing_route_profile
+        or active_component_missing_provider_boundary
+        or active_component_missing_lineage
+    )
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
@@ -553,6 +731,8 @@ def main() -> int:
         or operator_mode_missing_compact_proof
         or operator_mode_claims_pass_without_lock_summary
         or raw_plain_task_claimed_production_proof
+        or component_depth_failure
+        or runtime_structure_failure
     ):
         status = "FAIL"
     elif (
@@ -696,6 +876,57 @@ def main() -> int:
     print(f"operator_mode_claims_pass_without_lock_summary={str(operator_mode_claims_pass_without_lock_summary).lower()}")
     print(f"operator_mode_missing_compact_proof={str(operator_mode_missing_compact_proof).lower()}")
     print(f"raw_plain_task_claimed_production_proof={str(raw_plain_task_claimed_production_proof).lower()}")
+    print(f"component_depth_validation_required={str(component_depth_validation_required).lower()}")
+    print(f"universal_component_contract_present={str(universal_component_contract_present).lower()}")
+    print(f"component_selected_but_not_consumed={str(component_selected_but_not_consumed).lower()}")
+    print(f"selected_component_missing_input_schema={str(selected_component_missing_input_schema).lower()}")
+    print(f"selected_component_missing_output_schema={str(selected_component_missing_output_schema).lower()}")
+    print(
+        "selected_component_missing_communication_pointer="
+        f"{str(selected_component_missing_communication_pointer).lower()}"
+    )
+    print(f"selected_component_missing_validator_binding={str(selected_component_missing_validator_binding).lower()}")
+    print(f"selected_component_missing_fallback={str(selected_component_missing_fallback).lower()}")
+    print(f"script_segment_packet_present={str(script_segment_packet_present).lower()}")
+    print(f"voice_context_packet_present={str(voice_context_packet_present).lower()}")
+    print(f"visual_context_packet_present={str(visual_context_packet_present).lower()}")
+    print(f"video_context_packet_present={str(video_context_packet_present).lower()}")
+    print(f"music_sfx_packet_present={str(music_sfx_packet_present).lower()}")
+    print(f"editing_timeline_packet_present={str(editing_timeline_packet_present).lower()}")
+    print(f"provider_handoff_packet_present={str(provider_handoff_packet_present).lower()}")
+    print(f"media_quality_gate_packet_present={str(media_quality_gate_packet_present).lower()}")
+    print(f"lineage_approval_packet_present={str(lineage_approval_packet_present).lower()}")
+    print(f"quality_scores_present={str(quality_scores_present).lower()}")
+    print(
+        "segment_level_regeneration_actions_present="
+        f"{str(segment_level_regeneration_actions_present).lower()}"
+    )
+    print(f"component_template_only_shallow={str(component_template_only_shallow).lower()}")
+    print(f"active_component_unknown_needs_review={str(active_component_unknown_needs_review).lower()}")
+    print(f"generic_input_output_packets={str(generic_input_output_packets).lower()}")
+    print(f"pointer_file_only_no_pointer_id={str(pointer_file_only_no_pointer_id).lower()}")
+    print(f"component_registry_all_needs_review={str(component_registry_all_needs_review).lower()}")
+    print(
+        "article_pipeline_contract_only_not_route_connected="
+        f"{str(article_pipeline_contract_only_not_route_connected).lower()}"
+    )
+    print(f"active_component_missing_route_profile={str(active_component_missing_route_profile).lower()}")
+    print(f"active_component_missing_provider_boundary={str(active_component_missing_provider_boundary).lower()}")
+    print(f"active_component_missing_lineage={str(active_component_missing_lineage).lower()}")
+    print(f"route_dag_validation_pass={str(route_dag_validation_pass).lower()}")
+    print(f"packet_schema_validation_pass={str(packet_schema_validation_pass).lower()}")
+    print(f"packet_flow_validation_pass={str(packet_flow_validation_pass).lower()}")
+    print(f"communication_vein_validation_pass={str(communication_vein_validation_pass).lower()}")
+    print(f"lifecycle_validation_pass={str(lifecycle_validation_pass).lower()}")
+    print(f"lineage_approval_validation_pass={str(lineage_approval_validation_pass).lower()}")
+    print(f"quality_scorecard_validation_pass={str(quality_scorecard_validation_pass).lower()}")
+    print(f"provider_boundary_validation_pass={str(provider_boundary_validation_pass).lower()}")
+    print(f"fake_depth_detected={str(fake_depth_detected).lower()}")
+    print(f"contract_only_detected={str(contract_only_detected).lower()}")
+    print(f"text_label_only_detected={str(text_label_only_detected).lower()}")
+    print(f"runtime_structure_validation_required={str(runtime_structure_validation_required).lower()}")
+    print(f"runtime_structure_failure={str(runtime_structure_failure).lower()}")
+    print(f"component_depth_failure={str(component_depth_failure).lower()}")
     print(f"all_core_locks_pass={str(all_core_locks_pass).lower()}")
     print(f"per_tool_source_map_count={per_tool_source_map_count}")
     print(f"non_openai_tool_sources_count={non_openai_tool_sources_count}")

@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py preflight",
+  "name": "shadow_cli_preflight",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"content_generation\": false,\n  \"external_calls\": false,\n  \"missing\": [],\n  \"pass\": true\n}\n"
+}

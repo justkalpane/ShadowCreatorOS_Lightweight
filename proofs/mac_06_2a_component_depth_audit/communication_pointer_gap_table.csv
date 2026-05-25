@@ -1,0 +1,12 @@
+source_component,target_component,expected_pointer,pointer_exists,input_packet_defined,output_packet_defined,validation_rule_exists,fallback_exists,lineage_exists,risk_if_missing,status
+Research,Script,research_brief_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Script,Debate,script_v1_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Debate,Refinement,critique_delta_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Refinement,Final Script,script_final_candidate,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Final Script,Voice Context,voice_context_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Final Script,Image Context,visual_context_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Final Script,Video Context,video_context_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Media Context,Provider Handoff,provider_handoff_packet,true,true,true,true,true,true,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",CONNECTED
+Provider Handoff,Quality Gate,media_result_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Quality Gate,Lineage,quality_report_packet,true,false,false,false,false,false,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",PARTIAL
+Lineage,Approval Gate,approval_packet,true,true,true,true,true,true,"Downstream stage can run with vague or missing source-of-truth packet, causing generic output or false PASS.",CONNECTED

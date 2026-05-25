@@ -1,40 +1,45 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://shadow-empire.local/schemas/packets/final_script_packet.schema.json",
-  "title": "FinalScriptPacket",
+  "title": "final_script_packet",
   "type": "object",
-  "required": [
-    "packet_id",
-    "dossier_id",
-    "final_title",
-    "final_hook",
-    "final_sections",
-    "created_at"
-  ],
+  "additionalProperties": false,
   "properties": {
     "packet_id": {
       "type": "string"
     },
-    "dossier_id": {
+    "route_id": {
       "type": "string"
     },
-    "final_title": {
+    "producer_component_id": {
       "type": "string"
     },
-    "final_hook": {
-      "type": "string"
-    },
-    "final_sections": {
+    "consumer_component_ids": {
       "type": "array",
       "items": {
         "type": "string"
-      },
-      "minItems": 1
+      }
     },
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
+    "lineage": {
+      "type": "object"
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "final_script_text": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "string"
     }
   },
-  "additionalProperties": true
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "final_script_text",
+    "cta"
+  ]
 }

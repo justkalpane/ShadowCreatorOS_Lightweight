@@ -1,0 +1,13 @@
+{
+  "packet_id": "script_strategy_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "demo_component",
+  "consumer_component_ids": [
+    "demo_consumer"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "duration_target_sec": 60
+}

@@ -75,3 +75,10 @@ no_n8n_provider_media_execution=true
 ```
 
 If operator output hides detailed ledgers, it must still include a compact final proof with route, lock, source, rule-evidence, quality, governance, and provider-boundary status. Operator compression is a display choice only; it is not permission to skip internal proof.
+
+
+## MAC-06.2D ARTICLE PIPELINE ROUTE CONNECTION
+
+- Output may claim media-pipeline readiness only when route manifests cite `mac_06_2d_article_pipeline_connections`.
+- Provider execution remains disabled unless an explicit `approval_packet` authorizes execution scope.
+- Contract-only media packet references are insufficient; route-level validator bindings must be present.

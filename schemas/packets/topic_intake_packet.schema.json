@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "topic_intake_packet",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "producer_component_id": {
+      "type": "string"
+    },
+    "consumer_component_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lineage": {
+      "type": "object"
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "topic",
+    "audience",
+    "intent"
+  ]
+}

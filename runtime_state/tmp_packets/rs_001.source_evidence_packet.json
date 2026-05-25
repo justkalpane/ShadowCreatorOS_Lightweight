@@ -1,0 +1,18 @@
+{
+  "packet_id": "source_evidence_packet",
+  "route_id": "research_synthesis",
+  "producer_component_id": "agastya_agent",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "sources": [
+    "https://example.com"
+  ],
+  "claims": [
+    "claim"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "command": "git rev-parse HEAD",
+  "name": "git_head",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "9f64ae34be6d7b5dfd6df13b1ebdaec81cc5ef24\n"
+}

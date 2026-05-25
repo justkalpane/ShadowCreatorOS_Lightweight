@@ -1,0 +1,53 @@
+{
+  "route_dags": [
+    {
+      "route_id": "script_generation",
+      "route_family": "script_generation",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "sg_001",
+          "component_id": "SUPREME_VISION_COUNCIL_1_REMAINING",
+          "component_path": "directors/DIRECTORS_05_TO_30_COMPLETE_SPECS.md",
+          "component_layer": "AGENT",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "research_brief_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DIRECTOR_AGENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "research_brief_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_002"
+          ]
+        }
+      ]
+    }
+  ]
+}

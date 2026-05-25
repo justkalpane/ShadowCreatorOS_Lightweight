@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "music_sfx_packet",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "producer_component_id": {
+      "type": "string"
+    },
+    "consumer_component_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lineage": {
+      "type": "object"
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "music_mood": {
+      "type": "string"
+    },
+    "sfx_cues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provider_execution_allowed": {
+      "type": "boolean",
+      "default": false,
+      "const": false
+    },
+    "approval_required": {
+      "type": "boolean",
+      "default": true
+    },
+    "approval_authorized": {
+      "type": "boolean",
+      "default": false
+    },
+    "approval_packet_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "music_mood",
+    "sfx_cues",
+    "provider_execution_allowed",
+    "approval_required"
+  ]
+}

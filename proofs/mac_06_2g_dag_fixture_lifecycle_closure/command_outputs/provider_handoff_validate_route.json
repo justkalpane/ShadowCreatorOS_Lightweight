@@ -1,0 +1,80 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_MEDIA_PROVIDER_HANDOFF"
+      ],
+      "component_id": "S-210-final-script-packager",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+      "emitted_output_packets": [
+        "script_segment_packet"
+      ],
+      "fallback_routes": [
+        "approval"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "ph_002"
+      ],
+      "node_id": "ph_001",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_segment_quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    },
+    {
+      "approval_required": true,
+      "communication_pointer_ids": [
+        "PTR_MEDIA_PROVIDER_HANDOFF"
+      ],
+      "component_id": "DIRECTOR:_KAMA",
+      "component_layer": "DIRECTOR",
+      "component_path": "directors/distribution/kama.md",
+      "emitted_output_packets": [
+        "provider_handoff_packet"
+      ],
+      "fallback_routes": [
+        "approval"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "ph_002",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "provider_handoff_gate"
+      ],
+      "required_input_packets": [
+        "script_segment_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "provider_handoff_packet",
+    "script_segment_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "provider_handoff"
+}

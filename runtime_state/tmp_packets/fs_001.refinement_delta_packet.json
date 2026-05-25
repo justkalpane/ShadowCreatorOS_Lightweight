@@ -1,0 +1,16 @@
+{
+  "packet_id": "refinement_delta_packet",
+  "route_id": "final_script_shaping",
+  "producer_component_id": "S-210-final-script-packager",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "changes": [
+    "change"
+  ],
+  "rationale": "improve clarity"
+}

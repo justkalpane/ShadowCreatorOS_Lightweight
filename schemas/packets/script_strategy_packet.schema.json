@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "script_strategy_packet",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "producer_component_id": {
+      "type": "string"
+    },
+    "consumer_component_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lineage": {
+      "type": "object"
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "duration_target_sec": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "strategy",
+    "duration_target_sec"
+  ]
+}

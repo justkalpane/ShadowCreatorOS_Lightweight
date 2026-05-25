@@ -1,0 +1,2 @@
+subskill_file,subskill_id,atomic_operation_specific,micro_input_specific,micro_output_specific,evidence_path_specific,validation_behavior_specific,reusable_across_routes,classification,gap
+subskills/README.md,README,true,true,true,true,true,true,FAKE_DEPTH,subskill is not a concrete atomic reusable micro-capability; mostly appended metadata

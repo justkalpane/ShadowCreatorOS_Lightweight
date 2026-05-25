@@ -1,0 +1,15 @@
+{
+  "canonical_active_schemas": 20,
+  "canonical_support_schemas": 0,
+  "dormant_future_schemas": 3,
+  "duplicate_candidate_schemas": 0,
+  "generated_alias_schemas": 309,
+  "issues": [],
+  "overgenerated_schema_risk_resolved": true,
+  "pass": true,
+  "quarantine_schemas": 0,
+  "schema_count_justified": true,
+  "schemas_found": 332,
+  "schemas_missing_for_dags": 0,
+  "schemas_used_by_dags": 19
+}

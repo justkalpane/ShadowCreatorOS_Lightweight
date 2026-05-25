@@ -163,7 +163,7 @@ FUNCTION aruna.orchestrate_flow(packets, context):
   7. CALCULATE flow health
      health = (Throughput × 0.30) + (Latency × 0.30) +
               (Load_Balance × 0.20) + (Resource_Efficiency × 0.20)
-     
+
      IF health <60%:
        → ESCALATE (system struggling)
      ELSE:
@@ -368,3 +368,55 @@ Without Aruna, packets cannot be routed efficiently and system will bottleneck. 
 - **Performance**: Optimize for minimal latency and maximum throughput
 - **Success Metric**: Flow health >80%, latency <1 second per stage, no bottlenecks
 - **Coordination**: Central to all system operations
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: DIRECTOR:_ARUNA
+component_layer: DIRECTOR
+component_name: Aruna
+route_families: [script_debate, script_generation]
+activation_triggers: route_family in [approval_gate, repo_write_mode] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
+upstream_inputs: [script_v1_packet, script_segment_packet, research_brief_packet]
+downstream_outputs: [debate_critique_packet, critique_delta_packet, risk_objection_packet]
+required_input_packets: [script_v1_packet, script_segment_packet, research_brief_packet]
+emitted_output_packets: [debate_critique_packet, critique_delta_packet, risk_objection_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_SCRIPT_DEBATE, PTR_DEBATE_REFINEMENT]
+quality_gates: [line_by_line_critique_gate, retention_leak_gate, logic_gate]
+validator_bindings: [component_selected_but_not_consumed, selected_component_missing_input_schema, quality_scores_present]
+fallback_behavior: NEEDS_HUMAN_REVIEW if critique cannot cite line numbers.
+lineage_fields: [script_v1_packet_id, line_number, critique_id, recommended_delta]
+provider_boundary: provider_execution_allowed=false; no provider/media execution; critique packets only
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [accept_delta, reject_delta, request_stronger_critique]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [debate_critique_packet, critique_delta_packet, risk_objection_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_SCRIPT_DEBATE, PTR_DEBATE_REFINEMENT]
+production_score_fields: [critique_score, logic_score, audience_fit_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: script_debate_profile
+route_family_resolved: [script_debate, script_generation]
+activation_triggers_resolved: [critique, debate, contradiction route]
+required_input_packets_resolved: [script_v1_packet, script_segment_packet, research_brief_packet]
+emitted_output_packets_resolved: [debate_critique_packet, critique_delta_packet, risk_objection_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_SCRIPT_DEBATE, PTR_DEBATE_REFINEMENT]
+validator_bindings_resolved: [component_selected_but_not_consumed, selected_component_missing_input_schema, quality_scores_present]
+quality_gates_resolved: [line_by_line_critique_gate, retention_leak_gate, logic_gate]
+fallback_behavior_resolved: NEEDS_HUMAN_REVIEW if critique cannot cite line numbers.
+lineage_fields_resolved: [script_v1_packet_id, line_number, critique_id, recommended_delta]
+provider_boundary_resolved: provider_execution_allowed=false; no provider/media execution; critique packets only; approval_packet_required_for_any_execution
+handoff_targets_resolved: [debate_critique_packet, critique_delta_packet, risk_objection_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_SCRIPT_DEBATE, PTR_DEBATE_REFINEMENT]
+production_score_fields_resolved: [critique_score, logic_score, audience_fit_score, lineage_score]
+human_approval_points_resolved: [accept_delta, reject_delta, request_stronger_critique]
+status_limits_resolved: [no rewrite without critique_delta_packet]
+evidence_used_for_resolution: path/pre-contract keyword: debate/critique; component_path=directors/kernel/aruna.md; component_id=DIRECTOR:_ARUNA
+remaining_unknowns: none

@@ -1,0 +1,18 @@
+{
+  "packet_id": "debate_critique_packet",
+  "route_id": "script_debate",
+  "producer_component_id": "S-210-final-script-packager",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "critique_points": [
+    "point"
+  ],
+  "line_refs": [
+    "L1"
+  ]
+}

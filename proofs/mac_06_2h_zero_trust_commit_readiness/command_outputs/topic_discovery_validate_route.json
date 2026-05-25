@@ -1,0 +1,80 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_DIRECTOR_AGENT"
+      ],
+      "component_id": "agastya_agent",
+      "component_layer": "AGENT",
+      "component_path": "agents/agastya/agastya_agent.py",
+      "emitted_output_packets": [
+        "trend_signal_packet"
+      ],
+      "fallback_routes": [
+        "research_synthesis"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "td_002"
+      ],
+      "node_id": "td_001",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "topic_quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_RESEARCH_SCRIPT"
+      ],
+      "component_id": "S-201-research-to-script-brief",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-201-research-to-script-brief.py",
+      "emitted_output_packets": [
+        "research_brief_packet"
+      ],
+      "fallback_routes": [
+        "research_synthesis"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "td_002",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "research_brief_quality_gate"
+      ],
+      "required_input_packets": [
+        "trend_signal_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "research_brief_packet",
+    "topic_intake_packet",
+    "trend_signal_packet"
+  ],
+  "pass": true,
+  "route_id": "topic_discovery"
+}

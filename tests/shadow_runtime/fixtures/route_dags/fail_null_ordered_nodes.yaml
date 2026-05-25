@@ -1,0 +1,17 @@
+{
+  "route_dags": [
+    {
+      "route_id": "script_generation",
+      "route_family": "script_generation",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": null
+    }
+  ]
+}

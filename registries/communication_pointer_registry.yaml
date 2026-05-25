@@ -1,0 +1,242 @@
+# MAC-06.2B Communication Pointer Registry
+status: ACTIVE_REGISTRY
+purpose: "Typed nervous system for component handoffs. No downstream stage may run without its required pointer packet."
+pointers:
+  - pointer_id: PTR_DIRECTOR_AGENT
+    source_component_layer: DIRECTOR
+    target_component_layer: AGENT
+    source_component_pattern: "director_*"
+    target_component_pattern: "agent_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: director_intent_packet
+    required_output_packet: stage_execution_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_AGENT_SUBAGENT
+    source_component_layer: AGENT
+    target_component_layer: SUB_AGENT
+    source_component_pattern: "agent_*"
+    target_component_pattern: "sub_agent_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: stage_execution_packet
+    required_output_packet: lane_execution_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_SUBAGENT_SKILL
+    source_component_layer: SUB_AGENT
+    target_component_layer: SKILL
+    source_component_pattern: "sub_agent_*"
+    target_component_pattern: "skill_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: skill_activation_packet
+    required_output_packet: skill_output_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_SKILL_SUBSKILL
+    source_component_layer: SKILL
+    target_component_layer: SUB_SKILL
+    source_component_pattern: "skill_*"
+    target_component_pattern: "sub_skill_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: atomic_task_packet
+    required_output_packet: atomic_result_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_RESEARCH_SCRIPT
+    source_component_layer: RESEARCH
+    target_component_layer: SCRIPT
+    source_component_pattern: "research_*"
+    target_component_pattern: "script_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: research_brief_packet
+    required_output_packet: script_strategy_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_SCRIPT_DEBATE
+    source_component_layer: SCRIPT
+    target_component_layer: DEBATE
+    source_component_pattern: "script_*"
+    target_component_pattern: "debate_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_v1_packet
+    required_output_packet: critique_request_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_DEBATE_REFINEMENT
+    source_component_layer: DEBATE
+    target_component_layer: REFINEMENT
+    source_component_pattern: "debate_*"
+    target_component_pattern: "refinement_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: critique_delta_packet
+    required_output_packet: refinement_instruction_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_REFINEMENT_FINAL_SCRIPT
+    source_component_layer: REFINEMENT
+    target_component_layer: FINAL_SCRIPT
+    source_component_pattern: "refinement_*"
+    target_component_pattern: "final_script_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_revision_packet
+    required_output_packet: script_final_candidate
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_FINAL_SCRIPT_VOICE
+    source_component_layer: FINAL_SCRIPT
+    target_component_layer: VOICE_CONTEXT
+    source_component_pattern: "final_script_*"
+    target_component_pattern: "voice_context_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_segment_packet
+    required_output_packet: voice_context_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_FINAL_SCRIPT_IMAGE
+    source_component_layer: FINAL_SCRIPT
+    target_component_layer: IMAGE_CONTEXT
+    source_component_pattern: "final_script_*"
+    target_component_pattern: "image_context_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_segment_packet
+    required_output_packet: visual_context_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_FINAL_SCRIPT_VIDEO
+    source_component_layer: FINAL_SCRIPT
+    target_component_layer: VIDEO_CONTEXT
+    source_component_pattern: "final_script_*"
+    target_component_pattern: "video_context_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_segment_packet
+    required_output_packet: video_context_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_FINAL_SCRIPT_MUSIC_SFX
+    source_component_layer: FINAL_SCRIPT
+    target_component_layer: MUSIC_SFX_CONTEXT
+    source_component_pattern: "final_script_*"
+    target_component_pattern: "music_sfx_context_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_segment_packet
+    required_output_packet: music_sfx_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_FINAL_SCRIPT_EDITING
+    source_component_layer: FINAL_SCRIPT
+    target_component_layer: EDITING_CONTEXT
+    source_component_pattern: "final_script_*"
+    target_component_pattern: "editing_context_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: script_segment_packet
+    required_output_packet: editing_timeline_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_MEDIA_PROVIDER_HANDOFF
+    source_component_layer: MEDIA_CONTEXT
+    target_component_layer: PROVIDER_HANDOFF
+    source_component_pattern: "media_context_*"
+    target_component_pattern: "provider_handoff_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: media_context_packet
+    required_output_packet: provider_handoff_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_PROVIDER_QUALITY
+    source_component_layer: PROVIDER_HANDOFF
+    target_component_layer: QUALITY_GATE
+    source_component_pattern: "provider_handoff_*"
+    target_component_pattern: "quality_gate_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: provider_handoff_packet
+    required_output_packet: media_quality_gate_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_QUALITY_LINEAGE
+    source_component_layer: QUALITY_GATE
+    target_component_layer: LINEAGE
+    source_component_pattern: "quality_gate_*"
+    target_component_pattern: "lineage_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: quality_report_packet
+    required_output_packet: lineage_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_LINEAGE_APPROVAL
+    source_component_layer: LINEAGE
+    target_component_layer: APPROVAL_GATE
+    source_component_pattern: "lineage_*"
+    target_component_pattern: "approval_gate_*"
+    trigger_condition: "Selected route requires this handoff or downstream packet."
+    required_input_packet: lineage_approval_packet
+    required_output_packet: approval_decision_packet
+    validation_rule: "input packet exists, output packet schema valid, lineage fields present, quality status not false"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "retry selected stage once, then NEEDS_HUMAN_REVIEW; do not fabricate packet"
+    lineage_required: true
+    production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
+    validator_binding: validators/validate_mac06_1a_output.py

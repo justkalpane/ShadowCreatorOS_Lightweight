@@ -1,0 +1,10 @@
+packet_contract,exists,producer_defined,consumer_defined,required_fields_present,validation_rules_present,quality_metrics_present,fallback_present,lineage_present,approval_boundary_present,provider_execution_default_false,status,missing_fields
+SCRIPT_SEGMENT_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+VOICE_CONTEXT_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+VISUAL_CONTEXT_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+VIDEO_CONTEXT_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+MUSIC_SFX_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+EDITING_TIMELINE_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+PROVIDER_HANDOFF_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+MEDIA_QUALITY_GATE_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,
+LINEAGE_APPROVAL_PACKET_CONTRACT.md,true,true,true,true,true,true,true,true,true,true,PASS,

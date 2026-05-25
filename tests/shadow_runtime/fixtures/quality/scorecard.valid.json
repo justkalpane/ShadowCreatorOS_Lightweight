@@ -1,0 +1,16 @@
+{
+  "script_score": 80,
+  "hook_score": 80,
+  "retention_score": 80,
+  "emotional_score": 80,
+  "voice_score": 80,
+  "visual_score": 80,
+  "video_score": 80,
+  "audio_score": 80,
+  "editing_score": 80,
+  "platform_score": 80,
+  "provider_handoff_score": 80,
+  "lineage_score": 80,
+  "approval_readiness_score": 80,
+  "final_pass_fail": false
+}

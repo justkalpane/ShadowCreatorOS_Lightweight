@@ -1,0 +1,8 @@
+{
+  "always_pass_logic_remaining": 0,
+  "hardcoded_success_remaining": 0,
+  "ignored_exceptions_remaining": 0,
+  "issues": [],
+  "pass": true,
+  "text_only_critical_checks_remaining": 0
+}

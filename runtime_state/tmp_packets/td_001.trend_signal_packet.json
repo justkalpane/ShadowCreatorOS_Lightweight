@@ -1,0 +1,16 @@
+{
+  "packet_id": "trend_signal_packet",
+  "route_id": "topic_discovery",
+  "producer_component_id": "agastya_agent",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "signals": [
+    "signal"
+  ],
+  "freshness_date": "2026-05-25"
+}

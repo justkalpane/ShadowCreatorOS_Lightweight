@@ -1,0 +1,16 @@
+{
+  "packet_id": "research_brief_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "agastya_agent",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "brief": "x",
+  "source_evidence_refs": [
+    "x"
+  ]
+}

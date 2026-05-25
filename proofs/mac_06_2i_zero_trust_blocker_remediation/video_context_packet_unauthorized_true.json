@@ -1,0 +1,18 @@
+{
+  "packet_id": "video_context_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "proof",
+  "consumer_component_ids": [
+    "proof"
+  ],
+  "lineage": {},
+  "validation_status": "PASS",
+  "provider_execution_allowed": true,
+  "approval_required": false,
+  "scene_plan": [
+    "x"
+  ],
+  "camera_moves": [
+    "x"
+  ]
+}

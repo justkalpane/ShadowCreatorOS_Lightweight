@@ -183,3 +183,56 @@ STEP 10: Emit deterministic routing decision to M-235 or WF-900/WF-021.
 - Escalation path WF-900 and replay path WF-021 are explicitly wired.
 - Minimum 18 tests are defined and traceable to requirements.
 - Upstream and downstream contract references are complete and non-ambiguous.
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: SKL-PH3C-M-234-PODCAST_AUDIO_OPTIMIZATION
+component_layer: SKILL
+component_name: M 234 Podcast Audio Optimization.Skill
+route_families: [lineage_summary, approval_gate]
+activation_triggers: route_family in [script_generation, voice_context, music_sfx_context, avatar_video_context] or explicit registry selection; mark lineage_profile only when route_family is unknown.
+upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
+downstream_outputs: [lineage_packet, approval_packet]
+required_input_packets: [media_quality_gate_packet, lineage_packet, approval_packet]
+emitted_output_packets: [lineage_packet, approval_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+quality_gates: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
+validator_bindings: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
+fallback_behavior: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
+lineage_fields: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
+provider_boundary: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve, revise_segment, regenerate_media, reject]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+production_score_fields: [lineage_score, approval_clarity_score, risk_score]
+skill_activation_contract: Activated by skill_activation_packet from subagent or route manifest.
+input_schema: Must declare atomic input fields before use; lineage_profile if absent upstream.
+output_schema: Must emit atomic output packet with evidence path and validation status.
+subskill_hooks: May call subskills only through atomic_task_packet.
+quality_metric: Must emit skill_quality_score and quality_threshold.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: lineage_profile
+route_family_resolved: [lineage_summary, approval_gate]
+activation_triggers_resolved: [lineage, trace, decision log]
+required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
+emitted_output_packets_resolved: [lineage_packet, approval_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+validator_bindings_resolved: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
+quality_gates_resolved: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
+fallback_behavior_resolved: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
+lineage_fields_resolved: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
+provider_boundary_resolved: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution; approval_packet_required_for_any_execution
+handoff_targets_resolved: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+production_score_fields_resolved: [lineage_score, approval_clarity_score, risk_score]
+human_approval_points_resolved: [approve, revise_segment, regenerate_media, reject]
+status_limits_resolved: [no silent approval, no execution without explicit approval]
+evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/media_audio/M-234-podcast-audio-optimization.skill.md; component_id=SKL-PH3C-M-234-PODCAST_AUDIO_OPTIMIZATION
+remaining_unknowns: none

@@ -1,0 +1,8 @@
+schema_file,provider_execution_allowed_present,default_false,unauthorized_true_rejected,approval_override_required,status
+schemas/packets/provider_handoff_packet.schema.json,True,True,True,True,PASS
+schemas/packets/video_context_packet.schema.json,True,True,True,True,PASS
+schemas/packets/voice_context_packet.schema.json,True,True,True,True,PASS
+schemas/packets/visual_context_packet.schema.json,True,True,True,True,PASS
+schemas/packets/music_sfx_packet.schema.json,True,True,True,True,PASS
+schemas/packets/editing_timeline_packet.schema.json,True,True,True,True,PASS
+schemas/packets/operator_execution_packet.schema.json,True,True,True,True,PASS

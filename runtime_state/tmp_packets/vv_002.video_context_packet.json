@@ -1,0 +1,20 @@
+{
+  "packet_id": "video_context_packet",
+  "route_id": "video_context",
+  "producer_component_id": "P-303-asset-brief-creator",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "scene_plan": [
+    "scene_1"
+  ],
+  "camera_moves": [
+    "static"
+  ],
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

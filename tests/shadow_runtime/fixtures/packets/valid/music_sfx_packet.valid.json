@@ -1,0 +1,18 @@
+{
+  "packet_id": "music_sfx_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "demo_component",
+  "consumer_component_ids": [
+    "demo_consumer"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "music_mood": "x",
+  "sfx_cues": [
+    "x"
+  ],
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

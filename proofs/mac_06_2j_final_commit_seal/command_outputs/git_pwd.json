@@ -1,0 +1,8 @@
+{
+  "command": "pwd",
+  "name": "git_pwd",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "/Users/apple/Documents/ShadowCreatorOS_Lightweight\n"
+}

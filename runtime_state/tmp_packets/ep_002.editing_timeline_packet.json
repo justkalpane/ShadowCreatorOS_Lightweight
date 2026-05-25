@@ -1,0 +1,20 @@
+{
+  "packet_id": "editing_timeline_packet",
+  "route_id": "editing_packaging",
+  "producer_component_id": "P-302-platform-format-specialist",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "timeline_segments": [
+    "seg_1"
+  ],
+  "cut_points": [
+    "00:03"
+  ],
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

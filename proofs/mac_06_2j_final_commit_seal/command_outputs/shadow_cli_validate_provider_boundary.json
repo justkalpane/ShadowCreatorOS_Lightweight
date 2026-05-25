@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py validate-provider-boundary",
+  "name": "shadow_cli_validate_provider_boundary",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"false_execution_claim_detected\": false,\n  \"issues\": [],\n  \"pass\": true,\n  \"provider_execution_disabled\": true,\n  \"unauthorized_provider_execution_blocked\": true\n}\n"
+}

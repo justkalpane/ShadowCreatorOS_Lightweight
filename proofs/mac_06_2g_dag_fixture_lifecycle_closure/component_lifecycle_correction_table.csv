@@ -1,0 +1,741 @@
+component_id,component_path,old_lifecycle_status,new_lifecycle_status,consumed_by_dag,active_runtime,reason
+SUPREME_VISION_COUNCIL_1_REMAINING,directors/DIRECTORS_05_TO_30_COMPLETE_SPECS.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+str,directors/DIRECTORS_COMPLETE_REGISTRY.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SHADOW_EMPIRE_DIRECTOR_REGISTRY_MANIFEST,directors/DIRECTOR_REGISTRY_MANIFEST.yaml,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_GARUDA,directors/cinematic/garuda.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+CINEMATIC_COUNCIL_REMAINING_DIRECTORS_23-25,directors/cinematic/garuda_varuna_indra_summary.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_HANUMAN,directors/cinematic/hanuman.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_INDRA,directors/cinematic/indra.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_NATARAJA,directors/cinematic/nataraja.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_VARUNA,directors/cinematic/varuna.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_KAMA,directors/distribution/kama.md,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+DIRECTOR:_SARASWATI,directors/distribution/saraswati.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_ARUNA,directors/kernel/aruna.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_KUBERA,directors/kernel/kubera.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_YAMA,directors/kernel/yama.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_AGNI,directors/production/agni.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_ARJUNA,directors/production/arjuna.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_MAYA,directors/production/maya.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+DIRECTOR:_TUMBURU,directors/production/tumburu.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+DIRECTOR:_VISHWAKARMA,directors/production/vishwakarma.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+DIRECTOR:_AGASTYA,directors/research/agastya.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_GANESHA,directors/research/ganesha.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_PARASHARA,directors/research/parashara.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_VALMIKI,directors/research/valmiki.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_VYASA,directors/research/vyasa.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+DIRECTOR:_CHANAKYA,directors/strategy/chanakya.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+DIRECTOR:_DURGA,directors/strategy/durga.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_NARADA,directors/strategy/narada.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_RAVANA,directors/strategy/ravana.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+DIRECTOR:_YUDHISHTHIRA,directors/strategy/yudhishthira.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_BRAHMA,directors/supreme_vision/brahma.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_KRISHNA,directors/supreme_vision/krishna.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_SHAKTI,directors/supreme_vision/shakti.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+shiva,directors/supreme_vision/shiva.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+DIRECTOR:_VISHNU,directors/supreme_vision/vishnu.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+AGENT_RUNTIME_REGISTRY,agents/AGENT_RUNTIME_REGISTRY.yaml,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+agastya_agent,agents/agastya/agastya_agent.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+agent_control_plane_001_agent,agents/agent_control_plane_001/agent_control_plane_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_control_plane_002_agent,agents/agent_control_plane_002/agent_control_plane_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_control_plane_003_agent,agents/agent_control_plane_003/agent_control_plane_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_control_plane_004_agent,agents/agent_control_plane_004/agent_control_plane_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_control_plane_005_agent,agents/agent_control_plane_005/agent_control_plane_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_evolution_001_agent,agents/agent_evolution_001/agent_evolution_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_evolution_002_agent,agents/agent_evolution_002/agent_evolution_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_evolution_003_agent,agents/agent_evolution_003/agent_evolution_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_evolution_004_agent,agents/agent_evolution_004/agent_evolution_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_evolution_005_agent,agents/agent_evolution_005/agent_evolution_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_001_agent,agents/agent_governance_001/agent_governance_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_002_agent,agents/agent_governance_002/agent_governance_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_003_agent,agents/agent_governance_003/agent_governance_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_004_agent,agents/agent_governance_004/agent_governance_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_005_agent,agents/agent_governance_005/agent_governance_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_006_agent,agents/agent_governance_006/agent_governance_006_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_007_agent,agents/agent_governance_007/agent_governance_007_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_008_agent,agents/agent_governance_008/agent_governance_008_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_009_agent,agents/agent_governance_009/agent_governance_009_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_governance_010_agent,agents/agent_governance_010/agent_governance_010_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_001_agent,agents/agent_kernel_001/agent_kernel_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_002_agent,agents/agent_kernel_002/agent_kernel_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_003_agent,agents/agent_kernel_003/agent_kernel_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_004_agent,agents/agent_kernel_004/agent_kernel_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_005_agent,agents/agent_kernel_005/agent_kernel_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_006_agent,agents/agent_kernel_006/agent_kernel_006_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_007_agent,agents/agent_kernel_007/agent_kernel_007_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_008_agent,agents/agent_kernel_008/agent_kernel_008_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_009_agent,agents/agent_kernel_009/agent_kernel_009_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_010_agent,agents/agent_kernel_010/agent_kernel_010_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_011_agent,agents/agent_kernel_011/agent_kernel_011_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_kernel_012_agent,agents/agent_kernel_012/agent_kernel_012_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_001_agent,agents/agent_media_001/agent_media_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_002_agent,agents/agent_media_002/agent_media_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_003_agent,agents/agent_media_003/agent_media_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_004_agent,agents/agent_media_004/agent_media_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_005_agent,agents/agent_media_005/agent_media_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_006_agent,agents/agent_media_006/agent_media_006_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_007_agent,agents/agent_media_007/agent_media_007_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_008_agent,agents/agent_media_008/agent_media_008_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_009_agent,agents/agent_media_009/agent_media_009_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_010_agent,agents/agent_media_010/agent_media_010_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_011_agent,agents/agent_media_011/agent_media_011_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_012_agent,agents/agent_media_012/agent_media_012_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_013_agent,agents/agent_media_013/agent_media_013_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_014_agent,agents/agent_media_014/agent_media_014_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_015_agent,agents/agent_media_015/agent_media_015_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_016_agent,agents/agent_media_016/agent_media_016_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_017_agent,agents/agent_media_017/agent_media_017_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_018_agent,agents/agent_media_018/agent_media_018_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_019_agent,agents/agent_media_019/agent_media_019_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_media_020_agent,agents/agent_media_020/agent_media_020_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_plugin_runtime_001_agent,agents/agent_plugin_runtime_001/agent_plugin_runtime_001_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+agent_plugin_runtime_002_agent,agents/agent_plugin_runtime_002/agent_plugin_runtime_002_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+agent_plugin_runtime_003_agent,agents/agent_plugin_runtime_003/agent_plugin_runtime_003_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+agent_plugin_runtime_004_agent,agents/agent_plugin_runtime_004/agent_plugin_runtime_004_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+agent_recovery_001_agent,agents/agent_recovery_001/agent_recovery_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_002_agent,agents/agent_recovery_002/agent_recovery_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_003_agent,agents/agent_recovery_003/agent_recovery_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_004_agent,agents/agent_recovery_004/agent_recovery_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_005_agent,agents/agent_recovery_005/agent_recovery_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_006_agent,agents/agent_recovery_006/agent_recovery_006_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_007_agent,agents/agent_recovery_007/agent_recovery_007_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_recovery_008_agent,agents/agent_recovery_008/agent_recovery_008_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_001_agent,agents/agent_research_001/agent_research_001_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_002_agent,agents/agent_research_002/agent_research_002_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_003_agent,agents/agent_research_003/agent_research_003_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_004_agent,agents/agent_research_004/agent_research_004_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_005_agent,agents/agent_research_005/agent_research_005_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_006_agent,agents/agent_research_006/agent_research_006_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_007_agent,agents/agent_research_007/agent_research_007_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_008_agent,agents/agent_research_008/agent_research_008_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_009_agent,agents/agent_research_009/agent_research_009_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_010_agent,agents/agent_research_010/agent_research_010_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_011_agent,agents/agent_research_011/agent_research_011_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_012_agent,agents/agent_research_012/agent_research_012_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_013_agent,agents/agent_research_013/agent_research_013_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_014_agent,agents/agent_research_014/agent_research_014_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_015_agent,agents/agent_research_015/agent_research_015_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_016_agent,agents/agent_research_016/agent_research_016_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_017_agent,agents/agent_research_017/agent_research_017_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agent_research_018_agent,agents/agent_research_018/agent_research_018_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+agni_agent,agents/agni/agni_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+arjuna_agent,agents/arjuna/arjuna_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+aruna_agent,agents/aruna/aruna_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+brahma_agent,agents/brahma/brahma_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+chanakya_agent,agents/chanakya/chanakya_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+chandra_agent,agents/chandra/chandra_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+chitragupta_agent,agents/chitragupta/chitragupta_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+agent_class_matrix,agents/common/agent_class_matrix.py,ACTIVE_SUPPORT,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+director_authority_profiles,agents/common/director_authority_profiles.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+director_binding_matrix,agents/common/director_binding_matrix.py,ACTIVE_SUPPORT,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+production_agent_base,agents/common/production_agent_base.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+sub_agent_matrix,agents/common/sub_agent_matrix.py,ACTIVE_SUPPORT,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+workflow_binding_contracts,agents/common/workflow_binding_contracts.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+workflow_sub_agent_base,agents/common/workflow_sub_agent_base.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+durga_agent,agents/durga/durga_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+ganesha_agent,agents/ganesha/ganesha_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+garuda_agent,agents/garuda/garuda_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+hanuman_agent,agents/hanuman/hanuman_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+indra_agent,agents/indra/indra_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+kama_agent,agents/kama/kama_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+krishna_agent,agents/krishna/krishna_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+kubera_agent,agents/kubera/kubera_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+Narada_Data_Ingestion_Agent_v2,agents/narada/narada_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+nataraja_agent,agents/nataraja/nataraja_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+parashara_agent,agents/parashara/parashara_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+ravana_agent,agents/ravana/ravana_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+saraswati_agent,agents/saraswati/saraswati_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+shakti_agent,agents/shakti/shakti_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+shiva_agent,agents/shiva/shiva_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+tumburu_agent,agents/tumburu/tumburu_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+valmiki_agent,agents/valmiki/valmiki_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+varuna_agent,agents/varuna/varuna_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+vishnu_agent,agents/vishnu/vishnu_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+vishwakarma_agent,agents/vishwakarma/vishwakarma_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+vyasa_agent,agents/vyasa/vyasa_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+yama_agent,agents/yama/yama_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+yudhishthira_agent,agents/yudhishthira/yudhishthira_agent.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SUB_AGENT_RUNTIME_REGISTRY,subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml,ACTIVE_SUPPORT,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+cwf_110_sub_agent,subagents/cwf_110/cwf_110_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_120_sub_agent,subagents/cwf_120/cwf_120_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_130_sub_agent,subagents/cwf_130/cwf_130_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_140_sub_agent,subagents/cwf_140/cwf_140_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_210_sub_agent,subagents/cwf_210/cwf_210_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_220_sub_agent,subagents/cwf_220/cwf_220_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_230_sub_agent,subagents/cwf_230/cwf_230_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_240_sub_agent,subagents/cwf_240/cwf_240_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_310_sub_agent,subagents/cwf_310/cwf_310_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_320_sub_agent,subagents/cwf_320/cwf_320_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_330_sub_agent,subagents/cwf_330/cwf_330_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_340_sub_agent,subagents/cwf_340/cwf_340_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_410_sub_agent,subagents/cwf_410/cwf_410_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_420_sub_agent,subagents/cwf_420/cwf_420_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_430_sub_agent,subagents/cwf_430/cwf_430_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_440_sub_agent,subagents/cwf_440/cwf_440_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_510_sub_agent,subagents/cwf_510/cwf_510_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_520_sub_agent,subagents/cwf_520/cwf_520_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_530_sub_agent,subagents/cwf_530/cwf_530_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_610_sub_agent,subagents/cwf_610/cwf_610_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_620_sub_agent,subagents/cwf_620/cwf_620_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+cwf_630_sub_agent,subagents/cwf_630/cwf_630_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_000_sub_agent,subagents/wf_000/wf_000_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_001_sub_agent,subagents/wf_001/wf_001_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_010_sub_agent,subagents/wf_010/wf_010_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_020_sub_agent,subagents/wf_020/wf_020_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_021_sub_agent,subagents/wf_021/wf_021_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_022_sub_agent,subagents/wf_022/wf_022_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_023_sub_agent,subagents/wf_023/wf_023_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_100_sub_agent,subagents/wf_100/wf_100_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_200_sub_agent,subagents/wf_200/wf_200_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_300_sub_agent,subagents/wf_300/wf_300_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_400_sub_agent,subagents/wf_400/wf_400_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_500_sub_agent,subagents/wf_500/wf_500_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_600_sub_agent,subagents/wf_600/wf_600_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+wf_900_sub_agent,subagents/wf_900/wf_900_sub_agent.py,DUPLICATE_CANDIDATE,DUPLICATE_CANDIDATE,false,false,duplicate candidate quarantined from active execution
+SKILL_DNA_UPGRADE_TEMPLATE,skills/SKILL_DNA_UPGRADE_TEMPLATE.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+E-601-performance-analyst,skills/analytics/E-601-performance-analyst.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+E-601-performance-analyst.skill,skills/analytics/E-601-performance-analyst.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+E-602-feedback-analyst,skills/analytics/E-602-feedback-analyst.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+E-602-feedback-analyst.skill,skills/analytics/E-602-feedback-analyst.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+E-603-evolution-strategist,skills/analytics/E-603-evolution-strategist.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+E-603-evolution-strategist.skill,skills/analytics/E-603-evolution-strategist.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-091-lip-sync-engine,skills/autonomous_loop/M-091-lip-sync-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-091-lip-sync-engine.skill,skills/autonomous_loop/M-091-lip-sync-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-091-m-091-execution-engine,skills/autonomous_loop/M-091-m-091-execution-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-092-avatar-rendering-engine,skills/autonomous_loop/M-092-avatar-rendering-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-092-avatar-rendering-engine.skill,skills/autonomous_loop/M-092-avatar-rendering-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-093-visual-effects-engine,skills/autonomous_loop/M-093-visual-effects-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-093-visual-effects-engine.skill,skills/autonomous_loop/M-093-visual-effects-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-094-color-grading-engine,skills/autonomous_loop/M-094-color-grading-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-094-color-grading-engine.skill,skills/autonomous_loop/M-094-color-grading-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-095-motion-graphics-engine,skills/autonomous_loop/M-095-motion-graphics-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-095-motion-graphics-engine.skill,skills/autonomous_loop/M-095-motion-graphics-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-096-transition-designer,skills/autonomous_loop/M-096-transition-designer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-096-transition-designer.skill,skills/autonomous_loop/M-096-transition-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-097-pacing-optimizer,skills/autonomous_loop/M-097-pacing-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-097-pacing-optimizer.skill,skills/autonomous_loop/M-097-pacing-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-098-final-edit-compiler,skills/autonomous_loop/M-098-final-edit-compiler.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-098_Final_Edit_Compiler,skills/autonomous_loop/M-098-final-edit-compiler.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-099-quality-assurance-engine,skills/autonomous_loop/M-099-quality-assurance-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-099_Quality_Assurance_Engine,skills/autonomous_loop/M-099-quality-assurance-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-100-safety-compliance-engine,skills/autonomous_loop/M-100-safety-compliance-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-100_Safety_Compliance_Engine,skills/autonomous_loop/M-100-safety-compliance-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-101-decision-board,skills/autonomous_loop/M-101-decision-board.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-101_Decision_Board,skills/autonomous_loop/M-101-decision-board.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-102-escalation-engine,skills/autonomous_loop/M-102-escalation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-102_Escalation_Engine,skills/autonomous_loop/M-102-escalation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-103-strategic-alignment-engine,skills/autonomous_loop/M-103-strategic-alignment-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-103_Strategic_Alignment_Engine,skills/autonomous_loop/M-103-strategic-alignment-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-104-executive-review-system,skills/autonomous_loop/M-104-executive-review-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-104_Executive_Review_System,skills/autonomous_loop/M-104-executive-review-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-105-publishing-engine,skills/autonomous_loop/M-105-publishing-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-105_Publishing_Engine,skills/autonomous_loop/M-105-publishing-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-106-upload-verification,skills/autonomous_loop/M-106-upload-verification.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-106_Upload_Verification,skills/autonomous_loop/M-106-upload-verification.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-107-algorithm-kickstart-engine,skills/autonomous_loop/M-107-algorithm-kickstart-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-107_Algorithm_Kickstart_Engine,skills/autonomous_loop/M-107-algorithm-kickstart-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-108-engagement-booster,skills/autonomous_loop/M-108-engagement-booster.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-108_Engagement_Booster,skills/autonomous_loop/M-108-engagement-booster.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-109-comment-analyzer,skills/autonomous_loop/M-109-comment-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-109_Comment_Analyzer,skills/autonomous_loop/M-109-comment-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-110-reputation-monitor,skills/autonomous_loop/M-110-reputation-monitor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-110_Reputation_Monitor,skills/autonomous_loop/M-110-reputation-monitor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-111-feedback-learning-engine,skills/autonomous_loop/M-111-feedback-learning-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-111_Feedback_Learning_Engine,skills/autonomous_loop/M-111-feedback-learning-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-112-strategy-refinement-engine,skills/autonomous_loop/M-112-strategy-refinement-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-112_Strategy_Refinement_Engine,skills/autonomous_loop/M-112-strategy-refinement-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-113-empire-growth-engine,skills/autonomous_loop/M-113-empire-growth-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-113_Empire_Growth_Engine,skills/autonomous_loop/M-113-empire-growth-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-114-resource-expansion-engine,skills/autonomous_loop/M-114-resource-expansion-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-114_Resource_Expansion_Engine,skills/autonomous_loop/M-114-resource-expansion-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-115-automation-expansion-engine,skills/autonomous_loop/M-115-automation-expansion-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-115_Automation_Expansion_Engine,skills/autonomous_loop/M-115-automation-expansion-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-116-skill-evolution-engine,skills/autonomous_loop/M-116-skill-evolution-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-116_Skill_Evolution_Engine,skills/autonomous_loop/M-116-skill-evolution-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-117-intelligence-upgrade-engine,skills/autonomous_loop/M-117-intelligence-upgrade-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-117_Intelligence_Upgrade_Engine,skills/autonomous_loop/M-117-intelligence-upgrade-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-118-empire-security-engine,skills/autonomous_loop/M-118-empire-security-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-118_Empire_Security_Engine,skills/autonomous_loop/M-118-empire-security-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-119-redundancy-system,skills/autonomous_loop/M-119-redundancy-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-119_Redundancy_System,skills/autonomous_loop/M-119-redundancy-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-120-supreme-orchestrator,skills/autonomous_loop/M-120-supreme-orchestrator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-120_Supreme_Orchestrator,skills/autonomous_loop/M-120-supreme-orchestrator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+P-301-execution-context-engineer,skills/context_engineering/P-301-execution-context-engineer.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+P-301-execution-context-engineer.skill,skills/context_engineering/P-301-execution-context-engineer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+P-302-platform-format-specialist,skills/context_engineering/P-302-platform-format-specialist.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+P-302-platform-format-specialist.skill,skills/context_engineering/P-302-platform-format-specialist.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+P-303-asset-brief-creator,skills/context_engineering/P-303-asset-brief-creator.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+P-303-asset-brief-creator.skill,skills/context_engineering/P-303-asset-brief-creator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+P-304-lineage-chain-validator,skills/context_engineering/P-304-lineage-chain-validator.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+P-304-lineage-chain-validator.skill,skills/context_engineering/P-304-lineage-chain-validator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+P-305-context-packet-finalizer,skills/context_engineering/P-305-context-packet-finalizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+P-305-context-packet-finalizer.skill,skills/context_engineering/P-305-context-packet-finalizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-181-innovation-engine,skills/governance/M-181-innovation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-181_Innovation_Engine,skills/governance/M-181-innovation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-182-collaboration-engine,skills/governance/M-182-collaboration-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-182_Collaboration_Engine,skills/governance/M-182-collaboration-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-001-intent-cortex,skills/intelligence/M-001-intent-cortex.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-001_Intent_Cortex,skills/intelligence/M-001-intent-cortex.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-002-context-analyzer,skills/intelligence/M-002-context-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-002_Context_Analyzer,skills/intelligence/M-002-context-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-231-VOICEOVER_DIRECTION_SCRIPT,skills/media_audio/M-231-voiceover-direction-script.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-232-SOUND_DESIGN_BRIEF,skills/media_audio/M-232-sound-design-brief.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-233-MUSIC_SELECTION_ADVISOR,skills/media_audio/M-233-music-selection-advisor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-234-PODCAST_AUDIO_OPTIMIZATION,skills/media_audio/M-234-podcast-audio-optimization.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-235-ACOUSTIC_ENVIRONMENT_ANALYZER,skills/media_audio/M-235-acoustic-environment-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-236-NOISE_REDUCTION_STRATEGY,skills/media_audio/M-236-noise-reduction-strategy.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-237-AUDIO_LEVELS_NORMALIZATION,skills/media_audio/M-237-audio-levels-normalization.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-238-COMPRESSION_EQ_SPECIFICATIONS,skills/media_audio/M-238-compression-eq-specifications.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-239-REVERB_EFFECTS_DESIGNER,skills/media_audio/M-239-reverb-effects-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-240-AUDIO_MIXING_GUIDE,skills/media_audio/M-240-audio-mixing-guide.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-241-MASTERING_SPECIFICATIONS,skills/media_audio/M-241-mastering-specifications.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-242-PODCAST_INTRO_OUTRO_DESIGNER,skills/media_audio/M-242-podcast-intro-outro-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-243-AUDIO_TRANSITIONS_OPTIMIZER,skills/media_audio/M-243-audio-transitions-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-244-TRANSCRIPT_GENERATOR,skills/media_audio/M-244-transcript-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3C-M-245-ACCESSIBILITY_AUDIO_DESCRIPTION,skills/media_audio/M-245-accessibility-audio-description.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-201-VISUAL_DESIGN_BRIEF_GENERATOR,skills/media_graphics/M-201-visual-design-brief-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-202-COLOR_PALETTE_OPTIMIZER,skills/media_graphics/M-202-color-palette-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-203-TYPOGRAPHY_SELECTOR,skills/media_graphics/M-203-typography-selector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-204-LAYOUT_COMPOSITION_STRATEGIST,skills/media_graphics/M-204-layout-composition-strategist.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-205-ICON_ILLUSTRATION_MAPPER,skills/media_graphics/M-205-icon-illustration-mapper.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-206-BRAND_CONSISTENCY_VALIDATOR,skills/media_graphics/M-206-brand-consistency-validator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-207-ACCESSIBILITY_ANALYZER,skills/media_graphics/M-207-accessibility-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-208-IMAGE_ASSET_SOURCING_ADVISOR,skills/media_graphics/M-208-image-asset-sourcing-advisor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-209-INFOGRAPHIC_STRUCTURE_DESIGNER,skills/media_graphics/M-209-infographic-structure-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-210-ANIMATION_TRANSITION_SPECIFIER,skills/media_graphics/M-210-animation-transition-specifier.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-211-MOBILE_FIRST_LAYOUT_OPTIMIZER,skills/media_graphics/M-211-mobile-first-layout-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-212-DARK_MODE_VARIANT_GENERATOR,skills/media_graphics/M-212-dark-mode-variant-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-213-PRINT_READY_FORMAT_CONVERTER,skills/media_graphics/M-213-print-ready-format-converter.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-214-SOCIAL_MEDIA_GRAPHICS_OPTIMIZER,skills/media_graphics/M-214-social-media-graphics-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3A-M-215-BANNER_HEADER_DESIGNER,skills/media_graphics/M-215-banner-header-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-401-thumbnail-concept-designer,skills/media_production/A-401-thumbnail-concept-designer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-401-thumbnail-concept-designer.skill,skills/media_production/A-401-thumbnail-concept-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-402-visual-asset-planner,skills/media_production/A-402-visual-asset-planner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-402-visual-asset-planner.skill,skills/media_production/A-402-visual-asset-planner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-403-audio-script-optimizer,skills/media_production/A-403-audio-script-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-403-audio-script-optimizer.skill,skills/media_production/A-403-audio-script-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-404-media-package-assembler,skills/media_production/A-404-media-package-assembler.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-404-media-package-assembler.skill,skills/media_production/A-404-media-package-assembler.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+A-405-media-qa-validator,skills/media_production/A-405-media-qa-validator.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+A-405-media-qa-validator.skill,skills/media_production/A-405-media-qa-validator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-216-SHOT_LIST_GENERATOR,skills/media_video/M-216-shot-list-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-217-B_ROLL_SOURCING_STRATEGY,skills/media_video/M-217-b-roll-sourcing-strategy.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-218-VIDEO_EDITING_SCRIPT,skills/media_video/M-218-video-editing-script.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-219-COLOR_GRADING_BRIEF,skills/media_video/M-219-color-grading-brief.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-220-SOUND_DESIGN_SPECIFICATIONS,skills/media_video/M-220-sound-design-specifications.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-221-MOTION_GRAPHICS_STORYBOARD,skills/media_video/M-221-motion-graphics-storyboard.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-222-VIDEO_TRANSITIONS_OPTIMIZER,skills/media_video/M-222-video-transitions-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-223-PACING_RHYTHM_EDITOR,skills/media_video/M-223-pacing-rhythm-editor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-224-TITLE_CARD_GENERATOR,skills/media_video/M-224-title-card-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-225-THUMBNAIL_DESIGNER,skills/media_video/M-225-thumbnail-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-226-VIDEO_SEO_OPTIMIZER,skills/media_video/M-226-video-seo-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-227-CAPTIONS_SUBTITLE_GENERATOR,skills/media_video/M-227-captions-subtitle-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-228-MULTI_ANGLE_CUT_STRATEGY,skills/media_video/M-228-multi-angle-cut-strategy.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-229-VIDEO_PERFORMANCE_PREDICTOR,skills/media_video/M-229-video-performance-predictor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SKL-PH3B-M-230-PLATFORM_SPECIFIC_VIDEO_ADAPTER,skills/media_video/M-230-platform-specific-video-adapter.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-151-empire-expansion-layer,skills/operations/M-151-empire-expansion-layer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-151_Empire_Expansion_Layer,skills/operations/M-151-empire-expansion-layer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-152-channel-discovery-engine,skills/operations/M-152-channel-discovery-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-152_Channel_Discovery_Engine,skills/operations/M-152-channel-discovery-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-153-niche-profitability-analyzer,skills/operations/M-153-niche-profitability-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-153_Niche_Profitability_Analyzer,skills/operations/M-153-niche-profitability-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-154-channel-launch-architect,skills/operations/M-154-channel-launch-architect.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-154_Channel_Launch_Architect,skills/operations/M-154-channel-launch-architect.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-155-brand-identity-engine,skills/operations/M-155-brand-identity-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-155_Brand_Identity_Engine,skills/operations/M-155-brand-identity-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-156-audience-persona-generator,skills/operations/M-156-audience-persona-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-156_Audience_Persona_Generator,skills/operations/M-156-audience-persona-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-157-content-strategy-replicator,skills/operations/M-157-content-strategy-replicator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-157_Content_Strategy_Replicator,skills/operations/M-157-content-strategy-replicator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-158-content-calendar-engine,skills/operations/M-158-content-calendar-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-158_Content_Calendar_Engine,skills/operations/M-158-content-calendar-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-159-production-capacity-planner,skills/operations/M-159-production-capacity-planner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-159_Production_Capacity_Planner,skills/operations/M-159-production-capacity-planner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-160-creator-clone-system,skills/operations/M-160-creator-clone-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-160_Creator_Clone_System,skills/operations/M-160-creator-clone-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-161-personality-mapping-engine,skills/operations/M-161-personality-mapping-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-161_Personality_Mapping_Engine,skills/operations/M-161-personality-mapping-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-162-voice-identity-cloner,skills/operations/M-162-voice-identity-cloner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-162_Voice_Identity_Cloner,skills/operations/M-162-voice-identity-cloner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-163-speech-emotion-engine,skills/operations/M-163-speech-emotion-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-163_Speech_Emotion_Engine,skills/operations/M-163-speech-emotion-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-164-character-behavior-engine,skills/operations/M-164-character-behavior-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-164_Character_Behavior_Engine,skills/operations/M-164-character-behavior-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-165-dialogue-style-generator,skills/operations/M-165-dialogue-style-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-165_Dialogue_Style_Generator,skills/operations/M-165-dialogue-style-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-166-creator-identity-manager,skills/operations/M-166-creator-identity-manager.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-166_Creator_Identity_Manager,skills/operations/M-166-creator-identity-manager.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-167-reputation-control-engine,skills/operations/M-167-reputation-control-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-167_Reputation_Control_Engine,skills/operations/M-167-reputation-control-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-168-content-factory-controller,skills/operations/M-168-content-factory-controller.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-168_Content_Factory_Controller,skills/operations/M-168-content-factory-controller.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-169-topic-generation-engine,skills/operations/M-169-topic-generation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-169_Topic_Generation_Engine,skills/operations/M-169-topic-generation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-170-research-automation-engine,skills/operations/M-170-research-automation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-170_Research_Automation_Engine,skills/operations/M-170-research-automation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-171-knowledge-graph-builder,skills/operations/M-171-knowledge-graph-builder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-171_Knowledge_Graph_Builder,skills/operations/M-171-knowledge-graph-builder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-172-insight-extraction-engine,skills/operations/M-172-insight-extraction-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-172_Insight_Extraction_Engine,skills/operations/M-172-insight-extraction-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-173-script-automation-engine,skills/operations/M-173-script-automation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-173_Script_Automation_Engine,skills/operations/M-173-script-automation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-174-visual-asset-generator,skills/operations/M-174-visual-asset-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-174_Visual_Asset_Generator,skills/operations/M-174-visual-asset-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-175-video-assembly-engine,skills/operations/M-175-video-assembly-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-175_Video_Assembly_Engine,skills/operations/M-175-video-assembly-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-176-post-production-automation,skills/operations/M-176-post-production-automation.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-176_Post_Production_Automation,skills/operations/M-176-post-production-automation.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-177-performance-tracking-engine,skills/operations/M-177-performance-tracking-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-177_Performance_Tracking_Engine,skills/operations/M-177-performance-tracking-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-178-channel-benchmark-engine,skills/operations/M-178-channel-benchmark-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-178_Channel_Benchmark_Engine,skills/operations/M-178-channel-benchmark-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-179-competitive-intelligence-engine,skills/operations/M-179-competitive-intelligence-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-179_Competitive_Intelligence_Engine,skills/operations/M-179-competitive-intelligence-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-180-strategy-adaptation-engine,skills/operations/M-180-strategy-adaptation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-180_Strategy_Adaptation_Engine,skills/operations/M-180-strategy-adaptation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+D-501-platform-metadata-generator,skills/publishing/D-501-platform-metadata-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+D-501-platform-metadata-generator.skill,skills/publishing/D-501-platform-metadata-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+D-502-seo-optimization-specialist,skills/publishing/D-502-seo-optimization-specialist.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+D-502-seo-optimization-specialist.skill,skills/publishing/D-502-seo-optimization-specialist.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+D-503-publish-readiness-checker,skills/publishing/D-503-publish-readiness-checker.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+D-503-publish-readiness-checker.skill,skills/publishing/D-503-publish-readiness-checker.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-009-knowledge-source-collector,skills/research_intelligence/M-009-knowledge-source-collector.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-009_Knowledge_Source_Collector,skills/research_intelligence/M-009-knowledge-source-collector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-010-source-credibility-validator,skills/research_intelligence/M-010-source-credibility-validator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-010_Source_Credibility_Validator,skills/research_intelligence/M-010-source-credibility-validator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-011-knowledge-dossier-builder,skills/research_intelligence/M-011-knowledge-dossier-builder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-011_Knowledge_Dossier_Builder,skills/research_intelligence/M-011-knowledge-dossier-builder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-020-knowledge-summarization-engine,skills/research_intelligence/M-020-knowledge-summarization-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-020_Knowledge_Summarization_Engine,skills/research_intelligence/M-020-knowledge-summarization-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-021-fact-cross-verification-unit,skills/research_intelligence/M-021-fact-cross-verification-unit.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-021-fact-cross-verification-unit.skill,skills/research_intelligence/M-021-fact-cross-verification-unit.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-022-knowledge-graph-builder,skills/research_intelligence/M-022-knowledge-graph-builder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-022-knowledge-graph-builder.skill,skills/research_intelligence/M-022-knowledge-graph-builder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-025-research-archive-manager,skills/research_intelligence/M-025-research-archive-manager.py,HISTORICAL_REFERENCE,HISTORICAL_REFERENCE,false,false,historical reference only
+M-025-research-archive-manager.skill,skills/research_intelligence/M-025-research-archive-manager.skill.md,HISTORICAL_REFERENCE,HISTORICAL_REFERENCE,false,false,historical reference only
+S-201-hook-optimizer,skills/script_intelligence/S-201-hook-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-201-hook-optimizer.skill,skills/script_intelligence/S-201-hook-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-201-research-to-script-brief,skills/script_intelligence/S-201-research-to-script-brief.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+S-201-research-to-script-brief.skill,skills/script_intelligence/S-201-research-to-script-brief.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-202-first-draft-generation,skills/script_intelligence/S-202-first-draft-generation.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+S-202-first-draft-generation.skill,skills/script_intelligence/S-202-first-draft-generation.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-202-structure-designer,skills/script_intelligence/S-202-structure-designer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-202-structure-designer.skill,skills/script_intelligence/S-202-structure-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-203-hook-structure-audit,skills/script_intelligence/S-203-hook-structure-audit.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-203-hook-structure-audit.skill,skills/script_intelligence/S-203-hook-structure-audit.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-203-retention-engineer,skills/script_intelligence/S-203-retention-engineer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-203-retention-engineer.skill,skills/script_intelligence/S-203-retention-engineer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-204-clarity-enhancer,skills/script_intelligence/S-204-clarity-enhancer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-204-clarity-enhancer.skill,skills/script_intelligence/S-204-clarity-enhancer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-204-narrative-logic-audit,skills/script_intelligence/S-204-narrative-logic-audit.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-204-narrative-logic-audit.skill,skills/script_intelligence/S-204-narrative-logic-audit.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-205-evidence-aligner,skills/script_intelligence/S-205-evidence-aligner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-205-evidence-aligner.skill,skills/script_intelligence/S-205-evidence-aligner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-205-voice-tone-refinement,skills/script_intelligence/S-205-voice-tone-refinement.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-205-voice-tone-refinement.skill,skills/script_intelligence/S-205-voice-tone-refinement.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-206-clarity-retention-refinement,skills/script_intelligence/S-206-clarity-retention-refinement.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-206-clarity-retention-refinement.skill,skills/script_intelligence/S-206-clarity-retention-refinement.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-206-emotion-amplifier,skills/script_intelligence/S-206-emotion-amplifier.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-206-emotion-amplifier.skill,skills/script_intelligence/S-206-emotion-amplifier.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-207-conflict-intensity-booster,skills/script_intelligence/S-207-conflict-intensity-booster.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-207-conflict-intensity-booster.skill,skills/script_intelligence/S-207-conflict-intensity-booster.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-207-narrative-flow-optimizer,skills/script_intelligence/S-207-narrative-flow-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-207-narrative-flow-optimizer.skill,skills/script_intelligence/S-207-narrative-flow-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-208-governance-safety-checker,skills/script_intelligence/S-208-governance-safety-checker.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-208-governance-safety-checker.skill,skills/script_intelligence/S-208-governance-safety-checker.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-208-policy-risk-screen,skills/script_intelligence/S-208-policy-risk-screen.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-208-policy-risk-screen.skill,skills/script_intelligence/S-208-policy-risk-screen.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-209-audience-alignment-mapper,skills/script_intelligence/S-209-audience-alignment-mapper.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-209-audience-alignment-mapper.skill,skills/script_intelligence/S-209-audience-alignment-mapper.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-209-emotional-rhythm-tuning,skills/script_intelligence/S-209-emotional-rhythm-tuning.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-209-emotional-rhythm-tuning.skill,skills/script_intelligence/S-209-emotional-rhythm-tuning.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-210-final-script-packager,skills/script_intelligence/S-210-final-script-packager.py,ACTIVE_CORE,ACTIVE_CORE,true,true,directly consumed by executable route DAG node
+S-210-final-script-packager.skill,skills/script_intelligence/S-210-final-script-packager.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-210-script-compression-engine,skills/script_intelligence/S-210-script-compression-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+S-210-script-compression-engine.skill,skills/script_intelligence/S-210-script-compression-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-026-title-engineer,skills/script_intelligence_army/M-026-title-engineer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-026-title-engineer.skill,skills/script_intelligence_army/M-026-title-engineer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-027-seo-architect,skills/script_intelligence_army/M-027-seo-architect.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-027-seo-architect.skill,skills/script_intelligence_army/M-027-seo-architect.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-028-metadata-builder,skills/script_intelligence_army/M-028-metadata-builder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-028-metadata-builder.skill,skills/script_intelligence_army/M-028-metadata-builder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-029-audience-analyzer,skills/script_intelligence_army/M-029-audience-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-029-audience-analyzer.skill,skills/script_intelligence_army/M-029-audience-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-030-engagement-predictor,skills/script_intelligence_army/M-030-engagement-predictor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-030-engagement-predictor.skill,skills/script_intelligence_army/M-030-engagement-predictor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-031-mrbeast-hook-system,skills/script_intelligence_army/M-031-mrbeast-hook-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-031_Mrbeast_Hook_System,skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-032-pattern-interrupt-engine,skills/script_intelligence_army/M-032-pattern-interrupt-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-032_Pattern_Interrupt_Engine,skills/script_intelligence_army/M-032-pattern-interrupt-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-033-curiosity-gap-generator,skills/script_intelligence_army/M-033-curiosity-gap-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-033_Curiosity_Gap_Generator,skills/script_intelligence_army/M-033-curiosity-gap-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-034-micro-cliffhanger-engine,skills/script_intelligence_army/M-034-micro-cliffhanger-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-034_Micro_Cliffhanger_Engine,skills/script_intelligence_army/M-034-micro-cliffhanger-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-035-engagement-loop-builder,skills/script_intelligence_army/M-035-engagement-loop-builder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-035_Engagement_Loop_Builder,skills/script_intelligence_army/M-035-engagement-loop-builder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-036-emotional-spike-system,skills/script_intelligence_army/M-036-emotional-spike-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-036_Emotional_Spike_System,skills/script_intelligence_army/M-036-emotional-spike-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-037-reward-tease-engine,skills/script_intelligence_army/M-037-reward-tease-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-037_Reward_Tease_Engine,skills/script_intelligence_army/M-037-reward-tease-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-038-payoff-delivery-system,skills/script_intelligence_army/M-038-payoff-delivery-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-038_Payoff_Delivery_System,skills/script_intelligence_army/M-038-payoff-delivery-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-039-re-hook-system,skills/script_intelligence_army/M-039-re-hook-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-039_Re_Hook_System,skills/script_intelligence_army/M-039-re-hook-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-040-story-momentum-engine,skills/script_intelligence_army/M-040-story-momentum-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-040_Story_Momentum_Engine,skills/script_intelligence_army/M-040-story-momentum-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-041-scene-energy-analyzer,skills/script_intelligence_army/M-041-scene-energy-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-041_Scene_Energy_Analyzer,skills/script_intelligence_army/M-041-scene-energy-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-042-editing-optimization-engine,skills/script_intelligence_army/M-042-editing-optimization-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-042_Editing_Optimization_Engine,skills/script_intelligence_army/M-042-editing-optimization-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-043-cut-acceleration-system,skills/script_intelligence_army/M-043-cut-acceleration-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-043_Cut_Acceleration_System,skills/script_intelligence_army/M-043-cut-acceleration-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-044-visual-impact-engine,skills/script_intelligence_army/M-044-visual-impact-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-044_Visual_Impact_Engine,skills/script_intelligence_army/M-044-visual-impact-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-045-sound-impact-system,skills/script_intelligence_army/M-045-sound-impact-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-045_Sound_Impact_System,skills/script_intelligence_army/M-045-sound-impact-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-046-cinematic-enhancement-engine,skills/script_intelligence_army/M-046-cinematic-enhancement-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-046_Cinematic_Enhancement_Engine,skills/script_intelligence_army/M-046-cinematic-enhancement-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-047-thumbnail-psychology-engine,skills/script_intelligence_army/M-047-thumbnail-psychology-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-047_Thumbnail_Psychology_Engine,skills/script_intelligence_army/M-047-thumbnail-psychology-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-048-thumbnail-a-b-tester,skills/script_intelligence_army/M-048-thumbnail-a-b-tester.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-048_Thumbnail_A_B_Tester,skills/script_intelligence_army/M-048-thumbnail-a-b-tester.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-049-viral-distribution-planner,skills/script_intelligence_army/M-049-viral-distribution-planner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-049_Viral_Distribution_Planner,skills/script_intelligence_army/M-049-viral-distribution-planner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-050-platform-algorithm-adapter,skills/script_intelligence_army/M-050-platform-algorithm-adapter.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-050_Platform_Algorithm_Adapter,skills/script_intelligence_army/M-050-platform-algorithm-adapter.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-051-viral-multiplier-engine,skills/script_intelligence_army/M-051-viral-multiplier-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-051_Viral_Multiplier_Engine,skills/script_intelligence_army/M-051-viral-multiplier-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-052-engagement-feedback-analyzer,skills/script_intelligence_army/M-052-engagement-feedback-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-052_Engagement_Feedback_Analyzer,skills/script_intelligence_army/M-052-engagement-feedback-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-053-audience-sentiment-engine,skills/script_intelligence_army/M-053-audience-sentiment-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-053_Audience_Sentiment_Engine,skills/script_intelligence_army/M-053-audience-sentiment-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-054-content-optimization-engine,skills/script_intelligence_army/M-054-content-optimization-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-054_Content_Optimization_Engine,skills/script_intelligence_army/M-054-content-optimization-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-055-learning-memory-engine,skills/script_intelligence_army/M-055-learning-memory-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-055_Learning_Memory_Engine,skills/script_intelligence_army/M-055-learning-memory-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-056-growth-prediction-engine,skills/script_intelligence_army/M-056-growth-prediction-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-056_Growth_Prediction_Engine,skills/script_intelligence_army/M-056-growth-prediction-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-057-monetization-advisor,skills/script_intelligence_army/M-057-monetization-advisor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-057_Monetization_Advisor,skills/script_intelligence_army/M-057-monetization-advisor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-058-sponsorship-matchmaker,skills/script_intelligence_army/M-058-sponsorship-matchmaker.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-058_Sponsorship_Matchmaker,skills/script_intelligence_army/M-058-sponsorship-matchmaker.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-059-product-integration-engine,skills/script_intelligence_army/M-059-product-integration-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-059_Product_Integration_Engine,skills/script_intelligence_army/M-059-product-integration-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-060-channel-strategy-director,skills/script_intelligence_army/M-060-channel-strategy-director.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-060_Channel_Strategy_Director,skills/script_intelligence_army/M-060-channel-strategy-director.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-001-context-packet-sanitizer,skills/sub_skills/SS-001-context-packet-sanitizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-001-context-packet-sanitizer.subskill,skills/sub_skills/SS-001-context-packet-sanitizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-101-elevenlabs-voice-generation-optimizer,skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-101-elevenlabs-voice-generation-optimizer.subskill,skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-102-heygen-avatar-render-orchestrator,skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-102-heygen-avatar-render-orchestrator.subskill,skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-103-nanobanana-visual-generation-optimizer,skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-103-nanobanana-visual-generation-optimizer.subskill,skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-104-sora-video-generation-orchestrator,skills/sub_skills/SS-104-sora-video-generation-orchestrator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-104-sora-video-generation-orchestrator.subskill,skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-105-higgsfield-cinematic-motion-director,skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-105-higgsfield-cinematic-motion-director.subskill,skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-106-kling-video-prompt-optimizer,skills/sub_skills/SS-106-kling-video-prompt-optimizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-106-kling-video-prompt-optimizer.subskill,skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-107-suno-music-generation-optimizer,skills/sub_skills/SS-107-suno-music-generation-optimizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-107-suno-music-generation-optimizer.subskill,skills/sub_skills/SS-107-suno-music-generation-optimizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-108-youtube-publish-oauth-guard,skills/sub_skills/SS-108-youtube-publish-oauth-guard.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-108-youtube-publish-oauth-guard.subskill,skills/sub_skills/SS-108-youtube-publish-oauth-guard.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-109-youtube-analytics-ingestion-governor,skills/sub_skills/SS-109-youtube-analytics-ingestion-governor.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-109-youtube-analytics-ingestion-governor.subskill,skills/sub_skills/SS-109-youtube-analytics-ingestion-governor.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-110-openrouter-llm-route-governor,skills/sub_skills/SS-110-openrouter-llm-route-governor.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-110-openrouter-llm-route-governor.subskill,skills/sub_skills/SS-110-openrouter-llm-route-governor.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-111-ollama-local-inference-optimizer,skills/sub_skills/SS-111-ollama-local-inference-optimizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-111-ollama-local-inference-optimizer.subskill,skills/sub_skills/SS-111-ollama-local-inference-optimizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-112-ffmpeg-render-assembly-guard,skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-112-ffmpeg-render-assembly-guard.subskill,skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-113-wav2lip-lipsync-quality-guard,skills/sub_skills/SS-113-wav2lip-lipsync-quality-guard.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-113-wav2lip-lipsync-quality-guard.subskill,skills/sub_skills/SS-113-wav2lip-lipsync-quality-guard.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-114-yt-dlp-ingestion-compliance-guard,skills/sub_skills/SS-114-yt-dlp-ingestion-compliance-guard.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-114-yt-dlp-ingestion-compliance-guard.subskill,skills/sub_skills/SS-114-yt-dlp-ingestion-compliance-guard.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-115-gemini-multimodal-research-optimizer,skills/sub_skills/SS-115-gemini-multimodal-research-optimizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-115-gemini-multimodal-research-optimizer.subskill,skills/sub_skills/SS-115-gemini-multimodal-research-optimizer.subskill.md,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-220-deep-research-agent,skills/sub_skills/SS-220-deep-research-agent.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-220-deep-research-agent.subskill,skills/sub_skills/SS-220-deep-research-agent.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-221-source-credibility-evaluator,skills/sub_skills/SS-221-source-credibility-evaluator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-221-source-credibility-evaluator.subskill,skills/sub_skills/SS-221-source-credibility-evaluator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-222-fact-verification-engine,skills/sub_skills/SS-222-fact-verification-engine.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-222-fact-verification-engine.subskill,skills/sub_skills/SS-222-fact-verification-engine.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-223-knowledge-synthesizer,skills/sub_skills/SS-223-knowledge-synthesizer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-223-knowledge-synthesizer.subskill,skills/sub_skills/SS-223-knowledge-synthesizer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-224-contradiction-detector,skills/sub_skills/SS-224-contradiction-detector.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-224-contradiction-detector.subskill,skills/sub_skills/SS-224-contradiction-detector.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-230-content-angle-generator,skills/sub_skills/SS-230-content-angle-generator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-230-content-angle-generator.subskill,skills/sub_skills/SS-230-content-angle-generator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-231-unique-value-proposition-builder,skills/sub_skills/SS-231-unique-value-proposition-builder.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-231-unique-value-proposition-builder.subskill,skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-232-series-strategy-planner,skills/sub_skills/SS-232-series-strategy-planner.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-232-series-strategy-planner.subskill,skills/sub_skills/SS-232-series-strategy-planner.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-233-content-calendar-generator,skills/sub_skills/SS-233-content-calendar-generator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-233-content-calendar-generator.subskill,skills/sub_skills/SS-233-content-calendar-generator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-234-platform-strategy-mapper,skills/sub_skills/SS-234-platform-strategy-mapper.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-234-platform-strategy-mapper.subskill,skills/sub_skills/SS-234-platform-strategy-mapper.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-240-hook-variation-generator,skills/sub_skills/SS-240-hook-variation-generator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-240-hook-variation-generator.subskill,skills/sub_skills/SS-240-hook-variation-generator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-241-open-loop-generator,skills/sub_skills/SS-241-open-loop-generator.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-241-open-loop-generator.subskill,skills/sub_skills/SS-241-open-loop-generator.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-242-story-tension-builder,skills/sub_skills/SS-242-story-tension-builder.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-242-story-tension-builder.subskill,skills/sub_skills/SS-242-story-tension-builder.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-243-pacing-controller,skills/sub_skills/SS-243-pacing-controller.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-243-pacing-controller.subskill,skills/sub_skills/SS-243-pacing-controller.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-244-retention-loop-engine,skills/sub_skills/SS-244-retention-loop-engine.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-244-retention-loop-engine.subskill,skills/sub_skills/SS-244-retention-loop-engine.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+SS-245-cliffhanger-designer,skills/sub_skills/SS-245-cliffhanger-designer.py,DORMANT_FUTURE,DORMANT_FUTURE,false,false,future/provider execution remains disabled
+SS-245-cliffhanger-designer.subskill,skills/sub_skills/SS-245-cliffhanger-designer.subskill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-121-algorithm-intelligence-core,skills/swarm_expansion/M-121-algorithm-intelligence-core.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-121-algorithm-intelligence-core.skill,skills/swarm_expansion/M-121-algorithm-intelligence-core.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-122-data-signal-collector,skills/swarm_expansion/M-122-data-signal-collector.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-122-data-signal-collector.skill,skills/swarm_expansion/M-122-data-signal-collector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-123-algorithm-pattern-analyzer,skills/swarm_expansion/M-123-algorithm-pattern-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-123-algorithm-pattern-analyzer.skill,skills/swarm_expansion/M-123-algorithm-pattern-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-124-watch-time-analyzer,skills/swarm_expansion/M-124-watch-time-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-124-watch-time-analyzer.skill,skills/swarm_expansion/M-124-watch-time-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-125-retention-drop-detector,skills/swarm_expansion/M-125-retention-drop-detector.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-125-retention-drop-detector.skill,skills/swarm_expansion/M-125-retention-drop-detector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-126-retention-repair-engine,skills/swarm_expansion/M-126-retention-repair-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-126-retention-repair-engine.skill,skills/swarm_expansion/M-126-retention-repair-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-127-viral-pattern-library,skills/swarm_expansion/M-127-viral-pattern-library.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-127-viral-pattern-library.skill,skills/swarm_expansion/M-127-viral-pattern-library.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-128-viral-pattern-replicator,skills/swarm_expansion/M-128-viral-pattern-replicator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-128-viral-pattern-replicator.skill,skills/swarm_expansion/M-128-viral-pattern-replicator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-129-thumbnail-heatmap-analyzer,skills/swarm_expansion/M-129-thumbnail-heatmap-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-129-thumbnail-heatmap-analyzer.skill,skills/swarm_expansion/M-129-thumbnail-heatmap-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-130-thumbnail-optimization-engine,skills/swarm_expansion/M-130-thumbnail-optimization-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-130-thumbnail-optimization-engine.skill,skills/swarm_expansion/M-130-thumbnail-optimization-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-131-ctr-prediction-engine,skills/swarm_expansion/M-131-ctr-prediction-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-131_Ctr_Prediction_Engine,skills/swarm_expansion/M-131-ctr-prediction-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-132-title-emotion-analyzer,skills/swarm_expansion/M-132-title-emotion-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-132_Title_Emotion_Analyzer,skills/swarm_expansion/M-132-title-emotion-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-133-curiosity-trigger-engine,skills/swarm_expansion/M-133-curiosity-trigger-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-133_Curiosity_Trigger_Engine,skills/swarm_expansion/M-133-curiosity-trigger-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-134-psychological-hook-engine,skills/swarm_expansion/M-134-psychological-hook-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-134_Psychological_Hook_Engine,skills/swarm_expansion/M-134-psychological-hook-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-135-click-urgency-generator,skills/swarm_expansion/M-135-click-urgency-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-135_Click_Urgency_Generator,skills/swarm_expansion/M-135-click-urgency-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-136-ctr-stress-tester,skills/swarm_expansion/M-136-ctr-stress-tester.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-136_Ctr_Stress_Tester,skills/swarm_expansion/M-136-ctr-stress-tester.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-137-thumbnail-emotion-optimizer,skills/swarm_expansion/M-137-thumbnail-emotion-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-137_Thumbnail_Emotion_Optimizer,skills/swarm_expansion/M-137-thumbnail-emotion-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-138-viral-probability-engine,skills/swarm_expansion/M-138-viral-probability-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-138_Viral_Probability_Engine,skills/swarm_expansion/M-138-viral-probability-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-139-viral-acceleration-engine,skills/swarm_expansion/M-139-viral-acceleration-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-139_Viral_Acceleration_Engine,skills/swarm_expansion/M-139-viral-acceleration-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-140-shareability-optimizer,skills/swarm_expansion/M-140-shareability-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-140_Shareability_Optimizer,skills/swarm_expansion/M-140-shareability-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-141-community-trigger-engine,skills/swarm_expansion/M-141-community-trigger-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-141_Community_Trigger_Engine,skills/swarm_expansion/M-141-community-trigger-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-142-comment-magnet-engine,skills/swarm_expansion/M-142-comment-magnet-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-142_Comment_Magnet_Engine,skills/swarm_expansion/M-142-comment-magnet-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-143-discussion-amplifier,skills/swarm_expansion/M-143-discussion-amplifier.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-143_Discussion_Amplifier,skills/swarm_expansion/M-143-discussion-amplifier.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-144-engagement-momentum-engine,skills/swarm_expansion/M-144-engagement-momentum-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-144_Engagement_Momentum_Engine,skills/swarm_expansion/M-144-engagement-momentum-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-145-algorithm-boost-detector,skills/swarm_expansion/M-145-algorithm-boost-detector.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-145_Algorithm_Boost_Detector,skills/swarm_expansion/M-145-algorithm-boost-detector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-146-viral-surge-manager,skills/swarm_expansion/M-146-viral-surge-manager.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-146_Viral_Surge_Manager,skills/swarm_expansion/M-146-viral-surge-manager.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-147-content-amplification-engine,skills/swarm_expansion/M-147-content-amplification-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-147_Content_Amplification_Engine,skills/swarm_expansion/M-147-content-amplification-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-148-channel-authority-builder,skills/swarm_expansion/M-148-channel-authority-builder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-148_Channel_Authority_Builder,skills/swarm_expansion/M-148-channel-authority-builder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-149-algorithm-trust-engine,skills/swarm_expansion/M-149-algorithm-trust-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-149_Algorithm_Trust_Engine,skills/swarm_expansion/M-149-algorithm-trust-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-150-platform-dominance-engine,skills/swarm_expansion/M-150-platform-dominance-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-150_Platform_Dominance_Engine,skills/swarm_expansion/M-150-platform-dominance-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-061-micro-skill-army-router,skills/system_intelligence/M-061-micro-skill-army-router.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-061_Micro_Skill_Army_Router,skills/system_intelligence/M-061-micro-skill-army-router.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-062-skill-loader-protocol,skills/system_intelligence/M-062-skill-loader-protocol.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-062_Skill_Loader_Protocol,skills/system_intelligence/M-062-skill-loader-protocol.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-063-skill-dependency-resolver,skills/system_intelligence/M-063-skill-dependency-resolver.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-063_Skill_Dependency_Resolver,skills/system_intelligence/M-063-skill-dependency-resolver.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-064-skill-priority-engine,skills/system_intelligence/M-064-skill-priority-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-064_Skill_Priority_Engine,skills/system_intelligence/M-064-skill-priority-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-065-task-queue-manager,skills/system_intelligence/M-065-task-queue-manager.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-065_Task_Queue_Manager,skills/system_intelligence/M-065-task-queue-manager.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-066-resource-allocator,skills/system_intelligence/M-066-resource-allocator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-066_Resource_Allocator,skills/system_intelligence/M-066-resource-allocator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-067-performance-monitor,skills/system_intelligence/M-067-performance-monitor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-067_Performance_Monitor,skills/system_intelligence/M-067-performance-monitor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-068-failure-detector,skills/system_intelligence/M-068-failure-detector.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-068_Failure_Detector,skills/system_intelligence/M-068-failure-detector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-069-recovery-engine,skills/system_intelligence/M-069-recovery-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-069_Recovery_Engine,skills/system_intelligence/M-069-recovery-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-070-adaptive-re-router,skills/system_intelligence/M-070-adaptive-re-router.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-070_Adaptive_Re_Router,skills/system_intelligence/M-070-adaptive-re-router.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-071-intelligence-memory-system,skills/system_intelligence/M-071-intelligence-memory-system.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-071_Intelligence_Memory_System,skills/system_intelligence/M-071-intelligence-memory-system.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-072-pattern-recognition-engine,skills/system_intelligence/M-072-pattern-recognition-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-072_Pattern_Recognition_Engine,skills/system_intelligence/M-072-pattern-recognition-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-073-trend-prediction-engine,skills/system_intelligence/M-073-trend-prediction-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-073_Trend_Prediction_Engine,skills/system_intelligence/M-073-trend-prediction-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-074-viral-opportunity-scanner,skills/system_intelligence/M-074-viral-opportunity-scanner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-074_Viral_Opportunity_Scanner,skills/system_intelligence/M-074-viral-opportunity-scanner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-075-content-replication-engine,skills/system_intelligence/M-075-content-replication-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-075_Content_Replication_Engine,skills/system_intelligence/M-075-content-replication-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-076-multi-channel-expansion-engine,skills/system_intelligence/M-076-multi-channel-expansion-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-076_Multi_Channel_Expansion_Engine,skills/system_intelligence/M-076-multi-channel-expansion-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-077-language-localization-engine,skills/system_intelligence/M-077-language-localization-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-077_Language_Localization_Engine,skills/system_intelligence/M-077-language-localization-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-078-cultural-adaptation-engine,skills/system_intelligence/M-078-cultural-adaptation-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-078_Cultural_Adaptation_Engine,skills/system_intelligence/M-078-cultural-adaptation-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-079-platform-format-engine,skills/system_intelligence/M-079-platform-format-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-079_Platform_Format_Engine,skills/system_intelligence/M-079-platform-format-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-080-shorts-generator,skills/system_intelligence/M-080-shorts-generator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-080_Shorts_Generator,skills/system_intelligence/M-080-shorts-generator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-081-clip-extraction-engine,skills/system_intelligence/M-081-clip-extraction-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-081_Clip_Extraction_Engine,skills/system_intelligence/M-081-clip-extraction-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-082-viral-clip-optimizer,skills/system_intelligence/M-082-viral-clip-optimizer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-082_Viral_Clip_Optimizer,skills/system_intelligence/M-082-viral-clip-optimizer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-083-social-media-distributor,skills/system_intelligence/M-083-social-media-distributor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-083_Social_Media_Distributor,skills/system_intelligence/M-083-social-media-distributor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-084-cross-platform-analytics,skills/system_intelligence/M-084-cross-platform-analytics.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-084_Cross_Platform_Analytics,skills/system_intelligence/M-084-cross-platform-analytics.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-085-ai-avatar-director,skills/system_intelligence/M-085-ai-avatar-director.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-085_Ai_Avatar_Director,skills/system_intelligence/M-085-ai-avatar-director.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-086-cinematic-shot-planner,skills/system_intelligence/M-086-cinematic-shot-planner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-086_Cinematic_Shot_Planner,skills/system_intelligence/M-086-cinematic-shot-planner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-087-lighting-designer,skills/system_intelligence/M-087-lighting-designer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-087_Lighting_Designer,skills/system_intelligence/M-087-lighting-designer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-088-scene-composition-engine,skills/system_intelligence/M-088-scene-composition-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-088_Scene_Composition_Engine,skills/system_intelligence/M-088-scene-composition-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-089-motion-director,skills/system_intelligence/M-089-motion-director.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-089_Motion_Director,skills/system_intelligence/M-089-motion-director.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-090-generic-m-090-forbidden-in-runtime-split-into-av-emo-090-and-yt-for-090,skills/system_intelligence/M-090-generic-m-090-forbidden-in-runtime-split-into-av-emo-090-and-yt-for-090.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-090_Generic_M_090_Forbidden_In_Runtime_Split_Into_Av_Emo_090_And_Yt_For_090,skills/system_intelligence/M-090-generic-m-090-forbidden-in-runtime-split-into-av-emo-090-and-yt-for-090.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-001-global-trend-scanner,skills/topic_intelligence/M-001-global-trend-scanner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-001-global-trend-scanner.skill,skills/topic_intelligence/M-001-global-trend-scanner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-002-topic-opportunity-miner,skills/topic_intelligence/M-002-topic-opportunity-miner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-002-topic-opportunity-miner.skill,skills/topic_intelligence/M-002-topic-opportunity-miner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-003-keyword-intelligence-miner,skills/topic_intelligence/M-003-keyword-intelligence-miner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-003_Keyword_Intelligence_Miner,skills/topic_intelligence/M-003-keyword-intelligence-miner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-004-audience-demographic-mapper,skills/topic_intelligence/M-004-audience-demographic-mapper.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-004_Audience_Demographic_Mapper,skills/topic_intelligence/M-004-audience-demographic-mapper.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-006-viral-pattern-detector,skills/topic_intelligence/M-006-viral-pattern-detector.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-006_Viral_Pattern_Detector,skills/topic_intelligence/M-006-viral-pattern-detector.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-007-algorithm-signal-monitor,skills/topic_intelligence/M-007-algorithm-signal-monitor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-007_Algorithm_Signal_Monitor,skills/topic_intelligence/M-007-algorithm-signal-monitor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-008-topic-viability-scorer,skills/topic_intelligence/M-008-topic-viability-scorer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-008_Topic_Viability_Scorer,skills/topic_intelligence/M-008-topic-viability-scorer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-012-audience-interest-predictor,skills/topic_intelligence/M-012-audience-interest-predictor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-012_Audience_Interest_Predictor,skills/topic_intelligence/M-012-audience-interest-predictor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-013-search-demand-forecaster,skills/topic_intelligence/M-013-search-demand-forecaster.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-013_Search_Demand_Forecaster,skills/topic_intelligence/M-013-search-demand-forecaster.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-014-comment-sentiment-analyzer,skills/topic_intelligence/M-014-comment-sentiment-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-014_Comment_Sentiment_Analyzer,skills/topic_intelligence/M-014-comment-sentiment-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-015-cultural-context-analyzer,skills/topic_intelligence/M-015-cultural-context-analyzer.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-015_Cultural_Context_Analyzer,skills/topic_intelligence/M-015-cultural-context-analyzer.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-016-content-gap-finder,skills/topic_intelligence/M-016-content-gap-finder.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-016_Content_Gap_Finder,skills/topic_intelligence/M-016-content-gap-finder.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-018-trend-lifecycle-predictor,skills/topic_intelligence/M-018-trend-lifecycle-predictor.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-018_Trend_Lifecycle_Predictor,skills/topic_intelligence/M-018-trend-lifecycle-predictor.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-019-audience-pain-point-miner,skills/topic_intelligence/M-019-audience-pain-point-miner.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-019_Audience_Pain_Point_Miner,skills/topic_intelligence/M-019-audience-pain-point-miner.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-023-trend-risk-evaluator,skills/topic_intelligence/M-023-trend-risk-evaluator.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-023-trend-risk-evaluator.skill,skills/topic_intelligence/M-023-trend-risk-evaluator.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-024-topic-finalization-engine,skills/topic_intelligence/M-024-topic-finalization-engine.py,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+M-024-topic-finalization-engine.skill,skills/topic_intelligence/M-024-topic-finalization-engine.skill.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG
+README,subskills/README.md,ACTIVE_CORE,QUARANTINE_REVIEW,false,false,not consumed by executable DAG

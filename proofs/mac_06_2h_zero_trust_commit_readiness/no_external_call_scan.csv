@@ -1,0 +1,2 @@
+file_path,scan_type,match_count,sample_matches,status,gap
+operator_harness/NON_CODEX_OPERATOR_TEST_PROTOCOL.md,n8n_calls_found,1,n8n,REVIEW,potential external/provider/media reference

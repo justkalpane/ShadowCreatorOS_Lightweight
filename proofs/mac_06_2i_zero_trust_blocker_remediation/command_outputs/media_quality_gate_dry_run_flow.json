@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "media_quality_gate_packet",
+    "script_segment_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "media_quality_gate",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "mq_001"
+    },
+    {
+      "component_id": "A-405-media-qa-validator",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "media_quality_gate_packet"
+      ],
+      "node_id": "mq_002"
+    }
+  ]
+}

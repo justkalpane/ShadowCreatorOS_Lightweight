@@ -1,0 +1,16 @@
+{
+  "packet_id": "lineage_packet",
+  "route_id": "lineage",
+  "producer_component_id": "P-304-lineage-chain-validator",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "upstream_packet_ids": [
+    "x"
+  ],
+  "decision_log": "x"
+}

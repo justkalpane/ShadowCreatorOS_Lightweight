@@ -1,0 +1,14 @@
+{
+  "packet_id": "operator_execution_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "proof",
+  "consumer_component_ids": [
+    "proof"
+  ],
+  "lineage": {},
+  "validation_status": "PASS",
+  "provider_execution_allowed": true,
+  "approval_required": false,
+  "task": "x",
+  "proof_fields": {}
+}

@@ -43,13 +43,13 @@
 ### Vein Shards
 1. **strategy_state** (FULL) — Chanakya's decisions, historical outcomes
    - Purpose: Identify where Chanakya's strategy has succeeded/failed
-   
+
 2. **research_vein** (FULL) — same data as Chanakya, different interpretation
    - Purpose: Find alternative angles Chanakya missed
-   
+
 3. **competitive_intelligence** (FULL) — market landscape
    - Purpose: Identify threats/opportunities Chanakya dismissed
-   
+
 4. **risk_assessment** (READ ONLY) — Chanakya's risk analysis
    - Purpose: Challenge Chanakya's risk scores
 
@@ -244,3 +244,55 @@ Ravana is an enhancement (alternative strategy provider). System works without R
 - Conflict logs remain immutable once written
 - Arbitration trigger conditions are deterministic and testable
 
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: DIRECTOR:_RAVANA
+component_layer: DIRECTOR
+component_name: Ravana
+route_families: [provider_handoff, full_video_pipeline]
+activation_triggers: route_family in [trend_research, quality_gate] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
+upstream_inputs: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
+downstream_outputs: [provider_handoff_packet, media_quality_gate_packet]
+required_input_packets: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
+emitted_output_packets: [provider_handoff_packet, media_quality_gate_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_MEDIA_PROVIDER_HANDOFF, PTR_PROVIDER_QUALITY]
+quality_gates: [provider_boundary_gate, typed_input_gate, approval_gate]
+validator_bindings: [provider_handoff_packet_present, no_n8n_provider_media_execution, provider_boundary_present]
+fallback_behavior: BLOCKED_BEFORE_OUTPUT unless approval_packet explicitly authorizes provider execution.
+lineage_fields: [provider_handoff_packet_id, approval_packet_id, typed_input_id]
+provider_boundary: provider_execution_allowed=false by default; only explicit approval_packet may change it
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_provider_handoff, deny_provider_execution, revise_provider_input]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [provider_handoff_packet, media_quality_gate_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_MEDIA_PROVIDER_HANDOFF, PTR_PROVIDER_QUALITY]
+production_score_fields: [handoff_completeness_score, risk_score, approval_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: provider_handoff_profile
+route_family_resolved: [provider_handoff, full_video_pipeline]
+activation_triggers_resolved: [provider, tool adapter]
+required_input_packets_resolved: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
+emitted_output_packets_resolved: [provider_handoff_packet, media_quality_gate_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_MEDIA_PROVIDER_HANDOFF, PTR_PROVIDER_QUALITY]
+validator_bindings_resolved: [provider_handoff_packet_present, no_n8n_provider_media_execution, provider_boundary_present]
+quality_gates_resolved: [provider_boundary_gate, typed_input_gate, approval_gate]
+fallback_behavior_resolved: BLOCKED_BEFORE_OUTPUT unless approval_packet explicitly authorizes provider execution.
+lineage_fields_resolved: [provider_handoff_packet_id, approval_packet_id, typed_input_id]
+provider_boundary_resolved: provider_execution_allowed=false by default; only explicit approval_packet may change it
+handoff_targets_resolved: [provider_handoff_packet, media_quality_gate_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_MEDIA_PROVIDER_HANDOFF, PTR_PROVIDER_QUALITY]
+production_score_fields_resolved: [handoff_completeness_score, risk_score, approval_score, lineage_score]
+human_approval_points_resolved: [approve_provider_handoff, deny_provider_execution, revise_provider_input]
+status_limits_resolved: [no provider-called claim without execution proof]
+evidence_used_for_resolution: path/pre-contract keyword: provider/tool adapter; component_path=directors/strategy/ravana.md; component_id=DIRECTOR:_RAVANA
+remaining_unknowns: none

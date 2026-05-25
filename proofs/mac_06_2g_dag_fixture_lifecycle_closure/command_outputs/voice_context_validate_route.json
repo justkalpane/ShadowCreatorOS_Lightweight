@@ -1,0 +1,80 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_FINAL_SCRIPT_VOICE"
+      ],
+      "component_id": "S-210-final-script-packager",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+      "emitted_output_packets": [
+        "script_segment_packet"
+      ],
+      "fallback_routes": [
+        "context_engineering"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "vc_002"
+      ],
+      "node_id": "vc_001",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_segment_quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_FINAL_SCRIPT_VOICE"
+      ],
+      "component_id": "P-302-platform-format-specialist",
+      "component_layer": "SKILL",
+      "component_path": "skills/context_engineering/P-302-platform-format-specialist.py",
+      "emitted_output_packets": [
+        "voice_context_packet"
+      ],
+      "fallback_routes": [
+        "context_engineering"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "vc_002",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "voice_context_quality_gate"
+      ],
+      "required_input_packets": [
+        "script_segment_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "script_segment_packet",
+    "topic_intake_packet",
+    "voice_context_packet"
+  ],
+  "pass": true,
+  "route_id": "voice_context"
+}

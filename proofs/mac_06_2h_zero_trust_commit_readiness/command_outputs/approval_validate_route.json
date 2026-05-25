@@ -1,0 +1,80 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_LINEAGE_APPROVAL"
+      ],
+      "component_id": "P-304-lineage-chain-validator",
+      "component_layer": "SKILL",
+      "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
+      "emitted_output_packets": [
+        "lineage_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "ap_002"
+      ],
+      "node_id": "ap_001",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "lineage_integrity_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    },
+    {
+      "approval_required": true,
+      "communication_pointer_ids": [
+        "PTR_LINEAGE_APPROVAL"
+      ],
+      "component_id": "DIRECTOR:_KAMA",
+      "component_layer": "DIRECTOR",
+      "component_path": "directors/distribution/kama.md",
+      "emitted_output_packets": [
+        "approval_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "ap_002",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "approval_gate"
+      ],
+      "required_input_packets": [
+        "lineage_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "approval_packet",
+    "lineage_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "approval"
+}

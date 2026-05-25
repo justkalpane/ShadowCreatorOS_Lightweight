@@ -1,0 +1,27 @@
+{
+  "components_scanned": 740,
+  "directors_scanned": 34,
+  "agents_scanned": 121,
+  "subagents_scanned": 37,
+  "skills_scanned": 547,
+  "subskills_scanned": 1,
+  "production_grade_components": 2,
+  "shallow_components": 201,
+  "missing_io_schema_components": 427,
+  "missing_pointer_components": 33,
+  "missing_validator_components": 2,
+  "orphaned_components": 1,
+  "historical_only_components": 74,
+  "communication_pointer_gaps": 9,
+  "media_context_gaps": 7,
+  "article_inspired_upgrade_items": 10,
+  "status_counts": {
+    "MISSING_IO_SCHEMA": 427,
+    "HISTORICAL_ONLY": 74,
+    "MISSING_VALIDATOR": 2,
+    "SHALLOW_CONTRACT": 201,
+    "MISSING_COMMUNICATION_POINTERS": 33,
+    "PRODUCTION_GRADE": 2,
+    "ORPHANED": 1
+  }
+}

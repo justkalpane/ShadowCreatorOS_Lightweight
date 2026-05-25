@@ -1,0 +1,16 @@
+{
+  "packet_id": "provider_handoff_packet",
+  "route_id": "provider_handoff",
+  "producer_component_id": "DIRECTOR:_KAMA",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "provider_type": "planning_only",
+  "typed_input": "script_segment_packet",
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

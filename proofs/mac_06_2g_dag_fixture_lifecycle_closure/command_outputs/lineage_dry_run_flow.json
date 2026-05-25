@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "lineage_packet",
+    "media_quality_gate_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "lineage",
+  "steps": [
+    {
+      "component_id": "A-405-media-qa-validator",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "media_quality_gate_packet"
+      ],
+      "node_id": "ln_001"
+    },
+    {
+      "component_id": "P-304-lineage-chain-validator",
+      "consumed": [
+        "media_quality_gate_packet"
+      ],
+      "emitted": [
+        "lineage_packet"
+      ],
+      "node_id": "ln_002"
+    }
+  ]
+}

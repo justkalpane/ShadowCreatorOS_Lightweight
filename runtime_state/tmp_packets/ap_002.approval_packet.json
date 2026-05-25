@@ -1,0 +1,14 @@
+{
+  "packet_id": "approval_packet",
+  "route_id": "approval",
+  "producer_component_id": "DIRECTOR:_KAMA",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "approval_action": "review",
+  "approved_by": "user"
+}

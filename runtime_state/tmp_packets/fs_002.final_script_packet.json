@@ -1,0 +1,14 @@
+{
+  "packet_id": "final_script_packet",
+  "route_id": "final_script_shaping",
+  "producer_component_id": "S-210-final-script-packager",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "final_script_text": "final",
+  "cta": "comment"
+}

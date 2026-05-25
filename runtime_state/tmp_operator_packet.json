@@ -1,0 +1,66 @@
+{
+  "approval_required": false,
+  "consumer_component_ids": [
+    "non_codex_operator_harness"
+  ],
+  "content_generation": false,
+  "external_calls": false,
+  "lineage": {
+    "decision_log": "local enforcement only",
+    "upstream_packet_ids": [
+      "script_segment_packet"
+    ]
+  },
+  "local_enforcement_checks": {
+    "dry_run": true,
+    "lifecycle": true,
+    "packets": true,
+    "preflight": true,
+    "provider_boundary": true,
+    "route": true,
+    "veins": true
+  },
+  "packet_id": "operator_execution_packet",
+  "producer_component_id": "shadow_cli",
+  "proof_fields": {
+    "communication_vein_validation_pass": true,
+    "compact_or_proof_output_allowed_only_after_locks": true,
+    "component_depth_validation_required": true,
+    "contract_only_detected": false,
+    "editing_timeline_packet_present": true,
+    "fake_depth_detected": false,
+    "gateway_contract_loaded_before_alias": true,
+    "internal_wrapper_applied": true,
+    "lifecycle_validation_pass": true,
+    "lineage_approval_packet_present": true,
+    "lineage_approval_validation_pass": true,
+    "media_quality_gate_packet_present": true,
+    "music_sfx_packet_present": true,
+    "no_n8n_provider_media_execution": true,
+    "output_mode_contract_loaded": true,
+    "packet_flow_validation_pass": true,
+    "packet_schema_validation_pass": true,
+    "provider_boundary_present": true,
+    "provider_boundary_validation_pass": true,
+    "provider_handoff_packet_present": true,
+    "quality_scorecard_validation_pass": true,
+    "quality_scores_present": true,
+    "registry_paths_exist": true,
+    "route_components_exist": true,
+    "route_dag_validation_pass": true,
+    "route_manifest_loaded": true,
+    "script_segment_packet_present": true,
+    "segment_level_regeneration_actions_present": true,
+    "selected_components_are_registered": true,
+    "shadow_command_alias_detected": true,
+    "text_label_only_detected": false,
+    "universal_component_contract_present": true,
+    "video_context_packet_present": true,
+    "visual_context_packet_present": true,
+    "voice_context_packet_present": true
+  },
+  "provider_execution_allowed": false,
+  "route_id": "script_generation",
+  "task": "Shadow script proof mode task",
+  "validation_status": "PASS"
+}

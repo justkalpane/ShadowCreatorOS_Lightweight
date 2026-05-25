@@ -1,4 +1,4 @@
-﻿# DIRECTORS 05-30: COMPLETE SPECIFICATIONS
+# DIRECTORS 05-30: COMPLETE SPECIFICATIONS
 ## All 26 Remaining Directors (Structured Delivery)
 ## Shadow Empire Phase-1 Director Expansion Build
 
@@ -7,10 +7,10 @@
 # SUPREME VISION COUNCIL (1 REMAINING)
 
 ## DIRECTOR-05: SHAKTI
-**Canonical_Domain_ID**: DIR-ORCHv1-005  
-**Role**: Creative Force Amplifier + Distribution Velocity Controller  
-**Primary_Domain**: Creative Intensity Scaling, Audience Force Multiplication, Engagement Amplification  
-**Secondary_Domain**: Viral Acceleration, Community Amplification  
+**Canonical_Domain_ID**: DIR-ORCHv1-005
+**Role**: Creative Force Amplifier + Distribution Velocity Controller
+**Primary_Domain**: Creative Intensity Scaling, Audience Force Multiplication, Engagement Amplification
+**Secondary_Domain**: Viral Acceleration, Community Amplification
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (distribution_vein + engagement metrics)
@@ -67,10 +67,10 @@ AMPLIFICATION_SCORE =
 # STRATEGY COUNCIL (5 DIRECTORS)
 
 ## DIRECTOR-06: CHANAKYA
-**Canonical_Domain_ID**: DIR-STRTv1-001  
-**Role**: Strategic Filtering + Opportunity Selection + Risk Optimization  
-**Primary_Domain**: Research & Intelligence via strategy lens, Decision Logic  
-**Secondary_Domain**: Operations optimization  
+**Canonical_Domain_ID**: DIR-STRTv1-001
+**Role**: Strategic Filtering + Opportunity Selection + Risk Optimization
+**Primary_Domain**: Research & Intelligence via strategy lens, Decision Logic
+**Secondary_Domain**: Operations optimization
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (strategy_namespaces only)
@@ -104,10 +104,10 @@ SCORE = (Demand Ã— 0.20) + (Trend Ã— 0.20) + (Unique_Angle Ã— 0.20) +
 ---
 
 ## DIRECTOR-07: NARADA
-**Canonical_Domain_ID**: DIR-STRTv1-002  
-**Role**: Operations, Distribution & Optimization Orchestrator  
-**Primary_Domain**: Operations, Distribution, Optimization, Data Ingestion  
-**Secondary_Domain**: Script Intelligence operational layer, Multi-agent coordination  
+**Canonical_Domain_ID**: DIR-STRTv1-002
+**Role**: Operations, Distribution & Optimization Orchestrator
+**Primary_Domain**: Operations, Distribution, Optimization, Data Ingestion
+**Secondary_Domain**: Script Intelligence operational layer, Multi-agent coordination
 
 ### Authority
 - **Dossier_Lock**: FULL (operations + distribution namespaces)
@@ -143,9 +143,9 @@ DAILY LOOP:
 ---
 
 ## DIRECTOR-08: RAVANA
-**Canonical_Domain_ID**: DIR-STRTv1-003  
-**Role**: Alternative Strategy Provider + Conflict Manager  
-**Primary_Domain**: Alternative strategic viewpoints, Devil's Advocate, Conflict Mediation  
+**Canonical_Domain_ID**: DIR-STRTv1-003
+**Role**: Alternative Strategy Provider + Conflict Manager
+**Primary_Domain**: Alternative strategic viewpoints, Devil's Advocate, Conflict Mediation
 **Secondary_Domain**: Adversarial planning, risk surface expansion, strategic contradiction testing
 
 ### Authority
@@ -236,9 +236,9 @@ CONFLICT_SCORE =
 ---
 
 ## DIRECTOR-09: DURGA
-**Canonical_Domain_ID**: DIR-STRTv1-004  
-**Role**: Protection & Veto Logic + Safety Enforcement  
-**Primary_Domain**: Risk Protection, Safety Enforcement, Boundary Protection  
+**Canonical_Domain_ID**: DIR-STRTv1-004
+**Role**: Protection & Veto Logic + Safety Enforcement
+**Primary_Domain**: Risk Protection, Safety Enforcement, Boundary Protection
 **Secondary_Domain**: Runtime safeguards, release safety assurance
 
 ### Authority
@@ -314,9 +314,9 @@ RISK_ASSESSMENT =
 ---
 
 ## DIRECTOR-10: YUDHISHTHIRA
-**Canonical_Domain_ID**: DIR-STRTv1-005  
-**Role**: Dharma/Governance Validation + Ethical Decision Making  
-**Primary_Domain**: Ethical Alignment, Creator Values, Governance Validation  
+**Canonical_Domain_ID**: DIR-STRTv1-005
+**Role**: Dharma/Governance Validation + Ethical Decision Making
+**Primary_Domain**: Ethical Alignment, Creator Values, Governance Validation
 **Secondary_Domain**: Value conflict mediation, principle-preserving remodification
 
 ### Authority
@@ -401,9 +401,9 @@ DHARMA_SCORE =
 
 # RESEARCH COUNCIL (5 DIRECTORS)
 ## DIRECTOR-11: VALMIKI
-**Canonical_Domain_ID**: DIR-RSRCHv1-001  
-**Role**: Research Synthesis + Knowledge Structuring + Story Grounding  
-**Primary_Domain**: Research Synthesis, Knowledge Structure, Historical Fact-Checking  
+**Canonical_Domain_ID**: DIR-RSRCHv1-001
+**Role**: Research Synthesis + Knowledge Structuring + Story Grounding
+**Primary_Domain**: Research Synthesis, Knowledge Structure, Historical Fact-Checking
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (research_vein only)
@@ -430,9 +430,9 @@ END
 ---
 
 ## DIRECTOR-12: VYASA
-**Canonical_Domain_ID**: DIR-RSRCHv1-002  
-**Role**: Content Creation + Knowledge Graph Management + Narrative Intelligence  
-**Primary_Domain**: Content Creation, Knowledge Graph, Narrative Intelligence  
+**Canonical_Domain_ID**: DIR-RSRCHv1-002
+**Role**: Content Creation + Knowledge Graph Management + Narrative Intelligence
+**Primary_Domain**: Content Creation, Knowledge Graph, Narrative Intelligence
 
 ### Authority
 - **Dossier_Lock**: FULL (narrative_vein + research_vein)
@@ -460,9 +460,9 @@ END
 ---
 
 ## DIRECTOR-13: AGASTYA
-**Canonical_Domain_ID**: DIR-RSRCHv1-003  
-**Role**: Deep Analysis + Insight Extraction + Knowledge Depth  
-**Primary_Domain**: Deep Analysis, Insight Extraction, Knowledge Depth  
+**Canonical_Domain_ID**: DIR-RSRCHv1-003
+**Role**: Deep Analysis + Insight Extraction + Knowledge Depth
+**Primary_Domain**: Deep Analysis, Insight Extraction, Knowledge Depth
 
 ### Skill Bindings (7 skills)
 M-005, M-014, M-172, M-243, M-244, M-245, M-246
@@ -473,9 +473,9 @@ M-005, M-014, M-172, M-243, M-244, M-245, M-246
 ---
 
 ## DIRECTOR-14: PARASHARA
-**Canonical_Domain_ID**: DIR-RSRCHv1-004  
-**Role**: Trend Analysis + Pattern Discovery + Predictive Intelligence  
-**Primary_Domain**: Trend Analysis, Pattern Discovery, Predictive Intelligence  
+**Canonical_Domain_ID**: DIR-RSRCHv1-004
+**Role**: Trend Analysis + Pattern Discovery + Predictive Intelligence
+**Primary_Domain**: Trend Analysis, Pattern Discovery, Predictive Intelligence
 
 ### Skill Bindings (6 skills)
 M-006, M-072, M-122, M-247, M-248, M-249
@@ -486,9 +486,9 @@ M-006, M-072, M-122, M-247, M-248, M-249
 ---
 
 ## DIRECTOR-15: GANESHA
-**Canonical_Domain_ID**: DIR-RSRCHv1-005  
-**Role**: Neural Index Router + Routing Intelligence + Decision Routing  
-**Primary_Domain**: Neural Routing, Decision Routing, Flow Control  
+**Canonical_Domain_ID**: DIR-RSRCHv1-005
+**Role**: Neural Index Router + Routing Intelligence + Decision Routing
+**Primary_Domain**: Neural Routing, Decision Routing, Flow Control
 
 ### Authority
 - **Routing_Authority**: FULL (can route any task)
@@ -516,9 +516,9 @@ END
 # PRODUCTION COUNCIL (5 DIRECTORS)
 
 ## DIRECTOR-16: TUMBURU
-**Canonical_Domain_ID**: DIR-PRODv1-001  
-**Role**: Audio Production + Voice Direction + Sound Engineering  
-**Primary_Domain**: Audio Production, Voice Direction, Sound Engineering  
+**Canonical_Domain_ID**: DIR-PRODv1-001
+**Role**: Audio Production + Voice Direction + Sound Engineering
+**Primary_Domain**: Audio Production, Voice Direction, Sound Engineering
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (production_vein audio section)
@@ -546,9 +546,9 @@ END
 ---
 
 ## DIRECTOR-17: ARJUNA
-**Canonical_Domain_ID**: DIR-PRODv1-002  
-**Role**: Script Execution + Narrative Warfare + Delivery Control  
-**Primary_Domain**: Script Execution, Narrative Delivery, Performance Direction  
+**Canonical_Domain_ID**: DIR-PRODv1-002
+**Role**: Script Execution + Narrative Warfare + Delivery Control
+**Primary_Domain**: Script Execution, Narrative Delivery, Performance Direction
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (narrative_vein execution section)
@@ -562,9 +562,9 @@ M-009, M-015, M-046, M-258, M-259, M-260, M-261, M-262
 ---
 
 ## DIRECTOR-18: MAYA
-**Canonical_Domain_ID**: DIR-PRODv1-003  
-**Role**: Visual Production + Creative Visualization + Design Control  
-**Primary_Domain**: Visual Production, Creative Design, Visual Effects  
+**Canonical_Domain_ID**: DIR-PRODv1-003
+**Role**: Visual Production + Creative Visualization + Design Control
+**Primary_Domain**: Visual Production, Creative Design, Visual Effects
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (production_vein visual section)
@@ -578,9 +578,9 @@ M-020, M-021, M-046, M-048, M-263, M-264, M-265, M-266, M-267
 ---
 
 ## DIRECTOR-19: VISHWAKARMA
-**Canonical_Domain_ID**: DIR-PRODv1-004  
-**Role**: Architecture + Technical Production + Infrastructure  
-**Primary_Domain**: Production Architecture, Technical Infrastructure, System Design  
+**Canonical_Domain_ID**: DIR-PRODv1-004
+**Role**: Architecture + Technical Production + Infrastructure
+**Primary_Domain**: Production Architecture, Technical Infrastructure, System Design
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (production_vein infrastructure section)
@@ -594,9 +594,9 @@ M-064, M-268, M-269, M-270, M-271, M-272, M-273
 ---
 
 ## DIRECTOR-20: AGNI
-**Canonical_Domain_ID**: DIR-PRODv1-005  
-**Role**: Energy/Momentum + Urgency Injection + Performance Acceleration  
-**Primary_Domain**: Energy Management, Urgency Control, Performance Optimization  
+**Canonical_Domain_ID**: DIR-PRODv1-005
+**Role**: Energy/Momentum + Urgency Injection + Performance Acceleration
+**Primary_Domain**: Energy Management, Urgency Control, Performance Optimization
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (production_vein urgency section)
@@ -612,9 +612,9 @@ M-032, M-134, M-274, M-275, M-276, M-277
 # CINEMATIC COUNCIL (5 DIRECTORS)
 
 ## DIRECTOR-21: HANUMAN
-**Canonical_Domain_ID**: DIR-CINv1-001  
-**Role**: Speed + Fast-Track Execution + Quick Delivery  
-**Primary_Domain**: Speed Optimization, Fast-Track Execution, Rapid Delivery  
+**Canonical_Domain_ID**: DIR-CINv1-001
+**Role**: Speed + Fast-Track Execution + Quick Delivery
+**Primary_Domain**: Speed Optimization, Fast-Track Execution, Rapid Delivery
 
 ### Authority
 - **Cost_Authority**: Can request expedited billing (1.5Ã— cost for 2Ã— speed)
@@ -635,9 +635,9 @@ HANUMAN_EMERGENCY: 6-12 hours (cost: 3.0Ã— baseline, requires founder approva
 ---
 
 ## DIRECTOR-22: NATARAJA
-**Canonical_Domain_ID**: DIR-CINv1-002  
-**Role**: Dance/Rhythm + Pacing + Editing + Flow Control  
-**Primary_Domain**: Pacing, Editing, Flow Control, Rhythm Management  
+**Canonical_Domain_ID**: DIR-CINv1-002
+**Role**: Dance/Rhythm + Pacing + Editing + Flow Control
+**Primary_Domain**: Pacing, Editing, Flow Control, Rhythm Management
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (narrative_vein pacing section)
@@ -660,9 +660,9 @@ WRITE pacing_map to narrative_vein
 ---
 
 ## DIRECTOR-23: GARUDA
-**Canonical_Domain_ID**: DIR-CINv1-003  
-**Role**: High-Speed Transport + Distribution Velocity + Rapid Publishing  
-**Primary_Domain**: Distribution Speed, Rapid Publishing, Velocity Control  
+**Canonical_Domain_ID**: DIR-CINv1-003
+**Role**: High-Speed Transport + Distribution Velocity + Rapid Publishing
+**Primary_Domain**: Distribution Speed, Rapid Publishing, Velocity Control
 
 ### Authority
 - **Delegation**: To distribution platforms (via Kama)
@@ -676,9 +676,9 @@ M-049, M-290, M-291, M-292, M-293, M-294, M-295
 ---
 
 ## DIRECTOR-24: VARUNA
-**Canonical_Domain_ID**: DIR-CINv1-004  
-**Role**: Flow + Medium Control + Liquid Narrative + Adaptability  
-**Primary_Domain**: Narrative Flow, Medium Adaptation, Liquid Structure  
+**Canonical_Domain_ID**: DIR-CINv1-004
+**Role**: Flow + Medium Control + Liquid Narrative + Adaptability
+**Primary_Domain**: Narrative Flow, Medium Adaptation, Liquid Structure
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (narrative_vein adaptability section)
@@ -692,9 +692,9 @@ M-009, M-046, M-296, M-297, M-298, M-299, M-300, M-301
 ---
 
 ## DIRECTOR-25: INDRA
-**Canonical_Domain_ID**: DIR-CINv1-005  
-**Role**: Power + Premium Tier Execution + High-Value Production  
-**Primary_Domain**: Premium Execution, High-Value Production, Power Allocation  
+**Canonical_Domain_ID**: DIR-CINv1-005
+**Role**: Power + Premium Tier Execution + High-Value Production
+**Primary_Domain**: Premium Execution, High-Value Production, Power Allocation
 
 ### Authority
 - **Cost_Authority**: Can allocate premium resources
@@ -711,9 +711,9 @@ M-046, M-302, M-303, M-304, M-305, M-306, M-307
 # DISTRIBUTION & EVOLUTION COUNCIL (5 DIRECTORS)
 
 ## DIRECTOR-26: KAMA
-**Canonical_Domain_ID**: DIR-DISTv1-001  
-**Role**: Desire/Engagement + Conversion + Audience Attraction  
-**Primary_Domain**: Engagement, Conversion, Audience Attraction, Desire Stimulation  
+**Canonical_Domain_ID**: DIR-DISTv1-001
+**Role**: Desire/Engagement + Conversion + Audience Attraction
+**Primary_Domain**: Engagement, Conversion, Audience Attraction, Desire Stimulation
 
 ### Authority
 - **Dossier_Lock**: FULL (distribution_vein engagement section)
@@ -739,9 +739,9 @@ END
 ---
 
 ## DIRECTOR-27: SARASWATI
-**Canonical_Domain_ID**: DIR-DISTv1-002  
-**Role**: Knowledge Dissemination + Content Multiplication + Platform Expansion  
-**Primary_Domain**: Knowledge Distribution, Content Multiplication, Platform Expansion  
+**Canonical_Domain_ID**: DIR-DISTv1-002
+**Role**: Knowledge Dissemination + Content Multiplication + Platform Expansion
+**Primary_Domain**: Knowledge Distribution, Content Multiplication, Platform Expansion
 
 ### Authority
 - **Dossier_Lock**: PARTIAL (distribution_vein dissemination section)
@@ -766,9 +766,9 @@ END
 ---
 
 ## DIRECTOR-28: KUBERA
-**Canonical_Domain_ID**: KERNEL-COST-001  
-**Role**: Cost/Budget Authority + Financial Gate + Resource Allocation  
-**Primary_Domain**: Budget Control, Cost Gating, Resource Allocation  
+**Canonical_Domain_ID**: KERNEL-COST-001
+**Role**: Cost/Budget Authority + Financial Gate + Resource Allocation
+**Primary_Domain**: Budget Control, Cost Gating, Resource Allocation
 **Kernel_Spine_Component**: YES (non-overrideable)
 
 ### Authority
@@ -796,9 +796,9 @@ M-064, M-320, M-321, M-322, M-323
 ---
 
 ## DIRECTOR-29: YAMA
-**Canonical_Domain_ID**: KERNEL-POLICY-001  
-**Role**: Policy/Legality Gate + Governance Enforcement  
-**Primary_Domain**: Policy Enforcement, Legality Checking, Governance  
+**Canonical_Domain_ID**: KERNEL-POLICY-001
+**Role**: Policy/Legality Gate + Governance Enforcement
+**Primary_Domain**: Policy Enforcement, Legality Checking, Governance
 **Kernel_Spine_Component**: YES (non-overrideable)
 
 ### Authority
@@ -825,9 +825,9 @@ M-225, M-226, M-324, M-325, M-326
 ---
 
 ## DIRECTOR-30: ARUNA
-**Canonical_Domain_ID**: KERNEL-FLOW-001  
-**Role**: Flow Building + Emergence + Resource Gating + Neural Sunrise  
-**Primary_Domain**: Flow Control, Resource Gating, Neural Flow Building  
+**Canonical_Domain_ID**: KERNEL-FLOW-001
+**Role**: Flow Building + Emergence + Resource Gating + Neural Sunrise
+**Primary_Domain**: Flow Control, Resource Gating, Neural Flow Building
 **Kernel_Spine_Component**: YES (non-overrideable)
 
 ### Authority
@@ -874,10 +874,62 @@ EVERY decision_packet MUST flow through Aruna:
 - Cinematic: 5 (Hanuman, Nataraja, Garuda, Varuna, Indra) âœ…
 - Distribution & Evolution: 5 (Kama, Saraswati, Kubera, Yama, Aruna) âœ…
 
-**Status**: COMPLETE  
-**Created**: 2026-04-21  
-**Total Skill Bindings Across All 30**: 218 skills mapped  
-**Release_Blocking**: 18 directors (all core functions)  
+**Status**: COMPLETE
+**Created**: 2026-04-21
+**Total Skill Bindings Across All 30**: 218 skills mapped
+**Release_Blocking**: 18 directors (all core functions)
 **Enhancement_Features**: 12 directors (optional, non-blocking)
 
 
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: SUPREME_VISION_COUNCIL_1_REMAINING
+component_layer: DIRECTOR
+component_name: Directors 05 To 30 Complete Specs
+route_families: [quality_gate, full_video_pipeline]
+activation_triggers: route_family in [script_generation, trend_research, topic_discovery, voice_context] or explicit registry selection; mark media_quality_gate_profile only when route_family is unknown.
+upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+downstream_outputs: [media_quality_gate_packet, lineage_packet]
+required_input_packets: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+emitted_output_packets: [media_quality_gate_packet, lineage_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+quality_gates: [script_score_gate, voice_score_gate, visual_score_gate, video_score_gate, audio_score_gate, editing_score_gate]
+validator_bindings: [media_quality_gate_packet_present, quality_scores_present, final_status_matches_weakest_evidence_layer]
+fallback_behavior: BLOCKED_BEFORE_OUTPUT if critical score is below threshold or missing.
+lineage_fields: [quality_gate_id, upstream_packet_ids, score_reason, failure_id]
+provider_boundary: provider_execution_allowed=false; quality gate reviews packets/artifacts only; no provider execution
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_quality_gate, revise_segment, reject_output]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [media_quality_gate_packet, lineage_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+production_score_fields: [script_score, hook_score, retention_score, voice_score, visual_score, video_score, audio_score, editing_score, platform_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: media_quality_gate_profile
+route_family_resolved: [quality_gate, full_video_pipeline]
+activation_triggers_resolved: [quality, validation, compliance]
+required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+validator_bindings_resolved: [media_quality_gate_packet_present, quality_scores_present, final_status_matches_weakest_evidence_layer]
+quality_gates_resolved: [script_score_gate, voice_score_gate, visual_score_gate, video_score_gate, audio_score_gate, editing_score_gate]
+fallback_behavior_resolved: BLOCKED_BEFORE_OUTPUT if critical score is below threshold or missing.
+lineage_fields_resolved: [quality_gate_id, upstream_packet_ids, score_reason, failure_id]
+provider_boundary_resolved: provider_execution_allowed=false; quality gate reviews packets/artifacts only; no provider execution; approval_packet_required_for_any_execution
+handoff_targets_resolved: [media_quality_gate_packet, lineage_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+production_score_fields_resolved: [script_score, hook_score, retention_score, voice_score, visual_score, video_score, audio_score, editing_score, platform_score, lineage_score]
+human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_output]
+status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
+evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/DIRECTORS_05_TO_30_COMPLETE_SPECS.md; component_id=SUPREME_VISION_COUNCIL_1_REMAINING
+remaining_unknowns: none

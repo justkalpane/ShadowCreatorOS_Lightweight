@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/schema_rationalizer.py",
+  "name": "schema_rationalizer",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"canonical_active_schemas\": 20,\n  \"canonical_support_schemas\": 0,\n  \"dormant_future_schemas\": 3,\n  \"duplicate_candidate_schemas\": 0,\n  \"generated_alias_schemas\": 309,\n  \"issues\": [],\n  \"overgenerated_schema_risk_resolved\": true,\n  \"pass\": true,\n  \"quarantine_schemas\": 0,\n  \"schema_count_justified\": true,\n  \"schemas_found\": 332,\n  \"schemas_missing_for_dags\": 0,\n  \"schemas_used_by_dags\": 19\n}\n"
+}

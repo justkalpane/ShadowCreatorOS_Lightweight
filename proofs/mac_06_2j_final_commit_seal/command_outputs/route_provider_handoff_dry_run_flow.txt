@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "provider_handoff_packet",
+    "script_segment_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "provider_handoff",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "ph_001"
+    },
+    {
+      "component_id": "DIRECTOR:_KAMA",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "provider_handoff_packet"
+      ],
+      "node_id": "ph_002"
+    }
+  ]
+}

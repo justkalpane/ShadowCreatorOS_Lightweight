@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py validate-packets --route final_script_shaping",
+  "name": "route_final_script_shaping_validate_packets",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"failed_packets\": [],\n  \"packets_checked\": 20,\n  \"pass\": true,\n  \"route\": \"final_script_shaping\"\n}\n"
+}

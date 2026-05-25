@@ -1,0 +1,18 @@
+{
+  "packet_id": "visual_context_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "demo_component",
+  "consumer_component_ids": [
+    "demo_consumer"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "style_bible": "x",
+  "scene_prompts": [
+    "x"
+  ],
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

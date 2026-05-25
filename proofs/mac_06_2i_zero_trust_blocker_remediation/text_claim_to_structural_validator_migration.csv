@@ -1,0 +1,12 @@
+old_text_claim_gate,new_structural_check,file_patched,negative_case_supported,status
+native_executable_depth_proven,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+route_manifests_executable_as_dag,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+media_pipeline_dry_run_executable,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+provider_boundary_pass,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+operator_packet_pass,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+runtime_tests_pass,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+route_dags_complete,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+routes_passed,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+validator_reality_upgrade_status,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+text_only_validator_rules_remaining,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS
+safe_to_commit_after_user_review,route/lifecycle/schema/flow/vein/provider/runtime command validation,validators/validate_mac06_1a_output.py,True,PASS

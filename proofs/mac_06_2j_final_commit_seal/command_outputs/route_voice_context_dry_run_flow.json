@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route voice_context",
+  "name": "route_voice_context_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"script_segment_packet\",\n    \"topic_intake_packet\",\n    \"voice_context_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"voice_context\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"script_segment_packet\"\n      ],\n      \"node_id\": \"vc_001\"\n    },\n    {\n      \"component_id\": \"P-302-platform-format-specialist\",\n      \"consumed\": [\n        \"script_segment_packet\"\n      ],\n      \"emitted\": [\n        \"voice_context_packet\"\n      ],\n      \"node_id\": \"vc_002\"\n    }\n  ]\n}\n"
+}

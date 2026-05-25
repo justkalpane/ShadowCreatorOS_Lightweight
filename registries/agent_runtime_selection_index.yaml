@@ -795,3 +795,25 @@ source_evidence:
   - "registries/skill_registry.yaml"
   - "registries/subskill_runtime_registry.yaml"
   - "deployment/mac_phase_05_repo_first_operating_loop/MAC_05_DIRECTOR_AGENT_SKILL_SELECTION_STANDARD.md"
+
+mac_06_2b_component_depth_registry_extension:
+  status: ACTIVE_SUPPORTING_REGISTRY_EXTENSION
+  component_contract_registry: registries/component_contract_registry.yaml
+  communication_pointer_registry: registries/communication_pointer_registry.yaml
+  universal_component_contract_standard: runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md
+  required_fields_per_registered_component:
+    - component_id
+    - component_path
+    - component_layer
+    - route_family
+    - upstream_dependencies
+    - downstream_dependencies
+    - input_packets
+    - output_packets
+    - communication_pointers
+    - validator_binding
+    - quality_binding
+    - provider_boundary
+    - status
+    - needs_human_review
+  runtime_rule: "Registry selection is incomplete unless the selected component has typed packets, communication pointers, validator binding, fallback, and lineage."

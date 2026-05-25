@@ -1,0 +1,965 @@
+# MAC-06.2D Component Route Profile Registry
+status: ACTIVE_REGISTRY
+purpose: "Route-specific profile source for component depth enrichment. Active components must resolve to one profile and exact pointer IDs."
+profiles:
+  - profile_id: topic_discovery_profile
+    route_families:
+      - topic_discovery
+      - trend_research
+    activation_triggers:
+      - topic request
+      - trend request
+      - audience opportunity mining
+      - keyword/topic discovery route
+    required_input_packets:
+      - topic_intake_packet
+      - trend_signal_packet
+      - source_evidence_packet
+    emitted_output_packets:
+      - research_brief_packet
+      - topic_quality_packet
+      - trend_opportunity_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_RESEARCH_SCRIPT
+    required_quality_gates:
+      - topic_quality_gate
+      - freshness_gate
+      - audience_fit_gate
+      - production_feasibility_gate
+    validator_bindings:
+      - universal_component_contract_present
+      - selected_component_missing_input_schema
+      - selected_component_missing_output_schema
+      - selected_component_missing_communication_pointer
+      - quality_scores_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT if trend/source evidence or topic_quality_packet is missing; otherwise route to research_synthesis_profile."
+    lineage_fields:
+      - topic_intake_packet_id
+      - source_evidence_packet_id
+      - trend_signal_packet_id
+      - decision_reason
+      - evidence_path
+    provider_boundary: "provider_execution_allowed=false unless approval_packet explicitly authorizes provider handoff"
+    production_score_fields:
+      - topic_score
+      - freshness_score
+      - audience_fit_score
+      - risk_score
+      - lineage_score
+    human_approval_points:
+      - approve_topic
+      - revise_angle
+      - request_more_sources
+      - reject_topic
+    status_limits:
+      - no provider execution
+      - no n8n execution
+      - no onboarding claim
+  - profile_id: research_synthesis_profile
+    route_families:
+      - trend_research
+      - topic_discovery
+      - script_generation
+    activation_triggers:
+      - freshness-sensitive task
+      - source-backed claim
+      - research synthesis before script
+    required_input_packets:
+      - topic_intake_packet
+      - trend_signal_packet
+      - source_evidence_packet
+    emitted_output_packets:
+      - research_brief_packet
+      - source_evidence_packet
+      - claim_risk_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_RESEARCH_SCRIPT
+    required_quality_gates:
+      - source_breadth_gate
+      - claim_confidence_gate
+      - freshness_gate
+      - contradiction_gate
+    validator_bindings:
+      - source_breadth_lock_status
+      - per_tool_source_map_present
+      - exact_rule_evidence_present
+      - selected_component_missing_validator_binding
+    fallback_behavior: "NEEDS_CONFIRMATION if source breadth is insufficient; BLOCKED_BEFORE_OUTPUT for unsupported claims."
+    lineage_fields:
+      - source_url
+      - source_date
+      - claim_id
+      - confidence_score
+      - research_brief_packet_id
+    provider_boundary: "web research may cite sources; provider/media execution remains disabled without approval_packet"
+    production_score_fields:
+      - source_score
+      - freshness_score
+      - claim_confidence_score
+      - contradiction_score
+      - lineage_score
+    human_approval_points:
+      - approve_research_brief
+      - request_more_sources
+      - downgrade_claim
+      - reject_claim
+    status_limits:
+      - no fake realtime claim
+      - no provider execution
+      - no n8n execution
+  - profile_id: script_generation_profile
+    route_families:
+      - script_generation
+    activation_triggers:
+      - script request
+      - YouTube Shorts/Reel/TikTok script
+      - content writing after research brief
+    required_input_packets:
+      - research_brief_packet
+      - script_strategy_packet
+      - source_evidence_packet
+    emitted_output_packets:
+      - script_v1_packet
+      - script_segment_packet
+      - voice_context_packet
+      - visual_context_packet
+      - video_context_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_RESEARCH_SCRIPT
+      - PTR_SCRIPT_DEBATE
+      - PTR_FINAL_SCRIPT_VOICE
+      - PTR_FINAL_SCRIPT_IMAGE
+      - PTR_FINAL_SCRIPT_VIDEO
+    required_quality_gates:
+      - hook_generation_gate
+      - retention_gate
+      - script_quality_gate
+      - source_evidence_gate
+    validator_bindings:
+      - script_segment_packet_present
+      - voice_context_packet_present
+      - visual_context_packet_present
+      - video_context_packet_present
+      - quality_scores_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT when research_brief_packet or script_segment_packet cannot be produced."
+    lineage_fields:
+      - research_brief_packet_id
+      - script_v1_packet_id
+      - script_segment_packet_id
+      - line_number
+      - evidence_reference
+    provider_boundary: "content planning only; provider/media execution disabled unless approval_packet authorizes handoff"
+    production_score_fields:
+      - script_score
+      - hook_score
+      - retention_score
+      - evidence_score
+      - lineage_score
+    human_approval_points:
+      - approve_script
+      - revise_hook
+      - regenerate_segment
+      - reject_script
+    status_limits:
+      - script-only output is PARTIAL unless explicitly requested
+      - no media execution
+  - profile_id: script_debate_profile
+    route_families:
+      - script_debate
+      - script_generation
+    activation_triggers:
+      - critique script
+      - debate script
+      - line-by-line challenge after script_v1_packet
+    required_input_packets:
+      - script_v1_packet
+      - script_segment_packet
+      - research_brief_packet
+    emitted_output_packets:
+      - debate_critique_packet
+      - critique_delta_packet
+      - risk_objection_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_SCRIPT_DEBATE
+      - PTR_DEBATE_REFINEMENT
+    required_quality_gates:
+      - line_by_line_critique_gate
+      - retention_leak_gate
+      - logic_gate
+      - audience_fit_gate
+    validator_bindings:
+      - component_selected_but_not_consumed
+      - selected_component_missing_input_schema
+      - quality_scores_present
+    fallback_behavior: "NEEDS_HUMAN_REVIEW if critique cannot cite line numbers or evidence references."
+    lineage_fields:
+      - script_v1_packet_id
+      - line_number
+      - critique_id
+      - reason
+      - recommended_delta
+    provider_boundary: "no provider/media execution; critique packets only"
+    production_score_fields:
+      - critique_score
+      - logic_score
+      - audience_fit_score
+      - retention_risk_score
+      - lineage_score
+    human_approval_points:
+      - accept_delta
+      - reject_delta
+      - request_stronger_critique
+    status_limits:
+      - no rewrite without critique_delta_packet
+  - profile_id: script_refinement_profile
+    route_families:
+      - script_refinement
+      - script_generation
+    activation_triggers:
+      - revise script
+      - apply critique deltas
+      - final script shaping
+    required_input_packets:
+      - debate_critique_packet
+      - critique_delta_packet
+      - script_v1_packet
+    emitted_output_packets:
+      - refinement_delta_packet
+      - final_script_packet
+      - script_segment_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_DEBATE_REFINEMENT
+      - PTR_REFINEMENT_FINAL_SCRIPT
+    required_quality_gates:
+      - delta_trace_gate
+      - script_quality_gate
+      - retention_repair_gate
+      - lineage_gate
+    validator_bindings:
+      - lineage_approval_packet_present
+      - quality_scores_present
+      - segment_level_regeneration_actions_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT if every refinement cannot cite critique_delta_packet."
+    lineage_fields:
+      - critique_delta_packet_id
+      - refinement_delta_packet_id
+      - changed_line
+      - reason
+      - before_after_delta
+    provider_boundary: "no provider/media execution; final script packet only"
+    production_score_fields:
+      - refinement_score
+      - script_score
+      - retention_score
+      - lineage_score
+    human_approval_points:
+      - approve_revision
+      - revise_segment
+      - reject_delta
+    status_limits:
+      - no silent rewrite
+      - no final PASS without delta lineage
+  - profile_id: final_script_shaping_profile
+    route_families:
+      - script_generation
+      - script_refinement
+      - context_engineering
+    activation_triggers:
+      - final script candidate
+      - timed beat map
+      - segment shaping
+    required_input_packets:
+      - final_script_packet
+      - script_segment_packet
+      - refinement_delta_packet
+    emitted_output_packets:
+      - script_segment_packet
+      - voice_context_packet
+      - visual_context_packet
+      - video_context_packet
+      - music_sfx_packet
+      - editing_timeline_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_REFINEMENT_FINAL_SCRIPT
+      - PTR_FINAL_SCRIPT_VOICE
+      - PTR_FINAL_SCRIPT_IMAGE
+      - PTR_FINAL_SCRIPT_VIDEO
+      - PTR_FINAL_SCRIPT_MUSIC_SFX
+      - PTR_FINAL_SCRIPT_EDITING
+    required_quality_gates:
+      - timed_segment_gate
+      - hook_under_3s_gate
+      - retention_pattern_gate
+      - platform_fit_gate
+    validator_bindings:
+      - script_segment_packet_present
+      - voice_context_packet_present
+      - visual_context_packet_present
+      - video_context_packet_present
+      - music_sfx_packet_present
+      - editing_timeline_packet_present
+    fallback_behavior: "split, compress, or regenerate segment when timing/retention gate fails."
+    lineage_fields:
+      - final_script_packet_id
+      - script_segment_packet_id
+      - segment_id
+      - timing_delta
+      - retention_purpose
+    provider_boundary: "provider execution disabled; emits context packets only until approval_packet"
+    production_score_fields:
+      - script_score
+      - hook_score
+      - retention_score
+      - platform_score
+      - lineage_score
+    human_approval_points:
+      - approve_final_script
+      - revise_segment
+      - regenerate_segment
+      - reject_final
+    status_limits:
+      - no media-created claim
+      - no provider-called claim
+  - profile_id: context_engineering_profile
+    route_families:
+      - context_engineering
+      - script_generation
+    activation_triggers:
+      - context packet
+      - media handoff planning
+      - asset brief creation
+    required_input_packets:
+      - final_script_packet
+      - script_segment_packet
+      - research_brief_packet
+    emitted_output_packets:
+      - voice_context_packet
+      - visual_context_packet
+      - video_context_packet
+      - music_sfx_packet
+      - editing_timeline_packet
+      - provider_handoff_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_FINAL_SCRIPT_VOICE
+      - PTR_FINAL_SCRIPT_IMAGE
+      - PTR_FINAL_SCRIPT_VIDEO
+      - PTR_FINAL_SCRIPT_MUSIC_SFX
+      - PTR_FINAL_SCRIPT_EDITING
+      - PTR_MEDIA_PROVIDER_HANDOFF
+    required_quality_gates:
+      - context_completeness_gate
+      - asset_consistency_gate
+      - provider_boundary_gate
+    validator_bindings:
+      - provider_handoff_packet_present
+      - media_quality_gate_packet_present
+      - lineage_approval_packet_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT if any media context packet lacks segment_id and lineage."
+    lineage_fields:
+      - script_segment_packet_id
+      - context_packet_id
+      - provider_handoff_packet_id
+      - asset_brief_id
+    provider_boundary: "handoff planning only; provider_execution_allowed=false until approval_packet"
+    production_score_fields:
+      - voice_score
+      - visual_score
+      - video_score
+      - audio_score
+      - editing_score
+      - lineage_score
+    human_approval_points:
+      - approve_context_packet
+      - revise_asset_brief
+      - block_provider_handoff
+    status_limits:
+      - no tool execution
+      - no media creation
+  - profile_id: voice_context_profile
+    route_families:
+      - voice_context
+      - context_engineering
+    activation_triggers:
+      - voiceover plan
+      - narration direction
+      - audio timing
+    required_input_packets:
+      - script_segment_packet
+      - final_script_packet
+    emitted_output_packets:
+      - voice_context_packet
+      - music_sfx_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_FINAL_SCRIPT_VOICE
+    required_quality_gates:
+      - voice_persona_gate
+      - emotion_map_gate
+      - pause_map_gate
+      - timestamp_strategy_gate
+    validator_bindings:
+      - voice_context_packet_present
+      - music_sfx_packet_present
+      - quality_scores_present
+    fallback_behavior: "NEEDS_HUMAN_REVIEW if emotion/pause/timestamp map cannot be tied to segment_id."
+    lineage_fields:
+      - script_segment_packet_id
+      - voice_context_packet_id
+      - segment_id
+      - emotion
+      - pause_marker
+    provider_boundary: "voice provider calls disabled unless provider_handoff_packet and approval_packet authorize them"
+    production_score_fields:
+      - voice_score
+      - audio_score
+      - sync_score
+      - lineage_score
+    human_approval_points:
+      - approve_voice_plan
+      - revise_tone
+      - block_voice_provider
+    status_limits:
+      - no voice generated claim
+  - profile_id: visual_context_profile
+    route_families:
+      - visual_context
+      - context_engineering
+      - image_generation
+    activation_triggers:
+      - image prompt
+      - visual scene plan
+      - style bible
+    required_input_packets:
+      - script_segment_packet
+      - final_script_packet
+      - visual_context_packet
+    emitted_output_packets:
+      - visual_context_packet
+      - provider_handoff_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_FINAL_SCRIPT_IMAGE
+      - PTR_MEDIA_PROVIDER_HANDOFF
+    required_quality_gates:
+      - style_bible_gate
+      - scene_prompt_gate
+      - subject_consistency_gate
+      - negative_prompt_gate
+    validator_bindings:
+      - visual_context_packet_present
+      - provider_handoff_packet_present
+      - quality_scores_present
+    fallback_behavior: "rebuild style bible or block provider handoff if continuity fields are missing."
+    lineage_fields:
+      - script_segment_packet_id
+      - visual_context_packet_id
+      - style_bible_id
+      - scene_id
+    provider_boundary: "image provider execution disabled unless approval_packet authorizes provider_handoff_packet"
+    production_score_fields:
+      - visual_score
+      - brand_consistency_score
+      - continuity_score
+      - lineage_score
+    human_approval_points:
+      - approve_style_bible
+      - revise_scene_prompt
+      - block_image_provider
+    status_limits:
+      - no image-created claim
+  - profile_id: video_context_profile
+    route_families:
+      - video_context
+      - avatar_video_context
+      - full_video_pipeline
+    activation_triggers:
+      - video prompt
+      - avatar scene plan
+      - motion/sync planning
+    required_input_packets:
+      - script_segment_packet
+      - visual_context_packet
+      - video_context_packet
+    emitted_output_packets:
+      - video_context_packet
+      - editing_timeline_packet
+      - provider_handoff_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_FINAL_SCRIPT_VIDEO
+      - PTR_FINAL_SCRIPT_EDITING
+      - PTR_MEDIA_PROVIDER_HANDOFF
+    required_quality_gates:
+      - motion_gate
+      - camera_gate
+      - sync_point_gate
+      - continuity_gate
+    validator_bindings:
+      - video_context_packet_present
+      - editing_timeline_packet_present
+      - provider_handoff_packet_present
+    fallback_behavior: "regenerate scene plan or block provider handoff if duration/sync/continuity is missing."
+    lineage_fields:
+      - script_segment_packet_id
+      - video_context_packet_id
+      - scene_id
+      - sync_point
+      - duration
+    provider_boundary: "video/avatar provider execution disabled unless approval_packet authorizes provider_handoff_packet"
+    production_score_fields:
+      - video_score
+      - sync_score
+      - continuity_score
+      - editing_score
+      - lineage_score
+    human_approval_points:
+      - approve_scene_plan
+      - revise_motion
+      - block_video_provider
+    status_limits:
+      - no video-created claim
+  - profile_id: music_sfx_context_profile
+    route_families:
+      - music_sfx_context
+      - voice_context
+      - editing_packaging
+    activation_triggers:
+      - music plan
+      - sound design
+      - SFX cue sheet
+    required_input_packets:
+      - script_segment_packet
+      - voice_context_packet
+      - music_sfx_packet
+    emitted_output_packets:
+      - music_sfx_packet
+      - editing_timeline_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_FINAL_SCRIPT_MUSIC_SFX
+      - PTR_FINAL_SCRIPT_EDITING
+    required_quality_gates:
+      - mood_curve_gate
+      - sfx_cue_gate
+      - loudness_boundary_gate
+      - silence_cue_gate
+    validator_bindings:
+      - music_sfx_packet_present
+      - editing_timeline_packet_present
+      - quality_scores_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT if music/SFX cues overpower voice or lack segment linkage."
+    lineage_fields:
+      - script_segment_packet_id
+      - music_sfx_packet_id
+      - cue_id
+      - segment_id
+      - loudness_boundary
+    provider_boundary: "music/SFX provider execution disabled unless approval_packet authorizes provider_handoff_packet"
+    production_score_fields:
+      - audio_score
+      - music_score
+      - sfx_score
+      - sync_score
+      - lineage_score
+    human_approval_points:
+      - approve_audio_plan
+      - revise_sfx
+      - block_music_provider
+    status_limits:
+      - no music-created claim
+  - profile_id: editing_packaging_profile
+    route_families:
+      - editing_packaging
+      - full_video_pipeline
+      - publishing
+    activation_triggers:
+      - editing plan
+      - platform package
+      - assembly timeline
+      - publishing package
+    required_input_packets:
+      - script_segment_packet
+      - voice_context_packet
+      - visual_context_packet
+      - video_context_packet
+      - music_sfx_packet
+      - editing_timeline_packet
+    emitted_output_packets:
+      - editing_timeline_packet
+      - platform_content_package_packet
+      - media_quality_gate_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_FINAL_SCRIPT_EDITING
+      - PTR_PROVIDER_QUALITY
+    required_quality_gates:
+      - timeline_gate
+      - caption_gate
+      - platform_aspect_ratio_gate
+      - thumbnail_moment_gate
+    validator_bindings:
+      - editing_timeline_packet_present
+      - media_quality_gate_packet_present
+      - quality_scores_present
+    fallback_behavior: "NEEDS_HUMAN_REVIEW if timeline/caption/thumbnail moment cannot be mapped to segment IDs."
+    lineage_fields:
+      - editing_timeline_packet_id
+      - segment_id
+      - cut_point
+      - platform_package_id
+      - quality_gate_id
+    provider_boundary: "local assembly/provider execution disabled unless approval_packet authorizes execution"
+    production_score_fields:
+      - editing_score
+      - platform_score
+      - sync_score
+      - quality_score
+      - lineage_score
+    human_approval_points:
+      - approve_editing_plan
+      - revise_timeline
+      - block_publish
+    status_limits:
+      - no final MP4 claim
+      - no publish claim
+  - profile_id: provider_handoff_profile
+    route_families:
+      - provider_handoff
+      - full_video_pipeline
+    activation_triggers:
+      - provider handoff packet
+      - tool adapter plan
+      - execution approval boundary
+    required_input_packets:
+      - voice_context_packet
+      - visual_context_packet
+      - video_context_packet
+      - music_sfx_packet
+      - editing_timeline_packet
+      - approval_packet
+    emitted_output_packets:
+      - provider_handoff_packet
+      - media_quality_gate_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_MEDIA_PROVIDER_HANDOFF
+      - PTR_PROVIDER_QUALITY
+    required_quality_gates:
+      - provider_boundary_gate
+      - typed_input_gate
+      - approval_gate
+      - false_claim_gate
+    validator_bindings:
+      - provider_handoff_packet_present
+      - no_n8n_provider_media_execution
+      - provider_boundary_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT unless approval_packet explicitly authorizes provider execution."
+    lineage_fields:
+      - provider_handoff_packet_id
+      - approval_packet_id
+      - typed_input_id
+      - execution_boundary_status
+    provider_boundary: "provider_execution_allowed=false by default; only explicit approval_packet may change execution status"
+    production_score_fields:
+      - handoff_completeness_score
+      - risk_score
+      - approval_score
+      - lineage_score
+    human_approval_points:
+      - approve_provider_handoff
+      - deny_provider_execution
+      - revise_provider_input
+    status_limits:
+      - no provider-called claim without execution proof
+  - profile_id: media_quality_gate_profile
+    route_families:
+      - quality_gate
+      - full_video_pipeline
+    activation_triggers:
+      - quality scoring
+      - media review
+      - final gate before approval
+    required_input_packets:
+      - script_segment_packet
+      - voice_context_packet
+      - visual_context_packet
+      - video_context_packet
+      - music_sfx_packet
+      - editing_timeline_packet
+      - provider_handoff_packet
+    emitted_output_packets:
+      - media_quality_gate_packet
+      - lineage_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_PROVIDER_QUALITY
+      - PTR_QUALITY_LINEAGE
+    required_quality_gates:
+      - script_score_gate
+      - voice_score_gate
+      - visual_score_gate
+      - video_score_gate
+      - audio_score_gate
+      - editing_score_gate
+      - lineage_score_gate
+    validator_bindings:
+      - media_quality_gate_packet_present
+      - quality_scores_present
+      - final_status_matches_weakest_evidence_layer
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT if any critical score is below threshold or missing."
+    lineage_fields:
+      - quality_gate_id
+      - upstream_packet_ids
+      - score_reason
+      - failure_id
+      - recommended_fix
+    provider_boundary: "quality gate reviews packets/artifacts only; no provider execution"
+    production_score_fields:
+      - script_score
+      - hook_score
+      - retention_score
+      - voice_score
+      - visual_score
+      - video_score
+      - audio_score
+      - editing_score
+      - platform_score
+      - lineage_score
+    human_approval_points:
+      - approve_quality_gate
+      - revise_segment
+      - reject_output
+    status_limits:
+      - no PASS if weakest evidence is PARTIAL/BLOCKED
+  - profile_id: lineage_profile
+    route_families:
+      - lineage_summary
+      - approval_gate
+    activation_triggers:
+      - lineage summary
+      - decision log
+      - approval packet
+    required_input_packets:
+      - media_quality_gate_packet
+      - lineage_packet
+      - approval_packet
+    emitted_output_packets:
+      - lineage_packet
+      - approval_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_QUALITY_LINEAGE
+      - PTR_LINEAGE_APPROVAL
+    required_quality_gates:
+      - lineage_completeness_gate
+      - decision_trace_gate
+      - approval_options_gate
+    validator_bindings:
+      - lineage_approval_packet_present
+      - segment_level_regeneration_actions_present
+      - quality_scores_present
+    fallback_behavior: "NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing."
+    lineage_fields:
+      - upstream_packet_ids
+      - downstream_packet_ids
+      - decision_log
+      - evidence_paths
+      - approval_action
+    provider_boundary: "approval may authorize future execution; default is no provider/media/n8n execution"
+    production_score_fields:
+      - lineage_score
+      - approval_clarity_score
+      - risk_score
+    human_approval_points:
+      - approve
+      - revise_segment
+      - regenerate_media
+      - reject
+    status_limits:
+      - no silent approval
+      - no execution without explicit approval
+  - profile_id: approval_gate_profile
+    route_families:
+      - approval_gate
+      - repo_write_mode
+    activation_triggers:
+      - user approval requested
+      - commit gate
+      - provider execution gate
+      - regeneration gate
+    required_input_packets:
+      - lineage_packet
+      - approval_packet
+      - media_quality_gate_packet
+    emitted_output_packets:
+      - approval_packet
+      - execution_authorization_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_LINEAGE_APPROVAL
+    required_quality_gates:
+      - explicit_user_approval_gate
+      - scope_lock_gate
+      - risk_acceptance_gate
+    validator_bindings:
+      - lineage_approval_packet_present
+      - no_n8n_provider_media_execution
+      - provider_boundary_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT until explicit user approval is present."
+    lineage_fields:
+      - approval_packet_id
+      - user_decision
+      - scope
+      - timestamp_or_version
+      - risk_acknowledged
+    provider_boundary: "may authorize future execution only when approval_packet explicitly states scope"
+    production_score_fields:
+      - approval_clarity_score
+      - risk_score
+      - lineage_score
+    human_approval_points:
+      - approve_patch
+      - approve_commit
+      - approve_provider_execution
+      - reject
+    status_limits:
+      - no commit/push/provider/n8n without approval
+  - profile_id: general_support_profile
+    route_families:
+      - non_content_technical_task
+      - general_support
+    activation_triggers:
+      - supporting component
+      - control plane
+      - governance
+      - kernel
+      - recovery
+      - analytics
+      - cross-route utility
+    required_input_packets:
+      - stage_execution_packet
+      - component_control_packet
+      - lineage_packet
+    emitted_output_packets:
+      - component_result_packet
+      - quality_report_packet
+      - lineage_packet
+    required_communication_pointer_ids:
+      - PTR_DIRECTOR_AGENT
+      - PTR_AGENT_SUBAGENT
+      - PTR_SUBAGENT_SKILL
+      - PTR_SKILL_SUBSKILL
+      - PTR_QUALITY_LINEAGE
+    required_quality_gates:
+      - component_integrity_gate
+      - fallback_gate
+      - lineage_gate
+    validator_bindings:
+      - universal_component_contract_present
+      - selected_components_are_registered
+      - quality_scores_present
+    fallback_behavior: "BLOCKED_BEFORE_OUTPUT if stage_execution_packet or component_result_packet cannot be produced."
+    lineage_fields:
+      - stage_execution_packet_id
+      - component_result_packet_id
+      - source_component_id
+      - decision_reason
+      - evidence_path
+    provider_boundary: "no provider/media/n8n execution unless approval_packet authorizes specific scope"
+    production_score_fields:
+      - component_quality_score
+      - reliability_score
+      - lineage_score
+    human_approval_points:
+      - approve_support_action
+      - request_manual_review
+      - reject_support_action
+    status_limits:
+      - support components cannot claim production output alone
+  - profile_id: quarantine_profile
+    route_families:
+      - quarantine
+    activation_triggers:
+      - unresolved component
+      - unsafe route inference
+      - broken path
+    required_input_packets:
+      - manual_review_packet
+    emitted_output_packets:
+      - quarantine_status_packet
+    required_communication_pointer_ids:
+      - PTR_QUALITY_LINEAGE
+      - PTR_LINEAGE_APPROVAL
+    required_quality_gates:
+      - manual_review_gate
+    validator_bindings:
+      - component_depth_validation_required
+    fallback_behavior: "inactive_until_review; cannot be selected for active runtime."
+    lineage_fields:
+      - manual_review_packet_id
+      - quarantine_reason
+      - evidence_path
+    provider_boundary: "provider_execution_allowed=false"
+    production_score_fields:
+      - review_risk_score
+      - lineage_score
+    human_approval_points:
+      - activate_after_review
+      - keep_quarantined
+    status_limits:
+      - inactive_until_review

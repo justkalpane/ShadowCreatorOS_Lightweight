@@ -1,0 +1,7 @@
+{
+  "errors": [],
+  "low_scores": [],
+  "pass": true,
+  "status": "PASS",
+  "threshold": 70
+}

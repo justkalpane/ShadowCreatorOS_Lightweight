@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route lineage",
+  "name": "route_lineage_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"lineage_packet\",\n    \"media_quality_gate_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"lineage\",\n  \"steps\": [\n    {\n      \"component_id\": \"A-405-media-qa-validator\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"media_quality_gate_packet\"\n      ],\n      \"node_id\": \"ln_001\"\n    },\n    {\n      \"component_id\": \"P-304-lineage-chain-validator\",\n      \"consumed\": [\n        \"media_quality_gate_packet\"\n      ],\n      \"emitted\": [\n        \"lineage_packet\"\n      ],\n      \"node_id\": \"ln_002\"\n    }\n  ]\n}\n"
+}

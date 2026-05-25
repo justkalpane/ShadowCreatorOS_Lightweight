@@ -1,0 +1,80 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_SCRIPT_DEBATE"
+      ],
+      "component_id": "S-202-first-draft-generation",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-202-first-draft-generation.py",
+      "emitted_output_packets": [
+        "script_v1_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sd_002"
+      ],
+      "node_id": "sd_001",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_DEBATE_REFINEMENT"
+      ],
+      "component_id": "S-210-final-script-packager",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+      "emitted_output_packets": [
+        "debate_critique_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "sd_002",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "debate_quality_gate"
+      ],
+      "required_input_packets": [
+        "script_v1_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass",
+        "packet_flow_validation_pass",
+        "communication_vein_validation_pass",
+        "lifecycle_validation_pass",
+        "provider_boundary_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "debate_critique_packet",
+    "script_v1_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "script_debate"
+}

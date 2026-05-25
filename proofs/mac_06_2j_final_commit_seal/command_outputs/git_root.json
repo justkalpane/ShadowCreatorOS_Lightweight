@@ -1,0 +1,8 @@
+{
+  "command": "git rev-parse --show-toplevel",
+  "name": "git_root",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "/Users/apple/Documents/ShadowCreatorOS_Lightweight\n"
+}

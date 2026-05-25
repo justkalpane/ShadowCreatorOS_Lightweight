@@ -68,3 +68,53 @@ onboarding_limits:
   safe_to_start_n8n_execution_bus: false
   safe_to_call_providers: false
   safe_to_create_media: false
+
+mac_06_2b_route_depth_requirements:
+  required_component_contract_standard: runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md
+  required_communication_pointers: registries/communication_pointer_registry.yaml
+  required_input_packets: [director_intent_packet, stage_execution_packet, research_brief_packet, script_segment_packet]
+  required_output_packets: [script_final_candidate, media_context_packet, provider_handoff_packet, media_quality_gate_packet, lineage_approval_packet]
+  required_media_packets:
+    - runtime_contracts/media_packets/SCRIPT_SEGMENT_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/VOICE_CONTEXT_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/VIDEO_CONTEXT_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/MUSIC_SFX_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/EDITING_TIMELINE_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/PROVIDER_HANDOFF_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/MEDIA_QUALITY_GATE_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/LINEAGE_APPROVAL_PACKET_CONTRACT.md
+  required_quality_gates: [component_quality_score, media_quality_gate_packet, final_pass_fail]
+  validator_binding: validators/validate_mac06_1a_output.py
+  lineage_required: true
+  provider_boundary: provider_execution_allowed=false unless explicitly approved
+  fallback_routes: [BLOCKED_BEFORE_OUTPUT, NEEDS_HUMAN_REVIEW, segment_level_regeneration]
+  human_approval_points: [provider_execution, n8n_execution, media_creation, repo_write, full_dossier, segment_regeneration]
+  status_limits:
+    safe_to_start_n8n: false
+    safe_to_declare_lightweight_os_onboarded: false
+    safe_to_claim_provider_execution: false
+
+mac_06_2d_article_pipeline_connections:
+  timed_script_segments: runtime_contracts/media_packets/SCRIPT_SEGMENT_PACKET_CONTRACT.md
+  visual_description_per_segment: runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md
+  visual_style_guide: runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md
+  voiceover_timing_metadata: runtime_contracts/media_packets/VOICE_CONTEXT_PACKET_CONTRACT.md
+  segment_level_regeneration: runtime_contracts/SEGMENT_LEVEL_REGENERATION_CONTRACT.md
+  final_assembly_editing_log: runtime_contracts/media_packets/EDITING_TIMELINE_PACKET_CONTRACT.md
+  platform_specific_content_packages: runtime_contracts/PLATFORM_CONTENT_PACKAGE_CONTRACT.md
+  schema_validation_before_downstream: runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md
+  typed_provider_tool_handoff: runtime_contracts/PROVIDER_ADAPTER_EXECUTION_BOUNDARY.md
+  human_review_checkpoint: runtime_contracts/media_packets/LINEAGE_APPROVAL_PACKET_CONTRACT.md
+  validator_bindings:
+    - script_segment_packet_present
+    - voice_context_packet_present
+    - visual_context_packet_present
+    - video_context_packet_present
+    - music_sfx_packet_present
+    - editing_timeline_packet_present
+    - provider_handoff_packet_present
+    - media_quality_gate_packet_present
+    - lineage_approval_packet_present
+    - segment_level_regeneration_actions_present
+  provider_execution_enabled: false

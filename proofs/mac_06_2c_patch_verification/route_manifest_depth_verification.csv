@@ -1,0 +1,9 @@
+route_manifest,required_component_standard_present,communication_pointers_present,input_packets_present,output_packets_present,media_packets_present,quality_gates_present,validator_binding_present,lineage_required_present,provider_boundary_present,fallback_routes_present,human_approval_points_present,status_limits_present,status,gap
+registries/route_manifests/script_generation.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/script_refinement.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/context_engineering.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/voice_context.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/avatar_video_context.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/editing_packaging.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/full_video_pipeline.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,
+registries/route_manifests/topic_discovery.yaml,true,true,true,true,true,true,true,true,true,true,true,true,PASS,

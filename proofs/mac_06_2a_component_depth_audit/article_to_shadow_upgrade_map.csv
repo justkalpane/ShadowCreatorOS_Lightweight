@@ -1,0 +1,11 @@
+article_pattern,shadow_equivalent,current_status,missing_element,target_files,upgrade_required,priority
+timed script segments,timed script segment packet,PARTIAL,Typed schema + producer/consumer pointer + validator binding + fallback path,runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md;skills/;validators/validate_mac06_1a_output.py,true,BLOCKER
+visual description per segment,visual context packet per segment,PARTIAL,Typed schema + producer/consumer pointer + validator binding + fallback path,runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md;skills/;subagents/,true,HIGH
+visual style guide,style bible / visual continuity contract,PARTIAL,Typed schema + producer/consumer pointer + validator binding + fallback path,runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md;skills/,true,HIGH
+voiceover timing metadata,voice context packet with pacing/timestamps,PARTIAL,Typed schema + producer/consumer pointer + validator binding + fallback path,runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md;skills/;validators/,true,HIGH
+segment-level regeneration,approval/regeneration packet by segment,PARTIAL,Typed schema + producer/consumer pointer + validator binding + fallback path,runtime_contracts/;registries/communication_pointer_registry.yaml,true,HIGH
+final assembly log,editing timeline and assembly log,PARTIAL,Typed schema + producer/consumer pointer + validator binding + fallback path,runtime_contracts/;validators/,true,HIGH
+platform-specific content packages,platform packaging contract,PRESENT,none,runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md,false,HIGH
+schema validation before downstream,packet schema validator,PRESENT,none,validators/validate_mac06_1a_output.py;future packet validators,false,BLOCKER
+provider/tool typed calls,provider adapter typed input/output,PRESENT,none,runtime_contracts/;provider adapter contracts,false,BLOCKER
+human review checkpoint,approval packet with approve/revise/regenerate/reject,PRESENT,none,runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md,false,HIGH

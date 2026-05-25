@@ -1,0 +1,88 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "approval_packet",
+    "lineage_packet",
+    "media_quality_gate_packet",
+    "research_brief_packet",
+    "script_segment_packet",
+    "script_strategy_packet",
+    "script_v1_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "script_generation",
+  "steps": [
+    {
+      "component_id": "agastya_agent",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "research_brief_packet"
+      ],
+      "node_id": "sg_001_research_brief"
+    },
+    {
+      "component_id": "S-201-research-to-script-brief",
+      "consumed": [
+        "research_brief_packet"
+      ],
+      "emitted": [
+        "script_strategy_packet"
+      ],
+      "node_id": "sg_002_script_strategy"
+    },
+    {
+      "component_id": "S-202-first-draft-generation",
+      "consumed": [
+        "script_strategy_packet"
+      ],
+      "emitted": [
+        "script_v1_packet"
+      ],
+      "node_id": "sg_003_script_v1"
+    },
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "script_v1_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "sg_004_script_segments"
+    },
+    {
+      "component_id": "A-405-media-qa-validator",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "media_quality_gate_packet"
+      ],
+      "node_id": "sg_005_quality_gate"
+    },
+    {
+      "component_id": "P-304-lineage-chain-validator",
+      "consumed": [
+        "media_quality_gate_packet"
+      ],
+      "emitted": [
+        "lineage_packet"
+      ],
+      "node_id": "sg_006_lineage"
+    },
+    {
+      "component_id": "DIRECTOR:_KAMA",
+      "consumed": [
+        "lineage_packet"
+      ],
+      "emitted": [
+        "approval_packet"
+      ],
+      "node_id": "sg_007_approval"
+    }
+  ]
+}

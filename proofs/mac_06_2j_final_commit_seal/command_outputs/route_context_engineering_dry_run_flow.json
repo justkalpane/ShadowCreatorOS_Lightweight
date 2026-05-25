@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route context_engineering",
+  "name": "route_context_engineering_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"lineage_packet\",\n    \"script_segment_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"context_engineering\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"script_segment_packet\"\n      ],\n      \"node_id\": \"ce_001\"\n    },\n    {\n      \"component_id\": \"P-301-execution-context-engineer\",\n      \"consumed\": [\n        \"script_segment_packet\"\n      ],\n      \"emitted\": [\n        \"lineage_packet\"\n      ],\n      \"node_id\": \"ce_002\"\n    }\n  ]\n}\n"
+}

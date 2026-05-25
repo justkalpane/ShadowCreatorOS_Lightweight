@@ -1,0 +1,55 @@
+test_name,bad_condition_rejected,method,status,gap,detail
+Route DAG with empty ordered_nodes must fail,False,route_graph_builder_monkeypatch,FAIL,"{""pass"": true, ""route_id"": ""script_generation"", ""issues"": [], ""ordered_nodes"": [], ""packets_produced"": [""topic_intake_packet""]}
+","{""pass"": true, ""route_id"": ""script_generation"", ""issues"": [], ""ordered_nodes"": [], ""packets_produced"": [""topic_intake_packet""]}
+"
+Route DAG using DUPLICATE_CANDIDATE component must fail,True,route_graph_builder_monkeypatch,PASS,,"{""pass"": false, ""route_id"": ""script_generation"", ""issues"": [""invalid_lifecycle:agents/agastya/agastya_agent.py:DUPLICATE_CANDIDATE""], ""ordered_nodes"": [{""node_id"": ""sg_001"", ""component_id"": ""agastya_agent"", ""component_path"": ""agents/agastya/agastya_agent.py"", ""component_layer"": ""AGENT"", ""required_input_packets"": [""topic_intake_packet""], ""emitted_output_packets"": [""research_brief_packet""], ""communication_pointer_ids"": [""PTR_DIRECTOR_AGENT""], ""validator_rules"": [""route_dag_validation_pass"", ""packe"
+Route DAG using QUARANTINE_REVIEW component must fail,True,route_graph_builder_monkeypatch,PASS,,"{""pass"": false, ""route_id"": ""script_generation"", ""issues"": [""invalid_lifecycle:agents/agastya/agastya_agent.py:QUARANTINE_REVIEW""], ""ordered_nodes"": [{""node_id"": ""sg_001"", ""component_id"": ""agastya_agent"", ""component_path"": ""agents/agastya/agastya_agent.py"", ""component_layer"": ""AGENT"", ""required_input_packets"": [""topic_intake_packet""], ""emitted_output_packets"": [""research_brief_packet""], ""communication_pointer_ids"": [""PTR_DIRECTOR_AGENT""], ""validator_rules"": [""route_dag_validation_pass"", ""packet_"
+Packet missing required field must fail,True,packet_schema_validator,PASS,,"{
+  ""errors"": [
+    ""missing_required:route_id"",
+    ""missing_required:producer_component_id"",
+    ""missing_required:consumer_component_ids"",
+    ""missing_required:lineage"",
+    ""missing_required:validation_status"",
+    ""missing_required:segments"",
+    ""missing_required:total_duration_sec""
+  ],
+  ""packet"": ""/Users/apple/Documents/ShadowCreatorOS_Lightweight/proofs/mac_06_2h_zero_trust_commit_readiness/temp_negative_tests/script_segment_missing_required.json"",
+  ""pass"": false,
+  ""schema"": ""schema"
+Provider execution enabled without approval must fail,True,provider_boundary_validator,PASS,,"{
+  ""false_execution_claim_detected"": false,
+  ""issues"": [
+    ""provider_execution_without_approval""
+  ],
+  ""pass"": false,
+  ""provider_execution_disabled"": false,
+  ""unauthorized_provider_execution_blocked"": false
+}
+"
+Quality scorecard false PASS must fail,True,quality_scorecard_runtime,PASS,,"{
+  ""errors"": [
+    ""critical_below_threshold:script_score,voice_score"",
+    ""false_pass_with_low_critical_scores""
+  ],
+  ""low_scores"": [
+    ""script_score"",
+    ""voice_score""
+  ],
+  ""pass"": false,
+  ""status"": ""FAIL"",
+  ""threshold"": 70
+}
+"
+Communication vein not connected to DAG must fail,True,communication_vein_validator_monkeypatch,PASS,,"{""pass"": false, ""route_id"": ""script_generation"", ""issues"": [""route_graph_invalid"", ""pointer_missing:PTR_DOES_NOT_EXIST""], ""contract_only_veins_remaining"": null, ""dag_connected_veins"": 0}
+"
+Operator output without local enforcement packet must fail,True,non_codex_operator_harness,PASS,,"{
+  ""issues"": [
+    ""proof_field_missing_or_false:shadow_command_alias_detected"",
+    ""proof_field_missing_or_false:route_manifest_loaded"",
+    ""proof_field_missing_or_false:internal_wrapper_applied"",
+    ""proof_field_missing_or_false:route_dag_validation_pass"",
+    ""proof_field_missing_or_false:packet_schema_validation_pass"",
+    ""proof_field_missing_or_false:packet_flow_validation_pass"",
+    ""proof_field_missing_or_false:communication_vein_validation_pass"",
+    ""proof_field_missing_or_false:li"

@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "final_script_packet",
+    "refinement_delta_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "final_script_shaping",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "refinement_delta_packet"
+      ],
+      "node_id": "fs_001"
+    },
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "refinement_delta_packet"
+      ],
+      "emitted": [
+        "final_script_packet"
+      ],
+      "node_id": "fs_002"
+    }
+  ]
+}

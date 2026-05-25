@@ -1,0 +1,18 @@
+{
+  "packet_id": "music_sfx_packet",
+  "route_id": "music_sfx_context",
+  "producer_component_id": "P-303-asset-brief-creator",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "music_mood": "uplifting",
+  "sfx_cues": [
+    "whoosh"
+  ],
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

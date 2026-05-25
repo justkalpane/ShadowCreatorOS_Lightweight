@@ -1,0 +1,17 @@
+{
+  "packet_id": "voice_context_packet",
+  "route_id": "voice_context",
+  "producer_component_id": "P-302-platform-format-specialist",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "voice_persona": "neutral",
+  "pace": "medium",
+  "emotion_map": "steady",
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

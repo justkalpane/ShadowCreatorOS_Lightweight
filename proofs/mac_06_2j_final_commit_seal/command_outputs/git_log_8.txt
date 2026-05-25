@@ -1,0 +1,8 @@
+9f64ae3 docs: record MAC-06.1R Codex Cloud behavior failure
+553808b fix: enforce MAC-06.1P-C registry and Shadow command gateway
+92ded7e docs: add MAC-06.1O layman command gateway
+7e0f71a docs: harden MAC-06.1N source breadth and rule evidence gates
+f9ba35e docs: record MAC-06.1M wrapper live test and MAC-06.1N backlog
+e22f6d3 docs: add MAC-06.1M shadow task execution wrapper mode
+c9d73a2 docs: enforce MAC-06.1J-K route scope locks and manifest consumption
+4c8979a docs: enforce MAC-06.1I task routing and repo consumption

@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "script_segment_packet",
+    "topic_intake_packet",
+    "visual_context_packet"
+  ],
+  "pass": true,
+  "route_id": "visual_context",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "ic_001"
+    },
+    {
+      "component_id": "P-303-asset-brief-creator",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "visual_context_packet"
+      ],
+      "node_id": "ic_002"
+    }
+  ]
+}

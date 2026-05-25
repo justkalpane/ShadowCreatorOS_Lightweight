@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route music_sfx_context",
+  "name": "route_music_sfx_context_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"music_sfx_packet\",\n    \"script_segment_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"music_sfx_context\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"script_segment_packet\"\n      ],\n      \"node_id\": \"ms_001\"\n    },\n    {\n      \"component_id\": \"P-303-asset-brief-creator\",\n      \"consumed\": [\n        \"script_segment_packet\"\n      ],\n      \"emitted\": [\n        \"music_sfx_packet\"\n      ],\n      \"node_id\": \"ms_002\"\n    }\n  ]\n}\n"
+}

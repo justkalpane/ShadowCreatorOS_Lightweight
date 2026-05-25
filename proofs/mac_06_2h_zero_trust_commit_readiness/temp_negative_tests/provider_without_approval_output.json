@@ -1,0 +1,9 @@
+{
+  "false_execution_claim_detected": false,
+  "issues": [
+    "provider_execution_without_approval"
+  ],
+  "pass": false,
+  "provider_execution_disabled": false,
+  "unauthorized_provider_execution_blocked": false
+}

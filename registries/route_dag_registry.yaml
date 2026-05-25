@@ -1,0 +1,1493 @@
+{
+  "status": "ACTIVE_REGISTRY",
+  "generated_at": "2026-05-25T18:02:00",
+  "route_dags": [
+    {
+      "route_id": "topic_discovery",
+      "route_family": "topic_discovery",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "td_001",
+          "component_id": "agastya_agent",
+          "component_path": "agents/agastya/agastya_agent.py",
+          "component_layer": "AGENT",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "trend_signal_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DIRECTOR_AGENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "topic_quality_gate"
+          ],
+          "fallback_routes": [
+            "research_synthesis"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "td_002"
+          ]
+        },
+        {
+          "node_id": "td_002",
+          "component_id": "S-201-research-to-script-brief",
+          "component_path": "skills/script_intelligence/S-201-research-to-script-brief.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "trend_signal_packet"
+          ],
+          "emitted_output_packets": [
+            "research_brief_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_RESEARCH_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "research_brief_quality_gate"
+          ],
+          "fallback_routes": [
+            "research_synthesis"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "research_synthesis",
+      "route_family": "research_synthesis",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "rs_001",
+          "component_id": "agastya_agent",
+          "component_path": "agents/agastya/agastya_agent.py",
+          "component_layer": "AGENT",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "source_evidence_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DIRECTOR_AGENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "source_evidence_quality_gate"
+          ],
+          "fallback_routes": [
+            "topic_discovery"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "rs_002"
+          ]
+        },
+        {
+          "node_id": "rs_002",
+          "component_id": "S-201-research-to-script-brief",
+          "component_path": "skills/script_intelligence/S-201-research-to-script-brief.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "source_evidence_packet"
+          ],
+          "emitted_output_packets": [
+            "research_brief_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_RESEARCH_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "research_brief_quality_gate"
+          ],
+          "fallback_routes": [
+            "topic_discovery"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "script_generation",
+      "route_family": "script_generation",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "sg_001",
+          "component_id": "agastya_agent",
+          "component_path": "agents/agastya/agastya_agent.py",
+          "component_layer": "AGENT",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "research_brief_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DIRECTOR_AGENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "research_brief_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_002"
+          ]
+        },
+        {
+          "node_id": "sg_002",
+          "component_id": "S-201-research-to-script-brief",
+          "component_path": "skills/script_intelligence/S-201-research-to-script-brief.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "research_brief_packet"
+          ],
+          "emitted_output_packets": [
+            "script_strategy_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_RESEARCH_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_strategy_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_003"
+          ]
+        },
+        {
+          "node_id": "sg_003",
+          "component_id": "S-202-first-draft-generation",
+          "component_path": "skills/script_intelligence/S-202-first-draft-generation.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_strategy_packet"
+          ],
+          "emitted_output_packets": [
+            "script_v1_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_SCRIPT_DEBATE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_004"
+          ]
+        },
+        {
+          "node_id": "sg_004",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_v1_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_REFINEMENT_FINAL_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_005"
+          ]
+        },
+        {
+          "node_id": "sg_005",
+          "component_id": "A-405-media-qa-validator",
+          "component_path": "skills/media_production/A-405-media-qa-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "media_quality_gate_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_PROVIDER_QUALITY"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "media_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_006"
+          ]
+        },
+        {
+          "node_id": "sg_006",
+          "component_id": "P-304-lineage-chain-validator",
+          "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "media_quality_gate_packet"
+          ],
+          "emitted_output_packets": [
+            "lineage_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_QUALITY_LINEAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "lineage_integrity_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_007"
+          ]
+        },
+        {
+          "node_id": "sg_007",
+          "component_id": "DIRECTOR:_KAMA",
+          "component_path": "directors/distribution/kama.md",
+          "component_layer": "DIRECTOR",
+          "required_input_packets": [
+            "lineage_packet"
+          ],
+          "emitted_output_packets": [
+            "approval_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_LINEAGE_APPROVAL"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "approval_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": true,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "script_debate",
+      "route_family": "script_debate",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "sd_001",
+          "component_id": "S-202-first-draft-generation",
+          "component_path": "skills/script_intelligence/S-202-first-draft-generation.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_v1_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_SCRIPT_DEBATE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sd_002"
+          ]
+        },
+        {
+          "node_id": "sd_002",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_v1_packet"
+          ],
+          "emitted_output_packets": [
+            "debate_critique_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DEBATE_REFINEMENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "debate_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "script_refinement",
+      "route_family": "script_refinement",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "sr_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "debate_critique_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DEBATE_REFINEMENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "debate_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_debate"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sr_002"
+          ]
+        },
+        {
+          "node_id": "sr_002",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "debate_critique_packet"
+          ],
+          "emitted_output_packets": [
+            "refinement_delta_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_REFINEMENT_FINAL_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "refinement_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_debate"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "final_script_shaping",
+      "route_family": "final_script_shaping",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "fs_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "refinement_delta_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_REFINEMENT_FINAL_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "refinement_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "fs_002"
+          ]
+        },
+        {
+          "node_id": "fs_002",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "refinement_delta_packet"
+          ],
+          "emitted_output_packets": [
+            "final_script_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_REFINEMENT_FINAL_SCRIPT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "final_script_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "context_engineering",
+      "route_family": "context_engineering",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ce_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_EDITING"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "final_script_shaping"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ce_002"
+          ]
+        },
+        {
+          "node_id": "ce_002",
+          "component_id": "P-301-execution-context-engineer",
+          "component_path": "skills/context_engineering/P-301-execution-context-engineer.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "lineage_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_QUALITY_LINEAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "lineage_integrity_gate"
+          ],
+          "fallback_routes": [
+            "final_script_shaping"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "voice_context",
+      "route_family": "voice_context",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "vc_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_VOICE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "vc_002"
+          ]
+        },
+        {
+          "node_id": "vc_002",
+          "component_id": "P-302-platform-format-specialist",
+          "component_path": "skills/context_engineering/P-302-platform-format-specialist.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "voice_context_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_VOICE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "voice_context_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "visual_context",
+      "route_family": "visual_context",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ic_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_IMAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ic_002"
+          ]
+        },
+        {
+          "node_id": "ic_002",
+          "component_id": "P-303-asset-brief-creator",
+          "component_path": "skills/context_engineering/P-303-asset-brief-creator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "visual_context_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_IMAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "visual_context_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "video_context",
+      "route_family": "video_context",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "vv_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_VIDEO"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "vv_002"
+          ]
+        },
+        {
+          "node_id": "vv_002",
+          "component_id": "P-303-asset-brief-creator",
+          "component_path": "skills/context_engineering/P-303-asset-brief-creator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "video_context_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_VIDEO"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "video_context_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "music_sfx_context",
+      "route_family": "music_sfx_context",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ms_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_MUSIC_SFX"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ms_002"
+          ]
+        },
+        {
+          "node_id": "ms_002",
+          "component_id": "P-303-asset-brief-creator",
+          "component_path": "skills/context_engineering/P-303-asset-brief-creator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "music_sfx_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_MUSIC_SFX"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "music_sfx_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "editing_packaging",
+      "route_family": "editing_packaging",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ep_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_EDITING"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ep_002"
+          ]
+        },
+        {
+          "node_id": "ep_002",
+          "component_id": "P-302-platform-format-specialist",
+          "component_path": "skills/context_engineering/P-302-platform-format-specialist.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "editing_timeline_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_EDITING"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "editing_timeline_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "provider_handoff",
+      "route_family": "provider_handoff",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ph_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_MEDIA_PROVIDER_HANDOFF"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "approval"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ph_002"
+          ]
+        },
+        {
+          "node_id": "ph_002",
+          "component_id": "DIRECTOR:_KAMA",
+          "component_path": "directors/distribution/kama.md",
+          "component_layer": "DIRECTOR",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "provider_handoff_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_MEDIA_PROVIDER_HANDOFF"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "provider_handoff_gate"
+          ],
+          "fallback_routes": [
+            "approval"
+          ],
+          "lineage_required": true,
+          "approval_required": true,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "media_quality_gate",
+      "route_family": "media_quality_gate",
+      "execution_status": "planning_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "mq_001",
+          "component_id": "S-210-final-script-packager",
+          "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "script_segment_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_PROVIDER_QUALITY"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "script_segment_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "mq_002"
+          ]
+        },
+        {
+          "node_id": "mq_002",
+          "component_id": "A-405-media-qa-validator",
+          "component_path": "skills/media_production/A-405-media-qa-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_segment_packet"
+          ],
+          "emitted_output_packets": [
+            "media_quality_gate_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_PROVIDER_QUALITY"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "media_quality_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "lineage",
+      "route_family": "lineage",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ln_001",
+          "component_id": "A-405-media-qa-validator",
+          "component_path": "skills/media_production/A-405-media-qa-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "media_quality_gate_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_QUALITY_LINEAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "media_quality_gate"
+          ],
+          "fallback_routes": [
+            "approval"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ln_002"
+          ]
+        },
+        {
+          "node_id": "ln_002",
+          "component_id": "P-304-lineage-chain-validator",
+          "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "media_quality_gate_packet"
+          ],
+          "emitted_output_packets": [
+            "lineage_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_QUALITY_LINEAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "lineage_integrity_gate"
+          ],
+          "fallback_routes": [
+            "approval"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "approval",
+      "route_family": "approval",
+      "execution_status": "local_validation_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "topic_intake_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "ap_001",
+          "component_id": "P-304-lineage-chain-validator",
+          "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "topic_intake_packet"
+          ],
+          "emitted_output_packets": [
+            "lineage_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_LINEAGE_APPROVAL"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "lineage_integrity_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "ap_002"
+          ]
+        },
+        {
+          "node_id": "ap_002",
+          "component_id": "DIRECTOR:_KAMA",
+          "component_path": "directors/distribution/kama.md",
+          "component_layer": "DIRECTOR",
+          "required_input_packets": [
+            "lineage_packet"
+          ],
+          "emitted_output_packets": [
+            "approval_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_LINEAGE_APPROVAL"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "approval_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": true,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    }
+  ]
+}

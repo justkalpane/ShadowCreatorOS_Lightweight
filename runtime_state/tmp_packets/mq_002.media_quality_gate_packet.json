@@ -1,0 +1,16 @@
+{
+  "packet_id": "media_quality_gate_packet",
+  "route_id": "media_quality_gate",
+  "producer_component_id": "A-405-media-qa-validator",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "scores": {
+    "script_score": 80
+  },
+  "final_pass_fail": false
+}

@@ -61,23 +61,23 @@
 1. **research_vein** (FULL) — all research outputs, topic signals, trend data, knowledge graphs
    - Scope: Last 100 decisions, real-time metrics refresh (every 60s)
    - Sources: Narada (data ingestion), Vyasa (knowledge synthesis), all research skills
-   
+
 2. **narrative_vein** (FULL) — all script versions, content dossier, debate logs, iteration history
    - Scope: All script variants, A/B test results, creative destruction cycles
    - Sources: Vyasa (content creation), Shiva (autonomous loop), all narrative skills
-   
+
 3. **production_vein** (FULL) — asset pipelines, media status, quality gates, voice/audio/visual metrics
    - Scope: Asset inventory, production queue status, quality scores
    - Sources: Tumburu (audio), Maya (visual), Vishwakarma (architecture)
-   
+
 4. **distribution_vein** (FULL) — engagement metrics, platform signals, audience data, viral scores
    - Scope: Real-time engagement, platform APIs, audience sentiment
    - Sources: Narada (operations), Kama (engagement), all distribution skills
-   
+
 5. **governance_vein** (FULL, restricted) — policy verdicts, audit trail, tribunal decisions
    - Scope: Restricted to Krishna access (Yama/Krishna only for sensitive decisions)
    - Sources: Brahma (policy), Yama (legality), audit logs
-   
+
 6. **dossier_lock** (READ ONLY) — current lock status for arbitration decisions
    - Scope: All namespace locks, lock owners, expiration times
    - Purpose: Detect conflicts before they escalate
@@ -288,7 +288,7 @@ END FUNCTION
 ### 7-Dimension Scoring System
 
 ```
-EXPANSION_SCORE(option) = 
+EXPANSION_SCORE(option) =
   (STRATEGIC_FIT × 0.25) +
   (RESOURCE_EFFICIENCY × 0.20) +
   (RISK_MITIGATION × 0.15) +
@@ -296,7 +296,7 @@ EXPANSION_SCORE(option) =
   (MULTI_AGENT_LEVERAGE × 0.15) +
   (GOVERNANCE_ALIGNMENT × 0.05) +
   (LEARNING_OPPORTUNITY × 0.05)
-  
+
 RANGE: 0-100
 THRESHOLDS:
   0-40   → Escalate to founder (reject or replan)
@@ -464,14 +464,14 @@ IF cost_overage >15%:
   TRIGGER_DEGRADATION:
     TIER_1 → TIER_2 (automatic, log event)
     TIER_2 → TIER_3 (requires Narada approval)
-    
+
   RE_PLAN remaining operations on lower tier
   ALERT stakeholders (creator, Kubera, Krishna)
 
 IF cost_overage >30%:
   HARD_STOP: No new operations until budget resets
   ESCALATE to founder + Kubera for emergency approval
-  
+
 IF cost_normalized (back under 80%):
   AUTO_UPGRADE to previous tier (no manual approval needed)
   RESUME pending operations
@@ -578,3 +578,55 @@ This director **MUST** be operational before Phase-1 completion. All council coo
 - **Next Step**: Wire to execution engine + test arbitration logic
 - **Testing Priority**: CRITICAL PATH
 
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: DIRECTOR:_KRISHNA
+component_layer: DIRECTOR
+component_name: Krishna
+route_families: [approval_gate, repo_write_mode]
+activation_triggers: route_family in [script_generation, trend_research, topic_discovery, voice_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
+upstream_inputs: [lineage_packet, approval_packet, media_quality_gate_packet]
+downstream_outputs: [approval_packet, execution_authorization_packet]
+required_input_packets: [lineage_packet, approval_packet, media_quality_gate_packet]
+emitted_output_packets: [approval_packet, execution_authorization_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_LINEAGE_APPROVAL]
+quality_gates: [explicit_user_approval_gate, scope_lock_gate, risk_acceptance_gate]
+validator_bindings: [lineage_approval_packet_present, no_n8n_provider_media_execution, provider_boundary_present]
+fallback_behavior: BLOCKED_BEFORE_OUTPUT until explicit user approval is present.
+lineage_fields: [approval_packet_id, user_decision, scope, risk_acknowledged]
+provider_boundary: provider_execution_allowed=false; may authorize future execution only when approval_packet explicitly states scope
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_patch, approve_commit, approve_provider_execution, reject]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [approval_packet, execution_authorization_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_LINEAGE_APPROVAL]
+production_score_fields: [approval_clarity_score, risk_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: approval_gate_profile
+route_family_resolved: [approval_gate, repo_write_mode]
+activation_triggers_resolved: [approval, oauth, permission]
+required_input_packets_resolved: [lineage_packet, approval_packet, media_quality_gate_packet]
+emitted_output_packets_resolved: [approval_packet, execution_authorization_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_LINEAGE_APPROVAL]
+validator_bindings_resolved: [lineage_approval_packet_present, no_n8n_provider_media_execution, provider_boundary_present]
+quality_gates_resolved: [explicit_user_approval_gate, scope_lock_gate, risk_acceptance_gate]
+fallback_behavior_resolved: BLOCKED_BEFORE_OUTPUT until explicit user approval is present.
+lineage_fields_resolved: [approval_packet_id, user_decision, scope, risk_acknowledged]
+provider_boundary_resolved: provider_execution_allowed=false; may authorize future execution only when approval_packet explicitly states scope
+handoff_targets_resolved: [approval_packet, execution_authorization_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_LINEAGE_APPROVAL]
+production_score_fields_resolved: [approval_clarity_score, risk_score, lineage_score]
+human_approval_points_resolved: [approve_patch, approve_commit, approve_provider_execution, reject]
+status_limits_resolved: [no commit/push/provider/n8n without approval]
+evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/supreme_vision/krishna.md; component_id=DIRECTOR:_KRISHNA
+remaining_unknowns: none

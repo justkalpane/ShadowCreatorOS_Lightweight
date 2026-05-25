@@ -1,0 +1,6 @@
+{
+  "packet_id": "operator_execution_packet",
+  "route_id": "script_generation",
+  "proof_fields": {},
+  "provider_execution_allowed": false
+}

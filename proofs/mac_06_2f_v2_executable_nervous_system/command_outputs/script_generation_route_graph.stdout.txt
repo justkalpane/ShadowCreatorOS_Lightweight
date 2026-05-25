@@ -1,0 +1,229 @@
+{
+  "issues": [],
+  "ordered_nodes": [
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_DIRECTOR_AGENT"
+      ],
+      "component_id": "agastya_agent",
+      "component_layer": "AGENT",
+      "component_path": "agents/agastya/agastya_agent.py",
+      "emitted_output_packets": [
+        "research_brief_packet"
+      ],
+      "fallback_routes": [
+        "research_synthesis"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sg_002_script_strategy"
+      ],
+      "node_id": "sg_001_research_brief",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "research_brief_quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_RESEARCH_SCRIPT"
+      ],
+      "component_id": "S-201-research-to-script-brief",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-201-research-to-script-brief.py",
+      "emitted_output_packets": [
+        "script_strategy_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sg_003_script_v1"
+      ],
+      "node_id": "sg_002_script_strategy",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_strategy_quality_gate"
+      ],
+      "required_input_packets": [
+        "research_brief_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_SCRIPT_DEBATE"
+      ],
+      "component_id": "S-202-first-draft-generation",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-202-first-draft-generation.py",
+      "emitted_output_packets": [
+        "script_v1_packet"
+      ],
+      "fallback_routes": [
+        "script_debate"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sg_004_script_segments"
+      ],
+      "node_id": "sg_003_script_v1",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_quality_gate"
+      ],
+      "required_input_packets": [
+        "script_strategy_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_REFINEMENT_FINAL_SCRIPT"
+      ],
+      "component_id": "S-210-final-script-packager",
+      "component_layer": "SKILL",
+      "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
+      "emitted_output_packets": [
+        "script_segment_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sg_005_quality_gate"
+      ],
+      "node_id": "sg_004_script_segments",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "script_segment_quality_gate"
+      ],
+      "required_input_packets": [
+        "script_v1_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass",
+        "packet_schema_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_PROVIDER_QUALITY"
+      ],
+      "component_id": "A-405-media-qa-validator",
+      "component_layer": "SKILL",
+      "component_path": "skills/media_production/A-405-media-qa-validator.py",
+      "emitted_output_packets": [
+        "media_quality_gate_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sg_006_lineage"
+      ],
+      "node_id": "sg_005_quality_gate",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "media_quality_gate"
+      ],
+      "required_input_packets": [
+        "script_segment_packet"
+      ],
+      "validator_rules": [
+        "quality_scorecard_validation_pass"
+      ]
+    },
+    {
+      "approval_required": false,
+      "communication_pointer_ids": [
+        "PTR_QUALITY_LINEAGE"
+      ],
+      "component_id": "P-304-lineage-chain-validator",
+      "component_layer": "SKILL",
+      "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
+      "emitted_output_packets": [
+        "lineage_packet"
+      ],
+      "fallback_routes": [
+        "context_engineering"
+      ],
+      "lineage_required": true,
+      "next_nodes": [
+        "sg_007_approval"
+      ],
+      "node_id": "sg_006_lineage",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "lineage_integrity_gate"
+      ],
+      "required_input_packets": [
+        "media_quality_gate_packet"
+      ],
+      "validator_rules": [
+        "lineage_approval_validation_pass"
+      ]
+    },
+    {
+      "approval_required": true,
+      "communication_pointer_ids": [
+        "PTR_LINEAGE_APPROVAL"
+      ],
+      "component_id": "DIRECTOR:_KAMA",
+      "component_layer": "DIRECTOR",
+      "component_path": "directors/distribution/kama.md",
+      "emitted_output_packets": [
+        "approval_packet"
+      ],
+      "fallback_routes": [
+        "script_refinement"
+      ],
+      "lineage_required": true,
+      "next_nodes": [],
+      "node_id": "sg_007_approval",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "approval_gate"
+      ],
+      "required_input_packets": [
+        "lineage_packet"
+      ],
+      "validator_rules": [
+        "approval_state_required"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "approval_packet",
+    "lineage_packet",
+    "media_quality_gate_packet",
+    "research_brief_packet",
+    "script_segment_packet",
+    "script_strategy_packet",
+    "script_v1_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "script_generation"
+}

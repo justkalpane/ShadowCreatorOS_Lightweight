@@ -1,0 +1,8 @@
+{
+  "active_components": 10,
+  "active_not_consumed": [],
+  "all_active": false,
+  "blocked_active": [],
+  "components_classified": 740,
+  "pass": true
+}

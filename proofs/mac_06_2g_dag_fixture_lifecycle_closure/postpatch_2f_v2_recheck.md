@@ -1,0 +1,8 @@
+POSTPATCH_2F_V2_RECHECK_STATUS=PASS
+native_executable_depth_proven=true
+route_manifests_executable_as_dag=true
+media_pipeline_dry_run_executable=true
+validator_reality_upgrade_status=PASS
+text_only_validator_rules_remaining=0
+safe_to_commit_after_user_review=true
+safe_to_run_non_codex_operator_proof_after_commit=true

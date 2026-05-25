@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route approval",
+  "name": "route_approval_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"approval_packet\",\n    \"lineage_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"approval\",\n  \"steps\": [\n    {\n      \"component_id\": \"P-304-lineage-chain-validator\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"lineage_packet\"\n      ],\n      \"node_id\": \"ap_001\"\n    },\n    {\n      \"component_id\": \"DIRECTOR:_KAMA\",\n      \"consumed\": [\n        \"lineage_packet\"\n      ],\n      \"emitted\": [\n        \"approval_packet\"\n      ],\n      \"node_id\": \"ap_002\"\n    }\n  ]\n}\n"
+}

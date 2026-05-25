@@ -1,0 +1,5 @@
+# ROUTE DAG EXECUTION CONTRACT
+
+execution_mode=local_validation_only
+provider_execution_enabled=false
+route_registry=registries/route_dag_registry.yaml

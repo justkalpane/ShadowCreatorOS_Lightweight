@@ -1,0 +1,10 @@
+{
+  "contract_only_veins_remaining": null,
+  "dag_connected_veins": 0,
+  "issues": [
+    "route_graph_invalid",
+    "route_not_found"
+  ],
+  "pass": false,
+  "route_id": "non_existing"
+}

@@ -1,0 +1,16 @@
+{
+  "packet_id": "lineage_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "demo_component",
+  "consumer_component_ids": [
+    "demo_consumer"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "upstream_packet_ids": [
+    "x"
+  ],
+  "decision_log": "x"
+}

@@ -1,0 +1,14 @@
+{
+  "packet_id": "script_v1_packet",
+  "route_id": "script_debate",
+  "producer_component_id": "S-202-first-draft-generation",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "script_text": "x",
+  "hook": "x"
+}

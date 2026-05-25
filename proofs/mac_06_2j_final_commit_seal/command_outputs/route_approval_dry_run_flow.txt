@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "approval_packet",
+    "lineage_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "approval",
+  "steps": [
+    {
+      "component_id": "P-304-lineage-chain-validator",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "lineage_packet"
+      ],
+      "node_id": "ap_001"
+    },
+    {
+      "component_id": "DIRECTOR:_KAMA",
+      "consumed": [
+        "lineage_packet"
+      ],
+      "emitted": [
+        "approval_packet"
+      ],
+      "node_id": "ap_002"
+    }
+  ]
+}

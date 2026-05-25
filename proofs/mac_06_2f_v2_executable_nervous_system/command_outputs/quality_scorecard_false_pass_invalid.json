@@ -1,0 +1,13 @@
+{
+  "errors": [
+    "critical_below_threshold:script_score,voice_score",
+    "false_pass_with_low_critical_scores"
+  ],
+  "low_scores": [
+    "script_score",
+    "voice_score"
+  ],
+  "pass": false,
+  "status": "FAIL",
+  "threshold": 70
+}

@@ -1,0 +1,11 @@
+{
+  "lineages": [
+    {
+      "route_id": "script_generation",
+      "packet_id": "script_segment_packet",
+      "component_id": "shadow_cli",
+      "upstream_packet_ids": [],
+      "downstream_packet_ids": []
+    }
+  ]
+}

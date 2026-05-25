@@ -1,0 +1,8 @@
+{
+  "command": "git branch --show-current",
+  "name": "git_branch",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "main\n"
+}

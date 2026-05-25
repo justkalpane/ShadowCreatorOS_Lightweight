@@ -188,3 +188,10 @@ Normal final content is forbidden when command expansion is incomplete.
 - `operator_mode_used=true` and no compact lock summary exists
 - raw plain post-bootstrap task is claimed as production proof without automatic locks
 - Shadow command output claims `PASS` while route lock, dependency expansion, consumption, source breadth, rule evidence, quality, or governance lock is missing
+
+
+## MAC-06.2D ARTICLE PIPELINE ROUTE CONNECTION
+
+- Output may claim media-pipeline readiness only when route manifests cite `mac_06_2d_article_pipeline_connections`.
+- Provider execution remains disabled unless an explicit `approval_packet` authorizes execution scope.
+- Contract-only media packet references are insufficient; route-level validator bindings must be present.

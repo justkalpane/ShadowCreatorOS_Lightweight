@@ -1,0 +1,10 @@
+{
+  "added": {
+    "component_id": "shadow_cli",
+    "downstream_packet_ids": [],
+    "packet_id": "script_segment_packet",
+    "route_id": "script_generation",
+    "upstream_packet_ids": []
+  },
+  "pass": true
+}

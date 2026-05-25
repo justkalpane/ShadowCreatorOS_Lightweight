@@ -191,7 +191,7 @@ FUNCTION arjuna.execute_production(topic_id, narrative_script, context):
   10. CALCULATE production quality score
       quality = (Script_Fidelity × 0.25) + (Narrative_Continuity × 0.25) +
                 (Actor_Performance × 0.25) + (Production_Value × 0.25)
-      
+
       IF quality <70%:
         → ESCALATE (reshoots or major revision needed)
       ELSE:
@@ -295,19 +295,19 @@ SCENE_EXECUTION_REQUIREMENTS:
      ✓ Lighting appropriate for mood
      ✓ Audio recording ready
      ✓ Actors briefed on context
-  
+
   2. Performance Direction
      ✓ Emotional state established
      ✓ Dialogue natural and audible
      ✓ Physical performance matches script
      ✓ Continuity with previous scenes
-  
+
   3. Technical Execution
      ✓ Audio levels correct
      ✓ Camera framing appropriate
      ✓ Lighting correct for mood
      ✓ No technical artifacts
-  
+
   4. Post-Scene QA
      ✓ Scene matches script intent
      ✓ Emotional beats landed
@@ -324,13 +324,13 @@ CONTINUITY_TRACKING:
     - Same character behavior/mannerisms
     - Emotional state consistent with arc
     - Dialogue consistent with character voice
-  
+
   Plot Continuity:
     - Scene sequencing makes narrative sense
     - Plot events consistent with story logic
     - Dialogue references make sense in context
     - Cause-effect relationships clear
-  
+
   Emotional Continuity:
     - Overall emotional arc progresses logically
     - Character emotions match established states
@@ -478,3 +478,55 @@ Without Arjuna, scripts cannot be executed into production. Script execution is 
 - **Next Step**: Integration with Vyasa (script input) and Maya (visual production)
 - **Real-Time Requirement**: Production execution is highly time-dependent
 - **Coordination Requirement**: Works closely with Tumburu (audio), Maya (visual), Narada (operations)
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: DIRECTOR:_ARJUNA
+component_layer: DIRECTOR
+component_name: Arjuna
+route_families: [quality_gate, full_video_pipeline]
+activation_triggers: route_family in [script_generation, topic_discovery, voice_context, music_sfx_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
+upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+downstream_outputs: [media_quality_gate_packet, lineage_packet]
+required_input_packets: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+emitted_output_packets: [media_quality_gate_packet, lineage_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+quality_gates: [script_score_gate, voice_score_gate, visual_score_gate, video_score_gate, audio_score_gate, editing_score_gate]
+validator_bindings: [media_quality_gate_packet_present, quality_scores_present, final_status_matches_weakest_evidence_layer]
+fallback_behavior: BLOCKED_BEFORE_OUTPUT if critical score is below threshold or missing.
+lineage_fields: [quality_gate_id, upstream_packet_ids, score_reason, failure_id]
+provider_boundary: provider_execution_allowed=false; quality gate reviews packets/artifacts only; no provider execution
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_quality_gate, revise_segment, reject_output]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [media_quality_gate_packet, lineage_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+production_score_fields: [script_score, hook_score, retention_score, voice_score, visual_score, video_score, audio_score, editing_score, platform_score, lineage_score]
+decision_authority: Owns route decision boundaries, downstream agent selection, quality authority, escalation authority.
+agent_selection_rules: Select only registered agents with matching route_family and input/output packet capability.
+quality_authority: May block downstream execution when quality gates or packet evidence are missing.
+escalation_rules: Escalate to user or governance gate when route, evidence, or provider boundary is unclear.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: media_quality_gate_profile
+route_family_resolved: [quality_gate, full_video_pipeline]
+activation_triggers_resolved: [quality, validation, compliance]
+required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
+emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+validator_bindings_resolved: [media_quality_gate_packet_present, quality_scores_present, final_status_matches_weakest_evidence_layer]
+quality_gates_resolved: [script_score_gate, voice_score_gate, visual_score_gate, video_score_gate, audio_score_gate, editing_score_gate]
+fallback_behavior_resolved: BLOCKED_BEFORE_OUTPUT if critical score is below threshold or missing.
+lineage_fields_resolved: [quality_gate_id, upstream_packet_ids, score_reason, failure_id]
+provider_boundary_resolved: provider_execution_allowed=false; quality gate reviews packets/artifacts only; no provider execution; approval_packet_required_for_any_execution
+handoff_targets_resolved: [media_quality_gate_packet, lineage_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_PROVIDER_QUALITY, PTR_QUALITY_LINEAGE]
+production_score_fields_resolved: [script_score, hook_score, retention_score, voice_score, visual_score, video_score, audio_score, editing_score, platform_score, lineage_score]
+human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_output]
+status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
+evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/production/arjuna.md; component_id=DIRECTOR:_ARJUNA
+remaining_unknowns: none

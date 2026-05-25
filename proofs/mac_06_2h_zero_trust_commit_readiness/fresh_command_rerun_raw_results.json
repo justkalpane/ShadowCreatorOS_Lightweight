@@ -1,0 +1,546 @@
+[
+  {
+    "route_id": "GLOBAL",
+    "command": "preflight",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "GLOBAL",
+    "command": "validate_lifecycle",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "GLOBAL",
+    "command": "validate_provider_boundary",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "topic_discovery",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "topic_discovery",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "topic_discovery",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "topic_discovery",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "research_synthesis",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "research_synthesis",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "research_synthesis",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "research_synthesis",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_generation",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_generation",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_generation",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_generation",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_debate",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_debate",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_debate",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_debate",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_refinement",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_refinement",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_refinement",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "script_refinement",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "final_script_shaping",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "final_script_shaping",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "final_script_shaping",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "final_script_shaping",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "context_engineering",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "context_engineering",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "context_engineering",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "context_engineering",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "voice_context",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "voice_context",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "voice_context",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "voice_context",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "visual_context",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "visual_context",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "visual_context",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "visual_context",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "video_context",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "video_context",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "video_context",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "video_context",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "music_sfx_context",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "music_sfx_context",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "music_sfx_context",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "music_sfx_context",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "editing_packaging",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "editing_packaging",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "editing_packaging",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "editing_packaging",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "provider_handoff",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "provider_handoff",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "provider_handoff",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "provider_handoff",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "media_quality_gate",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "media_quality_gate",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "media_quality_gate",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "media_quality_gate",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "lineage",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "lineage",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "lineage",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "lineage",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "approval",
+    "command": "validate_route",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "approval",
+    "command": "validate_veins",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "approval",
+    "command": "validate_packets",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "approval",
+    "command": "dry_run_flow",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  },
+  {
+    "route_id": "GLOBAL",
+    "command": "runtime_tests",
+    "pass": true,
+    "returncode": 0,
+    "status": "PASS",
+    "gap": ""
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "packet_id": "operator_execution_packet",
+  "route_id": "x",
+  "producer_component_id": "demo_component",
+  "consumer_component_ids": [
+    "demo_consumer"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "task": "x",
+  "proof_fields": {
+    "k": "v"
+  },
+  "approval_required": false,
+  "provider_execution_allowed": false
+}

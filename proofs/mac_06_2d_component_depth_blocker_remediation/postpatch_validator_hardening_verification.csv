@@ -1,0 +1,11 @@
+check_name,validator_rule_present,negative_fixture_present,expected_json_present,status
+component_template_only_shallow,true,true,true,PASS
+active_component_unknown_needs_review,true,true,true,PASS
+generic_input_output_packets,true,true,true,PASS
+pointer_file_only_no_pointer_id,true,true,true,PASS
+component_registry_all_needs_review,true,true,true,PASS
+article_pipeline_contract_only_not_route_connected,true,true,true,PASS
+active_component_missing_route_profile,true,true,true,PASS
+active_component_missing_provider_boundary,true,true,true,PASS
+active_component_missing_lineage,true,true,true,PASS
+pass_mac06_2d_full_component_depth_route_specific_graph,true,true,true,PASS

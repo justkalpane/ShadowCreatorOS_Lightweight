@@ -1,0 +1,11 @@
+article_pattern,repo_artifact,exists,connected_to_route,validator_covered,status,gap
+timed script segments,runtime_contracts/media_packets/SCRIPT_SEGMENT_PACKET_CONTRACT.md,true,true,true,PASS,
+visual description per segment,runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md,true,true,true,PASS,
+visual style guide,runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md,true,true,true,PARTIAL,Contract exists but production implementation remains text/contract-level rather than executable media runtime.
+voiceover timing metadata,runtime_contracts/media_packets/VOICE_CONTEXT_PACKET_CONTRACT.md,true,true,true,PASS,
+segment-level regeneration,runtime_contracts/media_packets/LINEAGE_APPROVAL_PACKET_CONTRACT.md,true,true,true,PASS,
+final assembly/editing log,runtime_contracts/media_packets/EDITING_TIMELINE_PACKET_CONTRACT.md,true,true,true,PARTIAL,Contract exists but production implementation remains text/contract-level rather than executable media runtime.
+platform-specific content packages,runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md,true,true,true,PARTIAL,Contract exists but production implementation remains text/contract-level rather than executable media runtime.
+schema validation before downstream,runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md,true,true,true,PARTIAL,Contract exists but production implementation remains text/contract-level rather than executable media runtime.
+typed provider/tool handoff,runtime_contracts/media_packets/PROVIDER_HANDOFF_PACKET_CONTRACT.md,true,true,true,PARTIAL,Contract exists but production implementation remains text/contract-level rather than executable media runtime.
+human review checkpoint,runtime_contracts/media_packets/LINEAGE_APPROVAL_PACKET_CONTRACT.md,true,true,true,PARTIAL,Contract exists but production implementation remains text/contract-level rather than executable media runtime.

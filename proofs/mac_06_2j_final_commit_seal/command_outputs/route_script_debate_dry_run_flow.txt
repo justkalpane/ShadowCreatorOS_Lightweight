@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "debate_critique_packet",
+    "script_v1_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "script_debate",
+  "steps": [
+    {
+      "component_id": "S-202-first-draft-generation",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_v1_packet"
+      ],
+      "node_id": "sd_001"
+    },
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "script_v1_packet"
+      ],
+      "emitted": [
+        "debate_critique_packet"
+      ],
+      "node_id": "sd_002"
+    }
+  ]
+}

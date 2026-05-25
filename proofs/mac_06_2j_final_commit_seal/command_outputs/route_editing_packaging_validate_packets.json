@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py validate-packets --route editing_packaging",
+  "name": "route_editing_packaging_validate_packets",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"failed_packets\": [],\n  \"packets_checked\": 20,\n  \"pass\": true,\n  \"route\": \"editing_packaging\"\n}\n"
+}

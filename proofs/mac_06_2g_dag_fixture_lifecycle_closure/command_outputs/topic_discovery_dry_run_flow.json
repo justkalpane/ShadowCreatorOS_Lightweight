@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "research_brief_packet",
+    "topic_intake_packet",
+    "trend_signal_packet"
+  ],
+  "pass": true,
+  "route_id": "topic_discovery",
+  "steps": [
+    {
+      "component_id": "agastya_agent",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "trend_signal_packet"
+      ],
+      "node_id": "td_001"
+    },
+    {
+      "component_id": "S-201-research-to-script-brief",
+      "consumed": [
+        "trend_signal_packet"
+      ],
+      "emitted": [
+        "research_brief_packet"
+      ],
+      "node_id": "td_002"
+    }
+  ]
+}

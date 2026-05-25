@@ -1,0 +1,11 @@
+article_requirement,route_connected,validator_connected,provider_execution_enabled,status,gap_remaining
+timed script segments,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+visual description per segment,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+visual style guide,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+voiceover timing metadata,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+segment-level regeneration,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+final assembly/editing log,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+platform-specific content packages,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+schema validation before downstream,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+typed provider/tool handoff,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none
+human review checkpoint,true,true,false,PASS_WITH_PROVIDER_DISABLED_NOTICE,none

@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "lineage_packet",
+    "script_segment_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "context_engineering",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "ce_001"
+    },
+    {
+      "component_id": "P-301-execution-context-engineer",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "lineage_packet"
+      ],
+      "node_id": "ce_002"
+    }
+  ]
+}

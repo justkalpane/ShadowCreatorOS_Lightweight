@@ -1,0 +1,11 @@
+{
+  "approval_request": {
+    "action": "regenerate_segment",
+    "approval_required": true,
+    "provider_execution_allowed": false,
+    "route_id": "script_generation",
+    "segment_id": "seg_001",
+    "state": "REQUESTED"
+  },
+  "pass": true
+}

@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "script_segment_packet",
+    "topic_intake_packet",
+    "voice_context_packet"
+  ],
+  "pass": true,
+  "route_id": "voice_context",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "vc_001"
+    },
+    {
+      "component_id": "P-302-platform-format-specialist",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "voice_context_packet"
+      ],
+      "node_id": "vc_002"
+    }
+  ]
+}

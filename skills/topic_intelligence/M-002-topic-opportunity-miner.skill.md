@@ -1,4 +1,4 @@
-﻿# SKL-PH1-TOPIC-OPPORTUNITY-MINER
+# SKL-PH1-TOPIC-OPPORTUNITY-MINER
 
 ## 1. Skill Identity
 - **Skill ID:** M-002
@@ -54,13 +54,13 @@ STEP 1: VALIDATE INPUTS & LOAD TREND ENVELOPE
     * creator_primary_platforms (where to analyze opportunities)
     * creator_content_formats (video|audio|text|hybrid)
     * creator_genre_affinities
-  
+
   Validation: If curated_trends_top_20 empty → escalate to WF-900 with escalation_type = "no_trends_to_mine"
   Confidence floor: >=0.6 to proceed; else flag "limited_context"
 
 STEP 2: FOR EACH TREND, EXECUTE COMPETITOR ANALYSIS
   For each trend in curated_trends_top_20:
-    
+
     A) IDENTIFY EXISTING_CREATORS_COVERING_TREND:
        - Query platform-specific creator search (YouTube, TikTok, Twitter, etc.):
          * Filter by: trend_name in title/tags/description
@@ -74,7 +74,7 @@ STEP 2: FOR EACH TREND, EXECUTE COMPETITOR ANALYSIS
          * angle_used (their unique take on trend)
          * posting_frequency_during_trend
        - Aggregate: count_total_creators, avg_views, avg_engagement, format_distribution
-    
+
     B) CLASSIFY_COMPETITOR_COVERAGE_INTENSITY:
        IF count_total_creators < 50:
          coverage_intensity = "UNDERSERVED" → high_opportunity_bonus
@@ -84,7 +84,7 @@ STEP 2: FOR EACH TREND, EXECUTE COMPETITOR ANALYSIS
          coverage_intensity = "SATURATED" → requires_unique_angle
        ELSE:
          coverage_intensity = "OVERSATURATED" → risk_high, opportunity_low
-    
+
     C) EXTRACT_COMPETITOR_ANGLES:
        - Sample 10-20 top creators (by views/engagement)
        - For each, infer angle/positioning:
@@ -95,7 +95,7 @@ STEP 2: FOR EACH TREND, EXECUTE COMPETITOR ANALYSIS
          * "trending_format_angle" (challenges, dances, skits)
        - Map: angle → creator_count, avg_views, avg_engagement
        - Identify: missing_angles (angles not yet heavily covered)
-    
+
     D) IDENTIFY_CREATOR_DIFFERENTIATION:
        - Compare competitor_angles to creator_strength_areas (from content_patterns)
        - Identify angles aligned with creator's historical performance:
@@ -107,7 +107,7 @@ STEP 2: FOR EACH TREND, EXECUTE COMPETITOR ANALYSIS
 
 STEP 3: MINE FOR MICRO-NICHE OPPORTUNITIES
   For each trend:
-    
+
     A) SEGMENT_TREND_BY_MICRO_NICHES:
        Break trend into smallest viable sub-segments:
        Example: "AI" trend segments into:
@@ -116,29 +116,29 @@ STEP 3: MINE FOR MICRO-NICHE OPPORTUNITIES
          - "AI safety" (ethics/concerns)
          - "AI art generation" (specific tool category)
          - "AI learning" (tutorials, how-tos)
-       
+
        - Recursively segment until audience_size >= 1000 but <= 100K (optimal micro-niche size)
        - For each micro-niche, query:
          * Search volume (Google Trends for sub-query)
          * Creator coverage count (YouTube/TikTok search)
          * Engagement potential (avg_views for this sub-segment)
-    
+
     B) SCORE_MICRO_NICHE_OPPORTUNITY:
        opportunity_score_per_niche = 50
        + (IF segment_creator_count < 20: +30) ELSE IF < 100: +15 ELSE 0  // underserved bonus
        + (IF audience_size 10K-100K: +20) ELSE IF 1K-10K: +10 ELSE 0      // audience size
        + (IF creator_genre_match: +25) ELSE IF adjacent_genre: +10 ELSE 0 // creator fit
        - (IF trend_lifecycle == DECLINING: +20)                           // declining penalty
-       
+
        niche_opportunity = min(100, max(0, opportunity_score_per_niche))
-    
+
     C) RANK_MICRO_NICHES:
        Sort by niche_opportunity (descending)
        Return Top 5 micro-niches per trend
 
 STEP 4: RESEARCH RELATED KEYWORDS & HASHTAGS
   For each trend + top micro-niche:
-    
+
     A) EXTRACT_KEYWORD_VARIATIONS:
        - Query Google Suggest, YouTube Suggest, TikTok Suggest for trend keywords
        - Identify long-tail variations:
@@ -147,7 +147,7 @@ STEP 4: RESEARCH RELATED KEYWORDS & HASHTAGS
          * search_volume (monthly searches)
          * competition_level (creator_count covering this keyword)
          * search_trend (rising/stable/declining)
-    
+
     B) EXTRACT_HASHTAG_INTELLIGENCE:
        - Platform-specific hashtag analysis (TikTok, Instagram, Twitter):
          * Primary hashtag (main trend tag)
@@ -157,7 +157,7 @@ STEP 4: RESEARCH RELATED KEYWORDS & HASHTAGS
          * hashtag_video_count (total content using it)
          * hashtag_avg_views (average views per video)
          * hashtag_growth_rate (7d change)
-    
+
     C) IDENTIFY_CREATOR_QUESTIONS:
        - Query Reddit, Quora, YouTube comments for trend-related questions:
          * "How do I...?" questions (tutorial demand)
@@ -168,7 +168,7 @@ STEP 4: RESEARCH RELATED KEYWORDS & HASHTAGS
 
 STEP 5: ANALYZE_CONTENT_FORMAT_VARIATIONS
   For each trend + micro-niche:
-    
+
     A) IDENTIFY_WINNING_FORMATS:
        - Analyze competitor_angles from STEP 2C
        - For each format (video, shorts, reels, tweets, posts, podcasts):
@@ -177,12 +177,12 @@ STEP 5: ANALYZE_CONTENT_FORMAT_VARIATIONS
          * creator_count_using_format
          * format_trend (rising/stable/declining)
        - Rank: format_performance = avg_views * engagement_rate * creator_rarity_bonus
-    
+
     B) IDENTIFY_UNDERUTILIZED_FORMATS:
        - If trend mostly covered in video, but podcasts have high engagement_rate → opportunity
        - Format underutilization = (avg_views_in_format) / (creator_count_using_format) (views per creator)
        - Higher ratio = less saturated, higher upside potential
-    
+
     C) MATCH_TO_CREATOR_STRENGTH:
        - Compare winning_formats to creator_primary_formats (from platform_defaults)
        - Strong_match_bonus = +25 for platform-native formats
@@ -190,7 +190,7 @@ STEP 5: ANALYZE_CONTENT_FORMAT_VARIATIONS
 
 STEP 6: BUILD_OPPORTUNITY_PROFILES
   For each trend, create opportunity_profile objects:
-    
+
     opportunity_profile = {
       "opportunity_id": "OPP-[trend_id]-[niche_hash]",
       "trend_id": [from M-001],
@@ -267,7 +267,7 @@ STEP 9: VALIDATION & EMIT
   - Each opportunity_profile has minimum required fields
   - overall_opportunity_score values in 0-100 range
   - Timestamp in ISO format
-  
+
   IF validation passes AND mining_confidence >= 0.8:
     status = "CREATED"
   ELSE IF opportunities_curated_top_40 non-empty AND mining_confidence >= 0.6:
@@ -276,7 +276,7 @@ STEP 9: VALIDATION & EMIT
   ELSE:
     status = "EMPTY"
     escalate to WF-900 with escalation_type = "opportunity_mining_failed"
-  
+
   Emit packet with deterministic lineage metadata
   Write dossier.discovery_vein.topic-opportunity-miner (append_only)
   Register in se_packet_index
@@ -516,3 +516,56 @@ STEP 9: VALIDATION & EMIT
 - ✅ Mining confidence score calculated from source_coverage + niche_viability ratio (formula documented)
 - ✅ Test suite covers happy path + all 4 failure modes + edge cases (timeout, saturation, weak_angles, format_mismatch)
 - ✅ Deterministic replay guaranteed within 24h (same input = same opportunity ranking)
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: M-002-topic-opportunity-miner.skill
+component_layer: SKILL
+component_name: M 002 Topic Opportunity Miner.Skill
+route_families: [lineage_summary, approval_gate]
+activation_triggers: route_family in [script_generation, trend_research, topic_discovery, music_sfx_context] or explicit registry selection; mark lineage_profile only when route_family is unknown.
+upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
+downstream_outputs: [lineage_packet, approval_packet]
+required_input_packets: [media_quality_gate_packet, lineage_packet, approval_packet]
+emitted_output_packets: [lineage_packet, approval_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+quality_gates: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
+validator_bindings: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
+fallback_behavior: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
+lineage_fields: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
+provider_boundary: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve, revise_segment, regenerate_media, reject]
+failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
+handoff_targets: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+production_score_fields: [lineage_score, approval_clarity_score, risk_score]
+skill_activation_contract: Activated by skill_activation_packet from subagent or route manifest.
+input_schema: Must declare atomic input fields before use; lineage_profile if absent upstream.
+output_schema: Must emit atomic output packet with evidence path and validation status.
+subskill_hooks: May call subskills only through atomic_task_packet.
+quality_metric: Must emit skill_quality_score and quality_threshold.
+
+## M
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: lineage_profile
+route_family_resolved: [lineage_summary, approval_gate]
+activation_triggers_resolved: [lineage, trace, decision log]
+required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
+emitted_output_packets_resolved: [lineage_packet, approval_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+validator_bindings_resolved: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
+quality_gates_resolved: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
+fallback_behavior_resolved: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
+lineage_fields_resolved: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
+provider_boundary_resolved: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution; approval_packet_required_for_any_execution
+handoff_targets_resolved: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
+production_score_fields_resolved: [lineage_score, approval_clarity_score, risk_score]
+human_approval_points_resolved: [approve, revise_segment, regenerate_media, reject]
+status_limits_resolved: [no silent approval, no execution without explicit approval]
+evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/topic_intelligence/M-002-topic-opportunity-miner.skill.md; component_id=M-002-topic-opportunity-miner.skill
+remaining_unknowns: none

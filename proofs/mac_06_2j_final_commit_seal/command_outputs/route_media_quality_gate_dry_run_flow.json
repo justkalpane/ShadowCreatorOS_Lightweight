@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route media_quality_gate",
+  "name": "route_media_quality_gate_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"media_quality_gate_packet\",\n    \"script_segment_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"media_quality_gate\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"script_segment_packet\"\n      ],\n      \"node_id\": \"mq_001\"\n    },\n    {\n      \"component_id\": \"A-405-media-qa-validator\",\n      \"consumed\": [\n        \"script_segment_packet\"\n      ],\n      \"emitted\": [\n        \"media_quality_gate_packet\"\n      ],\n      \"node_id\": \"mq_002\"\n    }\n  ]\n}\n"
+}

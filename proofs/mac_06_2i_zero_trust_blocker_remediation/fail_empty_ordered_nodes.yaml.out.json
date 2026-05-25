@@ -1,0 +1,7 @@
+{
+  "issues": [
+    "ordered_nodes_empty"
+  ],
+  "pass": false,
+  "route_id": "script_generation"
+}

@@ -1,0 +1,40 @@
+{
+  "issues": [
+    "placeholder_or_missing_node_id:0",
+    "placeholder_or_missing_component_id:0",
+    "placeholder_or_missing_component_path:0",
+    "placeholder_or_missing_component_layer:0",
+    "component_not_in_lifecycle:placeholder",
+    "component_path_missing:placeholder"
+  ],
+  "ordered_nodes": [
+    {
+      "communication_pointer_ids": [
+        "PTR_DIRECTOR_AGENT"
+      ],
+      "component_id": "placeholder",
+      "component_layer": "placeholder",
+      "component_path": "placeholder",
+      "emitted_output_packets": [
+        "research_brief_packet"
+      ],
+      "next_nodes": [],
+      "node_id": "placeholder",
+      "provider_boundary": "provider_execution_allowed=false",
+      "quality_gates": [
+        "quality_gate"
+      ],
+      "required_input_packets": [
+        "topic_intake_packet"
+      ],
+      "validator_rules": [
+        "route_dag_validation_pass"
+      ]
+    }
+  ],
+  "packets_produced": [
+    "topic_intake_packet"
+  ],
+  "pass": false,
+  "route_id": "script_generation"
+}

@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py validate-lifecycle",
+  "name": "shadow_cli_validate_lifecycle",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"active_components\": 10,\n  \"active_not_consumed\": [],\n  \"all_active\": false,\n  \"blocked_active\": [],\n  \"components_classified\": 740,\n  \"pass\": true\n}\n"
+}

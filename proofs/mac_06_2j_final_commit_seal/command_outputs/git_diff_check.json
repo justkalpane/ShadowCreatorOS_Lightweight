@@ -1,0 +1,8 @@
+{
+  "command": "git diff --check",
+  "name": "git_diff_check",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

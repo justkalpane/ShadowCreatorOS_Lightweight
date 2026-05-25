@@ -1,0 +1,14 @@
+{
+  "packet_id": "script_strategy_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "S-201-research-to-script-brief",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "strategy": "x",
+  "duration_target_sec": 60
+}

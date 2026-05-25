@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py dry-run-flow --route final_script_shaping",
+  "name": "route_final_script_shaping_dry_run_flow",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"issues\": [],\n  \"mode\": \"dry-run\",\n  \"packets_available\": [\n    \"final_script_packet\",\n    \"refinement_delta_packet\",\n    \"topic_intake_packet\"\n  ],\n  \"pass\": true,\n  \"route_id\": \"final_script_shaping\",\n  \"steps\": [\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"topic_intake_packet\"\n      ],\n      \"emitted\": [\n        \"refinement_delta_packet\"\n      ],\n      \"node_id\": \"fs_001\"\n    },\n    {\n      \"component_id\": \"S-210-final-script-packager\",\n      \"consumed\": [\n        \"refinement_delta_packet\"\n      ],\n      \"emitted\": [\n        \"final_script_packet\"\n      ],\n      \"node_id\": \"fs_002\"\n    }\n  ]\n}\n"
+}

@@ -1,0 +1,33 @@
+{
+  "issues": [],
+  "mode": "dry-run",
+  "packets_available": [
+    "editing_timeline_packet",
+    "script_segment_packet",
+    "topic_intake_packet"
+  ],
+  "pass": true,
+  "route_id": "editing_packaging",
+  "steps": [
+    {
+      "component_id": "S-210-final-script-packager",
+      "consumed": [
+        "topic_intake_packet"
+      ],
+      "emitted": [
+        "script_segment_packet"
+      ],
+      "node_id": "ep_001"
+    },
+    {
+      "component_id": "P-302-platform-format-specialist",
+      "consumed": [
+        "script_segment_packet"
+      ],
+      "emitted": [
+        "editing_timeline_packet"
+      ],
+      "node_id": "ep_002"
+    }
+  ]
+}

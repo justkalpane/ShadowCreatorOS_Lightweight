@@ -1,0 +1,8 @@
+{
+  "command": "python3 tools/shadow_runtime/shadow_cli.py validate-veins --route visual_context",
+  "name": "route_visual_context_validate_veins",
+  "passed": true,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"contract_only_veins_remaining\": 0,\n  \"dag_connected_veins\": 2,\n  \"issues\": [],\n  \"pass\": true,\n  \"route_id\": \"visual_context\",\n  \"veins_validated\": 2\n}\n"
+}

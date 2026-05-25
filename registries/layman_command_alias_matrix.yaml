@@ -86,9 +86,21 @@ gateway_rules:
   apply_shadow_task_execution_wrapper: true
   raw_plain_task_production_proof: false
   default_output_mode: OPERATOR_MODE
+  command_expansion_required_output:
+    - shadow_command_alias_detected
+    - raw_user_task_preserved
+    - alias_matrix_entry_used
+    - route_id_resolved
+    - route_manifest_loaded
+    - internal_wrapper_applied
+    - output_mode_resolved
+    - compact_or_proof_output_allowed_only_after_locks
+  failure_behavior:
+    final_status: FAIL
+    output: BLOCKED_BEFORE_OUTPUT
+    failed_lock: SHADOW_COMMAND_EXPANSION
   proof_mode_requested_by_terms:
     - "proof mode"
     - "show proof"
     - "audit"
     - "validator proof"
-

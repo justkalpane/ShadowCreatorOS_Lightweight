@@ -79,3 +79,19 @@ When a Shadow command is detected:
 4. Execute all locks before output.
 5. Use compact operator output unless user requests proof mode.
 6. Never treat raw plain message without Shadow prefix as production-proof in Codex Cloud.
+
+Compact command expansion proof:
+
+```text
+SHADOW_COMMAND_EXPANSION_REQUIRED_OUTPUT
+shadow_command_alias_detected=true
+raw_user_task_preserved=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+internal_wrapper_applied=true
+output_mode_resolved=true
+compact_or_proof_output_allowed_only_after_locks=true
+```
+
+If any expansion field or required lock is false or missing, return `BLOCKED_BEFORE_OUTPUT` instead of final content.

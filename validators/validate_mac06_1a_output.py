@@ -106,6 +106,14 @@ FALSE_EXECUTION_CLAIMS = [
     "gemini_api_called=true",
 ]
 
+FALSE_ONBOARDING_CLAIMS = [
+    "safe_to_declare_default_bootstrap_mode_onboarded=true",
+    "safe_to_declare_lightweight_os_onboarded=true",
+    "codex_cloud_safe_as_primary_operator=true",
+    "lightweight_os_onboarded=true",
+    "default_bootstrap_mode_onboarded=true",
+]
+
 INTERNET_FIRST_MARKERS = [
     "web_access_used_before_repo_route=true",
     "internet_first_behavior_detected=true",
@@ -251,6 +259,11 @@ def explicit_status(text: str, key: str) -> str | None:
     return value.upper() if value else None
 
 
+def explicit_not_true(text: str, key: str) -> bool:
+    value = find_key_value(text, key)
+    return value is not None and value.lower() != "true"
+
+
 def count_hook_variants(text: str) -> int:
     explicit = find_key_value(text, "hook_variants_count")
     if explicit and explicit.isdigit():
@@ -290,6 +303,7 @@ def main() -> int:
     invalid_statuses.extend(collect_invalid_gate_values(text))
     invalid_research_modes = collect_invalid_research_modes(text)
     false_claims = [claim for claim in FALSE_EXECUTION_CLAIMS if claim in text]
+    false_onboarding_claims = [claim for claim in FALSE_ONBOARDING_CLAIMS if claim in text]
     internet_first_markers = [marker for marker in INTERNET_FIRST_MARKERS if marker in text]
     shallow_routing_markers = [marker for marker in SHALLOW_ROUTING_MARKERS if marker in text]
     boot_signature_present = "SHADOW_BOOT_CONFIRMATION" in text
@@ -390,6 +404,19 @@ def main() -> int:
     shadow_command_alias_detected = explicit_true(text, "shadow_command_alias_detected")
     raw_user_task_preserved = explicit_true(text, "raw_user_task_preserved")
     internal_wrapper_applied = explicit_true(text, "internal_wrapper_applied")
+    alias_matrix_entry_used = explicit_true(text, "alias_matrix_entry_used")
+    route_id_resolved = explicit_true(text, "route_id_resolved")
+    route_manifest_loaded = explicit_true(text, "route_manifest_loaded")
+    gateway_contract_loaded_before_alias = explicit_true(text, "gateway_contract_loaded_before_alias")
+    output_mode_contract_loaded = explicit_true(text, "output_mode_contract_loaded")
+    registry_paths_exist = explicit_true(text, "registry_paths_exist")
+    route_components_exist = explicit_true(text, "route_components_exist")
+    selected_components_are_registered = explicit_true(text, "selected_components_are_registered")
+    provider_boundary_present = explicit_true(text, "provider_boundary_present")
+    no_n8n_provider_media_execution = explicit_true(text, "no_n8n_provider_media_execution")
+    compact_or_proof_output_allowed_only_after_locks = explicit_true(
+        text, "compact_or_proof_output_allowed_only_after_locks"
+    )
     output_mode = find_key_value(text, "output_mode")
     output_mode_valid = output_mode in VALID_OUTPUT_MODES
     operator_mode_used = explicit_true(text, "operator_mode_used") or output_mode == "OPERATOR_MODE"
@@ -401,11 +428,33 @@ def main() -> int:
         text, "source_summary_present"
     )
     shadow_alias_without_internal_locks = shadow_command_alias_detected and not internal_wrapper_applied
+    shadow_alias_without_gateway_contract = shadow_command_alias_detected and not gateway_contract_loaded_before_alias
+    shadow_alias_without_alias_matrix = shadow_command_alias_detected and not alias_matrix_entry_used
+    shadow_alias_without_route_resolution = shadow_command_alias_detected and not route_id_resolved
+    shadow_alias_without_route_manifest_loaded = shadow_command_alias_detected and not route_manifest_loaded
+    shadow_alias_without_output_mode_contract = shadow_command_alias_detected and not output_mode_contract_loaded
+    shadow_alias_without_lock_gated_output = (
+        shadow_command_alias_detected and not compact_or_proof_output_allowed_only_after_locks
+    )
+    registry_paths_missing = explicit_false(text, "registry_paths_exist") or explicit_not_true(text, "registry_paths_exist")
+    route_components_missing = explicit_false(text, "route_components_exist") or explicit_not_true(
+        text, "route_components_exist"
+    )
+    selected_components_not_registered = explicit_false(text, "selected_components_are_registered") or explicit_not_true(
+        text, "selected_components_are_registered"
+    )
+    provider_boundary_missing = explicit_false(text, "provider_boundary_present") or explicit_not_true(
+        text, "provider_boundary_present"
+    )
+    false_n8n_provider_media_claims = explicit_false(text, "no_n8n_provider_media_execution") or explicit_not_true(
+        text, "no_n8n_provider_media_execution"
+    )
     operator_mode_claims_pass_without_lock_summary = (
         operator_mode_used
         and (find_key_value(text, "proof_classification") == "PASS")
         and not operator_mode_compact_proof_present
     )
+    operator_mode_missing_compact_proof = operator_mode_used and not operator_mode_compact_proof_present
     raw_plain_task_claimed_production_proof = explicit_true(text, "raw_plain_task_claimed_production_proof")
 
     generic_detected = any(text.lstrip().startswith(marker) for marker in GENERIC_OUTPUT_MARKERS)
@@ -413,6 +462,8 @@ def main() -> int:
     index_missing = "registries/agent_runtime_selection_index.yaml" not in text
     task_intent_matrix_missing = "registries/task_intent_routing_matrix.yaml" not in text
     route_id_missing = find_key_value(text, "route_id") in {None, ""}
+    route_manifest_path_value = find_key_value(text, "route_manifest_path")
+    route_manifest_path_does_not_exist = bool(route_manifest_path_value) and not Path(route_manifest_path_value).is_file()
     hook_variants_insufficient = hook_variant_count < 3
     script_scores_missing = find_key_value(text, "script_overall_score") is None or find_key_value(text, "script_pass_threshold") is None
     consumption_ledger_missing = any(
@@ -458,6 +509,7 @@ def main() -> int:
     status = "PASS"
     if (
         false_claims
+        or false_onboarding_claims
         or generic_detected
         or source_claim_without_list
         or not boot_signature_present
@@ -486,6 +538,19 @@ def main() -> int:
         or broad_watchlist_one_vendor_only
         or named_tool_without_source_map
         or shadow_alias_without_internal_locks
+        or shadow_alias_without_gateway_contract
+        or shadow_alias_without_alias_matrix
+        or shadow_alias_without_route_resolution
+        or shadow_alias_without_route_manifest_loaded
+        or shadow_alias_without_output_mode_contract
+        or shadow_alias_without_lock_gated_output
+        or registry_paths_missing
+        or route_components_missing
+        or selected_components_not_registered
+        or provider_boundary_missing
+        or false_n8n_provider_media_claims
+        or route_manifest_path_does_not_exist
+        or operator_mode_missing_compact_proof
         or operator_mode_claims_pass_without_lock_summary
         or raw_plain_task_claimed_production_proof
     ):
@@ -547,6 +612,9 @@ def main() -> int:
     print(f"false_execution_claim_count={len(false_claims)}")
     for item in false_claims:
         print(f"false_execution_claim={item}")
+    print(f"false_onboarding_claim_count={len(false_onboarding_claims)}")
+    for item in false_onboarding_claims:
+        print(f"false_onboarding_claim={item}")
     print(f"internet_first_marker_count={len(internet_first_markers)}")
     for item in internet_first_markers:
         print(f"internet_first_marker={item}")
@@ -592,14 +660,41 @@ def main() -> int:
     print(f"layman_command_gateway_used={str(layman_command_gateway_used).lower()}")
     print(f"shadow_command_alias_detected={str(shadow_command_alias_detected).lower()}")
     print(f"raw_user_task_preserved={str(raw_user_task_preserved).lower()}")
+    print(f"alias_matrix_entry_used={str(alias_matrix_entry_used).lower()}")
+    print(f"route_id_resolved={str(route_id_resolved).lower()}")
+    print(f"route_manifest_loaded={str(route_manifest_loaded).lower()}")
     print(f"internal_wrapper_applied={str(internal_wrapper_applied).lower()}")
+    print(f"gateway_contract_loaded_before_alias={str(gateway_contract_loaded_before_alias).lower()}")
+    print(f"output_mode_contract_loaded={str(output_mode_contract_loaded).lower()}")
+    print(f"registry_paths_exist={str(registry_paths_exist).lower()}")
+    print(f"route_components_exist={str(route_components_exist).lower()}")
+    print(f"selected_components_are_registered={str(selected_components_are_registered).lower()}")
+    print(f"provider_boundary_present={str(provider_boundary_present).lower()}")
+    print(f"no_n8n_provider_media_execution={str(no_n8n_provider_media_execution).lower()}")
+    print(
+        "compact_or_proof_output_allowed_only_after_locks="
+        f"{str(compact_or_proof_output_allowed_only_after_locks).lower()}"
+    )
     print(f"output_mode={output_mode or 'MISSING'}")
     print(f"output_mode_valid={str(output_mode_valid).lower()}")
     print(f"operator_mode_used={str(operator_mode_used).lower()}")
     print(f"operator_mode_compact_proof_present={str(operator_mode_compact_proof_present).lower()}")
     print(f"source_summary_missing_in_operator_mode={str(source_summary_missing_in_operator_mode).lower()}")
     print(f"shadow_alias_without_internal_locks={str(shadow_alias_without_internal_locks).lower()}")
+    print(f"shadow_alias_without_gateway_contract={str(shadow_alias_without_gateway_contract).lower()}")
+    print(f"shadow_alias_without_alias_matrix={str(shadow_alias_without_alias_matrix).lower()}")
+    print(f"shadow_alias_without_route_resolution={str(shadow_alias_without_route_resolution).lower()}")
+    print(f"shadow_alias_without_route_manifest_loaded={str(shadow_alias_without_route_manifest_loaded).lower()}")
+    print(f"shadow_alias_without_output_mode_contract={str(shadow_alias_without_output_mode_contract).lower()}")
+    print(f"shadow_alias_without_lock_gated_output={str(shadow_alias_without_lock_gated_output).lower()}")
+    print(f"registry_paths_missing={str(registry_paths_missing).lower()}")
+    print(f"route_components_missing={str(route_components_missing).lower()}")
+    print(f"selected_components_not_registered={str(selected_components_not_registered).lower()}")
+    print(f"provider_boundary_missing={str(provider_boundary_missing).lower()}")
+    print(f"false_n8n_provider_media_claims={str(false_n8n_provider_media_claims).lower()}")
+    print(f"route_manifest_path_does_not_exist={str(route_manifest_path_does_not_exist).lower()}")
     print(f"operator_mode_claims_pass_without_lock_summary={str(operator_mode_claims_pass_without_lock_summary).lower()}")
+    print(f"operator_mode_missing_compact_proof={str(operator_mode_missing_compact_proof).lower()}")
     print(f"raw_plain_task_claimed_production_proof={str(raw_plain_task_claimed_production_proof).lower()}")
     print(f"all_core_locks_pass={str(all_core_locks_pass).lower()}")
     print(f"per_tool_source_map_count={per_tool_source_map_count}")

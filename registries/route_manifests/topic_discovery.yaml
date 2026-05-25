@@ -62,3 +62,52 @@ fail_rules: [route manifest not read, mandatory files not read, selected compone
 partial_rules: [web unavailable with user-approved limited mode, optional subskill missing]
 pass_rules: [all required locks pass, topic scores include basis, approval gate present]
 create_missing_registry_binding: false
+
+# MAC-06.1P-C route binding enforcement
+trigger_aliases:
+  - "Shadow topic:"
+  - "Topic:"
+  - "Find topic:"
+  - "Pick topic:"
+mandatory_contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/RESEARCH_GATE_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SOURCE_INTELLIGENCE_AND_WEB_RESEARCH_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+output_blocks:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - SOURCE_RESEARCH_LOCK
+  - GOVERNANCE_LOCK
+  - topic_options
+  - scores
+  - reason
+  - approval_gate
+validator_binding:
+  validator_file: validators/validate_mac06_1a_output.py
+  required_checks:
+    - shadow_command_alias_detected
+    - internal_wrapper_applied
+    - route_manifest_loaded
+    - provider_boundary_present
+    - no_n8n_provider_media_execution
+    - weakest_layer_status_respected
+provider_boundary:
+  required: true
+  n8n_allowed_after_approval: false
+  provider_execution_allowed_after_approval: false
+  media_creation_allowed_after_approval: false
+status_limits:
+  full_pass_requires_validator_binding: true
+  full_pass_requires_provider_boundary: true
+  documented_only_max_status: PARTIAL
+onboarding_limits:
+  safe_to_declare_lightweight_os_onboarded: false
+  safe_to_start_n8n_execution_bus: false
+  safe_to_call_providers: false
+  safe_to_create_media: false

@@ -100,6 +100,8 @@ agents:
   - file: agents/krishna/krishna_agent.py
   - file: agents/kubera/kubera_agent.py
   - file: agents/maya/maya_agent.py
+    status: DISABLED_MISSING_FILE
+    reason: missing file verified by MAC-06.1P-A/P-B; Maya remains director-only until agent binding exists
   - file: agents/narada/narada_agent.py
   - file: agents/nataraja/nataraja_agent.py
   - file: agents/parashara/parashara_agent.py

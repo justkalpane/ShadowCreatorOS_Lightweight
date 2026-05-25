@@ -1,7 +1,7 @@
 {
   "matrix_name": "sub_agent_matrix",
   "schema_version": "1.0.0",
-  "source_registry": "sub_agents/SUB_AGENT_RUNTIME_REGISTRY.yaml",
+  "source_registry": "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml",
   "generated_at": "2026-04-23T09:26:36.310701+00:00",
   "total_sub_agents": 36,
   "family_totals": {
@@ -59,7 +59,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_110/cwf_110_sub_agent.py",
+      "registry_path": "subagents/cwf_110/cwf_110_sub_agent.py",
       "sub_agent_class": "Cwf110SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_110-sub-agent-packet",
@@ -97,7 +97,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_120/cwf_120_sub_agent.py",
+      "registry_path": "subagents/cwf_120/cwf_120_sub_agent.py",
       "sub_agent_class": "Cwf120SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_120-sub-agent-packet",
@@ -135,7 +135,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_130/cwf_130_sub_agent.py",
+      "registry_path": "subagents/cwf_130/cwf_130_sub_agent.py",
       "sub_agent_class": "Cwf130SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_130-sub-agent-packet",
@@ -173,7 +173,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_140/cwf_140_sub_agent.py",
+      "registry_path": "subagents/cwf_140/cwf_140_sub_agent.py",
       "sub_agent_class": "Cwf140SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_140-sub-agent-packet",
@@ -210,7 +210,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_210/cwf_210_sub_agent.py",
+      "registry_path": "subagents/cwf_210/cwf_210_sub_agent.py",
       "sub_agent_class": "Cwf210SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_210-sub-agent-packet",
@@ -248,7 +248,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_220/cwf_220_sub_agent.py",
+      "registry_path": "subagents/cwf_220/cwf_220_sub_agent.py",
       "sub_agent_class": "Cwf220SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_220-sub-agent-packet",
@@ -284,7 +284,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_230/cwf_230_sub_agent.py",
+      "registry_path": "subagents/cwf_230/cwf_230_sub_agent.py",
       "sub_agent_class": "Cwf230SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_230-sub-agent-packet",
@@ -320,7 +320,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_240/cwf_240_sub_agent.py",
+      "registry_path": "subagents/cwf_240/cwf_240_sub_agent.py",
       "sub_agent_class": "Cwf240SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_240-sub-agent-packet",
@@ -354,7 +354,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_310/cwf_310_sub_agent.py",
+      "registry_path": "subagents/cwf_310/cwf_310_sub_agent.py",
       "sub_agent_class": "Cwf310SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_310-sub-agent-packet",
@@ -388,7 +388,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_320/cwf_320_sub_agent.py",
+      "registry_path": "subagents/cwf_320/cwf_320_sub_agent.py",
       "sub_agent_class": "Cwf320SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_320-sub-agent-packet",
@@ -422,7 +422,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_330/cwf_330_sub_agent.py",
+      "registry_path": "subagents/cwf_330/cwf_330_sub_agent.py",
       "sub_agent_class": "Cwf330SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_330-sub-agent-packet",
@@ -461,7 +461,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_340/cwf_340_sub_agent.py",
+      "registry_path": "subagents/cwf_340/cwf_340_sub_agent.py",
       "sub_agent_class": "Cwf340SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_340-sub-agent-packet",
@@ -495,7 +495,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_410/cwf_410_sub_agent.py",
+      "registry_path": "subagents/cwf_410/cwf_410_sub_agent.py",
       "sub_agent_class": "Cwf410SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_410-sub-agent-packet",
@@ -529,7 +529,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_420/cwf_420_sub_agent.py",
+      "registry_path": "subagents/cwf_420/cwf_420_sub_agent.py",
       "sub_agent_class": "Cwf420SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_420-sub-agent-packet",
@@ -563,7 +563,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_430/cwf_430_sub_agent.py",
+      "registry_path": "subagents/cwf_430/cwf_430_sub_agent.py",
       "sub_agent_class": "Cwf430SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_430-sub-agent-packet",
@@ -601,7 +601,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_440/cwf_440_sub_agent.py",
+      "registry_path": "subagents/cwf_440/cwf_440_sub_agent.py",
       "sub_agent_class": "Cwf440SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_440-sub-agent-packet",
@@ -637,7 +637,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_510/cwf_510_sub_agent.py",
+      "registry_path": "subagents/cwf_510/cwf_510_sub_agent.py",
       "sub_agent_class": "Cwf510SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_510-sub-agent-packet",
@@ -671,7 +671,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_520/cwf_520_sub_agent.py",
+      "registry_path": "subagents/cwf_520/cwf_520_sub_agent.py",
       "sub_agent_class": "Cwf520SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_520-sub-agent-packet",
@@ -706,7 +706,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_530/cwf_530_sub_agent.py",
+      "registry_path": "subagents/cwf_530/cwf_530_sub_agent.py",
       "sub_agent_class": "Cwf530SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_530-sub-agent-packet",
@@ -735,7 +735,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_610/cwf_610_sub_agent.py",
+      "registry_path": "subagents/cwf_610/cwf_610_sub_agent.py",
       "sub_agent_class": "Cwf610SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_610-sub-agent-packet",
@@ -764,7 +764,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_620/cwf_620_sub_agent.py",
+      "registry_path": "subagents/cwf_620/cwf_620_sub_agent.py",
       "sub_agent_class": "Cwf620SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_620-sub-agent-packet",
@@ -793,7 +793,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/cwf_630/cwf_630_sub_agent.py",
+      "registry_path": "subagents/cwf_630/cwf_630_sub_agent.py",
       "sub_agent_class": "Cwf630SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "cwf_630-sub-agent-packet",
@@ -827,7 +827,7 @@
         "escalate_to": "WF-900",
         "severity": "high"
       },
-      "registry_path": "sub_agents/wf_000/wf_000_sub_agent.py",
+      "registry_path": "subagents/wf_000/wf_000_sub_agent.py",
       "sub_agent_class": "Wf000SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_000-sub-agent-packet",
@@ -861,7 +861,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/wf_001/wf_001_sub_agent.py",
+      "registry_path": "subagents/wf_001/wf_001_sub_agent.py",
       "sub_agent_class": "Wf001SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_001-sub-agent-packet",
@@ -897,7 +897,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/wf_010/wf_010_sub_agent.py",
+      "registry_path": "subagents/wf_010/wf_010_sub_agent.py",
       "sub_agent_class": "Wf010SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_010-sub-agent-packet",
@@ -932,7 +932,7 @@
         "escalate_to": "WF-900",
         "severity": "high"
       },
-      "registry_path": "sub_agents/wf_020/wf_020_sub_agent.py",
+      "registry_path": "subagents/wf_020/wf_020_sub_agent.py",
       "sub_agent_class": "Wf020SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_020-sub-agent-packet",
@@ -969,7 +969,7 @@
         "escalate_to": "WF-900",
         "severity": "high"
       },
-      "registry_path": "sub_agents/wf_021/wf_021_sub_agent.py",
+      "registry_path": "subagents/wf_021/wf_021_sub_agent.py",
       "sub_agent_class": "Wf021SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_021-sub-agent-packet",
@@ -1006,7 +1006,7 @@
         "escalate_to": "WF-900",
         "severity": "high"
       },
-      "registry_path": "sub_agents/wf_022/wf_022_sub_agent.py",
+      "registry_path": "subagents/wf_022/wf_022_sub_agent.py",
       "sub_agent_class": "Wf022SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_022-sub-agent-packet",
@@ -1041,7 +1041,7 @@
         "escalate_to": "WF-900",
         "severity": "normal"
       },
-      "registry_path": "sub_agents/wf_023/wf_023_sub_agent.py",
+      "registry_path": "subagents/wf_023/wf_023_sub_agent.py",
       "sub_agent_class": "Wf023SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_023-sub-agent-packet",
@@ -1081,7 +1081,7 @@
         "escalate_to": "WF-900",
         "severity": "medium"
       },
-      "registry_path": "sub_agents/wf_100/wf_100_sub_agent.py",
+      "registry_path": "subagents/wf_100/wf_100_sub_agent.py",
       "sub_agent_class": "Wf100SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_100-sub-agent-packet",
@@ -1122,7 +1122,7 @@
         "escalate_to": "WF-900",
         "severity": "medium"
       },
-      "registry_path": "sub_agents/wf_200/wf_200_sub_agent.py",
+      "registry_path": "subagents/wf_200/wf_200_sub_agent.py",
       "sub_agent_class": "Wf200SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_200-sub-agent-packet",
@@ -1161,7 +1161,7 @@
         "escalate_to": "WF-900",
         "severity": "medium"
       },
-      "registry_path": "sub_agents/wf_300/wf_300_sub_agent.py",
+      "registry_path": "subagents/wf_300/wf_300_sub_agent.py",
       "sub_agent_class": "Wf300SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_300-sub-agent-packet",
@@ -1200,7 +1200,7 @@
         "escalate_to": "WF-900",
         "severity": "medium"
       },
-      "registry_path": "sub_agents/wf_400/wf_400_sub_agent.py",
+      "registry_path": "subagents/wf_400/wf_400_sub_agent.py",
       "sub_agent_class": "Wf400SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_400-sub-agent-packet",
@@ -1238,7 +1238,7 @@
         "escalate_to": "WF-900",
         "severity": "medium"
       },
-      "registry_path": "sub_agents/wf_500/wf_500_sub_agent.py",
+      "registry_path": "subagents/wf_500/wf_500_sub_agent.py",
       "sub_agent_class": "Wf500SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_500-sub-agent-packet",
@@ -1278,7 +1278,7 @@
         "escalate_to": "WF-900",
         "severity": "medium"
       },
-      "registry_path": "sub_agents/wf_600/wf_600_sub_agent.py",
+      "registry_path": "subagents/wf_600/wf_600_sub_agent.py",
       "sub_agent_class": "Wf600SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_600-sub-agent-packet",
@@ -1311,7 +1311,7 @@
         "escalate_to": "WF-900",
         "severity": "high"
       },
-      "registry_path": "sub_agents/wf_900/wf_900_sub_agent.py",
+      "registry_path": "subagents/wf_900/wf_900_sub_agent.py",
       "sub_agent_class": "Wf900SubAgent",
       "runtime_base": "WorkflowSubAgentBase",
       "artifact_family": "wf_900-sub-agent-packet",

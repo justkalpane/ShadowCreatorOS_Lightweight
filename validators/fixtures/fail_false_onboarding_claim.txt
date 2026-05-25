@@ -16,6 +16,31 @@ real_time_sources_used=false
 Research Sufficiency Gate
 TASK_TO_CAPABILITY_ROUTING
 registries/native_capability_routing_matrix.yaml
+layman_command_gateway_used=true
+shadow_command_alias_detected=true
+shadow_command_alias=Shadow script:
+raw_user_task_preserved=true
+gateway_contract_loaded_before_alias=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+output_mode_contract_loaded=true
+registry_paths_exist=true
+route_components_exist=true
+selected_components_are_registered=true
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+compact_or_proof_output_allowed_only_after_locks=true
+internal_wrapper_applied=true
+output_mode=OPERATOR_MODE
+operator_mode_used=true
+proof_mode_requested=false
+operator_mode_compact_proof_present=true
+source_summary_present=true
+Shadow Boot / Route Summary
+Gate Summary
+Source Summary
+Quality Summary
 task_intent_classified=true
 route_id=SCRIPT_GENERATION
 registries/task_intent_routing_matrix.yaml
@@ -33,24 +58,23 @@ SKILL_CONSUMPTION_LEDGER
 skill_consumption_ledger_present=true
 SUBSKILL_CONSUMPTION_LEDGER
 subskill_consumption_ledger_present=true
-MISSED_REPO_RULES
 LINE_BY_LINE_INFLUENCE_MAP
 line_by_line_influence_map_present=true
 TOPIC_QUALITY_GATE
 topic_quality_gate_present=true
 HOOK_GENERATION_GATE
 hook_generation_gate_present=true
-hook_variant_1=The tool was not the problem.
-hook_variant_2=The creator had apps, not a system.
-hook_variant_3=Every new AI tool exposed the same broken workflow.
+hook_variant_1=System-first hook.
+hook_variant_2=Tool-chasing hook.
+hook_variant_3=Creator outcome hook.
 hook_variants_count=3
+hook_scores_present=true
+score_each=8.8,9.0,9.1
+selected_hook_reason_present=true
 SCRIPT_QUALITY_GATE
 script_quality_gate_present=true
-script_overall_score=8.9
-script_pass_threshold=8.0
-score_each=8.3,8.7,8.9
-hook_scores_present=true
-selected_hook_reason_present=true
+script_overall_score=9.0
+script_pass_threshold=8.5
 rewrite_performed_if_needed=true
 shallow_repo_routing_detected=false
 source_breadth_lock_status=PASS
@@ -76,17 +100,6 @@ task_route_lock_status=PASS
 route_manifest_path=registries/route_manifests/script_generation.yaml
 ROUTE_DEPENDENCY_EXPANSION_LOCK
 route_manifest_read=true
-gateway_contract_loaded_before_alias=true
-alias_matrix_entry_used=true
-route_id_resolved=true
-route_manifest_loaded=true
-output_mode_contract_loaded=true
-registry_paths_exist=true
-route_components_exist=true
-selected_components_are_registered=true
-provider_boundary_present=true
-no_n8n_provider_media_execution=true
-compact_or_proof_output_allowed_only_after_locks=true
 route_dependency_expansion_lock_present=true
 route_dependency_expansion_lock_status=PASS
 route_scope_complete=true
@@ -125,8 +138,15 @@ PLATFORM_PACKAGING
 Provider Handoff Boundary
 Quality Gate
 Lineage Summary
+Final Output
+Content Engineering Packet
+Provider Boundary
+Compact Final Proof
 Final Proof Classification
-proof_classification=PASS
+proof_classification=FAIL
 chat_only_mode_used=true
 files_created=false
 dossier_artifacts_created=false
+
+
+safe_to_declare_lightweight_os_onboarded=true

@@ -23,20 +23,26 @@ Before answering any task, read:
 3. AGENT_READ_ORDER.md
 4. AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
 5. AGENT_ANTI_DRIFT_RULES.md
-6. runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
-7. registries/task_intent_routing_matrix.yaml (version=1)
-8. runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
-9. runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
-10. runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
-11. runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md
-12. runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
-13. registries/director_binding_matrix.json
-14. agents/AGENT_RUNTIME_REGISTRY.yaml
-15. subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
-16. registries/skill_registry.yaml
-17. registries/subskill_runtime_registry.yaml
-18. runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
-19. runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+6. runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md
+7. runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md
+8. registries/layman_command_alias_matrix.yaml
+9. runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md
+10. handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md
+11. registries/task_intent_routing_matrix.yaml (version=1)
+12. selected route_manifest_path
+13. runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+14. runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+15. runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+16. runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
+17. runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md
+18. runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+19. registries/director_binding_matrix.json
+20. agents/AGENT_RUNTIME_REGISTRY.yaml
+21. subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+22. registries/skill_registry.yaml
+23. registries/subskill_runtime_registry.yaml
+24. runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+25. runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
 
 Every task must:
 - classify task intent
@@ -87,6 +93,11 @@ When a Shadow command is detected:
 4. Execute all locks before output.
 5. Use compact operator output unless user requests proof mode.
 6. Never treat raw plain message without Shadow prefix as production-proof in Codex Cloud.
+
+Hard load-order rule:
+- No Shadow command may be answered until `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`, `registries/layman_command_alias_matrix.yaml`, `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`, and `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` have been loaded.
+- If `Shadow script:`, `Shadow task:`, or any alias in `registries/layman_command_alias_matrix.yaml` is detected, internally expand the request through `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` before final output.
+- If expansion cannot prove `shadow_command_alias_detected=true`, `raw_user_task_preserved=true`, `alias_matrix_entry_used=true`, `route_id_resolved=true`, `route_manifest_loaded=true`, `internal_wrapper_applied=true`, and `output_mode_resolved=true`, return `BLOCKED_BEFORE_OUTPUT` instead of normal content.
 
 Codex Cloud compatibility note:
 - `post_bootstrap_task_persistence_status=FAILED`

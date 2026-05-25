@@ -124,25 +124,34 @@ Required proof fields:
 4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
 5. `AGENT_ANTI_DRIFT_RULES.md`
 6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
-7. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
-8. `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
-9. `registries/task_intent_routing_matrix.yaml`
-10. `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
-11. `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
-12. `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
-13. `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`
-14. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
-15. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
-16. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
-17. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
-18. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
-19. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
-20. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
-21. `registries/native_capability_routing_matrix.yaml`
-22. `registries/agent_runtime_selection_index.yaml`
+7. `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`
+8. `registries/layman_command_alias_matrix.yaml`
+9. `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`
+10. `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md`
+11. `registries/task_intent_routing_matrix.yaml`
+12. selected `route_manifest_path`
+13. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
+14. `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+15. `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+16. `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+17. `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+18. `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`
+19. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+20. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+21. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+22. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+23. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+24. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+25. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+26. `registries/native_capability_routing_matrix.yaml`
+27. `registries/agent_runtime_selection_index.yaml`
 
 Repo-relative paths are authoritative.
 Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`.
+
+No Shadow command may be answered until `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`, `registries/layman_command_alias_matrix.yaml`, `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`, and `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` are loaded.
+
+If `Shadow script:`, `Shadow task:`, or another alias in `registries/layman_command_alias_matrix.yaml` is detected, the alias must expand through the Shadow Task Execution Wrapper before final output. Failure to prove expansion is `BLOCKED_BEFORE_OUTPUT`.
 
 ## SHADOW_BOOT_CONFIRMATION REQUIRED
 

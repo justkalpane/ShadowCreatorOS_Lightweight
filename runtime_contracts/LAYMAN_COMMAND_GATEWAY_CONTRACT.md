@@ -141,10 +141,50 @@ operator_mode_used=true/false
 proof_mode_requested=true/false
 ```
 
+## Deterministic Command Expansion Block
+
+For every detected Shadow command, output mode may be compact, but the internal expansion proof must exist before final content:
+
+```text
+SHADOW_COMMAND_EXPANSION_REQUIRED_OUTPUT
+shadow_command_alias_detected=true
+raw_user_task_preserved=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+internal_wrapper_applied=true
+output_mode_resolved=true
+compact_or_proof_output_allowed_only_after_locks=true
+```
+
+Required expansion sequence:
+
+1. Detect the alias from `registries/layman_command_alias_matrix.yaml`.
+2. Preserve the raw user task exactly.
+3. Resolve `route_id` or `route_mode`.
+4. Load the selected route manifest.
+5. Internally apply `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md`.
+6. Resolve output mode from `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`.
+7. Execute all locks before final output.
+
+If any required expansion field is false or missing:
+
+```text
+final_status=FAIL
+BLOCKED_BEFORE_OUTPUT
+failed_lock=SHADOW_COMMAND_EXPANSION
+reason=Shadow command alias did not expand through the internal wrapper.
+```
+
+Normal final content is forbidden when command expansion is incomplete.
+
 ## Fail Conditions
 
 - `shadow_command_alias_detected=true` and `internal_wrapper_applied=false`
+- `shadow_command_alias_detected=true` and `alias_matrix_entry_used=false`
+- `shadow_command_alias_detected=true` and `route_manifest_loaded=false`
+- `shadow_command_alias_detected=true` and `output_mode_resolved=false`
+- `shadow_command_alias_detected=true` and `compact_or_proof_output_allowed_only_after_locks=false`
 - `operator_mode_used=true` and no compact lock summary exists
 - raw plain post-bootstrap task is claimed as production proof without automatic locks
 - Shadow command output claims `PASS` while route lock, dependency expansion, consumption, source breadth, rule evidence, quality, or governance lock is missing
-

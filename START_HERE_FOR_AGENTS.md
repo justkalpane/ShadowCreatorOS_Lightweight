@@ -134,13 +134,24 @@ If you are a coding agent working in this repository, start here before any prod
 4. Read `AGENT_READ_ORDER.md`.
 5. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`.
 6. Read `AGENT_ANTI_DRIFT_RULES.md`.
-7. Operate on branch `main`.
-8. Follow repo-first Shadow orchestration before answering.
-9. Enforce quality gate and lineage for every output.
+7. Read `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`.
+8. Read `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`.
+9. Read `registries/layman_command_alias_matrix.yaml`.
+10. Read `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`.
+11. Read `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md`.
+12. Read `registries/task_intent_routing_matrix.yaml`.
+13. Read selected `route_manifest_path`.
+14. Operate on branch `main`.
+15. Follow repo-first Shadow orchestration before answering.
+16. Enforce quality gate and lineage for every output.
 
 Repo-relative paths are authoritative. Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`.
 Any old absolute Mac startup path is `LOCAL_REFERENCE_ONLY`, not portable startup law.
 Any production dossier language applies only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 dossier mode.
+
+No Shadow command may be answered until the Layman Command Gateway contract, alias matrix, output mode contract, and Shadow Task Execution Wrapper are loaded.
+
+If a `Shadow <command>:` alias is detected, preserve the raw task, resolve the alias through `registries/layman_command_alias_matrix.yaml`, and internally apply `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md`. If that expansion cannot be proven, return `BLOCKED_BEFORE_OUTPUT` instead of normal content.
 
 ## Hard Boundaries
 

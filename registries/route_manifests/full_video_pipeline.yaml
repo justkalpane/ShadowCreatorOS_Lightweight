@@ -25,3 +25,51 @@ fail_rules: [provider/media/n8n execution claim without approval, skipped lane w
 partial_rules: [execution not approved, provider availability unproven]
 pass_rules: [all planning locks pass, boundaries explicit, execution disabled unless separately approved]
 create_missing_registry_binding: false
+
+# MAC-06.1P-C route binding enforcement
+trigger_aliases:
+  - "Shadow full:"
+  - "Full pipeline:"
+  - "Complete content package:"
+mandatory_contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+  - runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md
+output_blocks:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - SOURCE_RESEARCH_LOCK
+  - QUALITY_LOCK
+  - GOVERNANCE_LOCK
+  - all content engineering sections
+  - approval checkpoints
+  - provider boundary
+validator_binding:
+  validator_file: validators/validate_mac06_1a_output.py
+  required_checks:
+    - shadow_command_alias_detected
+    - internal_wrapper_applied
+    - route_manifest_loaded
+    - provider_boundary_present
+    - no_n8n_provider_media_execution
+    - weakest_layer_status_respected
+provider_boundary:
+  required: true
+  n8n_allowed_after_approval: false
+  provider_execution_allowed_after_approval: false
+  media_creation_allowed_after_approval: false
+status_limits:
+  full_pass_requires_validator_binding: true
+  full_pass_requires_provider_boundary: true
+  documented_only_max_status: PARTIAL
+onboarding_limits:
+  safe_to_declare_lightweight_os_onboarded: false
+  safe_to_start_n8n_execution_bus: false
+  safe_to_call_providers: false
+  safe_to_create_media: false

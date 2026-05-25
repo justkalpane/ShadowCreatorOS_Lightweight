@@ -1784,6 +1784,8 @@
       "agent_slug": "maya",
       "agent_class": "MayaAgent",
       "registry_path": "agents/maya/maya_agent.py",
+      "status": "DISABLED_MISSING_FILE",
+      "reason": "Missing file verified by MAC-06.1P-A/P-B; not an active selectable agent until implemented.",
       "class_family": "named_director",
       "director_binding": "Maya",
       "director_id": "DIR-PRODv1-003",

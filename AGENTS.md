@@ -151,24 +151,33 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 4. Read `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`.
 5. Read `AGENT_ANTI_DRIFT_RULES.md`.
 6. Read `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`.
-7. Read `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`.
-8. Read `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`.
-9. Read `registries/task_intent_routing_matrix.yaml`.
-10. Read `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`.
-11. Read `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`.
-12. Read `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`.
-13. Read `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`.
-14. Read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`.
-15. Read `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`.
-16. Read `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`.
-17. Read `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`.
-18. Read `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`.
-19. Read `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`.
-20. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
-21. Read `registries/native_capability_routing_matrix.yaml`.
-22. Read `registries/agent_runtime_selection_index.yaml`.
+7. Read `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`.
+8. Read `registries/layman_command_alias_matrix.yaml`.
+9. Read `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`.
+10. Read `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md`.
+11. Read `registries/task_intent_routing_matrix.yaml`.
+12. Read selected `route_manifest_path`.
+13. Read `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`.
+14. Read `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`.
+15. Read `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`.
+16. Read `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`.
+17. Read `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`.
+18. Read `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`.
+19. Read `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`.
+20. Read `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`.
+21. Read `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`.
+22. Read `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`.
+23. Read `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`.
+24. Read `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`.
+25. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
+26. Read `registries/native_capability_routing_matrix.yaml`.
+27. Read `registries/agent_runtime_selection_index.yaml`.
 
 Repo-relative paths are authoritative. Absolute Mac paths are `LOCAL_MAC_REFERENCE_ONLY`.
+
+No Shadow command may be answered until `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`, `registries/layman_command_alias_matrix.yaml`, `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`, and `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` have been loaded.
+
+If `Shadow script:`, `Shadow task:`, or any alias in `registries/layman_command_alias_matrix.yaml` is detected, internally expand the command through `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` before final output. If expansion cannot be proven, return `BLOCKED_BEFORE_OUTPUT`.
 
 ## Default Behavior
 

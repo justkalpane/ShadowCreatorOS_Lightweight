@@ -1,0 +1,17 @@
+script_requirement,repo_artifact,exists,runtime_enforced,quality_gate_present,gap,priority,patch_required
+hook under 3 seconds,SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md,True,False,True,Hook exists as gate but not reliably tied to segment duration object.,BLOCKER,Upgrade hook timing validator.
+timed segment strategy,script_segment_packet.schema.json,True,False,True,"Segments are string array, not structured timed objects.",BLOCKER,Make segments object array with duration/start/end.
+segment-level narration length control,script_segment_packet.schema.json,True,False,False,No max words/one-two sentence enforcement.,HIGH,Add narration length validator.
+audience-specific tone,script_strategy_packet.schema.json,True,False,False,Tone not strongly required through final script.,HIGH,Add audience/tone required fields.
+retention beats,script_strategy_packet.schema.json,True,False,True,Retention gate named but beat spacing not enforced.,HIGH,Add retention beat array and spacing checks.
+emotional arc,final_script_packet.schema.json,True,False,False,Emotion not modeled across segments.,MEDIUM,Add emotional arc fields.
+CTA strategy,final_script_packet.schema.json,True,True,True,"CTA exists in final script packet, but platform CTA variants are weak.",MEDIUM,Add platform CTA variants.
+visual intent per segment,visual_context_packet.schema.json,True,False,True,Scene prompts exist but not linked to structured segment ids.,HIGH,Bind visual prompts to segment_id.
+voice intent per segment,voice_context_packet.schema.json,True,False,True,Emotion map string is too coarse.,HIGH,Use per-segment voice intent map.
+source/evidence grounding,source_evidence_packet.schema.json,True,True,True,Evidence exists; claim confidence needs deeper scoring.,HIGH,Add claim confidence and quote refs.
+platform-specific script variants,platform_package_packet.schema.json,True,False,False,Platform package exists; no active variants per script.,HIGH,Add platform variants packet.
+revision loop,approval_packet.schema.json,True,True,True,Approval/regeneration supported.,LOW,Tie revision reasons to line/segment ids.
+boring-line detector,quality_scorecard.schema.json,False,False,False,No concrete boring-line detector.,HIGH,Add semantic boring-line negative fixture.
+generic-output detector,quality_scorecard.schema.json,False,False,False,Genericity only indirectly addressed.,HIGH,Add specificity/genericity score.
+line-by-line critique,debate_critique_packet.schema.json,True,False,True,Line refs exist but no coverage enforcement.,HIGH,Require critique coverage matrix.
+final scorecard,quality_scorecard.schema.json,True,True,True,Quality runtime exists.,LOW,Extend benchmark-specific sub-scores.

@@ -183,3 +183,55 @@ STEP 10: Emit deterministic routing decision to M-202 or WF-900/WF-021.
 - Escalation path WF-900 and replay path WF-021 are explicitly wired.
 - Minimum 18 tests are defined and traceable to requirements.
 - Upstream and downstream contract references are complete and non-ambiguous.
+
+
+## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
+
+This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
+
+component_id: SKL-PH3A-M-201-VISUAL_DESIGN_BRIEF_GENERATOR
+component_layer: SKILL
+component_name: M 201 Visual Design Brief Generator.Skill
+route_families: [media_factory_handoff, avatar_video_context, context_engineering]
+activation_triggers: route_family in [media_factory_handoff, avatar_video_context, context_engineering] or explicit registry selection; activated when visual design brief, graphic design spec, layout direction, or creative direction document is required.
+upstream_inputs: [scene_brief_packet, script_segment_packet, topic_intake_packet]
+downstream_outputs: [visual_design_brief_packet, creative_direction_packet]
+required_input_packets: [scene_brief_packet, script_segment_packet]
+emitted_output_packets: [visual_design_brief_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE]
+quality_gates: [design_brief_completeness_gate, visual_dna_compliance_gate, brand_consistency_gate]
+validator_bindings: [visual_design_brief_packet_present, all_dna_fields_populated, style_lock_declared]
+fallback_behavior: NEEDS_CONFIRMATION if scene_brief_packet is missing or visual DNA fields are incomplete.
+lineage_fields: [scene_id, design_brief_id, style_lock_ref, brand_persona_id, instance_id]
+provider_boundary: provider_execution_allowed=false; visual generation requires local ComfyUI or approved provider
+status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
+human_approval_points: [approve_design_brief, approve_style_lock, reject_brief]
+failure_modes: missing_scene_brief_packet, incomplete_visual_dna, missing_style_lock, provider_boundary_violation.
+handoff_targets: [visual_design_brief_packet, creative_direction_packet, PTR_DIRECTOR_AGENT, PTR_FINAL_SCRIPT_IMAGE]
+production_score_fields: [design_brief_completeness_score, visual_dna_compliance_score, brand_consistency_score]
+skill_activation_contract: Activated by skill_activation_packet from subagent or route manifest.
+input_schema: Must declare atomic input fields before use; fallback to lineage_profile if absent upstream.
+output_schema: Must emit atomic output packet with evidence path and validation status.
+subskill_hooks: May call subskills only through atomic_task_packet.
+quality_metric: Must emit skill_quality_score and quality_threshold.
+
+## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
+
+component_depth_status: PRODUCTION_DEPTH_ENRICHED
+route_profile_applied: media_factory_visual_design_profile
+route_family_resolved: [media_factory_handoff, avatar_video_context, context_engineering]
+activation_triggers_resolved: [visual design request, creative brief task, style lock task, brand identity direction]
+required_input_packets_resolved: [scene_brief_packet, script_segment_packet]
+emitted_output_packets_resolved: [visual_design_brief_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE]
+validator_bindings_resolved: [visual_design_brief_packet_present, all_dna_fields_populated, style_lock_declared]
+quality_gates_resolved: [design_brief_completeness_gate, visual_dna_compliance_gate, brand_consistency_gate]
+fallback_behavior_resolved: NEEDS_CONFIRMATION if scene_brief_packet is missing or visual DNA fields are incomplete.
+lineage_fields_resolved: [scene_id, design_brief_id, style_lock_ref, brand_persona_id, instance_id]
+provider_boundary_resolved: provider_execution_allowed=false; visual generation requires local ComfyUI or approved provider; approval_packet_required_for_any_execution
+handoff_targets_resolved: [visual_design_brief_packet, creative_direction_packet, PTR_DIRECTOR_AGENT, PTR_FINAL_SCRIPT_IMAGE]
+production_score_fields_resolved: [design_brief_completeness_score, visual_dna_compliance_score, brand_consistency_score]
+human_approval_points_resolved: [approve_design_brief, approve_style_lock, reject_brief]
+status_limits_resolved: [no silent approval, no execution without explicit approval]
+evidence_used_for_resolution: path/pre-contract keyword: visual/design/brief/style; component_path=skills/media_graphics/M-201-visual-design-brief-generator.skill.md; component_id=SKL-PH3A-M-201-VISUAL_DESIGN_BRIEF_GENERATOR
+remaining_unknowns: none

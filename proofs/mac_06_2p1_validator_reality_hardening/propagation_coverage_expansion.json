@@ -1,0 +1,21 @@
+{
+  "allowlisted_missing_from_scan": [],
+  "allowlisted_runtime_files": 63,
+  "classification_counts": {
+    "ACTIVE_RUNTIME_ENFORCEMENT": 63,
+    "GENERATED_ARTIFACT": 505,
+    "HISTORICAL_DOC": 163,
+    "NOT_APPLICABLE_WITH_REASON": 2532,
+    "REFERENCE_ONLY": 635,
+    "TEST_ONLY": 53
+  },
+  "generated_artifact_count": 505,
+  "historical_or_test_count": 216,
+  "keyword_candidates_total": 3951,
+  "needs_patch_count": 0,
+  "pass": true,
+  "reference_only_count": 635,
+  "review_method": "automated_keyword_bucket_review",
+  "reviewed_not_applicable_count": 2532,
+  "unclassified_relevant_candidates": 0
+}

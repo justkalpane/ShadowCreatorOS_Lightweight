@@ -1,0 +1,8 @@
+{
+  "m039_packet_id": "RHP-1780408108544",
+  "m039_producer": "M-039-re-hook-system",
+  "rehook_rows": 3,
+  "s202_accepts_typed_plan": true,
+  "s202_rejects_missing_plan": true,
+  "missing_plan_error": "missing or invalid M-039 rehook_plan_packet"
+}

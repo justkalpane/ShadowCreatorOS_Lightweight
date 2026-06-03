@@ -66,6 +66,11 @@ control_panel_commands:
   run_animdiff: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-animdiff <args>"
   run_wan: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-wan <args>"
 
+bridge_sync_commands:
+  audit: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check"
+  apply: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply"
+  rule: "Run audit after Media Factory changes. Run apply only after user-approved repo sync."
+
 capability_truth:
   source_of_truth: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
   last_known_truth:
@@ -107,6 +112,17 @@ honesty_gate_policy:
   classify_wan_until_visual_recovery_as: experimental
   safe_to_batch_automate_cinematic_broll: false
 
+drift_sync_policy:
+  audit_required_after_media_factory_change: true
+  auto_apply_without_user_approval: false
+  apply_mode_updates_bridge_sync_state_only: true
+  source_paths_checked:
+    - /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+    - /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+    - /Users/apple/ShadowMediaFactory/control_panel/proofs
+    - /Users/apple/ShadowMediaFactory/control_panel/registry
+  repo_sync_command: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply"
+
 provider_boundary:
   n8n_used: false
   providers_called_by_default: false
@@ -125,4 +141,65 @@ agent_operating_protocol:
   - "Run status/doctor/preflight before render execution when execution is approved."
   - "If preflight downgrades a request, report animated_storyboard or experimental honestly."
   - "Read Media Factory proof JSON and registry JSONL before claiming artifacts."
+  - "Run the bridge sync audit after Media Factory runtime changes and apply sync state only with user-approved repo-write."
   - "Do not modify the Shadow repo from Media Factory execution unless the user explicitly approves repo-write."
+
+# BEGIN AUTO-GENERATED MEDIA FACTORY SYNC STATE
+sync_state:
+  last_sync_at: "2026-06-03T17:53:09+00:00"
+  bridge_in_sync: true
+  media_factory_changed: false
+  repo_bridge_update_required: false
+  control_panel_cli_sha256: "adfb6e3ed89443e4c4659b7f6a332f971214970b6a4c9861c7c5d507a13213e3"
+  capability_map_sha256: "758bedec33e3cde0c68351f732e1e746cad67ce1ffbe03e00bf0489b3f16b749"
+  latest_proof_sha256: "238cbe00cd685959b33fcadfdc34b78ca23f8f95bf508f2ecad89dcaac48baef"
+  latest_proof_path: "/Users/apple/ShadowMediaFactory/control_panel/proofs/preflight_storyboard_bengaluru_honesty_gate.json"
+  path_status:
+    capability_map_exists: true
+    comfyui_root_exists: true
+    control_panel_cli_exists: true
+    control_panel_exists: true
+    exports_dir_exists: true
+    jobs_dir_exists: true
+    media_factory_root_exists: true
+    proofs_dir_exists: true
+    registry_dir_exists: true
+  lane_truth:
+    local_animatic_engine: "SD1.5 + Canny ControlNet + AnimateDiff"
+    local_animatic_role: "animatic_preview"
+    local_animatic_supports_canny: true
+    local_animatic_supports_openpose: false
+    local_animatic_supports_depth: false
+    local_animatic_supports_lineart: false
+    local_animatic_supports_ipadapter: false
+    local_animatic_supports_true_camera_motion: false
+    wan_engine: "Wan2.2 TI2V 5B"
+    wan_technical_pass: true
+    wan_production_quality_pass: false
+    assembly_engine: "FFmpeg"
+    assembly_supports_audio_mix: true
+    assembly_supports_per_scene_sfx: false
+  registry_files:
+    assets.jsonl:
+      exists: true
+      line_count: 129
+      valid_jsonl: true
+      hash: "7f015a678100a355e445eeb709a10eb18f7c288dbb5f59d0c0c6dbc58353f1fa"
+    scene_contracts.jsonl:
+      exists: true
+      line_count: 9
+      valid_jsonl: true
+      hash: "5a8db6a59a1c4faca49b3bb117d8a1eb477397b2e8be419778f2f70e88210fc4"
+    route_decisions.jsonl:
+      exists: true
+      line_count: 14
+      valid_jsonl: true
+      hash: "ed740ffe3cd6fa6fff5f1ba1434a4c15bd0df4ba6081b5e140e164e8bbda68ee"
+    retry_state.jsonl:
+      exists: true
+      line_count: 10
+      valid_jsonl: true
+      hash: "52e242e7940cdcbbe80f0942f0495aea6c81bdc21128b01d03a81a8b72401d2b"
+  issues:
+    []
+# END AUTO-GENERATED MEDIA FACTORY SYNC STATE

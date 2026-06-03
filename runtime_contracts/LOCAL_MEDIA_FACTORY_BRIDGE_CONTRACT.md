@@ -151,6 +151,50 @@ production_pass_allowed=false/true
 
 If proof is missing, the claim status is `NEEDS_CONFIRMATION`, not `PASS`.
 
+## Drift Sync Protocol
+
+The permanent bridge is not allowed to drift from the local Media Factory.
+Whenever the Media Factory control panel, capability map, proofs, registry, or
+runtime lanes change, agents must run:
+
+```text
+python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check
+```
+
+This command audits:
+
+```text
+/Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+/Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+/Users/apple/ShadowMediaFactory/control_panel/proofs/
+/Users/apple/ShadowMediaFactory/control_panel/registry/
+```
+
+and compares them against:
+
+```text
+registries/local_media_factory_bridge.yaml
+```
+
+If repo-write is approved, agents may synchronize the bridge state with:
+
+```text
+python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply
+```
+
+The apply mode may update only the auto-generated `sync_state` block inside the
+bridge registry. It must not install tools, render media, call providers, use
+n8n, or modify the Media Factory runtime.
+
+Required drift fields:
+
+```text
+BRIDGE_IN_SYNC=true/false
+MEDIA_FACTORY_CHANGED=true/false
+REPO_BRIDGE_UPDATE_REQUIRED=true/false
+SYNC_STATE_WRITTEN=true/false
+```
+
 ## Provider Boundary
 
 Core paid/provider exceptions remain:
@@ -172,3 +216,5 @@ approval.
 - Do not render unless local engine execution is explicitly approved.
 - Do not modify the Shadow repo from Media Factory execution unless repo-write
   is explicitly approved.
+- Do not let Media Factory runtime changes remain unsynced; run the drift sync
+  audit and report `REPO_BRIDGE_UPDATE_REQUIRED` honestly.

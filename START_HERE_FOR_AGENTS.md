@@ -190,6 +190,18 @@ The local Media Factory is the media worker, not the brain. ShadowCreatorOS
 produces scene/prompt/route packets; ShadowMediaFactory performs approved
 preflight, generation, assembly, proof, registry, and export tasks.
 
+After any Media Factory runtime change, run the bridge drift audit:
+
+```text
+python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check
+```
+
+If repo-write is explicitly approved, synchronize the bridge registry state:
+
+```text
+python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply
+```
+
 ## Historical Context References
 
 Future agents should read historical source docs when deeper background is needed on PRD intent, quarantine decisions, and migration history.

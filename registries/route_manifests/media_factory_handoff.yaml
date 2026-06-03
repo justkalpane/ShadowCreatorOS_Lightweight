@@ -88,11 +88,15 @@ provider_boundary:
 local_media_factory_bridge:
   bridge_registry: registries/local_media_factory_bridge.yaml
   bridge_contract: runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+  bridge_sync_tool: tools/shadow_runtime/media_factory_bridge_sync.py
   local_media_factory_root: /Users/apple/ShadowMediaFactory
   control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
   capability_map: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+  sync_audit_command: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check"
+  sync_apply_command: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply"
   preflight_required_before_render: true
   production_pass_blocked_on_route_downgrade: true
+  drift_sync_required_after_media_factory_change: true
   safe_to_batch_automate_cinematic_broll: false
 
 # Status Limits

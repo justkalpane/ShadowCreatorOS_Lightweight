@@ -460,3 +460,11 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/distribution/kama.md; component_id=DIRECTOR:_KAMA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Validate opening-hook, recurring re-hook, and CTA-hook density against
+  audience retention needs.
+- For 5-minute scripts, require at least three internal re-hooks plus a CTA
+  hook unless a recorded dynamic-timing reason justifies an alternative.
+- Reject flat sections with an unexplained re-hook gap above 90 seconds.

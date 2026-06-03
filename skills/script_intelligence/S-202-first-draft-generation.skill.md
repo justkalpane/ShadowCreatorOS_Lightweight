@@ -183,3 +183,11 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-202-first-draft-generation.skill.md; component_id=S-202-first-draft-generation.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Generate the English master draft unless the user explicitly requests
+  translation/localization.
+- Embed the 45-75 second cinematic story and recurring re-hooks inside the
+  draft body, not only in metadata.
+- A 5-minute script requires at least three internal re-hooks plus a CTA hook.

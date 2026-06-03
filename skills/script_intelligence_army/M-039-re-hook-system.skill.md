@@ -187,3 +187,13 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-039-re-hook-system.skill.md; component_id=M-039_Re_Hook_System
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Own `RECURRING_HOOK_DENSITY_LAW`.
+- Require dynamic 70-90 second re-hook intervals by default, no unexplained gap
+  above 90 seconds, and at least three internal re-hooks plus CTA hook for a
+  5-minute script.
+- Emit `RECURRING_REHOOK_MAP` with hook type, line, timestamp, topic
+  connection, retention reset goal, beat-map scene, editing cue, influence
+  reason, and Media Factory dependency.

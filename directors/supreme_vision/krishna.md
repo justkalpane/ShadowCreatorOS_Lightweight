@@ -630,3 +630,13 @@ human_approval_points_resolved: [approve_patch, approve_commit, approve_provider
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/supreme_vision/krishna.md; component_id=DIRECTOR:_KRISHNA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- `RECURRING_HOOK_DENSITY_LAW`: Reject final script approval when a 3-10
+  minute YouTube route lacks opening-hook proof, dynamic recurring re-hooks,
+  or active-layer consumption evidence.
+- Require the English master draft, source-quality gate, cinematic story,
+  dynamic beat map, Media Factory scene sync, and local/cloud/hybrid plan
+  before cross-council script approval.
+- A 5-minute script needs at least three internal re-hooks plus a CTA hook.

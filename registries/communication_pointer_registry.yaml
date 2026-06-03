@@ -86,6 +86,20 @@ pointers:
     lineage_required: true
     production_risk_if_missing: "Downstream drift, generic output, false PASS, or unsafe provider handoff."
     validator_binding: validators/validate_mac06_1a_output.py
+  - pointer_id: PTR_REHOOK_DRAFT
+    source_component_layer: SCRIPT_RETENTION
+    target_component_layer: SCRIPT
+    source_component_pattern: "M-039*"
+    target_component_pattern: "S-202*"
+    trigger_condition: "Script generation requires a typed recurring re-hook plan before drafting."
+    required_input_packet: script_strategy_packet
+    required_output_packet: rehook_plan_packet
+    validation_rule: "re-hook rows exist, timestamps are bounded, topic connection is present, and downstream mappings are declared"
+    failure_mode: "BLOCKED_BEFORE_OUTPUT"
+    fallback_behavior: "return NEEDS_CONFIRMATION; do not fabricate placeholder re-hooks"
+    lineage_required: true
+    production_risk_if_missing: "One-hook-only script or fake recurring-hook PASS."
+    validator_binding: validators/validate_script_generation_output.py
   - pointer_id: PTR_DEBATE_REFINEMENT
     source_component_layer: DEBATE
     target_component_layer: REFINEMENT

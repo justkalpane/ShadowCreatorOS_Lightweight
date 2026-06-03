@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/saraswati/saraswati_agent.py; component_id=saraswati_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, RECURRING_HOOK_DENSITY_LAW, PLATFORM_PACKAGING]
+# responsibility: Preserve English master language and align opening, recurring, and CTA hooks with platform packaging.
+# reject_when: silent language drift, platform-disconnected re-hook, CTA hook missing.

@@ -9,6 +9,7 @@ required_route_connections:
 - avatar_video_context
 - editing_packaging
 - full_video_pipeline
+- media_factory_handoff
 required_packets:
 - script_segment_packet
 - voice_context_packet

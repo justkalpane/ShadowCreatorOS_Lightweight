@@ -511,3 +511,12 @@ human_approval_points_resolved: [approve_provider_handoff, deny_provider_executi
 status_limits_resolved: [no provider-called claim without execution proof]
 evidence_used_for_resolution: path/pre-contract keyword: provider/tool adapter; component_path=directors/research/vyasa.md; component_id=DIRECTOR:_VYASA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Build the English master script with a 45-75 second cinematic story and a
+  `RECURRING_REHOOK_MAP`.
+- Treat three hook variants as opening-hook candidates only. Embed
+  topic-relevant recurring re-hooks every 70-90 seconds by default and bind
+  them to the final script, dynamic beat map, and line influence map.
+- Reject proof-based re-hooks that are not source-safe.

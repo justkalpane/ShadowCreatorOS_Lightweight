@@ -183,3 +183,11 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-210-final-script-packager.skill.md; component_id=S-210-final-script-packager.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Preserve `RECURRING_REHOOK_MAP` inside `FINAL_SCRIPT`,
+  `DYNAMIC_TIMED_BEAT_MAP`, `EDITING_CONTEXT`, and
+  `LINE_BY_LINE_INFLUENCE_MAP`.
+- For Media Factory final drafts, bind every re-hook to `SCENE_SYNC_MATRIX`.
+- Reject final packaging when a required CTA hook or internal re-hook is lost.

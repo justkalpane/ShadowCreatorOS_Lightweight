@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/krishna/krishna_agent.py; component_id=krishna_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SOURCE_QUALITY_CLASSIFICATION, SCRIPT_STORY_ENGINE, DYNAMIC_TIMED_BEAT_MAP, MEDIA_FACTORY_FINAL_DRAFT, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Reject final script arbitration when selected-layer propagation or recurring re-hook proof is missing.
+# reject_when: one-hook-only 3-10 minute YouTube script, missing scene sync for Media Factory final draft, weakest gate not reflected in final status.

@@ -12,6 +12,14 @@ mandatory_runtime_contracts:
   - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
   - runtime_contracts/QUALITY_GATE_CONTRACT.md
   - runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SCRIPT_STORY_ENGINE_CONTRACT.md
+  - runtime_contracts/SCRIPT_LANGUAGE_CONTROL_CONTRACT.md
+  - runtime_contracts/REAL_TIME_RESEARCH_ENFORCEMENT_CONTRACT.md
+  - runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md
+  - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+  - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+  - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
 mandatory_registries:
   - registries/task_intent_routing_matrix.yaml
   - registries/route_manifests/script_generation.yaml
@@ -49,6 +57,7 @@ mandatory_skills:
   - skills/script_intelligence/S-210-final-script-packager.skill.md
   - skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
   - skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+  - skills/script_intelligence_army/M-039-re-hook-system.skill.md
   - skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
 mandatory_subskills:
   - skills/sub_skills/SS-230-content-angle-generator.subskill.md
@@ -60,8 +69,8 @@ mandatory_subskills:
   - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
   - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
 mandatory_governance: [directors/kernel/yama.md, directors/distribution/saraswati.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
-mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, SOURCE_BREADTH_LOCK, RULE_CONSUMPTION_EVIDENCE_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK, PER_TOOL_SOURCE_MAP, RULE_CONSUMPTION_EVIDENCE_LEDGER, EXACT_RULE_LINEAGE_MAP, TOPIC_QUALITY_GATE, HOOK_GENERATION_GATE, SCRIPT_QUALITY_GATE, FINAL_SCRIPT]
-required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, SOURCE_BREADTH_LOCK when latest/current/watchlist terms are present, RULE_CONSUMPTION_EVIDENCE_LOCK, QUALITY_LOCK, GOVERNANCE_LOCK]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, SOURCE_BREADTH_LOCK, RULE_CONSUMPTION_EVIDENCE_LOCK, QUALITY_LOCK, RECURRING_HOOK_DENSITY_LOCK, GOVERNANCE_LOCK, PER_TOOL_SOURCE_MAP, RULE_CONSUMPTION_EVIDENCE_LEDGER, EXACT_RULE_LINEAGE_MAP, TOPIC_QUALITY_GATE, HOOK_GENERATION_GATE, SCRIPT_QUALITY_GATE, FINAL_SCRIPT]
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, SOURCE_RESEARCH_LOCK, SOURCE_BREADTH_LOCK when latest/current/watchlist terms are present, RULE_CONSUMPTION_EVIDENCE_LOCK, QUALITY_LOCK, RECURRING_HOOK_DENSITY_LOCK for 3-10 minute YouTube scripts, GOVERNANCE_LOCK]
 freshness_gate_required_when: [latest, current, this week, new update, today, 2026, watch this week]
 provider_boundary_required_when: [voice, video, image, avatar, provider, generation prompt]
 chat_only_allowed: true
@@ -71,8 +80,120 @@ n8n_allowed_after_approval: false
 provider_execution_allowed_after_approval: false
 fail_rules: [route manifest not read, mandatory files not read, selected component not consumed, script before locks, hook variants without scores, quality gate without threshold, latest multi-tool claim without PER_TOOL_SOURCE_MAP, one-vendor-only source map for broad watchlist]
 partial_rules: [manual structured output missing ledgers, web unavailable with limited mode approval, role-summary-only component consumption evidence]
-pass_rules: [all locks pass, at least 3 scored hook variants, quality threshold met or rewrite completed, governance lock passed, PER_TOOL_SOURCE_MAP complete when required, RULE_CONSUMPTION_EVIDENCE_LEDGER uses exact rule or section-level evidence]
+pass_rules: [all locks pass, at least 3 scored opening hook variants, recurring re-hook density gate passed for 3-10 minute YouTube scripts, quality threshold met or rewrite completed, governance lock passed, PER_TOOL_SOURCE_MAP complete when required, RULE_CONSUMPTION_EVIDENCE_LEDGER uses exact rule or section-level evidence]
 create_missing_registry_binding: false
+
+script_story_engine:
+  cinematic_story_required_for: 3_to_10_minute_youtube_scripts
+  cinematic_story_required: true
+  story_duration_target: 45_to_75_seconds
+  story_type: real_character_or_real_incident_driven
+  realistic_composite_allowed_when_honestly_labeled: true
+  mythological_parallel_allowed_when_honestly_labeled: true
+  story_must_resemble_topic: true
+  story_position_default: after_hook_before_main_teaching
+  required_fields: [character, setting, conflict, turning_point, cinematic_visuals, emotional_peak, lesson_bridge, source_references, unsupported_claims, status]
+  source_dependency_required_when: [real_person, real_incident, biographical_claim, career_claim]
+  story_gate_must_fail_if_missing: true
+
+real_world_source_gate:
+  web_required_when: [real_person, celebrity, brand, tool, platform, model, company, current_trend, law, pricing, factual_claim, case_study, article_reference, video_reference, biographical_claim, career_claim, real_world_example_as_proof]
+  required_fields: [freshness_class, current_data_required, web_access_available, web_access_used, research_mode, source_list, video_reference_list, unsupported_claims, current_fact_confidence, research_sufficiency_gate_status]
+  unsupported_claims_prevent_pass: true
+  web_required_but_unused_prevents_pass_unless_user_approved_repo_only: true
+  real_time_sources_require_source_list: true
+  source_sufficiency_required: true
+  minimum_total_sources_when_available: 3
+  minimum_non_encyclopedia_sources_when_available: 2
+  minimum_source_categories_when_available: 3
+  fact_vs_anecdote_map_required: true
+
+script_language_control:
+  language_control_contract_required: true
+  default_master_script_language: English
+  explicit_language_request_required_for_non_english: true
+  translation_localization_is_separate_stage: true
+  language_inference_from_topic_or_culture_forbidden: true
+
+dynamic_timed_beat_map:
+  dynamic_timed_beat_map_required: true
+  allowed_block_duration_seconds: 3_to_20
+  block_duration_reason_required: true
+  uniform_15_second_grid_requires_justification: true
+
+media_factory_final_draft:
+  contract_required_when_final_media_requested: true
+  scene_sync_matrix_schema: schemas/media_factory/scene_sync_matrix.schema.json
+  scene_sync_matrix_required_when_final_media_requested: true
+  media_contexts_synchronized_required: true
+  influence_map_creative_depth_required: true
+  local_cloud_hybrid_execution_required_when_media_context_present: true
+
+recurring_hook_density:
+  opening_hook_variants_required: 3
+  opening_hook_required: true
+  recurring_rehook_required_for: 3_to_10_minute_youtube_scripts
+  default_rehook_interval_seconds: 70_to_90
+  max_gap_without_rehook_seconds: 90
+  rehook_interval_dynamic: true
+  rehook_interval_reason_required: true
+  five_minute_minimum_internal_rehooks: 3
+  cta_hook_required: true
+  each_major_section_needs_retention_reset: true
+  required_mappings: [FINAL_SCRIPT, DYNAMIC_TIMED_BEAT_MAP, EDITING_CONTEXT, LINE_BY_LINE_INFLUENCE_MAP, SCENE_SYNC_MATRIX when Media Factory final draft is requested]
+
+content_engineering_output_required_blocks:
+  - SCRIPT_LANGUAGE_DECLARATION
+  - USER_LANGUAGE_REQUEST_CHECK
+  - SHADOW_MISSION_PACKET
+  - RESEARCH_AND_SOURCE_STATUS
+  - SOURCE_LEDGER
+  - SOURCE_LIMITATION_NOTES
+  - FACT_VS_ANECDOTE_MAP
+  - CLAIM_EVIDENCE_STATUS
+  - HOOK_VARIANTS
+  - SELECTED_HOOK_REASON
+  - RECURRING_REHOOK_MAP
+  - CINEMATIC_SHORT_STORY_BLOCK
+  - SCRIPT_STRUCTURE
+  - FINAL_SCRIPT
+  - DYNAMIC_TIMED_BEAT_MAP
+  - VOICE_GENERATION_CONTEXT
+  - IMAGE_GENERATION_CONTEXT
+  - VIDEO_GENERATION_CONTEXT
+  - MUSIC_AND_SFX_CONTEXT
+  - EDITING_CONTEXT
+  - PLATFORM_PACKAGING
+  - PROVIDER_HANDOFF_BOUNDARY
+  - QUALITY_GATE
+  - LINEAGE_SUMMARY
+  - LOCAL_CLOUD_HYBRID_EXECUTION_PLAN
+
+script_generation_production_validator:
+  validator_file: validators/validate_script_generation_output.py
+  required_checks:
+    - cinematic_story_block_present
+    - cinematic_story_structure_complete
+    - real_person_source_status_present
+    - unsupported_claims_prevent_source_research_pass
+    - real_world_claims_require_web_when_available
+    - real_time_sources_require_source_list
+    - content_engineering_sections_present
+    - script_only_requires_explicit_request
+    - weakest_layer_status_respected
+    - default_master_language_english_unless_explicitly_requested
+    - source_sufficiency_not_just_source_presence
+    - fact_vs_anecdote_map_present
+    - story_reconstruction_honestly_classified
+    - dynamic_timed_beat_map_not_unjustified_uniform_grid
+    - scene_sync_matrix_required_for_media_factory_final_draft
+    - local_cloud_hybrid_execution_plan_present
+    - influence_map_has_creative_and_retention_depth
+    - opening_hook_present
+    - recurring_rehook_count_sufficient_for_duration
+    - max_gap_without_rehook_within_limit_or_justified
+    - recurring_rehooks_mapped_to_script_beat_map_editing_and_influence
+    - recurring_rehooks_mapped_to_scene_sync_when_media_factory_final
 
 # MAC-06.1P-C route binding enforcement
 trigger_aliases:
@@ -89,6 +210,14 @@ mandatory_contracts:
   - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
   - runtime_contracts/QUALITY_GATE_CONTRACT.md
   - runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SCRIPT_STORY_ENGINE_CONTRACT.md
+  - runtime_contracts/SCRIPT_LANGUAGE_CONTROL_CONTRACT.md
+  - runtime_contracts/REAL_TIME_RESEARCH_ENFORCEMENT_CONTRACT.md
+  - runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md
+  - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+  - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+  - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
 output_blocks:
   - TASK_ROUTE_LOCK
   - ROUTE_DEPENDENCY_EXPANSION_LOCK
@@ -97,6 +226,7 @@ output_blocks:
   - SOURCE_BREADTH_LOCK
   - RULE_CONSUMPTION_EVIDENCE_LOCK
   - QUALITY_LOCK
+  - RECURRING_HOOK_DENSITY_LOCK
   - GOVERNANCE_LOCK
   - PER_TOOL_SOURCE_MAP
   - RULE_CONSUMPTION_EVIDENCE_LEDGER
@@ -104,7 +234,31 @@ output_blocks:
   - TOPIC_QUALITY_GATE
   - HOOK_GENERATION_GATE
   - SCRIPT_QUALITY_GATE
+  - SHADOW_MISSION_PACKET
+  - SCRIPT_LANGUAGE_DECLARATION
+  - USER_LANGUAGE_REQUEST_CHECK
+  - RESEARCH_AND_SOURCE_STATUS
+  - SOURCE_LEDGER
+  - SOURCE_LIMITATION_NOTES
+  - FACT_VS_ANECDOTE_MAP
+  - CLAIM_EVIDENCE_STATUS
+  - HOOK_VARIANTS
+  - SELECTED_HOOK_REASON
+  - RECURRING_REHOOK_MAP
+  - CINEMATIC_SHORT_STORY_BLOCK
+  - SCRIPT_STRUCTURE
   - FINAL_SCRIPT
+  - DYNAMIC_TIMED_BEAT_MAP
+  - VOICE_GENERATION_CONTEXT
+  - IMAGE_GENERATION_CONTEXT
+  - VIDEO_GENERATION_CONTEXT
+  - MUSIC_AND_SFX_CONTEXT
+  - EDITING_CONTEXT
+  - PLATFORM_PACKAGING
+  - PROVIDER_HANDOFF_BOUNDARY
+  - QUALITY_GATE
+  - LINEAGE_SUMMARY
+  - LOCAL_CLOUD_HYBRID_EXECUTION_PLAN
 validator_binding:
   validator_file: validators/validate_mac06_1a_output.py
   required_checks:

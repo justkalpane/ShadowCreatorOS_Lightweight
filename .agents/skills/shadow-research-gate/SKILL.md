@@ -19,6 +19,10 @@ Use this skill for any request involving:
 - citations
 - real-time
 - statistics
+- real people or celebrities
+- real incidents
+- biographical or career claims
+- brands, companies, platforms, or case studies used as proof
 
 ## Required Behavior
 
@@ -28,6 +32,23 @@ Use this skill for any request involving:
 4. If web is not used, set `real_time_sources_used=false`.
 5. Do not claim realtime or current research without retrieved sources.
 6. If current information is required and web access is unavailable, use `NEEDS_USER_APPROVAL` or `NEEDS_CONFIRMATION`.
+7. If a real person, real incident, brand, company, factual case study, or
+   biographical/career claim is used as proof, require web-assisted research
+   when web access is available.
+8. If `unsupported_claims` is non-empty, `SOURCE_RESEARCH_LOCK` cannot be
+   `PASS`.
+9. If `real_time_sources_used=true`, require `source_list_present=true`.
+10. If `web_access_used=true` but `real_time_sources_used=false`, classify the
+    research as `WEB_ASSISTED_STATIC_REFERENCE` or
+    `WEB_ASSISTED_LIMITED_REFERENCE`, never real-time research.
+11. For real-person proof scripts, require source sufficiency: three sources,
+    two non-encyclopedia sources, and three source categories where suitable
+    sources are available.
+12. Treat encyclopedia records as background context and interview reporting
+    as anecdotal support unless independently verified.
+13. Require `FACT_VS_ANECDOTE_MAP` for real-world proof claims.
+14. When a recurring re-hook uses a person, incident, factual, or current
+    proof claim, include it in `SOURCE_LEDGER` and `FACT_VS_ANECDOTE_MAP`.
 
 Allowed gate statuses only:
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from datetime import datetime, timezone
 from typing import Any
 
@@ -8,6 +9,32 @@ def _is_strict_packet_mode(input_payload: dict[str, Any]) -> bool:
     child_workflow_id = str(input_payload.get("child_workflow_id", "")).upper()
     workflow_id = str(input_payload.get("workflow_id", "")).upper()
     return bool(input_payload.get("strict_packet_output", False)) or child_workflow_id == "CWF-210" or workflow_id == "CWF-210"
+
+
+def _required_internal_rehooks(duration_minutes: float) -> int:
+    if duration_minutes < 3:
+        return 0
+    if duration_minutes <= 5:
+        return max(1, int(duration_minutes) - 2)
+    return max(4, math.ceil((duration_minutes * 60) / 90) - 1)
+
+
+def _default_rehook_map(duration_minutes: float) -> list[dict[str, Any]]:
+    count = _required_internal_rehooks(duration_minutes)
+    duration_seconds = int(duration_minutes * 60)
+    return [
+        {
+            "rehook_id": f"rehook_{index + 1}",
+            "timestamp_seconds": round(duration_seconds * (index + 1) / (count + 1)),
+            "hook_type": "curiosity_rehook",
+            "hook_line": f"[REHOOK_{index + 1}: add topic-relevant retention reset]",
+            "retention_function": "reset attention and reconnect the next section to the topic",
+            "topic_connection_required": True,
+            "mapped_to_dynamic_beat_map": True,
+            "mapped_to_line_influence_map": True,
+        }
+        for index in range(count)
+    ]
 
 
 def run(input_payload: dict[str, Any]) -> dict[str, Any]:
@@ -21,6 +48,26 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 
     now = datetime.now(timezone.utc).isoformat()
     ts = int(datetime.now(timezone.utc).timestamp() * 1000)
+    duration_minutes = float(input_payload.get("script_duration_minutes", 5))
+    rehook_plan_packet = input_payload.get("rehook_plan_packet")
+    recurring_rehook_map = (
+        rehook_plan_packet.get("recurring_rehook_map")
+        if isinstance(rehook_plan_packet, dict)
+        else input_payload.get("recurring_rehook_map")
+    )
+    if _is_strict_packet_mode(input_payload) and (
+        not isinstance(rehook_plan_packet, dict)
+        or rehook_plan_packet.get("producer_component_id") != "M-039-re-hook-system"
+        or not isinstance(recurring_rehook_map, list)
+        or not recurring_rehook_map
+    ):
+        return {
+            "status": "failed",
+            "error": "missing or invalid M-039 rehook_plan_packet",
+            "skill_id": "S-202",
+        }
+    if not isinstance(recurring_rehook_map, list) or not recurring_rehook_map:
+        recurring_rehook_map = _default_rehook_map(duration_minutes)
 
     if _is_strict_packet_mode(input_payload):
         return {
@@ -28,6 +75,13 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "dossier_id": str(dossier_id),
             "title": str(input_payload.get("title", "Structured Draft v1")),
             "hook": str(input_payload.get("hook", "This method compresses months of trial-and-error into one repeatable flow.")),
+            "master_script_language": str(input_payload.get("master_script_language", "English")),
+            "translation_localization_separate_stage": True,
+            "recurring_rehook_required": 3 <= duration_minutes <= 10,
+            "recurring_rehook_count": len(recurring_rehook_map),
+            "max_gap_without_rehook_seconds": 90,
+            "recurring_rehook_map": recurring_rehook_map,
+            "cta_hook_required": True,
             "section_plan": [
                 "Opening Hook",
                 "Problem Framing",
@@ -49,6 +103,8 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "route_context": input_payload.get("route_id", "unknown"),
+                "master_script_language": "English",
+                "recurring_rehook_map": recurring_rehook_map,
             },
         },
     }
@@ -100,3 +156,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [script-only output is PARTIAL unless explicitly requested, no media execution]
 # evidence_used_for_resolution: path/pre-contract keyword: script/hook/retention; component_path=skills/script_intelligence/S-202-first-draft-generation.py; component_id=S-202-first-draft-generation
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SCRIPT_STORY_ENGINE, DYNAMIC_TIMED_BEAT_MAP, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Emit English master draft packets with opening hook, duration-aware recurring re-hook map, CTA hook, and downstream beat-map bindings.

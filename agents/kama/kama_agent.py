@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/kama/kama_agent.py; component_id=kama_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [RECURRING_HOOK_DENSITY_LAW, RETENTION_GATE]
+# responsibility: Validate recurring re-hook density, topic relevance, CTA hook, and max retention gap.
+# reject_when: unexplained max_gap_without_rehook_seconds above 90 or fewer than three internal re-hooks in a 5-minute script.

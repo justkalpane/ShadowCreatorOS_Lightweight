@@ -88,3 +88,90 @@ providers:
     notes: >
       Publishing and analytics provider. Deferred until OAuth redirect URI and
       auth closure are finalized.
+
+  - provider_id: comfyui_local
+    display_name: ComfyUI (Local)
+    class: local_media_engine
+    status: designed
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_local_http
+    runtime_modes:
+      - local
+      - hybrid
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_models:
+      - SDXL
+      - Flux
+      - SD1.5
+      - AnimateDiff
+      - SVD
+    controlnet_support:
+      - Canny
+      - OpenPose
+      - Depth
+      - Lineart
+      - SoftEdge
+      - IP-Adapter
+    readiness_status: DESIGNED
+    notes: >
+      Primary local image and video generation engine. Accepts JSON workflow
+      files and text prompts. Outputs PNG/JPEG for images and MP4 for video.
+      Readiness status is DESIGNED — connection not yet confirmed. Upgrade to
+      LOCAL_ENGINE_READY when hardware and model installation are verified.
+
+  - provider_id: ffmpeg_local
+    display_name: FFmpeg (Local)
+    class: local_media_engine
+    status: designed
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_cli
+    runtime_modes:
+      - local
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - video_assembly_from_image_sequence
+      - audio_muxing
+      - subtitle_burn_in
+      - platform_transcoding
+      - storyboard_export
+    readiness_status: DESIGNED
+    notes: >
+      Local video assembly and rendering engine. Primary tool for combining
+      image sequences with audio and subtitles into platform-ready MP4 output.
+      No GPU required. Upgrade readiness_status to LOCAL_ENGINE_READY when
+      FFmpeg installation is confirmed on the target machine.
+
+  - provider_id: davinci_resolve_local
+    display_name: DaVinci Resolve (Local)
+    class: local_media_engine
+    status: designed
+    phase1_allowed: false
+    auth_style: none
+    callback_style: project_file_import
+    runtime_modes:
+      - local
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - color_grading
+      - final_cut_editing
+      - audio_mixing
+      - export_rec709
+      - export_prores
+    readiness_status: DESIGNED
+    notes: >
+      Local editing and color grading engine. Handles Rec.709 delivery, color
+      grade, and final export. Phase1_allowed is false because DaVinci Resolve
+      integration requires a confirmed project file handoff workflow. Upgrade
+      to LOCAL_ENGINE_READY when project handoff pipeline is validated.
+

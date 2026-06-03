@@ -187,3 +187,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md; component_id=M-031_Mrbeast_Hook_System
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Distinguish opening-hook variants from recurring re-hooks.
+- Generate topic-relevant opening, curiosity, proof, contrarian, emotional,
+  story-twist, pattern-interrupt, and CTA hook options.
+- Route recurring options to `M-039-re-hook-system`.

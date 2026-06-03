@@ -183,3 +183,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-206-emotion-amplifier.skill.md; component_id=S-206-emotion-amplifier.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Add emotional reset options at recurring re-hook scenes without inventing
+  unsupported factual details.
+- Bind emotion spikes to dynamic beat-map scenes and Media Factory voice,
+  image, video, music/SFX, and editing cues.

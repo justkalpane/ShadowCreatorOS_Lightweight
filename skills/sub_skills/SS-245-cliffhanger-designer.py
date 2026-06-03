@@ -50,8 +50,16 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "input_payload": input_payload.get("input_payload", {}),
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
+            "recurring_rehook_type": "story_twist_rehook",
+            "dynamic_beat_map_binding_required": True,
+            "line_influence_mapping_required": True,
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# SS-245 provides section-boundary cliffhangers that must appear in the final
+# script, dynamic beat map, and line-level influence map.
 
 # MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 # Append-only MAC-06.2B contract metadata.

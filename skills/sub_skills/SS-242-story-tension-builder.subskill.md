@@ -137,3 +137,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/sub_skills/SS-242-story-tension-builder.subskill.md; component_id=SS-242-story-tension-builder.subskill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Add tension resets at recurring re-hook scenes and preserve the cinematic
+  story bridge.
+- Reject generic motivation filler and unsourced factual dramatization.

@@ -187,3 +187,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-034-micro-cliffhanger-engine.skill.md; component_id=M-034_Micro_Cliffhanger_Engine
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Offer section-ending cliffhanger re-hooks and require truthful payoff in the
+  following section.
+- Reject generic cliffhangers or unsupported proof claims.

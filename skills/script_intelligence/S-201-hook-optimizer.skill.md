@@ -183,3 +183,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-201-hook-optimizer.skill.md; component_id=S-201-hook-optimizer.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- `HOOK_VARIANTS` emits at least three scored opening-hook candidates.
+- Opening-hook selection does not satisfy recurring retention requirements.
+- Emit `RECURRING_REHOOK_MAP` guidance for topic-relevant 70-90 second dynamic
+  retention resets and reject unexplained gaps above 90 seconds.

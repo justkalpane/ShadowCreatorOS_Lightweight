@@ -420,3 +420,13 @@ human_approval_points_resolved: [accept_delta, reject_delta, request_stronger_cr
 status_limits_resolved: [no rewrite without critique_delta_packet]
 evidence_used_for_resolution: path/pre-contract keyword: debate/critique; component_path=directors/kernel/aruna.md; component_id=DIRECTOR:_ARUNA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Route 3-10 minute YouTube scripts through `RECURRING_HOOK_DENSITY_LOCK`
+  before final output.
+- Block the route when the English master draft, source-quality mapping,
+  cinematic story, dynamic beat map, scene sync, hybrid execution plan, or
+  selected-layer consumption evidence is missing.
+- Enforce a dynamic 70-90 second re-hook default with no unexplained gap above
+  90 seconds.

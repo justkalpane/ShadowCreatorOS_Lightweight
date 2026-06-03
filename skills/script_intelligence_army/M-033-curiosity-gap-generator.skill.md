@@ -187,3 +187,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-033-curiosity-gap-generator.skill.md; component_id=M-033_Curiosity_Gap_Generator
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Generate curiosity re-hooks with explicit payoff targets.
+- Keep dynamic re-hook intervals within 70-90 seconds by default and reject
+  curiosity gaps that do not reconnect to the topic.

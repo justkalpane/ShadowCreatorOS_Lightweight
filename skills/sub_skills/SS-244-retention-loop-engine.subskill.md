@@ -137,3 +137,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/sub_skills/SS-244-retention-loop-engine.subskill.md; component_id=SS-244-retention-loop-engine.subskill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Enforce at least three internal re-hooks plus a CTA hook for a 5-minute
+  script unless a recorded timing reason justifies an alternative.
+- Require recurring re-hooks inside final script, dynamic beat map, editing
+  context, line influence map, and Media Factory scene sync when requested.

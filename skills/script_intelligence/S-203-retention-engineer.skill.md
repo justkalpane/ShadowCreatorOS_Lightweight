@@ -183,3 +183,11 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-203-retention-engineer.skill.md; component_id=S-203-retention-engineer.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Enforce `RECURRING_HOOK_DENSITY_LAW`.
+- Default recurring re-hook interval is dynamic 70-90 seconds; no unexplained
+  flat section may exceed 90 seconds.
+- Score each re-hook for topic connection, curiosity or emotional pressure,
+  payoff integrity, and mapping completeness.

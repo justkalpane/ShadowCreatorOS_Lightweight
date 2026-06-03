@@ -81,6 +81,18 @@ aliases:
     internal_wrapper_required: true
     execution_boundary: planning_only_no_provider_execution
 
+  shadow_media_factory:
+    prefixes:
+      - "Shadow storyboard:"
+      - "Shadow visual plan:"
+      - "Shadow scene prompt:"
+      - "Shadow Media Factory:"
+      - "Shadow render packet:"
+      - "Shadow B-roll:"
+    route_id: MEDIA_FACTORY_HANDOFF
+    internal_wrapper_required: true
+    execution_boundary: local_engine_packet_only_no_provider_execution
+
 gateway_rules:
   preserve_raw_user_task: true
   apply_shadow_task_execution_wrapper: true

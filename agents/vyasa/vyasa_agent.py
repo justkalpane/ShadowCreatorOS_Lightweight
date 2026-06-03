@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/vyasa/vyasa_agent.py; component_id=vyasa_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SCRIPT_STORY_ENGINE, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Build English master scripts with cinematic story, recurring re-hook map, dynamic timing, and line influence bindings.
+# reject_when: one-hook-only script, generic re-hook filler, re-hook unrelated to topic.

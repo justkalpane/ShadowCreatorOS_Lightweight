@@ -452,3 +452,12 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/research/valmiki.md; component_id=DIRECTOR:_VALMIKI
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Design narrative re-hooks that reconnect each major section to the topic and
+  maintain story momentum across a dynamic 70-90 second default interval.
+- Classify story basis honestly and separate verified fact, anecdotal support,
+  inference, and cinematic reconstruction.
+- Require proof-based re-hooks to appear in `SOURCE_LEDGER` and
+  `FACT_VS_ANECDOTE_MAP`.

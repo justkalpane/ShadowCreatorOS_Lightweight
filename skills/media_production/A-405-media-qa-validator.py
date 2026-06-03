@@ -38,6 +38,9 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
     context_id = str(input_payload.get("context_engineering_packet_id", "CEP-1001"))
     if not context_id.startswith("CEP-"):
         context_id = "CEP-1001"
+    recurring_rehook_map = input_payload.get("recurring_rehook_map")
+    if not isinstance(recurring_rehook_map, list):
+        recurring_rehook_map = []
 
     return {
         "status": "VALIDATED",
@@ -101,6 +104,19 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
                         "deviation_seconds": 0.2,
                     },
                 ],
+                "recurring_rehook_sync": {
+                    "recurring_rehook_count": len(recurring_rehook_map),
+                    "rehooks_mapped_to_scene_sync_matrix": bool(recurring_rehook_map),
+                    "required_pattern_interrupt_fields": [
+                        "voice_tension",
+                        "image_cue",
+                        "video_pattern_interrupt",
+                        "music_sfx_accent",
+                        "editing_cue",
+                        "platform_safe_zone",
+                        "local_cloud_hybrid_execution",
+                    ],
+                },
             },
             "quality": {
                 "packet_completeness": 1.0,
@@ -172,3 +188,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [no tool execution, no media creation]
 # evidence_used_for_resolution: path/pre-contract keyword: context engineering; component_path=skills/media_production/A-405-media-qa-validator.py; component_id=A-405-media-qa-validator
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [MEDIA_FACTORY_FINAL_DRAFT, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Carry re-hook scene synchronization proof across voice, image, video, music/SFX, editing, platform, influence, and execution rows.

@@ -75,3 +75,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [support components cannot claim production output alone]
 # evidence_used_for_resolution: fallback: cross-route support component; component_path=subagents/cwf_230/cwf_230_sub_agent.py; component_id=cwf_230_sub_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# route_profile_override: script_generation_refinement_lane when selected by SCRIPT_GENERATION manifest.
+# responsibility: Repair flat sections and embed re-hooks inside FINAL_SCRIPT, DYNAMIC_TIMED_BEAT_MAP, EDITING_CONTEXT, and LINE_BY_LINE_INFLUENCE_MAP.
+# reject_when: re-hooks exist only in a planning list.

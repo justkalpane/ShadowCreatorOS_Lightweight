@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/ganesha/ganesha_agent.py; component_id=ganesha_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [RECURRING_HOOK_DENSITY_LAW, SUBSKILL_ROUTING]
+# responsibility: Route recurring hook requirements through hook, open-loop, tension, pacing, retention, and cliffhanger subskills.
+# reject_when: script child workflow omits recurring re-hook map or dynamic beat hook markers.

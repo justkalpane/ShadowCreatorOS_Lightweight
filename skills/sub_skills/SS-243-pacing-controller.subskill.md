@@ -137,3 +137,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/sub_skills/SS-243-pacing-controller.subskill.md; component_id=SS-243-pacing-controller.subskill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Validate dynamic pacing and flag any unexplained re-hook gap above 90
+  seconds.
+- Bind every re-hook to `DYNAMIC_TIMED_BEAT_MAP` with `hook_marker`,
+  `rehook_type`, and `retention_reset_goal`.

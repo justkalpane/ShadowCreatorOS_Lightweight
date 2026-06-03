@@ -67,12 +67,19 @@ Required before final output:
 - `topic_quality_gate_present=true`
 - `hook_generation_gate_present=true`
 - `hook_variants_count>=3`
+- `recurring_rehook_required=true` for 3-10 minute YouTube scripts
+- `max_gap_without_rehook_seconds<=90` unless justified
+- `five_minute_minimum_internal_rehooks>=3`
 - `script_quality_gate_present=true`
 
 Shallow repo routing is `FAIL`.
 Generic output after bootstrap is `FAIL`.
 Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
 If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
+
+`HOOK_VARIANTS` is the opening-hook selection gate only. Contract creation
+alone is not runtime propagation. Missing selected-layer re-hook consumption
+evidence prevents `PASS`.
 
 ## COMPLETE REQUIRED REPO SCOPE LAW
 

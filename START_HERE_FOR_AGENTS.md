@@ -289,6 +289,12 @@ Do not follow older dossier-first text for normal chat tasks.
 - Content tasks must include content engineering output unless user asks for script-only.
 - Realtime/source-aware research must be used when current facts are required.
 - If web access is unavailable, disclose the limitation and gate.
+- Every 3-10 minute YouTube script must include a 45-75 second
+  `CINEMATIC_SHORT_STORY_BLOCK` with character, conflict, turning point,
+  cinematic visuals, emotional peak, and a bridge back to the topic.
+- Real-person, real-incident, brand, company, factual case-study, and
+  biographical proof claims require web-assisted research when web access is
+  available. Unsupported claims prevent `SOURCE_RESEARCH_LOCK=PASS`.
 
 ## CANONICAL SHADOW LIGHTWEIGHT BOOT ORDER - ACTIVE LAW
 
@@ -320,6 +326,38 @@ If repo-write is approved, create exactly one consolidated file by default: `out
 Older instructions saying every mission creates a dossier apply only to `FULL_DOSSIER_ARCHIVE_MODE` or approved MAC-05 production dossier mode.
 For content/video/script tasks, script-only output is `PARTIAL` unless the user explicitly asks for script-only.
 For content/video/script tasks, `CONTENT_ENGINEERING_OUTPUT_CONTRACT` is mandatory.
+
+For script routes, also load:
+
+- `runtime_contracts/SCRIPT_LANGUAGE_CONTROL_CONTRACT.md`
+- `runtime_contracts/REAL_TIME_RESEARCH_ENFORCEMENT_CONTRACT.md`
+- `runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md`
+- `runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md`
+- `runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md`
+- `runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md`
+- `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md`
+
+For Media Factory / storyboard / B-roll / visual plan / local engine handoff routes, also load:
+
+- `runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md`
+- `runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md`
+- `runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md`
+- `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md`
+- `registries/route_manifests/media_factory_handoff.yaml`
+- `schemas/media_factory/scene_sync_matrix.schema.json`
+- `schemas/media_factory/scene_prompt_packet.schema.json`
+- `schemas/media_factory/media_factory_packet.schema.json`
+- `.agents/skills/shadow-media-factory/SKILL.md`
+
+The English master draft, honest source sufficiency, dynamic timing, and
+scene-synchronized Media Factory handoff are mandatory production gates.
+
+Contract creation alone is not runtime propagation. Selected directors,
+agents, subagents, skills, and subskills must consume the relevant script laws.
+For 3-10 minute YouTube scripts, `HOOK_VARIANTS` chooses the opening hook only.
+Recurring re-hooks default to a dynamic 70-90 second interval, no unexplained
+gap may exceed 90 seconds, and a 5-minute script requires at least three
+internal re-hooks plus a CTA hook.
 
 ## CLAIM_EVIDENCE_STATUS LAW
 

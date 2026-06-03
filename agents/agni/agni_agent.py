@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/agni/agni_agent.py; component_id=agni_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [MEDIA_FACTORY_FINAL_DRAFT, DYNAMIC_TIMED_BEAT_MAP, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Map each recurring re-hook to camera, caption, edit, music/SFX, influence, and execution pattern-interrupt rows.
+# reject_when: Media Factory re-hook scene lacks synchronized pattern interrupt.

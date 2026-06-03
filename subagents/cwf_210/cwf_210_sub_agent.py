@@ -75,3 +75,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [support components cannot claim production output alone]
 # evidence_used_for_resolution: fallback: cross-route support component; component_path=subagents/cwf_210/cwf_210_sub_agent.py; component_id=cwf_210_sub_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# route_profile_override: script_generation_draft_lane when selected by SCRIPT_GENERATION manifest.
+# responsibility: Draft English master script with opening-hook candidates, selected opening hook, and recurring re-hook map.
+# reject_when: 3-10 minute YouTube draft has only an opening hook.

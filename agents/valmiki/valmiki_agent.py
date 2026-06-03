@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/valmiki/valmiki_agent.py; component_id=valmiki_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SCRIPT_STORY_ENGINE, SOURCE_QUALITY_CLASSIFICATION, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Shape narrative re-hooks and verify that story basis, reconstruction status, and proof claims remain honest.
+# reject_when: invented scene claimed verified, proof-based re-hook missing FACT_VS_ANECDOTE_MAP, retention reset disconnected from topic.

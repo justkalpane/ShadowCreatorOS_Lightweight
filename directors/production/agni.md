@@ -521,3 +521,11 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/production/agni.md; component_id=DIRECTOR:_AGNI
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Convert recurring re-hooks into scene-level pattern interrupts: camera or
+  B-roll shift, caption spike, edit cut, sound accent, and platform-safe cue.
+- Require every Media Factory re-hook row to align voice, image, video,
+  music/SFX, editing, influence, and local/cloud/hybrid execution planning.
+- Provider execution remains disabled without approval.

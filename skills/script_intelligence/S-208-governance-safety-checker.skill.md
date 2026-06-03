@@ -183,3 +183,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-208-governance-safety-checker.skill.md; component_id=S-208-governance-safety-checker.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Block unsupported factual re-hooks, false real-time claims, silent language
+  drift, generic filler hooks, and final `PASS` inflation.
+- Require factual re-hooks in `SOURCE_LEDGER` and `FACT_VS_ANECDOTE_MAP`.

@@ -75,3 +75,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [support components cannot claim production output alone]
 # evidence_used_for_resolution: fallback: cross-route support component; component_path=subagents/wf_200/wf_200_sub_agent.py; component_id=wf_200_sub_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# route_profile_override: script_generation_parent_lane when selected by SCRIPT_GENERATION manifest.
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SOURCE_QUALITY_CLASSIFICATION, SCRIPT_STORY_ENGINE, DYNAMIC_TIMED_BEAT_MAP, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Require English master script, cinematic story, recurring re-hook map, and weakest-gate honesty across WF-200 child lanes.

@@ -10,10 +10,13 @@ Bootstrap loaded is not enough.
 3. `ROUTE_DEPENDENCY_EXPANSION_LOCK`
 4. `CONSUMPTION_LOCK`
 5. `SOURCE_RESEARCH_LOCK`
-6. `QUALITY_LOCK`
-7. `GOVERNANCE_LOCK`
-8. `FINAL_OUTPUT`
-9. `FINAL_PROOF_CLASSIFICATION`
+6. `SCRIPT_LANGUAGE_LOCK` for script/content routes
+7. `QUALITY_LOCK`
+8. `RECURRING_HOOK_DENSITY_LOCK` for 3-10 minute YouTube scripts
+9. `MEDIA_FACTORY_SYNC_LOCK` when final media draft is requested
+10. `GOVERNANCE_LOCK`
+11. `FINAL_OUTPUT`
+12. `FINAL_PROOF_CLASSIFICATION`
 
 ## Hard Laws
 
@@ -71,16 +74,99 @@ consumption_lock_status=
 ```text
 SOURCE_RESEARCH_LOCK
 freshness_class=
+current_data_required=
 research_mode=
+web_access_available=
+web_access_used=
 web_required=
 web_used=
 sources_used_before_output=
 source_list_present=
+source_list=
+video_reference_list=
+real_time_sources_used=
 latest_claims_allowed=
 current_fact_confidence=
 unsupported_claims=
+research_sufficiency_gate_status=
 source_research_lock_status=
 ```
+
+`SOURCE_RESEARCH_LOCK` is mandatory for current/latest prompts and for
+real-person, real-incident, brand, company, factual case-study, biographical,
+career, article-reference, or video-reference claims used as proof.
+
+If `unsupported_claims` is non-empty, the lock cannot pass. If web evidence is
+required but unused, the final proof cannot pass unless the user explicitly
+approved repo-only limited continuation.
+
+## SCRIPT_LANGUAGE_LOCK
+
+```text
+SCRIPT_LANGUAGE_LOCK
+master_script_language=
+explicit_language_requested=
+translation_stage_required=
+language_inference_blocked=
+script_language_lock_status=
+```
+
+The default master language is English unless the user explicitly requests
+another language or translation/localization.
+
+## CINEMATIC_STORY_GATE
+
+```text
+CINEMATIC_STORY_GATE
+cinematic_story_required=
+story_duration_target_seconds=
+story_basis=
+character_present=
+conflict_present=
+turning_point_present=
+cinematic_visuals_present=
+emotional_peak_present=
+lesson_bridge_present=
+source_dependency_satisfied=
+cinematic_story_gate_status=
+```
+
+This gate is mandatory for every 3-10 minute YouTube script.
+
+## MEDIA_FACTORY_SYNC_LOCK
+
+```text
+MEDIA_FACTORY_SYNC_LOCK
+media_factory_final_draft_requested=
+dynamic_beat_map_present=
+scene_sync_matrix_complete=
+media_contexts_synchronized=
+local_cloud_hybrid_execution_plan_present=
+provider_execution_allowed=false
+media_factory_sync_lock_status=
+```
+
+This lock is mandatory when a final Media Factory draft is requested.
+
+## RECURRING_HOOK_DENSITY_LOCK
+
+```text
+RECURRING_HOOK_DENSITY_LOCK
+opening_hook_present=
+recurring_rehook_required=
+recurring_rehook_count=
+max_gap_without_rehook_seconds=
+rehook_interval_reason_present=
+rehooks_mapped_to_final_script=
+rehooks_mapped_to_dynamic_beat_map=
+rehooks_mapped_to_editing_context=
+rehooks_mapped_to_line_influence_map=
+rehooks_mapped_to_scene_sync_matrix=
+rehook_density_lock_status=
+```
+
+For a 5-minute script, at least three internal re-hooks plus a CTA hook are
+required. `HOOK_VARIANTS` is only the opening-hook selection gate.
 
 ## QUALITY_LOCK
 

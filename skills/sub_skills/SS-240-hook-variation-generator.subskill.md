@@ -138,3 +138,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/sub_skills/SS-240-hook-variation-generator.subskill.md; component_id=SS-240-hook-variation-generator.subskill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Generate opening-hook candidates and separate recurring re-hook candidates.
+- Tag re-hook type, topic connection, timestamp target, and retention reset
+  goal.

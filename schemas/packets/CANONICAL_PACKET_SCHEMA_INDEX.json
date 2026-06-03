@@ -6,6 +6,7 @@
     "source_evidence_packet",
     "research_brief_packet",
     "script_strategy_packet",
+    "rehook_plan_packet",
     "script_v1_packet",
     "debate_critique_packet",
     "refinement_delta_packet",
@@ -32,6 +33,7 @@
     "music_sfx_packet",
     "provider_handoff_packet",
     "refinement_delta_packet",
+    "rehook_plan_packet",
     "research_brief_packet",
     "script_segment_packet",
     "script_strategy_packet",
@@ -45,7 +47,7 @@
   ],
   "classification_counts": {
     "GENERATED_ALIAS": 309,
-    "CANONICAL_ACTIVE": 20,
+    "CANONICAL_ACTIVE": 21,
     "DORMANT_FUTURE": 3
   },
   "schema_count_justified": true,

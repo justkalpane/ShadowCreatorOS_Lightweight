@@ -172,6 +172,7 @@ Never answer directly as a generic chatbot unless the user explicitly says:
 25. Read `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`.
 26. Read `registries/native_capability_routing_matrix.yaml`.
 27. Read `registries/agent_runtime_selection_index.yaml`.
+28. If task involves storyboard, B-roll, scene prompt, visual plan, local engine handoff, or Media Factory output, read `.agents/skills/shadow-media-factory/SKILL.md`.
 
 Repo-relative paths are authoritative. Absolute Mac paths are `LOCAL_MAC_REFERENCE_ONLY`.
 
@@ -214,6 +215,25 @@ Older instructions saying every mission creates a dossier apply only to `FULL_DO
 For content/video/script tasks, script-only output is `PARTIAL` unless the user explicitly asks for script-only.
 For content/video/script tasks, `CONTENT_ENGINEERING_OUTPUT_CONTRACT` is mandatory.
 
+For script/content tasks:
+
+- The first master script is English unless the user explicitly requests
+  another language or translation/localization.
+- Source presence is not source sufficiency. Real-person proof scripts require
+  source-quality classification and fact-versus-anecdote mapping.
+- Timed beats are dynamic. Do not hard-lock output to uniform 15-second blocks
+  without production justification.
+- Final Media Factory drafts require scene-level synchronization and a
+  local/cloud/hybrid execution plan.
+- Contract creation alone is not enough. The selected directors, agents,
+  subagents, skills, and subskills must consume the script behavior laws.
+- `HOOK_VARIANTS` chooses an opening hook only. Every 3-10 minute YouTube
+  script requires topic-relevant recurring re-hooks at a dynamic 70-90 second
+  default interval, with no unexplained gap above 90 seconds.
+- A 5-minute script requires at least three internal re-hooks plus a CTA hook.
+- Missing active-layer propagation or recurring re-hook evidence prevents
+  `PASS`.
+
 ## CLAIM_EVIDENCE_STATUS LAW
 
 Every production-sensitive claim must be expressed as:
@@ -227,6 +247,37 @@ status=PASS/PARTIAL/BLOCKED/NEEDS_CONFIRMATION
 ```
 
 If evidence is missing, mark `NEEDS_CONFIRMATION`. Do not convert `NEEDS_CONFIRMATION` into `PASS`.
+
+## SCRIPT STORY + REAL-WORLD SOURCE LAW
+
+For every 3-10 minute YouTube script, the script-generation route must include a
+`CINEMATIC_SHORT_STORY_BLOCK` before the main teaching section.
+
+The story must run for 45-75 seconds and include:
+
+- character
+- setting
+- conflict
+- turning point
+- cinematic visuals
+- emotional peak
+- lesson bridge back to the topic
+
+The story basis must be one of:
+
+- `real_person`
+- `real_incident`
+- `realistic_composite`
+- `mythological_parallel`
+
+When a script uses a real person, celebrity, brand, company, factual case study,
+biographical claim, or real incident as proof, web-assisted source research is
+mandatory when web access is available.
+
+If unsupported claims remain, `SOURCE_RESEARCH_LOCK` cannot be `PASS`.
+If web evidence is required but unused, final proof cannot be `PASS` unless the
+user explicitly approved repo-only limited continuation.
+Script-only output is `PARTIAL` unless the user explicitly requested script-only.
 
 ## FRESH LAYMAN PROOF LAW
 

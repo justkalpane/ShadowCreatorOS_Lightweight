@@ -4798,9 +4798,9 @@
       "component_layer": "SKILL",
       "route_profile": "script_generation_profile",
       "route_family": "script_generation",
-      "lifecycle_status": "QUARANTINE_REVIEW",
-      "active_runtime": false,
-      "reason": "not consumed by executable DAG"
+      "lifecycle_status": "ACTIVE_SUPPORT",
+      "active_runtime": true,
+      "reason": "consumed by script_generation executable DAG before S-202 drafting"
     },
     {
       "component_id": "M-039_Re_Hook_System",

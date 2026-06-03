@@ -25,9 +25,17 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "recurring_rehook_type": "story_twist_rehook",
+                "major_section_cliffhanger_required": True,
+                "dynamic_beat_map_binding_required": True,
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# Cliffhangers provide section-boundary re-hook options and must bind to the
+# dynamic beat map rather than float outside the final script.
 
 
 

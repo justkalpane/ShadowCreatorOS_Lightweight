@@ -128,7 +128,7 @@ routes:
       - TASK_ROUTE_LOCK
       - ROUTE_DEPENDENCY_EXPANSION_LOCK
       - CONSUMPTION_LOCK
-      - SOURCE_RESEARCH_LOCK if latest/current terms are present
+      - SOURCE_RESEARCH_LOCK if latest/current terms or real-world proof claims are present
       - SOURCE_BREADTH_LOCK when latest/current/watchlist terms are present
       - RULE_CONSUMPTION_EVIDENCE_LOCK
       - QUALITY_LOCK
@@ -139,6 +139,15 @@ routes:
       - Shorts script
       - reel script
       - voiceover script
+    mandatory_story_engine:
+      contract: runtime_contracts/SCRIPT_STORY_ENGINE_CONTRACT.md
+      required_for: 3_to_10_minute_youtube_scripts
+      story_duration_target: 45_to_75_seconds
+      fail_if_missing: true
+    real_world_source_gate:
+      web_required_when: [real_person, real_incident, celebrity, brand, company, factual_case_study, biographical_claim, career_claim, real_world_example_as_proof]
+      unsupported_claims_prevent_pass: true
+      web_required_but_unused_prevents_pass_unless_user_approved_repo_only: true
     mandatory_directors:
       - name: Krishna
         path: directors/supreme_vision/krishna.md
@@ -701,6 +710,115 @@ routes:
       - skipped lane without disclosure
       - no approval checkpoints
       - provider/media execution claim without approval
+
+  - route_id: MEDIA_FACTORY_HANDOFF
+    route_name: Media Factory Handoff
+    route_manifest_path: registries/route_manifests/media_factory_handoff.yaml
+    complete_required_repo_scope_required: true
+    route_dependency_expansion_required: true
+    mandatory_files_must_be_read_before_output: true
+    selected_components_must_be_consumed: true
+    governance_lock_required: true
+    fail_if_route_manifest_not_read: true
+    fail_if_mandatory_files_not_read: true
+    fail_if_selected_component_not_consumed: true
+    fail_if_script_before_locks: true
+    fail_if_loaded_true_but_not_consumed: true
+    required_locks:
+      - TASK_ROUTE_LOCK
+      - ROUTE_DEPENDENCY_EXPANSION_LOCK
+      - CONSUMPTION_LOCK
+      - MEDIA_FACTORY_SYNC_LOCK
+      - GOVERNANCE_LOCK
+    trigger_terms:
+      - storyboard
+      - B-roll plan
+      - scene prompt
+      - visual plan
+      - image prompt packet
+      - video prompt packet
+      - Media Factory
+      - local engine handoff
+      - local media generation
+      - pacing metadata
+      - frame by frame
+      - cinematic visual plan
+      - shot list with prompts
+      - visual storyboard
+      - render packet
+      - local render
+    mandatory_directors:
+      - name: Maya
+        path: directors/production/maya.md
+      - name: Vishwakarma
+        path: directors/production/vishwakarma.md
+      - name: Nataraja
+        path: directors/cinematic/nataraja.md
+      - name: Brahma
+        path: directors/supreme_vision/brahma.md
+      - name: Varuna
+        path: directors/cinematic/varuna.md
+    mandatory_agents:
+      - agents/vishwakarma/vishwakarma_agent.py
+      - agents/nataraja/nataraja_agent.py
+      - agents/brahma/brahma_agent.py
+      - agents/varuna/varuna_agent.py
+    mandatory_subagents:
+      - subagents/wf_400/wf_400_sub_agent.py
+      - subagents/cwf_410/cwf_410_sub_agent.py
+      - subagents/cwf_420/cwf_420_sub_agent.py
+    mandatory_skills:
+      - skills/media_video/M-216-shot-list-generator.skill.md
+      - skills/media_video/M-217-b-roll-sourcing-strategy.skill.md
+      - skills/media_video/M-221-motion-graphics-storyboard.skill.md
+      - skills/media_production/A-402-visual-asset-planner.skill.md
+      - skills/media_production/A-401-thumbnail-concept-designer.skill.md
+      - skills/operations/M-174-visual-asset-generator.skill.md
+    mandatory_subskills:
+      - skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md
+      - skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md
+      - skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md
+      - skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md
+      - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+    mandatory_contracts:
+      - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+      - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
+      - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+      - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+      - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+      - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+    mandatory_registries:
+      - registries/task_intent_routing_matrix.yaml
+      - registries/route_manifests/media_factory_handoff.yaml
+      - registries/provider_registry.yaml
+      - registries/subskill_runtime_registry.yaml
+    governance_directors:
+      - Yama
+      - Brahma
+      - Nataraja
+    required_output_blocks:
+      - ROUTE_ACTIVATION_PROOF
+      - DIRECTOR_CONSUMPTION_LEDGER
+      - SKILL_CONSUMPTION_LEDGER
+      - SCENE_SYNC_MATRIX
+      - SCENE_PROMPT_PACKETS
+      - VIDEO_PROMPT_PACKETS
+      - STORYBOARD_EXPORT_PLAN
+      - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS
+      - PROVIDER_HONESTY_GATE
+      - GOVERNANCE_LOCK
+    pass_rules:
+      - All scene prompt packets include complete visual DNA fields.
+      - SCENE_SYNC_MATRIX emits one scene_row_json per scene.
+      - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS declares readiness per engine.
+      - PROVIDER_HONESTY_GATE is explicit with no fake execution claims.
+      - Storyboard export plan references exact filenames in pacing metadata.
+    fail_rules:
+      - scene prompt packet missing any visual DNA field
+      - SCENE_SYNC_MATRIX missing or contains only headings
+      - media artifact claimed without evidence block
+      - provider execution claimed without approval
+      - local engine execution claimed without render metadata
 
 mac_06_2b_component_depth_registry_extension:
   status: ACTIVE_SUPPORTING_REGISTRY_EXTENSION

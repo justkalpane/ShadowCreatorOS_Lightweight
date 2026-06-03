@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/agastya/agastya_agent.py; component_id=agastya_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [REAL_TIME_RESEARCH_ENFORCEMENT, SOURCE_QUALITY_CLASSIFICATION, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Emit source-safe research briefs and classify factual re-hook claims in SOURCE_LEDGER and FACT_VS_ANECDOTE_MAP.
+# reject_when: fake realtime claim, encyclopedia-only proof, anecdote treated as verified fact, factual re-hook without source lineage.

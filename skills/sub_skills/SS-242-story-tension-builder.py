@@ -50,8 +50,16 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "input_payload": input_payload.get("input_payload", {}),
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
+            "major_section_tension_reset_required": True,
+            "recurring_rehook_supported": True,
+            "story_topic_connection_required": True,
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# SS-242 must supply topic-connected tension resets for major script sections
+# and keep the cinematic story inside the same retention arc.
 
 # MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 # Append-only MAC-06.2B contract metadata.

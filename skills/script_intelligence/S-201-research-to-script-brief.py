@@ -25,6 +25,14 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "route_context": input_payload.get("route_id", "unknown"),
+                "script_behavior_requirements": {
+                    "master_script_language": "English",
+                    "translation_localization_separate_stage": True,
+                    "fact_vs_anecdote_map_required_for_real_world_proof": True,
+                    "recurring_rehook_required_for_3_to_10_minute_youtube": True,
+                    "default_rehook_interval_seconds": "70-90",
+                    "max_gap_without_rehook_seconds": 90,
+                },
             },
         },
     }
@@ -76,3 +84,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [script-only output is PARTIAL unless explicitly requested, no media execution]
 # evidence_used_for_resolution: path/pre-contract keyword: script/hook/retention; component_path=skills/script_intelligence/S-201-research-to-script-brief.py; component_id=S-201-research-to-script-brief
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SOURCE_QUALITY_CLASSIFICATION, SCRIPT_STORY_ENGINE, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Bind English master language, source-safe proof re-hooks, cinematic story, and recurring hook density into the script brief.

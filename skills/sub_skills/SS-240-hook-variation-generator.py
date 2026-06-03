@@ -50,8 +50,16 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "input_payload": input_payload.get("input_payload", {}),
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
+            "opening_hook_variants_required": 3,
+            "opening_hook_does_not_satisfy_recurring_rehooks": True,
+            "recurring_rehook_owner": "M-039",
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# SS-240 generates scored opening candidates and topic-bound recurring hook
+# options, but one selected opening hook never satisfies retention density.
 
 # MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 # Append-only MAC-06.2B contract metadata.

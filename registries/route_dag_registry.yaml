@@ -250,11 +250,48 @@
         },
         {
           "node_id": "sg_003",
+          "component_id": "M-039-re-hook-system",
+          "component_path": "skills/script_intelligence_army/M-039-re-hook-system.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_strategy_packet"
+          ],
+          "emitted_output_packets": [
+            "rehook_plan_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_REHOOK_DRAFT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass",
+            "recurring_rehook_reality_validation_pass"
+          ],
+          "quality_gates": [
+            "recurring_rehook_density_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_004"
+          ]
+        },
+        {
+          "node_id": "sg_004",
           "component_id": "S-202-first-draft-generation",
           "component_path": "skills/script_intelligence/S-202-first-draft-generation.py",
           "component_layer": "SKILL",
           "required_input_packets": [
-            "script_strategy_packet"
+            "script_strategy_packet",
+            "rehook_plan_packet"
           ],
           "emitted_output_packets": [
             "script_v1_packet"
@@ -280,11 +317,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_004"
+            "sg_005"
           ]
         },
         {
-          "node_id": "sg_004",
+          "node_id": "sg_005",
           "component_id": "S-210-final-script-packager",
           "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
           "component_layer": "SKILL",
@@ -315,11 +352,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_005"
+            "sg_006"
           ]
         },
         {
-          "node_id": "sg_005",
+          "node_id": "sg_006",
           "component_id": "A-405-media-qa-validator",
           "component_path": "skills/media_production/A-405-media-qa-validator.py",
           "component_layer": "SKILL",
@@ -350,11 +387,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_006"
+            "sg_007"
           ]
         },
         {
-          "node_id": "sg_006",
+          "node_id": "sg_007",
           "component_id": "P-304-lineage-chain-validator",
           "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
           "component_layer": "SKILL",
@@ -385,11 +422,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_007"
+            "sg_008"
           ]
         },
         {
-          "node_id": "sg_007",
+          "node_id": "sg_008",
           "component_id": "DIRECTOR:_KAMA",
           "component_path": "directors/distribution/kama.md",
           "component_layer": "DIRECTOR",
@@ -1484,6 +1521,120 @@
           ],
           "lineage_required": true,
           "approval_required": true,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": []
+        }
+      ]
+    },
+    {
+      "route_id": "media_factory_handoff",
+      "route_family": "media_factory",
+      "execution_status": "local_packet_only",
+      "allowed_lifecycle_statuses": [
+        "ACTIVE_CORE",
+        "ACTIVE_SUPPORT"
+      ],
+      "initial_packets": [
+        "scene_brief_packet"
+      ],
+      "ordered_nodes": [
+        {
+          "node_id": "mfh_001",
+          "component_id": "DIRECTOR:_VISHWAKARMA",
+          "component_path": "directors/production/vishwakarma.md",
+          "component_layer": "DIRECTOR",
+          "required_input_packets": [
+            "scene_brief_packet"
+          ],
+          "emitted_output_packets": [
+            "scene_prompt_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_DIRECTOR_AGENT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "media_factory_sync_lock_status",
+            "scene_sync_gate_status",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "scene_sync_matrix_quality_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "mfh_002"
+          ]
+        },
+        {
+          "node_id": "mfh_002",
+          "component_id": "M-216-shot-list-generator",
+          "component_path": "skills/media_video/M-216-shot-list-generator.skill.md",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "scene_prompt_packet"
+          ],
+          "emitted_output_packets": [
+            "storyboard_export_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_FINAL_SCRIPT_IMAGE"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "scene_sync_schema_validation_pass",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "visual_dna_compliance_gate",
+            "storyboard_export_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "mfh_003"
+          ]
+        },
+        {
+          "node_id": "mfh_003",
+          "component_id": "A-405-media-qa-validator",
+          "component_path": "skills/media_production/A-405-media-qa-validator.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "storyboard_export_packet"
+          ],
+          "emitted_output_packets": [
+            "media_quality_gate_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_PROVIDER_QUALITY"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "media_factory_sync_lock_status",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "media_quality_gate",
+            "provider_honesty_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": []
         }

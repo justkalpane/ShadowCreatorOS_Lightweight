@@ -50,8 +50,17 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "input_payload": input_payload.get("input_payload", {}),
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
+            "rehook_interval_dynamic": True,
+            "default_rehook_interval_seconds": "70-90",
+            "max_gap_without_rehook_seconds": 90,
+            "rehook_interval_reason_required": True,
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# SS-243 rejects unexplained flat sections longer than 90 seconds and binds
+# re-hook placement to the dynamic beat-map rhythm.
 
 # MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 # Append-only MAC-06.2B contract metadata.

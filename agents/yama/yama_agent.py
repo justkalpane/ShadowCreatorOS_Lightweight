@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/yama/yama_agent.py; component_id=yama_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [SOURCE_QUALITY_CLASSIFICATION, FINAL_STATUS_HONESTY_GATE, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Block unsupported proof re-hooks, PASS inflation, wrong language, and disconnected Media Factory context.
+# reject_when: final PASS with missing or partial mandatory gate.

@@ -418,3 +418,12 @@ human_approval_points_resolved: [approve_patch, approve_commit, approve_provider
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/kernel/yama.md; component_id=DIRECTOR:_YAMA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Block `PASS` when recurring re-hooks are absent, generic, unrelated to the
+  topic, or unsupported by evidence.
+- Block false real-time claims, anecdote-as-fact usage, language drift,
+  shallow influence maps, disconnected Media Factory contexts, and missing
+  selected-layer propagation.
+- Final status must match the weakest gate.

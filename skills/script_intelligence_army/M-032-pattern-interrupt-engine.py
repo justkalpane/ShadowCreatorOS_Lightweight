@@ -25,9 +25,22 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "rehook_pattern_interrupt_required": True,
+                "pattern_interrupt_targets": [
+                    "voice",
+                    "visual",
+                    "editing",
+                    "music_sfx",
+                    "caption",
+                ],
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# Re-hook scenes require a synchronized pattern interrupt across production
+# context, not only a stronger sentence inside the narration.
 
 
 

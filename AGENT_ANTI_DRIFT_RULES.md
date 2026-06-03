@@ -61,12 +61,20 @@ Required before final output:
 - `topic_quality_gate_present=true`
 - `hook_generation_gate_present=true`
 - `hook_variants_count>=3`
+- `recurring_rehook_required=true` for 3-10 minute YouTube scripts
+- `max_gap_without_rehook_seconds<=90` unless justified
+- `five_minute_minimum_internal_rehooks>=3`
 - `script_quality_gate_present=true`
 
 Shallow repo routing is `FAIL`.
 Generic output after bootstrap is `FAIL`.
 Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
 If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
+
+`HOOK_VARIANTS` chooses the opening hook only. A one-hook-only 3-10 minute
+YouTube script cannot pass. Missing selected-layer propagation, missing
+recurring re-hooks, or an unexplained re-hook gap above 90 seconds prevents
+`PASS`.
 
 ## COMPLETE REQUIRED REPO SCOPE LAW
 
@@ -252,3 +260,50 @@ Codex Cloud reliable production usage:
 3. Alias internally applies wrapper-required route locks.
 4. Raw plain messages remain non-production proof until native persistence is proven.
 5. Operator mode may hide details, but execution locks remain mandatory.
+
+## VISUAL_CREATION_DNA_LAW — Anti-Drift Reminder
+
+Every image prompt in a MEDIA_FACTORY_HANDOFF output must include all 15 fields.
+No prompt is complete with fewer than 15. This is repo law, not a recommendation.
+
+Required fields (all 15 must be present per scene):
+
+1. `subject` — who or what is in frame
+2. `environment` — location, era, time of day, set dressing
+3. `camera_framing` — shot type (wide/medium/close_up/etc.)
+4. `lens_focal_logic` — wide_angle / standard / telephoto / macro
+5. `lighting_setup` — key light direction, fill ratio, color temperature
+6. `emotional_tone` — the feeling the scene must produce
+7. `color_palette` — named palette with Rec.709 note
+8. `cinematic_delivery_standard` — default Rec.709 unless HDR explicitly requested
+9. `style_lock` — cinematic_realism / stylized_animation / etc.
+10. `movement_intent` — static / slow_drift / dolly_push / pull_back / etc.
+11. `negative_prompt` — must include: blurry, watermark, face_deformation
+12. `drift_prevention` — IP-Adapter ref, previous frame ID, or color card ID
+13. `continuity_constraints` — what must match adjacent scenes
+14. `brand_persona_consistency` — identity rules preserved across all scenes
+15. `safety_real_person_handling` — use_side_profile / use_silhouette / use_shadow / use_animated_inspired / no_face_generation / not_applicable
+
+Source of truth: `runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md`
+Schema enforcement: `schemas/media_factory/scene_prompt_packet.schema.json`
+
+Missing any field → prompt cannot reach PASS → entire Media Factory draft cannot reach PASS.
+
+## PROVIDER_HONESTY_GATE — Anti-Drift Reminder
+
+Every Media Factory output must explicitly declare:
+
+```text
+PROVIDER_HONESTY_GATE
+providers_called=true/false
+n8n_used=true/false
+local_media_generation_engine_used=true/false
+media_artifacts_claimed=true/false
+provider_execution_allowed=false
+```
+
+Do not omit this block. Do not set providers_called=true unless a provider was actually called.
+Do not set local_media_generation_engine_used=true unless a local engine produced output with evidence.
+Missing gate when artifacts are claimed → status downgrades from PASS to BLOCKED.
+
+Source of truth: `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md`

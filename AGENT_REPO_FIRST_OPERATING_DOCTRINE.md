@@ -90,12 +90,20 @@ Required before final output:
 - `topic_quality_gate_present=true`
 - `hook_generation_gate_present=true`
 - `hook_variants_count>=3`
+- `recurring_rehook_required=true` for 3-10 minute YouTube scripts
+- `max_gap_without_rehook_seconds<=90` unless justified
+- `five_minute_minimum_internal_rehooks>=3`
 - `script_quality_gate_present=true`
 
 Shallow repo routing is `FAIL`.
 Generic output after bootstrap is `FAIL`.
 Selected-but-not-read director/skill/subskill is `FAIL` or `PARTIAL` according to validator.
 If route evidence is missing, mark `NEEDS_CONFIRMATION` and ask whether to continue limited mode.
+
+`HOOK_VARIANTS` chooses the opening hook only. Every 3-10 minute YouTube script
+needs recurring topic-relevant re-hooks at a dynamic 70-90 second default
+interval. Contracts alone do not prove propagation: selected directors,
+agents, subagents, skills, and subskills must consume the law.
 
 ## COMPLETE REQUIRED REPO SCOPE LAW
 

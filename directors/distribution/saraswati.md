@@ -458,3 +458,12 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/distribution/saraswati.md; component_id=DIRECTOR:_SARASWATI
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Preserve the approved English master language unless the user explicitly
+  requests translation/localization.
+- Ensure opening hooks, recurring re-hooks, and CTA hooks remain
+  platform-appropriate, topic-relevant, and mapped to packaging.
+- Reject silent Hindi/Hinglish drift inferred from culture, celebrity,
+  geography, mythology, or source language.

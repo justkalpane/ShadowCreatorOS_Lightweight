@@ -137,3 +137,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/sub_skills/SS-241-open-loop-generator.subskill.md; component_id=SS-241-open-loop-generator.subskill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Create and pay off open loops across dynamic 70-90 second recurring re-hook
+  intervals.
+- Reject open loops with no section payoff or topic connection.

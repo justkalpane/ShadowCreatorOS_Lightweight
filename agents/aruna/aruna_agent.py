@@ -76,3 +76,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/aruna/aruna_agent.py; component_id=aruna_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [TASK_EXECUTION_STATE_MACHINE, RECURRING_HOOK_DENSITY_LOCK, MEDIA_FACTORY_SYNC_LOCK]
+# responsibility: Route script packets through recurring hook density and media sync gates before final output.
+# reject_when: missing lock, unexplained max_gap_without_rehook_seconds above 90, missing child-lane consumption proof.

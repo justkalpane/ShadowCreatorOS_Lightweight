@@ -236,3 +236,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 # evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=agents/narada/narada_agent.py; component_id=Narada_Data_Ingestion_Agent_v2
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [REAL_TIME_RESEARCH_ENFORCEMENT, SOURCE_QUALITY_CLASSIFICATION, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Surface source-safe trend or proof opportunities for factual re-hooks when web research is used.
+# reject_when: static reference labeled realtime, factual re-hook lacks source type or limitation.

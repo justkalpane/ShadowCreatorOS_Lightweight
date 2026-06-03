@@ -577,3 +577,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=directors/research/ganesha.md; component_id=DIRECTOR:_GANESHA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Route script tasks through hook, retention, pacing, open-loop, tension, and
+  cliffhanger subskills when recurring re-hook proof is required.
+- Reject one-hook-only 3-10 minute YouTube scripts before final shaping.
+- Preserve the dynamic beat map and re-hook lineage through child workflows.

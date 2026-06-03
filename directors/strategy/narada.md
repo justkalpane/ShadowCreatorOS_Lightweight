@@ -485,3 +485,11 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/strategy/narada.md; component_id=DIRECTOR:_NARADA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- When web research is used, surface source-safe trend, proof, and
+  contradiction opportunities for recurring re-hooks.
+- Require factual re-hooks to retain source type, limitation, and
+  fact-versus-anecdote classification.
+- Never label static web references as real-time sources.

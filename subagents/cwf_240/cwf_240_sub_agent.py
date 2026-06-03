@@ -75,3 +75,8 @@ if __name__ == "__main__":
 # status_limits_resolved: [support components cannot claim production output alone]
 # evidence_used_for_resolution: fallback: cross-route support component; component_path=subagents/cwf_240/cwf_240_sub_agent.py; component_id=cwf_240_sub_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# route_profile_override: script_generation_packaging_lane when selected by SCRIPT_GENERATION manifest.
+# responsibility: Preserve recurring re-hook map through final shaping and Media Factory scene synchronization.
+# reject_when: CTA hook missing or Media Factory re-hook rows are disconnected.

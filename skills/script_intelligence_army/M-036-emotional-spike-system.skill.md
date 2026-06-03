@@ -187,3 +187,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-036-emotional-spike-system.skill.md; component_id=M-036_Emotional_Spike_System
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Generate emotional re-hook options at flat-section risk points.
+- Align emotional spikes with voice, visual, music/SFX, and edit cues without
+  fabricating factual detail.

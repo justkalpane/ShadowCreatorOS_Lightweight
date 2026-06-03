@@ -170,6 +170,26 @@ Repo-first intelligence is the active path:
 
 n8n/provider layers are deferred execution infrastructure, not required for topic-to-context engineering.
 
+## Local Media Factory Bridge
+
+When a task involves storyboard, B-roll, visual media draft, local render,
+ComfyUI, AnimateDiff, Wan, FFmpeg, DaVinci, or the ShadowMediaFactory control
+panel, agents must load:
+
+- `registries/local_media_factory_bridge.yaml`
+- `runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md`
+- `registries/route_manifests/media_factory_handoff.yaml`
+
+Active local Mac Media Factory root:
+
+```text
+/Users/apple/ShadowMediaFactory
+```
+
+The local Media Factory is the media worker, not the brain. ShadowCreatorOS
+produces scene/prompt/route packets; ShadowMediaFactory performs approved
+preflight, generation, assembly, proof, registry, and export tasks.
+
 ## Historical Context References
 
 Future agents should read historical source docs when deeper background is needed on PRD intent, quarantine decisions, and migration history.

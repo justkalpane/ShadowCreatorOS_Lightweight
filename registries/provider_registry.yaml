@@ -92,7 +92,7 @@ providers:
   - provider_id: comfyui_local
     display_name: ComfyUI (Local)
     class: local_media_engine
-    status: designed
+    status: active_local_bridge
     phase1_allowed: true
     auth_style: none
     callback_style: synchronous_local_http
@@ -116,17 +116,30 @@ providers:
       - Lineart
       - SoftEdge
       - IP-Adapter
-    readiness_status: DESIGNED
+    currently_wired_controlnet_support:
+      - Canny
+    requested_but_not_wired:
+      - OpenPose
+      - Depth
+      - Lineart
+      - IP-Adapter
+      - true_camera_motion
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+    capability_map: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+    readiness_status: LOCAL_ENGINE_READY
     notes: >
-      Primary local image and video generation engine. Accepts JSON workflow
-      files and text prompts. Outputs PNG/JPEG for images and MP4 for video.
-      Readiness status is DESIGNED — connection not yet confirmed. Upgrade to
-      LOCAL_ENGINE_READY when hardware and model installation are verified.
+      Primary local visual factory bridge on the active Mac. Current proven
+      local lane is SD1.5 + Canny ControlNet + AnimateDiff for animated
+      storyboard / animatic preview. OpenPose, Depth, Lineart, IPAdapter, and
+      true camera motion must be treated as requested-but-not-wired unless a
+      future proof upgrades the capability map. Production cinematic B-roll is
+      not yet proven locally.
 
   - provider_id: ffmpeg_local
     display_name: FFmpeg (Local)
     class: local_media_engine
-    status: designed
+    status: active_local_bridge
     phase1_allowed: true
     auth_style: none
     callback_style: synchronous_cli
@@ -142,18 +155,20 @@ providers:
       - subtitle_burn_in
       - platform_transcoding
       - storyboard_export
-    readiness_status: DESIGNED
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+    readiness_status: LOCAL_ENGINE_READY
     notes: >
       Local video assembly and rendering engine. Primary tool for combining
       image sequences with audio and subtitles into platform-ready MP4 output.
-      No GPU required. Upgrade readiness_status to LOCAL_ENGINE_READY when
-      FFmpeg installation is confirmed on the target machine.
+      No GPU required. Active through the local ShadowMediaFactory control
+      panel and registry/proof workflow.
 
   - provider_id: davinci_resolve_local
     display_name: DaVinci Resolve (Local)
     class: local_media_engine
-    status: designed
-    phase1_allowed: false
+    status: active_local_bridge
+    phase1_allowed: true
     auth_style: none
     callback_style: project_file_import
     runtime_modes:
@@ -168,10 +183,10 @@ providers:
       - audio_mixing
       - export_rec709
       - export_prores
-    readiness_status: DESIGNED
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    readiness_status: LOCAL_ENGINE_READY
     notes: >
       Local editing and color grading engine. Handles Rec.709 delivery, color
-      grade, and final export. Phase1_allowed is false because DaVinci Resolve
-      integration requires a confirmed project file handoff workflow. Upgrade
-      to LOCAL_ENGINE_READY when project handoff pipeline is validated.
-
+      grade, and final export. Current role is manual finishing and QC through
+      the local Media Factory path. Automated project handoff is not claimed
+      until proof is present.

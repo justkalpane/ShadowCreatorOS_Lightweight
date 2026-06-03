@@ -51,6 +51,16 @@ The repo is designed to connect to a locally hosted Media Factory engine using
 local open-source tools. The following engines are recognized. Each must declare
 its readiness status when referenced in a Media Factory handoff.
 
+The active local Mac bridge is registered in:
+
+```text
+registries/local_media_factory_bridge.yaml
+```
+
+For Media Factory tasks, agents must load that registry and
+`runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md` before declaring
+local engine readiness, command paths, proof paths, or execution safety.
+
 ### Recognized Local Engines
 
 ```text
@@ -61,30 +71,35 @@ local_engine_registry:
   input_format: JSON workflow + text prompt
   output_format: PNG / JPEG / MP4
   supported_models: SDXL | Flux | SD1.5 | AnimateDiff | SVD
-  controlnet_support: Canny | OpenPose | Depth | Lineart | SoftEdge | IP-Adapter
+  currently_wired_controlnet_support: Canny
+  requested_but_not_wired: OpenPose | Depth | Lineart | IP-Adapter | true_camera_motion
   hardware_requirement: GPU recommended (CPU fallback available)
-  readiness_status: DESIGNED
+  readiness_status: LOCAL_ENGINE_READY
+  current_role: animated_storyboard / animatic_preview
 
   engine_id: ffmpeg_local
   engine_class: video_assembly_and_rendering
   input_format: image sequence | audio | subtitle files
   output_format: MP4 | MOV | WebM
   hardware_requirement: CPU
-  readiness_status: DESIGNED
+  readiness_status: LOCAL_ENGINE_READY
 
   engine_id: animatediff_local
   engine_class: video_motion_generation
   input_format: text prompt + reference image
   output_format: GIF | MP4
-  hardware_requirement: GPU required (8GB+ VRAM recommended)
-  readiness_status: DESIGNED
+  hardware_requirement: Apple Silicon MPS / local ComfyUI route
+  readiness_status: LOCAL_ENGINE_READY
+  current_role: animated_storyboard / animatic_preview
 
   engine_id: wan_local
   engine_class: open_source_video_model
   input_format: text prompt + optional image
   output_format: MP4
-  hardware_requirement: GPU required (12GB+ VRAM recommended)
-  readiness_status: STUB
+  hardware_requirement: Apple Silicon Mac-safe preset with cpu-vae
+  readiness_status: LOCAL_ENGINE_READY
+  current_role: experimental
+  production_quality_pass: false
 
   engine_id: ltx_local
   engine_class: open_source_video_model
@@ -98,8 +113,48 @@ local_engine_registry:
   input_format: video clips | audio | project file
   output_format: MP4 | ProRes | DCP
   hardware_requirement: CPU + GPU
-  readiness_status: DESIGNED
+  readiness_status: LOCAL_ENGINE_READY
+  current_role: manual finishing and QC
 ```
+
+## Permanent Local Bridge Commands
+
+The active local bridge commands are:
+
+```text
+MEDIA_FACTORY_STATUS=python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py status
+MEDIA_FACTORY_DOCTOR=python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py doctor
+MEDIA_FACTORY_PREFLIGHT_STORYBOARD=python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py preflight-storyboard --metadata <metadata_json>
+```
+
+Rendering commands require explicit user approval. Planning and preflight do not
+prove media creation.
+
+## Local Capability Honesty Rule
+
+If a scene packet requests controls or motion that the current local lane cannot
+execute, the handoff must report:
+
+```text
+ROUTE_DOWNGRADED=true
+OUTPUT_CLASSIFICATION=animated_storyboard
+PRODUCTION_PASS_ALLOWED=false
+SAFE_TO_BATCH_AUTOMATE=false
+```
+
+Current limitations from the bridge capability map:
+
+```text
+OpenPose=false
+Depth=false
+Lineart=false
+IPAdapter=false
+true_camera_motion=false
+Wan2.2_production_quality_pass=false
+```
+
+Agents may still use the local lane for animatics and proof-of-routing, but not
+as a proven cinematic B-roll lane until a later proof upgrades the capability.
 
 ## Readiness Status Labels
 
@@ -141,7 +196,7 @@ When storyboard images are exported for local engine ingestion:
 
 ```text
 storyboard_delivery:
-  default_path=downloads/b_roll_storyboard/
+  default_path=/Users/apple/Downloads/b_roll_storyboard/
   mission_scoped_path=outputs/missions/<mission_id>/storyboard/
   naming_convention=shot<N>_<scene_id>_<descriptor>.png
   json_pacing_metadata_path=<folder>/video_pacing_metadata.json

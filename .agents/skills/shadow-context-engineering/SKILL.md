@@ -52,6 +52,10 @@ For Media Factory final drafts, additionally output:
   DESIGNED / STUB / PACKET_READY / LOCAL_ENGINE_READY / EXECUTABLE / BLOCKED / NEEDS_CONFIRMATION
 - MEDIA_FACTORY_EVIDENCE_GATE with providers_called, n8n_used,
   local_media_generation_engine_used, media_artifacts_claimed declarations
+- Load `registries/local_media_factory_bridge.yaml` and
+  `runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md` before claiming
+  local engine paths, control panel command readiness, or Media Factory
+  artifact evidence.
 - For every claimed artifact: file_path, generation_method, engine_or_provider_used,
   source_prompt_packet_ref, validation_result, human_review_status
 

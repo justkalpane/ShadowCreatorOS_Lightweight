@@ -1,4 +1,4 @@
-﻿version: 1
+version: 1
 subskills:
   - subskill_id: SS-001
     name: context_packet_sanitizer
@@ -256,3 +256,43 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+  - subskill_id: SS-250
+    name: dynamic_prompt_builder
+    spec_file: skills/sub_skills/SS-250-dynamic-prompt-builder.subskill.md
+    runtime_file: skills/sub_skills/SS-250-dynamic-prompt-builder.py
+    consumer_workflows:
+      - WF-010
+      - WF-100
+      - WF-200
+  - subskill_id: SS-251
+    name: context_window_optimizer
+    spec_file: skills/sub_skills/SS-251-context-window-optimizer.subskill.md
+    runtime_file: skills/sub_skills/SS-251-context-window-optimizer.py
+    consumer_workflows:
+      - WF-010
+      - WF-100
+      - WF-200
+  - subskill_id: SS-252
+    name: token_efficiency_engine
+    spec_file: skills/sub_skills/SS-252-token-efficiency-engine.subskill.md
+    runtime_file: skills/sub_skills/SS-252-token-efficiency-engine.py
+    consumer_workflows:
+      - WF-010
+      - WF-100
+      - WF-200
+  - subskill_id: SS-253
+    name: multi_model_consensus_engine
+    spec_file: skills/sub_skills/SS-253-multi-model-consensus-engine.subskill.md
+    runtime_file: skills/sub_skills/SS-253-multi-model-consensus-engine.py
+    consumer_workflows:
+      - WF-010
+      - WF-100
+      - WF-200
+  - subskill_id: SS-254
+    name: fallback_prompt_engine
+    spec_file: skills/sub_skills/SS-254-fallback-prompt-engine.subskill.md
+    runtime_file: skills/sub_skills/SS-254-fallback-prompt-engine.py
+    consumer_workflows:
+      - WF-010
+      - WF-100
+      - WF-200

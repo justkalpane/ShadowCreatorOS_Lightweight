@@ -20,6 +20,9 @@ Use this skill when:
 
 Classify task as `MEDIA_FACTORY_HANDOFF` before output.
 Load `registries/route_manifests/media_factory_handoff.yaml` before generating any output.
+Load `registries/local_media_factory_bridge.yaml` and
+`runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md` before local engine
+handoff, control panel routing, storyboard render planning, or artifact claims.
 Consume mandatory directors: Maya, Vishwakarma, Nataraja, Brahma, Varuna.
 Apply `MEDIA_FACTORY_SYNC_LOCK` before scene output.
 
@@ -41,11 +44,15 @@ For every Media Factory task, output:
   pacing metadata JSON path, exact filename references
 - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS — readiness status per engine per lane
   (DESIGNED / STUB / PACKET_READY / LOCAL_ENGINE_READY / EXECUTABLE / BLOCKED / NEEDS_CONFIRMATION)
+  and the active bridge registry path when local execution is relevant
 - PROVIDER_HONESTY_GATE — explicit status for providers_called, n8n_used,
   local_media_generation_engine_used, media_artifacts_claimed, provider_execution_allowed
 - LOCAL_CLOUD_HYBRID_EXECUTION_PLAN — per-lane options for voice, image, video, music_sfx, editing, packaging
 - MEDIA_FACTORY_EVIDENCE_GATE — for any claimed artifact: file_path, generation_method, engine_used,
   source_prompt_packet_ref, validation_result, human_review_status
+- CONTROL_PANEL_PREFLIGHT_GATE — for renderable storyboard/B-roll requests:
+  requested controls, available controls, route downgrade status,
+  output_classification, production_pass_allowed, safe_to_batch_automate
 
 ## Visual DNA Compliance
 
@@ -78,15 +85,46 @@ When a real person is referenced in any visual scene:
 ## Storyboard Export Standard
 
 - Naming: `shot<N>_<scene_id>_<descriptor>.png`
-- Default path: `downloads/b_roll_storyboard/`
+- Default local Mac path: `/Users/apple/Downloads/b_roll_storyboard/`
 - Mission path: `outputs/missions/<mission_id>/storyboard/`
 - JSON pacing metadata must contain exact image filenames
 - TXT notepad must mirror the JSON for human readability
+
+## Permanent Local Bridge
+
+Active local Media Factory root:
+
+```text
+/Users/apple/ShadowMediaFactory
+```
+
+Active control panel CLI:
+
+```text
+python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+```
+
+The repo-side source of truth is:
+
+```text
+registries/local_media_factory_bridge.yaml
+runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+```
+
+Current lane truth:
+
+- SD1.5 + Canny + AnimateDiff is an `animated_storyboard` / animatic lane.
+- Wan2.2 5B is technical/experimental until visual quality proof upgrades it.
+- FFmpeg is assembly/export.
+- DaVinci Resolve is manual finishing/QC.
+- Production cinematic B-roll is not locally proven until proof says otherwise.
 
 ## Forbidden Behavior
 
 - Do not output scene prompts without the 15 visual DNA fields.
 - Do not claim media artifacts were generated without file_path and evidence.
+- Do not call an `animated_storyboard` lane production cinematic B-roll.
+- Do not silently downgrade requested OpenPose, Depth, Lineart, IPAdapter, true camera motion, or audio requirements.
 - Do not set providers_called=true unless a provider was actually called.
 - Do not set local_media_generation_engine_used=true unless local engine produced output.
 - Do not hard-lock beat timing to a uniform 15-second grid.

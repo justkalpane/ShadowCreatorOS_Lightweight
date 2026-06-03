@@ -389,3 +389,27 @@ Codex Cloud reliable production usage:
 3. Alias internally applies wrapper-required route locks.
 4. Raw plain messages remain non-production proof until native persistence is proven.
 5. Operator mode may hide details, but execution locks remain mandatory.
+
+## KNOWLEDGE BASE LAW — ACTIVE
+
+The repo contains a live knowledge base synthesized from the 3 canonical source documents.
+Every agent MUST read this file before performing structural work:
+
+- `docs/SHADOW_OS_KNOWLEDGE_BASE.md`
+
+This knowledge base contains:
+- Canonical Director Population (32 directors, all DIR IDs)
+- Codex Wave build history and completion status
+- Claude session history and gap inventory
+- PRD v34 zero-loss laws and harness architecture
+- Skill range map (M-001 through M-221+)
+- Current repo state (as of 2026-06-03)
+- Open gaps by priority (P1/P2/P3)
+- Anti-drift rules and provider boundary law
+
+Source documents (also in repo root — canonical):
+- `Detailed_PRD_MASTERPIECE_v34_ZERO_LOSS_HARNESS_RESTRUCTURED.txt` (2.2MB — HIGHEST authority)
+- `latest Claude entire Build status.txt` (158KB)
+- `latest Codex entire Build status.txt` (131KB)
+
+**Knowledge base must be read before any structural change, gap closure, or new component creation.**

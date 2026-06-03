@@ -389,3 +389,17 @@ Codex Cloud reliable production usage:
 3. Alias internally applies wrapper-required route locks.
 4. Raw plain messages remain non-production proof until native persistence is proven.
 5. Operator mode may hide details, but execution locks remain mandatory.
+
+## KNOWLEDGE BASE READ — REQUIRED STEP (added 2026-06-03)
+
+After reading the 28 core boot files, agents MUST also read:
+
+29. `docs/SHADOW_OS_KNOWLEDGE_BASE.md` — Live knowledge base synthesized from PRD v34, Claude Build Status, and Codex Build Status. Contains Director register, wave build history, skill range map, open gaps, and anti-drift rules.
+
+And for deep architectural questions, read the source documents directly:
+
+30. `Detailed_PRD_MASTERPIECE_v34_ZERO_LOSS_HARNESS_RESTRUCTURED.txt` — HIGHEST authority. Zero-loss architecture truth. v34 patch.
+31. `latest Claude entire Build status.txt` — Claude session history, gap analysis, boundary rules.
+32. `latest Codex entire Build status.txt` — Codex wave build history, gap tables, phase completion status.
+
+**Do not perform structural changes without reading item 29 first.**

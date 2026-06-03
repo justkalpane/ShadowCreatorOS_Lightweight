@@ -100,8 +100,8 @@ agents:
   - file: agents/krishna/krishna_agent.py
   - file: agents/kubera/kubera_agent.py
   - file: agents/maya/maya_agent.py
-    status: DISABLED_MISSING_FILE
-    reason: missing file verified by MAC-06.1P-A/P-B; Maya remains director-only until agent binding exists
+    status: ACTIVE
+    reason: File created by MAC-06.2B-2J; Maya agent binding now active for media_factory_handoff and avatar_video_context routes. Director: DIR-PRODv1-003 (Visual Production + Cinematography + Color Grading + Storyboard)
   - file: agents/narada/narada_agent.py
   - file: agents/nataraja/nataraja_agent.py
   - file: agents/parashara/parashara_agent.py

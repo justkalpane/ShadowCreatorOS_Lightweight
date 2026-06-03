@@ -763,6 +763,7 @@ routes:
       - agents/nataraja/nataraja_agent.py
       - agents/brahma/brahma_agent.py
       - agents/varuna/varuna_agent.py
+      - agents/maya/maya_agent.py
     mandatory_subagents:
       - subagents/wf_400/wf_400_sub_agent.py
       - subagents/cwf_410/cwf_410_sub_agent.py
@@ -771,6 +772,9 @@ routes:
       - skills/media_video/M-216-shot-list-generator.skill.md
       - skills/media_video/M-217-b-roll-sourcing-strategy.skill.md
       - skills/media_video/M-221-motion-graphics-storyboard.skill.md
+      - skills/media_video/M-219-color-grading-brief.skill.md
+      - skills/media_graphics/M-201-visual-design-brief-generator.skill.md
+      - skills/media_graphics/M-202-color-palette-optimizer.skill.md
       - skills/media_production/A-402-visual-asset-planner.skill.md
       - skills/media_production/A-401-thumbnail-concept-designer.skill.md
       - skills/operations/M-174-visual-asset-generator.skill.md

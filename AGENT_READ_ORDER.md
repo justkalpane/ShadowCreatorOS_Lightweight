@@ -152,6 +152,16 @@ Required proof fields:
 25. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
 26. `registries/native_capability_routing_matrix.yaml`
 27. `registries/agent_runtime_selection_index.yaml`
+28. If the task involves storyboard, B-roll, visual plan, scene prompts, local
+    engine handoff, or Media Factory output, also read:
+    - `.agents/skills/shadow-media-factory/SKILL.md`
+    - `registries/route_manifests/media_factory_handoff.yaml`
+    - `registries/local_media_factory_bridge.yaml`
+    - `runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md`
+    - `runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md`
+    - `skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md`
+    - `skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md`
+    - `skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md`
 
 Repo-relative paths are authoritative.
 Absolute `/Users/apple/...` paths are `LOCAL_MAC_REFERENCE_ONLY`.
@@ -325,6 +335,33 @@ Use these for normal layman content/script/video tasks:
 3. `.agents/skills/shadow-content-orchestration/SKILL.md`
 4. `.agents/skills/shadow-research-gate/SKILL.md`
 5. `.agents/skills/shadow-context-engineering/SKILL.md`
+
+## Phase N: Media Factory Visual Stack
+
+Use these for storyboard, B-roll, visual plan, scene prompt, local render packet,
+or Media Factory handoff tasks:
+
+1. `.agents/skills/shadow-media-factory/SKILL.md`
+2. `registries/route_manifests/media_factory_handoff.yaml`
+3. `registries/local_media_factory_bridge.yaml`
+4. `runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md`
+5. `runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md`
+6. `skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md`
+7. `skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md`
+8. `skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md`
+
+Locked visual laws:
+
+- HyperFrames is kept for NotebookLM slides, programmatic slides, kinetic text,
+  data cards, and WebM alpha overlays.
+- Depth Anything V2 is a mask generator only; DaVinci Resolve Fusion performs
+  2.5D parallax and DaVinci remains final assembly/polish.
+- Cinematic B-roll Video must be at least 12% of total runtime for 3-10 minute
+  production visual plans.
+- Storyboard output uses multi-arc tables with 10 production columns plus the
+  Reasoning column.
+- Do not downgrade Yash mission Scenes 2A, 2B, or 2C from
+  `CINEMATIC_BROLL_VIDEO`.
 
 ## CURRENT LIGHTWEIGHT OUTPUT LAW - ACTIVE LAW
 

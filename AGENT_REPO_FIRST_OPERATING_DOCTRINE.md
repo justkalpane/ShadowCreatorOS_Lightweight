@@ -204,6 +204,9 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 - provider handoff packet (reference mode only)
 - quality gate report
 - lineage
+- visual media plan and storyboard planning
+- Media Factory handoff packet planning
+- HyperFrames / NotebookLM / DA-V2 route planning in reference mode
 - commit/push after explicit review approval
 
 ## Work Deferred to Future Execution Layer
@@ -217,6 +220,20 @@ The lightweight repo exists to keep intelligence deterministic and auditable:
 - provider orchestration
 - n8n execution bus activation/import/execution
 - credentialed API execution
+- local render engine execution unless explicitly approved
+
+## Current Media Production Stack Locks
+
+- HyperFrames is retained for NotebookLM-style dual-panel slides, programmatic
+  data cards, kinetic text, and WebM alpha overlays.
+- Depth Anything V2 is a depth-mask generator only; DaVinci Resolve Fusion owns
+  2.5D parallax and DaVinci owns final assembly/color/polish.
+- `CINEMATIC_BROLL_VIDEO` must reach at least 12% of total runtime for 3-10
+  minute production visual plans unless the user explicitly approves downgrade.
+- Visual media plans use multi-arc storyboard tables with 10 production columns
+  plus the Reasoning column.
+- The Yash visual plan keeps Scenes 2A, 2B, and 2C as `CINEMATIC_BROLL_VIDEO`
+  and preserves A-Roll batches A through D.
 
 ## Branch Discipline
 

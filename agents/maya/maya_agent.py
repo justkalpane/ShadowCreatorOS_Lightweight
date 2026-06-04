@@ -10,6 +10,39 @@ from agents.common.production_agent_base import ProductionAgentBase, print_run
 
 
 class MayaAgent(ProductionAgentBase):
+    PALETTES = {
+        "yash_story_arc": {
+            "palette_id": "yash_story_arc",
+            "purpose": "Opening cinematic struggle-to-rise arc for the Yash self-investment mission.",
+            "primary": "#0E1B24",
+            "secondary": "#F5A623",
+            "accent": "#FFD54F",
+            "shadow": "#111111",
+            "delivery_standard": "Rec.709",
+            "notes": "Teal city shadows, amber sodium practicals, gold transformation highlights."
+        },
+        "yash_presenter": {
+            "palette_id": "yash_presenter",
+            "purpose": "Presenter A-roll continuity for direct motivational teaching blocks.",
+            "primary": "#2C2C2C",
+            "secondary": "#D89B2B",
+            "accent": "#FFFFFF",
+            "shadow": "#171717",
+            "delivery_standard": "Rec.709",
+            "notes": "Charcoal studio, warm gold rim light, white captions with gold keyword emphasis."
+        },
+        "yash_notebooklm": {
+            "palette_id": "yash_notebooklm",
+            "purpose": "NotebookLM-style HyperFrames slide scenes.",
+            "primary": "#FBF9F6",
+            "secondary": "#2C2C2C",
+            "accent": "#FFB300",
+            "shadow": "#E8E0D0",
+            "delivery_standard": "Rec.709",
+            "notes": "Warm paper background, dark gray text, gold active-note glow and highlight boxes."
+        }
+    }
+
     def __init__(
         self,
         timeout_seconds: float = 8.0,
@@ -24,6 +57,16 @@ class MayaAgent(ProductionAgentBase):
             max_retries=max_retries,
             backoff_seconds=backoff_seconds,
         )
+
+    def get_palette(self, palette_id: str) -> dict:
+        palette = self.PALETTES.get(palette_id)
+        if not palette:
+            return {
+                "palette_id": palette_id,
+                "status": "NEEDS_CONFIRMATION",
+                "reason": "Unknown Maya palette id. Use one of: yash_story_arc, yash_presenter, yash_notebooklm."
+            }
+        return {"status": "PASS", **palette}
 
 
 if __name__ == "__main__":

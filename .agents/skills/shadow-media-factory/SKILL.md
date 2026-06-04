@@ -28,8 +28,57 @@ Apply `MEDIA_FACTORY_SYNC_LOCK` before scene output.
 
 ## Required Media Factory Output
 
-For every Media Factory task, output:
+Depending on the depth mode requested:
 
+### Mode A: Visual Media Plan (Planning-Only Phase)
+If a "Visual Media Plan", "Visual Plan", or "Storyboard Plan" is requested (prior to rendering approval):
+- Present the detailed, written storyboard layout containing scene-by-scene tables detailing:
+  - Media Type & Visual Method (e.g. `A_ROLL_AVATAR`, `A_ROLL_OVERLAY_METHOD`, `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HTML_CSS_GSAP_VISUAL_METHOD`, `HYPERFRAME_VISUAL_METHOD`, `IMAGE_MOTION_GRAPHICS_BROLL_METHOD`, or `CINEMATIC_BROLL_VIDEO`)
+  - Shot Framing / Setup (Visual description, shot type, environment, safety profile, overlay layouts)
+  - Camera Motion / Technique (Ken Burns zoom/pan, dolly, tracking, and **HYPERFRAME_VISUAL_METHOD** detailing 3D parallax layer depth separation via DaVinci Fusion, visual highlights, glow maps, particle layers, lens flares, or depth-of-field blurring based on script lines)
+  - Voice (ElevenLabs Settings: stability, similarity, style exaggeration, speaker boost)
+  - Music & SFX (Detailed Suno prompts, Suno SFX cues, and **SFX_TIMELINE_METHOD** detailing precision audio timestamps and volume curves synchronized to visuals or speech)
+  - Captions (Style, keywords, positioning, kinetic typography)
+  - Editing (Nataraja) & Transitions (Cuts, speed shifts, J-cuts and L-cuts with precise offsets in seconds, and **FFMPEG_TRANSITION_METHOD** transition cuts between every photo—whip pans, zoom cuts, glitch wipes)
+  - Color Grade (Maya) (Palette, temperature, film grain, continuity)
+  - Safe Zone (Platform margins and watch-bar safe coordinates)
+- **Image+Motion Graphics Pacing & Hyperframe Rule**: The number of images generated for image-based B-roll segments must scale based on duration and narrative density.
+  - Scale image count: 1 image per 2-5 seconds for rapid lists/emphasis, or 1 image with continuous Ken Burns pan.
+  - Layer **HYPERFRAME_VISUAL_METHOD** (DaVinci Fusion 2.5D layer animations, DaVinci particle effects, or speed lines) over still images to simulate high-end editing pacing at low cost.
+  - Explicitly define the Image Count, the **Transition/Hyperframe FX**, and **Transition Audio** for every image.
+- **NOTEBOOKLM_VISUAL_METHOD Rule**:
+  - For explanation scenes, note lists, and document summaries, utilize the NotebookLM-style visual method.
+  - Define the sources panel on the left and the active note highlights with glowing border overlays on the right.
+  - These slides are rendered locally in headless Chrome via HyperFrames CLI at zero cost.
+  - **Asset & Render Specification Enforcement (Visual Planning Phase)**:
+    - While drafting NotebookLM scenes, the planner MUST explicitly define the asset structure and rendering draft block to prevent engine drift:
+      1. *Asset Inventory*: Itemize required files (e.g. `brand_logo.svg`, custom page preview PNGs, or background canvas textures). If no external visual files are needed, explicitly state `assets_needed=NONE (CSS vectors only)`.
+      2. *Rendering Draft (HyperFrames Config)*: Specify font family (e.g. Inter/Outfit), background color theme, typing animation velocity, scroll triggers, highlight opacity, and GSAP sync timeline details.
+      3. *DaVinci Composite Method*: Detail that the slides are rendered as a clean background MP4, with talking-head HeyGen presenter clips overlaid on track V2 and chromakeyed inside DaVinci Resolve.
+
+- **PROGRAMMATIC_SLIDE_VISUAL_METHOD & HTML_CSS_GSAP_VISUAL_METHOD Rule**:
+  - For explanation scenes, listicle blocks, data displays, and learning points, utilize programmatic HTML/CSS templates.
+  - Define the layout card style, font colors, kinetic text string, scroll rate, and animation timeline in the shot framing column.
+  - These slides are rendered locally in headless Chrome at zero cost.
+- **Narrative Transition & Ratio Target Law**:
+  - Whenever a backstory, real-person anecdote, or backdrop is introduced (including within segments that would otherwise be talking-head A-roll), the presenter avatar must fade or cut away in favor of `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HYPERFRAME_VISUAL_METHOD` overlays, or `CINEMATIC_BROLL_VIDEO`.
+  - The plan must target the following cost-efficient production ratios:
+    - **A-Roll (HeyGen Presenter / Avatars)**: ~40% of total runtime.
+    - **Image+Motion Graphics, Programmatic Slides & NotebookLM Slides (Low Cost)**: ~48% of total runtime.
+    - **Cinematic B-Roll Video (Cloud/Premium)**: At least 12% of total runtime (principally allocated to the short story/establishing blocks).
+- Provide the **COMPLETE A-ROLL vs B-ROLL vs MOTION GRAPHIC SUMMARY Table** including the `Image Count` column.
+- Provide the **Cost Distribution Result** calculating durations and percentages for A-Roll, Motion Graphic Images, and B-Roll Video to verify B-Roll cost minimization and ratio targets.
+- **MEDIA FACTORY TOOL ASSIGNMENT LAW:**
+  - `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE`, Data Cards, Kinetic Text -> **HyperFrames CLI**
+  - WebM Alpha overlays (e.g. Toxic Particle Card) -> **HyperFrames CLI**
+  - 2.5D Parallax on Still Images -> **DaVinci Resolve Fusion + Depth Anything V2 (masking)**
+  - Ken Burns (Pan/Zoom), particles, glow, lens flares -> **DaVinci Resolve Fusion**
+  - Master Final Assembly, J-cut/L-cut audio, color grading -> **DaVinci Resolve**
+  - **HYPERFRAME_VISUAL_METHOD** is a naming convention for motion graphics, it does NOT mean "use the HyperFrames tool for everything". Obey the assignment law above.
+- Do NOT generate or register executable prompt packets, JSON timeline metadata, or local ComfyUI/AnimateDiff configs. Postpone local media generation tasks until the plan is frozen.
+
+### Mode B: Media Factory Final Draft (Executable Phase)
+For full, executable Media Factory tasks (after plan validation & approval), output:
 - SCENE_SYNC_MATRIX — one scene_row_json per scene with all nine alignment dimensions
 - SCENE_PROMPT_PACKETS — per-scene image prompt with all 15 visual DNA fields:
   - subject, environment, camera_framing, lens_focal_logic, lighting_setup

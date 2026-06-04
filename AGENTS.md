@@ -234,6 +234,26 @@ For script/content tasks:
 - Missing active-layer propagation or recurring re-hook evidence prevents
   `PASS`.
 
+For Media Factory / storyboard / B-roll / visual plan tasks:
+
+- HyperFrames is kept and has locked roles: NotebookLM-style dual-panel slides,
+  programmatic slide/data-card/kinetic text rendering, and WebM alpha overlays.
+- Depth Anything V2 is a local depth-map masking tool only; it does not generate
+  images and does not replace DaVinci Resolve.
+- `CINEMATIC_BROLL_VIDEO` must be at least 12% of total runtime for 3-10 minute
+  production visual plans unless the user explicitly approves a downgrade.
+- The storyboard format is locked to multi-arc tables with 10 production columns
+  plus a Reasoning column.
+- For the Yash self-investment visual plan, Scenes 2A, 2B, and 2C remain
+  `CINEMATIC_BROLL_VIDEO`; do not downgrade them to still/parallax methods.
+- A 5-minute visual plan must preserve four re-hooks at no unexplained gap above
+  90 seconds and must keep A-Roll batches A through D.
+- `NOTEBOOKLM_VISUAL_METHOD` consumes SS-116 and SS-118.
+- `IMAGE_MOTION_GRAPHICS_BROLL_METHOD` consumes SS-117 and DaVinci Resolve
+  Fusion for parallax.
+- `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HTML_CSS_GSAP_VISUAL_METHOD`, and WebM
+  alpha overlays consume SS-118.
+
 ## CLAIM_EVIDENCE_STATUS LAW
 
 Every production-sensitive claim must be expressed as:

@@ -20,6 +20,10 @@
 - dossier_id:string
 - media_package_plan:object
 - target_profiles:array
+- j_cut_offset_seconds:number
+- l_cut_offset_seconds:number
+- transition_filtergraph_params:object
+- foley_sfx_alignment_manifest:object
 
 ### 3.2 Provider Context
   - ffmpeg_bridge
@@ -52,6 +56,26 @@
 - Avoid heavy final renders on unsupported worker classes
 - Apply checkpointed intermediate outputs for replay safety
 - Emit render metrics for cost and quality observability
+- Enforce J-cut and L-cut audio offsets using delay and amix filters (or in DaVinci: unlink audio/video and extend audio endpoints)
+- Programmatically compile transition filtergraphs (crossfade, whip pan, zoom transition) at scene boundaries
+- Auto-align foley effects on a millisecond scale relative to scene cut triggers
+- **DaVinci Track Layout Law:**
+  - V1: Primary video clips (A-Roll, B-Roll, HyperFrames slides, stills)
+  - V2: Overlay clips (HyperFrames WebM alpha, Toxic card, text overlays)
+  - V3: Caption/kinetic text (DaVinci Fusion Text+ nodes)
+  - A1: Master Voice (anchor - place first, everything syncs to this)
+  - A2: Music (4 segments with 0.5s crossfades)
+  - A3: SFX Channel 1 (impact/transition)
+  - A4: SFX Channel 2 (ambient/foley)
+  - A5: SFX Channel 3 (overflow)
+- **J-cut/L-cut Execution in DaVinci:**
+  - J-cut: right-click clip -> unlink audio/video -> extend audio endpoint past video cut point
+  - L-cut: unlink incoming clip audio -> extend outgoing audio past the video switch point
+- **Transition Execution Mapping (FFMPEG_TRANSITION_METHOD -> DaVinci):**
+  - Cross-dissolve -> DaVinci Dissolve
+  - Whip-pan -> DaVinci Blur transition or PNG sequence
+  - Flash cut -> 2-frame white PNG
+  - Glitch wipe -> DaVinci Glitch transition
 
 ## SECTION 8: EXECUTION RULES & CONSTRAINTS
 - Enforce patch-only mutation law on dossier writes.
@@ -114,8 +138,6 @@ input_schema: Must declare atomic input fields before use; approval_gate_profile
 output_schema: Must emit atomic output packet with evidence path and validation status.
 subskill_hooks: May call subskills only through atomic_task_packet.
 quality_metric: Must emit skill_quality_score and quality_threshold.
-
-## M
 
 ## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 

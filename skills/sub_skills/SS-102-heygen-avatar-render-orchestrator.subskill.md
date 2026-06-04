@@ -22,6 +22,12 @@
 - voice_asset_ref:string
 - scene_plan:object
 - governance_ack:boolean(optional)
+- heygen_avatar_style:string (e.g. Normal, TalkingPhoto, PhotoAvatar)
+- heygen_alpha_channel:boolean
+- heygen_expressive_avatar:boolean
+- heygen_output_resolution:string (e.g. 1080p, 4K)
+- a_roll_batch_group:string
+- overlay_isolation_required:boolean
 
 ### 3.2 Provider Context
   - heygen_api
@@ -55,6 +61,15 @@
 - Validate avatar-motion consistency and lip-sync envelope before acceptance
 - Apply callback signature verification when webhook mode is enabled
 - Route long-form jobs to cloud premium lane with explicit budget token
+- Configure alpha channel options (e.g. WebM with transparency) for avatar compositing in overlay methods
+- Enforce HeyGen v2 Expressive Avatar flag to capture micro-expressions and high-intensity mouth sync
+- Set output resolution parameters (1080p vs. 4K) matching platform upload specifications
+- **4-Grouped-Batch A-Roll generation strategy:**
+  - BATCH_A (HIGH_ENERGY_CONFRONTATIONAL): AR-01, AR-02, AR-10, AR-14 -> ~31s render
+  - BATCH_B (EDUCATIONAL_CONFIDENT): AR-03-05, AR-07-09, AR-11-13 -> ~70s render
+  - BATCH_C (WARM_EMOTIONAL): AR-06, AR-16 -> ~20s render
+  - BATCH_D (OVERLAY_ISOLATED): AR-15 only -> 8s render, MUST be separate
+- **AR-15 Isolation Law:** Any `A_ROLL_OVERLAY_METHOD` segment MUST be rendered as a completely isolated HeyGen batch. Never combine overlay segments with non-overlay segments in the same render.
 
 ## SECTION 8: EXECUTION RULES & CONSTRAINTS
 - Enforce patch-only mutation law on dossier writes.
@@ -67,6 +82,7 @@
 - callback_verification_failed -> switch to secure poller mode
 - provider_job_failed -> route WF-021 with remodify hints
 - budget_denied -> founder hold with local avatar draft fallback
+- overlay_contamination -> re-render AR-15 batch in isolation
 
 ## SECTION 10: TOOL POLICY
 - Allowed_Tools: n8n workflow nodes, provider adapters, packet validators, local runtime utilities
@@ -117,8 +133,6 @@ input_schema: Must declare atomic input fields before use; approval_gate_profile
 output_schema: Must emit atomic output packet with evidence path and validation status.
 subskill_hooks: May call subskills only through atomic_task_packet.
 quality_metric: Must emit skill_quality_score and quality_threshold.
-
-## M
 
 ## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 

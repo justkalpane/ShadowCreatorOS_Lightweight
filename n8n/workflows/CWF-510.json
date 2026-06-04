@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-510 Platform Metadata Generator Canonical",
   "description": "Generates platform-specific metadata for all publishing channels.",
   "nodes": [

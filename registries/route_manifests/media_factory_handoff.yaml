@@ -8,7 +8,7 @@ mandatory_directors: [directors/production/maya.md, directors/production/vishwak
 mandatory_agents: [agents/vishwakarma/vishwakarma_agent.py, agents/nataraja/nataraja_agent.py, agents/brahma/brahma_agent.py, agents/varuna/varuna_agent.py, agents/maya/maya_agent.py]
 mandatory_subagents: [subagents/wf_400/wf_400_sub_agent.py, subagents/cwf_410/cwf_410_sub_agent.py, subagents/cwf_420/cwf_420_sub_agent.py]
 mandatory_skills: [skills/media_video/M-216-shot-list-generator.skill.md, skills/media_video/M-217-b-roll-sourcing-strategy.skill.md, skills/media_video/M-221-motion-graphics-storyboard.skill.md, skills/media_video/M-219-color-grading-brief.skill.md, skills/media_graphics/M-201-visual-design-brief-generator.skill.md, skills/media_graphics/M-202-color-palette-optimizer.skill.md, skills/media_production/A-402-visual-asset-planner.skill.md, skills/media_production/A-401-thumbnail-concept-designer.skill.md, skills/operations/M-174-visual-asset-generator.skill.md]
-mandatory_subskills: [skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md, skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md, skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md, skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md, skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md]
+mandatory_subskills: [skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md, skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md, skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md, skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md, skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md, skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md, skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md, skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md]
 mandatory_governance: [directors/kernel/yama.md, directors/supreme_vision/brahma.md, directors/cinematic/nataraja.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md]
 mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, MEDIA_FACTORY_SYNC_LOCK, GOVERNANCE_LOCK, SCENE_SYNC_MATRIX, SCENE_PROMPT_PACKETS, VIDEO_PROMPT_PACKETS, STORYBOARD_EXPORT_PLAN, LOCAL_MEDIA_FACTORY_BRIDGE_STATUS, PROVIDER_HONESTY_GATE]
 required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, MEDIA_FACTORY_SYNC_LOCK, GOVERNANCE_LOCK]
@@ -20,6 +20,18 @@ full_dossier_allowed_after_explicit_request: true
 n8n_allowed_after_approval: false
 provider_execution_allowed_after_approval: false
 local_engine_execution_allowed_after_approval: true
+visual_method_assignment_law:
+  NOTEBOOKLM_VISUAL_METHOD: HyperFrames CLI through SS-116 and SS-118
+  PROGRAMMATIC_SLIDE_VISUAL_METHOD: HyperFrames CLI through SS-118
+  HTML_CSS_GSAP_VISUAL_METHOD: HyperFrames CLI through SS-118
+  A_ROLL_OVERLAY_METHOD: HeyGen chromakey foreground plus HyperFrames background/alpha overlay composited in DaVinci Resolve
+  IMAGE_MOTION_GRAPHICS_BROLL_METHOD: still image plus Depth Anything V2 mask plus DaVinci Resolve Fusion parallax through SS-117
+  CINEMATIC_BROLL_VIDEO: approved cloud/premium cinematic video lane unless a future local proof upgrades local cinematic B-roll
+  A_ROLL_AVATAR: HeyGen or approved avatar provider
+  final_assembly: DaVinci Resolve, with FFmpeg as assembly/export guard
+b_roll_minimum_percentage: 12
+locked_storyboard_format: multi_arc_table_10_columns_plus_reasoning
+locked_rehook_default: four_rehooks_at_max_90_second_intervals_for_5_minute_plan
 fail_rules: [scene prompt packet missing visual DNA field, SCENE_SYNC_MATRIX missing or contains only headings, media artifact claimed without evidence block, provider execution claimed without approval, local engine execution claimed without render metadata, tool_specific_translation_readiness below PACKET_READY for claimed execution]
 partial_rules: [local engine readiness is DESIGNED or STUB but disclosed, storyboard export plan present but images not yet generated, pacing metadata present but video not yet rendered]
 pass_rules: [all scene prompt packets include complete 15-field visual DNA, SCENE_SYNC_MATRIX emits one scene_row_json per scene, LOCAL_MEDIA_FACTORY_BRIDGE_STATUS declares readiness per engine per lane, PROVIDER_HONESTY_GATE is explicit with no fake claims, storyboard export references exact filenames in pacing metadata]
@@ -133,6 +145,12 @@ mac_06_2b_route_depth_requirements:
     - schemas/media_factory/scene_sync_matrix.schema.json
     - schemas/media_factory/scene_prompt_packet.schema.json
     - schemas/media_factory/media_factory_packet.schema.json
+    - schemas/packets/scene_brief_packet.schema.json
+    - schemas/packets/scene_prompt_packet.schema.json
+    - schemas/packets/storyboard_export_packet.schema.json
+    - schemas/packets/depth_map_plan_packet.schema.json
+    - schemas/packets/hyperframes_render_plan_packet.schema.json
+    - schemas/packets/notebooklm_visual_plan_packet.schema.json
   required_quality_gates: [visual_dna_compliance_score, tool_translation_readiness_score, media_quality_gate_packet, final_pass_fail]
   validator_binding: validators/validate_script_generation_output.py
   lineage_required: true

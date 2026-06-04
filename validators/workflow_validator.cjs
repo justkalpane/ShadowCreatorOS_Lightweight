@@ -90,7 +90,7 @@ class WorkflowValidator {
 
   validateFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = this.stripBom(fs.readFileSync(filePath, 'utf8'));
       let workflow;
       try {
         workflow = JSON.parse(content);
@@ -160,7 +160,7 @@ class WorkflowValidator {
       }
 
       try {
-        JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+        JSON.parse(this.stripBom(fs.readFileSync(fullPath, 'utf8')));
       } catch (error) {
         findings.push({
           code: 'INVALID_CANONICAL_WORKFLOW_JSON',
@@ -190,7 +190,7 @@ class WorkflowValidator {
     const parseableWorkflows = [];
     for (const row of workflowResults) {
       try {
-        const content = JSON.parse(fs.readFileSync(row.filepath, 'utf8'));
+        const content = JSON.parse(this.stripBom(fs.readFileSync(row.filepath, 'utf8')));
         parseableWorkflows.push({
           workflow_id: content.meta?.workflow_id || row.workflow_id || this.inferWorkflowIdFromPath(row.filepath),
           workflow: content
@@ -552,6 +552,10 @@ class WorkflowValidator {
       warnings,
       node_count: 0
     };
+  }
+
+  stripBom(text) {
+    return String(text || '').replace(/^\uFEFF/, '');
   }
 }
 

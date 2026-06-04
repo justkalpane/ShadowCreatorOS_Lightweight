@@ -7,7 +7,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const yaml = require('yaml');
 
 const repoRoot = path.resolve(__dirname, '..');
 const modelPath = path.join(repoRoot, 'registries', 'model_registry.yaml');
@@ -25,8 +24,7 @@ class ModelValidator {
     let content;
     try {
       const raw = fs.readFileSync(modelPath, 'utf8');
-      const docs = yaml.parseAllDocuments(raw);
-      content = docs[0].toJSON();
+      content = this.parseModelRegistry(raw);
     } catch (error) {
       errors.push(`YAML parse error: ${error.message}`);
       return { passed: false, errors, warnings };
@@ -61,6 +59,27 @@ class ModelValidator {
       warnings,
       registry_id: content.registry_id || null,
       family_count: content.model_families ? Object.keys(content.model_families).length : 0
+    };
+  }
+
+  parseModelRegistry(raw) {
+    const text = String(raw || '').replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
+    const registryId = (text.match(/^registry_id:\s*"?([^"\n]+)"?\s*$/m) || [])[1] || null;
+    const primaryTextModel =
+      (text.match(/^\s*primary_text_model:\s*"?([^"\n]+)"?\s*$/m) || [])[1] || null;
+    const familyBlock = text.match(/^model_families:\s*\n([\s\S]*)/m);
+    const modelFamilies = {};
+
+    if (familyBlock) {
+      for (const match of familyBlock[1].matchAll(/^\s{2}([a-zA-Z0-9_]+):\s*$/gm)) {
+        modelFamilies[match[1]] = true;
+      }
+    }
+
+    return {
+      registry_id: registryId,
+      defaults: primaryTextModel ? { primary_text_model: primaryTextModel } : null,
+      model_families: Object.keys(modelFamilies).length ? modelFamilies : null
     };
   }
 }

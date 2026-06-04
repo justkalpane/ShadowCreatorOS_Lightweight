@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-530 Publish Readiness Checker Canonical",
   "description": "Final readiness verification before publishing to live channels.",
   "nodes": [

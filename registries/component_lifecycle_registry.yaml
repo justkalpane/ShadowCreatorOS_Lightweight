@@ -186,11 +186,11 @@
       "component_id": "DIRECTOR:_VISHWAKARMA",
       "component_path": "directors/production/vishwakarma.md",
       "component_layer": "DIRECTOR",
-      "route_profile": "provider_handoff_profile",
-      "route_family": "provider_handoff, full_video_pipeline",
-      "lifecycle_status": "DORMANT_FUTURE",
-      "active_runtime": false,
-      "reason": "future/provider execution remains disabled"
+      "route_profile": "media_factory_profile",
+      "route_family": "media_factory_handoff, provider_handoff, full_video_pipeline",
+      "lifecycle_status": "ACTIVE_SUPPORT",
+      "active_runtime": true,
+      "reason": "active for local packet-only Media Factory planning; provider execution remains disabled"
     },
     {
       "component_id": "DIRECTOR:_AGASTYA",
@@ -3186,11 +3186,41 @@
       "component_id": "SKL-PH3B-M-216-SHOT_LIST_GENERATOR",
       "component_path": "skills/media_video/M-216-shot-list-generator.skill.md",
       "component_layer": "SKILL",
-      "route_profile": "lineage_profile",
-      "route_family": "lineage_summary, approval_gate",
-      "lifecycle_status": "QUARANTINE_REVIEW",
-      "active_runtime": false,
-      "reason": "not consumed by executable DAG"
+      "route_profile": "media_factory_profile",
+      "route_family": "media_factory_handoff, lineage_summary, approval_gate",
+      "lifecycle_status": "ACTIVE_SUPPORT",
+      "active_runtime": true,
+      "reason": "active for local packet-only Media Factory storyboard planning; provider/media execution remains disabled"
+    },
+    {
+      "component_id": "SS-116-notebooklm-visual-style-orchestrator",
+      "component_path": "skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md",
+      "component_layer": "SUB_SKILL",
+      "route_profile": "media_factory_profile",
+      "route_family": "media_factory_handoff",
+      "lifecycle_status": "ACTIVE_SUPPORT",
+      "active_runtime": true,
+      "reason": "consumed by Media Factory handoff for NotebookLM visual planning through HyperFrames"
+    },
+    {
+      "component_id": "SS-117-depth-anything-v2-depth-map-generator",
+      "component_path": "skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md",
+      "component_layer": "SUB_SKILL",
+      "route_profile": "media_factory_profile",
+      "route_family": "media_factory_handoff",
+      "lifecycle_status": "ACTIVE_SUPPORT",
+      "active_runtime": true,
+      "reason": "consumed by Media Factory handoff for DA-V2 depth-mask planning"
+    },
+    {
+      "component_id": "SS-118-hyperframes-html-renderer",
+      "component_path": "skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md",
+      "component_layer": "SUB_SKILL",
+      "route_profile": "media_factory_profile",
+      "route_family": "media_factory_handoff",
+      "lifecycle_status": "ACTIVE_SUPPORT",
+      "active_runtime": true,
+      "reason": "consumed by Media Factory handoff for HyperFrames slide and overlay planning"
     },
     {
       "component_id": "SKL-PH3B-M-217-B_ROLL_SOURCING_STRATEGY",

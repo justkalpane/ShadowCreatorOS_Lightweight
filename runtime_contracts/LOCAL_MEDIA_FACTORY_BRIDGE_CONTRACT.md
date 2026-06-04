@@ -52,12 +52,42 @@ ShadowMediaFactory
 -> status / doctor / preflight
 -> ComfyUI local generation when approved
 -> AnimateDiff / Wan lane execution when approved
+-> Depth map generation via DA-V2 (ViT-B / MPS)
+-> HyperFrames HTML deterministic renders (NotebookLM slides, kinetic titles)
 -> FFmpeg assembly / packaging
--> HyperFrames / DaVinci handoff when applicable
+-> DaVinci handoff for 2.5D Parallax, manual compositing, and final polish
 -> proof JSON
 -> asset registry update
 -> export artifact
 ```
+
+## Locked Local Pipelines
+
+Depth Anything V2 is authorized only as a local depth-map generator for still
+images. The production 2.5D parallax path is:
+
+```text
+source_still_image
+-> Depth Anything V2 depth_map_png
+-> DaVinci Resolve Fusion layer separation / Luma Keyer mask
+-> foreground/midground/background transform animation
+-> DaVinci timeline render or MP4 export
+```
+
+NotebookLM-style and programmatic slide rendering is authorized through
+HyperFrames CLI. The NotebookLM slide path is:
+
+```text
+notebook_dual_panel_html_css_gsap_project
+-> HyperFrames CLI / headless Chrome render
+-> MP4 or WebM alpha output
+-> DaVinci Resolve V1 slide background
+-> optional HeyGen chromakey presenter on V2
+-> final DaVinci assembly
+```
+
+HyperFrames does not replace DaVinci Resolve for 2.5D parallax or final
+assembly. Depth Anything V2 does not generate images or video.
 
 ## Required Handoff Flow
 
@@ -126,6 +156,12 @@ WAN_LANE=LOCAL_ENGINE_READY
 WAN_TECHNICAL_PASS=true
 WAN_PRODUCTION_QUALITY_PASS=false
 WAN_ROLE=experimental
+
+HYPERFRAMES_LANE=LOCAL_ENGINE_READY
+HYPERFRAMES_ROLE=html_css_deterministic_render
+
+DEPTH_ANYTHING_V2_LANE=LOCAL_ENGINE_READY
+DEPTH_ANYTHING_V2_ROLE=depth_map_generation
 
 FFMPEG_ASSEMBLY_LANE=LOCAL_ENGINE_READY
 DAVINCI_LANE=LOCAL_ENGINE_READY_FOR_MANUAL_FINISHING_QC

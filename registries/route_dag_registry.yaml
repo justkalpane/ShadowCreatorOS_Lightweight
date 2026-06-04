@@ -1574,11 +1574,114 @@
         },
         {
           "node_id": "mfh_002",
+          "component_id": "SS-116-notebooklm-visual-style-orchestrator",
+          "component_path": "skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md",
+          "component_layer": "SUB_SKILL",
+          "required_input_packets": [
+            "scene_prompt_packet"
+          ],
+          "emitted_output_packets": [
+            "notebooklm_visual_plan_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_SKILL_SUBSKILL"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "media_factory_sync_lock_status",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "notebooklm_visual_method_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "mfh_003"
+          ]
+        },
+        {
+          "node_id": "mfh_003",
+          "component_id": "SS-117-depth-anything-v2-depth-map-generator",
+          "component_path": "skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md",
+          "component_layer": "SUB_SKILL",
+          "required_input_packets": [
+            "scene_prompt_packet"
+          ],
+          "emitted_output_packets": [
+            "depth_map_plan_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_SKILL_SUBSKILL"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "media_factory_sync_lock_status",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "depth_mask_method_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "mfh_004"
+          ]
+        },
+        {
+          "node_id": "mfh_004",
+          "component_id": "SS-118-hyperframes-html-renderer",
+          "component_path": "skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md",
+          "component_layer": "SUB_SKILL",
+          "required_input_packets": [
+            "scene_prompt_packet",
+            "notebooklm_visual_plan_packet"
+          ],
+          "emitted_output_packets": [
+            "hyperframes_render_plan_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_SKILL_SUBSKILL"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "media_factory_sync_lock_status",
+            "provider_boundary_validation_pass"
+          ],
+          "quality_gates": [
+            "hyperframes_render_method_gate"
+          ],
+          "fallback_routes": [
+            "context_engineering"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "mfh_005"
+          ]
+        },
+        {
+          "node_id": "mfh_005",
           "component_id": "M-216-shot-list-generator",
           "component_path": "skills/media_video/M-216-shot-list-generator.skill.md",
           "component_layer": "SKILL",
           "required_input_packets": [
-            "scene_prompt_packet"
+            "scene_prompt_packet",
+            "notebooklm_visual_plan_packet",
+            "depth_map_plan_packet",
+            "hyperframes_render_plan_packet"
           ],
           "emitted_output_packets": [
             "storyboard_export_packet"
@@ -1603,11 +1706,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "mfh_003"
+            "mfh_006"
           ]
         },
         {
-          "node_id": "mfh_003",
+          "node_id": "mfh_006",
           "component_id": "A-405-media-qa-validator",
           "component_path": "skills/media_production/A-405-media-qa-validator.py",
           "component_layer": "SKILL",

@@ -19,6 +19,18 @@ storyboard_export_required=false
 ```
 
 ```text
+visual_media_plan_requested=true
+media_context_depth=PLANNING_ONLY
+scene_sync_matrix_required=true
+scene_prompt_packets_required=false
+storyboard_export_required=false
+visual_creation_dna_required=false
+video_motion_prompt_required=false
+tool_translation_readiness_required=false
+local_engine_bridge_status_required=false
+```
+
+```text
 media_factory_final_draft_requested=true
 media_context_depth=DEEP_REQUIRED
 scene_sync_matrix_required=true
@@ -29,6 +41,79 @@ video_motion_prompt_required=true
 tool_translation_readiness_required=true
 local_engine_bridge_status_required=true
 ```
+
+## Visual Media Plan vs. Media Factory Final Draft Law
+
+- When a "Visual Media Plan", "Visual Plan", or "Storyboard Plan" is requested (signaled by `visual_media_plan_requested=true`), the output must be a detailed, written, scene-by-scene storyboard layout in Markdown tables.
+- The Matrix MUST include the following dimensions:
+  - **Media Type & Visual Method**: Declare the exact method: `A_ROLL_AVATAR`, `A_ROLL_OVERLAY_METHOD`, `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HTML_CSS_GSAP_VISUAL_METHOD`, `HYPERFRAME_VISUAL_METHOD`, `IMAGE_MOTION_GRAPHICS_BROLL_METHOD`, or `CINEMATIC_BROLL_VIDEO`.
+  - **Shot Framing / Setup**: Visual description, shot type, environment, safety profile, and overlay layout (if using `A_ROLL_OVERLAY_METHOD` detailing what floats on top of the presenter).
+  - **Camera Motion / Technique**: Ken Burns zoom/pan, dolly, tracking, and **HYPERFRAME_VISUAL_METHOD** (detailing: 3D parallax layer depth separation of foreground vs background, visual highlights, glow maps, particle layers, lens flares, or depth-of-field blurring based on script lines).
+  - **Voice (ElevenLabs)**: Script lines, tone, pacing, ElevenLabs Settings (Stability, Similarity, Style Exaggeration, Speaker Boost).
+  - **Music & SFX (Suno / Local Library)**: Suno music prompts and **SFX_TIMELINE_METHOD** detailing precision audio timestamps and volume curves (e.g., `[+1.2s] swoop_01.wav at -6dB`, `[+3.5s] coin_ding.wav at -3dB`) synchronized directly to visual transitions or key spoken words.
+  - **Captions**: Formatting, kinetic typography, highlights, positioning.
+  - **Editing (Nataraja) & Transitions (FFMPEG_TRANSITION_METHOD)**: Cuts, zooms, speed adjustments, J-cuts and L-cuts with precise offsets in seconds (e.g., `J-Cut offset: -0.5s`, `L-Cut offset: +0.8s`), and specific transition cuts (e.g., whip pan, zoom cut, glitch wipe, flash cut) mapped to the visual sequence.
+  - **Color Grade (Maya)**: Palette, temperature, film grain, continuity.
+  - **Safe Zone**: Safe zone coordinates and platform margins.
+- **Image+Motion Graphics Pacing & Hyperframe Rule**: For any image-based B-roll segment:
+  - You MUST scale the number of images based on duration and narrative complexity (e.g., 1 image per 2-5 seconds for rapid pacing, or 1 image with continuous Ken Burns motion).
+  - Layer **HYPERFRAME_VISUAL_METHOD** overlays (2.5D layer animations, animated kinetic text overlays, digital tracking highlights, particle effects, or speed lines) over still images to simulate high-end editing pacing.
+  - Explicitly state the **Image Count** (number of distinct images to be generated) and the **Transition/Hyperframe FX** for each image.
+- **NOTEBOOKLM_VISUAL_METHOD Rule**:
+  - For sections explaining documents, lessons, note points, and data summaries, utilize the NotebookLM-style presentation.
+  - Layout: Left side showcases a vertical document list or note card source block; right side showcases the active selected note with glowing orange/gold bounding highlight boxes that expand over text lines as they are read.
+  - Animate document scrolling (vertical scroll) and kinetic citation links popping out from text highlights.
+  - These slides are rendered locally in headless Chrome via HyperFrames CLI at zero cost.
+  - **Asset & Render Specification Requirements**:
+    - During visual planning, the planner must explicitly define the asset structure and rendering parameters for NotebookLM scenes to ensure production quality:
+      1. *Asset Inventory*: Explicit list of target file paths (e.g. SVGs, logo files, page preview PNGs). If none are needed, state `assets_needed=NONE (CSS vectors only)`.
+      2. *Rendering Draft*: Specify the core rendering variables including font choices, theme styling (light/dark/custom background colors), typing animation speed, scroll offsets, highlight background color/opacity, and GSAP sync timeline parameters.
+      3. *DaVinci Overlays Layout*: Explicitly detail the multi-track layering mapping: base slide MP4 on V1 and chromakeyed talking-head avatar video on V2.
+
+- **PROGRAMMATIC_SLIDE_VISUAL_METHOD & HTML_CSS_GSAP_VISUAL_METHOD Rule**:
+  - For explanation scenes, listicle blocks, data displays, and learning points, utilize programmatic HTML/CSS templates.
+  - Define the layout card style, font colors, kinetic text string, scroll rate, and animation timeline (e.g., card flip, sequential bullet fade-in) in the shot framing column.
+  - These slides are rendered locally in headless Chrome at zero cost and offer pixel-perfect layout alignment.
+- **Narrative Transition & Ratio Target Law**:
+  - Whenever a backstory, real-person anecdote, or backdrop is introduced (including within segments that would otherwise be talking-head A-roll), the presenter avatar must fade or cut away in favor of `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HYPERFRAME_VISUAL_METHOD` overlays, or `CINEMATIC_BROLL_VIDEO`.
+  - The plan must target the following cost-efficient production ratios:
+    - **A-Roll (HeyGen Presenter / Avatars)**: ~40% of total runtime.
+    - **Image+Motion Graphics, Programmatic Slides & NotebookLM Slides (Low Cost)**: ~48% of total runtime.
+    - **Cinematic B-Roll Video (Cloud/Premium)**: At least 12% of total runtime (principally allocated to the short story/establishing blocks).
+- Do NOT generate ComfyUI/AnimateDiff/Flux prompt packets, JSON files, local render configs, or call local rendering engines yet. The goal is to lock the plan before committing to asset rendering.
+- Moving to the "Media Factory Final Draft" with full rendering DNA prompts and local engine handoff is only allowed AFTER the user reviews and explicitly approves the written Visual Media Plan.
+
+## Media Factory Tool Assignment Law
+
+Visual method names map to exact tools. Do not substitute tools silently.
+
+```text
+NOTEBOOKLM_VISUAL_METHOD -> HyperFrames CLI through SS-116 and SS-118
+PROGRAMMATIC_SLIDE_VISUAL_METHOD -> HyperFrames CLI through SS-118
+HTML_CSS_GSAP_VISUAL_METHOD -> HyperFrames CLI through SS-118
+A_ROLL_OVERLAY_METHOD -> HeyGen chromakey foreground plus HyperFrames MP4/WebM alpha background or overlay, composited in DaVinci Resolve
+IMAGE_MOTION_GRAPHICS_BROLL_METHOD -> still image plus Depth Anything V2 mask plus DaVinci Resolve Fusion 2.5D parallax
+CINEMATIC_BROLL_VIDEO -> approved cloud/premium cinematic video lane unless a future proof upgrades a local cinematic lane
+A_ROLL_AVATAR -> HeyGen or approved avatar provider
+FINAL_ASSEMBLY -> DaVinci Resolve, with FFmpeg as assembly/export support
+```
+
+HyperFrames is kept for NotebookLM slides, programmatic slides, kinetic text,
+data cards, and WebM alpha overlays. HyperFrames does not replace DaVinci
+Resolve for 2.5D parallax or final assembly.
+
+Depth Anything V2 is a depth-map masking tool only. It does not generate images
+and must not be described as a visual generator.
+
+## Visual Media Plan Required Summary Blocks
+
+Every Visual Media Plan output must conclude with the following two summary sections:
+1. **COMPLETE A-ROLL vs B-ROLL vs MOTION GRAPHIC SUMMARY Table**: A markdown table containing columns: `Scene`, `Timecode`, `Type`, `Duration`, `Image Count` (for Image+Motion Graphics scenes), and `Cost Level`.
+2. **Cost Distribution Result**: A summary block calculating total durations (in seconds) and percentages for:
+   - A-Roll (HeyGen avatar)
+   - Motion Graphic Images (Low cost Ken Burns/panning of stills)
+   - B-Roll Video (High cost cloud/local video generation)
+   This summary must prove that B-Roll video costs have been minimized and target percentages are met.
 
 ## Scene Synchronization Law
 

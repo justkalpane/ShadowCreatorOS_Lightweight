@@ -128,6 +128,27 @@ subskills:
       - WF-100
       - CWF-110
       - CWF-140
+  - subskill_id: SS-116
+    name: notebooklm_visual_style_orchestrator
+    spec_file: skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md
+    runtime_file: skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.py
+    consumer_workflows:
+      - WF-400
+      - CWF-440
+  - subskill_id: SS-117
+    name: depth_anything_v2_depth_map_generator
+    spec_file: skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md
+    runtime_file: skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.py
+    consumer_workflows:
+      - WF-400
+      - CWF-440
+  - subskill_id: SS-118
+    name: hyperframes_html_renderer
+    spec_file: skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md
+    runtime_file: skills/sub_skills/SS-118-hyperframes-html-renderer.py
+    consumer_workflows:
+      - WF-400
+      - CWF-440
   - subskill_id: SS-220
     name: deep_research_agent
     spec_file: skills/sub_skills/SS-220-deep-research-agent.subskill.md

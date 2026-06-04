@@ -89,6 +89,9 @@ aliases:
       - "Shadow Media Factory:"
       - "Shadow render packet:"
       - "Shadow B-roll:"
+      - "visual media draft:"
+      - "storyboard draft:"
+      - "generate storyboard:"
     route_id: MEDIA_FACTORY_HANDOFF
     internal_wrapper_required: true
     execution_boundary: local_engine_packet_only_no_provider_execution

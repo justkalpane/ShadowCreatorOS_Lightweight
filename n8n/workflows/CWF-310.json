@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-310 Execution Context Builder Canonical",
   "description": "Engineers runtime context envelope: allowed tools, execution constraints, platform-specific rules.",
   "nodes": [

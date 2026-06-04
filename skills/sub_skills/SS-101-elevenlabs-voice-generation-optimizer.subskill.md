@@ -22,6 +22,9 @@
 - voice_profile_id:string
 - emotion_profile:object
 - cost_tier:string
+- pronunciation_dictionary_locales:array
+- elevenlabs_project_id:string
+- sfx_generation_prompt:string
 
 ### 3.2 Provider Context
   - elevenlabs_api
@@ -55,6 +58,9 @@
 - Run chunk-level retry with capped premium retries and fallback to XTTS-v2
 - Cache voice outputs by script_hash+persona+emotion to reduce repeat spend
 - Enforce quality floor checks (clarity, pacing, pronunciation) before publish
+- Map custom pronunciation dictionary IDs (e.g., for Indian names and local terminology) to prevent accent drift
+- Utilize Projects API for long-form narrative consistency across scene compilations
+- Apply ElevenLabs Sound Effects API for synchronized transition and background foley effects
 
 ## SECTION 8: EXECUTION RULES & CONSTRAINTS
 - Enforce patch-only mutation law on dossier writes.
@@ -117,8 +123,6 @@ input_schema: Must declare atomic input fields before use; approval_gate_profile
 output_schema: Must emit atomic output packet with evidence path and validation status.
 subskill_hooks: May call subskills only through atomic_task_packet.
 quality_metric: Must emit skill_quality_score and quality_threshold.
-
-## M
 
 ## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 

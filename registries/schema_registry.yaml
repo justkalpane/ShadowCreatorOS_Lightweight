@@ -439,3 +439,15 @@ schemas:
     schema_path: schemas/packets/m244_packet.schema.json
   - artifact_family: m245_packet
     schema_path: schemas/packets/m245_packet.schema.json
+  - artifact_family: scene_brief_packet
+    schema_path: schemas/packets/scene_brief_packet.schema.json
+  - artifact_family: scene_prompt_packet
+    schema_path: schemas/packets/scene_prompt_packet.schema.json
+  - artifact_family: storyboard_export_packet
+    schema_path: schemas/packets/storyboard_export_packet.schema.json
+  - artifact_family: depth_map_plan_packet
+    schema_path: schemas/packets/depth_map_plan_packet.schema.json
+  - artifact_family: hyperframes_render_plan_packet
+    schema_path: schemas/packets/hyperframes_render_plan_packet.schema.json
+  - artifact_family: notebooklm_visual_plan_packet
+    schema_path: schemas/packets/notebooklm_visual_plan_packet.schema.json

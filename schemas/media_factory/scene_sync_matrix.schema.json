@@ -92,7 +92,20 @@
         "shot_type": {"type": "string", "minLength": 1},
         "camera_motion": {"type": "string", "minLength": 1},
         "duration": {"type": "number", "minimum": 3, "maximum": 20},
-        "continuity_notes": {"type": "string", "minLength": 1}
+        "continuity_notes": {"type": "string", "minLength": 1},
+        "visual_method": {
+          "type": "string",
+          "enum": [
+            "A_ROLL_AVATAR",
+            "A_ROLL_OVERLAY_METHOD",
+            "NOTEBOOKLM_VISUAL_METHOD",
+            "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+            "HTML_CSS_GSAP_VISUAL_METHOD",
+            "HYPERFRAME_VISUAL_METHOD",
+            "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+            "CINEMATIC_BROLL_VIDEO"
+          ]
+        }
       },
       "additionalProperties": true
     },
@@ -101,7 +114,19 @@
       "required": ["music_mood", "sfx"],
       "properties": {
         "music_mood": {"type": "string", "minLength": 1},
-        "sfx": {"type": "array"}
+        "sfx": {"type": "array"},
+        "sfx_timeline_method": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["timestamp_offset", "sfx_name", "volume_db"],
+            "properties": {
+              "timestamp_offset": {"type": "number"},
+              "sfx_name": {"type": "string"},
+              "volume_db": {"type": "number"}
+            }
+          }
+        }
       },
       "additionalProperties": true
     },
@@ -111,7 +136,18 @@
       "properties": {
         "cut_type": {"type": "string", "minLength": 1},
         "transition": {"type": "string", "minLength": 1},
-        "caption_style": {"type": "string", "minLength": 1}
+        "caption_style": {"type": "string", "minLength": 1},
+        "audio_video_offsets": {
+          "type": "object",
+          "properties": {
+            "j_cut_offset_seconds": {"type": "number"},
+            "l_cut_offset_seconds": {"type": "number"}
+          },
+          "additionalProperties": false
+        },
+        "ffmpeg_transition_method": {
+          "type": "string"
+        }
       },
       "additionalProperties": true
     },

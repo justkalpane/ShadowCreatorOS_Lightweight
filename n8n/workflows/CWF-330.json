@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-330 Asset Brief Generator Canonical",
   "description": "Generates downstream asset briefs: thumbnails, visuals, B-roll, captions, audio direction.",
   "nodes": [

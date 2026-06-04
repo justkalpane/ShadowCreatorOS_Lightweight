@@ -1,6 +1,6 @@
 version: 1
 registry_id: local_media_factory_bridge
-updated_at: "2026-06-03"
+updated_at: "2026-06-04"
 owner: shadow_commander
 purpose: >
   Permanent local bridge registry between ShadowCreatorOS_Lightweight and the
@@ -102,6 +102,29 @@ capability_truth:
       readiness_status: LOCAL_ENGINE_READY
       production_role: manual_finishing_qc
       automated_project_handoff_proven: false
+    hyperframes_lane:
+      engine: "HyperFrames Node.js CLI"
+      readiness_status: LOCAL_ENGINE_READY
+      production_role: html_css_deterministic_render
+      supports_alpha_webm: true
+      owning_subskills:
+        - SS-116
+        - SS-118
+      supported_visual_methods:
+        - NOTEBOOKLM_VISUAL_METHOD
+        - PROGRAMMATIC_SLIDE_VISUAL_METHOD
+        - HTML_CSS_GSAP_VISUAL_METHOD
+        - A_ROLL_OVERLAY_METHOD
+      boundary: "HyperFrames renders deterministic HTML/CSS/GSAP slides and alpha overlays; it does not replace DaVinci Resolve for 2.5D parallax or final assembly."
+    depth_anything_v2_lane:
+      engine: "Depth Anything V2 (ViT-B / MPS)"
+      readiness_status: LOCAL_ENGINE_READY
+      production_role: depth_map_generation
+      owning_subskills:
+        - SS-117
+      supported_visual_methods:
+        - IMAGE_MOTION_GRAPHICS_BROLL_METHOD
+      boundary: "Depth Anything V2 is a local depth-mask generator only; DaVinci Resolve Fusion performs the 2.5D parallax composite."
 
 honesty_gate_policy:
   preflight_required_before_render: true
@@ -146,13 +169,13 @@ agent_operating_protocol:
 
 # BEGIN AUTO-GENERATED MEDIA FACTORY SYNC STATE
 sync_state:
-  last_sync_at: "2026-06-03T17:53:09+00:00"
+  last_sync_at: "2026-06-04T17:27:13+00:00"
   bridge_in_sync: true
   media_factory_changed: false
   repo_bridge_update_required: false
   control_panel_cli_sha256: "adfb6e3ed89443e4c4659b7f6a332f971214970b6a4c9861c7c5d507a13213e3"
   capability_map_sha256: "758bedec33e3cde0c68351f732e1e746cad67ce1ffbe03e00bf0489b3f16b749"
-  latest_proof_sha256: "238cbe00cd685959b33fcadfdc34b78ca23f8f95bf508f2ecad89dcaac48baef"
+  latest_proof_sha256: "e327b966f84f847a03e97c1c5dd1d4e43434c08bd86848270be1f2d674c60b30"
   latest_proof_path: "/Users/apple/ShadowMediaFactory/control_panel/proofs/preflight_storyboard_bengaluru_honesty_gate.json"
   path_status:
     capability_map_exists: true
@@ -187,19 +210,19 @@ sync_state:
       hash: "7f015a678100a355e445eeb709a10eb18f7c288dbb5f59d0c0c6dbc58353f1fa"
     scene_contracts.jsonl:
       exists: true
-      line_count: 9
-      valid_jsonl: true
-      hash: "5a8db6a59a1c4faca49b3bb117d8a1eb477397b2e8be419778f2f70e88210fc4"
-    route_decisions.jsonl:
-      exists: true
-      line_count: 14
-      valid_jsonl: true
-      hash: "ed740ffe3cd6fa6fff5f1ba1434a4c15bd0df4ba6081b5e140e164e8bbda68ee"
-    retry_state.jsonl:
-      exists: true
       line_count: 10
       valid_jsonl: true
-      hash: "52e242e7940cdcbbe80f0942f0495aea6c81bdc21128b01d03a81a8b72401d2b"
+      hash: "c5d3072e1c53e1c79c439682f4fd4d5f4e735128b181cdbd386f216aeb16da94"
+    route_decisions.jsonl:
+      exists: true
+      line_count: 16
+      valid_jsonl: true
+      hash: "b20da07da1452294e5da1893075b0e9e06c6d6b7db43a25bf9745dda2190e969"
+    retry_state.jsonl:
+      exists: true
+      line_count: 11
+      valid_jsonl: true
+      hash: "5405f3970b0ad13853cd38ccc51d68b022d6548e8f0aff47d5c5c5c3856c935f"
   issues:
     []
 # END AUTO-GENERATED MEDIA FACTORY SYNC STATE

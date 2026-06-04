@@ -375,14 +375,33 @@ For Media Factory / storyboard / B-roll / visual plan / local engine handoff rou
 - `runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md`
 - `runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md`
 - `runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md`
+- `runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md`
 - `registries/route_manifests/media_factory_handoff.yaml`
+- `registries/local_media_factory_bridge.yaml`
 - `schemas/media_factory/scene_sync_matrix.schema.json`
 - `schemas/media_factory/scene_prompt_packet.schema.json`
 - `schemas/media_factory/media_factory_packet.schema.json`
 - `.agents/skills/shadow-media-factory/SKILL.md`
+- `skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md`
+- `skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md`
+- `skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md`
 
 The English master draft, honest source sufficiency, dynamic timing, and
 scene-synchronized Media Factory handoff are mandatory production gates.
+
+Locked Media Factory visual laws:
+
+- `NOTEBOOKLM_VISUAL_METHOD` uses HyperFrames CLI through SS-116/SS-118.
+- `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HTML_CSS_GSAP_VISUAL_METHOD`, and WebM
+  alpha overlays use HyperFrames CLI through SS-118.
+- `IMAGE_MOTION_GRAPHICS_BROLL_METHOD` uses Depth Anything V2 as a mask source
+  and DaVinci Resolve Fusion for 2.5D parallax.
+- `CINEMATIC_BROLL_VIDEO` must be at least 12% of total runtime in 3-10 minute
+  production visual plans.
+- Storyboards use the locked multi-arc table with 10 production columns plus
+  the Reasoning column.
+- Do not substitute tools across these methods without an explicit route
+  downgrade and user approval.
 
 Contract creation alone is not runtime propagation. Selected directors,
 agents, subagents, skills, and subskills must consume the relevant script laws.

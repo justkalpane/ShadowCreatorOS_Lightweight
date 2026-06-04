@@ -747,6 +747,12 @@ routes:
       - visual storyboard
       - render packet
       - local render
+      - NotebookLM slide
+      - HyperFrames slide
+      - Depth Anything V2
+      - DA-V2 parallax
+      - 2.5D parallax
+      - cinematic B-roll video
     mandatory_directors:
       - name: Maya
         path: directors/production/maya.md
@@ -784,6 +790,9 @@ routes:
       - skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md
       - skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md
       - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+      - skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md
+      - skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md
+      - skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md
     mandatory_contracts:
       - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
       - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
@@ -791,11 +800,42 @@ routes:
       - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
       - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
       - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+      - runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
     mandatory_registries:
       - registries/task_intent_routing_matrix.yaml
       - registries/route_manifests/media_factory_handoff.yaml
       - registries/provider_registry.yaml
       - registries/subskill_runtime_registry.yaml
+      - registries/local_media_factory_bridge.yaml
+    visual_methods:
+      - A_ROLL_AVATAR
+      - A_ROLL_OVERLAY_METHOD
+      - NOTEBOOKLM_VISUAL_METHOD
+      - PROGRAMMATIC_SLIDE_VISUAL_METHOD
+      - HTML_CSS_GSAP_VISUAL_METHOD
+      - HYPERFRAME_VISUAL_METHOD
+      - IMAGE_MOTION_GRAPHICS_BROLL_METHOD
+      - CINEMATIC_BROLL_VIDEO
+    sub_intents:
+      - NOTEBOOKLM_SLIDE
+      - PROGRAMMATIC_SLIDE
+      - HTML_CSS_GSAP_RENDER
+      - IMAGE_2_5D_PARALLAX
+      - CINEMATIC_BROLL_VIDEO
+      - A_ROLL_AVATAR
+      - A_ROLL_OVERLAY
+    b_roll_minimum_percentage: 12
+    visual_method_assignment_law:
+      NOTEBOOKLM_VISUAL_METHOD: HyperFrames CLI through SS-116 and SS-118
+      PROGRAMMATIC_SLIDE_VISUAL_METHOD: HyperFrames CLI through SS-118
+      HTML_CSS_GSAP_VISUAL_METHOD: HyperFrames CLI through SS-118
+      HYPERFRAME_VISUAL_METHOD: motion-graphics technique layer, not a universal tool substitution
+      IMAGE_MOTION_GRAPHICS_BROLL_METHOD: Depth Anything V2 mask plus DaVinci Resolve Fusion 2.5D parallax
+      CINEMATIC_BROLL_VIDEO: approved cinematic video lane; local animatic lanes cannot be called production cinematic B-roll
+      A_ROLL_OVERLAY_METHOD: HeyGen chromakey foreground plus HyperFrames background/alpha overlay composited in DaVinci Resolve
+      A_ROLL_AVATAR: HeyGen or approved avatar provider
+    locked_storyboard_format: multi_arc_table_10_columns_plus_reasoning
+    locked_rehook_requirement: 4 re-hooks at no unexplained gap above 90 seconds for the 5-minute Yash visual plan
     governance_directors:
       - Yama
       - Brahma
@@ -817,12 +857,16 @@ routes:
       - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS declares readiness per engine.
       - PROVIDER_HONESTY_GATE is explicit with no fake execution claims.
       - Storyboard export plan references exact filenames in pacing metadata.
+      - Cinematic B-Roll Video is at least 12% of total runtime for 3-10 minute production plans.
+      - SS-116, SS-117, and SS-118 are consumed when NotebookLM, HyperFrames, DA-V2, or 2.5D parallax methods appear.
     fail_rules:
       - scene prompt packet missing any visual DNA field
       - SCENE_SYNC_MATRIX missing or contains only headings
       - media artifact claimed without evidence block
       - provider execution claimed without approval
       - local engine execution claimed without render metadata
+      - NotebookLM / HyperFrames / DA-V2 visual methods used without the matching SS-116/SS-117/SS-118 subskill consumption
+      - cinematic B-roll below 12% without explicit user-approved downgrade
 
 mac_06_2b_component_depth_registry_extension:
   status: ACTIVE_SUPPORTING_REGISTRY_EXTENSION

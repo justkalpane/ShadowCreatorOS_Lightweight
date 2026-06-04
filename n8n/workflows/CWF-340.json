@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-340 Lineage Validator Canonical",
   "description": "Validates full lineage chain: topic â†’ research â†’ script â†’ context. Gates entry to WF-400.",
   "nodes": [

@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-620 Audience Feedback Aggregator Canonical",
   "description": "Aggregates audience feedback: comments, sentiment analysis, topic trending.",
   "nodes": [

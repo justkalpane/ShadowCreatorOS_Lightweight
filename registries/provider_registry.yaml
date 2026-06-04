@@ -33,7 +33,7 @@ providers:
     escalation_workflow: WF-900
     notes: >
       Primary local model host for Phase-1. Current working model is
-      llama3.2:3b on the active Windows target.
+      llama3.2:3b on the active local target when Ollama is available.
 
   - provider_id: elevenlabs_api
     display_name: ElevenLabs API
@@ -190,3 +190,102 @@ providers:
       grade, and final export. Current role is manual finishing and QC through
       the local Media Factory path. Automated project handoff is not claimed
       until proof is present.
+
+  - provider_id: depth_anything_v2_local
+    display_name: Depth Anything V2 (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_cli
+    runtime_modes:
+      - local
+      - hybrid
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - still_image_depth_mask_generation
+      - depth_map_png_export
+      - davinci_fusion_parallax_prep
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Local depth-map generator for IMAGE_MOTION_GRAPHICS_BROLL_METHOD. It is
+      a masking tool only: it does not generate images, video, cinematic B-roll,
+      or final composites. DaVinci Resolve Fusion owns the 2.5D parallax
+      composite after the depth mask is produced.
+
+  - provider_id: hyperframes_cli_local
+    display_name: HyperFrames CLI (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_cli
+    runtime_modes:
+      - local
+      - hybrid
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - notebooklm_dual_panel_slide_render
+      - programmatic_slide_render
+      - kinetic_text_render
+      - webm_alpha_overlay_export
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Local deterministic HTML/CSS/GSAP renderer for NOTEBOOKLM_VISUAL_METHOD,
+      PROGRAMMATIC_SLIDE_VISUAL_METHOD, HTML_CSS_GSAP_VISUAL_METHOD, and WebM
+      alpha overlays. HyperFrames does not replace DaVinci Resolve for 2.5D
+      parallax or final assembly.
+
+  - provider_id: runway_ml_api
+    display_name: Runway ML API
+    class: cloud_provider
+    status: deferred
+    phase1_allowed: false
+    auth_style: api_key
+    callback_style: polling_with_optional_webhook
+    runtime_modes:
+      - cloud
+      - hybrid
+    premium_provider: true
+    budget_gate_required: true
+    policy_gate_required: true
+    escalation_workflow: WF-900
+    supported_operations:
+      - cinematic_broll_video_generation
+      - camera_motion_video_generation
+    readiness_status: DEFERRED_PROVIDER_HANDOFF_ONLY
+    notes: >
+      Candidate cloud lane for CINEMATIC_BROLL_VIDEO. Provider execution is
+      disabled by default and requires explicit user approval, budget gate, and
+      provider proof before any artifact claim.
+
+  - provider_id: kling_ai_api
+    display_name: Kling AI API
+    class: cloud_provider
+    status: deferred
+    phase1_allowed: false
+    auth_style: api_key
+    callback_style: polling_with_optional_webhook
+    runtime_modes:
+      - cloud
+      - hybrid
+    premium_provider: true
+    budget_gate_required: true
+    policy_gate_required: true
+    escalation_workflow: WF-900
+    supported_operations:
+      - cinematic_broll_video_generation
+      - camera_motion_video_generation
+    readiness_status: DEFERRED_PROVIDER_HANDOFF_ONLY
+    notes: >
+      Candidate cloud lane for CINEMATIC_BROLL_VIDEO. Provider execution is
+      disabled by default and requires explicit user approval, budget gate, and
+      provider proof before any artifact claim.

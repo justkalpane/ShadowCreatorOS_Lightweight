@@ -289,6 +289,71 @@ Schema enforcement: `schemas/media_factory/scene_prompt_packet.schema.json`
 
 Missing any field → prompt cannot reach PASS → entire Media Factory draft cannot reach PASS.
 
+## MEDIA_FACTORY_VISUAL_METHOD_ASSIGNMENT_LAW — Anti-Drift Reminder
+
+Do not substitute tools across visual methods.
+
+- `NOTEBOOKLM_VISUAL_METHOD` -> HyperFrames CLI through SS-116 and SS-118.
+- `PROGRAMMATIC_SLIDE_VISUAL_METHOD` -> HyperFrames CLI through SS-118.
+- `HTML_CSS_GSAP_VISUAL_METHOD` -> HyperFrames CLI through SS-118.
+- `A_ROLL_OVERLAY_METHOD` -> HeyGen chromakey presenter plus HyperFrames
+  MP4/WebM alpha background or overlay, composited in DaVinci Resolve.
+- `IMAGE_MOTION_GRAPHICS_BROLL_METHOD` -> still image plus Depth Anything V2
+  depth mask plus DaVinci Resolve Fusion 2.5D parallax.
+- `CINEMATIC_BROLL_VIDEO` -> cloud/premium cinematic video lane unless a future
+  local proof explicitly upgrades a local cinematic lane.
+- `A_ROLL_AVATAR` -> HeyGen or approved avatar provider.
+- DaVinci Resolve remains final assembly, color grade, and manual finishing.
+- FFmpeg is assembly/export support and guardrail, not a creative replacement.
+
+HyperFrames is not removed. HyperFrames does not replace DaVinci for 2.5D
+parallax or final assembly.
+
+Depth Anything V2 is a masking/depth-map tool only. It does not generate images
+and must not be used as a prompt-depth decoration rule.
+
+## CINEMATIC_BROLL_RATIO_LOCK — Anti-Drift Reminder
+
+For 3-10 minute production visual plans, `CINEMATIC_BROLL_VIDEO` must be at
+least 12% of total runtime unless the user explicitly approves a downgrade.
+
+For the Yash self-investment visual plan:
+
+- Scene 2A remains `CINEMATIC_BROLL_VIDEO`.
+- Scene 2B remains `CINEMATIC_BROLL_VIDEO`.
+- Scene 2C remains `CINEMATIC_BROLL_VIDEO`.
+- The corrected target is 40 seconds of 305 seconds, or 13.1%.
+
+## STORYBOARD_TEMPLATE_LOCK — Anti-Drift Reminder
+
+Visual media plans must use a multi-arc storyboard table.
+
+Required columns:
+
+1. Scene & Timecode
+2. Media Type & Visual Method
+3. Shot Framing / Setup
+4. Camera Motion / Technique
+5. Voice (ElevenLabs Settings)
+6. Music & SFX
+7. Captions
+8. Editing & Transitions
+9. Color Grade (Maya)
+10. Safe Zone
+11. Reasoning
+
+Do not remove the Reasoning column. Do not collapse the multi-arc structure.
+
+## REHOOK_PLACEMENT_LOCK — Anti-Drift Reminder
+
+For the Yash 5-minute visual plan, preserve four re-hooks with no unexplained
+gap above 90 seconds:
+
+- Scene 3 around 70s
+- Scene 5 around 135s
+- Scene 7 around 205s
+- Scene 9A around 275s
+
 ## PROVIDER_HONESTY_GATE — Anti-Drift Reminder
 
 Every Media Factory output must explicitly declare:

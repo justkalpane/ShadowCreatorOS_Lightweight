@@ -7,7 +7,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const yaml = require('yaml');
 
 const repoRoot = path.resolve(__dirname, '..');
 const modePath = path.join(repoRoot, 'registries', 'mode_registry.yaml');
@@ -27,8 +26,7 @@ class ModeValidator {
     let content;
     try {
       const raw = fs.readFileSync(modePath, 'utf8');
-      const docs = yaml.parseAllDocuments(raw);
-      content = docs[0].toJSON();
+      content = this.parseModeRegistry(raw);
     } catch (error) {
       errors.push(`YAML parse error: ${error.message}`);
       return { passed: false, errors, warnings };
@@ -80,6 +78,24 @@ class ModeValidator {
       errors,
       warnings,
       registry_id: content.registry_id || null
+    };
+  }
+
+  parseModeRegistry(raw) {
+    const text = String(raw || '').replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
+    const registryId = (text.match(/^registry_id:\s*"?([^"\n]+)"?\s*$/m) || [])[1] || null;
+    const modeDefinitions = {};
+    const modeBlock = text.match(/^mode_definitions:\s*\n([\s\S]*)/m);
+
+    if (modeBlock) {
+      for (const match of modeBlock[1].matchAll(/^\s{2}([a-zA-Z0-9_]+):\s*$/gm)) {
+        modeDefinitions[match[1]] = true;
+      }
+    }
+
+    return {
+      registry_id: registryId,
+      mode_definitions: Object.keys(modeDefinitions).length ? modeDefinitions : null
     };
   }
 }

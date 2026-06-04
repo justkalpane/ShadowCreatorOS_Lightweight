@@ -126,6 +126,58 @@ Source: `latest Claude entire Build status.txt`
 - Ghost dependency issue corrected: M-219, M-201, M-202 were real files with wrong name references → fixed
 - maya_agent.py created from backup (exact copy) + MAC-06.2B upgrade applied
 
+### MAC-06 Yash Media Factory Capability Injection
+
+Source: `/Users/apple/Downloads/ShadowCreatorOS_RepoChanges_Audit.txt` and the
+current repo contracts.
+
+The Yash self-investment mission added a local-first visual production stack:
+
+- `NOTEBOOKLM_VISUAL_METHOD`: implemented as a local HyperFrames simulation of
+  NotebookLM-style dual-panel slides. The left side is a source shelf; the right
+  side is an active note with gold glow highlights, typing animation, and GSAP
+  timeline sync. This is not actual Google NotebookLM execution.
+- `PROGRAMMATIC_SLIDE_VISUAL_METHOD` and `HTML_CSS_GSAP_VISUAL_METHOD`:
+  rendered through HyperFrames CLI/headless Chrome for deterministic kinetic
+  text, data cards, comparison cards, and title panels.
+- `A_ROLL_OVERLAY_METHOD`: HeyGen chromakey presenter foreground over
+  HyperFrames MP4/WebM alpha background, composited in DaVinci Resolve V1/V2
+  tracks.
+- `IMAGE_MOTION_GRAPHICS_BROLL_METHOD`: still image plus Depth Anything V2 depth
+  mask, then DaVinci Resolve Fusion 2.5D parallax. Depth Anything V2 is a
+  masking/depth-map tool only; it is not an image generator or video generator.
+- `CINEMATIC_BROLL_VIDEO`: cloud/premium video lane for scenes that require
+  true camera motion, environmental motion, or premium cinematic realism. For
+  3-10 minute production visual plans, cinematic B-roll must be at least 12% of
+  total runtime unless the user explicitly approves a downgrade.
+
+Locked Yash mission decisions:
+
+- HyperFrames is kept for NotebookLM slides, programmatic slides, kinetic text,
+  and WebM alpha overlays.
+- DaVinci Resolve remains the final assembly, color grading, and 2.5D parallax
+  composite authority.
+- Depth Anything V2 Small is preferred for CPU/laptop safety; larger variants
+  require GPU/resource confirmation.
+- The storyboard format is a multi-arc table with 10 production columns plus a
+  Reasoning column.
+- The Yash visual plan uses Scenes 2A, 2B, and 2C as `CINEMATIC_BROLL_VIDEO`.
+- The corrected V2 plan achieves 40s of cinematic B-roll across a 305s runtime
+  (13.1%), satisfying the 12% minimum law.
+- Four re-hooks are locked around 70s, 135s, 205s, and 275s, with no unexplained
+  gap above 90 seconds.
+- A-Roll batching uses Batch A through D, with Batch D reserved for isolated /
+  chromakey overlay compositing.
+
+Maya palette ids for this mission:
+
+- `yash_story_arc`: teal city shadows, amber practicals, gold transformation
+  highlights.
+- `yash_presenter`: charcoal studio, warm gold rim light, white captions with
+  gold keyword emphasis.
+- `yash_notebooklm`: warm paper background, dark gray text, and gold active-note
+  glow.
+
 ---
 
 ## 6. PRD v34 ARCHITECTURE TRUTH (Zero-Loss Laws)

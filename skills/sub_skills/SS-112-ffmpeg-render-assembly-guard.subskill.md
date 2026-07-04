@@ -61,7 +61,7 @@
 - Auto-align foley effects on a millisecond scale relative to scene cut triggers
 - **DaVinci Track Layout Law:**
   - V1: Primary video clips (A-Roll, B-Roll, HyperFrames slides, stills)
-  - V2: Overlay clips (HyperFrames WebM alpha, Toxic card, text overlays)
+  - V2: Overlay clips (HyperFrames WebM alpha, promo/CTA cards, text overlays)
   - V3: Caption/kinetic text (DaVinci Fusion Text+ nodes)
   - A1: Master Voice (anchor - place first, everything syncs to this)
   - A2: Music (4 segments with 0.5s crossfades)
@@ -116,7 +116,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: SS-112-ffmpeg-render-assembly-guard.subskill
 component_layer: SKILL
 component_name: Ss 112 Ffmpeg Render Assembly Guard.Subskill
-route_families: [approval_gate, repo_write_mode]
+route_families: [full_video_pipeline, editing_packaging, context_engineering, media_factory_handoff, visual_media_plan, media_factory_final_draft, approval_gate, repo_write_mode]
 activation_triggers: route_family in [music_sfx_context, avatar_video_context, editing_packaging, quality_gate] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [lineage_packet, approval_packet, media_quality_gate_packet]
 downstream_outputs: [approval_packet, execution_authorization_packet]
@@ -143,7 +143,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: approval_gate_profile
-route_family_resolved: [approval_gate, repo_write_mode]
+route_family_resolved: [full_video_pipeline, editing_packaging, context_engineering, media_factory_handoff, visual_media_plan, media_factory_final_draft, approval_gate, repo_write_mode]
 activation_triggers_resolved: [approval, oauth, permission]
 required_input_packets_resolved: [lineage_packet, approval_packet, media_quality_gate_packet]
 emitted_output_packets_resolved: [approval_packet, execution_authorization_packet]
@@ -159,3 +159,26 @@ human_approval_points_resolved: [approve_patch, approve_commit, approve_provider
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md; component_id=SS-112-ffmpeg-render-assembly-guard.subskill
 remaining_unknowns: none
+
+## BATCH 4 MEDIA FACTORY RUNTIME BINDING
+
+binding_stage: BATCH_4_ROUTE_SUBSKILL_RUNTIME_BOUND
+required_runtime_state_schemas:
+  - schemas/runtime_state/evidence_bundle.schema.json
+  - schemas/runtime_state/route_state_capsule.schema.json
+required_schema_bindings:
+  - schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+  - schemas/media_factory/source_vs_render_packet.schema.json
+  - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+  - schemas/media_factory/pilot_cut_validation_packet.schema.json
+required_validator_bindings:
+  - validators/validate_evidence_bundle.py
+  - validators/validate_route_state_capsule.py
+  - validators/validate_ffmpeg_filtergraph_packet.py
+  - validators/validate_source_vs_render_packet.py
+  - validators/validate_visual_qa_acceptance.py
+  - validators/validate_pilot_cut_validation_packet.py
+blocked_unlocks_after_batch4:
+  - full_render_unlock_until_pilot_pass
+  - audio_unlock_until_visual_acceptance
+  - davinci_unlock_until_visual_acceptance

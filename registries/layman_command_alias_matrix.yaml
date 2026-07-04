@@ -101,6 +101,9 @@ gateway_rules:
   apply_shadow_task_execution_wrapper: true
   raw_plain_task_production_proof: false
   default_output_mode: OPERATOR_MODE
+  route_alias_contradiction_is_fail: true
+  wrapper_output_order_enforcement_required: true
+  manifest_required_blocks_enforcement_required: true
   command_expansion_required_output:
     - shadow_command_alias_detected
     - raw_user_task_preserved

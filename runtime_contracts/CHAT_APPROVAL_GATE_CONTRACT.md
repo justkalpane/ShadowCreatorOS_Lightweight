@@ -12,6 +12,8 @@ SHADOW_GATE_STATUS
 - current_status = PASS / BLOCKED / NEEDS_USER_APPROVAL / NEEDS_CONFIRMATION
 - director_or_gate_owner
 - evidence_used
+- proof_shown=true/false
+- trace_back_reference
 - issue_detected
 - recommendation
 - user_options
@@ -29,6 +31,26 @@ SHADOW_GATE_STATUS
 - Context Packet Gate
 - Provider Handoff Gate
 - Final Approval Gate
+
+## Execution Visibility Rule
+
+Every major stage must emit a visible gate block in chat before the task is
+treated as approved, refined, or final. A hidden pass, internal-only gate
+decision, or prose-only approval summary does not satisfy this contract.
+
+For script/content tasks, visible gate blocks should be used for:
+
+- topic intake
+- topic qualification
+- director/skill selection
+- research sufficiency
+- script quality
+- critique/refinement
+- governance
+- final approval
+
+The visible gate block must show what was checked and what the decision means
+for the next action.
 
 ## Required User Options
 

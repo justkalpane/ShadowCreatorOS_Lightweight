@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Kubera Gate",
+  "description": "Provider/cost gate for external tools. Provider execution remains blocked unless cost approval and token proof exist.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kubera_gate_id",
+    "job_id",
+    "cut_id",
+    "provider_execution_allowed",
+    "provider_token_present",
+    "provider_cost_estimate",
+    "premium_tool_required",
+    "cost_approval_status",
+    "cost_owner",
+    "blocked_reason",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "kubera_gate_id": {
+      "type": "string",
+      "pattern": "^KUB-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_execution_allowed": {
+      "type": "boolean"
+    },
+    "provider_token_present": {
+      "type": "boolean"
+    },
+    "provider_cost_estimate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "amount"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "estimated_minutes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "premium_tool_required": {
+      "type": "boolean"
+    },
+    "cost_approval_status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "NOT_REQUIRED"
+      ]
+    },
+    "cost_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "blocked_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "provider_execution_allowed": {
+            "const": true
+          }
+        },
+        "required": [
+          "provider_execution_allowed"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provider_token_present": {
+            "const": true
+          },
+          "cost_approval_status": {
+            "const": "APPROVED"
+          }
+        }
+      }
+    }
+  ]
+}

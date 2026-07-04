@@ -1,0 +1,12 @@
+mission_id=yash_self_investment
+primary_lane=HyperFrames_CLI
+repo_hyperframes_dir=outputs/missions/yash_self_investment/hyperframes/
+control_panel_job_root=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment
+scene_sync_packet=outputs/missions/yash_self_investment/packets/scene_sync_matrix.json
+scene_prompt_packet=outputs/missions/yash_self_investment/packets/scene_prompt_packets.json
+video_prompt_packet=outputs/missions/yash_self_investment/packets/video_prompt_packets.json
+proof_target=outputs/missions/yash_self_investment/proofs/hyperframes_status.txt
+
+notes:
+- NotebookLM, programmatic slide, and HTML/CSS/GSAP scenes map to HyperFrames.
+- HyperFrames outputs should be stored separately from final DaVinci outputs.

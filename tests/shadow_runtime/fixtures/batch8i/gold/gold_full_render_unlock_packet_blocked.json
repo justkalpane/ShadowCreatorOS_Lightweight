@@ -1,0 +1,21 @@
+{
+  "all_required_cut_ledgers_complete": false,
+  "audio_allowed": false,
+  "blocked_reasons": [
+    "pilot_not_accepted",
+    "route_state_capsule_not_approved"
+  ],
+  "created_at": "2026-06-22T00:00:00Z",
+  "davinci_allowed": false,
+  "evidence_bundle_id": "EB-C04A-001",
+  "full_render_allowed": false,
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "pilot_acceptance_token_id": "TOK-C04A-001",
+  "pilot_accepted": false,
+  "pilot_cut_id": "C04a",
+  "provider_allowed": false,
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "unlock_packet_id": "FRU-C04A-001"
+}

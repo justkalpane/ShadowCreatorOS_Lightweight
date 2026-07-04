@@ -1,0 +1,16 @@
+# Gold Fixture: Visual Generation Draft Mode Normalized
+
+route_id=MEDIA_FACTORY_HANDOFF
+canonical_route_id=MEDIA_FACTORY_HANDOFF
+task_mode=script_plus_visual_generation_draft
+source_user_phrase=visual_media_generator_draft
+normalized_user_phrase=script_plus_visual_generation_draft
+route_manifest_path=registries/route_manifests/media_factory_handoff.yaml
+selected_route_slice_path=registries/route_slices/visual_media_generation_draft.registry_slice.yaml
+selected_route_manifest_read=true
+selected_route_slice_read=true
+output_phase_started=true
+FINAL_PROOF_STATUS=PASS
+
+The user-facing phrase may mention visual media generator draft, but the runtime
+mode is explicitly normalized to the canonical route-chain mode.

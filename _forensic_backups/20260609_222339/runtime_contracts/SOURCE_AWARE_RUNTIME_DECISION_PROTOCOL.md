@@ -1,0 +1,163 @@
+# Source-Aware Runtime Decision Protocol
+
+This protocol enforces deterministic runtime behavior for freshness-sensitive tasks.
+
+## STEP 1 — Repo Startup
+
+- Read `START_HERE_FOR_AGENTS.md`
+- Read `AGENT_READ_ORDER.md`
+- Read runtime contracts
+- Load registry/director/agent/skill context
+
+## STEP 2 — Task Freshness Classification
+
+Classify task as:
+
+- `EVERGREEN`
+- `CURRENT_SENSITIVE`
+- `REALTIME_REQUIRED`
+- `USER_SOURCE_REQUIRED`
+- `HIGH_STAKES_CURRENT`
+
+## STEP 3 — Research Mode Selection
+
+- `EVERGREEN` -> `repo_only` or `repo_plus_static_knowledge`
+- `CURRENT_SENSITIVE` -> `web_assisted` preferred
+- `REALTIME_REQUIRED` -> `real_time_web` required
+- `USER_SOURCE_REQUIRED` -> user links or web required
+- `HIGH_STAKES_CURRENT` -> `real_time_web` + citations required
+
+## STEP 4 — Web Access Check
+
+Set:
+
+- `web_access_available=true/false/UNKNOWN`
+- `web_access_used=true/false`
+- `real_time_sources_used=true/false`
+
+## STEP 5 — Source Decision Gate
+
+If current info is required and web is unavailable or unused:
+
+- `Research Sufficiency Gate = NEEDS_USER_APPROVAL` or `NEEDS_CONFIRMATION`
+- Present options:
+  - `ENABLE_WEB_RESEARCH`
+  - `PROVIDE_SOURCE_LINKS`
+  - `APPROVE_REPO_ONLY`
+  - `CONTINUE_WITH_LIMITED_CONFIDENCE`
+  - `STOP`
+
+## STEP 6 — Tools Connectors Plugins Capability Gate
+
+Before capability claims, assess:
+
+- repo-defined tools
+- repo-defined connectors
+- repo-defined plugins
+- runtime state: active vs planned vs gated
+
+Status set:
+
+- `ACTIVE`
+- `AVAILABLE_BY_APPROVAL`
+- `PLANNED`
+- `NOT_ACTIVE`
+- `NEEDS_CONFIRMATION`
+
+## STEP 6B — Native Capability Routing
+
+- Inspect available native agent capabilities.
+- Inspect repo-defined tools/connectors/plugins.
+- Map task to required capabilities using `registries/native_capability_routing_matrix.yaml`.
+- Use `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md` for capability declaration format.
+- Use `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md` for mission-layer assessment output.
+- Use `registries/agent_runtime_selection_index.yaml` for agent-layer evidence binding when available.
+- If a required capability is missing, gate must be `NEEDS_CONFIRMATION` or `NEEDS_USER_APPROVAL`.
+- If an optional capability is unavailable, continue with disclosed limitation.
+- If provider/n8n/media execution is required, stop and request explicit approval.
+
+## STEP 7 — Output
+
+Output must include:
+
+- Research Sufficiency Gate
+- source disclosure fields
+- tools/connectors/plugins assessment
+- final confidence level
+- unsupported claims list
+
+## SOURCE_RESEARCH_LOCK FOR CURRENT PROMPTS
+
+For prompts containing latest, current, this week, new update, today, 2026, or watch this week:
+
+- `SOURCE_RESEARCH_LOCK` is mandatory.
+- `sources_used_before_output=true` is required for `PASS`.
+- A source list must be present before latest/current claims.
+- `unsupported_claims` must be listed.
+- If web access is unavailable, ask the user to continue limited mode or provide sources.
+- Do not invent latest tools, updates, sources, dates, or claims.
+
+## SOURCE_RESEARCH_LOCK FOR REAL-WORLD PROOF CLAIMS
+
+`SOURCE_RESEARCH_LOCK` is also mandatory when a script or content output uses:
+
+- a real person or celebrity
+- a real incident
+- a brand, company, platform, model, or tool
+- a biographical or career claim
+- a factual case study
+- an article or video reference
+- a real-world example presented as proof
+
+When web access is available, these prompts require:
+
+```text
+current_data_required=true/false
+web_access_available=true
+web_access_used=true
+research_mode=web_assisted or real_time_web
+source_list_present=true
+source_list=[{url,title,date,access_status}]
+video_reference_list=[]
+unsupported_claims=[]
+current_fact_confidence=
+research_sufficiency_gate_status=
+```
+
+Gate logic:
+
+- If `unsupported_claims` is non-empty, `SOURCE_RESEARCH_LOCK` cannot be `PASS`.
+- If web evidence is required and `web_access_used=false`, final proof cannot be
+  `PASS` unless the user explicitly approved repo-only limited continuation.
+- If a known named public figure or real-world identity is used, classify the
+  proof path as real-world proof even if the draft tries to call it composite.
+- If `real_time_sources_used=true`, `source_list_present=true` is mandatory.
+- If the source list is missing, set `real_time_sources_used=false` and
+  downgrade the weakest evidence layer.
+- Repo-first intelligence remains mandatory. Web research supplements the repo
+  brain; it does not replace registry-first routing.
+
+Use:
+
+- `runtime_contracts/REAL_TIME_RESEARCH_ENFORCEMENT_CONTRACT.md`
+- `runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md`
+
+Additional gate logic:
+
+- `web_access_used=true` with `real_time_sources_used=false` is
+  `WEB_ASSISTED_STATIC_REFERENCE` or `WEB_ASSISTED_LIMITED_REFERENCE`, never
+  real-time research.
+- Real-person proof scripts require multi-source validation where suitable
+  sources are available.
+- A single encyclopedia source is background context only.
+- Interview reporting is anecdotal support unless independently verified.
+- `FACT_VS_ANECDOTE_MAP` is mandatory for real-world proof claims.
+
+## MULTI-TOOL SOURCE BREADTH REQUIREMENT
+
+Latest/current/multi-tool watchlist prompts require `PER_TOOL_SOURCE_MAP` from `runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md`.
+
+- Broad watchlists cannot `PASS` with one-vendor-only sources.
+- Every named tool claim must map to a source entry.
+- Unsupported tool claims must be listed.
+- `source_breadth_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION` must be reported.

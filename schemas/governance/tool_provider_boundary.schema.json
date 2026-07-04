@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Tool Provider Boundary",
+  "description": "Tool and provider boundary matrix defining unlock requirements, proof requirements, and blocked-now semantics.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "boundary_id",
+    "job_id",
+    "cut_id",
+    "tools",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "boundary_id": {
+      "type": "string",
+      "pattern": "^TPB-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tool_name",
+          "local_or_provider",
+          "current_status",
+          "allowed_now",
+          "blocked_now",
+          "approval_token_required",
+          "cost_gate_required",
+          "policy_gate_required",
+          "resource_gate_required",
+          "unlock_requires",
+          "policy_gate",
+          "cost_gate",
+          "resource_gate",
+          "proof_required",
+          "fallback",
+          "risk_level",
+          "owner"
+        ],
+        "properties": {
+          "tool_name": {
+            "type": "string",
+            "enum": [
+              "FFmpeg",
+              "HyperFrames",
+              "Anything Depth",
+              "ComfyUI",
+              "DaVinci",
+              "Runway",
+              "Kling",
+              "Pika",
+              "HeyGen",
+              "ElevenLabs",
+              "Suno",
+              "Seedance",
+              "Higgsfield",
+              "RIFE",
+              "captions"
+            ]
+          },
+          "local_or_provider": {
+            "type": "string",
+            "enum": [
+              "local",
+              "provider",
+              "hybrid"
+            ]
+          },
+          "current_status": {
+            "type": "string",
+            "enum": [
+              "ALLOWED",
+              "BLOCKED",
+              "SUPPORT_ONLY",
+              "UNKNOWN"
+            ]
+          },
+          "allowed_now": {
+            "type": "boolean"
+          },
+          "blocked_now": {
+            "type": "boolean"
+          },
+          "approval_token_required": {
+            "type": "boolean"
+          },
+          "cost_gate_required": {
+            "type": "boolean"
+          },
+          "policy_gate_required": {
+            "type": "boolean"
+          },
+          "resource_gate_required": {
+            "type": "boolean"
+          },
+          "unlock_requires": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "policy_gate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cost_gate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resource_gate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "proof_required": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fallback": {
+            "type": "string",
+            "minLength": 1
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": [
+              "P0",
+              "P1",
+              "P2"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

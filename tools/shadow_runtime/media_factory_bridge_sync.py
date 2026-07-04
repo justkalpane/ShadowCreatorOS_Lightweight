@@ -3,9 +3,11 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,6 +20,9 @@ MEDIA_FACTORY_ROOT = Path("/Users/apple/ShadowMediaFactory")
 CONTROL_PANEL = MEDIA_FACTORY_ROOT / "control_panel"
 CLI = CONTROL_PANEL / "bin/shadow_factory_ctl.py"
 CAPABILITY_MAP = CONTROL_PANEL / "config/capability_map.json"
+DEPTH_ANYTHING_ROOT = MEDIA_FACTORY_ROOT / "tools/depth_anything_v2/Depth-Anything-V2"
+DEPTH_ANYTHING_VENV_PYTHON = MEDIA_FACTORY_ROOT / "tools/depth_anything_v2/.venv/bin/python"
+DEPTH_ANYTHING_SMALL_CHECKPOINT = DEPTH_ANYTHING_ROOT / "checkpoints/depth_anything_v2_vits.pth"
 PROOFS_DIR = CONTROL_PANEL / "proofs"
 REGISTRY_DIR = CONTROL_PANEL / "registry"
 JOBS_DIR = CONTROL_PANEL / "jobs"
@@ -26,6 +31,7 @@ COMFYUI_ROOT = MEDIA_FACTORY_ROOT / "apps/ComfyUI"
 
 SYNC_BEGIN = "# BEGIN AUTO-GENERATED MEDIA FACTORY SYNC STATE"
 SYNC_END = "# END AUTO-GENERATED MEDIA FACTORY SYNC STATE"
+LAST_SYNC_RE = re.compile(r'^\s*last_sync_at:\s*"([^"]+)"\s*$', re.MULTILINE)
 
 
 def now_iso() -> str:
@@ -132,6 +138,9 @@ def collect_snapshot(runtime_check: bool) -> dict:
             "jobs_dir_exists": JOBS_DIR.exists(),
             "exports_dir_exists": EXPORTS_DIR.exists(),
             "comfyui_root_exists": COMFYUI_ROOT.exists(),
+            "depth_anything_root_exists": DEPTH_ANYTHING_ROOT.exists(),
+            "depth_anything_venv_python_exists": DEPTH_ANYTHING_VENV_PYTHON.exists(),
+            "depth_anything_small_checkpoint_exists": DEPTH_ANYTHING_SMALL_CHECKPOINT.exists(),
         },
         "hashes": {
             "control_panel_cli_sha256": sha256(CLI),
@@ -155,6 +164,22 @@ def bridge_text() -> str:
     return BRIDGE.read_text(encoding="utf-8-sig", errors="replace") if BRIDGE.exists() else ""
 
 
+def atomic_write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(prefix=f"{path.name}.tmp.", dir=str(path.parent))
+    tmp_path = Path(tmp_name)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        tmp_path.replace(path)
+    except Exception:
+        if tmp_path.exists():
+            tmp_path.unlink()
+        raise
+
+
 def bridge_contains_required_paths(text: str) -> bool:
     required = [
         "/Users/apple/ShadowMediaFactory",
@@ -162,6 +187,11 @@ def bridge_contains_required_paths(text: str) -> bool:
         "/Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json",
     ]
     return all(item in text for item in required)
+
+
+def existing_last_sync_at(text: str) -> str | None:
+    match = LAST_SYNC_RE.search(text)
+    return match.group(1) if match else None
 
 
 def bridge_has_stale_hashes(text: str, snapshot: dict) -> bool:
@@ -185,6 +215,7 @@ def capability_drift(text: str, capability: dict) -> list[str]:
     animatic = capability.get("local_animatic_lane", {})
     wan = capability.get("wan_lane", {})
     assembly = capability.get("assembly_lane", {})
+    depth_anything = capability.get("depth_anything_v2_lane", {})
     expected_pairs = {
         "supports_canny": animatic.get("supports_canny"),
         "supports_openpose": animatic.get("supports_openpose"),
@@ -196,6 +227,10 @@ def capability_drift(text: str, capability: dict) -> list[str]:
         "wan_production_quality_pass": wan.get("production_quality_pass"),
         "supports_audio_mix": assembly.get("supports_audio_mix"),
         "supports_per_scene_sfx": assembly.get("supports_per_scene_sfx"),
+        "depth_anything_default_encoder": depth_anything.get("default_encoder"),
+        "depth_anything_default_license": depth_anything.get("default_license"),
+        "depth_anything_supports_batch_images": depth_anything.get("supports_batch_images"),
+        "depth_anything_davinci_dependency": depth_anything.get("davinci_dependency"),
     }
     for key, value in expected_pairs.items():
         if value is None:
@@ -203,8 +238,11 @@ def capability_drift(text: str, capability: dict) -> list[str]:
         yaml_key = key
         if key.startswith("wan_"):
             yaml_key = key.replace("wan_", "")
+        if key.startswith("depth_anything_"):
+            yaml_key = key
         needle = f"{yaml_key}: {str(value).lower()}"
-        if needle not in text:
+        quoted_needle = f'{yaml_key}: "{value}"'
+        if needle not in text and quoted_needle not in text:
             issues.append(f"bridge_missing_or_stale:{key}={str(value).lower()}")
     return issues
 
@@ -256,17 +294,18 @@ def yaml_scalar(value) -> str:
     return f'"{text}"'
 
 
-def render_sync_state(snapshot: dict, analysis: dict) -> str:
+def render_sync_state(snapshot: dict, analysis: dict, sync_timestamp: str | None = None) -> str:
     hashes = snapshot.get("hashes", {})
     paths = snapshot.get("paths", {})
     capability = snapshot.get("capability_map", {})
     animatic = capability.get("local_animatic_lane", {})
     wan = capability.get("wan_lane", {})
     assembly = capability.get("assembly_lane", {})
+    depth_anything = capability.get("depth_anything_v2_lane", {})
     lines = [
         SYNC_BEGIN,
         "sync_state:",
-        f"  last_sync_at: {yaml_scalar(snapshot.get('snapshot_at'))}",
+        f"  last_sync_at: {yaml_scalar(sync_timestamp or snapshot.get('snapshot_at'))}",
         f"  bridge_in_sync: {yaml_scalar(analysis.get('bridge_in_sync'))}",
         f"  media_factory_changed: {yaml_scalar(analysis.get('media_factory_changed'))}",
         f"  repo_bridge_update_required: {yaml_scalar(analysis.get('repo_bridge_update_required'))}",
@@ -295,6 +334,13 @@ def render_sync_state(snapshot: dict, analysis: dict) -> str:
             f"    assembly_engine: {yaml_scalar(assembly.get('engine'))}",
             f"    assembly_supports_audio_mix: {yaml_scalar(assembly.get('supports_audio_mix'))}",
             f"    assembly_supports_per_scene_sfx: {yaml_scalar(assembly.get('supports_per_scene_sfx'))}",
+            f"    depth_anything_engine: {yaml_scalar(depth_anything.get('engine'))}",
+            f"    depth_anything_default_encoder: {yaml_scalar(depth_anything.get('default_encoder'))}",
+            f"    depth_anything_default_model: {yaml_scalar(depth_anything.get('default_model'))}",
+            f"    depth_anything_default_license: {yaml_scalar(depth_anything.get('default_license'))}",
+            f"    depth_anything_supports_batch_images: {yaml_scalar(depth_anything.get('supports_batch_images'))}",
+            f"    depth_anything_output_classification: {yaml_scalar(depth_anything.get('output_classification'))}",
+            f"    depth_anything_davinci_dependency: {yaml_scalar(depth_anything.get('davinci_dependency'))}",
             "  registry_files:",
         ]
     )
@@ -313,9 +359,8 @@ def render_sync_state(snapshot: dict, analysis: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def apply_sync_state(snapshot: dict, analysis: dict) -> bool:
-    original = bridge_text()
-    block = render_sync_state(snapshot, analysis)
+def render_updated_bridge(original: str, snapshot: dict, analysis: dict, sync_timestamp: str | None = None) -> str:
+    block = render_sync_state(snapshot, analysis, sync_timestamp=sync_timestamp)
     if SYNC_BEGIN in original and SYNC_END in original:
         pattern = re.compile(
             re.escape(SYNC_BEGIN) + r".*?" + re.escape(SYNC_END) + r"\n?",
@@ -330,24 +375,96 @@ def apply_sync_state(snapshot: dict, analysis: dict) -> bool:
         updated,
         flags=re.MULTILINE,
     )
-    BRIDGE.write_text(updated, encoding="utf-8")
-    return bridge_text() == updated
+    return updated
+
+
+def sync_state_matches(snapshot: dict, analysis: dict, text: str | None = None, sync_timestamp: str | None = None) -> bool:
+    current = bridge_text() if text is None else text
+    return current == render_updated_bridge(current, snapshot, analysis, sync_timestamp=sync_timestamp)
+
+
+def apply_sync_state(runtime_check: bool) -> dict:
+    original = bridge_text()
+    snapshot = collect_snapshot(runtime_check=False)
+    analysis = analyze(snapshot)
+    preserved_sync_timestamp = existing_last_sync_at(original)
+    if not analysis.get("issues") and sync_state_matches(
+        snapshot,
+        analysis,
+        original,
+        sync_timestamp=preserved_sync_timestamp,
+    ):
+        return {
+            "written": False,
+            "write_count": 0,
+            "partial_apply_detected": False,
+            "verify_match": True,
+            "snapshot": snapshot,
+            "analysis": analysis,
+        }
+
+    sync_timestamp = snapshot.get("snapshot_at")
+    first_pass = render_updated_bridge(original, snapshot, analysis, sync_timestamp=sync_timestamp)
+    write_count = 0
+    if first_pass != original:
+        atomic_write_text(BRIDGE, first_pass)
+        write_count += 1
+
+    refreshed_snapshot = collect_snapshot(runtime_check=False)
+    refreshed_analysis = analyze(refreshed_snapshot)
+    current = bridge_text()
+    stabilized = render_updated_bridge(
+        current,
+        refreshed_snapshot,
+        refreshed_analysis,
+        sync_timestamp=sync_timestamp,
+    )
+    if stabilized != current:
+        atomic_write_text(BRIDGE, stabilized)
+        write_count += 1
+
+    final_snapshot = collect_snapshot(runtime_check=False)
+    final_analysis = analyze(final_snapshot)
+    final_text = bridge_text()
+    verify_match = sync_state_matches(
+        final_snapshot,
+        final_analysis,
+        final_text,
+        sync_timestamp=sync_timestamp,
+    )
+    return {
+        "written": write_count > 0,
+        "write_count": write_count,
+        "partial_apply_detected": not verify_match,
+        "verify_match": verify_match,
+        "snapshot": final_snapshot,
+        "analysis": final_analysis,
+    }
 
 
 def run(runtime_check: bool, apply: bool) -> dict:
     snapshot = collect_snapshot(runtime_check=runtime_check)
     analysis = analyze(snapshot)
     applied = False
+    sync_write_count = 0
+    partial_apply = False
+    verify_match = True
     if apply:
-        applied = apply_sync_state(snapshot, analysis)
-        refreshed = collect_snapshot(runtime_check=False)
-        analysis = analyze(refreshed)
-        snapshot = refreshed
+        apply_result = apply_sync_state(runtime_check=runtime_check)
+        applied = apply_result["written"]
+        sync_write_count = apply_result["write_count"]
+        partial_apply = apply_result["partial_apply_detected"]
+        verify_match = apply_result["verify_match"]
+        analysis = apply_result["analysis"]
+        snapshot = apply_result["snapshot"]
     return {
-        "pass": True,
+        "pass": not partial_apply,
         "BRIDGE_DRIFT_SYNC_DONE": True,
         "APPLY_MODE": apply,
         "SYNC_STATE_WRITTEN": applied,
+        "SYNC_WRITE_COUNT": sync_write_count,
+        "BRIDGE_SYNC_PARTIAL_APPLY": partial_apply,
+        "SYNC_VERIFY_MATCH": verify_match,
         "BRIDGE_IN_SYNC": analysis.get("bridge_in_sync"),
         "MEDIA_FACTORY_CHANGED": analysis.get("media_factory_changed"),
         "REPO_BRIDGE_UPDATE_REQUIRED": analysis.get("repo_bridge_update_required"),
@@ -373,7 +490,7 @@ def main() -> None:
     args = ap.parse_args()
     result = run(runtime_check=args.runtime_check, apply=args.apply)
     output(result, args.out)
-    raise SystemExit(0)
+    raise SystemExit(0 if result.get("pass") else 1)
 
 
 if __name__ == "__main__":

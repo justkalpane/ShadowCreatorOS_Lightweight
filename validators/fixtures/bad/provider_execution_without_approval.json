@@ -1,0 +1,29 @@
+{
+  "job_id": "JOB-c04a-pilot",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "route_state_capsule_id": "RSC-mediafactory-c04a",
+  "media_task_type": "pilot_cut",
+  "cut_id": "C04a",
+  "allowed_execution": [
+    "pilot_cut"
+  ],
+  "blocked_execution": [
+    "full_127s",
+    "audio",
+    "provider",
+    "davinci"
+  ],
+  "required_inputs": [
+    "scene_contract.json"
+  ],
+  "required_proofs": [
+    "pilot_manifest.json"
+  ],
+  "provider_execution_allowed": true,
+  "return_contract": {
+    "proof_bundle_path": "/tmp/proofs/pilot",
+    "qa_status": "pending_user_review",
+    "route_downgraded": false,
+    "production_pass_allowed": false
+  }
+}

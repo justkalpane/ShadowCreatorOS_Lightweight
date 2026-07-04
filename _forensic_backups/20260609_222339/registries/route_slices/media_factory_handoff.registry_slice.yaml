@@ -1,0 +1,22 @@
+slice_id: media_factory_handoff
+route_id: MEDIA_FACTORY_HANDOFF
+task_mode: script_plus_media_factory_handoff
+source_manifest: registries/route_manifests/media_factory_handoff.yaml
+inherits_from: registries/route_slices/visual_media_generation_draft.registry_slice.yaml
+additional_registries:
+  - registries/local_media_factory_bridge.yaml
+  - registries/provider_registry.yaml
+additional_contracts:
+  - runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+additional_output_contracts:
+  - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS
+  - PROVIDER_HONESTY_GATE
+  - MEDIA_FACTORY_EVIDENCE_GATE
+blocked_files:
+  - downloads/chat_transcript.txt
+historical_file_policy: disallow_unless_drift_audit_or_explicit_reference
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true

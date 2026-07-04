@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Human Review Packet",
+  "description": "Tokenized human visual review packet. Codex and MediaFactory are excluded from reviewer roles by schema design.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_packet_id",
+    "job_id",
+    "cut_id",
+    "reviewer_id",
+    "reviewer_role",
+    "review_status",
+    "reviewed_artifacts",
+    "reviewed_artifact_hashes",
+    "approval_token_request_allowed",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "review_packet_id": {
+      "type": "string",
+      "pattern": "^HRP-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_role": {
+      "type": "string",
+      "enum": [
+        "HUMAN_REVIEWER",
+        "HUMAN_FOUNDER",
+        "DIRECTOR",
+        "STAKEHOLDER",
+        "QA_REVIEWER"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED"
+      ]
+    },
+    "reviewed_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "reviewed_artifact_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:[a-f0-9]{64}$"
+      }
+    },
+    "approval_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rejection_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approved_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "rejected_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "approval_token_request_allowed": {
+      "type": "boolean"
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "review_status": {
+            "const": "PENDING"
+          }
+        },
+        "required": [
+          "review_status"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "approved_at"
+              ]
+            },
+            {
+              "required": [
+                "rejected_at"
+              ]
+            },
+            {
+              "required": [
+                "approval_reason"
+              ]
+            },
+            {
+              "required": [
+                "rejection_reason"
+              ]
+            }
+          ]
+        },
+        "properties": {
+          "approval_token_request_allowed": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "review_status": {
+            "const": "APPROVED"
+          }
+        },
+        "required": [
+          "review_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "approved_at",
+          "approval_reason"
+        ],
+        "properties": {
+          "approval_token_request_allowed": {
+            "const": true
+          },
+          "reviewed_artifact_hashes": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "review_status": {
+            "const": "REJECTED"
+          }
+        },
+        "required": [
+          "review_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "rejected_at",
+          "rejection_reason"
+        ],
+        "properties": {
+          "approval_token_request_allowed": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
+}

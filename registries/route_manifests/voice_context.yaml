@@ -22,6 +22,25 @@ provider_execution_allowed_after_approval: false
 fail_rules: [audio generation claim without approval, no provider boundary, selected voice component not read]
 partial_rules: [provider availability unknown but disclosed]
 pass_rules: [voice context complete, provider boundary explicit, no execution claim]
+validator_false_pass_hardening:
+  self_reported_fields_non_authoritative: true
+  hard_fail_if_any_mandatory_output_block_missing: true
+  hard_fail_if_required_lock_status_not_pass: true
+  hard_fail_if_alias_route_id_contradiction_present: true
+  hard_fail_if_wrapper_output_order_invalid: true
+validator_required_checks:
+  - shadow_command_alias_detected
+  - internal_wrapper_applied
+  - route_manifest_loaded
+  - voice_generation_context_present
+  - provider_boundary_present
+  - no_n8n_provider_media_execution
+  - weakest_layer_status_respected
+structured_output_rule_keys:
+  - voice_context_core
+  - provider_boundary
+conditional_required_locks_current_terms:
+  - SOURCE_RESEARCH_LOCK
 create_missing_registry_binding: false
 
 # MAC-06.1P-C route binding enforcement

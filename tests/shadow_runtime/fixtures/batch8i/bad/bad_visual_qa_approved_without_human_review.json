@@ -1,0 +1,20 @@
+{
+  "contact_sheet_id": "CS-C04A-001",
+  "contact_sheet_required": true,
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "evidence_bundle_id": "EB-C04A-001",
+  "human_review_packet_id": "HRP-C04A-001",
+  "human_review_required": true,
+  "job_id": "JOB-C04A-PILOT-001",
+  "production_pass_allowed": false,
+  "qa_error_codes": [
+    "VISUAL_QA_PENDING_REVIEW"
+  ],
+  "qa_status": "APPROVED_BY_HUMAN",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "source_vs_render_artifact_id": "SVR-C04A-001",
+  "source_vs_render_required": true,
+  "visual_qa_id": "VQA-C04A-001"
+}

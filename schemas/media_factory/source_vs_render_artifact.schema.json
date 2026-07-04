@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Source Vs Render Artifact",
+  "description": "Hardened source-vs-render artifact with deterministic metrics, threshold status, and human-review gating. File-existence-only or ffprobe-only claims are not permitted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_id",
+    "job_id",
+    "cut_id",
+    "source_frame_refs",
+    "render_frame_refs",
+    "diff_image_refs",
+    "report_path",
+    "metrics",
+    "threshold_status",
+    "auto_status",
+    "final_status",
+    "human_review_required",
+    "contact_sheet_required",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^SVR-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_frame_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "render_frame_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "diff_image_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "report_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sharpness_delta",
+        "edge_preservation",
+        "color_delta",
+        "contrast_delta",
+        "compression_artifact_score",
+        "blur_detection_score",
+        "overlay_occlusion_score",
+        "parallax_visibility_score",
+        "subject_readability_score",
+        "creative_intent_alignment_score",
+        "timestamp_coverage",
+        "artifact_scan_result",
+        "caption_safe_zone_result",
+        "base_image_preservation_score",
+        "motion_consistency_score"
+      ],
+      "properties": {
+        "sharpness_delta": {
+          "type": "number"
+        },
+        "edge_preservation": {
+          "type": "number"
+        },
+        "color_delta": {
+          "type": "number"
+        },
+        "contrast_delta": {
+          "type": "number"
+        },
+        "compression_artifact_score": {
+          "type": "number"
+        },
+        "blur_detection_score": {
+          "type": "number"
+        },
+        "overlay_occlusion_score": {
+          "type": "number"
+        },
+        "parallax_visibility_score": {
+          "type": "number"
+        },
+        "subject_readability_score": {
+          "type": "number"
+        },
+        "creative_intent_alignment_score": {
+          "type": "number"
+        },
+        "timestamp_coverage": {
+          "type": "number"
+        },
+        "artifact_scan_result": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "BLOCKED",
+            "UNKNOWN"
+          ]
+        },
+        "caption_safe_zone_result": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "BLOCKED",
+            "UNKNOWN"
+          ]
+        },
+        "base_image_preservation_score": {
+          "type": "number"
+        },
+        "motion_consistency_score": {
+          "type": "number"
+        }
+      }
+    },
+    "threshold_status": {
+      "type": "string",
+      "enum": [
+        "DEFINED",
+        "BUILDER_DECISION_REQUIRED",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "minimum_sharpness_delta": {
+          "type": "number"
+        },
+        "minimum_edge_preservation": {
+          "type": "number"
+        },
+        "minimum_color_delta": {
+          "type": "number"
+        },
+        "minimum_contrast_delta": {
+          "type": "number"
+        },
+        "minimum_compression_artifact_score": {
+          "type": "number"
+        },
+        "minimum_blur_detection_score": {
+          "type": "number"
+        },
+        "minimum_overlay_occlusion_score": {
+          "type": "number"
+        },
+        "minimum_parallax_visibility_score": {
+          "type": "number"
+        },
+        "minimum_subject_readability_score": {
+          "type": "number"
+        },
+        "minimum_creative_intent_alignment_score": {
+          "type": "number"
+        },
+        "minimum_timestamp_coverage": {
+          "type": "number"
+        },
+        "minimum_base_image_preservation_score": {
+          "type": "number"
+        },
+        "minimum_motion_consistency_score": {
+          "type": "number"
+        }
+      }
+    },
+    "auto_status": {
+      "type": "string",
+      "enum": [
+        "AUTO_BLOCKED",
+        "AUTO_FAIL",
+        "AUTO_PASS_PENDING_HUMAN_REVIEW"
+      ]
+    },
+    "final_status": {
+      "type": "string",
+      "enum": [
+        "BLOCKED",
+        "PENDING_HUMAN_REVIEW",
+        "APPROVED_BY_HUMAN"
+      ]
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "contact_sheet_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "threshold_status": {
+            "const": "BUILDER_DECISION_REQUIRED"
+          }
+        },
+        "required": [
+          "threshold_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "final_status": {
+            "enum": [
+              "BLOCKED",
+              "PENDING_HUMAN_REVIEW"
+            ]
+          },
+          "auto_status": {
+            "enum": [
+              "AUTO_BLOCKED",
+              "AUTO_FAIL",
+              "AUTO_PASS_PENDING_HUMAN_REVIEW"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_status": {
+            "const": "APPROVED_BY_HUMAN"
+          }
+        },
+        "required": [
+          "final_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "human_review_required": {
+            "const": true
+          },
+          "contact_sheet_required": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

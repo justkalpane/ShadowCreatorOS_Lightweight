@@ -1,0 +1,44 @@
+{
+  "route_id": "SCRIPT_GENERATION",
+  "route_manifest_path": "registries/route_manifests/script_generation.yaml",
+  "route_manifest_hash": "example_sha256_replace_with_live_hash",
+  "task_mode": "script_only",
+  "route_phase": "OUTPUT_PHASE_STARTED",
+  "files_consumed": [
+    "AGENTS.md",
+    "registries/task_intent_routing_matrix.yaml",
+    "registries/route_manifests/script_generation.yaml"
+  ],
+  "file_hashes": {
+    "AGENTS.md": "example_sha256",
+    "registries/task_intent_routing_matrix.yaml": "example_sha256",
+    "registries/route_manifests/script_generation.yaml": "example_sha256"
+  },
+  "dependencies_complete": true,
+  "output_phase_started": true,
+  "last_completed_step": "DEPENDENCIES_CONSUMED",
+  "next_required_step": "GENERATE_FINAL_SCRIPT",
+  "compaction_recovery_ready": true,
+  "historical_files_allowed": false,
+  "active_runtime_scope": [
+    "route_manifest",
+    "registry_slice",
+    "contract",
+    "skill",
+    "subskill",
+    "validator"
+  ],
+  "read_ledger": [
+    {
+      "file_path": "AGENTS.md",
+      "file_hash": "example_sha256",
+      "first_read_phase": "BOOT_CONFIRMED",
+      "last_read_phase": "BOOT_CONFIRMED",
+      "read_count": 1,
+      "reread_reason": "first_read",
+      "route_required": true,
+      "semantic_use_required": true,
+      "semantic_use_status": "USED"
+    }
+  ]
+}

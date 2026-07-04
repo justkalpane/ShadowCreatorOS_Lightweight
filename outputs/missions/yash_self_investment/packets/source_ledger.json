@@ -1,0 +1,97 @@
+{
+  "mission_id": "yash_self_investment",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "packet_family": "SOURCE_LEDGER",
+  "generated_at": "2026-06-04",
+  "research_mode": "WEB_ASSISTED_STATIC_REFERENCE",
+  "web_access_used": true,
+  "real_time_sources_used": false,
+  "source_research_lock_status": "PASS",
+  "sources": [
+    {
+      "source_id": "src_yash_bio_bg",
+      "url": "https://en.wikipedia.org/wiki/Yash_(actor)",
+      "title": "Yash (actor)",
+      "source_type": "encyclopedia_background",
+      "claim_supported": "Yash / Naveen Kumar Gowda biographical background and Kannada film career context",
+      "limitation": "Background only, not sole final authority.",
+      "classification": "BACKGROUND_CONTEXT"
+    },
+    {
+      "source_id": "src_tnm_300_interview",
+      "url": "https://www.thenewsminute.com/flix/had-just-rs-300-when-i-came-bengaluru-kgf-star-yash-speaks-tnm-94433",
+      "title": "Had just Rs 300 when I came to Bengaluru: 'KGF' star Yash speaks to TNM",
+      "date": "2019-01-03",
+      "access_status": "accessed_2026-06-04",
+      "source_type": "interview_reporting",
+      "claim_supported": "Yash says he reached Bengaluru with 300 rupees, began doing theatre, and came from a bus-driver family background.",
+      "limitation": "Interview reporting from the subject; strong support for personal-history story, still use approximate wording.",
+      "classification": "VERIFIED"
+    },
+    {
+      "source_id": "src_republic_300",
+      "url": "https://www.republicworld.com/entertainment/kgfs-yash-left-his-home-with-just-rs300-in-his-pocket",
+      "title": "KGF Yash left his home with just Rs 300 in his pocket",
+      "date": "reference_article",
+      "access_status": "accessed_2026-06-04",
+      "source_type": "secondary_commentary",
+      "claim_supported": "Rs 300 Bengaluru story attributed to old interview/public reporting.",
+      "limitation": "Secondary report; useful corroboration, not primary legal proof.",
+      "classification": "CROSS_VERIFIED"
+    },
+    {
+      "source_id": "src_india_today_arrogant",
+      "url": "https://www.indiatoday.in/amp/movies/regional-cinema/story/yash-branded-arrogant-asking-for-scripts-lost-many-movies-2698154-2025-03-24",
+      "title": "Yash was initially branded arrogant for asking scripts",
+      "date": "2025-03-24",
+      "access_status": "accessed_2026-06-04",
+      "source_type": "interview_reporting",
+      "claim_supported": "Anecdotal support for script-demand/arrogant label claim.",
+      "limitation": "Interview reporting; use as anecdotal support unless independently verified.",
+      "classification": "ANECDOTAL_SUPPORT"
+    },
+    {
+      "source_id": "src_bollywood_hungama_kgf2_1200",
+      "url": "https://www.bollywoodhungama.com/news/box-office-special-features/kgf-chapter-2-box-office-film-crosses-rs-1200-cr-worldwide-box-office-ranks-third-highest-time-worldwide-grosser/",
+      "title": "KGF Chapter 2 box office: Film crosses Rs. 1200 cr. at worldwide box office",
+      "date": "2022-05-16",
+      "access_status": "accessed_2026-06-04",
+      "source_type": "credible_news_article",
+      "claim_supported": "KGF Chapter 2 crossed Rs 1200 crore worldwide box office according to Bollywood Hungama reporting.",
+      "limitation": "Box-office reporting varies by outlet; phrase as crossed/around Rs 1200 crore, not exact net worth or personal earnings.",
+      "classification": "VERIFIED"
+    }
+  ],
+  "fact_vs_anecdote_map": [
+    {
+      "claim": "Yash / Naveen Kumar Gowda became a major Kannada film actor known nationally for KGF.",
+      "source": "src_yash_bio_bg + src_tnm_300_interview",
+      "classification": "CROSS_VERIFIED",
+      "script_usage_allowed": true,
+      "risk_note": "Stable background claim."
+    },
+    {
+      "claim": "Yash moved to Bengaluru with about Rs 300 while pursuing acting.",
+      "source": "src_tnm_300_interview + src_republic_300",
+      "classification": "CROSS_VERIFIED",
+      "script_usage_allowed": true,
+      "risk_note": "Use as public career story; avoid legal/biographical overprecision."
+    },
+    {
+      "claim": "KGF Chapter 2 grossed around Rs 1,200 crore worldwide.",
+      "source": "src_bollywood_hungama_kgf2_1200",
+      "classification": "VERIFIED",
+      "script_usage_allowed": true,
+      "risk_note": "Phrase as crossed/around Rs 1200 crore; do not convert box-office gross into Yash personal earnings."
+    },
+    {
+      "claim": "Yash was called arrogant for asking for scripts early in his career.",
+      "source": "src_india_today_arrogant",
+      "classification": "ANECDOTAL_SUPPORT",
+      "script_usage_allowed": true,
+      "risk_note": "Use as anecdotal support, not central verified proof."
+    }
+  ],
+  "unsupported_claims": [],
+  "provider_execution_allowed": false
+}

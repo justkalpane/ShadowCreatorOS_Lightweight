@@ -191,7 +191,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: SKL-PH3B-M-221-MOTION_GRAPHICS_STORYBOARD
 component_layer: SKILL
 component_name: M 221 Motion Graphics Storyboard.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, avatar_video_context, lineage_summary] or explicit registry selection; mark lineage_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -220,7 +220,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]
@@ -236,3 +236,31 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/media_video/M-221-motion-graphics-storyboard.skill.md; component_id=SKL-PH3B-M-221-MOTION_GRAPHICS_STORYBOARD
 remaining_unknowns: none
+
+## BATCH 4 MEDIA FACTORY RUNTIME BINDING
+
+binding_stage: BATCH_4_ROUTE_SKILL_RUNTIME_BOUND
+bound_route_families: [media_factory_handoff, visual_media_plan, media_factory_final_draft]
+required_runtime_state_schemas:
+  - schemas/runtime_state/evidence_bundle.schema.json
+  - schemas/runtime_state/route_state_capsule.schema.json
+required_schema_bindings:
+  - schemas/media_factory/hyperframes_payload.schema.json
+  - schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+  - schemas/media_factory/final_visual_media_generation_draft.schema.json
+required_validator_bindings:
+  - validators/validate_evidence_bundle.py
+  - validators/validate_route_state_capsule.py
+  - validators/validate_hyperframes_payload.py
+  - validators/validate_ffmpeg_filtergraph_packet.py
+  - validators/validate_final_visual_media_generation_draft.py
+required_fixture_bindings:
+  gold:
+    - validators/fixtures/gold/hyperframes_payload_valid.json
+    - validators/fixtures/gold/ffmpeg_filtergraph_packet_valid.json
+  bad:
+    - validators/fixtures/bad/hyperframes_random_overlay.json
+    - validators/fixtures/bad/ffmpeg_missing_filtergraph_dump.json
+route_state_requirements:
+  evidence_bundle_required_for_pass_claims: true
+  route_state_capsule_required: true

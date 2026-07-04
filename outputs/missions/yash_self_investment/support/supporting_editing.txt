@@ -1,0 +1,17 @@
+mission_id=yash_self_investment
+final_assembly_lane=DaVinci_Resolve_with_FFmpeg_support
+davinci_timeline_packet=outputs/missions/yash_self_investment/packets/media_factory_packet.json
+repo_davinci_dir=outputs/missions/yash_self_investment/davinci/
+control_panel_job_root=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment
+export_target=/Users/apple/ShadowMediaFactory/08_EXPORTS/yash_selfinvestment_master.mp4
+proof_target=outputs/missions/yash_self_investment/proofs/editing_status.txt
+
+track_map:
+- V1 primary video
+- V2 overlays and chromakey presenter
+- V3 captions and kinetic text
+- A1 master voice
+- A2 music
+- A3 impact and transition SFX
+- A4 ambient and foley SFX
+- A5 overflow SFX

@@ -104,6 +104,24 @@ subskills:
       - WF-400
       - CWF-440
       - WF-500
+    route_families:
+      - media_factory_handoff
+      - visual_media_plan
+      - media_factory_final_draft
+    required_schemas:
+      - schemas/runtime_state/evidence_bundle.schema.json
+      - schemas/runtime_state/route_state_capsule.schema.json
+      - schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+      - schemas/media_factory/source_vs_render_packet.schema.json
+      - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+      - schemas/media_factory/pilot_cut_validation_packet.schema.json
+    validator_bindings:
+      - validators/validate_evidence_bundle.py
+      - validators/validate_route_state_capsule.py
+      - validators/validate_ffmpeg_filtergraph_packet.py
+      - validators/validate_source_vs_render_packet.py
+      - validators/validate_visual_qa_acceptance.py
+      - validators/validate_pilot_cut_validation_packet.py
   - subskill_id: SS-113
     name: wav2lip_lipsync_quality_guard
     spec_file: skills/sub_skills/SS-113-wav2lip-lipsync-quality-guard.subskill.md
@@ -135,6 +153,29 @@ subskills:
     consumer_workflows:
       - WF-400
       - CWF-440
+    provider_bindings:
+      - provider_id: hyperframes_cli_local
+        provider_registry_ref: registries/provider_registry.yaml
+        connector_assessment_contract: runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md
+        connector_assessment_required: true
+    route_families:
+      - media_factory_handoff
+      - visual_media_plan
+      - media_factory_final_draft
+    required_schemas:
+      - schemas/runtime_state/evidence_bundle.schema.json
+      - schemas/runtime_state/route_state_capsule.schema.json
+      - schemas/media_factory/hyperframes_payload.schema.json
+      - schemas/media_factory/bridge_job_packet.schema.json
+      - schemas/media_factory/source_vs_render_packet.schema.json
+      - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+    validator_bindings:
+      - validators/validate_evidence_bundle.py
+      - validators/validate_route_state_capsule.py
+      - validators/validate_hyperframes_payload.py
+      - validators/validate_bridge_job_packet.py
+      - validators/validate_source_vs_render_packet.py
+      - validators/validate_visual_qa_acceptance.py
   - subskill_id: SS-117
     name: depth_anything_v2_depth_map_generator
     spec_file: skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md
@@ -142,6 +183,22 @@ subskills:
     consumer_workflows:
       - WF-400
       - CWF-440
+    route_families:
+      - media_factory_handoff
+      - visual_media_plan
+      - media_factory_final_draft
+    required_schemas:
+      - schemas/runtime_state/evidence_bundle.schema.json
+      - schemas/runtime_state/route_state_capsule.schema.json
+      - schemas/media_factory/depth_map_packet.schema.json
+      - schemas/media_factory/source_vs_render_packet.schema.json
+      - schemas/media_factory/pilot_cut_validation_packet.schema.json
+    validator_bindings:
+      - validators/validate_evidence_bundle.py
+      - validators/validate_route_state_capsule.py
+      - validators/validate_depth_map_packet.py
+      - validators/validate_source_vs_render_packet.py
+      - validators/validate_pilot_cut_validation_packet.py
   - subskill_id: SS-118
     name: hyperframes_html_renderer
     spec_file: skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md
@@ -149,6 +206,29 @@ subskills:
     consumer_workflows:
       - WF-400
       - CWF-440
+    provider_bindings:
+      - provider_id: hyperframes_cli_local
+        provider_registry_ref: registries/provider_registry.yaml
+        connector_assessment_contract: runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md
+        connector_assessment_required: true
+    route_families:
+      - media_factory_handoff
+      - visual_media_plan
+      - media_factory_final_draft
+    required_schemas:
+      - schemas/runtime_state/evidence_bundle.schema.json
+      - schemas/runtime_state/route_state_capsule.schema.json
+      - schemas/media_factory/hyperframes_payload.schema.json
+      - schemas/media_factory/bridge_job_packet.schema.json
+      - schemas/media_factory/source_vs_render_packet.schema.json
+      - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+    validator_bindings:
+      - validators/validate_evidence_bundle.py
+      - validators/validate_route_state_capsule.py
+      - validators/validate_hyperframes_payload.py
+      - validators/validate_bridge_job_packet.py
+      - validators/validate_source_vs_render_packet.py
+      - validators/validate_visual_qa_acceptance.py
   - subskill_id: SS-220
     name: deep_research_agent
     spec_file: skills/sub_skills/SS-220-deep-research-agent.subskill.md

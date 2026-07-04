@@ -1,0 +1,39 @@
+{
+  "fixture_id": "FX-GOLD-007",
+  "fixture_type": "gold",
+  "stage": "route_state_compaction_recovery",
+  "expected_validator": "validate_route_state_capsule.py",
+  "expected_result": "PASS",
+  "route_id": "SCRIPT_GENERATION",
+  "route_manifest_path": "registries/route_manifests/script_generation.yaml",
+  "route_manifest_hash": "sha256:script-manifest-demo",
+  "task_intent": "5 minute YouTube script using Yash self-investment topic",
+  "output_mode": "CHAT_ONLY_MODE",
+  "phase": "OUTPUT_PHASE_STARTED",
+  "last_completed_lock": "DEPENDENCIES_CONSUMED",
+  "next_required_lock": "FINAL_SCRIPT_OUTPUT",
+  "dependencies_complete": true,
+  "output_phase_started": true,
+  "files_read": [
+    "AGENTS.md",
+    "START_HERE_FOR_AGENTS.md",
+    "registries/task_intent_routing_matrix.yaml",
+    "registries/route_manifests/script_generation.yaml",
+    "registries/route_slices/script_generation.registry_slice.yaml"
+  ],
+  "file_hashes": {
+    "AGENTS.md": "sha256:agents-demo",
+    "START_HERE_FOR_AGENTS.md": "sha256:start-demo",
+    "registries/task_intent_routing_matrix.yaml": "sha256:routing-demo",
+    "registries/route_manifests/script_generation.yaml": "sha256:script-manifest-demo",
+    "registries/route_slices/script_generation.registry_slice.yaml": "sha256:slice-demo"
+  },
+  "selected_directors": ["krishna", "aruna", "vyasa", "valmiki", "saraswati", "yama"],
+  "selected_agents": ["krishna_agent", "aruna_agent", "vyasa_agent", "valmiki_agent", "saraswati_agent", "yama_agent"],
+  "selected_subagents": ["wf_200", "cwf_210", "cwf_220", "cwf_230", "cwf_240"],
+  "selected_skills": ["S-201", "S-202", "S-203", "S-206", "S-208", "S-210", "M-031", "M-036", "M-039", "M-040"],
+  "selected_subskills": ["SS-230", "SS-231", "SS-240", "SS-241", "SS-242", "SS-243", "SS-244", "SS-245"],
+  "evidence_scope": "persisted_route_state_with_hash",
+  "compaction_recovery_allowed": true,
+  "final_output_allowed": true
+}

@@ -1,0 +1,384 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Pilot Cut Manifest",
+  "description": "Pre-execution pilot manifest for the C04a controlled diagnostic cut. The manifest is blocked until all proofs exist and does not unlock render by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_id",
+    "mission_id",
+    "job_id",
+    "pilot_cut_id",
+    "route_id",
+    "experiment_type",
+    "script_line_ref",
+    "visual_intent",
+    "creative_intent_packet_ref",
+    "base_image_ref",
+    "depth_map_ref",
+    "hyperframes_overlay_ref",
+    "ffmpeg_filtergraph_ref",
+    "source_vs_render_ref",
+    "contact_sheet_ref",
+    "visual_qa_ref",
+    "human_review_ref",
+    "approval_token_ref",
+    "fps",
+    "duration_seconds",
+    "expected_frame_count",
+    "resolution",
+    "encode_profile",
+    "execution_allowed",
+    "full_render_unlock_allowed",
+    "audio_allowed",
+    "provider_allowed",
+    "davinci_allowed",
+    "status",
+    "blocked_reasons",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string",
+      "pattern": "^PCM-[A-Za-z0-9_-]+$"
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "pilot_cut_id": {
+      "type": "string",
+      "const": "C04a"
+    },
+    "route_id": {
+      "type": "string",
+      "const": "MEDIA_FACTORY_HANDOFF"
+    },
+    "experiment_type": {
+      "type": "string",
+      "const": "controlled_diagnostic_cut"
+    },
+    "script_line_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creative_intent_packet_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "base_image_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "depth_map_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "hyperframes_overlay_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ffmpeg_filtergraph_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source_vs_render_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "contact_sheet_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "visual_qa_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "human_review_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "approval_token_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "fps": {
+      "type": "number",
+      "minimum": 1
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "expected_frame_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "encode_profile": {
+      "type": "string",
+      "const": "crf18_bt709_lanczos"
+    },
+    "execution_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "full_render_unlock_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "audio_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "provider_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "davinci_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "BLOCKED",
+        "PENDING_HUMAN_REVIEW",
+        "READY_FOR_ARTIFACTS"
+      ]
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -209,13 +209,21 @@ providers:
       - still_image_depth_mask_generation
       - depth_map_png_export
       - davinci_fusion_parallax_prep
+    default_model: Depth-Anything-V2-Small
+    default_encoder: vits
+    default_license: Apache-2.0
+    noncommercial_models:
+      - Depth-Anything-V2-Base
+      - Depth-Anything-V2-Large
     bridge_registry_ref: registries/local_media_factory_bridge.yaml
     readiness_status: LOCAL_ENGINE_READY
     notes: >
       Local depth-map generator for IMAGE_MOTION_GRAPHICS_BROLL_METHOD. It is
       a masking tool only: it does not generate images, video, cinematic B-roll,
       or final composites. DaVinci Resolve Fusion owns the 2.5D parallax
-      composite after the depth mask is produced.
+      composite after the depth mask is produced. The installed production-safe
+      default is the upstream Small checkpoint under Apache-2.0; Base/Large are
+      non-commercial lanes requiring explicit license approval.
 
   - provider_id: hyperframes_cli_local
     display_name: HyperFrames CLI (Local)
@@ -235,14 +243,32 @@ providers:
       - notebooklm_dual_panel_slide_render
       - programmatic_slide_render
       - kinetic_text_render
-      - webm_alpha_overlay_export
+      - playstation_dashboard_panel_render
+      - image_evidence_wall_render
+      - comparison_card_render
+      - split_card_horizontal_render
+      - fullscreen_text_center_render
+      - gold_title_reveal_render
+      - timeline_roadmap_render
+      - local_image_motion_graphics_panel_render
+      - clean_broll_information_overlay_render
+      - mov_alpha_overlay_export
+      - hud_border_render
+      - fx_pack_overlay_render
     bridge_registry_ref: registries/local_media_factory_bridge.yaml
     readiness_status: LOCAL_ENGINE_READY
     notes: >
       Local deterministic HTML/CSS/GSAP renderer for NOTEBOOKLM_VISUAL_METHOD,
-      PROGRAMMATIC_SLIDE_VISUAL_METHOD, HTML_CSS_GSAP_VISUAL_METHOD, and WebM
-      alpha overlays. HyperFrames does not replace DaVinci Resolve for 2.5D
-      parallax or final assembly.
+      PROGRAMMATIC_SLIDE_VISUAL_METHOD, HTML_CSS_GSAP_VISUAL_METHOD, and local
+      alpha overlays on the proven `.mov` path. HyperFrames is the approved first foundation for
+      non-cinematic visual graphics panels layered over local image/video
+      B-roll, including dashboard panels, evidence walls, kinetic principle
+      cards, and NotebookLM-style note panels. It does not replace DaVinci
+      Resolve for 2.5D parallax or final assembly, and it must return proof
+      JSON plus a registry asset event before generated media is claimed.
+      HyperFrames claims must also carry a
+      `TOOLS_CONNECTORS_PLUGINS_ASSESSMENT` row plus original SS-118 / upstream
+      HyperFrames skill proof and the canonical connector blueprint contract.
 
   - provider_id: runway_ml_api
     display_name: Runway ML API

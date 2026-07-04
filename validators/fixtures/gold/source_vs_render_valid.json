@@ -1,0 +1,30 @@
+{
+  "source_frame": "/tmp/source.png",
+  "rendered_frame": "/tmp/render.png",
+  "diff_images": [
+    "/tmp/diff.png"
+  ],
+  "quality_metrics": {
+    "sharpness_delta": 0.1,
+    "edge_density_delta": 0.1,
+    "color_delta": 2.5,
+    "contrast_delta": 0.05,
+    "compression_artifact_flag": false,
+    "blur_detection_score": 0.1,
+    "overlay_occlusion_flag": false,
+    "parallax_visibility_flag": true,
+    "subject_readability_score": 0.9
+  },
+  "thresholds": {
+    "sharpness_delta_threshold": 0.2,
+    "edge_density_delta_threshold": 0.2,
+    "color_delta_threshold": 5.0,
+    "contrast_delta_threshold": 0.2,
+    "blur_detection_threshold": 0.2,
+    "minimum_subject_readability_score": 0.75
+  },
+  "human_review_required": true,
+  "human_override_status": "none",
+  "auto_status": "PASS_WITH_HUMAN_REVIEW_REQUIRED",
+  "source_vs_render_report_path": "/tmp/source_render_report.md"
+}

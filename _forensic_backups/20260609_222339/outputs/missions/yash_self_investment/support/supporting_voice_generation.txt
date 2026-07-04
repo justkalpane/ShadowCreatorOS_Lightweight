@@ -1,0 +1,12 @@
+mission_id=yash_self_investment
+primary_lane=ElevenLabs
+fallback_lane=local_scratch_narration_for_timing_preview_only
+primary_output_target=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/voice/narration.wav
+source_script=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/01_timeline/prompt_packet.json
+proof_target=outputs/missions/yash_self_investment/proofs/voice_status.txt
+
+notes:
+- User approved provider execution.
+- Codex does not currently have a direct callable ElevenLabs provider tool in this session.
+- If local scratch narration is generated, it must be labeled preview-only and must not be called ElevenLabs output.
+- Voice remains the master timing anchor for alignment, captions, A-roll, and edit assembly.

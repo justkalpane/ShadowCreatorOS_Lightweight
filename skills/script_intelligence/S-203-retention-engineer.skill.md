@@ -117,6 +117,9 @@ Runtime-ready canonical skill artifact for S-203 (Retention Engineer). This spec
 - Preserve source evidence/provenance in packet payload
 - Emit explicit partial status on non-critical source gaps
 - Keep escalation payload machine-readable for WF-900
+- Treat cadence as a retention variable, not a style preference
+- Vary sentence shape, interruption points, and contrast frequency
+- Reject article-like runs that do not create new viewer motion
 
 ## 12. Validation / Done
 
@@ -138,7 +141,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: S-203-retention-engineer.skill
 component_layer: SKILL
 component_name: S 203 Retention Engineer.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [script_generation, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, topic_discovery, quality_gate, lineage_summary] or explicit registry selection; mark lineage_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -167,7 +170,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [script_generation, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]
@@ -187,7 +190,11 @@ remaining_unknowns: none
 ## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
 
 - Enforce `RECURRING_HOOK_DENSITY_LAW`.
-- Default recurring re-hook interval is dynamic 70-90 seconds; no unexplained
-  flat section may exceed 90 seconds.
+- Default recurring re-hook interval is dynamic 25-30 seconds; no unexplained
+  flat section may exceed 30 seconds.
 - Score each re-hook for topic connection, curiosity or emotional pressure,
   payoff integrity, and mapping completeness.
+- Emit validator-friendly retention packets with explicit fields for
+  `hook_line`, `timestamp_seconds`, `topic_connection`, `retention_reset_goal`,
+  and `line_influence_reference`; reject prose-only summaries when the route
+  expects machine-checkable re-hook rows.

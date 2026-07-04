@@ -1,0 +1,198 @@
+{
+  "blocked_reasons": [
+    "pilot_not_accepted",
+    "visual_qa_pending",
+    "approval_token_blocked",
+    "provider_policy_locked"
+  ],
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "gate_matrix_id": "GATE-MATRIX-C04A-001",
+  "gates": [
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "PILOT_BLOCKER_NOT_CLOSED",
+      "gate_id": "G1",
+      "gate_name": "pilot_cut_manifest_gate",
+      "gate_owner": "ShadowOS",
+      "gate_sequence_index": 1,
+      "input_artifact_hashes": [
+        "1753a52d7b987960cf474d318828b4373894e262c83baa190e2acf88c66eece2"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "pilot_cut_manifest_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "1753a52d7b987960cf474d318828b4373894e262c83baa190e2acf88c66eece2"
+        }
+      ],
+      "next_gate": "G2",
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "pilot_cut_manifest.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/pilot_cut_manifest_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_pilot_cut_manifest.py"
+    },
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "SOURCE_VS_RENDER_ARTIFACTS_MISSING",
+      "gate_id": "G2",
+      "gate_name": "source_vs_render_gate",
+      "gate_owner": "MediaFactory",
+      "gate_sequence_index": 2,
+      "input_artifact_hashes": [
+        "dc59faee8ba58106353037e14c7c277e680facafe151434da0b675b9f88c9db4"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "source_vs_render_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "dc59faee8ba58106353037e14c7c277e680facafe151434da0b675b9f88c9db4"
+        }
+      ],
+      "next_gate": "G3",
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "source_vs_render_artifact.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_source_vs_render_artifact.py"
+    },
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "VISUAL_QA_ARTIFACTS_MISSING",
+      "gate_id": "G3",
+      "gate_name": "visual_qa_gate",
+      "gate_owner": "MediaFactory",
+      "gate_sequence_index": 3,
+      "input_artifact_hashes": [
+        "ae7ac67efe28c58bf94fbc15b864ff218840374a964bf56b40162c2026d83835"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "visual_qa_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "ae7ac67efe28c58bf94fbc15b864ff218840374a964bf56b40162c2026d83835"
+        }
+      ],
+      "next_gate": "G4",
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "visual_qa_artifact.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/visual_qa_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_visual_qa_artifact.py"
+    },
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "HUMAN_REVIEW_NOT_APPROVED",
+      "gate_id": "G4",
+      "gate_name": "human_review_gate",
+      "gate_owner": "Human_Founder",
+      "gate_sequence_index": 4,
+      "input_artifact_hashes": [
+        "e920e1788f36fc864eb33562405ded36c979dcf9c79d7c51b6eb838faff07cb1"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "human_review_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "e920e1788f36fc864eb33562405ded36c979dcf9c79d7c51b6eb838faff07cb1"
+        }
+      ],
+      "next_gate": "G5",
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "human_review_packet.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/human_review_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_human_review_packet.py"
+    },
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "APPROVAL_TOKEN_NOT_ISSUED",
+      "gate_id": "G5",
+      "gate_name": "approval_token_gate",
+      "gate_owner": "Human_Founder",
+      "gate_sequence_index": 5,
+      "input_artifact_hashes": [
+        "465a4d3aae563d56e47e7f62ac1541c7dfe604a381106f0a16788d2556691e14"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "approval_token_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "465a4d3aae563d56e47e7f62ac1541c7dfe604a381106f0a16788d2556691e14"
+        }
+      ],
+      "next_gate": "G6",
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "approval_token.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/approval_token_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_approval_token.py"
+    },
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "PROVIDER_EXECUTION_WITHOUT_APPROVAL",
+      "gate_id": "G6",
+      "gate_name": "provider_boundary_gate",
+      "gate_owner": "Kubera",
+      "gate_sequence_index": 6,
+      "input_artifact_hashes": [
+        "9413fe55586b4a158d32e34640847b5a6af8c0d4463cfa74976e1eb7bab84ccd"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "provider_boundary_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "9413fe55586b4a158d32e34640847b5a6af8c0d4463cfa74976e1eb7bab84ccd"
+        }
+      ],
+      "next_gate": "G7",
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "tool_provider_boundary.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/provider_boundary_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_tool_provider_boundary.py"
+    },
+    {
+      "current_status": "BLOCKED",
+      "evidence_bundle_required": true,
+      "failure_code": "SAFETY_LOCK_ONLY",
+      "gate_id": "G7",
+      "gate_name": "safety_lock_gate",
+      "gate_owner": "Chitragupta",
+      "gate_sequence_index": 7,
+      "input_artifact_hashes": [
+        "b171aab59c3021efff71b3b5a637521d88f166520c7fc78f2559f77370702c44"
+      ],
+      "input_artifacts": [
+        {
+          "artifact_id": "safety_lock_gate-input",
+          "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+          "sha256": "b171aab59c3021efff71b3b5a637521d88f166520c7fc78f2559f77370702c44"
+        }
+      ],
+      "next_gate": null,
+      "rollback_if_invalid": "route_state_capsule -> PILOT_PREP_BLOCKED",
+      "route_state_update_required": true,
+      "schema_name": "route_state_capsule.schema.json",
+      "status_source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/safety_lock_gate.status.json",
+      "unlock_token_if_passed": null,
+      "validator_name": "validate_route_state_capsule.py"
+    }
+  ],
+  "job_id": "JOB-C04A-PILOT-001",
+  "overall_status": "BLOCKED",
+  "schema_version": "1.0.0"
+}

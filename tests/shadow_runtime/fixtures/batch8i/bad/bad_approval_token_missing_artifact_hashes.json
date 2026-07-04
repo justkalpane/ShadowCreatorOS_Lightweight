@@ -1,0 +1,24 @@
+{
+  "artifact_hashes": [],
+  "blocked_reasons_at_issue_time": [],
+  "evidence_bundle_id": "EB-C04A-001",
+  "evidence_bundle_sha256": "ce2f654eb9114ffb3474989a5908dfef40d268057bb52c53005d155b9ab6c880",
+  "expires_at": "2026-06-23T00:00:00Z",
+  "issued_at": "2026-06-22T00:00:00Z",
+  "issuer_id": "HUMAN-FOUNDER-001",
+  "issuer_role": "HUMAN_FOUNDER",
+  "payload_sha256": "1c4da2580333a4743ce1c25ad33f78328cc3f48779ad534cec78afaa215757f2",
+  "prerequisites": [
+    "human_review_packet.APPROVED",
+    "evidence_bundle.COMPLETE"
+  ],
+  "revocation_reason": "not_applicable",
+  "revocation_status": "NONE",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "scope": "pilot_execution",
+  "single_use": true,
+  "status": "ISSUED",
+  "token_id": "TOK-C04A-002",
+  "token_type": "PILOT_EXECUTION"
+}

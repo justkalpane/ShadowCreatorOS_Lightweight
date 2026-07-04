@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Cut Level Visual Ledger",
+  "description": "C01-C35 cut ledger with explicit state per cut, including pilot candidate handling for C04a and carry-forward handling for C18.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ledger_id",
+    "mission_id",
+    "job_id",
+    "cuts",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "ledger_id": {
+      "type": "string",
+      "pattern": "^CLL-[A-Za-z0-9_-]+$"
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cuts": {
+      "type": "array",
+      "minItems": 35,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cut_id",
+          "known",
+          "source_path",
+          "script_line_ref",
+          "visual_intent",
+          "creative_intent_packet",
+          "base_image_status",
+          "depth_map_status",
+          "hyperframes_status",
+          "ffmpeg_status",
+          "source_vs_render_status",
+          "contact_sheet_status",
+          "visual_qa_status",
+          "human_review_status",
+          "approval_token_status",
+          "known_failure",
+          "carry_forward_required",
+          "unknowns",
+          "pilot_candidate"
+        ],
+        "properties": {
+          "cut_id": {
+            "type": "string",
+            "pattern": "^C(0[1-9]|[1-2][0-9]|3[0-5]|04a)$"
+          },
+          "known": {
+            "type": "boolean"
+          },
+          "source_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "script_line_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_intent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "creative_intent_packet": {
+            "type": "string",
+            "minLength": 1
+          },
+          "base_image_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "depth_map_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "hyperframes_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "ffmpeg_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "source_vs_render_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "contact_sheet_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "visual_qa_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "READY",
+              "BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "human_review_status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "APPROVED",
+              "REJECTED"
+            ]
+          },
+          "approval_token_status": {
+            "type": "string",
+            "enum": [
+              "DRAFT",
+              "ISSUED",
+              "CONSUMED",
+              "REVOKED",
+              "EXPIRED"
+            ]
+          },
+          "known_failure": {
+            "type": "boolean"
+          },
+          "carry_forward_required": {
+            "type": "boolean"
+          },
+          "unknowns": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "pilot_candidate": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

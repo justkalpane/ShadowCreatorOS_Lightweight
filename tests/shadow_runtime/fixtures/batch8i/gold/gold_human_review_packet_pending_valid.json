@@ -1,0 +1,21 @@
+{
+  "approval_token_request_allowed": false,
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "evidence_bundle_id": "EB-C04A-001",
+  "job_id": "JOB-C04A-PILOT-001",
+  "review_packet_id": "HRP-C04A-001",
+  "review_status": "PENDING",
+  "reviewed_artifact_hashes": [
+    "07285956178cfdc74cc2e28359e63e0cda590c6d964f7e2c8b8dc739526815fb",
+    "5a45d8d586f90a5386e7849c062eeffda12c472135456adfa441cd893a3c51c0"
+  ],
+  "reviewed_artifacts": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.png"
+  ],
+  "reviewer_id": "HUMAN-REVIEWER-001",
+  "reviewer_role": "HUMAN_REVIEWER",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0"
+}

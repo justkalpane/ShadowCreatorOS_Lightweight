@@ -1,0 +1,22 @@
+style_profile_id: bengaluru_spoken_english
+voice_type: spoken_host_average_english
+language: English
+region_anchor: Bengaluru
+intent: keep the script sounding like a real person talking live
+replacement_ledger:
+  - hard_word: hallucinating
+    spoken_replacement: overthinking
+  - hard_word: development
+    spoken_replacement: growth
+  - hard_word: investing
+    spoken_replacement: putting into yourself
+  - hard_word: substantial
+    spoken_replacement: big
+  - hard_word: corroborate
+    spoken_replacement: prove
+  - hard_word: implement
+    spoken_replacement: patch
+  - hard_word: therefore
+    spoken_replacement: so
+  - hard_word: objective
+    spoken_replacement: goal

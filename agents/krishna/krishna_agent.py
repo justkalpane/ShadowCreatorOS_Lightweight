@@ -35,7 +35,7 @@ if __name__ == "__main__":
 # component_id: krishna_agent
 # component_layer: AGENT
 # component_name: Krishna Agent
-# route_families: [trend_research, topic_discovery, script_generation]
+# route_families: [full_video_pipeline, trend_research, topic_discovery, script_generation]
 # activation_triggers: route_family in [approval_gate, repo_write_mode] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 # upstream_inputs: [topic_intake_packet, trend_signal_packet, source_evidence_packet]
 # downstream_outputs: [research_brief_packet, source_evidence_packet, claim_risk_packet]
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 # MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 # component_depth_status: PRODUCTION_DEPTH_ENRICHED
 # route_profile_applied: research_synthesis_profile
-# route_family_resolved: [trend_research, topic_discovery, script_generation]
+# route_family_resolved: [full_video_pipeline, trend_research, topic_discovery, script_generation]
 # activation_triggers_resolved: [freshness-sensitive task, source-backed claim]
 # required_input_packets_resolved: [topic_intake_packet, trend_signal_packet, source_evidence_packet]
 # emitted_output_packets_resolved: [research_brief_packet, source_evidence_packet, claim_risk_packet]
@@ -80,4 +80,4 @@ if __name__ == "__main__":
 # MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
 # behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SOURCE_QUALITY_CLASSIFICATION, SCRIPT_STORY_ENGINE, DYNAMIC_TIMED_BEAT_MAP, MEDIA_FACTORY_FINAL_DRAFT, RECURRING_HOOK_DENSITY_LAW]
 # responsibility: Reject final script arbitration when selected-layer propagation or recurring re-hook proof is missing.
-# reject_when: one-hook-only 3-10 minute YouTube script, missing scene sync for Media Factory final draft, weakest gate not reflected in final status.
+# reject_when: one-hook-only 3-10 minute YouTube script, missing scene sync for Media Factory final draft, weakest gate not reflected in final status, canonical route proof blocks are incomplete, VALIDATION_SCORECARD is absent, or final proof relies on TASK_INTENT_ROUTING_LEDGER instead of TASK_ROUTE_LOCK.

@@ -39,6 +39,7 @@ spoken_line_or_summary=
 scene_purpose=
 emotional_cue=
 voice_cue=
+spoken_rhythm_cue=
 visual_cue=
 avatar_cue=
 broll_or_image_cue=
@@ -52,8 +53,10 @@ retention_reset_goal=
 ```
 
 Every 3-10 minute YouTube script must mark opening-hook and recurring re-hook
-beats. Re-hook intervals default to 70-90 seconds and remain dynamic. Every
+beats. Re-hook intervals default to 25-30 seconds and remain dynamic. Every
 re-hook scene requires a topic-relevant retention reset goal.
+Every re-hook scene should also declare the cadence shift it creates so the
+beat map shows where the script speeds up, slows down, pauses, or confronts.
 
 ## Guidance
 

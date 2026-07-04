@@ -1,0 +1,20 @@
+{
+  "timestamp": "20260612_170315",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "reason_for_backup": "Controlled Patch: add active skill contamination guard after Antigravity handoff claim; live skill inspected and not edited.",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "sha256_before": "1e3c4efd0875cd326180655a338dbe41c149fd33d0b7ada55bf14bac946a62d8",
+      "backup_path": "backups/controlled_patch_20260612_170315/validators/run_all_validators.cjs"
+    },
+    {
+      "path": ".agents/skills/shadow-content-orchestration/SKILL.md",
+      "sha256_before": "2ad1edd94ff6c665527256b9b7f9be44adb0336b4b8bd52b6733a587ccf807a0",
+      "backup_path": "backups/controlled_patch_20260612_170315/.agents/skills/shadow-content-orchestration/SKILL.md",
+      "edited": false,
+      "reason": "Evidence snapshot only; live contamination was not proven."
+    }
+  ]
+}

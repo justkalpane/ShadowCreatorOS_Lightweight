@@ -10,6 +10,12 @@
     "source_script_ref",
     "scene_count",
     "runtime_mode",
+    "production_order_lock",
+    "asset_inventory_ledger",
+    "asset_dependency_graph",
+    "control_panel_execution_plan",
+    "davinci_timeline_packet",
+    "production_proof_gate",
     "provider_boundary",
     "local_engine_boundary",
     "a_roll_plan",
@@ -35,6 +41,193 @@
       "type": "string",
       "enum": ["local", "hybrid", "cloud", "planning_only"],
       "description": "Execution posture for this packet."
+    },
+    "production_order_lock": {
+      "type": "object",
+      "required": ["timeline_anchor", "phases", "parallelization_rule", "status"],
+      "properties": {
+        "timeline_anchor": {"type": "string"},
+        "parallelization_rule": {"type": "string"},
+        "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]},
+        "phases": {
+          "type": "array",
+          "minItems": 17,
+          "items": {
+            "type": "object",
+            "required": [
+              "phase_id",
+              "phase_order",
+              "phase_name",
+              "depends_on_phase_ids",
+              "blocking_prerequisites",
+              "output_asset_classes",
+              "execution_mode",
+              "approval_gate",
+              "proof_gate",
+              "status"
+            ],
+            "properties": {
+              "phase_id": {"type": "string", "pattern": "^P\\d{2}$"},
+              "phase_order": {"type": "integer", "minimum": 1},
+              "phase_name": {"type": "string", "minLength": 1},
+              "depends_on_phase_ids": {"type": "array", "items": {"type": "string", "pattern": "^P\\d{2}$"}},
+              "blocking_prerequisites": {"type": "array", "items": {"type": "string"}},
+              "output_asset_classes": {"type": "array", "items": {"type": "string"}},
+              "execution_mode": {
+                "type": "string",
+                "enum": ["plan_only", "ready_after_approval", "blocked_until_assets_exist", "requires_confirmation", "local_after_approval", "cloud_after_approval"]
+              },
+              "approval_gate": {"type": "string", "minLength": 1},
+              "proof_gate": {"type": "string", "minLength": 1},
+              "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+            }
+          }
+        }
+      }
+    },
+    "asset_inventory_ledger": {
+      "type": "object",
+      "required": [
+        "voice_assets",
+        "music_segments",
+        "sfx_clips",
+        "character_consistency_assets",
+        "storyboard_stills",
+        "depth_parallax_stills",
+        "hyperframes_slide_assets",
+        "hyperframes_overlay_assets",
+        "hyperframes_dashboard_panel_assets",
+        "local_image_motion_broll_assets",
+        "cinematic_broll_clips",
+        "a_roll_batches",
+        "davinci_project_assets",
+        "thumbnail_assets"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["count", "status"],
+        "properties": {
+          "count": {"type": "integer", "minimum": 0},
+          "notes": {"type": "string"},
+          "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+        }
+      }
+    },
+    "asset_dependency_graph": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "asset_type", "depends_on", "generation_lane", "tool_or_provider", "approval_required", "expected_output_path", "proof_required", "status"],
+        "properties": {
+          "asset_id": {"type": "string"},
+          "asset_type": {"type": "string"},
+          "depends_on": {"type": "array", "items": {"type": "string"}},
+          "generation_lane": {"type": "string"},
+          "tool_or_provider": {"type": "string"},
+          "approval_required": {"type": "boolean"},
+          "expected_output_path": {"type": "string"},
+          "proof_required": {"type": "boolean"},
+          "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+        }
+      }
+    },
+    "control_panel_execution_plan": {
+      "type": "object",
+      "required": ["bridge_registry", "control_panel_cli", "job_packet_dir", "preflight_required", "render_requires_user_approval", "proof_json_required", "registry_update_required", "phases"],
+      "properties": {
+        "bridge_registry": {"type": "string"},
+        "control_panel_cli": {"type": "string"},
+        "job_packet_dir": {"type": "string"},
+        "preflight_required": {"type": "boolean", "const": true},
+        "render_requires_user_approval": {"type": "boolean", "const": true},
+        "proof_json_required": {"type": "boolean", "const": true},
+        "registry_update_required": {"type": "boolean", "const": true},
+        "phases": {
+          "type": "array",
+          "minItems": 17,
+          "items": {
+            "type": "object",
+            "required": [
+              "phase_id",
+              "plan_state",
+              "control_panel_entrypoint",
+              "preflight_dependency",
+              "downgrade_on_failure",
+              "proof_artifacts",
+              "status"
+            ],
+            "properties": {
+              "phase_id": {"type": "string", "pattern": "^P\\d{2}$"},
+              "plan_state": {
+                "type": "string",
+                "enum": ["plan_only", "preflight", "ready_after_approval", "blocked_until_required_assets_exist", "requires_confirmation", "completed_with_proof"]
+              },
+              "control_panel_entrypoint": {"type": "string", "minLength": 1},
+              "preflight_dependency": {"type": "string", "minLength": 1},
+              "downgrade_on_failure": {"type": "string", "minLength": 1},
+              "proof_artifacts": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+              "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+            }
+          }
+        }
+      }
+    },
+    "davinci_timeline_packet": {
+      "type": "object",
+      "required": ["track_map", "timeline_rows"],
+      "properties": {
+        "track_map": {
+          "type": "object",
+          "required": ["V1", "V2", "V3", "A1", "A2", "A3", "A4", "A5"],
+          "properties": {
+            "V1": {"type": "string"},
+            "V2": {"type": "string"},
+            "V3": {"type": "string"},
+            "A1": {"type": "string"},
+            "A2": {"type": "string"},
+            "A3": {"type": "string"},
+            "A4": {"type": "string"},
+            "A5": {"type": "string"}
+          }
+        },
+        "timeline_rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["scene_id", "source_asset_id", "start_time", "end_time", "track", "transition_in", "transition_out", "proof_dependency"],
+            "properties": {
+              "scene_id": {"type": "string"},
+              "source_asset_id": {"type": "string"},
+              "start_time": {"type": "string"},
+              "end_time": {"type": "string"},
+              "track": {"type": "string"},
+              "transition_in": {"type": "string"},
+              "transition_out": {"type": "string"},
+              "j_cut_or_l_cut_offset": {"type": "string"},
+              "caption_action": {"type": "string"},
+              "color_grade": {"type": "string"},
+              "safe_zone": {"type": "string"},
+              "proof_dependency": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "production_proof_gate": {
+      "type": "object",
+      "required": ["artifact_path", "proof_json_path", "registry_entry_path", "engine_or_provider_used", "source_packet_ref", "validation_result", "human_review_status", "status"],
+      "properties": {
+        "artifact_path": {"type": "string"},
+        "proof_json_path": {"type": "string"},
+        "registry_entry_path": {"type": "string"},
+        "engine_or_provider_used": {"type": "string"},
+        "source_packet_ref": {"type": "string"},
+        "validation_result": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]},
+        "human_review_status": {"type": "string"},
+        "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+      }
     },
     "provider_boundary": {
       "type": "object",
@@ -78,7 +271,52 @@
         "sourcing_strategy": {"type": "string", "enum": ["local_generation", "cloud_provider", "stock_library", "hybrid", "manual_creation"]},
         "primary_tool_target": {"type": "string"},
         "storyboard_export_path": {"type": "string"},
+        "approved_non_cinematic_primary_lane": {"type": "string"},
+        "hyperframes_pro_upgrade_profile": {"type": "string"},
+        "overlay_alpha_required": {"type": "boolean"},
+        "effect_pack_inventory": {"type": "array", "items": {"type": "string"}},
+        "hyperframes_30s_proof_packet_ref": {"type": "string"},
         "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "PROVIDER_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "hyperframes_30s_proof_packet": {
+      "type": "object",
+      "required": [
+        "proof_segment_requested",
+        "total_duration_seconds",
+        "cut_count",
+        "style_lock",
+        "pattern_mix",
+        "assembly_rule",
+        "providers_called",
+        "n8n_used",
+        "fallback_policy",
+        "success_goal"
+      ],
+      "properties": {
+        "proof_segment_requested": {"type": "boolean", "const": true},
+        "total_duration_seconds": {"type": "integer", "const": 30},
+        "cut_count": {"type": "integer", "minimum": 8, "maximum": 12},
+        "style_lock": {"type": "string"},
+        "pattern_mix": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "enum": [
+              "playstation_dashboard_panel",
+              "notebooklm_dual_panel",
+              "image_evidence_wall",
+              "kinetic_principle_card",
+              "webm_alpha_overlay"
+            ]
+          }
+        },
+        "assembly_rule": {"type": "string"},
+        "providers_called": {"type": "boolean", "const": false},
+        "n8n_used": {"type": "boolean", "const": false},
+        "fallback_policy": {"type": "string"},
+        "success_goal": {"type": "string"}
       }
     },
     "voice_plan": {

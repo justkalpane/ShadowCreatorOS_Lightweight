@@ -451,3 +451,35 @@ schemas:
     schema_path: schemas/packets/hyperframes_render_plan_packet.schema.json
   - artifact_family: notebooklm_visual_plan_packet
     schema_path: schemas/packets/notebooklm_visual_plan_packet.schema.json
+  - artifact_family: media_factory_packet
+    schema_path: schemas/media_factory/media_factory_packet.schema.json
+  - artifact_family: evidence_bundle
+    schema_path: schemas/runtime_state/evidence_bundle.schema.json
+  - artifact_family: route_state_capsule
+    schema_path: schemas/runtime_state/route_state_capsule.schema.json
+  - artifact_family: patch_transaction
+    schema_path: schemas/governance/patch_transaction.schema.json
+  - artifact_family: bridge_job_packet
+    schema_path: schemas/media_factory/bridge_job_packet.schema.json
+  - artifact_family: visual_media_plan_row
+    schema_path: schemas/media_factory/visual_media_plan_row.schema.json
+  - artifact_family: final_visual_media_generation_draft
+    schema_path: schemas/media_factory/final_visual_media_generation_draft.schema.json
+  - artifact_family: depth_map_packet
+    schema_path: schemas/media_factory/depth_map_packet.schema.json
+  - artifact_family: ffmpeg_filtergraph_packet
+    schema_path: schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+  - artifact_family: hyperframes_payload
+    schema_path: schemas/media_factory/hyperframes_payload.schema.json
+  - artifact_family: comfyui_workflow_payload
+    schema_path: schemas/media_factory/comfyui_workflow_payload.schema.json
+  - artifact_family: source_vs_render_packet
+    schema_path: schemas/media_factory/source_vs_render_packet.schema.json
+  - artifact_family: visual_qa_acceptance_packet
+    schema_path: schemas/media_factory/visual_qa_acceptance_packet.schema.json
+  - artifact_family: pilot_cut_validation_packet
+    schema_path: schemas/media_factory/pilot_cut_validation_packet.schema.json
+  - artifact_family: audio_authorization_packet
+    schema_path: schemas/governance/audio_authorization_packet.schema.json
+  - artifact_family: davinci_handoff_packet
+    schema_path: schemas/governance/davinci_handoff_packet.schema.json

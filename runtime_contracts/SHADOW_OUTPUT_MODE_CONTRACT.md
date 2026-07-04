@@ -72,9 +72,18 @@ quality_lock_status=PASS
 governance_lock_status=PASS
 provider_boundary_present=true
 no_n8n_provider_media_execution=true
+route_state_capsule_present=true
+read_ledger_summary_present=true
+route_scope_file_audit_present=true
+manifest_required_blocks_missing=false
+wrapper_output_order_invalid=false
 ```
 
 If operator output hides detailed ledgers, it must still include a compact final proof with route, lock, source, rule-evidence, quality, governance, and provider-boundary status. Operator compression is a display choice only; it is not permission to skip internal proof.
+
+Operator-mode compact proof cannot self-report `PASS` if the visible output
+order contradicts the wrapper contract or if the selected route manifest's
+mandatory output blocks are missing.
 
 
 ## MAC-06.2D ARTICLE PIPELINE ROUTE CONNECTION

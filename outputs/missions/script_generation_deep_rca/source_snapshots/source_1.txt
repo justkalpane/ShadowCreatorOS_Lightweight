@@ -1,0 +1,3 @@
+Snapshot source_1
+url=https://example.com/official
+note=official profile snapshot for the script-generation proof bundle

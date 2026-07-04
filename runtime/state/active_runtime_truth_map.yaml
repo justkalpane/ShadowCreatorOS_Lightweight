@@ -1,0 +1,119 @@
+truth_map_id: ACTIVE_RUNTIME_TRUTH_MAP
+version: 1
+purpose: >
+  Classify repository files by runtime authority so fresh tasks do not consume
+  historical outputs, chat transcripts, proofs, or regression fixtures as live
+  route law.
+
+file_categories:
+  active_runtime:
+    examples:
+      - AGENTS.md
+      - START_HERE_FOR_AGENTS.md
+      - AGENT_READ_ORDER.md
+      - AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+      - AGENT_ANTI_DRIFT_RULES.md
+    allowed_by_default: true
+  route_manifest:
+    glob:
+      - registries/route_manifests/*.yaml
+    allowed_by_default: selected_route_only
+  registry:
+    glob:
+      - registries/*.yaml
+      - registries/*.json
+      - agents/AGENT_RUNTIME_REGISTRY.yaml
+      - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+    allowed_by_default: route_slice_only
+  registry_slice:
+    glob:
+      - registries/route_slices/*.registry_slice.yaml
+    allowed_by_default: selected_route_only
+  contract:
+    glob:
+      - runtime_contracts/*.md
+      - runtime_contracts/media_packets/*.md
+    allowed_by_default: selected_route_only
+  skill:
+    glob:
+      - skills/**/*.skill.md
+      - .agents/skills/**/SKILL.md
+    allowed_by_default: selected_route_only
+  subskill:
+    glob:
+      - skills/sub_skills/*.subskill.md
+    allowed_by_default: selected_route_only
+  validator:
+    glob:
+      - validators/*
+    allowed_by_default: validator_mode_only
+  test:
+    glob:
+      - tests/**
+    allowed_by_default: validator_mode_only
+  proof:
+    glob:
+      - proofs/**
+      - deployment_proofs/**
+      - outputs/**/proofs/**
+    allowed_by_default: validation_mode_only
+  historical_output:
+    glob:
+      - outputs/missions/**
+      - outputs/**
+    allowed_by_default: false
+    allowed_when:
+      - continue_previous_mission
+      - explicit_user_reference
+      - regression_mode
+  chat_transcript:
+    glob:
+      - downloads/chat_transcript.txt
+      - "**/chat_transcript.txt"
+    allowed_by_default: false
+    allowed_when:
+      - drift_audit_mode
+      - explicit_user_reference
+  mission_output:
+    glob:
+      - outputs/missions/**/MISSION_OUTPUT.md
+      - outputs/missions/**/VISUAL_MEDIA_GENERATOR_MASTER_PLAN.md
+    allowed_by_default: false
+    allowed_when:
+      - continue_previous_mission
+      - explicit_user_reference
+      - regression_mode
+  regression_fixture:
+    glob:
+      - downloads/antigravity highlights.txt
+      - "**/*GAP*Report*"
+      - "**/*ACCEPTANCE_TESTS*"
+    allowed_by_default: false
+    allowed_when:
+      - repo_drift_audit
+      - media_factory_regression_audit
+      - explicit_user_reference
+  archive:
+    glob:
+      - archive/**
+      - backups/**
+      - transfer_bundle/**
+    allowed_by_default: false
+    allowed_when:
+      - audit_mode
+      - explicit_user_requested_compare
+  documentation_only:
+    glob:
+      - docs/**
+      - README.md
+    allowed_by_default: route_referenced_only
+
+hard_rules:
+  - historical_output files are not active runtime unless regression_mode=true,
+    continue_previous_mission=true, or explicit_user_reference=true.
+  - chat_transcript files are not active runtime unless drift_audit_mode=true
+    or explicit_user_reference=true.
+  - proof files are not active runtime unless validation_mode=true.
+  - outputs/missions files are not active runtime for fresh script_only tasks.
+  - full registry scans are allowed only in audit_mode, validator_mode, or
+    rebuild_mode.

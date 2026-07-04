@@ -22,6 +22,15 @@ provider_execution_allowed_after_approval: false
 fail_rules: [rewrite before route manifest, rewrite without critique, selected component not consumed]
 partial_rules: [missing optional subskill with disclosure]
 pass_rules: [all locks pass, rewrite decisions mapped to consumed rules]
+validator_false_pass_hardening:
+  self_reported_fields_non_authoritative: true
+  hard_fail_if_any_mandatory_output_block_missing: true
+  hard_fail_if_required_lock_status_not_pass: true
+  hard_fail_if_alias_route_id_contradiction_present: true
+  hard_fail_if_wrapper_output_order_invalid: true
+validator_required_checks: [shadow_command_alias_detected, internal_wrapper_applied, route_manifest_loaded, critique_present, rewrite_decision_present, script_quality_gate_present, weakest_layer_status_respected]
+structured_output_rule_keys: [script_refinement_core]
+conditional_required_locks_current_terms: [SOURCE_RESEARCH_LOCK]
 create_missing_registry_binding: false
 
 # MAC-06.1P-C route binding enforcement

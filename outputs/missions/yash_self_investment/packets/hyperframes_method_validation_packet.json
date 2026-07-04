@@ -1,0 +1,213 @@
+{
+  "packet_id": "hyperframes_method_validation_packet",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "mission_id": "yash_self_investment",
+  "packet_role": "method_validation_suite",
+  "purpose": "Test active HyperFrames non-cinematic B-roll families one by one, verify exact capabilities, and isolate drift sources before any future full proof rerun.",
+  "provider_execution_allowed": false,
+  "providers_called": false,
+  "n8n_used": false,
+  "repo_write_allowed_for_antigravity": false,
+  "new_image_generation_allowed": false,
+  "depth_anything_v2_allowed": false,
+  "davinci_required": false,
+  "alpha_runtime_guard": {
+    "template_family_name_retained": "webm_alpha_overlay",
+    "production_safe_output_extension": ".mov",
+    "blocked_output_extension": ".webm"
+  },
+  "source_refs": {
+    "proof_packet_ref": "/Users/apple/Documents/ShadowCreatorOS_Lightweight/outputs/missions/yash_self_investment/packets/hyperframes_30s_proof_packet.json",
+    "media_factory_packet_ref": "/Users/apple/Documents/ShadowCreatorOS_Lightweight/outputs/missions/yash_self_investment/packets/media_factory_packet.json",
+    "scene_prompt_packets_ref": "/Users/apple/Documents/ShadowCreatorOS_Lightweight/outputs/missions/yash_self_investment/packets/scene_prompt_packets.json",
+    "template_registry_ref": "/Users/apple/ShadowMediaFactory/control_panel/templates/hyperframes_template_registry.json",
+    "effect_pack_registry_ref": "/Users/apple/ShadowMediaFactory/control_panel/templates/hyperframes_effect_pack_registry.json"
+  },
+  "asset_roots": {
+    "raw_images": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw",
+    "overlays": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/overlays"
+  },
+  "effect_inventory_under_test": [
+    "dust_motes_01",
+    "glowing_node_01",
+    "sparks_01",
+    "gold_border_sweep",
+    "hud_corner_brackets"
+  ],
+  "tests": [
+    {
+      "test_id": "HF_METHOD_01",
+      "template_family": "playstation_dashboard_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/playstation_dashboard_panel",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_05_city_skyline.png",
+      "visual_pattern": "local_image_motion_broll_dashboard",
+      "headline_primary": "No map. Only hunger.",
+      "headline_secondary": "Skill stack before spotlight.",
+      "support_line": "Open with control-room energy: metrics, rank strip, and guided ambition.",
+      "metric_or_claim": "72% skill stack selected",
+      "effect_pack_ids": ["glowing_node_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "hud_corners",
+        "metric_card",
+        "glow_node_visible"
+      ]
+    },
+    {
+      "test_id": "HF_METHOD_02",
+      "template_family": "notebooklm_dual_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/notebooklm_dual_panel",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_01_blueprint_hand.png",
+      "visual_pattern": "notebooklm_clean_dual_panel",
+      "headline_primary": "Write the system before the applause.",
+      "headline_secondary": "Quiet inputs become loud results.",
+      "support_line": "Notebook layout must feel like a live note-to-signal conversion.",
+      "metric_or_claim": "Compounding note chain active",
+      "effect_pack_ids": ["dust_motes_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "source_panel",
+        "active_note_panel",
+        "dust_overlay_visible"
+      ]
+    },
+    {
+      "test_id": "HF_METHOD_03",
+      "template_family": "image_evidence_wall",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/image_evidence_wall",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_01_laptop_grind.png",
+      "visual_pattern": "floating_evidence_wall",
+      "headline_primary": "Grind created the edge.",
+      "headline_secondary": "Proof links beat vague motivation.",
+      "support_line": "Evidence wall must feel like collected receipts from the work.",
+      "metric_or_claim": "Signal map -> lesson bridge",
+      "effect_pack_ids": ["sparks_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "floating_cards",
+        "spark_overlay_visible",
+        "evidence_wall_layout"
+      ]
+    },
+    {
+      "test_id": "HF_METHOD_04",
+      "template_family": "kinetic_principle_card",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/kinetic_principle_card",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_03_writing_notebook.png",
+      "visual_pattern": "kinetic_lesson_card",
+      "headline_primary": "Invest before the world notices.",
+      "headline_secondary": "Private repetition creates public leverage.",
+      "support_line": "This card must hit like a punchline, not a default slide.",
+      "metric_or_claim": "Principle lock active",
+      "effect_pack_ids": ["glowing_node_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "kinetic_title",
+        "underline_or_sweep",
+        "glow_node_visible"
+      ]
+    },
+    {
+      "test_id": "HF_METHOD_05",
+      "template_family": "webm_alpha_overlay",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/webm_alpha_overlay",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_09_clock_3am.png",
+      "visual_pattern": "transparent_cta_or_highlight_overlay",
+      "headline_primary": "3:00 AM is a decision.",
+      "headline_secondary": "Private discipline, visible result.",
+      "support_line": "Overlay must stay transparent and act as V3 only.",
+      "metric_or_claim": "Time pulse active",
+      "effect_pack_ids": ["glowing_node_01", "sparks_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "mov_alpha_output",
+        "transparent_overlay",
+        "background_composite",
+        "no_white_card_failure",
+        "highlight_ring_or_cta"
+      ],
+      "required_output_extension": ".mov"
+    },
+    {
+      "test_id": "HF_METHOD_06",
+      "template_family": "playstation_dashboard_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/playstation_dashboard_panel",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_02_steel_hammer.png",
+      "visual_pattern": "comparison_card",
+      "headline_primary": "Pressure is not the enemy.",
+      "headline_secondary": "Weak systems are.",
+      "support_line": "Contrast board must feel tougher and more industrial.",
+      "metric_or_claim": "Hammer test engaged",
+      "effect_pack_ids": ["sparks_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "contrast_variant",
+        "spark_overlay_visible"
+      ]
+    },
+    {
+      "test_id": "HF_METHOD_07",
+      "template_family": "notebooklm_dual_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/notebooklm_dual_panel",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_06_muddy_boots.png",
+      "visual_pattern": "claim_to_evidence",
+      "headline_primary": "Mud first. Recognition later.",
+      "headline_secondary": "The return is built before applause.",
+      "support_line": "Notebook proof view must show evidence-oriented reading flow.",
+      "metric_or_claim": "Claim -> evidence transition",
+      "effect_pack_ids": ["dust_motes_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "claim_to_evidence_variant",
+        "dust_overlay_visible"
+      ]
+    },
+    {
+      "test_id": "HF_METHOD_08",
+      "template_family": "image_evidence_wall",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/image_evidence_wall",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_07_faceless_people.png",
+      "visual_pattern": "data_evidence_board",
+      "headline_primary": "Noise is crowded. Clarity is lonely.",
+      "headline_secondary": "Receipts beat opinions.",
+      "support_line": "Use evidence framing, not generic collage behavior.",
+      "metric_or_claim": "Signal stack visible",
+      "effect_pack_ids": ["glowing_node_01", "gold_border_sweep"],
+      "border_pack_id": "hud_corner_brackets",
+      "expected_capabilities": [
+        "payload_injection",
+        "background_composite",
+        "data_evidence_variant",
+        "glow_node_visible"
+      ]
+    }
+  ],
+  "required_output_schema": {
+    "per_test_fields": [
+      "test_id",
+      "template_family",
+      "expected_capabilities",
+      "actual_capabilities",
+      "output_path",
+      "proof_json_path",
+      "registry_evidence_path",
+      "ffprobe_summary",
+      "verification_frame_path",
+      "drift_found",
+      "drift_reason",
+      "status"
+    ]
+  }
+}

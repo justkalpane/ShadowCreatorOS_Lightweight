@@ -1,0 +1,77 @@
+{
+  "artifact_id": "SVR-C04A-002",
+  "auto_status": "AUTO_BLOCKED",
+  "contact_sheet_required": true,
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "diff_image_refs": [
+    {
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/diff/frame_001.png",
+      "sha256": "abd78b99b6ad5f9f8b5ae510c9db93f0a6c685ce76449fe43b125c6ecc39036c"
+    },
+    {
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/diff/frame_002.png",
+      "sha256": "b9b0998fe7d8475948fdc2535f8941c0becf7da853e2b687a01985f849a56750"
+    }
+  ],
+  "evidence_bundle_id": "EB-C04A-001",
+  "final_status": "APPROVED_BY_HUMAN",
+  "human_review_required": true,
+  "job_id": "JOB-C04A-PILOT-001",
+  "metrics": {
+    "artifact_scan_result": "PASS",
+    "base_image_preservation_score": 0.95,
+    "blur_detection_score": 0.88,
+    "caption_safe_zone_result": "PASS",
+    "color_delta": 0.07,
+    "compression_artifact_score": 0.9,
+    "contrast_delta": 0.06,
+    "creative_intent_alignment_score": 0.89,
+    "edge_preservation": 0.91,
+    "motion_consistency_score": 0.87,
+    "overlay_occlusion_score": 0.12,
+    "parallax_visibility_score": 0.86,
+    "sharpness_delta": 0.08,
+    "subject_readability_score": 0.93,
+    "timestamp_coverage": 1.0
+  },
+  "render_frame_refs": [
+    {
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/render/frame_001.png",
+      "sha256": "301317927d574a0a91da02bfa4caf824dbc614248380db516682d036f08a8030"
+    },
+    {
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/render/frame_002.png",
+      "sha256": "a96b17460c288b4403217cbbc9fe03950c17f8b1fb368174ab52711b5aa9f448"
+    }
+  ],
+  "report_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "source_frame_refs": [
+    {
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/source/frame_001.png",
+      "sha256": "36f168301c9245aa32c01a2ecf9c188e43f5a1fceaf611cfc3baed4c2a8618df"
+    },
+    {
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/source/frame_002.png",
+      "sha256": "dfea1ed82a3520d43ebf51f5f84d97479f5aa322418c8a7b9b80243d8a0239d4"
+    }
+  ],
+  "threshold_status": "BUILDER_DECISION_REQUIRED",
+  "thresholds": {
+    "minimum_base_image_preservation_score": 0.9,
+    "minimum_blur_detection_score": 0.8,
+    "minimum_color_delta": 0.05,
+    "minimum_compression_artifact_score": 0.85,
+    "minimum_contrast_delta": 0.05,
+    "minimum_creative_intent_alignment_score": 0.85,
+    "minimum_edge_preservation": 0.85,
+    "minimum_motion_consistency_score": 0.8,
+    "minimum_overlay_occlusion_score": 0.1,
+    "minimum_parallax_visibility_score": 0.8,
+    "minimum_sharpness_delta": 0.05,
+    "minimum_subject_readability_score": 0.9,
+    "minimum_timestamp_coverage": 1.0
+  }
+}

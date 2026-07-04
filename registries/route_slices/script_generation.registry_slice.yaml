@@ -1,0 +1,89 @@
+slice_id: script_generation
+route_id: SCRIPT_GENERATION
+default_task_mode: script_only
+source_manifest: registries/route_manifests/script_generation.yaml
+directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/research/vyasa.md
+  - directors/research/valmiki.md
+  - directors/distribution/saraswati.md
+  - directors/kernel/yama.md
+agents:
+  - agents/krishna/krishna_agent.py
+  - agents/aruna/aruna_agent.py
+  - agents/vyasa/vyasa_agent.py
+  - agents/valmiki/valmiki_agent.py
+  - agents/saraswati/saraswati_agent.py
+  - agents/yama/yama_agent.py
+subagents:
+  - subagents/wf_200/wf_200_sub_agent.py
+  - subagents/cwf_210/cwf_210_sub_agent.py
+  - subagents/cwf_220/cwf_220_sub_agent.py
+  - subagents/cwf_230/cwf_230_sub_agent.py
+  - subagents/cwf_240/cwf_240_sub_agent.py
+skills:
+  - skills/script_intelligence/S-201-hook-optimizer.skill.md
+  - skills/script_intelligence/S-202-first-draft-generation.skill.md
+  - skills/script_intelligence/S-203-retention-engineer.skill.md
+  - skills/script_intelligence/S-206-emotion-amplifier.skill.md
+  - skills/script_intelligence/S-208-governance-safety-checker.skill.md
+  - skills/script_intelligence/S-210-final-script-packager.skill.md
+  - skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
+  - skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+  - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+  - skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
+subskills:
+  - skills/sub_skills/SS-230-content-angle-generator.subskill.md
+  - skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
+  - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+  - skills/sub_skills/SS-241-open-loop-generator.subskill.md
+  - skills/sub_skills/SS-242-story-tension-builder.subskill.md
+  - skills/sub_skills/SS-243-pacing-controller.subskill.md
+  - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+  - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
+contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+  - runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SCRIPT_STORY_ENGINE_CONTRACT.md
+  - runtime_contracts/SCRIPT_LANGUAGE_CONTROL_CONTRACT.md
+  - runtime_contracts/REAL_TIME_RESEARCH_ENFORCEMENT_CONTRACT.md
+  - runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md
+  - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+  - runtime_contracts/GOLD_RESULT_REFERENCE_PACK.md
+validators:
+  - validators/validate_script_generation_output.py
+output_contracts:
+  - SCRIPT_BODY_DEPTH_LOCK
+  - VALIDATION_SCORECARD
+  - LINE_BY_LINE_INFLUENCE_MAP
+  - SOURCE_SNAPSHOT_LEDGER
+  - CLAIM_TO_SCRIPT_LINE_MAP
+  - ROUTE_MANIFEST_HASH_LEDGER
+  - ROUTE_SLICE_HASH_LEDGER
+  - COMPONENT_CONSUMPTION_LEDGER
+  - BENGALURU_LANGUAGE_HARDENING_REPORT
+  - FINAL_SCRIPT
+  - DYNAMIC_TIMED_BEAT_MAP
+optional_downstream_routes:
+  visual_media_plan: registries/route_slices/visual_media_plan.registry_slice.yaml
+  visual_media_generation_draft: registries/route_slices/visual_media_generation_draft.registry_slice.yaml
+  media_factory_handoff: registries/route_slices/media_factory_handoff.registry_slice.yaml
+blocked_files:
+  - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+  - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
+  - outputs/missions/**
+  - downloads/chat_transcript.txt
+historical_file_policy: disallow_unless_explicit_reference_or_audit
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true

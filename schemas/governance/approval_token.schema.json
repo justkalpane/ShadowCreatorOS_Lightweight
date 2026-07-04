@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Approval Token",
+  "description": "Tokenized approval artifact for visual acceptance, pilot prep, pilot execution, and later unlock gates. Issued tokens cannot carry blockers.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "token_id",
+    "token_type",
+    "issuer_id",
+    "issuer_role",
+    "scope",
+    "issued_at",
+    "expires_at",
+    "single_use",
+    "prerequisites",
+    "evidence_bundle_id",
+    "evidence_bundle_sha256",
+    "route_state_capsule_id",
+    "artifact_hashes",
+    "blocked_reasons_at_issue_time",
+    "status",
+    "revocation_status",
+    "revocation_reason",
+    "payload_sha256",
+    "schema_version"
+  ],
+  "properties": {
+    "token_id": {
+      "type": "string",
+      "pattern": "^TOK-[A-Za-z0-9_-]+$"
+    },
+    "token_type": {
+      "type": "string",
+      "enum": [
+        "VISUAL_ACCEPTANCE",
+        "PILOT_PREP",
+        "PILOT_EXECUTION",
+        "FULL_RENDER_UNLOCK",
+        "AUDIO_UNLOCK",
+        "PROVIDER_UNLOCK",
+        "DAVINCI_UNLOCK"
+      ]
+    },
+    "issuer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issuer_role": {
+      "type": "string",
+      "enum": [
+        "HUMAN_FOUNDER",
+        "HUMAN_REVIEWER",
+        "DIRECTOR",
+        "GOVERNANCE_OFFICER"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "visual_acceptance",
+        "pilot_prep",
+        "pilot_execution",
+        "full_render_unlock",
+        "audio_unlock",
+        "provider_unlock",
+        "davinci_unlock"
+      ]
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "single_use": {
+      "type": "boolean"
+    },
+    "prerequisites": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "evidence_bundle_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:[a-f0-9]{64}$"
+      }
+    },
+    "blocked_reasons_at_issue_time": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "ISSUED",
+        "CONSUMED",
+        "REVOKED",
+        "EXPIRED"
+      ]
+    },
+    "revocation_status": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "REVOKED",
+        "EXPIRED"
+      ]
+    },
+    "revocation_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "ISSUED"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "blocked_reasons_at_issue_time": {
+            "maxItems": 0
+          },
+          "artifact_hashes": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "enum": [
+              "PILOT_PREP",
+              "PILOT_EXECUTION",
+              "FULL_RENDER_UNLOCK",
+              "AUDIO_UNLOCK",
+              "PROVIDER_UNLOCK",
+              "DAVINCI_UNLOCK"
+            ]
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "single_use": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "VISUAL_ACCEPTANCE"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "visual_acceptance"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "PILOT_PREP"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "pilot_prep"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "PILOT_EXECUTION"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "pilot_execution"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "FULL_RENDER_UNLOCK"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "full_render_unlock"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "AUDIO_UNLOCK"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "audio_unlock"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "PROVIDER_UNLOCK"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "provider_unlock"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "token_type": {
+            "const": "DAVINCI_UNLOCK"
+          }
+        },
+        "required": [
+          "token_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scope": {
+            "const": "davinci_unlock"
+          }
+        }
+      }
+    }
+  ]
+}

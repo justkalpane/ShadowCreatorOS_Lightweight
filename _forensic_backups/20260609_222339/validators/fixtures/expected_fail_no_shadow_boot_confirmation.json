@@ -1,0 +1,5 @@
+{
+  "expected_validation_status": "FAIL",
+  "expected_reason": "no_shadow_boot_confirmation",
+  "expected_generic_direct_answer_detected": true
+}

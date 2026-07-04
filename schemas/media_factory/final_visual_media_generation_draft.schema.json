@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/final_visual_media_generation_draft.schema.json",
+  "title": "Shadow Final Visual Media Generation Draft",
+  "description": "Planning-stage master packet for a governed Media Factory draft. This packet cannot unlock execution by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_id",
+    "route_id",
+    "route_state_capsule_id",
+    "evidence_bundle_id",
+    "bridge_job_packet_id",
+    "execution_lane",
+    "visual_rows",
+    "scene_sync_required",
+    "asset_inventory_required",
+    "source_vs_render_required",
+    "visual_qa_required",
+    "contact_sheet_required",
+    "pilot_required_before_batch",
+    "tools_connectors_plugins_assessment",
+    "provider_execution_allowed",
+    "audio_allowed",
+    "davinci_allowed"
+  ],
+  "properties": {
+    "packet_id": {"type": "string", "minLength": 1},
+    "route_id": {"type": "string", "const": "MEDIA_FACTORY_HANDOFF"},
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+-[0-9]{8}-[A-Za-z0-9_-]+$"
+    },
+    "bridge_job_packet_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "execution_lane": {
+      "type": "string",
+      "enum": [
+        "planning_only",
+        "pilot_only",
+        "full_render_blocked"
+      ]
+    },
+    "visual_rows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "scene_sync_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "asset_inventory_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "source_vs_render_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "visual_qa_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "contact_sheet_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "pilot_required_before_batch": {
+      "type": "boolean",
+      "const": true
+    },
+    "tools_connectors_plugins_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_name",
+        "item_type",
+        "source_path",
+        "runtime_status",
+        "required_for_task",
+        "approval_required",
+        "execution_allowed_now",
+        "notes"
+      ],
+      "properties": {
+        "item_name": {"type": "string", "const": "HyperFrames CLI (Local)"},
+        "item_type": {"type": "string", "const": "provider"},
+        "source_path": {
+          "type": "string",
+          "const": "registries/provider_registry.yaml#provider_id=hyperframes_cli_local"
+        },
+        "runtime_status": {"type": "string", "const": "ACTIVE"},
+        "required_for_task": {"type": "boolean", "const": true},
+        "approval_required": {"type": "boolean", "const": false},
+        "execution_allowed_now": {"type": "boolean", "const": true},
+        "notes": {"type": "string", "minLength": 1}
+      }
+    },
+    "provider_execution_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "audio_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "davinci_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

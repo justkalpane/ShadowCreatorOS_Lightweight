@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "depth_map_plan_packet",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "packet_id": {"type": "string"},
+    "route_id": {"type": "string"},
+    "producer_component_id": {"type": "string"},
+    "consumer_component_ids": {"type": "array", "items": {"type": "string"}},
+    "lineage": {"type": "object"},
+    "validation_status": {"type": "string"},
+    "scene_id": {"type": "string"},
+    "source_image_path": {"type": "string"},
+    "depth_mask_output_path": {"type": "string"},
+    "model_variant": {"type": "string"},
+    "davinci_fusion_plan": {"type": "object"},
+    "provider_execution_allowed": {"type": "boolean", "default": false, "const": false},
+    "approval_required": {"type": "boolean", "default": true}
+  },
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "scene_id",
+    "source_image_path",
+    "depth_mask_output_path",
+    "model_variant",
+    "davinci_fusion_plan",
+    "provider_execution_allowed",
+    "approval_required"
+  ]
+}

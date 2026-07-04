@@ -1,6 +1,6 @@
 version: 1
 registry_id: local_media_factory_bridge
-updated_at: "2026-06-04"
+updated_at: "2026-06-21"
 owner: shadow_commander
 purpose: >
   Permanent local bridge registry between ShadowCreatorOS_Lightweight and the
@@ -57,14 +57,55 @@ handoff_contract:
     - /Users/apple/ShadowMediaFactory/control_panel/proofs
     - /Users/apple/ShadowMediaFactory/control_panel/registry
     - /Users/apple/ShadowMediaFactory/08_EXPORTS
+  shadow_os_runtime_bindings:
+    required_runtime_state_schemas:
+      - schemas/runtime_state/evidence_bundle.schema.json
+      - schemas/runtime_state/route_state_capsule.schema.json
+      - schemas/governance/patch_transaction.schema.json
+    required_media_factory_packet_schemas:
+      - schemas/media_factory/bridge_job_packet.schema.json
+      - schemas/media_factory/final_visual_media_generation_draft.schema.json
+      - schemas/media_factory/depth_map_packet.schema.json
+      - schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+      - schemas/media_factory/hyperframes_payload.schema.json
+      - schemas/media_factory/comfyui_workflow_payload.schema.json
+      - schemas/media_factory/source_vs_render_packet.schema.json
+      - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+      - schemas/media_factory/pilot_cut_validation_packet.schema.json
+      - schemas/governance/audio_authorization_packet.schema.json
+      - schemas/governance/davinci_handoff_packet.schema.json
+    required_validators:
+      - validators/validate_evidence_bundle.py
+      - validators/validate_route_state_capsule.py
+      - validators/validate_patch_transaction.py
+      - validators/validate_bridge_job_packet.py
+      - validators/validate_final_visual_media_generation_draft.py
+      - validators/validate_depth_map_packet.py
+      - validators/validate_ffmpeg_filtergraph_packet.py
+      - validators/validate_hyperframes_payload.py
+      - validators/validate_comfyui_payload.py
+      - validators/validate_source_vs_render_packet.py
+      - validators/validate_visual_qa_acceptance.py
+      - validators/validate_pilot_cut_validation_packet.py
+      - validators/validate_audio_authorization_packet.py
+      - validators/validate_davinci_handoff_packet.py
+    blocked_unlocks_until_validated:
+      - local_engine_execution_claim
+      - full_render_unlock
+      - audio_unlock
+      - provider_unlock
+      - davinci_unlock
 
 control_panel_commands:
   status: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py status"
   doctor: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py doctor"
   preflight_storyboard: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py preflight-storyboard --metadata <metadata_json>"
   local_broll_proof: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-local-broll-proof --profile youtube_16_9"
-  run_animdiff: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-animdiff <args>"
-  run_wan: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-wan <args>"
+  run_hyperframes: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-hyperframes --project-root <project> --output <mp4_or_mov>"
+  run_depth_anything: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-depth-anything --input <image_or_dir> --output-dir <depth_output_dir>"
+  run_captions: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-captions --input <audio_or_video> --output-prefix <srt_prefix>"
+  run_rife: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-rife --input <clip> --output <clip>"
+  run_comfy_workflow: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-comfy-workflow --capability <capability> --workflow-json <workflow>"
 
 bridge_sync_commands:
   audit: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check"
@@ -74,6 +115,17 @@ bridge_sync_commands:
 capability_truth:
   source_of_truth: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
   last_known_truth:
+    local_image_broll_lane:
+      engine: "FFmpeg local image/music/SFX assembly"
+      readiness_status: PROVEN
+      production_role: immediate_non_cinematic_broll
+      output_classification: local_image_music_broll_mp4
+      proof_json_required: true
+      current_proof_path: /Users/apple/ShadowMediaFactory/control_panel/proofs/local_broll_test_proof.json
+      supports_pan_zoom: true
+      supports_audio_mix: true
+      supports_hyperframes_overlay: false
+      boundary: "Creates local image-based B-roll from approved stills/music/SFX; it does not generate new source images or replace DaVinci final finishing."
     local_animatic_lane:
       engine: "SD1.5 + Canny ControlNet + AnimateDiff"
       readiness_status: LOCAL_ENGINE_READY
@@ -104,9 +156,18 @@ capability_truth:
       automated_project_handoff_proven: false
     hyperframes_lane:
       engine: "HyperFrames Node.js CLI"
-      readiness_status: LOCAL_ENGINE_READY
+      readiness_status: PROVEN_FOR_NON_CINEMATIC_GRAPHICS
       production_role: html_css_deterministic_render
-      supports_alpha_webm: true
+      supports_alpha_webm: false
+      supports_alpha_mov: true
+      overlay_alpha_export_status: PROVEN_MOV_ONLY
+      alpha_family_name_compatibility: "webm_alpha_overlay family name retained; production-safe alpha output remains .mov only"
+      fx_pack_status: PARTIAL_PROVEN
+      hud_border_pack_status: PROVEN_TEMPLATE_EMBEDDED
+      proof_json_required: true
+      proof_parity_status: PASS
+      current_proof_path: /Users/apple/ShadowMediaFactory/control_panel/proofs/hyperframes_render_20260613_124043.json
+      current_proof_output: /Users/apple/ShadowMediaFactory/08_EXPORTS/review/hyperframes/pro_upgrade/alpha_overlay_production_safe.mov
       owning_subskills:
         - SS-116
         - SS-118
@@ -115,16 +176,60 @@ capability_truth:
         - PROGRAMMATIC_SLIDE_VISUAL_METHOD
         - HTML_CSS_GSAP_VISUAL_METHOD
         - A_ROLL_OVERLAY_METHOD
-      boundary: "HyperFrames renders deterministic HTML/CSS/GSAP slides and alpha overlays; it does not replace DaVinci Resolve for 2.5D parallax or final assembly."
+      supported_template_families:
+        - playstation_dashboard_panel
+        - notebooklm_dual_panel
+        - image_evidence_wall
+        - kinetic_principle_card
+        - webm_alpha_overlay
+      boundary: "HyperFrames renders deterministic HTML/CSS/GSAP slides and alpha overlays; current production-safe alpha delivery is .mov on this runtime. It does not replace DaVinci Resolve for 2.5D parallax or final assembly."
+    notebooklm_panels_lane:
+      engine: "HyperFrames template family: notebooklm_dual_panel"
+      readiness_status: CONFIGURED_NEEDS_PROOF_RENDER
+      production_role: clean_document_note_panel_broll
+      proof_json_required: true
+      boundary: "Simulates NotebookLM-style panels locally; it does not operate Google NotebookLM or claim NotebookLM cloud export."
+    hyperframes_first_proof_packet_lane:
+      engine: "HyperFrames CLI + FFmpeg support assembly"
+      readiness_status: PACKET_READY
+      production_role: multi_cut_non_cinematic_broll_proof
+      proof_json_required: true
+      overlay_alpha_requirement: mov_only_on_current_runtime
+      overlay_alpha_output_blocked_extension: ".webm"
+      supported_template_families:
+        - playstation_dashboard_panel
+        - notebooklm_dual_panel
+        - image_evidence_wall
+        - kinetic_principle_card
+        - webm_alpha_overlay
+      boundary: "This lane is approved for the next 30-second proof packet design. It must not silently downgrade to generic ffmpeg_ken_burns when a HyperFrames family is explicitly requested, and alpha-overlay scenes must use the proven .mov path."
     depth_anything_v2_lane:
-      engine: "Depth Anything V2 (ViT-B / MPS)"
+      engine: "Depth Anything V2"
       readiness_status: LOCAL_ENGINE_READY
+      default_encoder: "vits"
+      default_model: "Depth-Anything-V2-Small"
+      default_license: "Apache-2.0"
+      supports_batch_images: true
+      supports_single_image: true
+      output_classification: depth_map_png
+      davinci_dependency: true
       production_role: depth_map_generation
       owning_subskills:
         - SS-117
       supported_visual_methods:
         - IMAGE_MOTION_GRAPHICS_BROLL_METHOD
       boundary: "Depth Anything V2 is a local depth-mask generator only; DaVinci Resolve Fusion performs the 2.5D parallax composite."
+    rife_lane:
+      engine: "RIFE NCNN Vulkan"
+      readiness_status: CALLABLE_OPTIONAL
+      production_role: optional_smoothing_after_render
+      proof_json_required: false
+      boundary: "Optional interpolation/polish pass only; not a B-roll generator."
+    comfyui_api_lane:
+      engine: "ComfyUI local API"
+      readiness_status: OFFLINE
+      production_role: backlog_experimental_generation
+      boundary: "Installed models may exist, but API readiness is false until ComfyUI is running and workflow proofs pass."
 
 honesty_gate_policy:
   preflight_required_before_render: true
@@ -169,19 +274,22 @@ agent_operating_protocol:
 
 # BEGIN AUTO-GENERATED MEDIA FACTORY SYNC STATE
 sync_state:
-  last_sync_at: "2026-06-04T17:27:13+00:00"
+  last_sync_at: "2026-06-21T14:04:21+00:00"
   bridge_in_sync: true
   media_factory_changed: false
   repo_bridge_update_required: false
-  control_panel_cli_sha256: "adfb6e3ed89443e4c4659b7f6a332f971214970b6a4c9861c7c5d507a13213e3"
-  capability_map_sha256: "758bedec33e3cde0c68351f732e1e746cad67ce1ffbe03e00bf0489b3f16b749"
-  latest_proof_sha256: "e327b966f84f847a03e97c1c5dd1d4e43434c08bd86848270be1f2d674c60b30"
-  latest_proof_path: "/Users/apple/ShadowMediaFactory/control_panel/proofs/preflight_storyboard_bengaluru_honesty_gate.json"
+  control_panel_cli_sha256: "96d053b02df69166aeca046412139629ce3df185b231909d48cc8fca40d83e86"
+  capability_map_sha256: "c7556caeca92af5cdf66b8e3ed043d183290aa489a04955985797471f361284d"
+  latest_proof_sha256: "a284e1ddae6b979814ad2ea7d0caf1573deb98f42775096686e0c2df60c62931"
+  latest_proof_path: "/Users/apple/ShadowMediaFactory/control_panel/proofs/qa_gate_verdict_JOB-c04a-pilot_20260621_141826.json"
   path_status:
     capability_map_exists: true
     comfyui_root_exists: true
     control_panel_cli_exists: true
     control_panel_exists: true
+    depth_anything_root_exists: true
+    depth_anything_small_checkpoint_exists: true
+    depth_anything_venv_python_exists: true
     exports_dir_exists: true
     jobs_dir_exists: true
     media_factory_root_exists: true
@@ -202,27 +310,34 @@ sync_state:
     assembly_engine: "FFmpeg"
     assembly_supports_audio_mix: true
     assembly_supports_per_scene_sfx: false
+    depth_anything_engine: "Depth Anything V2"
+    depth_anything_default_encoder: "vits"
+    depth_anything_default_model: "Depth-Anything-V2-Small"
+    depth_anything_default_license: "Apache-2.0"
+    depth_anything_supports_batch_images: true
+    depth_anything_output_classification: "depth_map_png"
+    depth_anything_davinci_dependency: true
   registry_files:
     assets.jsonl:
       exists: true
-      line_count: 129
+      line_count: 389
       valid_jsonl: true
-      hash: "7f015a678100a355e445eeb709a10eb18f7c288dbb5f59d0c0c6dbc58353f1fa"
+      hash: "3cf82cbdff0128b62c3ac52ae6ceca421961d4ea8faa0a486be2a421881ccd63"
     scene_contracts.jsonl:
       exists: true
-      line_count: 10
+      line_count: 12
       valid_jsonl: true
-      hash: "c5d3072e1c53e1c79c439682f4fd4d5f4e735128b181cdbd386f216aeb16da94"
+      hash: "5425f909de9bb974701c68876add2647f158f9f1cc4214fbb7efc3f98d795f97"
     route_decisions.jsonl:
       exists: true
-      line_count: 16
+      line_count: 26
       valid_jsonl: true
-      hash: "b20da07da1452294e5da1893075b0e9e06c6d6b7db43a25bf9745dda2190e969"
+      hash: "b587acaca0108873debb1ae7e23ca815fac442ea9e8de3ccce128dbe1625da42"
     retry_state.jsonl:
       exists: true
-      line_count: 11
+      line_count: 13
       valid_jsonl: true
-      hash: "5405f3970b0ad13853cd38ccc51d68b022d6548e8f0aff47d5c5c5c3856c935f"
+      hash: "26bed18d266aa5d6289450a71b57ab285ff83893c8b2b5259c21fc4172c809ad"
   issues:
     []
 # END AUTO-GENERATED MEDIA FACTORY SYNC STATE

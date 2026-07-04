@@ -414,7 +414,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_SARASWATI
 component_layer: DIRECTOR
 component_name: Saraswati
-route_families: [quality_gate, full_video_pipeline]
+route_families: [voice_context, script_refinement, script_generation, editing_packaging, context_engineering, quality_gate, full_video_pipeline]
 activation_triggers: route_family in [script_generation, music_sfx_context, visual_context, avatar_video_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -442,7 +442,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_quality_gate_profile
-route_family_resolved: [quality_gate, full_video_pipeline]
+route_family_resolved: [voice_context, script_refinement, script_generation, editing_packaging, context_engineering, quality_gate, full_video_pipeline]
 activation_triggers_resolved: [quality, validation, compliance]
 required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]

@@ -28,6 +28,8 @@
 - hyperframes_cli (Primary: /Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/node_modules/.bin/hyperframes)
 - local_playwright_instance (Fallback)
 - local_ffmpeg_assembler
+- provider_id: hyperframes_cli_local
+- connector_assessment_contract: `runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md`
 
 ## SECTION 4: WRITES (OUTPUT VEINS)
 - artifact_family:notebooklm-rendered-broll_packet
@@ -39,10 +41,11 @@
 ## SECTION 5: EXECUTION FLOW & ALGORITHM
 1. Load HTML/CSS template containing the dual-panel NotebookLM layout.
 2. Inject `sources_list` and `active_note_text` into the DOM.
-3. Run `hyperframes render <project> --output <file.mp4>` via HyperFrames CLI.
+3. Run `python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-hyperframes --project-root <project> --output <file.mp4> --template-family notebooklm_dual_panel --visual-pattern notebooklm_clean_dual_panel` so proof JSON and registry evidence are emitted.
 4. Trigger CSS keyframe animations for sequential word highlights matched to timeline stamps.
 5. (Fallback) If HyperFrames fails, launch Playwright headless browser instance to capture frames at 60fps and use FFmpeg to assemble MP4.
 6. Verify file integrity and register output packet in lineage indexes.
+7. Verify `proof_json_path` and `assets.jsonl` registry event before claiming any NotebookLM-style video artifact.
 
 ## SECTION 6: SCORING FRAMEWORK
 - alignment_score (0-100)
@@ -61,6 +64,9 @@
 - Required HyperFrames Config block fields: `font_family`, `theme_styling`, `typing_animation`, `scroll_trigger`, `gsap_timeline_sync`, and `davinci_layering`.
 - Required asset inventory: list every SVG/PNG/background canvas used by the source shelf or active note; if none are needed, state `assets_needed=NONE (CSS vectors only)`.
 - Required DaVinci composite layout: V1 must be the rendered slide background MP4/WebM; V2 may be a chromakeyed HeyGen presenter or empty presenter lane.
+- Required proof parity: every rendered NotebookLM-style panel must have HyperFrames proof JSON with `providers_called=false`, `n8n_used=false`, `template_family=notebooklm_dual_panel`, and an `assets.jsonl` registry event.
+- Required connector parity: when the HyperFrames path is claimed, the output must also include `TOOLS_CONNECTORS_PLUGINS_ASSESSMENT` for `hyperframes_cli_local` and the upstream HyperFrames skill proof chain.
+- Required scene blueprint fields when this lane is used inside a generator draft: `template_family=notebooklm_dual_panel`, `visual_pattern`, `source_background`, `floating_panel_layers`, `kinetic_text_layers`, `lane_assignment`, and `proof_gate=hyperframes_proof_json`.
 - Anti-drift: This subskill simulates the NotebookLM visual style locally. It must not claim to operate Google NotebookLM or use actual cloud NotebookLM as a renderer.
 
 ## SECTION 8: EXECUTION RULES & CONSTRAINTS
@@ -81,7 +87,7 @@
 ## HYPERFRAMES INTEGRATION ADDENDUM
 - Utilizes the `notebooklm_dual_panel` project template.
 - Can render transparent WebM outputs using the `--alpha` flag if needed for overlay usage.
-- Uses control panel command: `python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-hyperframes`
+- Uses control panel command: `python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-hyperframes --project-root <project> --output <mp4> --template-family notebooklm_dual_panel --visual-pattern notebooklm_clean_dual_panel`
 - **Capabilities vs. Actual Web App Comparison**:
   - *Video Export*: Local HyperFrames supports programmatic, headless rendering to high-quality MP4/WebM videos directly. Actual Google NotebookLM has no video export (manual screen-recording looks amateur).
   - *Highlight & Audio Sync*: Local HyperFrames achieves millisecond-accurate text highlighting synced via GSAP timelines to the ElevenLabs voice track. Actual NotebookLM highlights dynamically as it streams text, which is impossible to sync to an audio track.
@@ -110,7 +116,7 @@
 component_id: SS-116-notebooklm-visual-style-orchestrator.subskill
 component_layer: SKILL
 component_name: Ss 116 Notebooklm Visual Style Orchestrator.Subskill
-route_families: [media_factory, repo_write_mode]
+route_families: [media_factory_handoff, visual_media_plan, media_factory_final_draft, media_factory, repo_write_mode]
 activation_triggers: route_family in [media_factory, repo_write_mode] or explicit registry selection
 upstream_inputs: [visual_context_packet, editing_timeline_packet, approval_packet]
 downstream_outputs: [media_quality_gate_packet]
@@ -136,7 +142,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 ## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_factory_profile
-route_family_resolved: [media_factory, repo_write_mode]
+route_family_resolved: [media_factory_handoff, visual_media_plan, media_factory_final_draft, media_factory, repo_write_mode]
 activation_triggers_resolved: [storyboard, visual plan]
 required_input_packets_resolved: [visual_context_packet, editing_timeline_packet, approval_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet]
@@ -152,3 +158,25 @@ human_approval_points_resolved: [approve_patch, approve_commit, reject]
 status_limits_resolved: [no provider-called claim without execution proof]
 evidence_used_for_resolution: component_path=skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md; component_id=SS-116-notebooklm-visual-style-orchestrator
 remaining_unknowns: none
+
+## BATCH 4 MEDIA FACTORY RUNTIME BINDING
+
+binding_stage: BATCH_4_ROUTE_SUBSKILL_RUNTIME_BOUND
+required_runtime_state_schemas:
+  - schemas/runtime_state/evidence_bundle.schema.json
+  - schemas/runtime_state/route_state_capsule.schema.json
+required_schema_bindings:
+  - schemas/media_factory/hyperframes_payload.schema.json
+  - schemas/media_factory/bridge_job_packet.schema.json
+  - schemas/media_factory/source_vs_render_packet.schema.json
+  - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+required_validator_bindings:
+  - validators/validate_evidence_bundle.py
+  - validators/validate_route_state_capsule.py
+  - validators/validate_hyperframes_payload.py
+  - validators/validate_bridge_job_packet.py
+  - validators/validate_source_vs_render_packet.py
+  - validators/validate_visual_qa_acceptance.py
+blocked_unlocks_after_batch4:
+  - local_engine_execution_claim_without_bridge_job_packet
+  - full_render_unlock_until_visual_qa

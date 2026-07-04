@@ -1,0 +1,16 @@
+{
+  "timestamp": "20260612_153547",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "reason_for_backup": "Controlled Patch Batch 7: add route-scope telemetry law validator and wire it into the aggregate runner.",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "sha256_before": "89303361ddc98bd65f645f0c65b69d9aac6a926cd0159bbec9e82500ebf4fe74",
+      "backup_path": "backups/controlled_patch_20260612_153547/validators/run_all_validators.cjs"
+    }
+  ],
+  "git_status_before_for_target_files": [
+    " M validators/run_all_validators.cjs"
+  ]
+}

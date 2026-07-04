@@ -8,6 +8,13 @@ from pathlib import Path
 
 HYPERFRAMES_BIN = "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/node_modules/.bin/hyperframes"
 CONTROL_PANEL_CLI = "/Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py"
+HYPERFRAMES_PROVIDER_ID = "hyperframes_cli_local"
+HYPERFRAMES_CONNECTOR_CONTRACT = "runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md"
+HYPERFRAMES_ORIGINAL_SKILL_PATHS = [
+    "/Users/apple/.codex/plugins/cache/openai-curated/hyperframes/3fdeeb49/skills/hyperframes/SKILL.md",
+    "/Users/apple/.codex/plugins/cache/openai-curated/hyperframes/3fdeeb49/skills/hyperframes-cli/SKILL.md",
+    "/Users/apple/.codex/plugins/cache/openai-curated/hyperframes/3fdeeb49/skills/hyperframes-registry/SKILL.md",
+]
 
 
 def build_hyperframes_render_plan(project_root: str, output_path: str, use_alpha: bool = False, execute: bool = False) -> dict:
@@ -37,10 +44,14 @@ def build_hyperframes_render_plan(project_root: str, output_path: str, use_alpha
         "execution_mode": "dry_run_plan_only",
         "local_engine_execution_used": False,
         "provider_execution_allowed": False,
+        "provider_id": HYPERFRAMES_PROVIDER_ID,
+        "connector_assessment_required": True,
+        "connector_assessment_contract": HYPERFRAMES_CONNECTOR_CONTRACT,
         "project_root": str(project),
         "project_root_exists": project.exists(),
         "output_path": str(output),
         "alpha_export_requested": use_alpha,
+        "original_skill_paths": HYPERFRAMES_ORIGINAL_SKILL_PATHS,
         "supported_layouts": ["split_card_horizontal", "fullscreen_text_center", "notebook_dual_panel"],
         "tool_role": "deterministic HTML/CSS/GSAP render planning for NotebookLM slides, programmatic cards, kinetic text, and WebM alpha overlays",
         "boundary": "HyperFrames does not replace DaVinci Resolve for 2.5D parallax or final assembly.",

@@ -1,0 +1,12 @@
+mission_id=yash_self_investment
+primary_music_lane=Suno_or_approved_licensed_library
+primary_sfx_lane=Suno_or_approved_licensed_library
+repo_music_dir=outputs/missions/yash_self_investment/music/
+repo_sfx_dir=outputs/missions/yash_self_investment/sfx/
+control_panel_music_target=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/music/music.wav
+control_panel_sfx_target=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/sfx/sfx.wav
+proof_target=outputs/missions/yash_self_investment/proofs/music_sfx_status.txt
+
+notes:
+- Music and SFX should follow voice alignment timing, not precede it.
+- Temporary local stub audio may be used only for preview or timing support and must not be mislabeled as provider output.

@@ -22,6 +22,15 @@ provider_execution_allowed_after_approval: false
 fail_rules: [provider execution claim without approval, context output before route manifest, missing provider boundary]
 partial_rules: [missing provider availability disclosed]
 pass_rules: [all locks pass, provider boundary explicit, no execution claim]
+validator_false_pass_hardening:
+  self_reported_fields_non_authoritative: true
+  hard_fail_if_any_mandatory_output_block_missing: true
+  hard_fail_if_required_lock_status_not_pass: true
+  hard_fail_if_alias_route_id_contradiction_present: true
+  hard_fail_if_wrapper_output_order_invalid: true
+validator_required_checks: [shadow_command_alias_detected, internal_wrapper_applied, route_manifest_loaded, voice_generation_context_present, image_generation_context_present, video_generation_context_present, editing_context_present, provider_boundary_present, weakest_layer_status_respected]
+structured_output_rule_keys: [context_engineering_core, provider_boundary]
+conditional_required_locks_current_terms: [SOURCE_RESEARCH_LOCK]
 create_missing_registry_binding: false
 
 # MAC-06.1P-C route binding enforcement

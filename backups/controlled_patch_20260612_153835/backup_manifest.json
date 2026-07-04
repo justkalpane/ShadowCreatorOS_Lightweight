@@ -1,0 +1,13 @@
+{
+  "timestamp": "20260612_153835",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "reason_for_backup": "Controlled Patch Batch 8: add explicit runner fixture probes for visual depth and duplicate-read validators.",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "sha256_before": "809a594150ef36d83ede86321015d6d8f2e7bebe576031220552f727425ec99c",
+      "backup_path": "backups/controlled_patch_20260612_153835/validators/run_all_validators.cjs"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# P1 Blocker Ledger
+
+| blocker_id | title | repository / evidence file | lines | root cause | why blocks production | repair strategy | owner | validation_status | first_drift_point | generic_model_fallback | validator_escape_path |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SG-P1-001 | Route-slice integrity proof gap | `registries/route_manifests/script_generation.yaml`, `registries/route_slices/script_generation.registry_slice.yaml`, `runtime_contracts/MAC_06_SCRIPT_MEDIA_FACTORY_ACCEPTANCE_TESTS.md` | `registries/...:119, 178-210`; `route_slices/...:63-66`; `acceptance:64-85, 146-159` | Canonical routing does not elevate `VALIDATION_SCORECARD` or `script_integrity_lock`, but acceptance tests require them. | The canonical route can look complete while still failing acceptance. | Promote the missing integrity surface into the canonical route/route-slice proof set. | Routing / registry maintenance | VERIFIED | `mandatory_output_blocks` | false | `quality_scorecard_validation_pass` |
+| SG-P1-002 | Source breadth is too narrow | `/Users/apple/.codex/attachments/b1a5eaa5-e7a3-44f5-a1a9-9494f8360a6a/pasted-text.txt` | 60-85 | Only two sources were used and both are the same source type. | The real-person proof is weaker than the route requires when suitable sources exist. | Add a third source category and keep the source ledger structurally complete. | Research / Valmiki | VERIFIED | `SOURCE_LEDGER` | false | `real_person_source_count_below_three` |
+

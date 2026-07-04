@@ -58,8 +58,8 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
         "opening_hook_variants_required": 3,
         "recurring_rehook_required": 3 <= duration_minutes <= 10,
         "required_internal_rehook_count": _required_internal_rehooks(duration_minutes),
-        "default_rehook_interval_seconds": "70-90",
-        "max_gap_without_rehook_seconds": 90,
+                "default_rehook_interval_seconds": "25-30",
+                "max_gap_without_rehook_seconds": 30,
         "rehook_interval_dynamic": True,
         "rehook_interval_reason_required": True,
         "cta_hook_required": True,
@@ -94,7 +94,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 
 # MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
 # M-039 owns recurring re-hook planning. A 3-10 minute YouTube script must
-# carry dynamic 70-90 second retention resets, topic binding, and downstream
+# carry dynamic 25-30 second retention resets, topic binding, and downstream
 # mappings before it can pass packaging or Media Factory handoff.
 
 

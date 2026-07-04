@@ -51,7 +51,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
             "recurring_open_loop_required": True,
-            "default_rehook_interval_seconds": "70-90",
+            "default_rehook_interval_seconds": "25-30",
             "payoff_mapping_required": True,
         },
     }

@@ -1,0 +1,195 @@
+{
+  "all_hashes_present": false,
+  "all_required_assets_present": false,
+  "assets": [
+    {
+      "asset_class": "base_image",
+      "asset_id": "asset-base_image",
+      "class_specific_validation": {
+        "validation_name": "base_image_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/base_image.bin",
+      "required_for_pilot": true,
+      "sha256": "cf7733aeb8868f40a4a68975a5fa4aee217ad1fc74cbf3ff77499ee0d29ad8ff",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-base_image",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/creative_intent_packet.json",
+        "sha256": "a964e29a6c9a78b133c696347d3f7bbdfba13d0e57d0f4bcfc6ae96566f4b521"
+      },
+      "status": "PRESENT"
+    },
+    {
+      "asset_class": "depth_map",
+      "asset_id": "asset-depth_map",
+      "class_specific_validation": {
+        "validation_name": "depth_map_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/depth_map.bin",
+      "required_for_pilot": true,
+      "sha256": "52f6c4c406050e0f45b3669a6ada615af67f38b70a5191ed5b9b9239c92b7920",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-depth_map",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "ed91da0669899bf541ef8e3f05e138521e68c982c60fb3ad5197b76f15cb663c"
+      },
+      "status": "PRESENT"
+    },
+    {
+      "asset_class": "hyperframes_overlay",
+      "asset_id": "asset-hyperframes_overlay",
+      "class_specific_validation": {
+        "validation_name": "hyperframes_overlay_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/hyperframes_overlay.bin",
+      "required_for_pilot": true,
+      "sha256": "b1272bae660ce366be152c7b65f3b29d5625ee3e987c6a4ba3db7f6753761360",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-hyperframes_overlay",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "8b55b282a6eccbcb81d4d93d55db88dbea25da7f90aabde5045b7c9942985f50"
+      },
+      "status": "PRESENT"
+    },
+    {
+      "asset_class": "ffmpeg_filtergraph",
+      "asset_id": "asset-ffmpeg_filtergraph",
+      "class_specific_validation": {
+        "validation_name": "ffmpeg_filtergraph_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/ffmpeg_filtergraph.bin",
+      "required_for_pilot": true,
+      "sha256": "afe335c29df57508eeea4dfc22089ada9af6a085244ed49faa7b1b44aa22f25a",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-ffmpeg_filtergraph",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "f830f9c255ab37cfc696e1cc8b41a9ca71fb2741d99ef66ef4ad81a885b2ee9d"
+      },
+      "status": "PRESENT"
+    },
+    {
+      "asset_class": "source_vs_render_packet",
+      "asset_id": "asset-source_vs_render_packet",
+      "class_specific_validation": {
+        "validation_name": "source_vs_render_packet_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_packet.json",
+      "required_for_pilot": true,
+      "sha256": "c3846cdd6d3c4c45c4837e81614dac936eac602a5c5d3048e0b69f3be010f3d1",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-source_vs_render_packet",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "43edf8154ad79427f7e77af4b6557c5862aeb489ff879141f0ddcad6fec682b3"
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "asset_class": "contact_sheet",
+      "asset_id": "asset-contact_sheet",
+      "class_specific_validation": {
+        "validation_name": "contact_sheet_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.bin",
+      "required_for_pilot": true,
+      "sha256": "2002d18da84ad01ce708fe71885352c48a146d1a389ed303ebec5edc795f6806",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-contact_sheet",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "f242a45ee7a51c3c4b5f1e40cc019afdf2c64ebc458cb66544fcd98b0d7d2a82"
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "asset_class": "visual_qa_packet",
+      "asset_id": "asset-visual_qa_packet",
+      "class_specific_validation": {
+        "validation_name": "visual_qa_packet_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/visual_qa_packet.json",
+      "required_for_pilot": true,
+      "sha256": "f9756f6eb900a43106f7effa7a104e91eadb0c89ee8746eb92b766a569b51c36",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-visual_qa_packet",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "5967efe4e6a7fc0b3499485d401579447c99e90d00fc4ac01e8af6977cd34da8"
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "asset_class": "human_review_packet",
+      "asset_id": "asset-human_review_packet",
+      "class_specific_validation": {
+        "validation_name": "human_review_packet_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/human_review_packet.json",
+      "required_for_pilot": true,
+      "sha256": "3e8791171a988912e6e8676d82d4d872249f664919f5c66f3bd2e6ef0feaea9d",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-human_review_packet",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "c501559d171824da266f9fdb06cc9ec85401fe4b9764d33ca424043f5c37b599"
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "asset_class": "approval_token",
+      "asset_id": "asset-approval_token",
+      "class_specific_validation": {
+        "validation_name": "approval_token_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/approval_token.bin",
+      "required_for_pilot": true,
+      "sha256": "b576ae1ea6be3d0a98230d74ddfdd99b92e7a058a5a7a19ce7b11e6278e11b4c",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-approval_token",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "9c383a4e90ea85c5e4417b6df41bac3bbd8927c4e37c2a6e7c6666af04984d69"
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "asset_class": "runtime_proof_bundle",
+      "asset_id": "asset-runtime_proof_bundle",
+      "class_specific_validation": {
+        "validation_name": "runtime_proof_bundle_validation",
+        "validation_status": "PENDING"
+      },
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/runtime_proof_bundle.json",
+      "required_for_pilot": true,
+      "sha256": "c4a0b44702db39e26736acdb5635d62f70218e0f463baabfe62f01ee17b9176a",
+      "source_packet_ref": {
+        "artifact_id": "srcpkt-runtime_proof_bundle",
+        "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+        "sha256": "7ba81f1de2676852c81e344059ef8258988a75aed514d30b9f4d3fa5a073594d"
+      },
+      "status": "BLOCKED"
+    }
+  ],
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "evidence_bundle_id": "EB-C04A-001",
+  "job_id": "JOB-C04A-PILOT-001",
+  "manifest_id": "ASM-C04A-001",
+  "required_asset_classes": [
+    "base_image",
+    "depth_map",
+    "hyperframes_overlay",
+    "ffmpeg_filtergraph",
+    "source_vs_render_packet",
+    "contact_sheet",
+    "visual_qa_packet",
+    "human_review_packet",
+    "approval_token",
+    "runtime_proof_bundle"
+  ],
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0"
+}

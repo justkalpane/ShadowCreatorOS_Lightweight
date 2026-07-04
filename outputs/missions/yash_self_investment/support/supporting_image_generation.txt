@@ -1,0 +1,12 @@
+mission_id=yash_self_investment
+primary_still_lane=ChatGPT_image_generation_or_approved_still_provider
+backup_lane=none_declared_for_production_primary
+scene_prompt_packet=outputs/missions/yash_self_investment/packets/scene_prompt_packets.json
+storyboard_export_packet=outputs/missions/yash_self_investment/packets/storyboard_export_packet.json
+repo_images_dir=outputs/missions/yash_self_investment/images/
+control_panel_images_dir=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/images/
+proof_target=outputs/missions/yash_self_investment/proofs/storyboard_status.txt
+
+notes:
+- Storyboard stills and character reference assets must be generated before depth maps and premium cinematic B-roll.
+- Output names must stay synchronized with the storyboard export packet.

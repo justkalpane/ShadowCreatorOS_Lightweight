@@ -1,0 +1,4 @@
+Here is a script about AI tools failing when creators do not build systems first.
+
+This intentionally starts as generic output before repo routing.
+proof_classification=PASS

@@ -1,0 +1,51 @@
+{
+  "bt709_required": true,
+  "chains": {
+    "color_stage": {
+      "color_space": "bt709"
+    },
+    "concat_stage": {
+      "no_hidden_double_encode": true
+    },
+    "depth_stage": {
+      "depth_proxy_method": "displace",
+      "proof_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/depth_stage_proof.json"
+    },
+    "encode_stage": {
+      "crf": 20,
+      "pix_fmt": "yuv420p"
+    },
+    "overlay_stage": {
+      "alpha_mode": "premultiplied",
+      "blend_mode": "screen",
+      "proof_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/overlay_stage_proof.json"
+    },
+    "scale_stage": {
+      "scale_algorithm": "lanczos"
+    }
+  },
+  "command_log_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/ffmpeg_command.log",
+  "crf": 20,
+  "cut_id": "C04a",
+  "ffmpeg_governance_id": "FFMPEG-GOV-C04A-001",
+  "filtergraph_snapshot_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/filtergraph_snapshot.txt",
+  "forbidden_methods": [
+    "boxblur",
+    "gblur",
+    "maskedmerge_only",
+    "bilinear",
+    "default_scale",
+    "ffprobe_only_pass",
+    "file_exists_only_pass",
+    "hash_only_pass"
+  ],
+  "job_id": "JOB-C04A-PILOT-001",
+  "no_hidden_double_encode": true,
+  "pix_fmt": "yuv420p",
+  "proof_artifacts": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/ffmpeg_command.txt",
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/filtergraph.txt"
+  ],
+  "scale_flags": "lanczos",
+  "schema_version": "1.0.0"
+}

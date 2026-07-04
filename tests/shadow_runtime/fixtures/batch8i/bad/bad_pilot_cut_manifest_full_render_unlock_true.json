@@ -1,0 +1,82 @@
+{
+  "approval_token_ref": {
+    "artifact_id": "approval-token",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/approval_token.json",
+    "sha256": "b20f97ddb9eb4056e37a4ca473e8096484267452455b58e4fd756e75ab6d5bd5"
+  },
+  "audio_allowed": false,
+  "base_image_ref": {
+    "artifact_id": "base-image",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/base_image.png",
+    "sha256": "be1cb8747ea0d1fdff1bb85625042aa4bc6da052c486a0e341c541e882f917bf"
+  },
+  "blocked_reasons": [
+    "pilot_not_accepted",
+    "human_review_required"
+  ],
+  "contact_sheet_ref": {
+    "artifact_id": "contact-sheet",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.png",
+    "sha256": "92d66c9b838d94b80882a479fec6d27ce598f6d99ef69c5c4773c8f50840e44a"
+  },
+  "created_at": "2026-06-22T00:00:00Z",
+  "creative_intent_packet_ref": {
+    "artifact_id": "creative-intent-packet",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/creative_intent_packet.json",
+    "sha256": "324695d5935d854f0474bd68a856dfd7abc5efe99ecd3bd8c077c5200bdf2b5e"
+  },
+  "davinci_allowed": false,
+  "depth_map_ref": {
+    "artifact_id": "depth-map",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/depth_map.png",
+    "sha256": "572c8e8922766bdb0bb7271fa9a3ac9521bb00b872c4458ad08ed0dd07cbaf22"
+  },
+  "duration_seconds": 58,
+  "encode_profile": "crf18_bt709_lanczos",
+  "evidence_bundle_id": "EB-C04A-001",
+  "execution_allowed": false,
+  "expected_frame_count": 1392,
+  "experiment_type": "controlled_diagnostic_cut",
+  "ffmpeg_filtergraph_ref": {
+    "artifact_id": "ffmpeg-filtergraph",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/ffmpeg_filtergraph.txt",
+    "sha256": "bd7e8c211817c86c6edea56d3eaf077bcc2fcb96eb43d0a2d123d7328cd3b84f"
+  },
+  "fps": 24,
+  "full_render_unlock_allowed": true,
+  "human_review_ref": {
+    "artifact_id": "human-review-packet",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/human_review_packet.json",
+    "sha256": "0cbcd54bef3cdb9fb87c822ac66207df6f810ab0b19fb15143e949c7aabe9b99"
+  },
+  "hyperframes_overlay_ref": {
+    "artifact_id": "hyperframes-overlay",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/hyperframes_overlay.webm",
+    "sha256": "4bb2457aa40d5ebb43e2df7fc2d7c0dd1d523d721fdc99cc43c4445e8dcebeb7"
+  },
+  "job_id": "JOB-C04A-PILOT-001",
+  "manifest_id": "PM-C04A-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "pilot_cut_id": "C04a",
+  "provider_allowed": false,
+  "resolution": {
+    "height": 1080,
+    "width": 1920
+  },
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "script_line_ref": "M1-L42",
+  "source_vs_render_ref": {
+    "artifact_id": "source-vs-render-report",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+    "sha256": "d431ab1ee71cc5544f19ff31ab823b400e0f9b0cdfc63807779aa43d52425b42"
+  },
+  "status": "BLOCKED",
+  "visual_intent": "C04a pilot cut proving blocked-safe visual truth without unlocking full render.",
+  "visual_qa_ref": {
+    "artifact_id": "visual-qa-packet",
+    "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/visual_qa_packet.json",
+    "sha256": "b44dbc31ba2074619d7d197ccf0d545fba1ae0e6b4356452b16ba4ad84e8386e"
+  }
+}

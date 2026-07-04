@@ -1,0 +1,15 @@
+mission_id=yash_self_investment
+production_support_started=true
+preflight_storyboard_status=PASS
+preflight_proof=/Users/apple/ShadowMediaFactory/control_panel/proofs/preflight_storyboard_bengaluru_honesty_gate.json
+local_stack_status=usable_for_preview_support
+provider_execution_user_approval=true
+provider_execution_direct_tooling_available_in_codex_session=false
+primary_provider_lanes_pending=ElevenLabs,HeyGen,Suno,premium_cinematic_broll
+local_preview_artifacts_started=true
+cleanup_policy=keep_required_delete_temporary
+
+notes:
+- The repo mission bundle has been created and normalized.
+- A local scratch narration and captions were generated for timing preview only.
+- No provider render is being claimed complete from this status file.

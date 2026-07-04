@@ -1,0 +1,40 @@
+{
+  "alpha_mode": "premultiplied",
+  "animation_duration": 4.0,
+  "blend_mode": "screen",
+  "contact_sheet_proof": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.png",
+  "frame_rate": 24.0,
+  "human_review_required": true,
+  "loop_behavior": "hold_last_frame",
+  "opacity_max": 0.65,
+  "opacity_min": 0.15,
+  "overlay_category": "kinetic_text",
+  "overlay_end_time": 4.0,
+  "overlay_id": "HF-C04A-001",
+  "overlay_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/hyperframes_overlay.webm",
+  "overlay_purpose": "state the decision without obscuring the hero frame",
+  "overlay_sha256": "4bb2457aa40d5ebb43e2df7fc2d7c0dd1d523d721fdc99cc43c4445e8dcebeb7",
+  "overlay_start_time": 0.0,
+  "position": {
+    "anchor": "top_left",
+    "x": 0.1,
+    "y": 0.08
+  },
+  "safe_zone": {
+    "height": 0.22,
+    "width": 0.88,
+    "x": 0.06,
+    "y": 0.06
+  },
+  "scale": {
+    "height": 0.26,
+    "scale_mode": "fit",
+    "width": 0.88
+  },
+  "scene_relevance": "supports the self-investment beat",
+  "schema_version": "1.0.0",
+  "source_vs_render_proof": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json",
+  "subject_occlusion_limit": 0.9,
+  "visual_noise_limit": 0.25,
+  "z_order": 5
+}

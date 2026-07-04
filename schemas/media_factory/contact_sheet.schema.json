@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Contact Sheet",
+  "description": "Contact sheet traceability record with at least four frame points and explicit source/render/diff hashes for each row.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contact_sheet_id",
+    "job_id",
+    "cut_id",
+    "source_vs_render_packet_id",
+    "frame_points",
+    "layout",
+    "label_format",
+    "generation_log_path",
+    "contact_sheet_path",
+    "contact_sheet_sha256",
+    "human_review_required",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "contact_sheet_id": {
+      "type": "string",
+      "pattern": "^CSH-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_vs_render_packet_id": {
+      "type": "string",
+      "pattern": "^SVR-[A-Za-z0-9_-]+$"
+    },
+    "frame_points": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "frame_id",
+          "timestamp",
+          "source_frame_path",
+          "render_frame_path",
+          "diff_frame_path",
+          "source_sha256",
+          "render_sha256",
+          "diff_sha256",
+          "visual_note",
+          "risk_flags"
+        ],
+        "properties": {
+          "frame_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "timestamp": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_frame_path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "render_frame_path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "diff_frame_path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "render_sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "diff_sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "visual_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "risk_flags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "columns",
+        "style"
+      ],
+      "properties": {
+        "rows": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "style": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "label_format": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generation_log_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "contact_sheet_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "contact_sheet_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

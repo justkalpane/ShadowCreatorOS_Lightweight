@@ -67,7 +67,11 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "skill_id": "S-202",
         }
     if not isinstance(recurring_rehook_map, list) or not recurring_rehook_map:
-        recurring_rehook_map = _default_rehook_map(duration_minutes)
+        return {
+            "status": "failed",
+            "error": "missing recurring_rehook_map",
+            "skill_id": "S-202",
+        }
 
     if _is_strict_packet_mode(input_payload):
         return {
@@ -79,7 +83,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "translation_localization_separate_stage": True,
             "recurring_rehook_required": 3 <= duration_minutes <= 10,
             "recurring_rehook_count": len(recurring_rehook_map),
-            "max_gap_without_rehook_seconds": 90,
+            "max_gap_without_rehook_seconds": 30,
             "recurring_rehook_map": recurring_rehook_map,
             "cta_hook_required": True,
             "section_plan": [

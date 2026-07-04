@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Full Render Unlock Packet",
+  "description": "Explicit full render unlock packet. Full render remains blocked unless pilot acceptance and cut-ledger completion are proven.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "unlock_packet_id",
+    "mission_id",
+    "job_id",
+    "pilot_cut_id",
+    "pilot_accepted",
+    "pilot_acceptance_token_id",
+    "all_required_cut_ledgers_complete",
+    "full_render_allowed",
+    "audio_allowed",
+    "provider_allowed",
+    "davinci_allowed",
+    "blocked_reasons",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "unlock_packet_id": {
+      "type": "string",
+      "pattern": "^FRU-[A-Za-z0-9_-]+$"
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "pilot_cut_id": {
+      "type": "string",
+      "const": "C04a"
+    },
+    "pilot_accepted": {
+      "type": "boolean"
+    },
+    "pilot_acceptance_token_id": {
+      "type": "string",
+      "pattern": "^TOK-[A-Za-z0-9_-]+$"
+    },
+    "all_required_cut_ledgers_complete": {
+      "type": "boolean"
+    },
+    "full_render_allowed": {
+      "type": "boolean"
+    },
+    "audio_allowed": {
+      "type": "boolean"
+    },
+    "provider_allowed": {
+      "type": "boolean"
+    },
+    "davinci_allowed": {
+      "type": "boolean"
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "full_render_allowed": {
+            "const": true
+          }
+        },
+        "required": [
+          "full_render_allowed"
+        ]
+      },
+      "then": {
+        "properties": {
+          "pilot_accepted": {
+            "const": true
+          },
+          "all_required_cut_ledgers_complete": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "full_render_allowed": {
+            "const": false
+          }
+        },
+        "required": [
+          "full_render_allowed"
+        ]
+      },
+      "then": {
+        "properties": {
+          "blocked_reasons": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

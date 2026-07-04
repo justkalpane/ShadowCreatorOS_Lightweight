@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/visual_qa_acceptance_packet.schema.json",
+  "title": "Shadow Visual QA Acceptance Packet",
+  "description": "Visual QA gate packet requiring contact sheet, source-vs-render evidence, and human review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_bundle_id",
+    "contact_sheet_path",
+    "source_vs_render_packet_path",
+    "human_review_packet",
+    "qa_status",
+    "visual_qa_required",
+    "contact_sheet_required",
+    "source_vs_render_required",
+    "human_review_required",
+    "production_pass_allowed"
+  ],
+  "properties": {
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+-[0-9]{8}-[A-Za-z0-9_-]+$"
+    },
+    "contact_sheet_path": {"type": "string", "pattern": "^/"},
+    "source_vs_render_packet_path": {"type": "string", "pattern": "^/"},
+    "human_review_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_status"
+      ],
+      "properties": {
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "PENDING",
+            "APPROVED",
+            "REJECTED"
+          ]
+        },
+        "reviewer": {"type": "string", "minLength": 1},
+        "notes": {"type": "string", "minLength": 1}
+      }
+    },
+    "qa_status": {
+      "type": "string",
+      "enum": [
+        "blocked",
+        "ready_for_review",
+        "approved"
+      ]
+    },
+    "visual_qa_required": {"type": "boolean", "const": true},
+    "contact_sheet_required": {"type": "boolean", "const": true},
+    "source_vs_render_required": {"type": "boolean", "const": true},
+    "human_review_required": {"type": "boolean", "const": true},
+    "production_pass_allowed": {"type": "boolean", "const": false}
+  }
+}

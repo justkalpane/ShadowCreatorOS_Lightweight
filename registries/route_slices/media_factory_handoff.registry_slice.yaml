@@ -1,0 +1,94 @@
+slice_id: media_factory_handoff
+route_id: MEDIA_FACTORY_HANDOFF
+task_mode: script_plus_media_factory_handoff
+source_manifest: registries/route_manifests/media_factory_handoff.yaml
+inherits_from: registries/route_slices/visual_media_generation_draft.registry_slice.yaml
+additional_registries:
+  - registries/local_media_factory_bridge.yaml
+  - registries/provider_registry.yaml
+additional_contracts:
+  - runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+  - runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md
+  - runtime_contracts/NO_FAKE_PASS_GATE.md
+  - runtime_contracts/PILOT_CUT_VALIDATION_GATE.md
+  - runtime_contracts/MEDIA_FACTORY_ROUTE_RUNTIME_BINDING_CONTRACT.md
+  - runtime_contracts/CHITRAGUPTA_AUDIT_EVENT_BINDING_CONTRACT.md
+additional_output_contracts:
+  - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS
+  - PROVIDER_HONESTY_GATE
+  - TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+  - MEDIA_FACTORY_EVIDENCE_GATE
+validators:
+  - validators/validate_evidence_bundle.py
+  - validators/validate_route_state_capsule.py
+  - validators/validate_bridge_job_packet.py
+  - validators/validate_final_visual_media_generation_draft.py
+  - validators/validate_depth_map_packet.py
+  - validators/validate_ffmpeg_filtergraph_packet.py
+  - validators/validate_hyperframes_payload.py
+  - validators/validate_comfyui_payload.py
+  - validators/validate_source_vs_render_packet.py
+  - validators/validate_visual_qa_acceptance.py
+  - validators/validate_pilot_cut_validation_packet.py
+  - validators/validate_audio_authorization_packet.py
+  - validators/validate_davinci_handoff_packet.py
+  - validators/validate_pilot_cut_manifest.py
+  - validators/validate_source_vs_render_artifact.py
+  - validators/validate_visual_qa_artifact.py
+  - validators/validate_contact_sheet.py
+  - validators/validate_human_review_packet.py
+  - validators/validate_approval_token.py
+  - validators/validate_c04a_asset_manifest.py
+  - validators/validate_approval_gate_matrix.py
+  - validators/validate_chitragupta_audit_event.py
+  - validators/validate_vayu_preflight.py
+  - validators/validate_kubera_gate.py
+  - validators/validate_yama_policy_gate.py
+  - validators/validate_creative_intent_packet.py
+  - validators/validate_packet_handoff_chain.py
+  - validators/validate_cut_level_visual_ledger.py
+  - validators/validate_full_render_unlock_packet.py
+  - validators/validate_c18_comfyui_failure_state.py
+  - validators/validate_tool_provider_boundary.py
+  - validators/validate_ffmpeg_filtergraph_governance.py
+  - validators/validate_depth_true_parallax.py
+  - validators/validate_hyperframes_composition.py
+runtime_state_schemas:
+  - schemas/runtime_state/evidence_bundle.schema.json
+  - schemas/runtime_state/route_state_capsule.schema.json
+  - schemas/governance/patch_transaction.schema.json
+packet_schemas:
+  - schemas/media_factory/bridge_job_packet.schema.json
+  - schemas/media_factory/final_visual_media_generation_draft.schema.json
+  - schemas/media_factory/depth_map_packet.schema.json
+  - schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+  - schemas/media_factory/hyperframes_payload.schema.json
+  - schemas/media_factory/comfyui_workflow_payload.schema.json
+  - schemas/media_factory/source_vs_render_packet.schema.json
+  - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+  - schemas/media_factory/pilot_cut_validation_packet.schema.json
+  - schemas/governance/audio_authorization_packet.schema.json
+  - schemas/governance/davinci_handoff_packet.schema.json
+runtime_packet_requirements:
+  evidence_bundle_required_for_pass_claims: true
+  route_state_capsule_required: true
+  chitragupta_audit_event_required_for_route_state_transitions: true
+  bridge_job_packet_required_for_local_handoff: true
+  patch_transaction_required_for_repo_write_claims: true
+  blocked_execution_unlocks:
+    - full_render_unlock_until_pilot_pass
+    - audio_unlock_until_visual_acceptance
+    - provider_unlock_without_explicit_approval
+    - davinci_unlock_until_visual_and_audio_acceptance
+    - no_fake_pass_route_regression
+blocked_files:
+  - downloads/chat_transcript.txt
+historical_file_policy: disallow_unless_drift_audit_or_explicit_reference
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true
+  ROUTE_STATE_CAPSULE_REQUIRED_FOR_PASS_CLAIMS: true
+  EVIDENCE_BUNDLE_REQUIRED_FOR_PASS_CLAIMS: true
+  BRIDGE_JOB_PACKET_REQUIRED_FOR_LOCAL_HANDOFF: true

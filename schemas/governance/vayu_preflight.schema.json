@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Vayu Preflight",
+  "description": "Resource-gate preflight packet for local execution. If this gate is not PASS, local execution remains blocked.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vayu_preflight_id",
+    "job_id",
+    "cut_id",
+    "disk_free_gb",
+    "ram_free_gb",
+    "cpu_load_percent",
+    "gpu_available",
+    "vram_available",
+    "thermal_state",
+    "ffmpeg_available",
+    "hyperframes_available",
+    "comfyui_available",
+    "estimated_runtime_seconds",
+    "resource_gate_status",
+    "blocked_reason",
+    "timestamp",
+    "proof_path",
+    "schema_version"
+  ],
+  "properties": {
+    "vayu_preflight_id": {
+      "type": "string",
+      "pattern": "^VAY-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "disk_free_gb": {
+      "type": "number",
+      "minimum": 0
+    },
+    "ram_free_gb": {
+      "type": "number",
+      "minimum": 0
+    },
+    "cpu_load_percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "gpu_available": {
+      "type": "boolean"
+    },
+    "vram_available": {
+      "type": "number",
+      "minimum": 0
+    },
+    "thermal_state": {
+      "type": "string",
+      "enum": [
+        "COOL",
+        "WARM",
+        "HOT",
+        "UNKNOWN"
+      ]
+    },
+    "ffmpeg_available": {
+      "type": "boolean"
+    },
+    "hyperframes_available": {
+      "type": "boolean"
+    },
+    "comfyui_available": {
+      "type": "boolean"
+    },
+    "estimated_runtime_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "resource_gate_status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "blocked_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "proof_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

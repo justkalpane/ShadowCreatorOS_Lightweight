@@ -1,0 +1,51 @@
+{
+  "timestamp": "20260612_150423",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "batch": "Batch 3 - PASS-sensitive validator normalizer wiring",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/run_all_validators.cjs",
+      "sha256_before": "8b50f0ca47473c7001310eef36a159bd0d6e3a2f287a02509c4a19cde61b94bf",
+      "sha256_backup": "8b50f0ca47473c7001310eef36a159bd0d6e3a2f287a02509c4a19cde61b94bf"
+    },
+    {
+      "path": "validators/validate_route_claim_evidence_consistency.py",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/validate_route_claim_evidence_consistency.py",
+      "sha256_before": "0e6d7d9a8f7e22b7f8e7f6c4f7fbc2f57de045ee54cc9f2ceed469daa7e9e971",
+      "sha256_backup": "0e6d7d9a8f7e22b7f8e7f6c4f7fbc2f57de045ee54cc9f2ceed469daa7e9e971"
+    },
+    {
+      "path": "validators/validate_source_freshness_url_ledger.py",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/validate_source_freshness_url_ledger.py",
+      "sha256_before": "3fcf95cc8a013517a6290455e7c956367ab1787719b4e905501da3faeeb709e9",
+      "sha256_backup": "3fcf95cc8a013517a6290455e7c956367ab1787719b4e905501da3faeeb709e9"
+    },
+    {
+      "path": "validators/validate_dominant_failure_classifier.py",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/validate_dominant_failure_classifier.py",
+      "sha256_before": "e477e5e92e61c593b759adf2b28d64d6c7f2dc2f9807b44d2b1ecd842890dacf",
+      "sha256_backup": "e477e5e92e61c593b759adf2b28d64d6c7f2dc2f9807b44d2b1ecd842890dacf"
+    },
+    {
+      "path": "validators/validate_evidence_scope_claims.py",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/validate_evidence_scope_claims.py",
+      "sha256_before": "af94f07b64be8e5c957897ac78a0eb5f49e36d7e8a15f0b8954d837f326a6df1",
+      "sha256_backup": "af94f07b64be8e5c957897ac78a0eb5f49e36d7e8a15f0b8954d837f326a6df1"
+    },
+    {
+      "path": "validators/validate_route_state_capsule.py",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/validate_route_state_capsule.py",
+      "sha256_before": "7997c503acca7159232eb774323cc846ecce35070e311d817d468bd87114dab5",
+      "sha256_backup": "7997c503acca7159232eb774323cc846ecce35070e311d817d468bd87114dab5"
+    },
+    {
+      "path": "validators/validate_packet_ready_artifacts.py",
+      "backup_path": "backups/controlled_patch_20260612_150423/validators/validate_packet_ready_artifacts.py",
+      "sha256_before": "fff6991199af04251de5779fcd7944180266bdb08f689ac020012617a945748a",
+      "sha256_backup": "fff6991199af04251de5779fcd7944180266bdb08f689ac020012617a945748a"
+    }
+  ],
+  "reason_for_backup": "Batch 3 modifies PASS-sensitive validators and runner fixture probes."
+}

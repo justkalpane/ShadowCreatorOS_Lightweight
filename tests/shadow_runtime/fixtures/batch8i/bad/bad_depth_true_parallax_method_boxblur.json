@@ -1,0 +1,32 @@
+{
+  "base_image_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/base_image.png",
+  "base_image_sha256": "be1cb8747ea0d1fdff1bb85625042aa4bc6da052c486a0e341c541e882f917bf",
+  "contact_sheet_frame": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.png",
+  "depth_inversion_policy": "invert_white_near",
+  "depth_map_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/depth_map.png",
+  "depth_map_sha256": "572c8e8922766bdb0bb7271fa9a3ac9521bb00b872c4458ad08ed0dd07cbaf22",
+  "depth_normalization": {
+    "method": "minmax",
+    "range_max": 1.0,
+    "range_min": 0.0
+  },
+  "depth_parallax_id": "DEPTH-C04A-001",
+  "dimension_match": true,
+  "displacement_method": "boxblur",
+  "edge_artifact_policy": "avoid visible edge tearing and keep borders clean",
+  "forbidden_depth_methods": [
+    "blur",
+    "boxblur",
+    "gblur",
+    "maskedmerge_only",
+    "depth_map_exists_only"
+  ],
+  "foreground_midground_background_policy": "foreground holds still while midground and background drift at distinct rates",
+  "human_review_required": true,
+  "motion_amplitude": 0.15,
+  "motion_axis": "horizontal",
+  "occlusion_policy": "preserve subject readability and avoid false occlusion",
+  "rendered_motion_sample": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/rendered_motion_sample.png",
+  "schema_version": "1.0.0",
+  "source_vs_render_proof": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+}

@@ -374,7 +374,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_YAMA
 component_layer: DIRECTOR
 component_name: Yama
-route_families: [approval_gate, repo_write_mode]
+route_families: [script_refinement, script_generation, full_video_pipeline, approval_gate, repo_write_mode]
 activation_triggers: route_family in [publishing] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [lineage_packet, approval_packet, media_quality_gate_packet]
 downstream_outputs: [approval_packet, execution_authorization_packet]
@@ -402,7 +402,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: approval_gate_profile
-route_family_resolved: [approval_gate, repo_write_mode]
+route_family_resolved: [script_refinement, script_generation, full_video_pipeline, approval_gate, repo_write_mode]
 activation_triggers_resolved: [approval, oauth, permission]
 required_input_packets_resolved: [lineage_packet, approval_packet, media_quality_gate_packet]
 emitted_output_packets_resolved: [approval_packet, execution_authorization_packet]

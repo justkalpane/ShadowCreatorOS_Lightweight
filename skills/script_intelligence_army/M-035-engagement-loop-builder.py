@@ -25,8 +25,8 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
-                "default_rehook_interval_seconds": "70-90",
-                "max_gap_without_rehook_seconds": 90,
+                "default_rehook_interval_seconds": "25-30",
+                "max_gap_without_rehook_seconds": 30,
                 "every_major_section_needs_retention_reset": True,
             },
         },
@@ -35,7 +35,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 
 # MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
 # Engagement loops must enforce a dynamic retention reset at least every
-# 70-90 seconds unless the script packet carries a topic-specific reason.
+# 25-30 seconds unless the script packet carries a topic-specific reason.
 
 
 

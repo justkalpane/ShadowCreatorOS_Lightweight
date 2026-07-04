@@ -1,0 +1,82 @@
+{
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "route_manifest_path": "registries/route_manifests/media_factory_handoff.yaml",
+  "route_manifest_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "task_intent": "validator and fixture pass for media factory control packets",
+  "task_mode": "script_plus_media_factory_handoff",
+  "output_mode": "CHAT_ONLY_MODE",
+  "phase": "OUTPUT_PHASE_STARTED",
+  "last_completed_lock": "DEPENDENCIES_CONSUMED",
+  "next_required_lock": "BATCH3_REVIEW",
+  "evidence_scope": "persisted_route_state_with_hash",
+  "files_read": [
+    "AGENTS.md",
+    "registries/route_manifests/media_factory_handoff.yaml"
+  ],
+  "file_hashes": {
+    "AGENTS.md": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "registries/route_manifests/media_factory_handoff.yaml": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "selected_directors": [
+    "maya"
+  ],
+  "selected_agents": [
+    "vishwakarma_agent"
+  ],
+  "selected_subagents": [
+    "wf_400"
+  ],
+  "selected_skills": [
+    "M-216"
+  ],
+  "selected_subskills": [
+    "SS-117"
+  ],
+  "dependencies_complete": true,
+  "output_phase_started": true,
+  "read_ledger": [
+    {
+      "path": "AGENTS.md",
+      "file_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "first_read_phase": "BOOT_CONFIRMED",
+      "last_read_phase": "OUTPUT_PHASE_STARTED",
+      "read_count": 1,
+      "route_required": true,
+      "semantic_use_required": true,
+      "semantic_use_status": "USED"
+    }
+  ],
+  "consumed_files_ledger": [
+    {
+      "path": "registries/route_manifests/media_factory_handoff.yaml",
+      "contract_type": "route_manifest",
+      "consumed_for": "route selection",
+      "semantic_effect": "locked media factory route"
+    }
+  ],
+  "validator_status_ledger": [
+    {
+      "validator_file": "validators/validate_route_state_capsule.py",
+      "schema_file": "schemas/runtime_state/route_state_capsule.schema.json",
+      "fixture_set": "gold",
+      "status": "PASS",
+      "report_path": "/tmp/reports/route_state.json"
+    }
+  ],
+  "pass_fail_ledger": [
+    {
+      "claim": "batch3 ready for review",
+      "status": "PASS",
+      "evidence_bundle_id": "EVB-full_video_pipeline-20260621-c04a-pilot",
+      "validator_status": "PASS",
+      "human_override": false
+    }
+  ],
+  "blocked_state": "ready_for_review",
+  "unlocked_state": "batch2",
+  "evidence_bundle_id": "EVB-full_video_pipeline-20260621-c04a-pilot",
+  "proof_bundle_path": "/tmp/proofs/bundle",
+  "human_review_status": "PENDING",
+  "compaction_detected": true,
+  "final_output_allowed": true
+}

@@ -1,0 +1,71 @@
+{
+  "mission_id": "yash_self_investment",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "validation_status": "PASS",
+  "provider_execution_allowed": false,
+  "n8n_used": false,
+  "voice": {
+    "local_options": [
+      "none approved for final voice"
+    ],
+    "cloud_options": [
+      "elevenlabs_api after approval"
+    ],
+    "hybrid_strategy": "packet-ready only until approval",
+    "fallback": "record scratch/local scratch VO for timing only"
+  },
+  "image": {
+    "local_options": [
+      "hyperframes_cli_local",
+      "depth_anything_v2_local",
+      "davinci_resolve_local"
+    ],
+    "cloud_options": [
+      "stock or approved image provider after approval"
+    ],
+    "hybrid_strategy": "local slides/parallax, cloud only if storyboard image cannot be sourced locally",
+    "fallback": "CSS/vector slides or stock placeholders"
+  },
+  "video": {
+    "local_options": [
+      "animated storyboard lanes only"
+    ],
+    "cloud_options": [
+      "runway_ml_api",
+      "kling_ai_api after approval"
+    ],
+    "hybrid_strategy": "cloud only for locked cinematic B-roll scenes 2A/2B/2C, local for slides/parallax",
+    "fallback": "approved stock footage or animated storyboard downgrade with explicit PARTIAL status"
+  },
+  "music_sfx": {
+    "local_options": [
+      "licensed/local SFX library",
+      "ffmpeg_local assembly"
+    ],
+    "cloud_options": [
+      "Suno after approval"
+    ],
+    "hybrid_strategy": "local temp track until approved music generation",
+    "fallback": "royalty-free reference track"
+  },
+  "editing": {
+    "local_options": [
+      "davinci_resolve_local",
+      "ffmpeg_local"
+    ],
+    "cloud_options": [],
+    "hybrid_strategy": "DaVinci final assembly with FFmpeg export guard",
+    "fallback": "FFmpeg rough assembly only"
+  },
+  "packaging": {
+    "local_options": [
+      "repo metadata files",
+      "thumbnail text plan"
+    ],
+    "cloud_options": [
+      "YouTube upload only after approval"
+    ],
+    "hybrid_strategy": "local package generation, manual/cloud publish later",
+    "fallback": "local package folder only"
+  }
+}

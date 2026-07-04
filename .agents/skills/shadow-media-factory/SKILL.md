@@ -26,12 +26,46 @@ handoff, control panel routing, storyboard render planning, or artifact claims.
 Consume mandatory directors: Maya, Vishwakarma, Nataraja, Brahma, Varuna.
 Apply `MEDIA_FACTORY_SYNC_LOCK` before scene output.
 
+Batch 4 runtime binding is required before any PASS-like handoff claim:
+
+- `schemas/runtime_state/evidence_bundle.schema.json`
+- `schemas/runtime_state/route_state_capsule.schema.json`
+- `schemas/media_factory/bridge_job_packet.schema.json`
+- `schemas/media_factory/visual_media_plan_row.schema.json`
+- `schemas/media_factory/final_visual_media_generation_draft.schema.json`
+- `validators/validate_evidence_bundle.py`
+- `validators/validate_route_state_capsule.py`
+- `validators/validate_bridge_job_packet.py`
+- `validators/validate_visual_media_plan_row.py`
+- `validators/validate_final_visual_media_generation_draft.py`
+
+If local-handoff-ready depth is requested, also bind:
+
+- `validators/validate_depth_map_packet.py`
+- `validators/validate_ffmpeg_filtergraph_packet.py`
+- `validators/validate_hyperframes_payload.py`
+- `validators/validate_comfyui_payload.py`
+- `validators/validate_source_vs_render_packet.py`
+- `validators/validate_visual_qa_acceptance.py`
+- `validators/validate_pilot_cut_validation_packet.py`
+- `validators/validate_audio_authorization_packet.py`
+- `validators/validate_davinci_handoff_packet.py`
+
+Do not treat file existence, route prose, or contract headings as sufficient
+handoff proof. Media-factory route claims require `route_state_capsule`,
+`evidence_bundle`, and `bridge_job_packet` readiness.
+
 ## Required Media Factory Output
 
 Depending on the depth mode requested:
 
 ### Mode A: Visual Media Plan (Planning-Only Phase)
 If a "Visual Media Plan", "Visual Plan", or "Storyboard Plan" is requested (prior to rendering approval):
+- Keep the stage in chat-only planning mode unless repo-write has been
+  explicitly approved for this exact stage. Do not create `implementation_plan.md`,
+  `task.md`, folders, `.docx`, `.txt`, `.json`, prompt packets, or media files
+  during a visual media plan. Any file/folder creation before approval is a
+  hard failure.
 - Present the detailed, written storyboard layout containing scene-by-scene tables detailing:
   - Media Type & Visual Method (e.g. `A_ROLL_AVATAR`, `A_ROLL_OVERLAY_METHOD`, `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE_VISUAL_METHOD`, `HTML_CSS_GSAP_VISUAL_METHOD`, `HYPERFRAME_VISUAL_METHOD`, `IMAGE_MOTION_GRAPHICS_BROLL_METHOD`, or `CINEMATIC_BROLL_VIDEO`)
   - Shot Framing / Setup (Visual description, shot type, environment, safety profile, overlay layouts)
@@ -68,14 +102,35 @@ If a "Visual Media Plan", "Visual Plan", or "Storyboard Plan" is requested (prio
     - **Cinematic B-Roll Video (Cloud/Premium)**: At least 12% of total runtime (principally allocated to the short story/establishing blocks).
 - Provide the **COMPLETE A-ROLL vs B-ROLL vs MOTION GRAPHIC SUMMARY Table** including the `Image Count` column.
 - Provide the **Cost Distribution Result** calculating durations and percentages for A-Roll, Motion Graphic Images, and B-Roll Video to verify B-Roll cost minimization and ratio targets.
+- Provide readable one-scene-per-table vertical breakout blocks. A giant merged
+  table may exist as a summary only; it cannot replace the vertical scene
+  breakouts.
+- Provide the **PRODUCTION_ORDER_LOCK**, **ASSET_INVENTORY_LEDGER**, **ASSET_DEPENDENCY_GRAPH**, **CONTROL_PANEL_EXECUTION_PLAN**, **DAVINCI_TIMELINE_PACKET**, and **PRODUCTION_PROOF_GATE**. A corrected storyboard without these blocks is a visual plan draft, not a production-ready generation plan.
+- Treat the master ElevenLabs voice track as the default timeline anchor. The generation order must be: approved script and scene IDs -> scene sync matrix -> master voice -> timestamp alignment -> music segments -> individual SFX clips -> character/reference assets -> storyboard/still assets -> HyperFrames renders -> Depth Anything V2 maps -> HeyGen A-roll batches -> premium cinematic B-roll -> DaVinci assembly -> QC/export -> proofs/registry update.
+- Do not leave the production order as prose only. For production-grade outputs,
+  emit one `production_phase_row_json=` row per phase and keep the row order
+  identical to the canonical generation chain.
+- Separate asset counts by class. Do not report `Still Images Required` as the total visual asset count unless it includes storyboard stills, depth-parallax stills, HyperFrames assets, overlays, thumbnails, and character/reference assets. If only DA-V2 stills are counted, label them `depth_parallax_stills_only`.
 - **MEDIA FACTORY TOOL ASSIGNMENT LAW:**
   - `NOTEBOOKLM_VISUAL_METHOD`, `PROGRAMMATIC_SLIDE`, Data Cards, Kinetic Text -> **HyperFrames CLI**
-  - WebM Alpha overlays (e.g. Toxic Particle Card) -> **HyperFrames CLI**
+  - WebM Alpha overlays (e.g. promo/CTA particle card) -> **HyperFrames CLI**
   - 2.5D Parallax on Still Images -> **DaVinci Resolve Fusion + Depth Anything V2 (masking)**
   - Ken Burns (Pan/Zoom), particles, glow, lens flares -> **DaVinci Resolve Fusion**
   - Master Final Assembly, J-cut/L-cut audio, color grading -> **DaVinci Resolve**
   - **HYPERFRAME_VISUAL_METHOD** is a naming convention for motion graphics, it does NOT mean "use the HyperFrames tool for everything". Obey the assignment law above.
 - Do NOT generate or register executable prompt packets, JSON timeline metadata, or local ComfyUI/AnimateDiff configs. Postpone local media generation tasks until the plan is frozen.
+
+### Depth Anything V2 Operational Lock
+
+- Use DA-V2 only through the local control panel:
+  `python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-depth-anything --input <image_or_dir> --output-dir <depth_output_dir>`
+- Installed default: `Depth-Anything-V2-Small`, encoder `vits`, license `Apache-2.0`.
+- Base/Large checkpoints are non-commercial lanes and require explicit license approval before use.
+- DA-V2 outputs `depth_map_png` artifacts only. It does not generate still images, video clips, cinematic B-roll, camera motion, or DaVinci composites.
+- Approved DA-V2 use cases are universal: macro/insert stills, split-screen
+  comparison panels, product/object close-ups, document/tabletop shots, and
+  other still-image shots where foreground/midground/background parallax adds
+  value. Use only for `IMAGE_MOTION_GRAPHICS_BROLL_METHOD` still-image shots.
 
 ### Mode B: Media Factory Final Draft (Executable Phase)
 For full, executable Media Factory tasks (after plan validation & approval), output:
@@ -96,12 +151,24 @@ For full, executable Media Factory tasks (after plan validation & approval), out
   and the active bridge registry path when local execution is relevant
 - PROVIDER_HONESTY_GATE — explicit status for providers_called, n8n_used,
   local_media_generation_engine_used, media_artifacts_claimed, provider_execution_allowed
+- PRODUCTION_ORDER_LOCK — ordered phases with dependency IDs, approval gates, and proof gates
+- ASSET_INVENTORY_LEDGER — separate counts for voice, music, SFX, character references, storyboard stills, depth parallax stills, HyperFrames assets, overlays, cinematic B-roll, A-roll batches, DaVinci assets, and thumbnails
+- ASSET_DEPENDENCY_GRAPH — one row per asset with dependencies, lane, tool/provider, expected output path, approval requirement, and proof requirement
+- CONTROL_PANEL_EXECUTION_PLAN — control panel CLI, job packet directory, preflight steps, route downgrade handling, proof JSON, registry update requirements, and one `control_panel_phase_row_json=` per executable phase
+- DAVINCI_TIMELINE_PACKET — V1/V2/V3 and A1-A5 track placement with scene IDs, source asset IDs, transitions, J/L cuts, color, captions, safe zones, and proof dependencies
+- PRODUCTION_PROOF_GATE — no stage is complete until artifacts, proof JSON, registry entry, validation result, and review status are present
+- VOICE_BATCH_PLAN, A_ROLL_BATCH_PLAN, MUSIC_SFX_BATCH_PLAN, IMAGE_BATCH_PLAN,
+  CINEMATIC_BROLL_BATCH_PLAN, MOTION_GRAPHICS_BATCH_PLAN, and ASSEMBLY_SYNC_PLAN
+  when the user asks for the visual media generator draft.
 - LOCAL_CLOUD_HYBRID_EXECUTION_PLAN — per-lane options for voice, image, video, music_sfx, editing, packaging
 - MEDIA_FACTORY_EVIDENCE_GATE — for any claimed artifact: file_path, generation_method, engine_used,
   source_prompt_packet_ref, validation_result, human_review_status
 - CONTROL_PANEL_PREFLIGHT_GATE — for renderable storyboard/B-roll requests:
   requested controls, available controls, route downgrade status,
   output_classification, production_pass_allowed, safe_to_batch_automate
+- RULE_CONSUMPTION_EVIDENCE_LEDGER and EXACT_RULE_LINEAGE_MAP — required for
+  full production readiness; proxy-only route summaries cap the output below
+  production-ready status
 
 ## Visual DNA Compliance
 

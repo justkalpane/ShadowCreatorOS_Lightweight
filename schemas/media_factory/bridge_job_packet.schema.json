@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/bridge_job_packet.schema.json",
+  "title": "Shadow Media Factory Bridge Job Packet",
+  "description": "Governed ShadowOS-to-ShadowMediaFactory handoff packet for dry-run, validation-only, or C04a pilot jobs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "job_id",
+    "route_id",
+    "route_state_capsule_id",
+    "media_task_type",
+    "allowed_execution",
+    "blocked_execution",
+    "required_inputs",
+    "required_proofs",
+    "provider_execution_allowed",
+    "return_contract"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "route_id": {
+      "type": "string",
+      "const": "MEDIA_FACTORY_HANDOFF"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "media_task_type": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "validate_only",
+        "pilot_cut"
+      ]
+    },
+    "cut_id": {
+      "type": "string"
+    },
+    "allowed_execution": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "dry_run",
+          "validate_only",
+          "pilot_cut"
+        ]
+      }
+    },
+    "blocked_execution": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "full_127s",
+          "audio",
+          "provider",
+          "davinci",
+          "media_creation"
+        ]
+      }
+    },
+    "required_inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_proofs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "provider_execution_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "return_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_bundle_path",
+        "qa_status",
+        "route_downgraded",
+        "production_pass_allowed"
+      ],
+      "properties": {
+        "proof_bundle_path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "qa_status": {
+          "type": "string",
+          "enum": [
+            "pending_user_review",
+            "blocked",
+            "approved"
+          ]
+        },
+        "route_downgraded": {
+          "type": "boolean"
+        },
+        "production_pass_allowed": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "media_task_type": {
+            "const": "pilot_cut"
+          }
+        },
+        "required": [
+          "media_task_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "cut_id"
+        ],
+        "properties": {
+          "cut_id": {
+            "const": "C04a"
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "blocked_execution": {
+          "contains": {
+            "const": "full_127s"
+          }
+        }
+      },
+      "required": [
+        "blocked_execution"
+      ]
+    },
+    {
+      "properties": {
+        "blocked_execution": {
+          "contains": {
+            "const": "audio"
+          }
+        }
+      },
+      "required": [
+        "blocked_execution"
+      ]
+    },
+    {
+      "properties": {
+        "blocked_execution": {
+          "contains": {
+            "const": "provider"
+          }
+        }
+      },
+      "required": [
+        "blocked_execution"
+      ]
+    },
+    {
+      "properties": {
+        "blocked_execution": {
+          "contains": {
+            "const": "davinci"
+          }
+        }
+      },
+      "required": [
+        "blocked_execution"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "allowed_next_states": [
+    "PILOT_PREP_ALLOWED"
+  ],
+  "approval_token_status": "DRAFT",
+  "artifacts_present": [
+    "pilot_cut_manifest"
+  ],
+  "artifacts_required": [
+    "pilot_cut_manifest",
+    "source_vs_render_artifact",
+    "visual_qa_artifact",
+    "contact_sheet"
+  ],
+  "audio_allowed": false,
+  "audit_event_ids": [],
+  "blocked_actions": [
+    "pilot_prep",
+    "pilot_execution",
+    "full_render",
+    "audio",
+    "provider",
+    "davinci"
+  ],
+  "blocked_reasons": [
+    "full_render_unlock_absent",
+    "pilot_not_accepted"
+  ],
+  "current_state": "FULL_RENDER_STILL_BLOCKED",
+  "cut_id": "C04a",
+  "davinci_allowed": false,
+  "evidence_bundle_ids": [
+    "EB-C04A-001"
+  ],
+  "forbidden_next_states": [
+    "PILOT_EXECUTION_ALLOWED",
+    "FULL_RENDER_UNLOCK_APPROVED",
+    "AUDIO_ALLOWED",
+    "PROVIDER_ALLOWED",
+    "DAVINCI_ALLOWED"
+  ],
+  "full_render_allowed": false,
+  "human_review_status": "PENDING",
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "owner": "ShadowOS",
+  "pilot_execution_allowed": false,
+  "pilot_prep_allowed": false,
+  "provider_allowed": false,
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "route_state_capsule_id": "RSC-C04A-002",
+  "schema_version": "1.0.0",
+  "schemas_validated": [
+    "pilot_cut_manifest.schema.json",
+    "source_vs_render_artifact.schema.json"
+  ],
+  "tests_run": [],
+  "timestamp": "2026-06-22T00:00:00Z",
+  "validators_run": []
+}

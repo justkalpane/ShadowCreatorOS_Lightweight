@@ -1,0 +1,67 @@
+slice_id: editing_packaging
+route_id: EDITING_PACKAGING
+task_mode: editing_packaging
+source_manifest: registries/route_manifests/editing_packaging.yaml
+registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/editing_packaging.yaml
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+directors:
+  - directors/cinematic/garuda.md
+  - directors/production/agni.md
+  - directors/production/maya.md
+  - directors/distribution/saraswati.md
+  - directors/kernel/yama.md
+agents:
+  - agents/garuda/garuda_agent.py
+  - agents/agni/agni_agent.py
+  - agents/saraswati/saraswati_agent.py
+subagents:
+  - subagents/wf_500/wf_500_sub_agent.py
+  - subagents/cwf_510/cwf_510_sub_agent.py
+  - subagents/cwf_520/cwf_520_sub_agent.py
+  - subagents/cwf_530/cwf_530_sub_agent.py
+skills:
+  - skills/media_video/M-218-video-editing-script.skill.md
+  - skills/media_video/M-223-pacing-rhythm-editor.skill.md
+  - skills/media_video/M-225-thumbnail-designer.skill.md
+  - skills/media_video/M-226-video-seo-optimizer.skill.md
+  - skills/media_video/M-227-captions-subtitle-generator.skill.md
+  - skills/media_video/M-230-platform-specific-video-adapter.skill.md
+  - skills/publishing/D-501-platform-metadata-generator.skill.md
+  - skills/publishing/D-502-seo-optimization-specialist.skill.md
+subskills:
+  - skills/sub_skills/SS-108-youtube-publish-oauth-guard.subskill.md
+  - skills/sub_skills/SS-234-platform-strategy-mapper.subskill.md
+  - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+validators:
+  - validators/validate_mac06_1a_output.py
+output_contracts:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - QUALITY_LOCK
+  - GOVERNANCE_LOCK
+  - EDITING_CONTEXT
+  - PLATFORM_PACKAGING
+blocked_files:
+  - downloads/chat_transcript.txt
+  - outputs/missions/** unless continue_previous_mission=true
+historical_file_policy: disallow_unless_explicit_reference_or_continue_previous_mission
+provider_boundary_required: true
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true

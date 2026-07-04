@@ -1,0 +1,608 @@
+{
+  "packet_id": "hyperframes_30s_proof_packet",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "mission_id": "yash_self_investment",
+  "packet_role": "proof_only_acceptance_test",
+  "purpose": "Validate the HyperFrames Pro non-cinematic B-roll lane with scene-reactive payloads, HUD/border packs, proven local MOV alpha overlays, and a 10-cut 30-second acceptance segment before rerender.",
+  "non_production_master": true,
+  "validation_status": "PACKET_READY",
+  "provider_execution_allowed": false,
+  "providers_called": false,
+  "n8n_used": false,
+  "proof_segment_requested": true,
+  "total_duration_seconds": 30,
+  "cut_count": 10,
+  "style_lock": "dark_blue_amber_gold_rec709",
+  "pattern_mix": [
+    "playstation_dashboard_panel",
+    "notebooklm_dual_panel",
+    "image_evidence_wall",
+    "kinetic_principle_card",
+    "webm_alpha_overlay"
+  ],
+  "assembly_rule": "V1 background / V2 HyperFrames panel / V3 overlay / A1 voice / A2 music / A3 SFX",
+  "fallback_policy": "no_silent_ffmpeg_ken_burns_downgrade",
+  "success_goal": "prove_variety_not_just_render_success",
+  "source_scope": {
+    "scene_ids": [
+      "2B",
+      "4A",
+      "8A"
+    ],
+    "source_mission_packet_ref": "outputs/missions/yash_self_investment/packets/media_factory_packet.json",
+    "scene_sync_matrix_ref": "outputs/missions/yash_self_investment/packets/scene_sync_matrix.json",
+    "scene_prompt_packets_ref": "outputs/missions/yash_self_investment/packets/scene_prompt_packets.json",
+    "video_prompt_packets_ref": "outputs/missions/yash_self_investment/packets/video_prompt_packets.json",
+    "template_registry_ref": "/Users/apple/ShadowMediaFactory/control_panel/templates/hyperframes_template_registry.json"
+  },
+  "asset_roots": {
+    "raw_images": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw",
+    "depth_maps": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/depth_maps",
+    "overlays": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/overlays"
+  },
+  "alpha_runtime_guard": {
+    "template_family_name_retained": "webm_alpha_overlay",
+    "production_safe_output_extension": ".mov",
+    "blocked_output_extension": ".webm",
+    "source_overlay_reference_clips_may_remain_webm": true
+  },
+  "selected_assets": [
+    {
+      "asset_id": "scene2b_city_skyline",
+      "scene_id": "2B",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_05_city_skyline.png"
+    },
+    {
+      "asset_id": "scene2b_blueprint_hand",
+      "scene_id": "2B",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_01_blueprint_hand.png"
+    },
+    {
+      "asset_id": "scene2b_golden_compass",
+      "scene_id": "2B",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_02_golden_compass.png"
+    },
+    {
+      "asset_id": "scene4a_laptop_grind",
+      "scene_id": "4A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_01_laptop_grind.png"
+    },
+    {
+      "asset_id": "scene4a_writing_notebook",
+      "scene_id": "4A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_03_writing_notebook.png"
+    },
+    {
+      "asset_id": "scene4a_clock_3am",
+      "scene_id": "4A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_09_clock_3am.png"
+    },
+    {
+      "asset_id": "scene8a_steel_hammer",
+      "scene_id": "8A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_02_steel_hammer.png"
+    },
+    {
+      "asset_id": "scene8a_muddy_boots",
+      "scene_id": "8A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_06_muddy_boots.png"
+    },
+    {
+      "asset_id": "scene8a_faceless_people",
+      "scene_id": "8A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_07_faceless_people.png"
+    },
+    {
+      "asset_id": "scene8a_lone_wolf",
+      "scene_id": "8A",
+      "asset_type": "background_image",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_08_lone_wolf.png"
+    },
+    {
+      "asset_id": "overlay_dust_motes",
+      "scene_id": "multi",
+      "asset_type": "alpha_overlay_source_reference",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/overlays/dust_motes_01.webm"
+    },
+    {
+      "asset_id": "overlay_glowing_node",
+      "scene_id": "multi",
+      "asset_type": "alpha_overlay_source_reference",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/overlays/glowing_node_01.webm"
+    },
+    {
+      "asset_id": "overlay_sparks",
+      "scene_id": "multi",
+      "asset_type": "alpha_overlay_source_reference",
+      "path": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/overlays/sparks_01.webm"
+    }
+  ],
+  "cuts": [
+    {
+      "cut_id": "HF30_01",
+      "start_seconds": 0,
+      "duration_seconds": 3,
+      "scene_id": "2B",
+      "template_family": "playstation_dashboard_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/playstation_dashboard_panel",
+      "visual_pattern": "local_image_motion_broll_dashboard",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_05_city_skyline.png",
+      "floating_panel_layers": [
+        "left_metric_card",
+        "right_rank_card",
+        "lower_status_strip"
+      ],
+      "kinetic_text_layers": [
+        "title_reveal",
+        "value_countup",
+        "keyword_pulse"
+      ],
+      "lane_assignment": {
+        "V1": "city skyline background still with light FFmpeg push",
+        "V2": "HyperFrames dashboard render",
+        "V3": "glowing node accent overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "light whoosh/SFX"
+      },
+      "headline": "NO MAP. ONLY HUNGER.",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "No map. Only hunger.",
+      "headline_secondary": "Skill stack before spotlight.",
+      "support_line": "Open with control-room energy: metrics, rank strip, and guided ambition.",
+      "metric_or_claim": "72% skill stack selected",
+      "effect_pack_ids": [
+        "glowing_node_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "medium_high",
+      "text_density_class": "balanced",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_02",
+      "start_seconds": 3,
+      "duration_seconds": 3,
+      "scene_id": "2B",
+      "template_family": "notebooklm_dual_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/notebooklm_dual_panel",
+      "visual_pattern": "notebooklm_clean_dual_panel",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_01_blueprint_hand.png",
+      "floating_panel_layers": [
+        "source_shelf_left",
+        "active_note_right"
+      ],
+      "kinetic_text_layers": [
+        "highlight_sweep",
+        "line_focus_pulse"
+      ],
+      "lane_assignment": {
+        "V1": "blueprint hand background",
+        "V2": "NotebookLM-style dual panel",
+        "V3": "dust motes alpha overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "paper tick/SFX"
+      },
+      "headline": "NO CONNECTIONS. NO MENTOR.",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "No connections. No mentor.",
+      "headline_secondary": "The process starts in private.",
+      "support_line": "Notebook mode should feel studied and deliberate, not empty.",
+      "metric_or_claim": "Claim: self-teaching begins before recognition",
+      "effect_pack_ids": [
+        "dust_motes_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "medium",
+      "text_density_class": "dense",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_03",
+      "start_seconds": 6,
+      "duration_seconds": 3,
+      "scene_id": "4A",
+      "template_family": "image_evidence_wall",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/image_evidence_wall",
+      "visual_pattern": "floating_evidence_wall",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_01_laptop_grind.png",
+      "floating_panel_layers": [
+        "image_card_stack",
+        "caption_tabs",
+        "connector_lines"
+      ],
+      "kinetic_text_layers": [
+        "card_stagger_in",
+        "tag_flash"
+      ],
+      "lane_assignment": {
+        "V1": "laptop grind background",
+        "V2": "evidence wall cards",
+        "V3": "sparks alpha overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "UI tick/SFX"
+      },
+      "headline": "GRIND CREATED THE EDGE.",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "Grind created the edge.",
+      "headline_secondary": "Proof links beat vague motivation.",
+      "support_line": "Evidence wall must feel like collected receipts from the work.",
+      "metric_or_claim": "Signal map -> lesson bridge",
+      "effect_pack_ids": [
+        "sparks_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "high",
+      "text_density_class": "balanced",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_04",
+      "start_seconds": 9,
+      "duration_seconds": 3,
+      "scene_id": "4A",
+      "template_family": "kinetic_principle_card",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/kinetic_principle_card",
+      "visual_pattern": "kinetic_lesson_card",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_03_writing_notebook.png",
+      "floating_panel_layers": [
+        "center_card",
+        "support_strip"
+      ],
+      "kinetic_text_layers": [
+        "word_pop",
+        "gold_underline",
+        "impact_pulse"
+      ],
+      "lane_assignment": {
+        "V1": "writing notebook background",
+        "V2": "kinetic principle card",
+        "V3": "glowing node accent",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "impact hit/SFX"
+      },
+      "headline": "CONSISTENCY > TALENT",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "Consistency beats talent.",
+      "headline_secondary": "Repetition becomes advantage.",
+      "support_line": "Principle card should land like a premium chapter marker.",
+      "metric_or_claim": "Lesson lock: daily effort compounds",
+      "effect_pack_ids": [
+        "glowing_node_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "high",
+      "text_density_class": "tight",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_05",
+      "start_seconds": 12,
+      "duration_seconds": 3,
+      "scene_id": "4A",
+      "template_family": "webm_alpha_overlay",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/webm_alpha_overlay",
+      "visual_pattern": "transparent_cta_or_highlight_overlay",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_4A/scene4a_grind_09_clock_3am.png",
+      "floating_panel_layers": [
+        "base_clock_plate"
+      ],
+      "kinetic_text_layers": [
+        "time_pulse",
+        "arrow_glow"
+      ],
+      "lane_assignment": {
+        "V1": "3AM clock background",
+        "V2": "light FFmpeg motion base",
+        "V3": "HyperFrames alpha overlay (.mov only on current runtime)",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "tick/SFX"
+      },
+      "headline": "03:00 AM IS A DECISION",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "3:00 AM is a decision.",
+      "headline_secondary": "Private discipline, visible result.",
+      "support_line": "Overlay must stay transparent and act as V3 only.",
+      "metric_or_claim": "Time pulse active",
+      "effect_pack_ids": [
+        "glowing_node_01",
+        "sparks_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "high",
+      "text_density_class": "tight",
+      "recommended_overlay_output": ".mov",
+      "overlay_text": "Key idea unlocked",
+      "highlight_shape": "scan_ring_clock_focus",
+      "output_container_requirement": "mov_alpha_only_on_current_runtime"
+    },
+    {
+      "cut_id": "HF30_06",
+      "start_seconds": 15,
+      "duration_seconds": 3,
+      "scene_id": "8A",
+      "template_family": "playstation_dashboard_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/playstation_dashboard_panel",
+      "visual_pattern": "comparison_card",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_02_steel_hammer.png",
+      "floating_panel_layers": [
+        "contrast_card_left",
+        "contrast_card_right",
+        "rank_strip"
+      ],
+      "kinetic_text_layers": [
+        "split_reveal",
+        "label_pop"
+      ],
+      "lane_assignment": {
+        "V1": "steel hammer background",
+        "V2": "dashboard contrast panel",
+        "V3": "sparks alpha overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "metal hit/SFX"
+      },
+      "headline": "PRESSURE BUILDS POWER",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "Pressure builds power.",
+      "headline_secondary": "Force becomes form.",
+      "support_line": "Contrast panel should feel like forged discipline, not generic comparison.",
+      "metric_or_claim": "Impact tier rising",
+      "effect_pack_ids": [
+        "sparks_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "high",
+      "text_density_class": "balanced",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_07",
+      "start_seconds": 18,
+      "duration_seconds": 3,
+      "scene_id": "8A",
+      "template_family": "notebooklm_dual_panel",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/notebooklm_dual_panel",
+      "visual_pattern": "claim_to_evidence",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_06_muddy_boots.png",
+      "floating_panel_layers": [
+        "claim_column",
+        "evidence_column"
+      ],
+      "kinetic_text_layers": [
+        "line_highlight",
+        "arrow_focus"
+      ],
+      "lane_assignment": {
+        "V1": "muddy boots background",
+        "V2": "claim-to-evidence notebook panel",
+        "V3": "dust motes overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "paper flip/SFX"
+      },
+      "headline": "PAIN BECOMES PROOF",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "Pain becomes proof.",
+      "headline_secondary": "What hurt becomes usable evidence.",
+      "support_line": "Claim-to-evidence panel should visually resolve doubt into clarity.",
+      "metric_or_claim": "Evidence column > excuse column",
+      "effect_pack_ids": [
+        "dust_motes_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "medium_high",
+      "text_density_class": "dense",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_08",
+      "start_seconds": 21,
+      "duration_seconds": 3,
+      "scene_id": "8A",
+      "template_family": "image_evidence_wall",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/image_evidence_wall",
+      "visual_pattern": "data_evidence_board",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_07_faceless_people.png",
+      "floating_panel_layers": [
+        "photo_grid",
+        "tag_badges",
+        "evidence_connectors"
+      ],
+      "kinetic_text_layers": [
+        "grid_reveal",
+        "marker_flash"
+      ],
+      "lane_assignment": {
+        "V1": "faceless people background",
+        "V2": "evidence board render",
+        "V3": "glowing node overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "glitch pop/SFX"
+      },
+      "headline": "NO CROWD CAN DECIDE YOU",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "No crowd can decide you.",
+      "headline_secondary": "Noise is not direction.",
+      "support_line": "Evidence board needs stronger social contrast and ownership energy.",
+      "metric_or_claim": "Identity stays self-owned",
+      "effect_pack_ids": [
+        "glowing_node_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "medium_high",
+      "text_density_class": "balanced",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_09",
+      "start_seconds": 24,
+      "duration_seconds": 3,
+      "scene_id": "8A",
+      "template_family": "kinetic_principle_card",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/kinetic_principle_card",
+      "visual_pattern": "gold_title_reveal",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_8A/scene8a_contrast_08_lone_wolf.png",
+      "floating_panel_layers": [
+        "title_core",
+        "support_caption"
+      ],
+      "kinetic_text_layers": [
+        "gold_reveal",
+        "word_hold",
+        "subtitle_fade"
+      ],
+      "lane_assignment": {
+        "V1": "lone wolf background",
+        "V2": "kinetic title card",
+        "V3": "dust motes overlay",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "sub hit/SFX"
+      },
+      "headline": "WALK ALONE. BUILD STRONG.",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "Walk alone. Build strong.",
+      "headline_secondary": "Isolation is not failure.",
+      "support_line": "This card should feel like the premium rehook before the closing lock.",
+      "metric_or_claim": "Strength = solo repetition",
+      "effect_pack_ids": [
+        "dust_motes_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "high",
+      "text_density_class": "tight",
+      "recommended_overlay_output": ".mp4",
+      "output_container_requirement": "mp4_panel_render"
+    },
+    {
+      "cut_id": "HF30_10",
+      "start_seconds": 27,
+      "duration_seconds": 3,
+      "scene_id": "2B",
+      "template_family": "webm_alpha_overlay",
+      "project_root": "/Users/apple/ShadowMediaFactory/07_PROJECTS/hyperframes/templates/webm_alpha_overlay",
+      "visual_pattern": "transparent_cta_or_highlight_overlay",
+      "source_background": "/Users/apple/Downloads/Yash_Self_Investment_BRoll_Assets/images/raw/scene_2B/scene2b_roadmap_02_golden_compass.png",
+      "floating_panel_layers": [
+        "base_compass_plate"
+      ],
+      "kinetic_text_layers": [
+        "cta_ring",
+        "path_highlight"
+      ],
+      "lane_assignment": {
+        "V1": "golden compass background",
+        "V2": "light FFmpeg motion base",
+        "V3": "HyperFrames alpha overlay (.mov only on current runtime)",
+        "A1": "proof voice or scratch narration",
+        "A2": "local temp music bed",
+        "A3": "resolve swell/SFX"
+      },
+      "headline": "LOCK THE LANE. PROVE THE SYSTEM.",
+      "proof_gate": "hyperframes_proof_json",
+      "headline_primary": "Lock the lane. Prove the system.",
+      "headline_secondary": "The process is now repeatable.",
+      "support_line": "Final overlay should feel like a system confirmation, not a CTA sticker.",
+      "metric_or_claim": "Route locked",
+      "effect_pack_ids": [
+        "glowing_node_01",
+        "sparks_01",
+        "gold_border_sweep"
+      ],
+      "border_pack_id": "hud_corner_brackets",
+      "animation_energy_class": "high",
+      "text_density_class": "balanced",
+      "recommended_overlay_output": ".mov",
+      "overlay_text": "Route locked",
+      "highlight_shape": "compass_lane_ring",
+      "output_container_requirement": "mov_alpha_only_on_current_runtime"
+    }
+  ],
+  "expected_outputs": {
+    "repo_hyperframes_dir": "outputs/missions/yash_self_investment/hyperframes/",
+    "repo_proofs_dir": "outputs/missions/yash_self_investment/proofs/",
+    "local_job_packet_dir": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/01_timeline",
+    "local_review_output_dir": "/Users/apple/ShadowMediaFactory/08_EXPORTS/review/hyperframes/",
+    "proof_json_required": true,
+    "registry_event_required": true,
+    "overlay_container_required": ".mov for webm_alpha_overlay cuts",
+    "visible_fx_minimum": "At least 3 cuts must visibly show effect-pack layers or HUD/border treatment."
+  },
+  "runtime_handshake": {
+    "control_panel_cli": "/Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py",
+    "required_preflight": [
+      "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py status",
+      "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py doctor"
+    ],
+    "must_use_real_hyperframes_lane": true,
+    "silent_fallback_forbidden": true,
+    "depth_anything_v2_enabled": false,
+    "davinci_required_for_proof": false,
+    "ffmpeg_role": "background motion, muxing, and final 30-second proof assembly only",
+    "alpha_overlay_runtime_truth": "webm_alpha_overlay must render to .mov on this runtime; .webm is blocked for production-safe alpha delivery",
+    "effect_pack_required_on_designated_cuts": [
+      "HF30_01",
+      "HF30_03",
+      "HF30_05",
+      "HF30_06",
+      "HF30_10"
+    ]
+  },
+  "antigravity_retest_gate": {
+    "retest_ready_after_user_review": true,
+    "minimum_distinct_template_families": 4,
+    "preferred_template_families": [
+      "playstation_dashboard_panel",
+      "notebooklm_dual_panel",
+      "image_evidence_wall",
+      "kinetic_principle_card",
+      "webm_alpha_overlay"
+    ],
+    "failure_if": [
+      "requested_hyperframes_family_downgraded_without_route_downgraded_block",
+      "hyperframes_first_proof_claimed_with_generic_ffmpeg_ken_burns_only",
+      "proof_json_missing",
+      "registry_event_missing"
+    ]
+  },
+  "hyperframes_pro_upgrade_profile": "mov_alpha_hud_fx_scene_reactive_v1",
+  "effect_pack_inventory": [
+    "dust_motes_01",
+    "glowing_node_01",
+    "sparks_01",
+    "hud_corner_brackets",
+    "gold_border_sweep"
+  ],
+  "overlay_alpha_required": true
+}

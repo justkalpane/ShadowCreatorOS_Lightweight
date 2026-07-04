@@ -195,7 +195,7 @@ if __name__ == "__main__":
 # component_id: Narada_Data_Ingestion_Agent_v2
 # component_layer: AGENT
 # component_name: Narada Agent
-# route_families: [quality_gate, full_video_pipeline]
+# route_families: [topic_discovery, quality_gate, full_video_pipeline]
 # activation_triggers: route_family in [trend_research, topic_discovery, script_generation] or explicit registry selection; mark research_synthesis_profile only when route_family is unknown.
 # upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 # downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -220,7 +220,7 @@ if __name__ == "__main__":
 # MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 # component_depth_status: PRODUCTION_DEPTH_ENRICHED
 # route_profile_applied: media_quality_gate_profile
-# route_family_resolved: [quality_gate, full_video_pipeline]
+# route_family_resolved: [topic_discovery, quality_gate, full_video_pipeline]
 # activation_triggers_resolved: [quality, validation, compliance]
 # required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 # emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]

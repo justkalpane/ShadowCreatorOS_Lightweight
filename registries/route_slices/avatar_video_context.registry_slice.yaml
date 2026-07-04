@@ -1,0 +1,73 @@
+slice_id: avatar_video_context
+route_id: AVATAR_VIDEO_CONTEXT
+task_mode: avatar_video_context
+source_manifest: registries/route_manifests/avatar_video_context.yaml
+registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/avatar_video_context.yaml
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+  - registries/provider_registry.yaml
+directors:
+  - directors/production/vishwakarma.md
+  - directors/cinematic/nataraja.md
+  - directors/supreme_vision/brahma.md
+  - directors/production/maya.md
+  - directors/cinematic/varuna.md
+  - directors/kernel/yama.md
+agents:
+  - agents/vishwakarma/vishwakarma_agent.py
+  - agents/nataraja/nataraja_agent.py
+  - agents/brahma/brahma_agent.py
+  - agents/varuna/varuna_agent.py
+subagents:
+  - subagents/wf_400/wf_400_sub_agent.py
+  - subagents/cwf_410/cwf_410_sub_agent.py
+  - subagents/cwf_420/cwf_420_sub_agent.py
+  - subagents/cwf_440/cwf_440_sub_agent.py
+skills:
+  - skills/media_video/M-216-shot-list-generator.skill.md
+  - skills/media_video/M-217-b-roll-sourcing-strategy.skill.md
+  - skills/media_video/M-221-motion-graphics-storyboard.skill.md
+  - skills/media_video/M-229-video-performance-predictor.skill.md
+  - skills/operations/M-174-visual-asset-generator.skill.md
+subskills:
+  - skills/sub_skills/SS-102-heygen-avatar-render-orchestrator.subskill.md
+  - skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md
+  - skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md
+  - skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md
+  - skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md
+contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+  - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+  - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
+  - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+validators:
+  - validators/validate_mac06_1a_output.py
+output_contracts:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - GOVERNANCE_LOCK
+  - IMAGE_GENERATION_CONTEXT
+  - VIDEO_GENERATION_CONTEXT
+  - PROVIDER_HANDOFF_BOUNDARY
+blocked_files:
+  - downloads/chat_transcript.txt
+  - outputs/missions/** unless continue_previous_mission=true
+historical_file_policy: disallow_unless_explicit_reference_or_continue_previous_mission
+provider_boundary_required: true
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true

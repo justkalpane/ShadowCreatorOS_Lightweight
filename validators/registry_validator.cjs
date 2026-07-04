@@ -111,6 +111,7 @@ class RegistryValidator {
     const workflowBindings = this.parseWorkflowBindings(workflowBindingsText);
     const directorBinding = this.parseDirectorBinding(directorBindingText);
     const schemaRegistry = this.parseSchemaRegistry(schemaRegistryText);
+    const routeComponentWiring = this.validateRouteComponentWiring();
 
     const registeredSkillIds = new Set(skillRegistry.skills.map((row) => row.skill_id));
     const workflowSkillIds = new Set(workflowBindings.bindings.map((row) => row.skill_id));
@@ -309,6 +310,8 @@ class RegistryValidator {
       }
     }
 
+    findings.push(...routeComponentWiring.findings);
+
     return this.buildResult(!findings.some((row) => row.severity === 'error'), findings, {
       registry_presence: registryPresence,
       skill_registry_stats: {
@@ -327,8 +330,178 @@ class RegistryValidator {
       schema_registry_stats: {
         schemas: schemaRegistry.schemas.length,
         duplicate_artifact_families: schemaRegistry.duplicate_artifact_families.length
+      },
+      route_component_wiring_stats: {
+        route_manifests: routeComponentWiring.route_count,
+        strict_route_manifests: routeComponentWiring.strict_route_count,
+        component_checks: routeComponentWiring.component_check_count
       }
     });
+  }
+
+  validateRouteComponentWiring() {
+    const manifestDir = path.resolve(this.config.registries_path, 'route_manifests');
+    const findings = [];
+    const manifests = this.walkFiles(manifestDir, (file) => file.endsWith('.yaml'));
+    let strictRouteCount = 0;
+    let componentCheckCount = 0;
+
+    for (const manifestPath of manifests) {
+      const text = fs.readFileSync(manifestPath, 'utf8');
+      const routeId = this.extractYamlScalar(text, 'route_id');
+      if (!routeId) {
+        findings.push({
+          code: 'ROUTE_MANIFEST_MISSING_ROUTE_ID',
+          severity: 'error',
+          message: `${path.relative(process.cwd(), manifestPath)} missing route_id`,
+          filepath: manifestPath
+        });
+        continue;
+      }
+
+      const strict = this.extractYamlBoolean(text, 'strict_component_route_family_required');
+      const acceptedFamilies = new Set(
+        this.extractYamlList(text, 'accepted_component_route_families')
+          .concat(this.defaultAcceptedRouteFamilies(routeId))
+          .map((value) => String(value).toLowerCase())
+      );
+
+      if (strict) {
+        strictRouteCount += 1;
+      }
+
+      const componentKeys = [
+        'mandatory_directors',
+        'mandatory_agents',
+        'mandatory_subagents',
+        'mandatory_skills',
+        'mandatory_subskills'
+      ];
+
+      for (const key of componentKeys) {
+        const componentPaths = this.extractYamlList(text, key);
+        for (const componentPath of componentPaths) {
+          componentCheckCount += 1;
+          const resolvedPath = path.resolve(componentPath);
+          if (!fs.existsSync(resolvedPath)) {
+            findings.push({
+              code: 'ROUTE_COMPONENT_FILE_MISSING',
+              severity: strict ? 'error' : 'warning',
+              message: `${routeId} ${key} references missing component: ${componentPath}`,
+              filepath: manifestPath
+            });
+            continue;
+          }
+
+          const componentText = fs.readFileSync(resolvedPath, 'utf8');
+          const declaredFamilies = this.extractRouteFamiliesFromComponent(componentText);
+          const hasRouteFamily = declaredFamilies.some((family) => acceptedFamilies.has(family));
+
+          if (!hasRouteFamily) {
+            findings.push({
+              code: 'ROUTE_COMPONENT_FAMILY_MISMATCH',
+              severity: strict ? 'error' : 'warning',
+              message:
+                `${routeId} ${key} component ${componentPath} lacks accepted route family. ` +
+                `accepted=[${Array.from(acceptedFamilies).sort().join(', ')}], ` +
+                `declared=[${declaredFamilies.sort().join(', ') || 'none'}]`,
+              filepath: resolvedPath
+            });
+          }
+        }
+      }
+    }
+
+    return {
+      route_count: manifests.length,
+      strict_route_count: strictRouteCount,
+      component_check_count: componentCheckCount,
+      findings
+    };
+  }
+
+  extractYamlScalar(text, key) {
+    const match = text.match(new RegExp(`^\\s*${key}:\\s*([^#\\n]+?)\\s*$`, 'm'));
+    if (!match) {
+      return null;
+    }
+    return match[1].trim().replace(/^["']|["']$/g, '');
+  }
+
+  extractYamlBoolean(text, key) {
+    const value = this.extractYamlScalar(text, key);
+    return String(value || '').toLowerCase() === 'true';
+  }
+
+  extractYamlList(text, key) {
+    const lines = text.replace(/\r\n/g, '\n').split('\n');
+    const values = [];
+
+    for (let index = 0; index < lines.length; index += 1) {
+      const line = lines[index];
+      const inline = line.match(new RegExp(`^\\s*${key}:\\s*\\[(.*?)\\]\\s*(?:#.*)?$`));
+      if (inline) {
+        return inline[1]
+          .split(',')
+          .map((item) => item.trim().replace(/^["']|["']$/g, ''))
+          .filter(Boolean);
+      }
+
+      if (line.match(new RegExp(`^\\s*${key}:\\s*$`))) {
+        for (let cursor = index + 1; cursor < lines.length; cursor += 1) {
+          const item = lines[cursor].match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
+          if (item) {
+            values.push(item[1].trim().replace(/^["']|["']$/g, ''));
+            continue;
+          }
+          if (lines[cursor].trim() === '') {
+            continue;
+          }
+          break;
+        }
+        return values;
+      }
+    }
+
+    return values;
+  }
+
+  extractRouteFamiliesFromComponent(text) {
+    const families = new Set();
+    const regex = /route_famil(?:y|ies)(?:_resolved)?:\s*\[(.*?)\]/g;
+    let match = regex.exec(text);
+    while (match) {
+      match[1]
+        .split(',')
+        .map((item) => item.trim().replace(/^["']|["']$/g, '').toLowerCase())
+        .filter(Boolean)
+        .forEach((item) => families.add(item));
+      match = regex.exec(text);
+    }
+
+    const scalarRegex = /route_famil(?:y|ies)(?:_resolved)?:\s*([a-zA-Z0-9_-]+)\s*$/gm;
+    let scalarMatch = scalarRegex.exec(text);
+    while (scalarMatch) {
+      families.add(scalarMatch[1].trim().toLowerCase());
+      scalarMatch = scalarRegex.exec(text);
+    }
+
+    return Array.from(families);
+  }
+
+  defaultAcceptedRouteFamilies(routeId) {
+    const normalized = String(routeId || '').toLowerCase();
+    const values = new Set([normalized]);
+    normalized
+      .split('_')
+      .filter(Boolean)
+      .forEach((part) => values.add(part));
+    if (normalized.includes('media_factory')) {
+      values.add('media_factory');
+      values.add('visual_media_plan');
+      values.add('media_factory_final_draft');
+    }
+    return Array.from(values);
   }
 
   parseSkillRegistryPolicy(text) {

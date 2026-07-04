@@ -1,0 +1,10 @@
+mission_id=yash_self_investment
+artifact_type=local_preview_captions
+input_voice=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/voice/narration.wav
+artifact_path=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/02_captions/yash_self_investment_youtube_16_9.srt
+line_count=220
+status=PREVIEW_READY
+
+notes:
+- Captions were generated locally from the preview narration WAV.
+- Final production captions should still be revalidated against the approved master voice lane when ElevenLabs output exists.

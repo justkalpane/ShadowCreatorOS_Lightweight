@@ -138,7 +138,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: S-210-final-script-packager.skill
 component_layer: SKILL
 component_name: S 210 Final Script Packager.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [script_generation, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, topic_discovery, editing_packaging, quality_gate] or explicit registry selection; mark lineage_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -167,7 +167,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [script_generation, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]
@@ -189,5 +189,7 @@ remaining_unknowns: none
 - Preserve `RECURRING_REHOOK_MAP` inside `FINAL_SCRIPT`,
   `DYNAMIC_TIMED_BEAT_MAP`, `EDITING_CONTEXT`, and
   `LINE_BY_LINE_INFLUENCE_MAP`.
+- Preserve `VALIDATION_SCORECARD` inside the final pack and reject
+  prose-only scorecard substitutions that remove the numerical gate proof.
 - For Media Factory final drafts, bind every re-hook to `SCENE_SYNC_MATRIX`.
 - Reject final packaging when a required CTA hook or internal re-hook is lost.

@@ -138,7 +138,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: S-206-emotion-amplifier.skill
 component_layer: SKILL
 component_name: S 206 Emotion Amplifier.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [script_generation, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, topic_discovery, quality_gate, lineage_summary] or explicit registry selection; mark lineage_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -167,7 +167,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [script_generation, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]

@@ -1,0 +1,26 @@
+steps:
+  - AGENTS.md
+  - START_HERE_FOR_AGENTS.md
+  - SHADOW_BOOT_CONFIRMATION
+  - AGENT_READ_ORDER.md
+  - AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+  - AGENT_ANTI_DRIFT_RULES.md
+  - ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md
+  - task_intent_routing_matrix.yaml
+  - SHADOW_TASK_EXECUTION_WRAPPER.md
+  - script_generation.yaml
+  - TASK_INTENT_ROUTING_CONTRACT.md
+  - ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md
+  - SCRIPT_STORY_ENGINE_CONTRACT.md
+  - required_directors
+  - required_agents
+  - required_subagents
+  - required_skills
+  - required_subskills
+  - source_research_when_required
+  - final_script_output
+  - validation_scorecard

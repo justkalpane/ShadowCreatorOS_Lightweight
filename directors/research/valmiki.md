@@ -39,6 +39,14 @@
   - Parashara (trend data validation)
   - Cannot delegate synthesis decisions (core responsibility)
 
+### Production Rejection Rules
+- Reject any source packet that cannot support a real-person script with
+  structured `source_row_json` and `fact_map_row_json` evidence rows.
+- Reject drafts that inflate a nearby source into a stronger claim than the
+  source actually supports.
+- Reject source packets that rely on fewer than the required source categories
+  when suitable sources are available.
+
 ### Veto Authority
 - **NO** (advisory to Vyasa, Chanakya)
 - **Can_Escalate**: If source quality insufficient or facts contradictory → escalate to Vyasa
@@ -408,7 +416,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_VALMIKI
 component_layer: DIRECTOR
 component_name: Valmiki
-route_families: [quality_gate, full_video_pipeline]
+route_families: [script_refinement, script_generation, quality_gate, full_video_pipeline]
 activation_triggers: route_family in [script_generation, trend_research, topic_discovery, editing_packaging] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -436,7 +444,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_quality_gate_profile
-route_family_resolved: [quality_gate, full_video_pipeline]
+route_family_resolved: [script_refinement, script_generation, quality_gate, full_video_pipeline]
 activation_triggers_resolved: [quality, validation, compliance]
 required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]

@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Route State Capsule",
+  "description": "Route state capsule for the governed Media Factory handoff. Unlock flags remain false until future gated transitions occur.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "route_state_capsule_id",
+    "mission_id",
+    "job_id",
+    "cut_id",
+    "route_id",
+    "current_state",
+    "allowed_next_states",
+    "forbidden_next_states",
+    "blocked_actions",
+    "blocked_reasons",
+    "artifacts_required",
+    "artifacts_present",
+    "schemas_validated",
+    "validators_run",
+    "tests_run",
+    "human_review_status",
+    "approval_token_status",
+    "pilot_prep_allowed",
+    "pilot_execution_allowed",
+    "full_render_allowed",
+    "audio_allowed",
+    "provider_allowed",
+    "davinci_allowed",
+    "evidence_bundle_ids",
+    "audit_event_ids",
+    "timestamp",
+    "owner",
+    "schema_version"
+  ],
+  "properties": {
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "route_id": {
+      "type": "string",
+      "const": "MEDIA_FACTORY_HANDOFF"
+    },
+    "current_state": {
+      "type": "string",
+      "enum": [
+        "PILOT_PREP_BLOCKED",
+        "PILOT_PREP_SPEC_DRAFTED",
+        "PILOT_PREP_SPEC_APPROVED",
+        "PILOT_ARTIFACTS_REQUESTED",
+        "PILOT_ARTIFACTS_CREATED",
+        "PILOT_ARTIFACTS_VALIDATED",
+        "HUMAN_REVIEW_PENDING",
+        "HUMAN_REVIEW_APPROVED",
+        "APPROVAL_TOKEN_ISSUED",
+        "PILOT_PREP_ALLOWED",
+        "PILOT_EXECUTION_ALLOWED",
+        "FULL_RENDER_STILL_BLOCKED",
+        "FULL_RENDER_UNLOCK_APPROVED"
+      ]
+    },
+    "allowed_next_states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PILOT_PREP_BLOCKED",
+          "PILOT_PREP_SPEC_DRAFTED",
+          "PILOT_PREP_SPEC_APPROVED",
+          "PILOT_ARTIFACTS_REQUESTED",
+          "PILOT_ARTIFACTS_CREATED",
+          "PILOT_ARTIFACTS_VALIDATED",
+          "HUMAN_REVIEW_PENDING",
+          "HUMAN_REVIEW_APPROVED",
+          "APPROVAL_TOKEN_ISSUED",
+          "PILOT_PREP_ALLOWED",
+          "PILOT_EXECUTION_ALLOWED",
+          "FULL_RENDER_STILL_BLOCKED",
+          "FULL_RENDER_UNLOCK_APPROVED"
+        ]
+      }
+    },
+    "forbidden_next_states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PILOT_PREP_BLOCKED",
+          "PILOT_PREP_SPEC_DRAFTED",
+          "PILOT_PREP_SPEC_APPROVED",
+          "PILOT_ARTIFACTS_REQUESTED",
+          "PILOT_ARTIFACTS_CREATED",
+          "PILOT_ARTIFACTS_VALIDATED",
+          "HUMAN_REVIEW_PENDING",
+          "HUMAN_REVIEW_APPROVED",
+          "APPROVAL_TOKEN_ISSUED",
+          "PILOT_PREP_ALLOWED",
+          "PILOT_EXECUTION_ALLOWED",
+          "FULL_RENDER_STILL_BLOCKED",
+          "FULL_RENDER_UNLOCK_APPROVED"
+        ]
+      }
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "artifacts_required": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "artifacts_present": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "schemas_validated": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "validators_run": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "tests_run": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_review_status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED"
+      ]
+    },
+    "approval_token_status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "ISSUED",
+        "CONSUMED",
+        "REVOKED",
+        "EXPIRED"
+      ]
+    },
+    "pilot_prep_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "pilot_execution_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "full_render_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "audio_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "provider_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "davinci_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "evidence_bundle_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^EVB-[A-Za-z0-9_-]+$"
+      }
+    },
+    "audit_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^AUD-[A-Za-z0-9_-]+$"
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

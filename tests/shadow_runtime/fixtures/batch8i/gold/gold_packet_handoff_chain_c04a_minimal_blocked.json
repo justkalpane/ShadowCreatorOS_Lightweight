@@ -1,0 +1,66 @@
+{
+  "chain_id": "CHAIN-C04A-001",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "packets": [
+    {
+      "artifact_hashes": [
+        "6a6a6ce36215b890be378a4546988f28da5b2e61ea0924a785d4b3ad37174b5b"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/creative_intent_packet.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [],
+      "output_packet_ids": [
+        "selected_line_visual_packet"
+      ],
+      "packet_id": "SCRI-001",
+      "packet_type": "script_intent_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "READY",
+      "validator_version": "validate_script_intent_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "20896e1086ad50dee119018a668f3974bc48f4aa5cadc5f41c461fda833f1f06"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "script_intent_packet"
+      ],
+      "output_packet_ids": [
+        "visual_density_packet"
+      ],
+      "packet_id": "SELE-002",
+      "packet_type": "selected_line_visual_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_selected_line_visual_packet.py"
+    }
+  ],
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "schema_version": "1.0.0",
+  "status": "BLOCKED"
+}

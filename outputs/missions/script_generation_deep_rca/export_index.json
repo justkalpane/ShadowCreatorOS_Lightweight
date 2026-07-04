@@ -1,0 +1,13 @@
+{
+  "artifact_files_count": 20,
+  "diff": "outputs/missions/script_generation_deep_rca/diffs/task_files.diff",
+  "hashes": "outputs/missions/script_generation_deep_rca/hashes/artifact_hashes.tsv",
+  "logs": [
+    "outputs/missions/script_generation_deep_rca/logs/validate_script_generation_output_self_test.log",
+    "outputs/missions/script_generation_deep_rca/logs/validate_mac06_1a_output.log",
+    "outputs/missions/script_generation_deep_rca/logs/validate_visual_generation_depth.log",
+    "outputs/missions/script_generation_deep_rca/logs/run_all_validators_python_only.log"
+  ],
+  "manifest": "outputs/missions/script_generation_deep_rca/manifests/artifact_manifest.json",
+  "tracked_files_count": 15
+}

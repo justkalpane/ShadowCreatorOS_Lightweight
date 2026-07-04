@@ -1,0 +1,22 @@
+{
+  "timestamp": "20260612_152836",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "reason_for_backup": "Controlled Patch Batch 6: downgrade SCRIPT_GENERATION 68-file pass authority to telemetry only in two routing YAML files.",
+  "files_backed_up": [
+    {
+      "path": "registries/route_manifests/script_generation.yaml",
+      "sha256_before": "776481180765ed1be7e02ad3c5709a55f7fe1ab50459c12b4eeb2af9d78b0ae4",
+      "backup_path": "backups/controlled_patch_20260612_152836/registries/route_manifests/script_generation.yaml"
+    },
+    {
+      "path": "registries/task_intent_routing_matrix.yaml",
+      "sha256_before": "b64d0c78300925b7de5edb241d5e54f20c9548f63aee552f254da4a3f9239ffc",
+      "backup_path": "backups/controlled_patch_20260612_152836/registries/task_intent_routing_matrix.yaml"
+    }
+  ],
+  "git_status_before_for_target_files": [
+    " M registries/route_manifests/script_generation.yaml",
+    " M registries/task_intent_routing_matrix.yaml"
+  ]
+}

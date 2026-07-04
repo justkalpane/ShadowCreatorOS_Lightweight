@@ -1,0 +1,2878 @@
+{
+  "packet_id": "media_factory_packet",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "dossier_id": "yash_self_investment",
+  "source_script_ref": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+  "scene_count": 24,
+  "runtime_mode": "planning_only",
+  "production_order_lock": {
+    "timeline_anchor": "master_voice_track",
+    "parallelization_rule": "Parallelize only when dependency IDs prove no downstream asset depends on unfinished work.",
+    "status": "NEEDS_USER_APPROVAL",
+    "phases": [
+      {
+        "phase_id": "P01",
+        "phase_order": 1,
+        "phase_name": "freeze_approved_script_and_scene_ids",
+        "depends_on_phase_ids": [],
+        "blocking_prerequisites": [
+          "approved_route"
+        ],
+        "output_asset_classes": [
+          "frozen_script",
+          "scene_ids"
+        ],
+        "execution_mode": "plan_only",
+        "approval_gate": "route_lock",
+        "proof_gate": "lineage_capture",
+        "status": "PASS"
+      },
+      {
+        "phase_id": "P02",
+        "phase_order": 2,
+        "phase_name": "generate_or_confirm_scene_sync_matrix",
+        "depends_on_phase_ids": [
+          "P01"
+        ],
+        "blocking_prerequisites": [
+          "scene_ids_frozen"
+        ],
+        "output_asset_classes": [
+          "scene_sync_matrix"
+        ],
+        "execution_mode": "plan_only",
+        "approval_gate": "route_lock",
+        "proof_gate": "scene_sync_schema_validation",
+        "status": "PASS"
+      },
+      {
+        "phase_id": "P03",
+        "phase_order": 3,
+        "phase_name": "generate_master_voice_track",
+        "depends_on_phase_ids": [
+          "P02"
+        ],
+        "blocking_prerequisites": [
+          "voice_script_locked"
+        ],
+        "output_asset_classes": [
+          "voice_assets"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "voice_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P04",
+        "phase_order": 4,
+        "phase_name": "align_voice_timestamps_to_scene_rows",
+        "depends_on_phase_ids": [
+          "P03"
+        ],
+        "blocking_prerequisites": [
+          "master_voice_exists"
+        ],
+        "output_asset_classes": [
+          "voice_alignment_packet"
+        ],
+        "execution_mode": "requires_confirmation",
+        "approval_gate": "timestamp_alignment_confirmation",
+        "proof_gate": "voice_alignment_proof_json",
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P05",
+        "phase_order": 5,
+        "phase_name": "generate_music_segments",
+        "depends_on_phase_ids": [
+          "P04"
+        ],
+        "blocking_prerequisites": [
+          "voice_alignment_packet"
+        ],
+        "output_asset_classes": [
+          "music_segments"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "music_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P06",
+        "phase_order": 6,
+        "phase_name": "generate_individual_sfx_clips",
+        "depends_on_phase_ids": [
+          "P04"
+        ],
+        "blocking_prerequisites": [
+          "voice_alignment_packet"
+        ],
+        "output_asset_classes": [
+          "sfx_clips"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "sfx_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P07",
+        "phase_order": 7,
+        "phase_name": "generate_character_consistency_reference_assets",
+        "depends_on_phase_ids": [
+          "P02"
+        ],
+        "blocking_prerequisites": [
+          "scene_sync_matrix"
+        ],
+        "output_asset_classes": [
+          "character_consistency_assets"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "character_reference_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P08",
+        "phase_order": 8,
+        "phase_name": "generate_storyboard_and_still_image_assets",
+        "depends_on_phase_ids": [
+          "P07"
+        ],
+        "blocking_prerequisites": [
+          "character_consistency_assets"
+        ],
+        "output_asset_classes": [
+          "storyboard_stills",
+          "depth_parallax_stills"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "storyboard_stills_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P09",
+        "phase_order": 9,
+        "phase_name": "render_hyperframes_slides_cards_and_alpha_overlays",
+        "depends_on_phase_ids": [
+          "P08"
+        ],
+        "blocking_prerequisites": [
+          "storyboard_stills"
+        ],
+        "output_asset_classes": [
+          "hyperframes_slide_assets",
+          "hyperframes_overlay_assets"
+        ],
+        "execution_mode": "local_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "hyperframes_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P10",
+        "phase_order": 10,
+        "phase_name": "generate_depth_maps_for_still_parallax_assets",
+        "depends_on_phase_ids": [
+          "P08"
+        ],
+        "blocking_prerequisites": [
+          "depth_parallax_stills"
+        ],
+        "output_asset_classes": [
+          "depth_maps"
+        ],
+        "execution_mode": "local_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "depth_map_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P11",
+        "phase_order": 11,
+        "phase_name": "generate_heygen_a_roll_batches",
+        "depends_on_phase_ids": [
+          "P03"
+        ],
+        "blocking_prerequisites": [
+          "master_voice_exists"
+        ],
+        "output_asset_classes": [
+          "a_roll_batches"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "heygen_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P12",
+        "phase_order": 12,
+        "phase_name": "generate_premium_cinematic_b_roll_clips",
+        "depends_on_phase_ids": [
+          "P02"
+        ],
+        "blocking_prerequisites": [
+          "scene_prompt_packets",
+          "video_prompt_packets"
+        ],
+        "output_asset_classes": [
+          "cinematic_broll_clips"
+        ],
+        "execution_mode": "cloud_after_approval",
+        "approval_gate": "user_approval_required",
+        "proof_gate": "cinematic_broll_proof_json",
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P13",
+        "phase_order": 13,
+        "phase_name": "build_davinci_timeline_from_packet",
+        "depends_on_phase_ids": [
+          "P03",
+          "P05",
+          "P06",
+          "P09",
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "blocking_prerequisites": [
+          "required_assets_exist"
+        ],
+        "output_asset_classes": [
+          "davinci_project_assets"
+        ],
+        "execution_mode": "blocked_until_assets_exist",
+        "approval_gate": "asset_existence_confirmation",
+        "proof_gate": "davinci_timeline_proof_json",
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P14",
+        "phase_order": 14,
+        "phase_name": "assemble_v1_v2_v3_and_a1_to_a5_tracks",
+        "depends_on_phase_ids": [
+          "P13"
+        ],
+        "blocking_prerequisites": [
+          "davinci_timeline_packet"
+        ],
+        "output_asset_classes": [
+          "assembled_timeline"
+        ],
+        "execution_mode": "blocked_until_assets_exist",
+        "approval_gate": "timeline_confirmation",
+        "proof_gate": "track_assembly_proof_json",
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P15",
+        "phase_order": 15,
+        "phase_name": "qc_sync_captions_safe_zones_color_and_audio",
+        "depends_on_phase_ids": [
+          "P14"
+        ],
+        "blocking_prerequisites": [
+          "assembled_timeline"
+        ],
+        "output_asset_classes": [
+          "qc_report"
+        ],
+        "execution_mode": "requires_confirmation",
+        "approval_gate": "human_qc_confirmation",
+        "proof_gate": "qc_proof_json",
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P16",
+        "phase_order": 16,
+        "phase_name": "export_youtube_master",
+        "depends_on_phase_ids": [
+          "P15"
+        ],
+        "blocking_prerequisites": [
+          "qc_report_passed"
+        ],
+        "output_asset_classes": [
+          "youtube_master_export"
+        ],
+        "execution_mode": "requires_confirmation",
+        "approval_gate": "export_confirmation",
+        "proof_gate": "export_proof_json",
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P17",
+        "phase_order": 17,
+        "phase_name": "collect_proofs_and_update_registry",
+        "depends_on_phase_ids": [
+          "P16"
+        ],
+        "blocking_prerequisites": [
+          "youtube_master_export"
+        ],
+        "output_asset_classes": [
+          "proof_registry_updates"
+        ],
+        "execution_mode": "requires_confirmation",
+        "approval_gate": "registry_update_confirmation",
+        "proof_gate": "registry_proof_json",
+        "status": "NEEDS_CONFIRMATION"
+      }
+    ]
+  },
+  "asset_inventory_ledger": {
+    "voice_assets": {
+      "count": 1,
+      "notes": "ElevenLabs master voice WAV anchors timeline.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "music_segments": {
+      "count": 4,
+      "notes": "Suno or licensed music segments by mood arc.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "sfx_clips": {
+      "count": 35,
+      "notes": "Individual SFX clips, not one mixed file.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "character_consistency_assets": {
+      "count": 3,
+      "notes": "Presenter/avatar reference, boy silhouette reference, color cards.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "storyboard_stills": {
+      "count": 46,
+      "notes": "Full storyboard/reference image batch for visual continuity and thumbnails.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "depth_parallax_stills": {
+      "count": 3,
+      "notes": "DA-V2 still inputs only: coin macro plus 8B left/right panels.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "hyperframes_slide_assets": {
+      "count": 7,
+      "notes": "Programmatic and NotebookLM scenes rendered through HyperFrames.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "hyperframes_overlay_assets": {
+      "count": 1,
+      "notes": "A-roll overlay/background alpha card for Scene 9B if approved.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "cinematic_broll_clips": {
+      "count": 3,
+      "notes": "Scenes 2A, 2B, 2C; 40 seconds total.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "a_roll_batches": {
+      "count": 4,
+      "notes": "HeyGen batches A-D with Batch D isolated for overlay.",
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    "davinci_project_assets": {
+      "count": 1,
+      "notes": "DaVinci project/timeline packet for final assembly.",
+      "status": "NEEDS_CONFIRMATION"
+    },
+    "thumbnail_assets": {
+      "count": 3,
+      "notes": "YouTube thumbnail concept variants.",
+      "status": "NEEDS_USER_APPROVAL"
+    }
+  },
+  "asset_dependency_graph": [
+    {
+      "asset_id": "master_voice_5m05s",
+      "asset_type": "voice",
+      "depends_on": [
+        "approved_script",
+        "scene_sync_matrix"
+      ],
+      "generation_lane": "cloud_voice",
+      "tool_or_provider": "ElevenLabs",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/02_audio/master_voice_5m05s.wav",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "voice_alignment_timestamp_pack",
+      "asset_type": "voice_alignment",
+      "depends_on": [
+        "master_voice_5m05s",
+        "scene_sync_matrix"
+      ],
+      "generation_lane": "local_alignment",
+      "tool_or_provider": "Whisper timestamp alignment",
+      "approval_required": false,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/02_audio/voice_alignment.json",
+      "proof_required": true,
+      "status": "NEEDS_CONFIRMATION"
+    },
+    {
+      "asset_id": "music_segment_pack",
+      "asset_type": "music",
+      "depends_on": [
+        "voice_alignment_timestamp_pack"
+      ],
+      "generation_lane": "cloud_music",
+      "tool_or_provider": "Suno or licensed music library",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/02_audio/music/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "sfx_library_pack",
+      "asset_type": "sfx",
+      "depends_on": [
+        "voice_alignment_timestamp_pack",
+        "scene_sync_matrix"
+      ],
+      "generation_lane": "cloud_or_local_sfx",
+      "tool_or_provider": "Suno or local licensed library",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/02_audio/sfx/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "character_consistency_reference_pack",
+      "asset_type": "reference_assets",
+      "depends_on": [
+        "scene_sync_matrix"
+      ],
+      "generation_lane": "cloud_image_reference",
+      "tool_or_provider": "ChatGPT image generation or approved still provider",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/03_references/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "storyboard_stills_pack",
+      "asset_type": "storyboard_stills",
+      "depends_on": [
+        "character_consistency_reference_pack",
+        "scene_prompt_packets"
+      ],
+      "generation_lane": "cloud_image",
+      "tool_or_provider": "ChatGPT image generation or approved still provider",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/03_storyboard_stills/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "hyperframes_render_pack",
+      "asset_type": "motion_graphics",
+      "depends_on": [
+        "scene_sync_matrix",
+        "storyboard_stills_pack"
+      ],
+      "generation_lane": "local_hyperframes",
+      "tool_or_provider": "HyperFrames CLI",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/04_hyperframes/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "depth_map_pack",
+      "asset_type": "depth_maps",
+      "depends_on": [
+        "storyboard_stills_pack"
+      ],
+      "generation_lane": "local_depth",
+      "tool_or_provider": "Depth Anything V2",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/05_depth_maps/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "heygen_batch_pack",
+      "asset_type": "a_roll_batches",
+      "depends_on": [
+        "master_voice_5m05s"
+      ],
+      "generation_lane": "cloud_avatar",
+      "tool_or_provider": "HeyGen",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/06_aroll/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "cinematic_broll_pack",
+      "asset_type": "cinematic_broll",
+      "depends_on": [
+        "scene_prompt_packets",
+        "video_prompt_packets"
+      ],
+      "generation_lane": "cloud_video",
+      "tool_or_provider": "Runway or Kling",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/07_broll_cinematic/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    },
+    {
+      "asset_id": "davinci_master_timeline",
+      "asset_type": "edit_timeline",
+      "depends_on": [
+        "master_voice_5m05s",
+        "music_segment_pack",
+        "sfx_library_pack",
+        "hyperframes_render_pack",
+        "depth_map_pack",
+        "heygen_batch_pack",
+        "cinematic_broll_pack"
+      ],
+      "generation_lane": "local_edit",
+      "tool_or_provider": "DaVinci Resolve",
+      "approval_required": false,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/08_davinci/yash_selfinvestment_v1.drp",
+      "proof_required": true,
+      "status": "NEEDS_CONFIRMATION"
+    },
+    {
+      "asset_id": "qc_proof_pack",
+      "asset_type": "qc_report",
+      "depends_on": [
+        "davinci_master_timeline"
+      ],
+      "generation_lane": "local_qc",
+      "tool_or_provider": "DaVinci Resolve + FFmpeg + human review",
+      "approval_required": false,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/09_qc/qc_report.json",
+      "proof_required": true,
+      "status": "NEEDS_CONFIRMATION"
+    },
+    {
+      "asset_id": "thumbnail_pack",
+      "asset_type": "thumbnail_assets",
+      "depends_on": [
+        "storyboard_stills_pack",
+        "scene_prompt_packets"
+      ],
+      "generation_lane": "cloud_or_local_thumbnail",
+      "tool_or_provider": "ChatGPT image generation or local design tool",
+      "approval_required": true,
+      "expected_output_path": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/10_thumbnails/",
+      "proof_required": true,
+      "status": "NEEDS_USER_APPROVAL"
+    }
+  ],
+  "control_panel_execution_plan": {
+    "bridge_registry": "registries/local_media_factory_bridge.yaml",
+    "control_panel_cli": "/Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py",
+    "job_packet_dir": "/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/01_timeline",
+    "preflight_required": true,
+    "render_requires_user_approval": true,
+    "proof_json_required": true,
+    "registry_update_required": true,
+    "phases": [
+      {
+        "phase_id": "P01",
+        "plan_state": "preflight",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_phase_until_proof",
+        "proof_artifacts": [
+          "lineage_capture",
+          "registry_entry"
+        ],
+        "status": "PASS"
+      },
+      {
+        "phase_id": "P02",
+        "plan_state": "preflight",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_phase_until_proof",
+        "proof_artifacts": [
+          "scene_sync_schema_validation",
+          "registry_entry"
+        ],
+        "status": "PASS"
+      },
+      {
+        "phase_id": "P03",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_voice_lane",
+        "proof_artifacts": [
+          "voice_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P04",
+        "plan_state": "requires_confirmation",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_voice_lane",
+        "proof_artifacts": [
+          "voice_alignment_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P05",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_music_lane",
+        "proof_artifacts": [
+          "music_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P06",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_sfx_lane",
+        "proof_artifacts": [
+          "sfx_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P07",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_phase_until_proof",
+        "proof_artifacts": [
+          "character_reference_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P08",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_phase_until_proof",
+        "proof_artifacts": [
+          "storyboard_stills_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P09",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "fallback_to_static_cards",
+        "proof_artifacts": [
+          "hyperframes_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P10",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "fallback_to_flat_stills",
+        "proof_artifacts": [
+          "depth_map_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P11",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_a_roll_lane",
+        "proof_artifacts": [
+          "heygen_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P12",
+        "plan_state": "ready_after_approval",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "fallback_to_animated_storyboard_only",
+        "proof_artifacts": [
+          "cinematic_broll_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_USER_APPROVAL"
+      },
+      {
+        "phase_id": "P13",
+        "plan_state": "blocked_until_required_assets_exist",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_final_assembly",
+        "proof_artifacts": [
+          "davinci_timeline_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P14",
+        "plan_state": "blocked_until_required_assets_exist",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_final_assembly",
+        "proof_artifacts": [
+          "track_assembly_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P15",
+        "plan_state": "blocked_until_required_assets_exist",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_export",
+        "proof_artifacts": [
+          "qc_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P16",
+        "plan_state": "blocked_until_required_assets_exist",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_phase_until_proof",
+        "proof_artifacts": [
+          "export_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_CONFIRMATION"
+      },
+      {
+        "phase_id": "P17",
+        "plan_state": "blocked_until_required_assets_exist",
+        "control_panel_entrypoint": "shadow_factory_ctl.py",
+        "preflight_dependency": "job_packet_preflight",
+        "downgrade_on_failure": "block_phase_until_proof",
+        "proof_artifacts": [
+          "registry_proof_json",
+          "registry_entry"
+        ],
+        "status": "NEEDS_CONFIRMATION"
+      }
+    ]
+  },
+  "davinci_timeline_packet": {
+    "track_map": {
+      "V1": "primary_video",
+      "V2": "overlays_and_chromakey_presenter",
+      "V3": "captions_and_kinetic_text",
+      "A1": "master_voice",
+      "A2": "music_segments",
+      "A3": "sfx_impact_transition",
+      "A4": "sfx_ambient_foley",
+      "A5": "sfx_overflow"
+    },
+    "timeline_rows": [
+      {
+        "scene_id": "Scene 1",
+        "source_asset_id": "heygen_scene_1",
+        "start_time": "0:00",
+        "end_time": "0:12",
+        "track": "V1",
+        "transition_in": "Hard open from black (0 frame dissolve). No transition before Scene 1.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Montserrat ExtraBold. Gold glow on **₹300**, **Rocky Bhai**, **change your life**. No caption bar in bottom 15%.",
+        "color_grade": "Warm amber backlight rims shoulders. Desaturated charcoal background.",
+        "safe_zone": "Bottom 15% clear of watch bar.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 2A",
+        "source_asset_id": "broll_scene_2A",
+        "start_time": "0:12",
+        "end_time": "0:28",
+        "track": "V1",
+        "transition_in": "Hard cut from Scene 1 on the word \"Picture this.\" (voice beat sync).",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Clean centered white text. Helvetica Light. No gold here — building empathy, not triumph.",
+        "color_grade": "Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+        "safe_zone": "Center-weighted safe. No text bottom 15%.",
+        "proof_dependency": "cinematic_broll_pack"
+      },
+      {
+        "scene_id": "Scene 2B",
+        "source_asset_id": "broll_scene_2B",
+        "start_time": "0:28",
+        "end_time": "0:42",
+        "track": "V1",
+        "transition_in": "Soft dissolve (1.0s) from Scene 2A into crane shot.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Bold white text. Staccato word reveals synced to voice pauses: \"No connections.\" → \"No mentor.\" → \"No plan.\"",
+        "color_grade": "Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+        "safe_zone": "Center safe. Text top 30% of frame.",
+        "proof_dependency": "cinematic_broll_pack"
+      },
+      {
+        "scene_id": "Scene 2C",
+        "source_asset_id": "broll_scene_2C",
+        "start_time": "0:42",
+        "end_time": "0:52",
+        "track": "V1",
+        "transition_in": "Soft dissolve (0.8s) from Scene 2B.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "White text. \"performing in small plays\" in italic soft white.",
+        "color_grade": "Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+        "safe_zone": "Bottom 15% clear.",
+        "proof_dependency": "cinematic_broll_pack"
+      },
+      {
+        "scene_id": "Scene 2D",
+        "source_asset_id": "depth_parallax_scene_2D",
+        "start_time": "0:52",
+        "end_time": "1:02",
+        "track": "V1",
+        "transition_in": "Whip pan micro-cut (0.3s) from Scene 2C at the word \"Counting\".",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold text. Each word appears one-at-a-time on voice beats: **Every.** → **Single.** → **Night.** Montserrat ExtraBold.",
+        "color_grade": "Extreme amber key. Dark vignette. High contrast grain (8%).",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "depth_map_pack"
+      },
+      {
+        "scene_id": "Scene 2E",
+        "source_asset_id": "hyperframes_slide_scene_2E",
+        "start_time": "1:02",
+        "end_time": "1:10",
+        "track": "V1",
+        "transition_in": "Hard cut from Scene 2D on the word \"And when.\" Zero-frame cut for maximum impact.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Text IS the visual. Gold outlined \"₹300 → ₹1,200 CRORE\" glowing. No caption overlay needed.",
+        "color_grade": "Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 3",
+        "source_asset_id": "heygen_scene_3",
+        "start_time": "1:10",
+        "end_time": "1:20",
+        "track": "V1",
+        "transition_in": "Jump-cut zoom (snap zoom 0.2s on \"NOT\").",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "\"NOT DOING\" highlighted in red. Montserrat ExtraBold. All other text clean white.",
+        "color_grade": "Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+        "safe_zone": "Bottom 15% clear.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 4A1",
+        "source_asset_id": "heygen_scene_4A1",
+        "start_time": "1:20",
+        "end_time": "1:35",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 3.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Clean bold white text. Gold highlight on **Ekalavya** and **craft**.",
+        "color_grade": "Slate gray tones. Soft warm side lighting.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 4A2",
+        "source_asset_id": "heygen_scene_4A2",
+        "start_time": "1:35",
+        "end_time": "1:50",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 4A1.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **invest** and **yourself**.",
+        "color_grade": "Slate gray. Warm rim.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 4B1",
+        "source_asset_id": "hyperframes_slide_scene_4B1",
+        "start_time": "1:50",
+        "end_time": "2:03",
+        "track": "V1",
+        "transition_in": "Soft dissolve (0.5s) from Scene 4A2.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **craft**. Text in panels IS the visual.",
+        "color_grade": "Charcoal background. High-contrast red/gold glows.",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 4B2",
+        "source_asset_id": "hyperframes_slide_scene_4B2",
+        "start_time": "2:03",
+        "end_time": "2:15",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 4B1.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **yourself**.",
+        "color_grade": "Charcoal. Red/gold glows.",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 5",
+        "source_asset_id": "heygen_scene_5",
+        "start_time": "2:15",
+        "end_time": "2:25",
+        "track": "V1",
+        "transition_in": "Hard cut from Scene 4B2 to extreme close-up (pattern interrupt).",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "**\"THAT'S THE TRAP\"** in gold capitals. Maximum size. Flashes on screen.",
+        "color_grade": "Deep shadow under eyes. Single amber eye reflection highlight.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 6A1",
+        "source_asset_id": "notebooklm_hyperframes_scene_6A1",
+        "start_time": "2:25",
+        "end_time": "2:40",
+        "track": "V1",
+        "transition_in": "Soft dissolve (0.8s) from Scene 5 into NotebookLM slide.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **lose money**, **lose development**.",
+        "color_grade": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+        "safe_zone": "Left margin safe. No text in right 8% (panel edge).",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 6A2",
+        "source_asset_id": "notebooklm_hyperframes_scene_6A2",
+        "start_time": "2:40",
+        "end_time": "2:55",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 6A1.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **lose yourself**, **stunted**.",
+        "color_grade": "Warm beige (#FBF9F6). Dark gray text.",
+        "safe_zone": "Left margin safe.",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 6B1",
+        "source_asset_id": "heygen_scene_6B1",
+        "start_time": "2:55",
+        "end_time": "3:10",
+        "track": "V1",
+        "transition_in": "Cut back from NotebookLM slide to presenter A-roll. Warm re-entry.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Clean white text. Gold highlight on **potential** and **expires**.",
+        "color_grade": "Warm gold rim light. Slate gray background.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 6B2",
+        "source_asset_id": "heygen_scene_6B2",
+        "start_time": "3:10",
+        "end_time": "3:25",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 6B1.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **yourself** and **compounded**.",
+        "color_grade": "Warm gold rim. Slate gray.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 7",
+        "source_asset_id": "hyperframes_slide_scene_7",
+        "start_time": "3:25",
+        "end_time": "3:35",
+        "track": "V1",
+        "transition_in": "Hard cut from Scene 6B2 (maximum pattern interrupt).",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Text IS the visual. Gold letters. No caption overlay.",
+        "color_grade": "Gold text glow on pure black.",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 8A",
+        "source_asset_id": "notebooklm_hyperframes_scene_8A",
+        "start_time": "3:35",
+        "end_time": "3:55",
+        "track": "V1",
+        "transition_in": "Soft dissolve (0.8s) from Scene 7.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **skills, not status** and **compounds**.",
+        "color_grade": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+        "safe_zone": "Left margin safe.",
+        "proof_dependency": "hyperframes_render_pack"
+      },
+      {
+        "scene_id": "Scene 8B",
+        "source_asset_id": "depth_parallax_scene_8B",
+        "start_time": "3:55",
+        "end_time": "4:10",
+        "track": "V1",
+        "transition_in": "Soft dissolve (0.5s) from Scene 8A.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **time**. \"What are you choosing?\" appears full screen in gold at +13.5s.",
+        "color_grade": "Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "depth_map_pack"
+      },
+      {
+        "scene_id": "Scene 8C1",
+        "source_asset_id": "heygen_scene_8C1",
+        "start_time": "4:10",
+        "end_time": "4:22",
+        "track": "V1",
+        "transition_in": "Cut back to presenter A-roll from Scene 8B.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **energy** and **focus**.",
+        "color_grade": "Warm gold rim light. Slate gray.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 8C2",
+        "source_asset_id": "heygen_scene_8C2",
+        "start_time": "4:22",
+        "end_time": "4:35",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 8C1.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **arrogant**. \"Still where they were\" in cold white — no gold.",
+        "color_grade": "Warm gold rim. Slate gray.",
+        "safe_zone": "Bottom 15%.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 9A",
+        "source_asset_id": "heygen_scene_9A",
+        "start_time": "4:35",
+        "end_time": "4:47",
+        "track": "V1",
+        "transition_in": "Jump cut from Scene 8C2.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **portfolio**. \"NOW.\" in giant gold capitals on-screen at +11s.",
+        "color_grade": "High-contrast side key. Warm gold rim.",
+        "safe_zone": "Center safe.",
+        "proof_dependency": "heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 9B",
+        "source_asset_id": "hyperframes_overlay_scene_9B + heygen_overlay_scene_9B",
+        "start_time": "4:47",
+        "end_time": "4:55",
+        "track": "V1+V2",
+        "transition_in": "Dissolve (0.8s) from Scene 9A into composite overlay layout.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Bold green highlighted title text. \"LINKED ABOVE ↑\" annotation overlaid.",
+        "color_grade": "Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+        "safe_zone": "Top-right card safe. Presenter bottom-right.",
+        "proof_dependency": "hyperframes_render_pack,heygen_batch_pack"
+      },
+      {
+        "scene_id": "Scene 9C",
+        "source_asset_id": "heygen_scene_9C",
+        "start_time": "4:55",
+        "end_time": "5:05",
+        "track": "V1",
+        "transition_in": "Straight cut from Scene 9B. Fade to black at +8.5s.",
+        "transition_out": "next_scene_locked_cut",
+        "j_cut_or_l_cut_offset": "j=0s;l=0s",
+        "caption_action": "Gold highlight on **himself**. Subscribe/Like animation lower third appears at +5s.",
+        "color_grade": "Soft warm key light. Golden rim highlight.",
+        "safe_zone": "Bottom 15% clear.",
+        "proof_dependency": "heygen_batch_pack"
+      }
+    ]
+  },
+  "production_proof_gate": {
+    "artifact_path": "/Users/apple/ShadowMediaFactory/08_EXPORTS/yash_selfinvestment_master.mp4",
+    "proof_json_path": "/Users/apple/ShadowMediaFactory/control_panel/proofs/yash_selfinvestment_master_proof.json",
+    "registry_entry_path": "/Users/apple/ShadowMediaFactory/control_panel/registry/assets.jsonl",
+    "engine_or_provider_used": "DaVinci Resolve final assembly after approved assets",
+    "source_packet_ref": "outputs/missions/yash_self_investment/packets/media_factory_packet.json",
+    "validation_result": "NEEDS_CONFIRMATION",
+    "human_review_status": "pending",
+    "status": "NEEDS_CONFIRMATION"
+  },
+  "provider_boundary": {
+    "providers_called": false,
+    "n8n_used": false,
+    "provider_execution_allowed": false,
+    "media_artifacts_claimed": false
+  },
+  "local_engine_boundary": {
+    "local_media_generation_engine_used": false,
+    "local_engine_execution_approved": false,
+    "engines_referenced": [
+      "hyperframes_cli_local",
+      "depth_anything_v2_local",
+      "davinci_resolve_local",
+      "ffmpeg_local"
+    ]
+  },
+  "a_roll_plan": {
+    "avatar_or_presenter": "HeyGen presenter batches A-D planned only",
+    "style": "direct motivational presenter",
+    "safety_handling": "generic presenter, no real-person face generation",
+    "tool_target": "heygen_api",
+    "readiness_status": "PACKET_READY"
+  },
+  "b_roll_plan": {
+    "scene_count": 5,
+    "sourcing_strategy": "hybrid",
+    "primary_tool_target": "runway_ml_api/kling_ai_api for 2A-2C after approval; local DA-V2 for still parallax",
+    "storyboard_export_path": "outputs/missions/yash_self_investment/storyboard/",
+    "readiness_status": "PACKET_READY"
+  },
+  "voice_plan": {
+    "style": "firm cinematic motivational narrator",
+    "tool_target": "elevenlabs_api",
+    "ssml_ready": false,
+    "readiness_status": "PACKET_READY"
+  },
+  "music_sfx_plan": {
+    "mood": "dark cinematic to triumphant motivational rise",
+    "tempo": "scene-specific",
+    "tool_target": "Suno or local licensed library after approval",
+    "readiness_status": "PACKET_READY"
+  },
+  "image_prompt_packets": [
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "1"
+      },
+      "validation_status": "PASS",
+      "scene_id": "1",
+      "timestamp_range": "0:00-0:12",
+      "narration_ref": "A boy with ₹300 in his pocket stepped off a bus in Bengaluru. He didn't come with connections or a plan. He came with one skill. And that skill made him ₹1,200 Crore. Stop scrolling. Because what he did — you can do too.",
+      "emotional_intent": "Opens as conspiratorial whisper. Shifts to a sharp, direct declaration at 'Stop scrolling.'",
+      "visual_objective": "**Hook Law:** First 12s must lock attention with a real-person proof statement. Whisper-to-declaration voice arc is the primary pattern interrupt. No B-roll here — presenter presence builds personal authority at start.",
+      "subject": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+      "environment": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+      "camera_framing": "close_up",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm amber backlight rims shoulders. Desaturated charcoal background.",
+      "color_palette": "Warm amber backlight rims shoulders. Desaturated charcoal background.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=1; palette=Warm amber backlight rims shoulders. Desaturated charcoal background.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_1"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "2A"
+      },
+      "validation_status": "PASS",
+      "scene_id": "2A",
+      "timestamp_range": "0:12-0:28",
+      "narration_ref": "Picture this. Bengaluru, 1990s. Seventeen-year-old Naveen Kumar Gowda — a boy from a small Karnataka town — steps off a government bus into the biggest city he has ever seen. He has ₹300 in his pocket. His father is a KSRTC bus driver.",
+      "emotional_intent": "Soft cinematic narrator. Slow, measured pacing.",
+      "visual_objective": "**Story Law:** This is the CINEMATIC_SHORT_STORY_BLOCK establishing shot. Must be premium cloud video — motion, rain, crowd, and bus mechanics cannot be convincingly faked with a still. This is one of the primary B-roll spend allocations per the 12% law.",
+      "subject": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+      "environment": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+      "camera_framing": "wide",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+      "color_palette": "Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2A; palette=Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "use_side_profile",
+      "tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_2A"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "2B"
+      },
+      "validation_status": "PASS",
+      "scene_id": "2B",
+      "timestamp_range": "0:28-0:42",
+      "narration_ref": "No connections. No mentor. No plan. Just a dream to perform on stage — and ₹300 standing between him and survival.",
+      "emotional_intent": "Staccato, firm narrator. Pauses after each word list item.",
+      "visual_objective": "**B-Roll Law:** Extreme wide + crane up is a signature cinematic move that cannot be replicated with a still frame. The emotional peak of the story block — boy vs. city — requires genuine video motion for maximum retention impact. This is the second primary B-roll spend.",
+      "subject": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+      "environment": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+      "camera_framing": "extreme_wide",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+      "color_palette": "Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2B; palette=Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "use_silhouette",
+      "tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_2B"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "2C"
+      },
+      "validation_status": "PASS",
+      "scene_id": "2C",
+      "timestamp_range": "0:42-0:52",
+      "narration_ref": "For months, he performed in small plays. Earning almost nothing.",
+      "emotional_intent": "Empathetic, solemn. Slow delivery.",
+      "visual_objective": "**B-Roll Law:** This is the story's emotional dip — the struggle. The floating dust mote + spotlight effect cannot be replicated with a still. Third concentrated cinematic B-roll spend. Running total: 16+14+10 = 40s = 13.1%.",
+      "subject": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+      "environment": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+      "color_palette": "Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Slow dolly push-in toward the stage. Extremely gradual.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2C; palette=Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "use_silhouette",
+      "tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_2C"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "2D"
+      },
+      "validation_status": "PASS",
+      "scene_id": "2D",
+      "timestamp_range": "0:52-1:02",
+      "narration_ref": "Counting coins. Every. Single. Night.",
+      "emotional_intent": "Tightly punched. Pauses after each word for dramatic weight.",
+      "visual_objective": "**Image Law:** Macro still + 2.5D parallax is perfectly suited here. The emotional beat is a close detail shot (coins), not wide cinematic motion — still image achieves the same effect at zero cost. DA-V2 parallax adds dimensionality.",
+      "subject": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+      "environment": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+      "camera_framing": "close_up",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Extreme amber key. Dark vignette. High contrast grain (8%).",
+      "color_palette": "Extreme amber key. Dark vignette. High contrast grain (8%).",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2D; palette=Extreme amber key. Dark vignette. High contrast grain (8%).",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "depth_anything_v2_local",
+        "davinci_resolve_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_2D"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "2E"
+      },
+      "validation_status": "PASS",
+      "scene_id": "2E",
+      "timestamp_range": "1:02-1:10",
+      "narration_ref": "And when he finally broke through — the world called him Rocky Bhai. ₹300 to ₹1,200 Crore. Naveen Kumar Gowda — known as Yash.",
+      "emotional_intent": "Reverent, building to a proud crescendo on \"Yash.\"",
+      "visual_objective": "**Programmatic Slide Law:** Number-reveal moments do not need cinematic footage. HyperFrames delivers pixel-perfect kinetic gold text at zero cost. Maximum impact moment — the transformation reveal.",
+      "subject": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+      "environment": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+      "color_palette": "Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out + glow_pulse 1.5s loop`",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2E; palette=Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "use_silhouette",
+      "tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_2E"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "3"
+      },
+      "validation_status": "PASS",
+      "scene_id": "3",
+      "timestamp_range": "1:10-1:20",
+      "narration_ref": "That boy earning ₹300 was investing in himself every day. The question is — what are YOU not doing with yours?",
+      "emotional_intent": "Challenging. Intense. Direct confrontation with viewer. Peak authority voice.",
+      "visual_objective": "**Re-Hook Law:** First re-hook at ~70s. Must reset viewer retention. Presenter on camera creates personal accountability pressure. The snap zoom is the pattern interrupt. Silence amplifies impact.",
+      "subject": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+      "environment": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+      "color_palette": "Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=3; palette=Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_3"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "4A1"
+      },
+      "validation_status": "PASS",
+      "scene_id": "4A1",
+      "timestamp_range": "1:20-1:35",
+      "narration_ref": "Do you think Yash's name became 'Rocky Bhai' because he was lucky? He started in theatre. ₹300 budget. An Ekalavya path. He chose the craft.",
+      "emotional_intent": "Confident, authoritative. Teaching mode.",
+      "visual_objective": "**Principle Setup:** Establishes the core teaching — effort not luck. No B-roll needed. Presenter authority carries the argument.",
+      "subject": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+      "environment": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Slate gray tones. Soft warm side lighting.",
+      "color_palette": "Slate gray tones. Soft warm side lighting.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static framing. No camera movement.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4A1; palette=Slate gray tones. Soft warm side lighting.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_4A1"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "4A2"
+      },
+      "validation_status": "PASS",
+      "scene_id": "4A2",
+      "timestamp_range": "1:35-1:50",
+      "narration_ref": "Not because he was born talented. But because every rupee he earned — he put back into himself. Skills. Knowledge. Craft. That is what I want you to understand today. Invest in yourself.",
+      "emotional_intent": "Authoritative mentor. Building to a declaration.",
+      "visual_objective": "**Principle Law:** Core thesis delivery. Presenter face-time builds trust before the visual framework is introduced.",
+      "subject": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+      "environment": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Slate gray. Warm rim.",
+      "color_palette": "Slate gray. Warm rim.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4A2; palette=Slate gray. Warm rim.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_4A2"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "4B1"
+      },
+      "validation_status": "PASS",
+      "scene_id": "4B1",
+      "timestamp_range": "1:50-2:03",
+      "narration_ref": "Every rupee Yash earned, he spent on himself — not on things that made him look good for other people. On skills. On knowledge. On his craft. That is self-investment. Everything else is just spending.",
+      "emotional_intent": "Intimate, slightly warning. Like a mentor catching you before a mistake.",
+      "visual_objective": "**HyperFrames Slide Law:** Binary comparison (bad vs good) is perfectly rendered by HyperFrames split card. Zero cost. High clarity. Pacing maintained with Ken Burns pan across panels.",
+      "subject": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C62828` <br> `right_accent=#FFB300` <br> `animation=left_slides_in 0.4s, right_slides_in 0.7s`",
+      "environment": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C62828` <br> `right_accent=#FFB300` <br> `animation=left_slides_in 0.4s, right_slides_in 0.7s`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Charcoal background. High-contrast red/gold glows.",
+      "color_palette": "Charcoal background. High-contrast red/gold glows.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4B1; palette=Charcoal background. High-contrast red/gold glows.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_4B1"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "4B2"
+      },
+      "validation_status": "PASS",
+      "scene_id": "4B2",
+      "timestamp_range": "2:03-2:15",
+      "narration_ref": "Your money and your time are your two most powerful assets. And most of you are spending both of them on other people. On their validation. On their comfort. While you stay exactly where you are.",
+      "emotional_intent": "Pained warning. Delivered slowly.",
+      "visual_objective": "**Slide Series Law:** Back-to-back HyperFrames slides maintain visual variety without needing camera cuts. The pan motion between cards simulates editing pace without real footage.",
+      "subject": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C62828` <br> `right_accent=#FFB300` <br> `animation=sequential_reveal 0.5s delay each`",
+      "environment": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C62828` <br> `right_accent=#FFB300` <br> `animation=sequential_reveal 0.5s delay each`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Charcoal. Red/gold glows.",
+      "color_palette": "Charcoal. Red/gold glows.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Slow horizontal pan continues from left panel to right panel.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4B2; palette=Charcoal. Red/gold glows.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_4B2"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "5"
+      },
+      "validation_status": "PASS",
+      "scene_id": "5",
+      "timestamp_range": "2:15-2:25",
+      "narration_ref": "And I know what you're thinking. 'But I have responsibilities. Family. Bills.' I hear you. That's the trap.",
+      "emotional_intent": "Empathetic whisper. Drops lower mid-sentence. \"That's the trap\" is barely audible — maximum tension.",
+      "visual_objective": "**Re-Hook Law:** Second re-hook at ~135s. Extreme close-up with silence is one of the highest-retention techniques in YouTube. The whispered reveal creates emotional tension before the NotebookLM evidence section.",
+      "subject": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+      "environment": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+      "camera_framing": "extreme_close_up",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Deep shadow under eyes. Single amber eye reflection highlight.",
+      "color_palette": "Deep shadow under eyes. Single amber eye reflection highlight.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Slow camera push-in (100% → 106% over 10s).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=5; palette=Deep shadow under eyes. Single amber eye reflection highlight.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_5"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "6A1"
+      },
+      "validation_status": "PASS",
+      "scene_id": "6A1",
+      "timestamp_range": "2:25-2:40",
+      "narration_ref": "Here's the truth no one tells you. Every time you spend your energy making other people feel good about themselves — you lose. You lose money. You lose time. You lose development. And worst of all, you lose clarity on who you are.",
+      "emotional_intent": "Warning, educational. Controlled authority.",
+      "visual_objective": "**NotebookLM Law:** Evidence-based claims are always more credible inside a \"document\" visual frame. HyperFrames renders the full dual-panel layout locally at zero cost. The typing animation simulates live note-taking — creates real-time revelation effect that lifts retention.",
+      "subject": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Config:** <br> `assets_needed=validation_ledger_thumb.svg, notebook_bg_canvas.png` <br> `font_family=Outfit` <br> `theme_styling=light (#FBF9F6 bg, #2C2C2C text)` <br> `active_note_glow=#FFB300` <br> `typing_animation=45 WPM` <br> `scroll_trigger=auto_scroll line_3 at +12.0s` <br> `gsap_timeline_sync=highlight_1 at +3.2s ('lose money'), highlight_2 at +8.7s ('lose development')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+      "environment": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Config:** <br> `assets_needed=validation_ledger_thumb.svg, notebook_bg_canvas.png` <br> `font_family=Outfit` <br> `theme_styling=light (#FBF9F6 bg, #2C2C2C text)` <br> `active_note_glow=#FFB300` <br> `typing_animation=45 WPM` <br> `scroll_trigger=auto_scroll line_3 at +12.0s` <br> `gsap_timeline_sync=highlight_1 at +3.2s ('lose money'), highlight_2 at +8.7s ('lose development')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+      "color_palette": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6A1; palette=Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_6A1"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "6A2"
+      },
+      "validation_status": "PASS",
+      "scene_id": "6A2",
+      "timestamp_range": "2:40-2:55",
+      "narration_ref": "When you spend years managing other people's emotions, carrying other people's dreams — you lose yourself. You become the support system for everyone else's growth — while your own growth gets stunted. Yash refused this.",
+      "emotional_intent": "Solemn warning. Slow deliberate pace.",
+      "visual_objective": "**NotebookLM Series Law:** Second document card entering the source shelf visually communicates \"more evidence.\" The live-typing cursor for \"stunted growth\" is a micro-animation that forces viewers to read the word as it forms — peak attention spike in this segment.",
+      "subject": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames Config:** <br> `assets_needed=career_ledger_thumb.svg` <br> `font_family=Outfit` <br> `theme_styling=light` <br> `active_note_glow=#FFB300` <br> `typing_animation=50 WPM (fakes typing 'stunted growth')` <br> `scroll_trigger=none` <br> `gsap_timeline_sync=highlight_1 at +4.5s ('lose yourself'), highlight_2 at +11.2s ('growth gets stunted')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+      "environment": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames Config:** <br> `assets_needed=career_ledger_thumb.svg` <br> `font_family=Outfit` <br> `theme_styling=light` <br> `active_note_glow=#FFB300` <br> `typing_animation=50 WPM (fakes typing 'stunted growth')` <br> `scroll_trigger=none` <br> `gsap_timeline_sync=highlight_1 at +4.5s ('lose yourself'), highlight_2 at +11.2s ('growth gets stunted')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm beige (#FBF9F6). Dark gray text.",
+      "color_palette": "Warm beige (#FBF9F6). Dark gray text.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6A2; palette=Warm beige (#FBF9F6). Dark gray text.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_6A2"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "6B1"
+      },
+      "validation_status": "PASS",
+      "scene_id": "6B1",
+      "timestamp_range": "2:55-3:10",
+      "narration_ref": "I know — because I've seen it. I've watched brilliant people shrink themselves. Spend their best years being everything to everyone. And wake up one day wondering: where did I go? Your potential doesn't wait. It expires.",
+      "emotional_intent": "Empathetic, vulnerable. Slower pace than previous scenes. First-person confession.",
+      "visual_objective": "**Empathy Law:** After two slides of heavy data/warnings, switching back to presenter face creates personal connection. Empathy moment is required before the next instructional arc.",
+      "subject": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+      "environment": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm gold rim light. Slate gray background.",
+      "color_palette": "Warm gold rim light. Slate gray background.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6B1; palette=Warm gold rim light. Slate gray background.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_6B1"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "6B2"
+      },
+      "validation_status": "PASS",
+      "scene_id": "6B2",
+      "timestamp_range": "3:10-3:25",
+      "narration_ref": "Yash could have spent his ₹300 buying people's approval. Impressing the city. Fitting in. Instead, he spent every rupee investing in his acting. In his voice. In himself. And that is the only investment that actually compounded.",
+      "emotional_intent": "Firm resolve narrator. Building conviction.",
+      "visual_objective": "**Bridge Law:** Narrative bridge between evidence (NotebookLM) and action framework. Returns the story to Yash to re-anchor emotional investment before the prescription section.",
+      "subject": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+      "environment": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm gold rim. Slate gray.",
+      "color_palette": "Warm gold rim. Slate gray.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6B2; palette=Warm gold rim. Slate gray.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_6B2"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "7"
+      },
+      "validation_status": "PASS",
+      "scene_id": "7",
+      "timestamp_range": "3:25-3:35",
+      "narration_ref": "You're not broke. You're not stuck. You're just spending your investments in the wrong place.",
+      "emotional_intent": "Confrontational. Direct. Maximum volume and energy.",
+      "visual_objective": "**Re-Hook Law:** Third re-hook at ~205s. Text-on-black with music silence is the highest-contrast pattern interrupt available. The secondary text \"or someone else will invest in you as a tool\" is the twist that makes viewers pause and re-read — maximum rewatch signal.",
+      "subject": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 1.5s ease-out + secondary_text_fade_in at +2.5s`",
+      "environment": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 1.5s ease-out + secondary_text_fade_in at +2.5s`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Gold text glow on pure black.",
+      "color_palette": "Gold text glow on pure black.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=7; palette=Gold text glow on pure black.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_7"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "8A"
+      },
+      "validation_status": "PASS",
+      "scene_id": "8A",
+      "timestamp_range": "3:35-3:55",
+      "narration_ref": "So what does investing in yourself actually look like? First: Invest your money in skills — not in status. That ₹5,000 you're about to spend impressing people? Spend it on something that compounds. A course. A mentor session. A book. A skil",
+      "emotional_intent": "Direct, instructive. Count-listing delivery.",
+      "visual_objective": "**Action Framework Law:** After three arcs of story and warning, the viewer must receive a concrete prescription. NotebookLM action frame makes the prescription feel research-backed and credible rather than preachy.",
+      "subject": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_preview_thumb.png, skills_list_thumb.svg` <br> `font_family=Outfit` <br> `theme_styling=light` <br> `active_note_glow=#FFD54F` <br> `typing_animation=50 WPM` <br> `scroll_trigger=none` <br> `gsap_timeline_sync=highlight_1 at +4.8s ('skills, not status'), highlight_2 at +14.2s ('spend it on something that compounds')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+      "environment": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_preview_thumb.png, skills_list_thumb.svg` <br> `font_family=Outfit` <br> `theme_styling=light` <br> `active_note_glow=#FFD54F` <br> `typing_animation=50 WPM` <br> `scroll_trigger=none` <br> `gsap_timeline_sync=highlight_1 at +4.8s ('skills, not status'), highlight_2 at +14.2s ('spend it on something that compounds')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+      "color_palette": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "documentary",
+      "movement_intent": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8A; palette=Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_8A"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "8B"
+      },
+      "validation_status": "PASS",
+      "scene_id": "8B",
+      "timestamp_range": "3:55-4:10",
+      "narration_ref": "Second: Invest your time in growth — not in distraction. Every hour on that doomscroll feed is an hour you could have spent rehearsing. Practicing. Improving. Yash chose the stage. What are you choosing?",
+      "emotional_intent": "Energetic conviction. Punchy delivery on \"What are you choosing?\"",
+      "visual_objective": "**Image Law:** The side-by-side comparison is a static composition with controlled motion. No camera move is required — the contrast IS the content. DA-V2 parallax on each panel adds depth without cloud video cost. Correct tool: local still + DaVinci Fusion.",
+      "subject": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate depth masks for each half. DaVinci Fusion composites both panels with independent parallax animation. <br> `left_parallax=foreground_phone +6px, background_bed -3px` <br> `right_parallax=foreground_actor +8px, background_stage -4px`",
+      "environment": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate depth masks for each half. DaVinci Fusion composites both panels with independent parallax animation. <br> `left_parallax=foreground_phone +6px, background_bed -3px` <br> `right_parallax=foreground_actor +8px, background_stage -4px`",
+      "camera_framing": "two_shot",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+      "color_palette": "Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8B; palette=Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "depth_anything_v2_local",
+        "davinci_resolve_local"
+      ],
+      "tool_specific_translation_readiness": "LOCAL_ENGINE_READY",
+      "local_execution_readiness": "LOCAL_ENGINE_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_8B"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "8C1"
+      },
+      "validation_status": "PASS",
+      "scene_id": "8C1",
+      "timestamp_range": "4:10-4:22",
+      "narration_ref": "Third: Protect your energy. Stop spending it on people who drain it. Your focus is your most valuable resource. Where it goes — that is where your life goes.",
+      "emotional_intent": "Authoritative mentor. Clipped delivery. Each sentence is its own complete beat.",
+      "visual_objective": "**Presenter Return Law:** After two consecutive visual slides, returning to presenter face for the third action point maintains variety and ensures the advice feels personally delivered.",
+      "subject": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+      "environment": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm gold rim light. Slate gray.",
+      "color_palette": "Warm gold rim light. Slate gray.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8C1; palette=Warm gold rim light. Slate gray.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_8C1"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "8C2"
+      },
+      "validation_status": "PASS",
+      "scene_id": "8C2",
+      "timestamp_range": "4:22-4:35",
+      "narration_ref": "Yash was called 'arrogant' for not attending parties. For not wasting weekends. He was protecting his energy for rehearsals. And the people who called him arrogant — they're still where they were.",
+      "emotional_intent": "Authoritative mentor. Slight edge of controlled indignation.",
+      "visual_objective": "**Proof Point Law:** Backing every action prescription with a specific Yash proof prevents the advice from feeling generic. The \"arrogant\" callback reinforces real-person evidence.",
+      "subject": "Medium shot of presenter making firm point gestures. Studio.",
+      "environment": "Medium shot of presenter making firm point gestures. Studio.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Warm gold rim. Slate gray.",
+      "color_palette": "Warm gold rim. Slate gray.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8C2; palette=Warm gold rim. Slate gray.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_8C2"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "9A"
+      },
+      "validation_status": "PASS",
+      "scene_id": "9A",
+      "timestamp_range": "4:35-4:47",
+      "narration_ref": "So what are you waiting for? Start today. ₹100. One course. One book. One skill. Your portfolio of you starts with the next decision you make. Not next month. Now.",
+      "emotional_intent": "Commanding. Peak volume and energy. Direct call to action.",
+      "visual_objective": "**CTA Hook Law:** Final re-hook + CTA combined. Returning to Scene 1 framing creates a visual bookend that signals the journey is complete. Drums entering for the first time in the video creates maximum energy peak for CTA delivery.",
+      "subject": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+      "environment": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "High-contrast side key. Warm gold rim.",
+      "color_palette": "High-contrast side key. Warm gold rim.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static with slight forward lean.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=9A; palette=High-contrast side key. Warm gold rim.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_9A"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "9B"
+      },
+      "validation_status": "PASS",
+      "scene_id": "9B",
+      "timestamp_range": "4:47-4:55",
+      "narration_ref": "And speaking of protecting your energy — if you haven't watched my video on toxic relationships, I've linked it above. 'Toxic: A Fairy Tale for Grown-ups.' It'll change how you see the people in your life.",
+      "emotional_intent": "Warm, celebratory announcer. Natural cross-sell energy.",
+      "visual_objective": "**Overlay Law:** METHOD 3 A_ROLL_OVERLAY_METHOD. HyperFrames renders the background title card as a WebM alpha export. DaVinci Resolve composites: V1 = background card, V2 = chromakeyed presenter. This is the only METHOD 3 scene — used specifically for cross-sell CTA to maintain immersive engagement",
+      "subject": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Talking-head presenter avatar (AR-15 isolated background/chromakey version from Batch D). Presenter appears in bottom-right corner, scaled to 35% frame size. HeyGen renders presenter with green-screen for clean key. <br> HyperFrames Config: <br> `bg_visual=dark_forest_green_toxic_smoke.mp4` <br> `title_font=Bebas Neue` <br> `title_color=#00C853` <br> `particle_type=smoke_green_drift` <br> `presenter_position=bottom_right_35pct`",
+      "environment": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Talking-head presenter avatar (AR-15 isolated background/chromakey version from Batch D). Presenter appears in bottom-right corner, scaled to 35% frame size. HeyGen renders presenter with green-screen for clean key. <br> HyperFrames Config: <br> `bg_visual=dark_forest_green_toxic_smoke.mp4` <br> `title_font=Bebas Neue` <br> `title_color=#00C853` <br> `particle_type=smoke_green_drift` <br> `presenter_position=bottom_right_35pct`",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+      "color_palette": "Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "mixed_media",
+      "movement_intent": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=9B; palette=Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api",
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_9B"
+    },
+    {
+      "packet_id": "scene_prompt_packet",
+      "route_id": "MEDIA_FACTORY_HANDOFF",
+      "producer_component_id": "maya_agent",
+      "consumer_component_ids": [
+        "vishwakarma_agent",
+        "nataraja_agent",
+        "media_factory_packet"
+      ],
+      "lineage": {
+        "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+        "scene_id": "9C"
+      },
+      "validation_status": "PASS",
+      "scene_id": "9C",
+      "timestamp_range": "4:55-5:05",
+      "narration_ref": "From ₹300 on a Bengaluru bus to ₹1,200 Crore on screen. Yash didn't wait for permission. He invested in himself. Now it's your turn. I'll see you in the next one.",
+      "emotional_intent": "Heartfelt, human close. Warm. The entire energy drops from peak back to personal connection.",
+      "visual_objective": "**Outro Law:** Returns to Yash story close — completing the narrative circle from Scene 2A. Warm exit prevents viewer feeling sold-to. Natural, human close is the strongest retention tool for subscribe conversion.",
+      "subject": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+      "environment": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+      "camera_framing": "medium",
+      "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+      "lighting_setup": "Soft warm key light. Golden rim highlight.",
+      "color_palette": "Soft warm key light. Golden rim highlight.",
+      "cinematic_delivery_standard": "Rec.709",
+      "style_lock": "cinematic_realism",
+      "movement_intent": "Static. Gentle fade to black starts at +8.5s.",
+      "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+      "drift_prevention": "Maintain Yash mission visual continuity; scene_id=9C; palette=Soft warm key light. Golden rim highlight.",
+      "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+      "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+      "safety_real_person_handling": "not_applicable",
+      "tool_targets": [
+        "heygen_api"
+      ],
+      "tool_specific_translation_readiness": "PACKET_READY",
+      "local_execution_readiness": "PACKET_READY",
+      "provider_handoff_readiness": "PACKET_READY",
+      "provider_execution_allowed": false,
+      "beat_map_scene_id": "scene_9C"
+    }
+  ],
+  "video_prompt_packets": [
+    {
+      "scene_id": "1",
+      "timestamp_range": "0:00-0:12",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+      "background_motion": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+      "duration_seconds": 12,
+      "transition_out": "Hard open from black (0 frame dissolve). No transition before Scene 1.",
+      "sync_point_to_beat_map": "scene_1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2A",
+      "timestamp_range": "0:12-0:28",
+      "visual_method": "CINEMATIC_BROLL_VIDEO",
+      "camera_movement_type": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "cloud_cinematic_video_handoff",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+      "background_motion": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+      "duration_seconds": 16,
+      "transition_out": "Hard cut from Scene 1 on the word \"Picture this.\" (voice beat sync).",
+      "sync_point_to_beat_map": "scene_2A",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2B",
+      "timestamp_range": "0:28-0:42",
+      "visual_method": "CINEMATIC_BROLL_VIDEO",
+      "camera_movement_type": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "cloud_cinematic_video_handoff",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+      "background_motion": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+      "duration_seconds": 14,
+      "transition_out": "Soft dissolve (1.0s) from Scene 2A into crane shot.",
+      "sync_point_to_beat_map": "scene_2B",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2C",
+      "timestamp_range": "0:42-0:52",
+      "visual_method": "CINEMATIC_BROLL_VIDEO",
+      "camera_movement_type": "Slow dolly push-in toward the stage. Extremely gradual.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "cloud_cinematic_video_handoff",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+      "background_motion": "Slow dolly push-in toward the stage. Extremely gradual.",
+      "duration_seconds": 10,
+      "transition_out": "Soft dissolve (0.8s) from Scene 2B.",
+      "sync_point_to_beat_map": "scene_2C",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2D",
+      "timestamp_range": "0:52-1:02",
+      "visual_method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+      "camera_movement_type": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "still_2_5d_parallax",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "depth_anything_v2_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "Canny"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+      "background_motion": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+      "duration_seconds": 10,
+      "transition_out": "Whip pan micro-cut (0.3s) from Scene 2C at the word \"Counting\".",
+      "sync_point_to_beat_map": "scene_2D",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2E",
+      "timestamp_range": "1:02-1:10",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out + glow_pulse 1.5s loop`",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+      "background_motion": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out ",
+      "duration_seconds": 8,
+      "transition_out": "Hard cut from Scene 2D on the word \"And when.\" Zero-frame cut for maximum impact.",
+      "sync_point_to_beat_map": "scene_2E",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "3",
+      "timestamp_range": "1:10-1:20",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+      "background_motion": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+      "duration_seconds": 10,
+      "transition_out": "Jump-cut zoom (snap zoom 0.2s on \"NOT\").",
+      "sync_point_to_beat_map": "scene_3",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4A1",
+      "timestamp_range": "1:20-1:35",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static framing. No camera movement.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+      "background_motion": "Static framing. No camera movement.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 3.",
+      "sync_point_to_beat_map": "scene_4A1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4A2",
+      "timestamp_range": "1:35-1:50",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+      "background_motion": "Static.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 4A1.",
+      "sync_point_to_beat_map": "scene_4A2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4B1",
+      "timestamp_range": "1:50-2:03",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Out",
+      "background_motion": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+      "duration_seconds": 13,
+      "transition_out": "Soft dissolve (0.5s) from Scene 4A2.",
+      "sync_point_to_beat_map": "scene_4B1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4B2",
+      "timestamp_range": "2:03-2:15",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Slow horizontal pan continues from left panel to right panel.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br>",
+      "background_motion": "Slow horizontal pan continues from left panel to right panel.",
+      "duration_seconds": 12,
+      "transition_out": "Straight cut from Scene 4B1.",
+      "sync_point_to_beat_map": "scene_4B2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "5",
+      "timestamp_range": "2:15-2:25",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Slow camera push-in (100% → 106% over 10s).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+      "background_motion": "Slow camera push-in (100% → 106% over 10s).",
+      "duration_seconds": 10,
+      "transition_out": "Hard cut from Scene 4B2 to extreme close-up (pattern interrupt).",
+      "sync_point_to_beat_map": "scene_5",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6A1",
+      "timestamp_range": "2:25-2:40",
+      "visual_method": "NOTEBOOKLM_VISUAL_METHOD",
+      "camera_movement_type": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Conf",
+      "background_motion": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+      "duration_seconds": 15,
+      "transition_out": "Soft dissolve (0.8s) from Scene 5 into NotebookLM slide.",
+      "sync_point_to_beat_map": "scene_6A1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6A2",
+      "timestamp_range": "2:40-2:55",
+      "visual_method": "NOTEBOOKLM_VISUAL_METHOD",
+      "camera_movement_type": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames ",
+      "background_motion": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 6A1.",
+      "sync_point_to_beat_map": "scene_6A2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6B1",
+      "timestamp_range": "2:55-3:10",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+      "background_motion": "Static.",
+      "duration_seconds": 15,
+      "transition_out": "Cut back from NotebookLM slide to presenter A-roll. Warm re-entry.",
+      "sync_point_to_beat_map": "scene_6B1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6B2",
+      "timestamp_range": "3:10-3:25",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+      "background_motion": "Static.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 6B1.",
+      "sync_point_to_beat_map": "scene_6B2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "7",
+      "timestamp_range": "3:25-3:35",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_fam",
+      "background_motion": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+      "duration_seconds": 10,
+      "transition_out": "Hard cut from Scene 6B2 (maximum pattern interrupt).",
+      "sync_point_to_beat_map": "scene_7",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8A",
+      "timestamp_range": "3:35-3:55",
+      "visual_method": "NOTEBOOKLM_VISUAL_METHOD",
+      "camera_movement_type": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_p",
+      "background_motion": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+      "duration_seconds": 20,
+      "transition_out": "Soft dissolve (0.8s) from Scene 7.",
+      "sync_point_to_beat_map": "scene_8A",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8B",
+      "timestamp_range": "3:55-4:10",
+      "visual_method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+      "camera_movement_type": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "still_2_5d_parallax",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "depth_anything_v2_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "Canny"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate d",
+      "background_motion": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+      "duration_seconds": 15,
+      "transition_out": "Soft dissolve (0.5s) from Scene 8A.",
+      "sync_point_to_beat_map": "scene_8B",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8C1",
+      "timestamp_range": "4:10-4:22",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+      "background_motion": "Static.",
+      "duration_seconds": 12,
+      "transition_out": "Cut back to presenter A-roll from Scene 8B.",
+      "sync_point_to_beat_map": "scene_8C1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8C2",
+      "timestamp_range": "4:22-4:35",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter making firm point gestures. Studio.",
+      "background_motion": "Static.",
+      "duration_seconds": 13,
+      "transition_out": "Straight cut from Scene 8C1.",
+      "sync_point_to_beat_map": "scene_8C2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9A",
+      "timestamp_range": "4:35-4:47",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static with slight forward lean.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+      "background_motion": "Static with slight forward lean.",
+      "duration_seconds": 12,
+      "transition_out": "Jump cut from Scene 8C2.",
+      "sync_point_to_beat_map": "scene_9A",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9B",
+      "timestamp_range": "4:47-4:55",
+      "visual_method": "A_ROLL_OVERLAY_METHOD",
+      "camera_movement_type": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_overlay_composite",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Tal",
+      "background_motion": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+      "duration_seconds": 8,
+      "transition_out": "Dissolve (0.8s) from Scene 9A into composite overlay layout.",
+      "sync_point_to_beat_map": "scene_9B",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9C",
+      "timestamp_range": "4:55-5:05",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static. Gentle fade to black starts at +8.5s.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+      "background_motion": "Static. Gentle fade to black starts at +8.5s.",
+      "duration_seconds": 10,
+      "transition_out": "Straight cut from Scene 9B. Fade to black at +8.5s.",
+      "sync_point_to_beat_map": "scene_9C",
+      "provider_execution_allowed": false
+    }
+  ],
+  "pacing_metadata": {
+    "json_path": "outputs/missions/yash_self_investment/packets/scene_sync_matrix.json",
+    "txt_path": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+    "scene_count": 24,
+    "total_duration_seconds": 305,
+    "exact_filenames_in_json": true
+  },
+  "storyboard_export_plan": {
+    "export_path": "outputs/missions/yash_self_investment/storyboard/",
+    "naming_convention": "shot<N>_<scene_id>_<descriptor>.png",
+    "scene_to_image_map_required": true,
+    "pacing_metadata_coupling_required": true,
+    "image_format": "PNG",
+    "image_quality": "original_generation_quality",
+    "image_to_beat_map_sync": true,
+    "images_generated": false,
+    "readiness_status": "PACKET_READY"
+  },
+  "validation_gates": {
+    "visual_dna_compliance": "PASS",
+    "tool_translation_readiness": "PASS",
+    "scene_sync_matrix_valid": "PASS",
+    "production_phase_rows_exact_order": "PASS",
+    "control_panel_phase_rows_present": "PASS",
+    "asset_dependency_graph_present": "PASS",
+    "davinci_timeline_packet_complete": "PASS",
+    "provider_honesty_gate": "PASS",
+    "final_status": "PASS"
+  },
+  "human_review_required": true,
+  "evidence": [
+    {
+      "artifact_id": "scene_sync_matrix",
+      "artifact_type": "json_schema",
+      "file_path": "outputs/missions/yash_self_investment/packets/scene_sync_matrix.json",
+      "artifact_name": "Yash scene sync matrix",
+      "generation_method": "repo_parser_from_locked_MISSION_OUTPUT",
+      "engine_or_provider_used": "none",
+      "source_prompt_packet_ref": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+      "validation_result": "PASS",
+      "human_review_status": "pending"
+    },
+    {
+      "artifact_id": "production_order_lock",
+      "artifact_type": "control_layer",
+      "file_path": "outputs/missions/yash_self_investment/packets/media_factory_packet.json",
+      "artifact_name": "Canonical 17-phase production order lock",
+      "generation_method": "schema_aligned_packet_regeneration",
+      "engine_or_provider_used": "none",
+      "source_prompt_packet_ref": "runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md",
+      "validation_result": "PASS",
+      "human_review_status": "pending"
+    },
+    {
+      "artifact_id": "control_panel_execution_plan",
+      "artifact_type": "control_panel_bridge",
+      "file_path": "outputs/missions/yash_self_investment/packets/media_factory_packet.json",
+      "artifact_name": "Per-phase control panel execution rows",
+      "generation_method": "schema_aligned_packet_regeneration",
+      "engine_or_provider_used": "none",
+      "source_prompt_packet_ref": "registries/route_manifests/media_factory_handoff.yaml",
+      "validation_result": "PASS",
+      "human_review_status": "pending"
+    },
+    {
+      "artifact_id": "davinci_timeline_packet",
+      "artifact_type": "timeline_packet",
+      "file_path": "outputs/missions/yash_self_investment/packets/media_factory_packet.json",
+      "artifact_name": "24-scene DaVinci timeline coverage",
+      "generation_method": "scene_sync_matrix_projection",
+      "engine_or_provider_used": "none",
+      "source_prompt_packet_ref": "outputs/missions/yash_self_investment/packets/scene_sync_matrix.json",
+      "validation_result": "PASS",
+      "human_review_status": "pending"
+    }
+  ],
+  "next_action": "USER_REVIEW_PACKET_READY_BEFORE_LOCAL_OR_PROVIDER_EXECUTION"
+}

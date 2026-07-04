@@ -191,5 +191,5 @@ remaining_unknowns: none
 ## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
 
 - Build recurring retention resets across all major sections.
-- Reject unexplained gaps above 90 seconds and emit mapping evidence for final
+- Reject unexplained gaps above 30 seconds and emit mapping evidence for final
   script, beat map, editing context, and influence map.

@@ -191,5 +191,5 @@ remaining_unknowns: none
 ## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
 
 - Generate curiosity re-hooks with explicit payoff targets.
-- Keep dynamic re-hook intervals within 70-90 seconds by default and reject
+- Keep dynamic re-hook intervals within 25-30 seconds by default and reject
   curiosity gaps that do not reconnect to the topic.

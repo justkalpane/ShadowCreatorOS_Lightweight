@@ -1,0 +1,262 @@
+from __future__ import annotations
+
+ERROR_CATALOG = {
+    "FAKE_PASS_FFPROBE_ONLY": {
+        "message": "ffprobe-only pass claims are forbidden.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "evidence_bundle",
+        "bad_fixture_needed": "validators/fixtures/bad/pass_reason_ffprobe_only.json",
+        "proof_expected": "validator failure",
+    },
+    "FAKE_PASS_FILE_EXISTS_ONLY": {
+        "message": "file-exists-only pass claims are forbidden.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "evidence_bundle",
+        "bad_fixture_needed": "validators/fixtures/bad/pass_reason_file_exists_only.json",
+        "proof_expected": "validator failure",
+    },
+    "FAKE_PASS_EXIT_CODE_ONLY": {
+        "message": "exit-code-only pass claims are forbidden.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "evidence_bundle",
+        "bad_fixture_needed": "validators/fixtures/bad/pass_reason_exit_code_0_only.json",
+        "proof_expected": "validator failure",
+    },
+    "FAKE_PASS_CONTRACT_EXISTS_ONLY": {
+        "message": "contract-exists-only pass claims are forbidden.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "evidence_bundle",
+        "bad_fixture_needed": "validators/fixtures/bad/pass_reason_contract_exists_only.json",
+        "proof_expected": "validator failure",
+    },
+    "MISSING_EVIDENCE_BUNDLE": {
+        "message": "Required evidence bundle linkage is missing.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "runtime_state",
+        "bad_fixture_needed": "validators/fixtures/bad/missing_evidence_bundle_id.json",
+        "proof_expected": "validator failure",
+    },
+    "MISSING_ROUTE_STATE_CAPSULE": {
+        "message": "Required route state capsule linkage is missing.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "runtime_state",
+        "bad_fixture_needed": "validators/fixtures/bad/missing_route_state_capsule.json",
+        "proof_expected": "validator failure",
+    },
+    "DEPTH_METHOD_BOXBLUR_FORBIDDEN": {
+        "message": "Depth method boxblur is forbidden.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "depth_map_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/depth_method_boxblur.json",
+        "proof_expected": "validator failure",
+    },
+    "DEPTH_METHOD_BLUR_FORBIDDEN": {
+        "message": "Depth method blur is forbidden.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "depth_map_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/depth_method_blur.json",
+        "proof_expected": "validator failure",
+    },
+    "DEPTH_METHOD_MASKEDMERGE_ONLY_FORBIDDEN": {
+        "message": "maskedmerge_only cannot be used as a depth method.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "depth_map_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/depth_method_maskedmerge_only.json",
+        "proof_expected": "validator failure",
+    },
+    "FFMPEG_MISSING_LANCZOS": {
+        "message": "FFmpeg packet is missing the required lanczos scale method.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "ffmpeg_filtergraph_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/ffmpeg_missing_lanczos.json",
+        "proof_expected": "validator failure",
+    },
+    "FFMPEG_MISSING_CRF18": {
+        "message": "FFmpeg packet is missing the required CRF18 encode profile.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "ffmpeg_filtergraph_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/ffmpeg_missing_crf18.json",
+        "proof_expected": "validator failure",
+    },
+    "FFMPEG_MISSING_BT709": {
+        "message": "FFmpeg packet is missing the required BT709 color profile.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "ffmpeg_filtergraph_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/ffmpeg_missing_bt709.json",
+        "proof_expected": "validator failure",
+    },
+    "FFMPEG_MISSING_FILTERGRAPH_DUMP": {
+        "message": "FFmpeg packet is missing the filtergraph dump path.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "ffmpeg_filtergraph_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/ffmpeg_missing_filtergraph_dump.json",
+        "proof_expected": "validator failure",
+    },
+    "HYPERFRAMES_MISSING_ALPHA": {
+        "message": "HyperFrames payload is missing alpha mode.",
+        "severity": "P1",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "hyperframes_payload",
+        "bad_fixture_needed": "validators/fixtures/bad/hyperframes_missing_alpha_mode.json",
+        "proof_expected": "validator failure",
+    },
+    "HYPERFRAMES_MISSING_BLEND": {
+        "message": "HyperFrames payload is missing blend mode.",
+        "severity": "P1",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "hyperframes_payload",
+        "bad_fixture_needed": "validators/fixtures/bad/hyperframes_missing_blend_mode.json",
+        "proof_expected": "validator failure",
+    },
+    "VISUAL_QA_MISSING_CONTACT_SHEET": {
+        "message": "Visual QA packet is missing the required contact sheet.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "visual_qa_acceptance_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/visual_qa_missing_contact_sheet.json",
+        "proof_expected": "validator failure",
+    },
+    "SOURCE_VS_RENDER_MISSING_ARTIFACTS": {
+        "message": "Source-vs-render artifacts are incomplete.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "source_vs_render_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/source_vs_render_missing_diff.json",
+        "proof_expected": "validator failure",
+    },
+    "HUMAN_REVIEW_NOT_APPROVED": {
+        "message": "Human review is missing or not approved.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "visual_qa_acceptance_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/visual_qa_missing_human_review.json",
+        "proof_expected": "validator failure",
+    },
+    "PILOT_WRONG_CUT_ID": {
+        "message": "Pilot packet must target cut C04a.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "pilot_cut_validation_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/pilot_wrong_cut_id.json",
+        "proof_expected": "validator failure",
+    },
+    "FULL_RENDER_BEFORE_PILOT": {
+        "message": "Full render cannot unlock before pilot validation completes.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "pilot_cut_validation_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/full_render_before_pilot.json",
+        "proof_expected": "validator failure",
+    },
+    "AUDIO_BEFORE_VISUAL_ACCEPTANCE": {
+        "message": "Audio authorization is blocked until visual acceptance is active.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "audio_authorization_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/audio_before_visual_acceptance.json",
+        "proof_expected": "validator failure",
+    },
+    "PROVIDER_WITHOUT_APPROVAL": {
+        "message": "Provider execution is blocked without explicit approval.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "bridge_job_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/provider_execution_without_approval.json",
+        "proof_expected": "validator failure",
+    },
+    "DAVINCI_BEFORE_ACCEPTANCE": {
+        "message": "DaVinci handoff is blocked until the visual-audio package is ready.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "davinci_handoff_packet",
+        "bad_fixture_needed": "validators/fixtures/bad/davinci_before_visual_audio_package.json",
+        "proof_expected": "validator failure",
+    },
+    "COMFYUI_TIMEOUT_MARKED_PASS": {
+        "message": "ComfyUI timeout cannot be classified as a pass.",
+        "severity": "P0",
+        "validator_owner": "ShadowOS",
+        "schema_or_runtime_binding": "comfyui_workflow_payload",
+        "bad_fixture_needed": "validators/fixtures/bad/comfyui_timeout_marked_pass.json",
+        "proof_expected": "validator failure",
+    },
+    "MIRROR_UNCLASSIFIED_FILE": {
+        "message": "Mirror packaging cannot include unclassified files.",
+        "severity": "P0",
+        "validator_owner": "DocsOnly",
+        "schema_or_runtime_binding": "review_package",
+        "bad_fixture_needed": "n/a",
+        "proof_expected": "manifest exclusion",
+    },
+    "BRIDGE_SYNC_PARTIAL_APPLY": {
+        "message": "Bridge sync apply partially updated the registry and must fail closed.",
+        "severity": "P0",
+        "validator_owner": "CrossRepo",
+        "schema_or_runtime_binding": "media_factory_bridge_sync",
+        "bad_fixture_needed": "n/a",
+        "proof_expected": "bridge sync idempotency report",
+    },
+}
+
+LEGACY_ERROR_CATALOG = {
+    "missing_required_field": {
+        "message": "A required field is missing.",
+        "severity": "P1",
+    },
+    "const_mismatch": {
+        "message": "A const-constrained field does not match the required value.",
+        "severity": "P1",
+    },
+    "enum_mismatch": {
+        "message": "A field value is outside the allowed enum set.",
+        "severity": "P1",
+    },
+    "pattern_mismatch": {
+        "message": "A field does not match the required pattern.",
+        "severity": "P1",
+    },
+    "boolean_required": {
+        "message": "A boolean field is required.",
+        "severity": "P1",
+    },
+    "number_required": {
+        "message": "A numeric field is required.",
+        "severity": "P1",
+    },
+    "number_below_minimum": {
+        "message": "A numeric field is below the allowed minimum.",
+        "severity": "P1",
+    },
+    "number_above_maximum": {
+        "message": "A numeric field is above the allowed maximum.",
+        "severity": "P1",
+    },
+    "array_too_small": {
+        "message": "An array field does not satisfy the minimum size.",
+        "severity": "P1",
+    },
+}
+
+
+def catalog_manifest() -> dict:
+    return {
+        "custom_error_catalog": ERROR_CATALOG,
+        "legacy_error_catalog": LEGACY_ERROR_CATALOG,
+    }
+
+
+def format_error(code: str, detail: str = "") -> str:
+    return f"{code}:{detail}" if detail else code

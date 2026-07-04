@@ -1,0 +1,17 @@
+steps:
+  - locked_final_script
+  - locked_visual_media_plan
+  - MEDIA_FACTORY_HANDOFF
+  - media_factory_handoff_route_manifest
+  - script_integrity_lock
+  - visual_plan_integrity_lock
+  - DEEP_REQUIRED_depth
+  - scene_prompt_packets
+  - storyboard_export_plan
+  - local_media_bridge_status
+  - provider_honesty_gate
+  - asset_generation_order
+  - reasoning_column
+  - B-roll_ratio
+  - DaVinci/FFmpeg_assembly_plan
+  - QC/proof_registry

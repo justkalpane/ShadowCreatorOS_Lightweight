@@ -1,0 +1,32 @@
+matrix_id: route_trigger_precedence_matrix
+version: 1
+
+precedence:
+  media_factory:
+    route_id: MEDIA_FACTORY_HANDOFF
+    trigger_terms:
+      - storyboard
+      - scene prompt
+      - pacing metadata
+      - local engine handoff
+      - visual media plan
+      - visual media generation draft
+      - B-roll
+      - Media Factory
+  avatar_video:
+    route_id: AVATAR_VIDEO_CONTEXT
+    trigger_terms:
+      - avatar
+      - presenter
+      - HeyGen
+      - lip-sync
+      - face video
+      - A-roll avatar
+  split_route_required:
+    when_both_present: true
+    behavior: split_route_required=true
+    resolution_order:
+      - route_lock
+      - route_state
+      - selected_route_slice
+      - output_phase

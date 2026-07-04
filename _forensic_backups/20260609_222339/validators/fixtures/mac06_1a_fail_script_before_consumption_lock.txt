@@ -1,0 +1,14 @@
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+AGENTS.md
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+Final script
+CONSUMPTION_LOCK
+proof_classification=FAIL

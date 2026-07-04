@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "provider_handoff_packet",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "producer_component_id": {
+      "type": "string"
+    },
+    "consumer_component_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lineage": {
+      "type": "object"
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "provider_type": {
+      "type": "string"
+    },
+    "typed_input": {
+      "type": "string"
+    },
+    "provider_execution_allowed": {
+      "type": "boolean",
+      "default": false,
+      "const": false
+    },
+    "approval_required": {
+      "type": "boolean"
+    },
+    "approval_authorized": {
+      "type": "boolean",
+      "default": false
+    },
+    "approval_packet_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "provider_type",
+    "typed_input",
+    "provider_execution_allowed",
+    "approval_required"
+  ]
+}

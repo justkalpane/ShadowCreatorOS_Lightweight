@@ -457,7 +457,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_MAYA
 component_layer: DIRECTOR
 component_name: Maya
-route_families: [provider_handoff, full_video_pipeline]
+route_families: [editing_packaging, avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, provider_handoff, full_video_pipeline]
 activation_triggers: route_family in [script_generation, topic_discovery, music_sfx_context, visual_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
 downstream_outputs: [provider_handoff_packet, media_quality_gate_packet]
@@ -485,7 +485,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: provider_handoff_profile
-route_family_resolved: [provider_handoff, full_video_pipeline]
+route_family_resolved: [editing_packaging, avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, provider_handoff, full_video_pipeline]
 activation_triggers_resolved: [provider, tool adapter]
 required_input_packets_resolved: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
 emitted_output_packets_resolved: [provider_handoff_packet, media_quality_gate_packet]

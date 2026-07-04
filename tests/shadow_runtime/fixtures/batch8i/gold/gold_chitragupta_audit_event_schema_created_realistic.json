@@ -1,0 +1,25 @@
+{
+  "actor": "Codex",
+  "actor_type": "CODEX",
+  "blocked_reasons": [],
+  "cut_id": "C04a",
+  "decision": "CREATED",
+  "event_id": "AUD-C04A-002",
+  "event_type": "SCHEMA_CREATED",
+  "evidence_bundle_id": "EB-C04A-001",
+  "input_artifact_ids": [
+    "PM-C04A-001",
+    "SVR-C04A-001"
+  ],
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "notes": "Batch 8I oracle capture",
+  "output_artifact_ids": [
+    "schema_manifest"
+  ],
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "sha256": "4bf5fec5a8d7e0c9a1da3df4554bb69710c5385e1e373f86fbbb4808c06fbc29",
+  "timestamp": "2026-06-22T00:00:00Z"
+}

@@ -1,0 +1,18 @@
+{
+  "visual_acceptance_token": {
+    "token_id": "tok-visual",
+    "issuer": "shadow_commander",
+    "scope": "visual_acceptance",
+    "proof_bundle_id": "proof-1",
+    "expires_at": "2026-06-30T00:00:00Z",
+    "status": "active"
+  },
+  "audio_authorization_token": {
+    "token_id": "tok-audio",
+    "issuer": "shadow_commander",
+    "scope": "audio_sync",
+    "proof_bundle_id": "proof-1",
+    "expires_at": "2026-06-30T00:00:00Z",
+    "status": "active"
+  }
+}

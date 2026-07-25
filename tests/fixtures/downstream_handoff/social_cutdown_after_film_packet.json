@@ -1,0 +1,16 @@
+{
+  "fixture_id": "DH-007",
+  "fixture_family": "downstream_handoff",
+  "input_packet_summary": "Social cutdown request after film packet.",
+  "expected_route": "CONTENT_DISTRIBUTION",
+  "expected_result": "HANDOFF_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_content_distribution_handoff.py",
+  "purpose": "Social adaptation after film",
+  "risk_if_missing": "Content distribution path loses separation from film route",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

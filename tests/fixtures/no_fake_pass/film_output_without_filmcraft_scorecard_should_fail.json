@@ -1,0 +1,16 @@
+{
+  "fixture_id": "NF-005",
+  "fixture_family": "no_fake_pass",
+  "input_summary": "Film output lacks a filmcraft scorecard.",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "prohibited_claims": ["filmcraft_scorecard_complete"],
+  "required_future_validator_or_schema": "validate_film_scorecard_no_fake_pass.py",
+  "purpose": "Validation completeness",
+  "risk_if_missing": "A screenplay packet can claim approval without craft checks",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

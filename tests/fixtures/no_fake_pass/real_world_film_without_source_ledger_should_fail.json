@@ -1,0 +1,16 @@
+{
+  "fixture_id": "NF-003",
+  "fixture_family": "no_fake_pass",
+  "input_summary": "Real-world film topic lacks a source ledger.",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "prohibited_claims": ["source_backed_film_claim"],
+  "required_future_validator_or_schema": "validate_source_ledger_present.py",
+  "purpose": "Source honesty enforcement",
+  "risk_if_missing": "Real-world film claims go unverified",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

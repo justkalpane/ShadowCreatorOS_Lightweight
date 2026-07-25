@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FP-004",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Film packet missing scene objective / conflict / turn map.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "missing_required_fields": ["scene_objective", "scene_conflict", "scene_turn"],
+  "required_future_validator_or_schema": "validate_scene_turns.py",
+  "purpose": "Scene craft failure",
+  "risk_if_missing": "Scene structure collapses without detection",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

@@ -1,0 +1,16 @@
+{
+  "fixture_id": "DH-002",
+  "fixture_family": "downstream_handoff",
+  "input_packet_summary": "Valid film packet handed to voice context generation.",
+  "expected_route": "VOICE_CONTEXT",
+  "expected_result": "HANDOFF_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_voice_context_handoff.py",
+  "purpose": "Film packet to voice context handoff",
+  "risk_if_missing": "Voice handoff stops being film-aware",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

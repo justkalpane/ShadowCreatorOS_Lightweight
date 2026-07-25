@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FP-002",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Film packet missing beat sheet.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "missing_required_fields": ["beat_sheet"],
+  "required_future_validator_or_schema": "validate_save_the_cat_beat_sheet.py",
+  "purpose": "Mandatory structure failure",
+  "risk_if_missing": "Beat-sheet gaps slip through as valid screenplay packets",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-003",
+  "fixture_family": "route_selection",
+  "input_prompt": "Write a screenplay about a student after exam leak allegations.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_mode": "film_core",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_film_route_selection.py",
+  "purpose": "Screenplay-language film request",
+  "risk_if_missing": "Screenplay requests get flattened into content scripts",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

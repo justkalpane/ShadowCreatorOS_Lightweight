@@ -1,0 +1,16 @@
+{
+  "fixture_id": "CP-003",
+  "fixture_family": "content_preservation",
+  "input_prompt": "Instagram reel script on NEET issue.",
+  "expected_route": "SCRIPT_GENERATION",
+  "expected_mode": "content",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_content_route_selection.py",
+  "purpose": "Preserve reel behavior",
+  "risk_if_missing": "Reel requests get treated as screenplay output",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

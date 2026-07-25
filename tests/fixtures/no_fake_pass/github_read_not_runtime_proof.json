@@ -1,0 +1,16 @@
+{
+  "fixture_id": "NF-007",
+  "fixture_family": "no_fake_pass",
+  "input_summary": "GitHub repository read-only evidence is available but governed runtime artifacts are absent.",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "prohibited_claims": ["governed_runtime_proof_from_repo_read"],
+  "required_future_validator_or_schema": "validate_repo_read_not_runtime_proof.py",
+  "purpose": "Boundary enforcement",
+  "risk_if_missing": "Repo inspection is mistaken for runtime execution",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

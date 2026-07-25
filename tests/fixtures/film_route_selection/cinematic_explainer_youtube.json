@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-010",
+  "fixture_family": "route_selection",
+  "input_prompt": "Make a cinematic explainer for YouTube.",
+  "expected_route": "SCRIPT_GENERATION",
+  "expected_mode": "content",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_content_route_selection.py",
+  "purpose": "Ambiguous cinematic content stays in content route unless screenplay is explicit",
+  "risk_if_missing": "Ambiguous prompts skip route clarification",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

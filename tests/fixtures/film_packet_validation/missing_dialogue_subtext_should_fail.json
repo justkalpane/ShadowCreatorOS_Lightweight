@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FP-005",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Film packet missing dialogue subtext pass.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "missing_required_fields": ["dialogue_subtext"],
+  "required_future_validator_or_schema": "validate_dialogue_subtext.py",
+  "purpose": "Dialogue craft failure",
+  "risk_if_missing": "Literal dialogue can masquerade as cinematic writing",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

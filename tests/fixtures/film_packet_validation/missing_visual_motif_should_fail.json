@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FP-006",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Film packet missing visual motif system.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "missing_required_fields": ["visual_motif_system"],
+  "required_future_validator_or_schema": "validate_visual_motif_system.py",
+  "purpose": "Visual storytelling failure",
+  "risk_if_missing": "Visual symbolism gaps go unvalidated",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

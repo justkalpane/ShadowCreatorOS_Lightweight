@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FP-003",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Film packet missing character arc.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "missing_required_fields": ["character_arc"],
+  "required_future_validator_or_schema": "validate_character_arc_map.py",
+  "purpose": "Character transformation failure",
+  "risk_if_missing": "Flat characters can still pass film validation",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

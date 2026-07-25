@@ -35,10 +35,9 @@ Phase 12 must not start until documentation repair and the supplement layer are 
 
 ## Current Phase 12 status
 
-`PHASE_12_BLOCKED_PENDING_SUPPLEMENT_REVIEW`
+`PHASE_12_BLOCKED_PENDING_PHASE_11U_REVIEW`
 
 ## What this gate protects
 
 This gate prevents the repo from jumping into implementation while the canon, style, animation, and ethics layers are still incomplete.
 It also protects the existing content engine and downstream media stack from being accidentally reworked before the film boundary is fully specified.
-

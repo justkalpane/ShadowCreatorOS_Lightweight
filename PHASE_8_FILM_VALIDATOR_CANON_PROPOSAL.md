@@ -112,3 +112,18 @@ Phase 9 should inspect and propose schemas for:
 ## 7. Non-goals
 
 This phase does not patch validators yet. It only identifies the current content-mode validation bias, the reusable governance spine, and the missing filmcraft validator canon.
+
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 8 finding.
+Future film validators must now enforce the supplement pack in a selected, route-aware way:
+
+- canon candidates from `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- Disney 12 principles when animation mode is selected
+- style bible completeness from `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- palette consistency from `FILM_OUTPUT_STYLE_PALETTE_SCHEMA_REQUIREMENTS.md`
+- source-vs-render separation and docudrama ethics from `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+- no content-validator PASS for film packets
+
+`SCRIPT_GENERATION` remains preserved for content/platform validation, and `FILM_SCREENPLAY_GENERATION` remains a parallel future route.
+Phase 12 remains blocked until the supplement layer is reviewed.

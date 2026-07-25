@@ -75,3 +75,18 @@ That phase should then decide which skills are:
 - duplicated for film mode
 - moved downstream
 - unsafe in film core
+
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 3 finding.
+Future subagent film mode must now inherit the supplement pack:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+
+Subagents must keep `SCRIPT_GENERATION` preserved, add `FILM_SCREENPLAY_GENERATION` in parallel later, and keep platform/content logic downstream or content-only.
+Hook, pacing, retention, and creator-fit logic may remain in content subagents, but they must not become film-core PASS criteria.
+Phase 12 remains blocked until the supplement layer is reviewed and linked.

@@ -84,3 +84,17 @@ That next pass should also check whether subagents already carry hook, retention
 
 This proposal is intentionally not implementation. It defines the target agent architecture so the next patch phase can be clean and reviewable.
 
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 2 finding.
+Future agent film mode must now consult the supplement pack before any implementation:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+
+Agent film mode must keep `SCRIPT_GENERATION` preserved, add `FILM_SCREENPLAY_GENERATION` in parallel later, and keep platform/content logic downstream or content-only.
+Agent decisions must not treat hook, retention, or creator-fit logic as film-core PASS law.
+Phase 12 remains blocked until the supplement layer is reviewed.

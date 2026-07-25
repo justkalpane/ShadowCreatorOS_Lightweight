@@ -196,3 +196,21 @@ then:
 
 This keeps the film brain clean while still preserving the creator/content stack as a valid downstream layer.
 
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 1 finding.
+The future film route must now explicitly obey:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `FILM_OUTPUT_STYLE_PALETTE_SCHEMA_REQUIREMENTS.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+- `PHASE_12_READINESS_GATE.md`
+
+`SCRIPT_GENERATION` remains preserved for content/platform scripts.
+`FILM_SCREENPLAY_GENERATION` must still be added in parallel later.
+Platform/content logic remains downstream or content-only, not film-core law.
+Hook, retention, and recurring-rehook rules remain content-route requirements and must not become film-core PASS criteria.
+Phase 12 remains blocked until the supplement layer is reviewed and the smallest safe patch slice is approved.

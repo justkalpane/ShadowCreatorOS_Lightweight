@@ -143,3 +143,22 @@ Phase 10 should build fixtures for:
 ## 7. Non-goals
 
 This phase does not patch schemas yet. It only identifies the current content-mode schema spine, the reusable governance and media scaffolding, and the missing film-first packet family.
+
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 9 finding.
+Future film output schemas must later include structured fields for:
+
+- style bible
+- visual DNA
+- palette
+- lens / camera / lighting
+- editing rhythm
+- sound / music motif
+- animation style bible
+- AI prompt style DNA
+- anti-drift rules
+- real incident ethics fields
+
+The schema layer must keep `SCRIPT_GENERATION` preserved, keep `FILM_SCREENPLAY_GENERATION` parallel later, and keep platform/content logic downstream or content-only.
+Phase 12 remains blocked until the supplement layer is reviewed.

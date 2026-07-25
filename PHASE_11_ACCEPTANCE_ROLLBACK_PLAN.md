@@ -183,3 +183,17 @@ Do not continue implementation if any of the following are true:
 
 Phase 11 is a bridge from audit to implementation, not a leap.
 The safest path is to add the film-first layer one boundary at a time and preserve the existing content and downstream systems throughout.
+
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 11 acceptance and rollback logic.
+Phase 12 cannot begin until:
+
+- the Phase 11U docs are committed
+- the supplement pack is linked from the core planning chain
+- the owner approves the smallest safe Phase 12 patch slice
+- external source ledger status is acknowledged
+- no implementation begins from stale Phase 1–11 assumptions
+
+`SCRIPT_GENERATION` remains preserved, `FILM_SCREENPLAY_GENERATION` remains parallel later, and platform/content logic stays downstream or content-only.
+Rollback planning must continue to protect the content engine while film canon and style constraints are added later.

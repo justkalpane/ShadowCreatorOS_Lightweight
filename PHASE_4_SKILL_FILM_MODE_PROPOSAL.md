@@ -117,3 +117,19 @@ This phase does not create or patch any skills yet.
 
 It does not alter routes, contracts, validators, schemas, or runtime behavior.
 
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 4 finding.
+Future film skills must now be built with the supplement pack in view:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `FILM_OUTPUT_STYLE_PALETTE_SCHEMA_REQUIREMENTS.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+
+The future film skill family must include screenwriting canon, scene dramaturgy, dialogue subtext, cinematography/lens/composition, editing rhythm, sound/music motif, performance direction, animation principles and style, style/palette/continuity discipline, and real-incident ethics.
+`SCRIPT_GENERATION` remains preserved for content/platform use, and `FILM_SCREENPLAY_GENERATION` remains a parallel future route.
+Platform and retention logic stay downstream or content-only, not film-core PASS law.
+Phase 12 remains blocked until the supplement layer is reviewed.

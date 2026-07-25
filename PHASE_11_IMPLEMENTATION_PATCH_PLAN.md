@@ -205,3 +205,17 @@ Implement the smallest safe film-first layer first, then expand outward.
 The governance spine is reusable.
 The content engine is reusable.
 The new film route family is additive.
+
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 11 finding.
+Phase 12 cannot start until:
+
+- the Phase 11U docs are committed
+- the supplement pack is linked from the core planning chain
+- the owner approves the smallest safe Phase 12 patch slice
+- external source ledger status is acknowledged
+- the implementation does not rely on stale Phase 1–11 assumptions
+
+`SCRIPT_GENERATION` remains preserved, `FILM_SCREENPLAY_GENERATION` remains parallel later, and platform/content logic stays downstream or content-only.
+The implementation roadmap must remain additive and canon-linked, not a rewrite of the content engine.

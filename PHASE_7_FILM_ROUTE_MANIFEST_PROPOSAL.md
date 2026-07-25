@@ -100,3 +100,18 @@ Phase 8 should inspect and propose validators for:
 ## 7. Future patch plan
 Phase 8 should inspect validator coverage only after the film route manifests and slices are defined. The validator layer is where the future film route gets guarded against fake PASS claims, but that guardrail should be built on top of a clear route split, not before it.
 
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 7 finding.
+Future film route manifests and route slices must later bind to:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `FILM_OUTPUT_STYLE_PALETTE_SCHEMA_REQUIREMENTS.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+
+The route layer must preserve `SCRIPT_GENERATION`, keep `FILM_SCREENPLAY_GENERATION` parallel later, and keep platform/content logic downstream or content-only.
+Film routes may not inherit hook/retention law as core PASS criteria.
+Phase 12 remains blocked until the supplement layer is reviewed.

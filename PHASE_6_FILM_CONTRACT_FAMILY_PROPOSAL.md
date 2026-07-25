@@ -116,3 +116,19 @@ It should also verify how the new film routes stay separate from:
 ## 7. Future patch plan
 Phase 7 should inspect route manifests and route slices only after the film contracts are defined. The purpose is to bind the future film route to the reusable governance spine while keeping content, visual, and distribution flows separated by design.
 
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 6 finding.
+Future film contracts must now explicitly include law for:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `FILM_OUTPUT_STYLE_PALETTE_SCHEMA_REQUIREMENTS.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+- `PHASE_12_READINESS_GATE.md`
+
+The film contract family must support canon-backed filmcraft, animation mode variants, style/palette law, platform/content separation, real-incident ethics, and readiness gating before implementation.
+`SCRIPT_GENERATION` remains preserved, `FILM_SCREENPLAY_GENERATION` remains a parallel later route, and platform logic stays downstream or content-only.
+Phase 12 remains blocked until the supplement layer is reviewed.

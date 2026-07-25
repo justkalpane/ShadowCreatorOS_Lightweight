@@ -118,3 +118,19 @@ This phase does not create or patch any subskills yet.
 
 It does not alter routes, skills, contracts, validators, schemas, or runtime behavior.
 
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 5 finding.
+Future film subskills must now align to the supplement pack:
+
+- `FILMCRAFT_CANON_SOURCE_LEDGER.md`
+- `CINEMA_STYLE_BIBLE_REQUIREMENTS.md`
+- `ANIMATION_CANON_REQUIREMENTS.md`
+- `FILM_ROUTE_PLATFORM_SEPARATION_LAW.md`
+- `FILM_OUTPUT_STYLE_PALETTE_SCHEMA_REQUIREMENTS.md`
+- `REAL_INCIDENT_DOCUDRAMA_ETHICS_REQUIREMENTS.md`
+
+Future film subskills must include canon-aware structure checks, style/palette micro-rules, animation branching, source-vs-render checks, and ethics-aware real-incident handling.
+`SCRIPT_GENERATION` remains preserved for content/platform use, and `FILM_SCREENPLAY_GENERATION` remains a parallel future route.
+Hook, retention, pacing, and creator-fit micro-behavior may stay in content subskills, but they must not become film-core PASS criteria.
+Phase 12 remains blocked until the supplement layer is reviewed.

@@ -111,3 +111,21 @@ The NEET fixture should sit beside, not replace:
 ## 7. Non-goals
 
 This is not an executable test yet. It is the design target for the future Phase 11 implementation patch plan and the eventual film-route test suite.
+
+## Phase 11U Canon/Style Supplement Linkage Addendum
+
+This is a later linkage update and does not rewrite the original Phase 10 finding.
+The NEET fixture must later include the supplement pack in its expectation set:
+
+- source ledger
+- fact-vs-anecdote map
+- uncertainty ledger
+- dramatization boundary
+- source-vs-render separation
+- no fake archival evidence
+- style bible fields
+- camera / palette / sound / performance requirements
+- anti-platform-route collision cases
+
+`SCRIPT_GENERATION` remains preserved for content/platform use, and `FILM_SCREENPLAY_GENERATION` remains a parallel future route.
+Phase 12 remains blocked until the supplement layer is reviewed.

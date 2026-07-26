@@ -1,0 +1,46 @@
+phase: "12E"
+status: "DRAFT_UNREGISTERED"
+runtime_behavior_changed: false
+route_selector_modified: false
+route_registered: false
+route_bound_to_runtime: false
+governed_runtime_proof_claimed: false
+pass_claimed: false
+content_engine_preserved: true
+route_id: "FEATURE_FILM_PRODUCTION_PIPELINE"
+canonical_route_id_only: true
+future_parallel_route: true
+preserves_existing_script_generation: true
+draft_boundary:
+  not_in_registries_route_manifests: true
+  not_in_registries_route_slices: true
+  not_bound_to_route_selector: true
+  not_bound_to_runtime_state: true
+future_route_dependencies:
+  - "runtime_contracts/film/route/FILM_ROUTE_INTENT_CONTRACT.md"
+  - "runtime_contracts/film/route/FILM_CONTENT_ROUTE_SEPARATION_CONTRACT.md"
+future_contract_dependencies:
+  - "runtime_contracts/film/output_packet/FILM_OUTPUT_PACKET_CONTRACT.md"
+  - "runtime_contracts/film/validation/FILM_VALIDATION_SCORECARD_CONTRACT.md"
+future_schema_dependencies:
+  - "schemas/film/route/film_route_state_capsule.schema.json"
+  - "schemas/film/output_packet/film_screenplay_output_packet.schema.json"
+future_validator_dependencies:
+  - "validators/film/route/validate_film_route_selection.py"
+  - "validators/film/validation/validate_film_content_packet_separation.py"
+future_fixture_dependencies:
+  - "tests/fixtures/film_route_selection/neet_short_film.json"
+  - "tests/fixtures/no_fake_pass/content_validator_cannot_pass_film_packet.json"
+future_director_agent_skill_dependencies:
+  - "Phase 11U linkage addendum"
+  - "Phase 11S canon/style supplement pack"
+future_downstream_handoff_dependencies:
+  - "visual_media_plan"
+  - "voice_context"
+  - "editing_packaging"
+  - "media_factory_handoff"
+non_binding_boundary:
+  - "no runtime binding"
+  - "no route selector modification"
+  - "no manifest publication into active registries"
+  - "no validator or schema enforcement"

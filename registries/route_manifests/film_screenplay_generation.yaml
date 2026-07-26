@@ -1,0 +1,137 @@
+route_id: "FILM_SCREENPLAY_GENERATION"
+route_name: "Film Screenplay Generation"
+canonical_route_id_only: true
+accepted_route_ids:
+  - FILM_SCREENPLAY_GENERATION
+status: "ACTIVE_REGISTRY_ONLY"
+active_route: true
+registered: true
+bound_to_route_selector: false
+runtime_behavior_changed: false
+governed_runtime_proof_claimed: false
+pass_claimed: false
+route_family: "cinema_core"
+route_mode: "film_screenplay_generation"
+preserves_content_route: "SCRIPT_GENERATION"
+
+trigger_terms:
+  - "short film"
+  - "feature film"
+  - "screenplay"
+  - "shooting script"
+  - "cinematic screenplay"
+  - "film scene"
+  - "dialogue scene"
+  - "character arc film"
+  - "animated short film"
+  - "docudrama film"
+  - "real-incident short film"
+
+non_triggers:
+  - "YouTube script"
+  - "Shorts script"
+  - "Instagram reel script"
+  - "TikTok script"
+  - "voiceover script"
+  - "explainer video script"
+  - "content script"
+  - "creator video"
+  - "hook-focused script"
+  - "retention-focused script"
+  - "trailer"
+  - "teaser"
+  - "thumbnail"
+  - "title pack"
+  - "social cutdown"
+  - "edit package"
+  - "visual media plan"
+  - "voice context"
+  - "media factory handoff"
+  - "full video pipeline"
+
+mandatory_startup_docs:
+  - AGENTS.md
+  - START_HERE_FOR_AGENTS.md
+  - AGENT_READ_ORDER.md
+  - AGENT_REPO_FIRST_OPERATING_DOCTRINE.md
+  - AGENT_ANTI_DRIFT_RULES.md
+
+mandatory_runtime_contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md
+  - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+
+mandatory_registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/script_generation.yaml
+  - registries/route_slices/script_generation.registry_slice.yaml
+  - registries/director_binding_matrix.json
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+
+mandatory_directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/research/vyasa.md
+  - directors/research/valmiki.md
+  - directors/distribution/saraswati.md
+  - directors/kernel/yama.md
+
+mandatory_agents:
+  - agents/krishna/krishna_agent.py
+  - agents/aruna/aruna_agent.py
+  - agents/vyasa/vyasa_agent.py
+  - agents/valmiki/valmiki_agent.py
+  - agents/saraswati/saraswati_agent.py
+  - agents/yama/yama_agent.py
+
+mandatory_subagents:
+  - subagents/wf_200/wf_200_sub_agent.py
+  - subagents/cwf_210/cwf_210_sub_agent.py
+  - subagents/cwf_220/cwf_220_sub_agent.py
+  - subagents/cwf_230/cwf_230_sub_agent.py
+  - subagents/cwf_240/cwf_240_sub_agent.py
+
+mandatory_skills:
+  - .agents/skills/shadow-content-orchestration/SKILL.md
+  - .agents/skills/shadow-context-engineering/SKILL.md
+  - .agents/skills/shadow-research-gate/SKILL.md
+  - skills/script_intelligence/S-201-hook-optimizer.skill.md
+  - skills/script_intelligence/S-202-first-draft-generation.skill.md
+  - skills/script_intelligence/S-203-retention-engineer.skill.md
+  - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+
+mandatory_subskills:
+  - skills/sub_skills/SS-241-open-loop-generator.subskill.md
+  - skills/sub_skills/SS-243-pacing-controller.subskill.md
+  - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+
+mandatory_output_blocks:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - SOURCE_RESEARCH_LOCK
+  - SOURCE_BREADTH_LOCK
+  - RULE_CONSUMPTION_EVIDENCE_LOCK
+  - QUALITY_LOCK
+  - RECURRING_HOOK_DENSITY_LOCK
+  - GOVERNANCE_LOCK
+  - ROUTE_STATE_CAPSULE
+  - VALIDATION_SCORECARD
+  - LINE_BY_LINE_INFLUENCE_MAP
+  - CLAIM_TO_SCRIPT_LINE_MAP
+  - FINAL_SCRIPT
+
+future_activation_blockers:
+  - route selector remains unmodified in this phase
+  - active file presence does not imply selector binding
+  - runtime behavior remains unchanged
+  - governed runtime proof is not claimed
+

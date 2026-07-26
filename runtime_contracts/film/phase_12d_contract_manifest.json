@@ -1,0 +1,171 @@
+{
+  "phase": "12D",
+  "contract_count": 26,
+  "runtime_behavior_changed": false,
+  "route_selector_modified": false,
+  "contracts_created": true,
+  "contracts_bound": false,
+  "validators_bound": false,
+  "schemas_bound": false,
+  "routes_created": false,
+  "routes_bound": false,
+  "governed_runtime_proof_claimed": false,
+  "contracts": [
+    {
+      "path": "runtime_contracts/film/route/FILM_ROUTE_INTENT_CONTRACT.md",
+      "family": "route",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/route/FILM_CONTENT_ROUTE_SEPARATION_CONTRACT.md",
+      "family": "route",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/story_structure/FILM_SCREENPLAY_STRUCTURE_CONTRACT.md",
+      "family": "story_structure",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/story_structure/SAVE_THE_CAT_BEAT_SHEET_CONTRACT.md",
+      "family": "story_structure",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/story_structure/THREE_ACT_EIGHT_SEQUENCE_CONTRACT.md",
+      "family": "story_structure",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/story_structure/HERO_JOURNEY_STORY_CIRCLE_CONTRACT.md",
+      "family": "story_structure",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/story_structure/MCKEE_SYD_FIELD_TRUBY_STORY_LOGIC_CONTRACT.md",
+      "family": "story_structure",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/character/CHARACTER_ARC_AND_DESIRE_CONTRACT.md",
+      "family": "character",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/character/CHARACTER_WEB_AND_OPPOSING_FORCE_CONTRACT.md",
+      "family": "character",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/scene_dramaturgy/SCENE_DRAMATURGY_CONTRACT.md",
+      "family": "scene_dramaturgy",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/dialogue/DIALOGUE_SUBTEXT_CONTRACT.md",
+      "family": "dialogue",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/visual_language/VISUAL_MOTIF_AND_IMAGE_SYSTEM_CONTRACT.md",
+      "family": "visual_language",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/visual_language/MISE_EN_SCENE_BLOCKING_COMPOSITION_CONTRACT.md",
+      "family": "visual_language",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/visual_language/CAMERA_LANGUAGE_CONTRACT.md",
+      "family": "visual_language",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/directorial_style/SOUND_MOTIF_PERFORMANCE_CONTRACT.md",
+      "family": "directorial_style",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/style/CINEMA_STYLE_BIBLE_CONTRACT.md",
+      "family": "style",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/style/STYLE_PALETTE_CONTINUITY_CONTRACT.md",
+      "family": "style",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/style/ANIMATION_CANON_CONTRACT.md",
+      "family": "style",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/style/AI_PROMPT_STYLE_DNA_CONTRACT.md",
+      "family": "style",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/source/REAL_INCIDENT_DOCUDRAMA_ETHICS_CONTRACT.md",
+      "family": "source",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/source/FILM_SOURCE_LEDGER_CONTRACT.md",
+      "family": "source",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/output_packet/FILM_OUTPUT_PACKET_CONTRACT.md",
+      "family": "output_packet",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/downstream_handoff/FILM_DOWNSTREAM_HANDOFF_CONTRACT.md",
+      "family": "downstream_handoff",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/validation/FILM_VALIDATION_SCORECARD_CONTRACT.md",
+      "family": "validation",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/validation/NO_FAKE_FILM_PASS_CONTRACT.md",
+      "family": "validation",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "runtime_contracts/film/validation/FILM_SCHEMA_VALIDATOR_BINDING_BOUNDARY_CONTRACT.md",
+      "family": "validation",
+      "status": "skeleton_only",
+      "bound_to_runtime": false
+    }
+  ]
+}

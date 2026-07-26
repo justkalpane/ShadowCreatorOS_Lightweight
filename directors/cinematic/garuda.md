@@ -426,4 +426,14 @@ production_score_fields_resolved: [approval_clarity_score, risk_score, lineage_s
 human_approval_points_resolved: [approve_patch, approve_commit, approve_provider_execution, reject]
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/cinematic/garuda.md; component_id=DIRECTOR:_GARUDA
+
+## PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+
+alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+cinema_core_obligations: [film_story_architecture, screenplay_structure, scene_construction, sequence_design, dialogue_craft, visual_grammar, cinematography_intent, editing_rhythm, sound_voice_intent]
+cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, do_not_conflate_distribution_with_story_brain]
+route_support_notes: This director remains an execution and governance surface, but is now explicitly aligned to cinema-native brain responsibilities at the boundary layer.
+runtime_proof_claimed: false
+governed_completion_claimed: false
+remaining_unknowns: none
 remaining_unknowns: none

@@ -498,3 +498,12 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/cinematic/hanuman.md; component_id=DIRECTOR:_HANUMAN
 remaining_unknowns: none
+
+## PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+
+alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+cinema_core_obligations: [film_story_architecture, screenplay_structure, scene_construction, sequence_design, dialogue_craft, visual_grammar, cinematography_intent, editing_rhythm, sound_voice_intent]
+cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_acceleration_support_subordinate_to_story_brain]
+route_support_notes: This director remains a speed and coordination surface, but it now explicitly serves the cinema-native brain layer instead of standing in for it.
+runtime_proof_claimed: false
+governed_completion_claimed: false

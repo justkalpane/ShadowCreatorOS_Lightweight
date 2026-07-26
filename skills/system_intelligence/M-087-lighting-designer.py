@@ -65,6 +65,13 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # route_profile_applied: visual_context_profile
 # route_family_resolved: [visual_context, context_engineering, image_generation]
 # activation_triggers_resolved: [visual, image, design, style]
+
+# PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+# alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+# cinema_core_obligations: [visual_grammar, cinematography_intent, scene_construction, mood_control, tonal_continuity]
+# cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_lighting_support_subordinate_to_story_brain]
+# runtime_proof_claimed: false
+# governed_completion_claimed: false
 # required_input_packets_resolved: [script_segment_packet, final_script_packet, visual_context_packet]
 # emitted_output_packets_resolved: [visual_context_packet, provider_handoff_packet]
 # communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE, PTR_MEDIA_PROVIDER_HANDOFF]

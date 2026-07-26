@@ -420,4 +420,13 @@ production_score_fields_resolved: [script_score, hook_score, retention_score, vo
 human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_output]
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/cinematic/varuna.md; component_id=DIRECTOR:_VARUNA
+
+## PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+
+alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+cinema_core_obligations: [film_story_architecture, screenplay_structure, scene_construction, sequence_design, dialogue_craft, visual_grammar, cinematography_intent, editing_rhythm, sound_voice_intent]
+cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_handoff_support_downstream_only]
+route_support_notes: This director remains a handoff and orchestration surface, but it is now explicitly aligned to the cinema-native brain boundary.
+runtime_proof_claimed: false
+governed_completion_claimed: false
 remaining_unknowns: none

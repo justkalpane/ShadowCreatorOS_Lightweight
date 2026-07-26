@@ -28,12 +28,16 @@ Future rollback must include:
 - remove active route files only if registration happened in the same patch
 
 ## 4. Future approval phrase
-`Approved: proceed with Phase 12L selector binding patch only.`
+`Approved: proceed with Phase 12L active manifest/slice files only, no selector binding.`
 
 Phase 12L must not start until Phase 12K is reviewed and approved.
+Phase 12L must not modify the route selector.
+Phase 12L must not bind `FILM_SCREENPLAY_GENERATION`.
+Phase 12L may only create active manifest/slice files if repo evidence proves they remain unselector-bound until a later selector patch.
+Selector binding remains a later phase after Phase 12L review.
+No runtime PASS or governed proof is claimed.
 
 ## 5. Phase 12L recommendation
 `Phase 12L: active manifest/slice files only, no selector binding`
 
 That is the safer next step because it creates the active route artifacts first while keeping the live selector untouched.
-

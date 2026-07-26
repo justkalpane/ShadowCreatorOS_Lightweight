@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_animation_style_bible.schema.json",
+  "title": "Film Animation Style Bible",
+  "description": "Skeleton schema for animation style bible.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"animation_style_family":{"type":"string","description":"Animation style family"},"disney_12_principles_map":{"type":"object","description":"Disney 12 principles map"},"character_design_sheet":{"type":"object","description":"Character design sheet"},"turnaround_sheet":{"type":"object","description":"Turnaround sheet"},"expression_sheet":{"type":"object","description":"Expression sheet"},"key_poses":{"type":"array","items":{"type":"string"},"description":"Key poses"},"extremes":{"type":"array","items":{"type":"string"},"description":"Extremes"},"breakdowns":{"type":"array","items":{"type":"string"},"description":"Breakdowns"},"in_betweens":{"type":"array","items":{"type":"string"},"description":"In-betweens"},"timing_chart":{"type":"object","description":"Timing chart"},"motion_arcs":{"type":"array","items":{"type":"string"},"description":"Motion arcs"},"color_script":{"type":"object","description":"Color script"},"animation_acting_notes":{"type":"string","description":"Animation acting notes"},"continuity_notes":{"type":"string","description":"Continuity notes"}},
+  "required": []
+}

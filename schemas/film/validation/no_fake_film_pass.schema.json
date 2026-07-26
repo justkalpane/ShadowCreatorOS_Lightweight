@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/validation/no_fake_film_pass.schema.json",
+  "title": "No Fake Film Pass",
+  "description": "Skeleton schema for no-fake-pass checks.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"governed_runtime_proof_claimed":{"type":"boolean","description":"Governed runtime proof claimed"},"repository_lock_id":{"type":"string","description":"Repository lock id"},"proof_contract_id":{"type":"string","description":"Proof contract id"},"context_packet_id":{"type":"string","description":"Context packet id"},"prompt_package_id":{"type":"string","description":"Prompt package id"},"evaluation_report_id":{"type":"string","description":"Evaluation report id"},"completion_certificate":{"type":"string","description":"Completion certificate"},"github_read_treated_as_runtime_proof":{"type":"boolean","description":"GitHub read treated as runtime proof"},"content_validator_used_for_film_packet":{"type":"boolean","description":"Content validator used for film packet"},"missing_film_schema":{"type":"array","items":{"type":"string"},"description":"Missing film schema"},"missing_filmcraft_scorecard":{"type":"array","items":{"type":"string"},"description":"Missing filmcraft scorecard"}},
+  "required": []
+}

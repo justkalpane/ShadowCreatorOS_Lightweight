@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/story_structure/film_hero_journey_map.schema.json",
+  "title": "Film Hero Journey Map",
+  "description": "Skeleton schema for hero's journey mapping.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"call_to_adventure":{"type":"string","description":"Call to adventure"},"road_of_trials":{"type":"array","items":{"type":"string"},"description":"Road of trials"},"ordeal":{"type":"string","description":"Ordeal"},"return":{"type":"string","description":"Return"}},
+  "required": []
+}

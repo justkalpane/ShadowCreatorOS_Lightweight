@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_lighting_palette.schema.json",
+  "title": "Film Lighting Palette",
+  "description": "Skeleton schema for lighting palette planning.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"lighting_style":{"type":"string","description":"Lighting style"},"motivation":{"type":"string","description":"Motivation"},"contrast":{"type":"string","description":"Contrast"},"color_temperature":{"type":"string","description":"Color temperature"}},
+  "required": []
+}

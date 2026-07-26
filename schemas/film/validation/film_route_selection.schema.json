@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/validation/film_route_selection.schema.json",
+  "title": "Film Route Selection",
+  "description": "Skeleton schema for film route selection and collision handling.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"route_id":{"type":"string","description":"Route id"},"input_prompt":{"type":"string","description":"Input prompt"},"expected_route":{"type":"string","description":"Expected route"},"expected_mode":{"type":"string","description":"Expected mode"},"route_collision_status":{"type":"string","description":"Route collision status"},"content_route_allowed":{"type":"boolean","description":"Content route allowed"},"film_route_allowed":{"type":"boolean","description":"Film route allowed"},"platform_logic_allowed_downstream":{"type":"boolean","description":"Platform logic allowed downstream"}},
+  "required": []
+}

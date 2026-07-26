@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/output_packet/film_screenplay_output_packet.schema.json",
+  "title": "Film Screenplay Output Packet",
+  "description": "Skeleton schema for cinema-first screenplay packets.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"route_state_capsule":{"type":"object","description":"Route state capsule"},"film_intent_lock":{"type":"string","description":"Film intent lock"},"source_research_status":{"type":"string","description":"Source research status"},"source_ledger":{"type":"object","description":"Source ledger"},"fact_vs_anecdote_map":{"type":"object","description":"Fact vs anecdote map"},"logline":{"type":"string","description":"Logline"},"theme":{"type":"string","description":"Theme"},"premise":{"type":"string","description":"Premise"},"genre":{"type":"string","description":"Genre"},"tone":{"type":"string","description":"Tone"},"cinematic_world":{"type":"object","description":"Cinematic world"},"protagonist_want":{"type":"string","description":"Protagonist want"},"protagonist_need":{"type":"string","description":"Protagonist need"},"protagonist_flaw":{"type":"string","description":"Protagonist flaw"},"protagonist_arc":{"type":"object","description":"Protagonist arc"},"opposing_force":{"type":"string","description":"Opposing force"},"character_web":{"type":"object","description":"Character web"},"beat_sheet":{"type":"object","description":"Beat sheet"},"three_act_map":{"type":"object","description":"Three act map"},"eight_sequence_map":{"type":"object","description":"Eight sequence map"},"scene_dramaturgy_map":{"type":"object","description":"Scene dramaturgy map"},"dialogue_subtext_pass":{"type":"object","description":"Dialogue subtext pass"},"visual_motif_system":{"type":"object","description":"Visual motif system"},"style_bible":{"type":"object","description":"Style bible"},"screenplay_body":{"type":"string","description":"Screenplay body"},"film_validation_scorecard":{"type":"object","description":"Film validation scorecard"},"no_fake_pass_gate":{"type":"object","description":"No fake pass gate"},"downstream_handoff_recommendations":{"type":"object","description":"Downstream handoff recommendations"}},
+  "required": []
+}

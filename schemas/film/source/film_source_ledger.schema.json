@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/source/film_source_ledger.schema.json",
+  "title": "Film Source Ledger",
+  "description": "Skeleton schema for film source ledgers.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"source_research_status":{"type":"string","description":"Source research status"},"source_ledger":{"type":"array","items":{"type":"object"},"description":"Source ledger"},"freshness_status":{"type":"string","description":"Freshness status"},"coverage_notes":{"type":"string","description":"Coverage notes"}},
+  "required": []
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/downstream_handoff/film_downstream_handoff_packet.schema.json",
+  "title": "Film Downstream Handoff Packet",
+  "description": "Skeleton schema for downstream handoff packets.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"visual_handoff":{"type":"object","description":"Visual handoff"},"voice_handoff":{"type":"object","description":"Voice handoff"},"editing_handoff":{"type":"object","description":"Editing handoff"},"media_factory_handoff":{"type":"object","description":"Media factory handoff"},"release_handoff":{"type":"object","description":"Release handoff"}},
+  "required": []
+}

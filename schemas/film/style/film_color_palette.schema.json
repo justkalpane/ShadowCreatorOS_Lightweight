@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_color_palette.schema.json",
+  "title": "Film Color Palette",
+  "description": "Skeleton schema for color palette planning.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"color_palette":{"type":"object","description":"Color palette"},"contrast":{"type":"string","description":"Contrast"},"saturation":{"type":"string","description":"Saturation"},"color_script":{"type":"object","description":"Color script"}},
+  "required": []
+}

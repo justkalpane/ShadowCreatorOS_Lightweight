@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_continuity_anti_drift.schema.json",
+  "title": "Film Continuity Anti Drift",
+  "description": "Skeleton schema for continuity and anti-drift rules.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"continuity_rules":{"type":"array","items":{"type":"string"},"description":"Continuity rules"},"anti_drift_rules":{"type":"array","items":{"type":"string"},"description":"Anti-drift rules"},"prohibited_drift":{"type":"array","items":{"type":"string"},"description":"Prohibited drift"}},
+  "required": []
+}

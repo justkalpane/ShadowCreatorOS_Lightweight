@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/character/film_character_arc.schema.json",
+  "title": "Film Character Arc",
+  "description": "Skeleton schema for character arc data.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"character_name":{"type":"string","description":"Character name"},"want":{"type":"string","description":"Want"},"need":{"type":"string","description":"Need"},"flaw":{"type":"string","description":"Flaw"},"transformation":{"type":"string","description":"Transformation"}},
+  "required": []
+}

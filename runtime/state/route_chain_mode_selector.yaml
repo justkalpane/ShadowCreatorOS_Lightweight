@@ -23,6 +23,29 @@ modes:
       - no_chat_transcript_without_drift_audit_mode
       - output_phase_started
 
+  film_screenplay_generation:
+    allowed_route_ids: [FILM_SCREENPLAY_GENERATION]
+    blocked_route_ids: []
+    required_output_sections:
+      - ROUTE_STATE_CAPSULE
+      - VALIDATION_SCORECARD
+      - LINE_BY_LINE_INFLUENCE_MAP
+      - CLAIM_TO_SCRIPT_LINE_MAP
+      - FINAL_SCRIPT
+    optional_downstream_routes:
+      - visual_media_plan
+      - voice_context
+      - editing_packaging
+      - media_factory_handoff
+      - full_video_pipeline
+    stop_condition: film_screenplay_generated=true
+    validation_gates:
+      - film_route_explicitly_requested
+      - script_generation_preserved
+      - no_fake_film_pass
+      - source_vs_render_separation
+      - post_binding_validation_required
+
   script_plus_visual_plan:
     allowed_route_ids: [SCRIPT_GENERATION, MEDIA_FACTORY_HANDOFF]
     blocked_route_ids: []

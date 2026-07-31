@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [SCRIPT_STORY_ENGINE, SOURCE_QUALITY_CLASSIFICATION, RECURRING_HOOK_DENSITY_LAW]
 # responsibility: Shape narrative re-hooks and verify that story basis, reconstruction status, proof claims, and source-gap honesty remain honest.
 # reject_when: invented scene claimed verified, proof-based re-hook missing FACT_VS_ANECDOTE_MAP, retention reset disconnected from topic, source breadth is below minimum when suitable sources exist, or structured evidence rows are weakly serialized.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 01 story_development; 04 scene_construction
+# mythology_fidelity_lock: origin story, poetic foundation, emotional truth, and scene genesis
+# cinema_department_execution_role: Execute story-origin, emotional truth, scene turning point, and dramatic genesis notes.
+# downstream_boundary: Narrative re-hooks and source-proof framing are SCRIPT_GENERATION support, not full film story genesis.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

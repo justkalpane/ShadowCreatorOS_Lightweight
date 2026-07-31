@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [RECURRING_HOOK_DENSITY_LAW, SUBSKILL_ROUTING]
 # responsibility: Route recurring hook requirements through hook, open-loop, tension, pacing, retention, and cliffhanger subskills.
 # reject_when: script child workflow omits recurring re-hook map or dynamic beat hook markers.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 17 docudrama_ethics_and_source_separation; 21 production_management_and_scheduling; 24 runtime_proof_and_no_fake_pass_governance
+# mythology_fidelity_lock: obstacle removal, beginnings, structure, gatekeeping, and preflight clarity
+# cinema_department_execution_role: Execute preflight, obstacle-clearing, route gate, source separation, and no-fake-PASS checks for film packets.
+# downstream_boundary: Hook routing, retention tooling, or script-generation subskill routing cannot become film-core proof.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

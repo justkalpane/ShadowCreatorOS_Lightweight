@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [RECURRING_HOOK_DENSITY_LAW, RETENTION_GATE]
 # responsibility: Validate recurring re-hook density, topic relevance, CTA hook, and max retention gap.
 # reject_when: unexplained max_gap_without_rehook_seconds above 90 or fewer than three internal re-hooks in a 5-minute script.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 05 dialogue_and_language; 06 character_arc_and_performance; 23 distribution_packaging_isolated_downstream
+# mythology_fidelity_lock: desire, attraction, relational pull, emotional magnetism, and audience-facing charm
+# cinema_department_execution_role: Execute desire-line, relational pull, attraction logic, and downstream packaging boundaries.
+# downstream_boundary: CTR, retention, conversion, and viral attraction remain SCRIPT_GENERATION or downstream packaging logic, not film-core authorship.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

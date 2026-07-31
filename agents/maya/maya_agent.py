@@ -122,3 +122,19 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution, all 15 visual DNA fields required for PASS]
 # evidence_used_for_resolution: path/pre-contract keyword: visual/cinematic/storyboard/color; component_path=agents/maya/maya_agent.py; component_id=maya_agent; director_file=directors/production/maya.md
 # remaining_unknowns: none
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 11 production_design_and_worldbuilding; 16 animation_and_style_system; 09 cinematography_and_visual_grammar
+# mythology_fidelity_lock: illusion, appearance, perception, designed reality, and visual world construction
+# cinema_department_execution_role: Execute film-world texture, production design, visual perception, and animation style continuity.
+# downstream_boundary: Media Factory visuals are downstream execution and do not replace preproduction worldbuilding.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

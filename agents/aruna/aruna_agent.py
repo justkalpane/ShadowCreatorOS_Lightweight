@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [TASK_EXECUTION_STATE_MACHINE, RECURRING_HOOK_DENSITY_LOCK, MEDIA_FACTORY_SYNC_LOCK]
 # responsibility: Route script packets through recurring hook density and media sync gates before final output.
 # reject_when: missing lock, unexplained max_gap_without_rehook_seconds above 90, missing child-lane consumption proof.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 04 scene_construction; 13 editing_rhythm_and_pacing
+# mythology_fidelity_lock: dawn, transition, awakening, threshold movement, and momentum between states
+# cinema_department_execution_role: Execute scene transitions, reveal momentum, tonal dawn shifts, and edit-rhythm handoff notes.
+# downstream_boundary: Content pacing, retention, and social-video momentum are not film-core criteria unless explicitly downstream.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

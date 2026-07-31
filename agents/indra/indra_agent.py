@@ -76,3 +76,19 @@ if __name__ == "__main__":
 # status_limits_resolved: [no fake realtime claim, no provider execution]
 # evidence_used_for_resolution: path/pre-contract keyword: research/source/fact; component_path=agents/indra/indra_agent.py; component_id=indra_agent
 # remaining_unknowns: none
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 07 dramatic_conflict_and_stakes; 21 production_management_and_scheduling
+# mythology_fidelity_lock: command, storm decision, authority, escalation, and strategic deployment
+# cinema_department_execution_role: Execute production command, escalation, dependency deployment, and stakes war-room decisions.
+# downstream_boundary: Premium content execution and platform escalation are downstream, not film-core command authority.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

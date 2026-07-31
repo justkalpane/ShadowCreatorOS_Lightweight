@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, RECURRING_HOOK_DENSITY_LAW, PLATFORM_PACKAGING]
 # responsibility: Preserve English master language and align opening, recurring, and CTA hooks with platform packaging.
 # reject_when: silent language drift, platform-disconnected re-hook, CTA hook missing.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 05 dialogue_and_language; 15 music_motif_and_emotional_score; 20 actor_voice_and_prosody
+# mythology_fidelity_lock: language, dialogue, music, learning, articulation, clarity, and voice
+# cinema_department_execution_role: Execute dialogue clarity, subtext articulation, music motif, actor voice, and prosody notes.
+# downstream_boundary: Platform packaging copy, CTA hooks, and content clarity remain downstream or SCRIPT_GENERATION only.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [MEDIA_FACTORY_FINAL_DRAFT, DYNAMIC_TIMED_BEAT_MAP, RECURRING_HOOK_DENSITY_LAW]
 # responsibility: Map each recurring re-hook to camera, caption, edit, music/SFX, influence, and execution pattern-interrupt rows.
 # reject_when: Media Factory re-hook scene lacks synchronized pattern interrupt.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 10 lighting_and_mood; 14 sound_design_and_atmosphere; 22 post_production_and_finishing
+# mythology_fidelity_lock: transformation, purification, ignition, intensity, and finishing heat
+# cinema_department_execution_role: Execute light, sound, intensity, purification, and finishing notes for film preproduction packets.
+# downstream_boundary: Urgency, speed, recurring re-hook, shorts, viral, or platform energy may support SCRIPT_GENERATION only and is not film-core authority.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

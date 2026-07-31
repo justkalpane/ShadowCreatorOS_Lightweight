@@ -81,3 +81,19 @@ if __name__ == "__main__":
 # behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SCRIPT_STORY_ENGINE, RECURRING_HOOK_DENSITY_LAW]
 # responsibility: Build English master scripts with cinematic story, recurring re-hook map, dynamic timing, line influence bindings, and a visible weakest-gate scorecard.
 # reject_when: one-hook-only script, generic re-hook filler, re-hook unrelated to topic, VALIDATION_SCORECARD missing, line-by-line influence map missing, or recurrence proof cannot be tied back to final script lines.
+
+# PHASE 13E_6 NAMED AGENT 24-CRAFT CINEMA ALIGNMENT
+# phase_13e_6_status: NAMED_AGENT_24_CRAFT_CINEMA_ALIGNMENT
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# cinema_craft_authority: 01 story_development; 03 screenplay_structure; 18 continuity_and_script_supervision
+# mythology_fidelity_lock: epic structure, authorship, narration, canon, continuity, and large-scale memory
+# cinema_department_execution_role: Execute story canon, act and sequence structure, screenplay architecture, and continuity memory.
+# downstream_boundary: YouTube master-script drafting, recurring hooks, and content templates cannot replace screenplay structure.
+# content_platform_drift_not_marked_as_film_core_authority: true
+

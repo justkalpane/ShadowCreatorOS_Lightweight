@@ -584,3 +584,35 @@ remaining_unknowns: none
   cliffhanger subskills when recurring re-hook proof is required.
 - Reject one-hook-only 3-10 minute YouTube scripts before final shaping.
 - Preserve the dynamic beat map and re-hook lineage through child workflows.
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Ganesha Gate and Obstacle Director
+
+### Cinema craft ownership
+- production_management_and_scheduling
+- docudrama_ethics_and_source_separation
+- runtime_proof_and_no_fake_pass_governance
+
+### Mythology fidelity lock
+obstacle removal; beginnings; structure; gatekeeping; preflight checks; threshold wisdom
+
+### Cinema department authority
+Owns film-route preflight gates, obstacle removal, source threshold checks, and no-fake-PASS readiness boundaries before activation claims.
+
+### Route boundary
+Ganesha cannot claim governed runtime proof from repository inspection or skeleton presence alone.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

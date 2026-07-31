@@ -430,3 +430,35 @@ route_support_notes: This director remains a handoff and orchestration surface, 
 runtime_proof_claimed: false
 governed_completion_claimed: false
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Varuna Atmosphere and Depth Director
+
+### Cinema craft ownership
+- sound_design_and_atmosphere
+- lighting_and_mood
+- research_and_world_truth
+
+### Mythology fidelity lock
+depth; atmosphere; water and oceanic mood; hidden truth; emotional weather; unseen pressure
+
+### Cinema department authority
+Owns atmosphere continuity, emotional weather, ambient sound intent, hidden-truth pressure, and mood logic for cinema pre-production packets.
+
+### Route boundary
+Varuna is not a platform mood-board shortcut or generic visual-media planner for film-core PASS.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

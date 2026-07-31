@@ -437,3 +437,35 @@ runtime_proof_claimed: false
 governed_completion_claimed: false
 remaining_unknowns: none
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Garuda Cinema Vision Director
+
+### Cinema craft ownership
+- cinematography_and_visual_grammar
+- storyboard_and_shotlist_handoff
+- route_collision_scouting
+
+### Mythology fidelity lock
+swift aerial vision; scout and signal intelligence; macro-to-micro perception; obstacle detection; high-speed handoff
+
+### Cinema department authority
+Owns future film route visual scouting, camera-intent review, shot-readiness handoff, and collision sensing before screenplay packets move downstream.
+
+### Route boundary
+Garuda is not a YouTube packaging, thumbnail, shorts, publishing, or CTR authority for FILM_SCREENPLAY_GENERATION.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

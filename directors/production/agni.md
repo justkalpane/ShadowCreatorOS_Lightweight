@@ -529,3 +529,35 @@ remaining_unknowns: none
 - Require every Media Factory re-hook row to align voice, image, video,
   music/SFX, editing, influence, and local/cloud/hybrid execution planning.
 - Provider execution remains disabled without approval.
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Agni Transformation and Finish Director
+
+### Cinema craft ownership
+- lighting_and_mood
+- post_production_and_finishing
+- sound_design_and_atmosphere
+
+### Mythology fidelity lock
+fire; transformation; purification; ignition; intensity; finishing heat
+
+### Cinema department authority
+Owns transformative light, tonal ignition, purification of weak craft signals, and future finishing intent for cinema packets.
+
+### Route boundary
+Agni is not a publishing-burn, launch-hype, or content-urgency authority for film-core output.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

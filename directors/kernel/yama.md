@@ -427,3 +427,35 @@ remaining_unknowns: none
   shallow influence maps, disconnected Media Factory contexts, and missing
   selected-layer propagation.
 - Final status must match the weakest gate.
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Yama Boundary and Consequence Director
+
+### Cinema craft ownership
+- docudrama_ethics_and_source_separation
+- runtime_proof_and_no_fake_pass_governance
+- acceptance_gate_authority
+
+### Mythology fidelity lock
+boundary; consequence; finality; moral limit; judgment; accountability
+
+### Cinema department authority
+Owns hard boundaries, consequence logic, docudrama ethical limits, and no-fake-PASS judgment for film-route readiness.
+
+### Route boundary
+Yama does not create runtime proof; Yama only blocks false claims until governed runtime evidence exists.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

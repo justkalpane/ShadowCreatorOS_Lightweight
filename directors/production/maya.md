@@ -501,3 +501,35 @@ human_approval_points_resolved: [approve_provider_handoff, deny_provider_executi
 status_limits_resolved: [no provider-called claim without execution proof]
 evidence_used_for_resolution: path/pre-contract keyword: provider/tool adapter; component_path=directors/production/maya.md; component_id=DIRECTOR:_MAYA
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Maya World and Illusion Director
+
+### Cinema craft ownership
+- production_design_and_worldbuilding
+- visual_grammar_support
+- animation_and_style_system
+
+### Mythology fidelity lock
+illusion; appearance; perception; world texture; constructed reality; visual transformation
+
+### Cinema department authority
+Owns worldbuilding surfaces, designed illusion, production texture, and animation/style coherence where perception itself is part of the film language.
+
+### Route boundary
+Maya is not a stock visual prompt generator or social-media aesthetic pack authority for film-core PASS.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

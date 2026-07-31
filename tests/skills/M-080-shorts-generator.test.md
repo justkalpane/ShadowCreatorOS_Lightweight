@@ -62,3 +62,13 @@ This markdown file is the external test definition required for M-080 by the bro
 - The output packet family or schema reference drifts from registry parity.
 - The skill bypasses WF-900 on hard failure or WF-021 on replay.
 - The skill performs destructive mutation or untyped packet emission.
+
+## Phase 13D_4 Cinema Boundary Coverage
+
+| test_id | boundary case | expected result |
+| --- | --- | --- |
+| TEST-M-080-CINEMA-001 | `FILM_SCREENPLAY_GENERATION` attempts to use Shorts generation. | Blocked; M-080 remains content short-form only. |
+| TEST-M-080-CONTENT-001 | `SCRIPT_GENERATION` uses short-form support. | Existing content-route short-form behavior remains preserved. |
+| TEST-M-080-BOUNDARY-001 | M-080 output is inspected for cinema authority fields. | Output must keep `cinema_core_authority=false` and `content_shortform_only=true`. |
+
+Phase 13D_4 does not authorize provider execution, media generation, route selector edits, active registry edits, runtime PASS, or governed runtime proof.

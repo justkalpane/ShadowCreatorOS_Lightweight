@@ -62,3 +62,13 @@ This markdown file is the external test definition required for M-047 by the bro
 - The output packet family or schema reference drifts from registry parity.
 - The skill bypasses WF-900 on hard failure or WF-021 on replay.
 - The skill performs destructive mutation or untyped packet emission.
+
+## Phase 13D_4 Cinema Boundary Coverage
+
+| test_id | boundary case | expected result |
+| --- | --- | --- |
+| TEST-M-047-CINEMA-001 | `FILM_SCREENPLAY_GENERATION` attempts to use thumbnail psychology before film packet readiness. | Blocked; M-047 remains downstream packaging only. |
+| TEST-M-047-CINEMA-002 | `FILM_SCREENPLAY_GENERATION` has `film_packet_ready=true` and `downstream_packaging_authorized=true`. | M-047 may create a downstream package packet but must keep `cinema_core_authority=false`. |
+| TEST-M-047-CONTENT-001 | `SCRIPT_GENERATION` uses thumbnail or packaging support. | Existing content-route behavior remains preserved and separate from film-core PASS criteria. |
+
+Phase 13D_4 does not authorize provider execution, media generation, route selector edits, active registry edits, runtime PASS, or governed runtime proof.

@@ -80,3 +80,21 @@ if __name__ == "__main__":
 # route_profile_override: script_generation_refinement_lane when selected by SCRIPT_GENERATION manifest.
 # responsibility: Repair flat sections and embed re-hooks inside FINAL_SCRIPT, DYNAMIC_TIMED_BEAT_MAP, EDITING_CONTEXT, and LINE_BY_LINE_INFLUENCE_MAP.
 # reject_when: re-hooks exist only in a planning list.
+
+# PHASE 13E_10 SUBAGENT CINEMA DEPARTMENT LANE OVERLAY
+# phase_13e_10_status: SUBAGENT_CINEMA_DEPARTMENT_LANE_OVERLAY
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# shared_with_script_generation: true
+# film_route_id: FILM_SCREENPLAY_GENERATION
+# script_route_id: SCRIPT_GENERATION
+# cinema_department_lane: film_screenplay_revision_lane
+# cinema_craft_responsibility: act/sequence repair, scene conflict repair, dialogue polish, motif continuity, false-material removal, and source-ethics correction.
+# content_route_boundary: Re-hook repair, platform retention rewriting, and content influence-map repair remain SCRIPT_GENERATION criteria only.
+# downstream_boundary: Media sync edits, edit-package changes, thumbnails, trailers, and release packaging remain downstream.
+# no_fake_pass_boundary: true

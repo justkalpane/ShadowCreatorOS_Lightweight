@@ -38,6 +38,43 @@ sub_agents:
   - file: subagents/wf_600/wf_600_sub_agent.py
   - file: subagents/wf_900/wf_900_sub_agent.py
 
+phase_13e_10_subagent_cinema_lane_overlay:
+  status: ADDITIVE_CINEMA_DEPARTMENT_LANE_OVERLAY
+  runtime_behavior_changed: false
+  selector_modified: false
+  active_route_registry_modified: false
+  route_binding_modified: false
+  pass_claimed: false
+  runtime_proof_claimed: false
+  script_generation_preserved: true
+  film_screenplay_generation_preserved: true
+  shared_with_script_generation: true
+  film_route_id: FILM_SCREENPLAY_GENERATION
+  script_route_id: SCRIPT_GENERATION
+  target_subagent_count: 5
+  purpose: "Add route-specific cinema-preproduction lane semantics to shared script/film subagent files without changing selector, route registry, or runtime behavior."
+  shared_lanes:
+    - file: subagents/wf_200/wf_200_sub_agent.py
+      cinema_department_lane: film_screenplay_parent_lane
+      content_route_boundary: "SCRIPT_GENERATION keeps YouTube/content hook, retention, and recurring re-hook criteria."
+      downstream_boundary: "Media generation, visual planning, voice, editing, packaging, and publishing stay downstream."
+    - file: subagents/cwf_210/cwf_210_sub_agent.py
+      cinema_department_lane: film_screenplay_draft_lane
+      content_route_boundary: "Opening hook and recurring re-hook drafting remain SCRIPT_GENERATION only."
+      downstream_boundary: "Storyboard, visual media, voice, and Media Factory execution remain downstream."
+    - file: subagents/cwf_220/cwf_220_sub_agent.py
+      cinema_department_lane: film_screenplay_critique_lane
+      content_route_boundary: "Hook density and content-retention critique remain SCRIPT_GENERATION only."
+      downstream_boundary: "Visual/media execution critique remains downstream packet review only."
+    - file: subagents/cwf_230/cwf_230_sub_agent.py
+      cinema_department_lane: film_screenplay_revision_lane
+      content_route_boundary: "Re-hook repair and platform retention rewrites remain SCRIPT_GENERATION only."
+      downstream_boundary: "Media sync edits and packaging revisions remain downstream."
+    - file: subagents/cwf_240/cwf_240_sub_agent.py
+      cinema_department_lane: film_screenplay_output_packet_lane
+      content_route_boundary: "CTA hook and content packaging closure remain SCRIPT_GENERATION only."
+      downstream_boundary: "Scene synchronization and Media Factory handoff stay downstream of screenplay packet closure."
+
 mac_06_2b_universal_component_contract_upgrade:
   component_id: "SUB_AGENT_RUNTIME_REGISTRY"
   component_layer: "SUB_AGENT"

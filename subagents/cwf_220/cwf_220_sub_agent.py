@@ -80,3 +80,21 @@ if __name__ == "__main__":
 # route_profile_override: script_generation_critique_lane when selected by SCRIPT_GENERATION manifest.
 # responsibility: Critique language, source quality, cinematic story, recurring hook density, dynamic pacing, and topic connection.
 # reject_when: generic filler re-hook or unsupported factual re-hook survives critique.
+
+# PHASE 13E_10 SUBAGENT CINEMA DEPARTMENT LANE OVERLAY
+# phase_13e_10_status: SUBAGENT_CINEMA_DEPARTMENT_LANE_OVERLAY
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# shared_with_script_generation: true
+# film_route_id: FILM_SCREENPLAY_GENERATION
+# script_route_id: SCRIPT_GENERATION
+# cinema_department_lane: film_screenplay_critique_lane
+# cinema_craft_responsibility: scene dramaturgy, character arc, dialogue/subtext, source-vs-render separation, docudrama ethics, and style/canon critique.
+# content_route_boundary: Hook density, topic-connection scoring, and content-retention critique remain SCRIPT_GENERATION criteria only.
+# downstream_boundary: Visual/media execution critique remains downstream packet review, not film-core screenplay PASS authority.
+# no_fake_pass_boundary: true

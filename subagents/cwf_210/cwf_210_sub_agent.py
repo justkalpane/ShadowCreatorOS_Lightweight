@@ -80,3 +80,21 @@ if __name__ == "__main__":
 # route_profile_override: script_generation_draft_lane when selected by SCRIPT_GENERATION manifest.
 # responsibility: Draft English master script with opening-hook candidates, selected opening hook, and recurring re-hook map.
 # reject_when: 3-10 minute YouTube draft has only an opening hook.
+
+# PHASE 13E_10 SUBAGENT CINEMA DEPARTMENT LANE OVERLAY
+# phase_13e_10_status: SUBAGENT_CINEMA_DEPARTMENT_LANE_OVERLAY
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# shared_with_script_generation: true
+# film_route_id: FILM_SCREENPLAY_GENERATION
+# script_route_id: SCRIPT_GENERATION
+# cinema_department_lane: film_screenplay_draft_lane
+# cinema_craft_responsibility: screenplay structure, scene drafting, character motivation, dialogue/subtext drafting, and source-aware screenplay language.
+# content_route_boundary: Opening-hook candidates, recurring re-hook maps, YouTube drafting, and retention structure remain SCRIPT_GENERATION criteria only.
+# downstream_boundary: Storyboard, visual prompt, voice, editing, and Media Factory execution remain downstream of film screenplay drafting.
+# no_fake_pass_boundary: true

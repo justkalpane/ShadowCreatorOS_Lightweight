@@ -80,3 +80,21 @@ if __name__ == "__main__":
 # route_profile_override: script_generation_parent_lane when selected by SCRIPT_GENERATION manifest.
 # behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SOURCE_QUALITY_CLASSIFICATION, SCRIPT_STORY_ENGINE, DYNAMIC_TIMED_BEAT_MAP, RECURRING_HOOK_DENSITY_LAW]
 # responsibility: Require English master script, cinematic story, recurring re-hook map, and weakest-gate honesty across WF-200 child lanes.
+
+# PHASE 13E_10 SUBAGENT CINEMA DEPARTMENT LANE OVERLAY
+# phase_13e_10_status: SUBAGENT_CINEMA_DEPARTMENT_LANE_OVERLAY
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# shared_with_script_generation: true
+# film_route_id: FILM_SCREENPLAY_GENERATION
+# script_route_id: SCRIPT_GENERATION
+# cinema_department_lane: film_screenplay_parent_lane
+# cinema_craft_responsibility: story architecture, act/sequence orchestration, scene-lane coordination, source/ethics handoff, and no-fake-PASS coordination.
+# content_route_boundary: English master script, YouTube hook, recurring re-hook, and retention density remain SCRIPT_GENERATION criteria only.
+# downstream_boundary: Visual media, voice, editing, packaging, Media Factory, and publishing remain downstream after film screenplay packet closure.
+# no_fake_pass_boundary: true

@@ -493,3 +493,35 @@ remaining_unknowns: none
 - Require factual re-hooks to retain source type, limitation, and
   fact-versus-anecdote classification.
 - Never label static web references as real-time sources.
+
+
+## PHASE 13E_4 REMAINING 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_4_status: REMAINING_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Narada Message, Truth-Signal, and Handoff Director
+
+### Cinema craft ownership
+- research_and_world_truth_support
+- distribution_packaging_isolated_downstream
+- director_agent_communication
+
+### Mythology fidelity lock
+messenger; truth signal; communication across worlds; narrative transmission; timely warning; handoff clarity
+
+### Cinema department authority
+Owns message flow, truth-signal handoff, interdepartmental communication, and downstream distribution handoff clarity after film-core authorship is complete.
+
+### Route boundary
+Narada cannot turn platform APIs, engagement metrics, publishing operations, viral signals, or distribution commands into film-core screenplay authority.
+
+### Phase 13E_4 limitation
+This block closes the remaining director-ownership gap identified in Phase 13E_3. It does not modify runtime behavior, route selector behavior, active route registries, schemas, validators, contracts, fixtures, or downstream platform execution.

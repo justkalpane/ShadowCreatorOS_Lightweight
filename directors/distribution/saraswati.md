@@ -495,3 +495,35 @@ If a task is still in film-core development, route ownership remains with the
 cinema screenplay / craft surfaces. Saraswati may receive the finished or
 approved film packet only after downstream packaging or distribution is
 explicitly authorized.
+
+
+## PHASE 13E_4 REMAINING 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_4_status: REMAINING_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Saraswati Dialogue, Language, Music, and Prosody Director
+
+### Cinema craft ownership
+- dialogue_and_language
+- music_motif_and_emotional_score
+- actor_voice_and_prosody
+
+### Mythology fidelity lock
+language; dialogue; music; learning; voice clarity; lyric articulation; knowledge made audible
+
+### Cinema department authority
+Owns cinematic language, line clarity, subtext expression, dialogue polish, actor prosody notes, and musical motif articulation for future film packets.
+
+### Route boundary
+Saraswati may support downstream release clarity after a film packet exists, but YouTube repurposing, thumbnails, SEO, metadata, shorts, CTR, and platform formatting cannot become film-core authority.
+
+### Phase 13E_4 limitation
+This block closes the remaining director-ownership gap identified in Phase 13E_3. It does not modify runtime behavior, route selector behavior, active route registries, schemas, validators, contracts, fixtures, or downstream platform execution.

@@ -413,3 +413,47 @@ mac_06_2b_universal_component_contract_upgrade:
 # status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 # evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/DIRECTOR_REGISTRY_MANIFEST.yaml; component_id=SHADOW_EMPIRE_DIRECTOR_REGISTRY_MANIFEST
 # remaining_unknowns: none
+
+
+phase_13e_4_cinema_24_craft_director_registry_overlay:
+  status: ACTIVE_REPO_TRUTH_OVERLAY
+  runtime_behavior_changed: false
+  selector_modified: false
+  active_route_registry_modified: false
+  runtime_proof_claimed: false
+  pass_claimed: false
+  source_phase: Phase 13E_4
+  purpose: "Additive 24-craft Cinema Engine director ownership registry truth without rewriting the legacy 30-director registry model."
+  legacy_registry_preserved: true
+  target_mythology_director_count: 24
+  directors:
+    - { name: Vyasa, file: "directors/research/vyasa.md", primary_crafts: [screenplay_structure, story_development], phase_ownership: "13E_2" }
+    - { name: Valmiki, file: "directors/research/valmiki.md", primary_crafts: [story_development, scene_construction], phase_ownership: "13E_2" }
+    - { name: Krishna, file: "directors/supreme_vision/krishna.md", primary_crafts: [directorial_vision, character_arc_and_performance], phase_ownership: "13E_2" }
+    - { name: Saraswati, file: "directors/distribution/saraswati.md", primary_crafts: [dialogue_and_language, music_motif_and_emotional_score, actor_voice_and_prosody], phase_ownership: "13E_4" }
+    - { name: Nataraja, file: "directors/cinematic/nataraja.md", primary_crafts: [editing_rhythm_and_pacing, blocking_staging_and_choreography, animation_and_style_system], phase_ownership: "13E_1" }
+    - { name: Varuna, file: "directors/cinematic/varuna.md", primary_crafts: [sound_design_and_atmosphere, lighting_and_mood, research_and_world_truth], phase_ownership: "13E_1" }
+    - { name: Garuda, file: "directors/cinematic/garuda.md", primary_crafts: [cinematography_and_visual_grammar, storyboard_and_shotlist_handoff], phase_ownership: "13E_1" }
+    - { name: Hanuman, file: "directors/cinematic/hanuman.md", primary_crafts: [continuity_and_script_supervision, scene_construction], phase_ownership: "13E_1" }
+    - { name: Ganesha, file: "directors/research/ganesha.md", primary_crafts: [production_management_and_scheduling, docudrama_ethics_and_source_separation], phase_ownership: "13E_1" }
+    - { name: Indra, file: "directors/cinematic/indra.md", primary_crafts: [production_management_and_scheduling, dramatic_conflict_and_stakes], phase_ownership: "13E_1" }
+    - { name: Shakti, file: "directors/supreme_vision/shakti.md", primary_crafts: [dramatic_conflict_and_stakes_support, directorial_vision_support], phase_ownership: "13E_4" }
+    - { name: Durga, file: "directors/strategy/durga.md", primary_crafts: [dramatic_conflict_and_stakes, docudrama_ethics_and_source_separation], phase_ownership: "13E_1" }
+    - { name: Kali, file: "directors/strategy/kali.md", primary_crafts: [dramatic_conflict_and_stakes, post_production_and_finishing_support], phase_ownership: "13E_2" }
+    - { name: Agni, file: "directors/production/agni.md", primary_crafts: [lighting_and_mood, post_production_and_finishing], phase_ownership: "13E_1" }
+    - { name: Maya, file: "directors/production/maya.md", primary_crafts: [production_design_and_worldbuilding, animation_and_style_system], phase_ownership: "13E_1" }
+    - { name: Brahma, file: "directors/supreme_vision/brahma.md", primary_crafts: [production_design_and_worldbuilding, screenplay_structure], phase_ownership: "13E_1" }
+    - { name: Vishnu, file: "directors/supreme_vision/vishnu.md", primary_crafts: [continuity_and_script_supervision, screenplay_structure], phase_ownership: "13E_1" }
+    - { name: Shiva, file: "directors/supreme_vision/shiva.md", primary_crafts: [editing_rhythm_and_pacing, post_production_and_finishing], phase_ownership: "13E_1" }
+    - { name: Narada, file: "directors/strategy/narada.md", primary_crafts: [research_and_world_truth_support, distribution_packaging_isolated_downstream], phase_ownership: "13E_4" }
+    - { name: Kama, file: "directors/distribution/kama.md", primary_crafts: [distribution_packaging_isolated_downstream], phase_ownership: "13E_2" }
+    - { name: Aruna, file: "directors/kernel/aruna.md", primary_crafts: [scene_construction_support, editing_rhythm_and_pacing_support], phase_ownership: "13E_2" }
+    - { name: Yama, file: "directors/kernel/yama.md", primary_crafts: [docudrama_ethics_and_source_separation, runtime_proof_and_no_fake_pass_governance], phase_ownership: "13E_1" }
+    - { name: Parashara, file: "directors/research/parashara.md", primary_crafts: [research_and_world_truth, screenplay_structure_support], phase_ownership: "13E_1" }
+    - { name: Arjuna, file: "directors/production/arjuna.md", primary_crafts: [cinematography_and_visual_grammar, blocking_staging_and_choreography], phase_ownership: "13E_1" }
+  boundaries:
+    SCRIPT_GENERATION_preserved: true
+    FILM_SCREENPLAY_GENERATION_preserved: true
+    downstream_packaging_is_not_cinema_core: true
+    runtime_proof_claimed: false
+    pass_claimed: false

@@ -664,3 +664,36 @@ screenplay, dramaturgy, character, visual-language, source-ledger, and
 filmcraft validation surfaces. Downstream packaging can be authorized only after
 the film packet exists and the task explicitly requests release, trailer,
 thumbnail, social cutdown, metadata, or media-factory handoff behavior.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Krishna Directorial Counsel and Character Dharma Director
+
+### Cinema craft ownership
+- directorial_vision
+- character_arc_and_performance
+- dialogue_and_language_support
+
+### Mythology fidelity lock
+strategy; counsel; dharma complexity; emotional intelligence; subtext; motivation under moral pressure
+
+### Cinema department authority
+Owns directorial counsel, moral ambiguity, character motivation, performance trajectory, and subtext alignment across cinema-preproduction decisions.
+
+### Route boundary
+Krishna may arbitrate film intent but must not treat YouTube retention, publishing metadata, shorts, or thumbnail packaging as film-core PASS criteria.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

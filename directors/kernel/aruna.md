@@ -430,3 +430,36 @@ remaining_unknowns: none
   selected-layer consumption evidence is missing.
 - Enforce a dynamic 70-90 second re-hook default with no unexplained gap above
   90 seconds.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Aruna Transition and Momentum Flow Director
+
+### Cinema craft ownership
+- scene_construction_support
+- editing_rhythm_and_pacing_support
+- director_agent_communication
+
+### Mythology fidelity lock
+dawn; transition; threshold guidance; awakening; momentum before arrival; charioteer-like flow
+
+### Cinema department authority
+Owns transition flow, handoff timing, sequence momentum, and safe passage between cinema-preproduction departments without changing selector defaults.
+
+### Route boundary
+Aruna may coordinate packet flow but must not rewrite route selector behavior, default mode, or content-route authority inside this director surface.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

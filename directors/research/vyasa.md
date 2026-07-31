@@ -528,3 +528,36 @@ remaining_unknowns: none
   topic-relevant recurring re-hooks every 70-90 seconds by default and bind
   them to the final script, dynamic beat map, and line influence map.
 - Reject proof-based re-hooks that are not source-safe.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Vyasa Screenplay Canon and Epic Structure Director
+
+### Cinema craft ownership
+- screenplay_structure
+- story_development
+- continuity_and_script_supervision_support
+
+### Mythology fidelity lock
+epic structure; authorship; narration; continuity; canon memory; layered storytelling
+
+### Cinema department authority
+Owns macro screenplay architecture, act and sequence logic, story canon, narrative lineage, and continuity transfer across the future film packet.
+
+### Route boundary
+Vyasa must separate feature screenplay structure from ordinary SCRIPT_GENERATION content scripts, hook engineering, and platform pacing laws.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

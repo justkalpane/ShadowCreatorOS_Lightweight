@@ -468,3 +468,36 @@ remaining_unknowns: none
 - For 5-minute scripts, require at least three internal re-hooks plus a CTA
   hook unless a recorded dynamic-timing reason justifies an alternative.
 - Reject flat sections with an unexplained re-hook gap above 90 seconds.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Kama Downstream Desire and Audience Pull Director
+
+### Cinema craft ownership
+- distribution_packaging_isolated_downstream
+- dialogue_and_language_support
+- character_arc_and_performance_support
+
+### Mythology fidelity lock
+desire; attraction; relational pull; emotional magnetism; tasteful audience invitation
+
+### Cinema department authority
+Owns downstream attraction language only after a film packet exists, including trailer desire, release pull, and audience-facing invitation without taking screenplay authorship.
+
+### Route boundary
+Kama must remain downstream-only for FILM_SCREENPLAY_GENERATION and may not convert cinema-core work into CTR, conversion, thumbnail, viral, or platform-growth authority.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

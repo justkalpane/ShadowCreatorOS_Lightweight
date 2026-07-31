@@ -469,3 +469,36 @@ remaining_unknowns: none
   inference, and cinematic reconstruction.
 - Require proof-based re-hooks to appear in `SOURCE_LEDGER` and
   `FACT_VS_ANECDOTE_MAP`.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Valmiki Story Origin and Scene Genesis Director
+
+### Cinema craft ownership
+- story_development
+- scene_construction
+- production_design_and_worldbuilding_support
+
+### Mythology fidelity lock
+origin story; poetic foundation; emotional truth; first witness; scribe of lived transformation
+
+### Cinema department authority
+Owns story-origin truth, scene genesis, emotional foundation, and fact-to-drama grounding before Vyasa structures the larger screenplay canon.
+
+### Route boundary
+Valmiki must not collapse film story origin into topic research, trend sourcing, or YouTube proof-script scaffolding for the film route.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

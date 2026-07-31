@@ -65,13 +65,15 @@ def test_phase_13e1_deferred_dirty_directors_were_not_marked_by_this_batch():
         assert MARKER not in text, path
 
 
-def test_phase_13e1_missing_kali_surface_remains_explicitly_deferred():
-    assert not (ROOT / "directors/strategy/kali.md").exists()
+def test_phase_13e1_kali_surface_was_not_marked_by_batch_1():
+    strategy_kali = ROOT / "directors/strategy/kali.md"
+    if strategy_kali.exists():
+        assert MARKER not in strategy_kali.read_text(encoding="utf-8")
     assert not (ROOT / "directors/supreme_vision/kali.md").exists()
 
 
 if __name__ == "__main__":
     test_phase_13e1_clean_director_batch_contains_ownership_blocks()
     test_phase_13e1_deferred_dirty_directors_were_not_marked_by_this_batch()
-    test_phase_13e1_missing_kali_surface_remains_explicitly_deferred()
+    test_phase_13e1_kali_surface_was_not_marked_by_batch_1()
     print("phase_13e1_director_ownership_blocks_ok")

@@ -96,12 +96,13 @@ agents:
   - file: agents/garuda/garuda_agent.py
   - file: agents/hanuman/hanuman_agent.py
   - file: agents/indra/indra_agent.py
+  - file: agents/kali/kali_agent.py
   - file: agents/kama/kama_agent.py
   - file: agents/krishna/krishna_agent.py
   - file: agents/kubera/kubera_agent.py
   - file: agents/maya/maya_agent.py
     status: ACTIVE
-    reason: File created by MAC-06.2B-2J; Maya agent binding now active for media_factory_handoff and avatar_video_context routes. Director: DIR-PRODv1-003 (Visual Production + Cinematography + Color Grading + Storyboard)
+    reason: "File created by MAC-06.2B-2J; Maya agent binding now active for media_factory_handoff and avatar_video_context routes. Director: DIR-PRODv1-003 (Visual Production + Cinematography + Color Grading + Storyboard)"
   - file: agents/narada/narada_agent.py
   - file: agents/nataraja/nataraja_agent.py
   - file: agents/parashara/parashara_agent.py
@@ -117,6 +118,47 @@ agents:
   - file: agents/vyasa/vyasa_agent.py
   - file: agents/yama/yama_agent.py
   - file: agents/yudhishthira/yudhishthira_agent.py
+
+phase_13e_8_named_agent_cinema_profile_overlay:
+  status: ADDITIVE_PROFILE_COHERENCE_OVERLAY
+  runtime_behavior_changed: false
+  selector_modified: false
+  active_route_registry_modified: false
+  route_binding_modified: false
+  pass_claimed: false
+  runtime_proof_claimed: false
+  script_generation_preserved: true
+  film_screenplay_generation_preserved: true
+  purpose: "Expose all 24 Phase 13E_6 named mythology agent surfaces to registry/profile coherence without rewriting legacy agent semantics."
+  named_agent_count: 24
+  kali_added_to_runtime_registry: true
+  legacy_entries_preserved: true
+  cinema_profile_overlay_source: agents/common/director_authority_profiles.py
+  named_agents:
+    - Agni
+    - Arjuna
+    - Aruna
+    - Brahma
+    - Durga
+    - Ganesha
+    - Garuda
+    - Hanuman
+    - Indra
+    - Kali
+    - Kama
+    - Krishna
+    - Maya
+    - Narada
+    - Nataraja
+    - Parashara
+    - Saraswati
+    - Shakti
+    - Shiva
+    - Valmiki
+    - Varuna
+    - Vishnu
+    - Vyasa
+    - Yama
 
 mac_06_2b_universal_component_contract_upgrade:
   component_id: "AGENT_RUNTIME_REGISTRY"

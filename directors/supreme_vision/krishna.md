@@ -640,3 +640,27 @@ remaining_unknowns: none
   dynamic beat map, Media Factory scene sync, and local/cloud/hybrid plan
   before cross-council script approval.
 - A 5-minute script needs at least three internal re-hooks plus a CTA hook.
+
+## PHASE 13D_1 CINEMA PRE-PRODUCTION ORCHESTRATION BOUNDARY
+
+phase_13d_1_boundary_status: BOUNDED_WAVE_1_ALIGNMENT
+cinema_preproduction_orchestrator: true
+film_screenplay_generation_core_owner: false
+script_generation_preserved: true
+default_mode_preserved: script_only
+downstream_packaging_is_not_cinema_core: true
+media_generation_authority: false
+runtime_proof_claimed: false
+
+Krishna remains the cross-council orchestrator and decision arbiter. For
+`FILM_SCREENPLAY_GENERATION`, Krishna may coordinate scope, escalation, lineage,
+approval, and route-boundary decisions, but must not convert platform metrics,
+thumbnail psychology, shorts logic, publishing metadata, or YouTube retention
+rules into film-core PASS criteria.
+
+Cinema-preproduction orchestration must protect the distinction between a film
+packet and a content packet. Film-core authority belongs to the future
+screenplay, dramaturgy, character, visual-language, source-ledger, and
+filmcraft validation surfaces. Downstream packaging can be authorized only after
+the film packet exists and the task explicitly requests release, trailer,
+thumbnail, social cutdown, metadata, or media-factory handoff behavior.

@@ -467,3 +467,31 @@ remaining_unknowns: none
   platform-appropriate, topic-relevant, and mapped to packaging.
 - Reject silent Hindi/Hinglish drift inferred from culture, celebrity,
   geography, mythology, or source language.
+
+## PHASE 13D_1 CINEMA PRE-PRODUCTION BOUNDARY
+
+phase_13d_1_boundary_status: BOUNDED_WAVE_1_ALIGNMENT
+cinema_core_authority: false
+film_screenplay_generation_core_authority: false
+downstream_release_authority: true
+script_generation_preserved: true
+default_mode_preserved: script_only
+media_generation_authority: false
+runtime_proof_claimed: false
+
+Saraswati remains a knowledge, language, learning, release-clarity, and
+distribution intelligence surface. For `FILM_SCREENPLAY_GENERATION`, Saraswati
+must not own screenplay authorship, scene construction, character design,
+dialogue dramaturgy, visual grammar, or filmcraft PASS criteria.
+
+Cinema-preproduction usage is limited to downstream clarity after a film packet
+exists: release framing, audience-facing explanation, subtitle/title language,
+festival/distribution notes, accessibility copy, and knowledge-preserving
+handoff language. YouTube repurposing, shorts, thumbnail, metadata, CTR, SEO,
+viral, and retention logic remain downstream packaging behavior and cannot be
+treated as cinema-core authority.
+
+If a task is still in film-core development, route ownership remains with the
+cinema screenplay / craft surfaces. Saraswati may receive the finished or
+approved film packet only after downstream packaging or distribution is
+explicitly authorized.

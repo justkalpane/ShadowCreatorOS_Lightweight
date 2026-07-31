@@ -4,19 +4,45 @@ from datetime import datetime, timezone
 from typing import Any
 
 
+SKILL_ID = "M-080"
+CINEMA_CORE_AUTHORITY = False
+CONTENT_SHORTFORM_ONLY = True
+FILM_ROUTE_ID = "FILM_SCREENPLAY_GENERATION"
+
+
+def _film_core_boundary(input_payload: dict[str, Any]) -> dict[str, Any] | None:
+    route_id = str(input_payload.get("route_id", "")).upper()
+    route_mode = str(input_payload.get("route_mode", ""))
+    if route_id == FILM_ROUTE_ID or route_mode == "film_screenplay_generation":
+        return {
+            "status": "blocked",
+            "error": "M-080 generates content short-form packets and cannot serve as film screenplay core.",
+            "skill_id": SKILL_ID,
+            "route_id": route_id or FILM_ROUTE_ID,
+            "cinema_core_authority": CINEMA_CORE_AUTHORITY,
+            "content_shortform_only": CONTENT_SHORTFORM_ONLY,
+            "expected_film_surface": "FILM_SCREENPLAY_GENERATION",
+        }
+    return None
+
+
 def run(input_payload: dict[str, Any]) -> dict[str, Any]:
+    boundary_result = _film_core_boundary(input_payload)
+    if boundary_result is not None:
+        return boundary_result
+
     dossier_id = input_payload.get("dossier_id")
     if not dossier_id:
         return {
             "status": "failed",
             "error": "missing dossier_id",
-            "skill_id": "M-080",
+            "skill_id": SKILL_ID,
         }
 
     now = datetime.now(timezone.utc).isoformat()
     return {
         "status": "success",
-        "skill_id": "M-080",
+        "skill_id": SKILL_ID,
         "skill_name": "Shorts Generator",
         "artifact_family": "shorts-generator_packet",
         "created_at": now,
@@ -25,6 +51,8 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-010 -> WF-021 -> WF-022",
+                "cinema_core_authority": CINEMA_CORE_AUTHORITY,
+                "content_shortform_only": CONTENT_SHORTFORM_ONLY,
             },
         },
     }

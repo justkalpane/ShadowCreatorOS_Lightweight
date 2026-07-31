@@ -4,6 +4,35 @@ from datetime import datetime, timezone
 from typing import Any
 
 
+SKILL_ID = "D-501"
+CINEMA_CORE_AUTHORITY = False
+DOWNSTREAM_PACKAGING_ONLY = True
+FILM_ROUTE_ID = "FILM_SCREENPLAY_GENERATION"
+
+
+def _film_core_boundary(input_payload: dict[str, Any]) -> dict[str, Any] | None:
+    route_id = str(input_payload.get("route_id", "")).upper()
+    route_mode = str(input_payload.get("route_mode", ""))
+    film_packet_ready = input_payload.get("film_packet_ready") is True
+    downstream_authorized = input_payload.get("downstream_packaging_authorized") is True
+
+    if route_id == FILM_ROUTE_ID or route_mode == "film_screenplay_generation":
+        if not (film_packet_ready and downstream_authorized):
+            return {
+                "status": "blocked",
+                "error": "D-501 is downstream packaging only and cannot act as cinema-core authority.",
+                "skill_id": SKILL_ID,
+                "route_id": route_id or FILM_ROUTE_ID,
+                "cinema_core_authority": CINEMA_CORE_AUTHORITY,
+                "downstream_packaging_only": DOWNSTREAM_PACKAGING_ONLY,
+                "required_before_use": [
+                    "film_packet_ready=true",
+                    "downstream_packaging_authorized=true",
+                ],
+            }
+    return None
+
+
 def _platform_block(platform: str, title: str, topic: str) -> dict[str, Any]:
     return {
         "title": f"{title} | {platform.title()}",
@@ -19,12 +48,16 @@ def _platform_block(platform: str, title: str, topic: str) -> dict[str, Any]:
 
 
 def run(input_payload: dict[str, Any]) -> dict[str, Any]:
+    boundary_result = _film_core_boundary(input_payload)
+    if boundary_result is not None:
+        return boundary_result
+
     dossier_id = input_payload.get("dossier_id")
     if not dossier_id:
         return {
             "status": "failed",
             "error": "missing dossier_id",
-            "skill_id": "D-501",
+            "skill_id": SKILL_ID,
         }
 
     media_packet = input_payload.get("media_production_packet")
@@ -51,7 +84,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "status": "CREATED",
-        "skill_id": "D-501",
+        "skill_id": SKILL_ID,
         "skill_name": "Platform Metadata Generator",
         "instance_id": f"PMP-{ts}",
         "artifact_family": "platform_metadata_packet",
@@ -80,6 +113,8 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
                 "metadata_generated": True,
                 "next_stage": "CWF-520",
                 "decision": "PROCEED_TO_SEO_OPTIMIZATION",
+                "cinema_core_authority": CINEMA_CORE_AUTHORITY,
+                "downstream_packaging_only": DOWNSTREAM_PACKAGING_ONLY,
             },
         },
     }

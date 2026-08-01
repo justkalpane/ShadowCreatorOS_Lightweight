@@ -201,8 +201,8 @@ def test_phase_13e25_did_not_add_metadata_to_subskill_files_or_route_boundaries(
     assert "default_mode: script_only" in selector
     assert "film_screenplay_generation:" in selector
     assert 'route_id: "FILM_SCREENPLAY_GENERATION"' in film_manifest
-    assert "bound_to_route_selector: false" in film_manifest
-    assert "bound_to_route_selector: false" in film_slice
+    assert "bound_to_route_selector: true" in film_manifest
+    assert "bound_to_route_selector: true" in film_slice
     assert "SCRIPT_GENERATION_PRESERVED: true" in film_slice
     assert "route_id: SCRIPT_GENERATION" in script_slice
 

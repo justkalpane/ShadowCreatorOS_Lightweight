@@ -117,8 +117,8 @@ def test_phase_13e10_subagent_overlay_and_route_boundary_files_still_align():
     assert "default_mode: script_only" in selector
     assert "film_screenplay_generation:" in selector
     assert 'route_id: "FILM_SCREENPLAY_GENERATION"' in film_manifest
-    assert "bound_to_route_selector: false" in film_manifest
-    assert "bound_to_route_selector: false" in film_slice
+    assert "bound_to_route_selector: true" in film_manifest
+    assert "bound_to_route_selector: true" in film_slice
     assert "SCRIPT_GENERATION_PRESERVED: true" in film_slice
 
     for subagent_path in [

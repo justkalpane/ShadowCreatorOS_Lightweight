@@ -3,13 +3,16 @@ route_name: "Film Screenplay Generation"
 canonical_route_id_only: true
 accepted_route_ids:
   - FILM_SCREENPLAY_GENERATION
-status: "ACTIVE_REGISTRY_ONLY"
+status: "ACTIVE_REGISTRY_SELECTOR_BOUND_REPO_METADATA"
 active_route: true
 registered: true
-bound_to_route_selector: false
+bound_to_route_selector: true
 runtime_behavior_changed: false
 governed_runtime_proof_claimed: false
 pass_claimed: false
+selector_binding_reconciled: true
+selector_binding_source_phase: "12L-K"
+selector_binding_reconciliation_phase: "13E_29"
 route_family: "cinema_core"
 route_mode: "film_screenplay_generation"
 preserves_content_route: "SCRIPT_GENERATION"
@@ -130,8 +133,7 @@ mandatory_output_blocks:
   - FINAL_SCRIPT
 
 future_activation_blockers:
-  - route selector remains unmodified in this phase
-  - active file presence does not imply selector binding
   - runtime behavior remains unchanged
   - governed runtime proof is not claimed
-
+  - runtime PASS is not claimed
+  - post-binding checker remains a separate future phase

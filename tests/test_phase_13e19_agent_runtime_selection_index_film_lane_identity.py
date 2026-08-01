@@ -163,8 +163,8 @@ def test_phase_13e19_did_not_touch_route_boundary_files():
     assert "default_mode: script_only" in selector
     assert "film_screenplay_generation:" in selector
     assert 'route_id: "FILM_SCREENPLAY_GENERATION"' in film_manifest
-    assert "bound_to_route_selector: false" in film_manifest
-    assert "bound_to_route_selector: false" in film_slice
+    assert "bound_to_route_selector: true" in film_manifest
+    assert "bound_to_route_selector: true" in film_slice
     assert "SCRIPT_GENERATION_PRESERVED: true" in film_slice
     assert "route_id: SCRIPT_GENERATION" in script_slice
 

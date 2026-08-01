@@ -1,0 +1,38 @@
+{
+  "phase": "13E_30",
+  "checker": "validators/film/validate_film_route_post_binding_state.py",
+  "status": "post_binding_checker_unbound_read_only",
+  "ready_status": "POST_BINDING_FILM_ROUTE_STATE_READY",
+  "runtime_behavior_changed": false,
+  "route_selector_modified": false,
+  "active_registry_files_modified": false,
+  "schemas_modified": false,
+  "contracts_modified": false,
+  "fixtures_modified": false,
+  "governed_runtime_proof_claimed": false,
+  "pass_claimed": false,
+  "required_inputs": [
+    "runtime/state/route_chain_mode_selector.yaml",
+    "registries/route_manifests/film_screenplay_generation.yaml",
+    "registries/route_slices/film_screenplay_generation.registry_slice.yaml",
+    "registries/route_manifests/script_generation.yaml",
+    "registries/route_slices/script_generation.registry_slice.yaml",
+    "PHASE_12L_K_SELECTOR_BINDING_PATCH_REPORT.md",
+    "PHASE_13E_29_ACTIVE_FILM_ROUTE_BINDING_METADATA_RECONCILIATION_PATCH_REPORT.md"
+  ],
+  "blocked_statuses": [
+    "POST_BINDING_BLOCKED_MISSING_FILE",
+    "POST_BINDING_BLOCKED_PARSE_ERROR",
+    "POST_BINDING_BLOCKED_SELECTOR_DEFAULT_MODE_CHANGED",
+    "POST_BINDING_BLOCKED_SELECTOR_MISSING_FILM_MODE",
+    "POST_BINDING_BLOCKED_SELECTOR_ROUTE_ID_MISMATCH",
+    "POST_BINDING_BLOCKED_MANIFEST_NOT_ACTIVE_REGISTERED",
+    "POST_BINDING_BLOCKED_MANIFEST_NOT_SELECTOR_BOUND",
+    "POST_BINDING_BLOCKED_SLICE_NOT_ACTIVE_REGISTERED",
+    "POST_BINDING_BLOCKED_SLICE_NOT_SELECTOR_BOUND",
+    "POST_BINDING_BLOCKED_SCRIPT_ROUTE_NOT_PRESERVED",
+    "POST_BINDING_BLOCKED_NO_FAKE_PASS_BOUNDARY_MISSING",
+    "POST_BINDING_BLOCKED_RUNTIME_PROOF_CLAIM",
+    "POST_BINDING_BLOCKED_DOWNSTREAM_BOUNDARY_MISSING"
+  ]
+}

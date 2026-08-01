@@ -14,11 +14,11 @@ def load_harness():
     return module
 
 
-def test_harness_reports_blocked_schema_gap_without_runtime_proof():
+def test_harness_reports_blocked_skeleton_validators_without_runtime_proof():
     harness = load_harness()
     report = harness.evaluate(ROOT)
 
-    assert report["status"] == "FILM_RUNTIME_PROOF_BLOCKED_ROUTE_STATE_SCHEMA_GAP"
+    assert report["status"] == "FILM_RUNTIME_PROOF_BLOCKED_SKELETON_VALIDATORS"
     assert report["route_id"] == "FILM_SCREENPLAY_GENERATION"
     assert report["route_mode"] == "film_screenplay_generation"
     assert report["default_mode_before"] == "script_only"
@@ -26,7 +26,7 @@ def test_harness_reports_blocked_schema_gap_without_runtime_proof():
     assert report["selector_mode_resolved"] is True
     assert report["script_generation_preserved"] is True
     assert report["post_binding_checker_status"] == "POST_BINDING_FILM_ROUTE_STATE_READY"
-    assert report["route_state_schema_compatible"] is False
+    assert report["route_state_schema_compatible"] is True
     assert report["runtime_execution_performed"] is False
     assert report["film_output_generated"] is False
     assert report["pass_claimed"] is False
@@ -70,8 +70,8 @@ def test_harness_cli_prints_report_and_exits_blocked():
 
     assert result.returncode == 1
     assert "FILM_RUNTIME_PROOF_HARNESS_REPORT" in result.stdout
-    assert "status=FILM_RUNTIME_PROOF_BLOCKED_ROUTE_STATE_SCHEMA_GAP" in result.stdout
-    assert "route_state_schema_compatible=false" in result.stdout
+    assert "status=FILM_RUNTIME_PROOF_BLOCKED_SKELETON_VALIDATORS" in result.stdout
+    assert "route_state_schema_compatible=true" in result.stdout
     assert "film_validators_enforceable=false" in result.stdout
     assert "runtime_execution_performed=false" in result.stdout
     assert "film_output_generated=false" in result.stdout
@@ -80,7 +80,7 @@ def test_harness_cli_prints_report_and_exits_blocked():
 
 
 if __name__ == "__main__":
-    test_harness_reports_blocked_schema_gap_without_runtime_proof()
+    test_harness_reports_blocked_skeleton_validators_without_runtime_proof()
     test_harness_records_skeleton_validator_reality()
     test_harness_creates_route_state_template_in_memory_only()
     test_harness_cli_prints_report_and_exits_blocked()

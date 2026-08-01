@@ -32,6 +32,7 @@
         "script_plus_visual_generation_draft",
         "script_plus_media_factory_handoff",
         "full_content_packet",
+        "film_screenplay_generation",
         "repo_drift_audit",
         "media_factory_regression_audit"
       ]

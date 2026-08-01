@@ -11,3 +11,65 @@ skills:
   - M-038
   - M-039
   - M-040
+phase_13e_22_film_lane_identity:
+  status: ADDITIVE_SKILL_REGISTRY_FILM_LANE_IDENTITY
+  source_phase: "13E_22"
+  mirrors_agent_runtime_index_phase: "13E_19"
+  mirrors_subagent_matrix_phase: "13E_16"
+  mirrors_workflow_contract_phase: "13E_13"
+  runtime_behavior_changed: false
+  selector_modified: false
+  active_route_registry_modified: false
+  skill_ids_modified: false
+  skill_implementations_modified: false
+  skill_runtime_behavior_modified: false
+  script_generation_preserved: true
+  film_screenplay_generation_preserved: true
+  film_route_id: FILM_SCREENPLAY_GENERATION
+  script_route_id: SCRIPT_GENERATION
+  registry_mirror_only: true
+  no_fake_pass_boundary: true
+  target_skill_count: 10
+  content_route_boundary: Preserves WF-200 script intelligence behavior for SCRIPT_GENERATION and does not promote content hook or retention logic into film-core PASS criteria.
+  film_lane_boundary: Provides conservative film-lane identity metadata only for future FILM_SCREENPLAY_GENERATION coordination.
+  per_skill_classification:
+    M-031:
+      classification: SCRIPT_GENERATION_ONLY
+      film_lane_note: Mrbeast-style hook behavior remains content-route support and is not a film-core authority.
+      not_film_core_authority: true
+    M-032:
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      film_lane_note: Pattern-interrupt language may map to screenplay scene turns only as metadata.
+      not_film_core_authority: true
+    M-033:
+      classification: SCRIPT_GENERATION_ONLY
+      film_lane_note: Curiosity-gap behavior remains content-route support unless separately rewritten as film dramaturgy.
+      not_film_core_authority: true
+    M-034:
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      film_lane_note: Micro-cliffhanger behavior may inform act or sequence tension only as metadata.
+      not_film_core_authority: true
+    M-035:
+      classification: SCRIPT_GENERATION_ONLY
+      film_lane_note: Engagement-loop behavior remains content-route support and cannot become screenplay PASS logic.
+      not_film_core_authority: true
+    M-036:
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      film_lane_note: Emotional spike behavior may support film beat intensity only as metadata.
+      not_film_core_authority: true
+    M-037:
+      classification: SCRIPT_GENERATION_ONLY
+      film_lane_note: Reward-tease behavior remains content-route support and is not film-core structure.
+      not_film_core_authority: true
+    M-038:
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      film_lane_note: Payoff delivery may support setup-payoff tracking only as metadata.
+      not_film_core_authority: true
+    M-039:
+      classification: SCRIPT_GENERATION_ONLY
+      film_lane_note: Re-hook behavior remains SCRIPT_GENERATION retention logic and is not film-core PASS logic.
+      not_film_core_authority: true
+    M-040:
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      film_lane_note: Story momentum may support screenplay pacing only as metadata.
+      not_film_core_authority: true

@@ -88,6 +88,30 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Provider/model route governance may mirror film-lane awareness only without changing provider selection or runtime routing.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-111
     name: ollama_local_inference_optimizer
     spec_file: skills/sub_skills/SS-111-ollama-local-inference-optimizer.subskill.md
@@ -96,6 +120,30 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Local inference optimization may mirror film-lane awareness only without changing model selection or runtime behavior.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-112
     name: ffmpeg_render_assembly_guard
     spec_file: skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
@@ -277,6 +325,30 @@ subskills:
       - WF-200
       - CWF-210
       - CWF-230
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Content angle generation remains SCRIPT_GENERATION support unless separately rewritten as cinema-preproduction craft.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-231
     name: unique_value_proposition_builder
     spec_file: skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
@@ -285,6 +357,30 @@ subskills:
       - WF-200
       - CWF-210
       - CWF-230
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: UVP and positioning behavior remains content-route support and is not film-core screenplay authority.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-232
     name: series_strategy_planner
     spec_file: skills/sub_skills/SS-232-series-strategy-planner.subskill.md
@@ -293,6 +389,30 @@ subskills:
       - WF-200
       - CWF-210
       - CWF-230
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Series planning remains content-route support and cannot become film screenplay PASS logic.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-233
     name: content_calendar_generator
     spec_file: skills/sub_skills/SS-233-content-calendar-generator.subskill.md
@@ -301,6 +421,30 @@ subskills:
       - WF-200
       - CWF-210
       - CWF-230
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Content calendar behavior remains platform/content planning and is not film-core authority.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-234
     name: platform_strategy_mapper
     spec_file: skills/sub_skills/SS-234-platform-strategy-mapper.subskill.md
@@ -309,6 +453,30 @@ subskills:
       - WF-200
       - CWF-210
       - CWF-230
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Platform strategy remains SCRIPT_GENERATION support and cannot govern film-core screenplay output.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-240
     name: hook_variation_generator
     spec_file: skills/sub_skills/SS-240-hook-variation-generator.subskill.md
@@ -317,6 +485,30 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Hook variation remains SCRIPT_GENERATION support and is not film-core screenplay authority.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-241
     name: open_loop_generator
     spec_file: skills/sub_skills/SS-241-open-loop-generator.subskill.md
@@ -325,6 +517,30 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Open-loop and re-hook behavior remains SCRIPT_GENERATION support and cannot become film-core PASS logic.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-242
     name: story_tension_builder
     spec_file: skills/sub_skills/SS-242-story-tension-builder.subskill.md
@@ -333,6 +549,30 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Story tension may support screenplay beat, sequence, and scene craft only as metadata.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-243
     name: pacing_controller
     spec_file: skills/sub_skills/SS-243-pacing-controller.subskill.md
@@ -341,6 +581,30 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Pacing may support screenplay rhythm and scene/sequence flow only as metadata.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-244
     name: retention_loop_engine
     spec_file: skills/sub_skills/SS-244-retention-loop-engine.subskill.md
@@ -349,6 +613,30 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SCRIPT_GENERATION_ONLY
+      cinema_lane_note: Retention-loop behavior remains SCRIPT_GENERATION support and cannot become film-core screenplay PASS logic.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-245
     name: cliffhanger_designer
     spec_file: skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
@@ -357,6 +645,30 @@ subskills:
       - WF-200
       - CWF-220
       - CWF-240
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: FILM_SCREENPLAY_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Cliffhanger design may support screenplay act, sequence, and scene payoff only as metadata.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-250
     name: dynamic_prompt_builder
     spec_file: skills/sub_skills/SS-250-dynamic-prompt-builder.subskill.md
@@ -365,6 +677,30 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Prompt construction may mirror film-lane awareness only without changing prompt routing or runtime behavior.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-251
     name: context_window_optimizer
     spec_file: skills/sub_skills/SS-251-context-window-optimizer.subskill.md
@@ -373,6 +709,30 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Context-window optimization may mirror film-lane awareness only without changing context routing behavior.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-252
     name: token_efficiency_engine
     spec_file: skills/sub_skills/SS-252-token-efficiency-engine.subskill.md
@@ -381,6 +741,30 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Token efficiency may mirror film-lane awareness only without changing token or context behavior.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-253
     name: multi_model_consensus_engine
     spec_file: skills/sub_skills/SS-253-multi-model-consensus-engine.subskill.md
@@ -389,6 +773,30 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Multi-model consensus may mirror film-lane awareness only without changing model selection or consensus runtime behavior.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true
   - subskill_id: SS-254
     name: fallback_prompt_engine
     spec_file: skills/sub_skills/SS-254-fallback-prompt-engine.subskill.md
@@ -397,3 +805,27 @@ subskills:
       - WF-010
       - WF-100
       - WF-200
+    phase_13e_25_film_lane_identity:
+      status: ADDITIVE_SUBSKILL_REGISTRY_FILM_LANE_IDENTITY
+      source_phase: "13E_25"
+      mirrors_skill_registry_phase: "13E_22"
+      mirrors_agent_runtime_index_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      classification: SYSTEM_SUPPORT_METADATA_ONLY
+      cinema_lane_note: Prompt fallback may mirror film-lane awareness only without changing fallback routing or runtime behavior.
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      subskill_ids_modified: false
+      consumer_workflows_modified: false
+      spec_files_modified: false
+      runtime_files_modified: false
+      subskill_runtime_behavior_modified: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      film_route_id: FILM_SCREENPLAY_GENERATION
+      script_route_id: SCRIPT_GENERATION
+      registry_mirror_only: true
+      no_fake_pass_boundary: true
+      not_film_core_authority: true

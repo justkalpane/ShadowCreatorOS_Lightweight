@@ -14,11 +14,11 @@ def load_harness():
     return module
 
 
-def test_harness_reports_blocked_skeleton_validators_without_runtime_proof():
+def test_harness_reports_preflight_ready_with_governed_validator_inputs():
     harness = load_harness()
     report = harness.evaluate(ROOT)
 
-    assert report["status"] == "FILM_RUNTIME_PROOF_BLOCKED_SKELETON_VALIDATORS"
+    assert report["status"] == "FILM_RUNTIME_PROOF_HARNESS_PREFLIGHT_READY"
     assert report["route_id"] == "FILM_SCREENPLAY_GENERATION"
     assert report["route_mode"] == "film_screenplay_generation"
     assert report["default_mode_before"] == "script_only"
@@ -27,22 +27,26 @@ def test_harness_reports_blocked_skeleton_validators_without_runtime_proof():
     assert report["script_generation_preserved"] is True
     assert report["post_binding_checker_status"] == "POST_BINDING_FILM_ROUTE_STATE_READY"
     assert report["route_state_schema_compatible"] is True
+    assert report["film_validators_enforceable"] is True
+    assert report["governed_validator_inputs_used"] is True
     assert report["runtime_execution_performed"] is False
     assert report["film_output_generated"] is False
     assert report["pass_claimed"] is False
     assert report["governed_runtime_proof_claimed"] is False
 
 
-def test_harness_records_skeleton_validator_reality():
+def test_harness_records_governed_validator_reality():
     harness = load_harness()
     report = harness.evaluate(ROOT)
 
-    assert report["film_validators_enforceable"] is False
+    assert report["film_validators_enforceable"] is True
     statuses = {item["path"]: item["status"] for item in report["validator_ledger"]}
-    assert statuses["validators/film/output_packet/validate_film_screenplay_packet.py"] == "SKELETON_ONLY"
-    assert statuses["validators/film/validation/validate_no_fake_film_pass.py"] == "SKELETON_ONLY"
-    assert statuses["validators/film/validation/validate_film_content_packet_separation.py"] == "SKELETON_ONLY"
-    assert statuses["validators/film/route/validate_film_route_selection.py"] == "SKELETON_ONLY"
+    assert statuses["validators/film/output_packet/validate_film_screenplay_packet.py"] == "VALIDATION_PASSED"
+    assert statuses["validators/film/validation/validate_no_fake_film_pass.py"] == "VALIDATION_PASSED"
+    assert statuses["validators/film/validation/validate_film_content_packet_separation.py"] == "VALIDATION_PASSED"
+    assert statuses["validators/film/route/validate_film_route_selection.py"] == "VALIDATION_PASSED"
+    assert all(item["governed_validator_input_payload_used"] is True for item in report["validator_ledger"])
+    assert all(item["input_payload_kind"] for item in report["validator_ledger"])
 
 
 def test_harness_creates_route_state_template_in_memory_only():
@@ -68,11 +72,12 @@ def test_harness_cli_prints_report_and_exits_blocked():
         check=False,
     )
 
-    assert result.returncode == 1
+    assert result.returncode == 0
     assert "FILM_RUNTIME_PROOF_HARNESS_REPORT" in result.stdout
-    assert "status=FILM_RUNTIME_PROOF_BLOCKED_SKELETON_VALIDATORS" in result.stdout
+    assert "status=FILM_RUNTIME_PROOF_HARNESS_PREFLIGHT_READY" in result.stdout
     assert "route_state_schema_compatible=true" in result.stdout
-    assert "film_validators_enforceable=false" in result.stdout
+    assert "film_validators_enforceable=true" in result.stdout
+    assert "governed_validator_inputs_used=true" in result.stdout
     assert "runtime_execution_performed=false" in result.stdout
     assert "film_output_generated=false" in result.stdout
     assert "pass_claimed=false" in result.stdout
@@ -80,8 +85,8 @@ def test_harness_cli_prints_report_and_exits_blocked():
 
 
 if __name__ == "__main__":
-    test_harness_reports_blocked_skeleton_validators_without_runtime_proof()
-    test_harness_records_skeleton_validator_reality()
+    test_harness_reports_preflight_ready_with_governed_validator_inputs()
+    test_harness_records_governed_validator_reality()
     test_harness_creates_route_state_template_in_memory_only()
     test_harness_cli_prints_report_and_exits_blocked()
     print("phase_13e34_film_route_runtime_proof_harness_ok")

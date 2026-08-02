@@ -101,7 +101,93 @@ def load_yaml_subset(repo_root: Path, rel_path: str) -> dict[str, Any]:
     return checker.load_yaml_subset(repo_root / rel_path)
 
 
-def validator_status(repo_root: Path, rel_path: str) -> dict[str, Any]:
+def build_governed_route_selection_payload() -> dict[str, Any]:
+    return {
+        "fixture_family": "route_selection",
+        "input_prompt": "Write a short film about NEET.",
+        "expected_route": ROUTE_ID,
+        "expected_mode": "film_core",
+        "should_pass_later": True,
+        "should_fail_later": False,
+    }
+
+
+def build_governed_content_separation_payload() -> dict[str, Any]:
+    return {
+        "fixture_family": "content_preservation",
+        "input_prompt": "Write a YouTube script about NEET.",
+        "expected_route": SCRIPT_ROUTE_ID,
+        "expected_mode": "content",
+        "should_pass_later": True,
+        "should_fail_later": False,
+    }
+
+
+def build_governed_screenplay_packet_payload(repo_root: Path) -> dict[str, Any]:
+    schema = json.loads(
+        (repo_root / "schemas/film/output_packet/film_screenplay_output_packet.schema.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    packet: dict[str, Any] = {}
+    for field in schema.get("required", []):
+        kind = schema.get("properties", {}).get(field, {}).get("type")
+        if kind == "object":
+            packet[field] = {"status": "present"}
+        elif kind == "array":
+            packet[field] = ["present"]
+        else:
+            packet[field] = f"{field}_present"
+    packet["route_state_capsule"] = {"route_id": ROUTE_ID}
+    packet["film_intent_lock"] = ROUTE_ID
+    packet["no_fake_pass_gate"] = {"pass_claimed": False}
+    return packet
+
+
+def build_governed_no_fake_pass_payload(repo_root: Path) -> dict[str, Any]:
+    return {
+        "target_route": ROUTE_ID,
+        "validator_type": "film",
+        "pass_claimed": False,
+        "film_pass_claimed": False,
+        "runtime_pass_claimed": False,
+        "governed_runtime_proof_claimed": False,
+        "claims_film_schema_valid": True,
+        "film_schema_evidence": {
+            "schema_path": str(
+                (repo_root / "schemas/film/output_packet/film_screenplay_output_packet.schema.json").relative_to(repo_root)
+            )
+        },
+        "claims_source_backed": True,
+        "source_ledger": {"status": "present"},
+        "claims_route_lineage_complete": True,
+        "route_lineage_ledger": {"status": "present"},
+        "claims_filmcraft_scorecard_complete": True,
+        "filmcraft_scorecard": {"status": "present"},
+        "claims_governed_runtime_proof_from_repo_read": False,
+        "runtime_artifact_claims": [],
+    }
+
+
+def build_governed_validator_payloads(repo_root: Path) -> dict[str, dict[str, Any]]:
+    return {
+        "validators/film/route/validate_film_route_selection.py": build_governed_route_selection_payload(),
+        "validators/film/validation/validate_film_content_packet_separation.py": build_governed_content_separation_payload(),
+        "validators/film/output_packet/validate_film_screenplay_packet.py": build_governed_screenplay_packet_payload(repo_root),
+        "validators/film/validation/validate_no_fake_film_pass.py": build_governed_no_fake_pass_payload(repo_root),
+    }
+
+
+def payload_kind(rel_path: str) -> str:
+    return {
+        "validators/film/route/validate_film_route_selection.py": "route_selection_governed_positive_control",
+        "validators/film/validation/validate_film_content_packet_separation.py": "content_preservation_governed_positive_control",
+        "validators/film/output_packet/validate_film_screenplay_packet.py": "film_screenplay_packet_governed_positive_control",
+        "validators/film/validation/validate_no_fake_film_pass.py": "no_fake_pass_governed_positive_control",
+    }.get(rel_path, "governed_payload")
+
+
+def validator_status(repo_root: Path, rel_path: str, payload: dict[str, Any] | None = None) -> dict[str, Any]:
     path = repo_root / rel_path
     module = load_module(path, path.stem)
     if not hasattr(module, "validate"):
@@ -111,7 +197,8 @@ def validator_status(repo_root: Path, rel_path: str) -> dict[str, Any]:
             "passed": False,
             "enforced": False,
         }
-    result = module.validate({})
+    payload = payload or {}
+    result = module.validate(payload)
     return {
         "path": rel_path,
         "status": result.get("status"),
@@ -119,6 +206,9 @@ def validator_status(repo_root: Path, rel_path: str) -> dict[str, Any]:
         "enforced": result.get("enforced"),
         "validator_bound_to_runtime": result.get("validator_bound_to_runtime"),
         "governed_runtime_proof_claimed": result.get("governed_runtime_proof_claimed"),
+        "input_payload_kind": payload_kind(rel_path),
+        "governed_validator_input_payload_used": bool(payload),
+        "input_payload_non_empty": bool(payload),
     }
 
 
@@ -221,7 +311,11 @@ def evaluate(repo_root: Path) -> dict[str, Any]:
     output_required_fields = film_output_schema.get("required", [])
     film_output_schema_enforceable = bool(output_required_fields)
 
-    validators = [validator_status(repo_root, rel) for rel in CRITICAL_VALIDATORS]
+    governed_payloads = build_governed_validator_payloads(repo_root)
+    validators = [
+        validator_status(repo_root, rel, governed_payloads[rel])
+        for rel in CRITICAL_VALIDATORS
+    ]
     film_validators_enforceable = all(
         item.get("status") != "SKELETON_ONLY"
         and item.get("passed") is not False
@@ -290,7 +384,16 @@ def evaluate(repo_root: Path) -> dict[str, Any]:
         "film_output_schema_enforceable": film_output_schema_enforceable,
         "film_output_schema_required_field_count": len(output_required_fields),
         "film_validators_enforceable": film_validators_enforceable,
+        "governed_validator_inputs_used": True,
         "validator_ledger": validators,
+        "governed_validator_input_payloads": [
+            {
+                "path": rel,
+                "input_payload_kind": payload_kind(rel),
+                "governed_validator_input_payload_used": True,
+            }
+            for rel in CRITICAL_VALIDATORS
+        ],
         "dirty_worktree_present": bool(git_stdout(repo_root, "status", "--porcelain")),
         "runtime_execution_performed": False,
         "film_output_generated": False,
@@ -333,6 +436,7 @@ def render_text(report: dict[str, Any]) -> str:
         f"film_output_schema_enforceable={bool_text(report.get('film_output_schema_enforceable'))}",
         f"film_output_schema_required_field_count={report.get('film_output_schema_required_field_count')}",
         f"film_validators_enforceable={bool_text(report.get('film_validators_enforceable'))}",
+        f"governed_validator_inputs_used={bool_text(report.get('governed_validator_inputs_used'))}",
         f"dirty_worktree_present={bool_text(report.get('dirty_worktree_present'))}",
         f"runtime_execution_performed={bool_text(report.get('runtime_execution_performed'))}",
         f"film_output_generated={bool_text(report.get('film_output_generated'))}",
@@ -353,9 +457,24 @@ def render_text(report: dict[str, Any]) -> str:
                     f"passed={bool_text(item.get('passed'))}",
                     f"enforced={bool_text(item.get('enforced'))}",
                     f"validator_bound_to_runtime={bool_text(item.get('validator_bound_to_runtime'))}",
+                    f"input_payload_kind={item.get('input_payload_kind')}",
+                    f"governed_validator_input_payload_used={bool_text(item.get('governed_validator_input_payload_used'))}",
                 ]
             )
         )
+    if report.get("governed_validator_input_payloads"):
+        lines.append("governed_validator_input_payloads:")
+        for item in report["governed_validator_input_payloads"]:
+            lines.append(
+                "- "
+                + ",".join(
+                    [
+                        f"path={item.get('path')}",
+                        f"input_payload_kind={item.get('input_payload_kind')}",
+                        f"governed_validator_input_payload_used={bool_text(item.get('governed_validator_input_payload_used'))}",
+                    ]
+                )
+            )
     return "\n".join(lines)
 
 

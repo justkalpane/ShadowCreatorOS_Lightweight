@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Department Packet",
+  "type": "object",
+  "required": ["department_name", "owner_director", "purpose", "required_inputs", "required_outputs", "handoff_to", "validator_required", "blocking_failure_conditions", "artifact_dependency", "route_boundary"],
+  "properties": {
+    "department_name": {"type": "string"},
+    "owner_director": {"type": "string"},
+    "purpose": {"type": "string"},
+    "required_inputs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "required_outputs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "handoff_to": {"type": "string"},
+    "validator_required": {"type": "string"},
+    "blocking_failure_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "artifact_dependency": {"type": "string"},
+    "route_boundary": {"type": "string"}
+  }
+}

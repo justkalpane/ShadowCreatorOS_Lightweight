@@ -1,0 +1,41 @@
+{
+  "payload": {
+    "route": "FILM_SCREENPLAY_GENERATION",
+    "mode": "script_only",
+    "duration_minutes": 5,
+    "format": "short_film_screenplay",
+    "language": "English",
+    "genre": "thriller",
+    "tone": ["tense", "grounded", "contained"],
+    "theme": "Calm precision is stronger than panic under threat.",
+    "setting": "narrow apartment corridor",
+    "emotional_pressure_trigger": "a gas smell spreads while the power flickers and the toddlers start coughing",
+    "toddler_stakes_detail": "the toddlers must be moved to safety before fear turns everyone reckless",
+    "relationship_type": "domestic emotional partnership",
+    "visual_style": "shadowed practical-light thriller realism",
+    "opposing_force": "a real domestic threat amplified by panic",
+    "external_goal": "Get the children out safely before the danger worsens.",
+    "internal_need": "Keep calm enough to read the threat accurately.",
+    "want": "Remove the children from danger immediately.",
+    "need": "Think clearly instead of performing panic.",
+    "moral_dilemma": "act fast in panic or act precisely under pressure",
+    "main_character_name": "Raval",
+    "second_character_name": "Omra",
+    "second_character_role": "emotional_mirror"
+  },
+  "weakness_profile": [
+    "no clear threat escalation",
+    "weak ticking clock",
+    "opposing force vague",
+    "suspense not scene-mapped",
+    "visual tension missing",
+    "ending not earned"
+  ],
+  "weak_dialogue_line": "There may be a problem but I am sure it will work itself out somehow.",
+  "weak_conflict_line": "there may or may not be an issue nearby",
+  "weak_stakes_line": "the threat feels about the same in every moment",
+  "weak_visual_line": "ordinary coverage without suspense design",
+  "weak_ending_line": "The danger seems gone because the story says so.",
+  "expected_quality_band": "NEEDS_MAJOR_REWRITE"
+}
+

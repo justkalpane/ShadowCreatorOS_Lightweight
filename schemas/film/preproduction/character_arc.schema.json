@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Arc",
+  "type": "object",
+  "required": ["protagonist", "want", "need", "flaw", "wound", "contradiction", "moral_dilemma", "opposing_force", "transformation_start", "transformation_midpoint", "transformation_end", "relationship_pressure", "emotional_continuity_by_scene", "behavioral_consistency_rules", "arc_turning_points"],
+  "properties": {
+    "protagonist": {"type": "string"},
+    "want": {"type": "string"},
+    "need": {"type": "string"},
+    "flaw": {"type": "string"},
+    "wound": {"type": "string"},
+    "contradiction": {"type": "string"},
+    "moral_dilemma": {"type": "string"},
+    "opposing_force": {"type": "string"},
+    "transformation_start": {"type": "string"},
+    "transformation_midpoint": {"type": "string"},
+    "transformation_end": {"type": "string"},
+    "relationship_pressure": {"type": "string"},
+    "emotional_continuity_by_scene": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["scene_number", "emotional_state"],
+        "properties": {
+          "scene_number": {"type": "integer"},
+          "emotional_state": {"type": "string"}
+        }
+      }
+    },
+    "behavioral_consistency_rules": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "arc_turning_points": {"type": "array", "items": {"type": "string"}, "minItems": 3}
+  }
+}

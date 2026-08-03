@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Film Source Evidence Ledger",
+  "type": "object",
+  "required": ["ledger_id", "phase", "source_policy", "entries"],
+  "properties": {
+    "ledger_id": {"type": "string"},
+    "phase": {"type": "string"},
+    "source_policy": {"type": "string"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "source_status", "notes"],
+        "properties": {
+          "claim": {"type": "string"},
+          "source_status": {"type": "string"},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

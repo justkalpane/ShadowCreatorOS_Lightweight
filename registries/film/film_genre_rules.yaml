@@ -1,0 +1,163 @@
+{
+  "registry_id": "FILM_GENRE_RULES_V3",
+  "phase": "PHASE_13D_F9",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "genres": {
+    "motivational_drama": {
+      "story_logic": "grounded internal struggle that resolves through restraint and repair",
+      "scene_logic": "domestic pressure escalates through intimate scenes rather than spectacle",
+      "pacing_logic": "compact build, reflective pause, earned emotional repair",
+      "character_logic": "soft-spoken protagonist, mirror character, visible care stakes",
+      "visual_logic": "naturalistic framing, restrained camera, warm realism",
+      "negative_rules": ["lecture_dump", "melodrama", "random_twist", "violence_as_resolution"],
+      "required_beats": ["opening_image", "pressure_trigger", "visible_restraint", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "pressure", "restraint", "repair"],
+      "required_validator_hooks": ["theme_alignment", "stakes_escalation", "emotional_continuity", "visual_language"],
+      "validator_hooks": ["theme_alignment", "stakes_escalation", "emotional_continuity", "visual_language"]
+    },
+    "social_drama": {
+      "story_logic": "personal conflict must reflect a larger social pressure",
+      "scene_logic": "scenes expose systems through human interaction",
+      "pacing_logic": "steady escalation toward moral consequence",
+      "character_logic": "competing social roles and emotional compromise",
+      "visual_logic": "observational realism with social-space awareness",
+      "negative_rules": ["issue_speechifying", "caricatured_villainy", "consequence_free_resolution"],
+      "required_beats": ["opening_image", "pressure_trigger", "self_awareness", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "social_pressure", "moral_choice", "consequence"],
+      "required_validator_hooks": ["theme_alignment", "world_bible", "consequence_logic"],
+      "validator_hooks": ["theme_alignment", "world_bible", "consequence_logic"]
+    },
+    "thriller": {
+      "story_logic": "rising uncertainty, cause-and-effect tension, delayed reveal",
+      "scene_logic": "each scene must intensify pressure or suspicion",
+      "pacing_logic": "compression, pressure, pursuit, reveal",
+      "character_logic": "secrets, fear, and tactical choices shape behavior",
+      "visual_logic": "controlled reveal design, shadow logic, pressure framing",
+      "negative_rules": ["random_reveal", "flat_tension", "exposition_dump"],
+      "required_beats": ["opening_image", "pressure_trigger", "midpoint_reversal", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "suspicion", "reversal", "choice"],
+      "required_validator_hooks": ["sequence_structure", "cinematography_plan", "director_vision"],
+      "validator_hooks": ["sequence_structure", "cinematography_plan", "director_vision"]
+    },
+    "horror": {
+      "story_logic": "dread before shock, consequence before spectacle",
+      "scene_logic": "ordinary space becomes unsafe through pattern disruption",
+      "pacing_logic": "slow dread, rupture, aftermath",
+      "character_logic": "fear behavior must stay consistent",
+      "visual_logic": "negative space, silence, reveal discipline",
+      "negative_rules": ["jump_scare_only", "arbitrary_monster_logic", "comedy_leak"],
+      "required_beats": ["opening_image", "pressure_trigger", "internal_anger", "midpoint_reversal", "closing_image"],
+      "required_scene_functions": ["setup", "dread", "rupture", "aftermath"],
+      "required_validator_hooks": ["world_bible", "visual_language", "cinematography_plan"],
+      "validator_hooks": ["world_bible", "visual_language", "cinematography_plan"]
+    },
+    "romance": {
+      "story_logic": "attraction, misunderstanding, vulnerability, earned union or loss",
+      "scene_logic": "emotional exchange must advance relationship pressure",
+      "pacing_logic": "approach, retreat, confession, resolution",
+      "character_logic": "mutual change and relational stakes",
+      "visual_logic": "intimacy framing, emotional space, gesture attention",
+      "negative_rules": ["empty_flirting", "instant_resolution", "decorative_love_interest"],
+      "required_beats": ["opening_image", "pressure_trigger", "self_awareness", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "approach", "retreat", "confession"],
+      "required_validator_hooks": ["relationship_map", "emotional_continuity", "dialogue_subtext"],
+      "validator_hooks": ["relationship_map", "emotional_continuity", "dialogue_subtext"]
+    },
+    "comedy": {
+      "story_logic": "misalignment, timing, consequence, release",
+      "scene_logic": "each scene needs comic friction with payoff",
+      "pacing_logic": "setup, escalation, reversal, release",
+      "character_logic": "flaws generate comedy pressure",
+      "visual_logic": "rhythm, spatial contrast, reaction framing",
+      "negative_rules": ["joke_spam", "cruelty_without_counterbalance", "no_story_engine"],
+      "required_beats": ["opening_image", "pressure_trigger", "visible_restraint", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "friction", "reversal", "release"],
+      "required_validator_hooks": ["sequence_structure", "scene_cards", "director_vision"],
+      "validator_hooks": ["sequence_structure", "scene_cards", "director_vision"]
+    },
+    "crime": {
+      "story_logic": "motive, method, consequence, exposure",
+      "scene_logic": "suspicion and stakes must tighten",
+      "pacing_logic": "clue chain, pressure, reveal",
+      "character_logic": "loyalty, betrayal, and risk discipline",
+      "visual_logic": "power framing, procedural detail, spatial clarity",
+      "negative_rules": ["mystery_without_logic", "consequence_free_crime", "random_confession"],
+      "required_beats": ["opening_image", "pressure_trigger", "midpoint_reversal", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "clue", "pressure", "exposure"],
+      "required_validator_hooks": ["world_bible", "consequence_logic", "scene_cards"],
+      "validator_hooks": ["world_bible", "consequence_logic", "scene_cards"]
+    },
+    "action": {
+      "story_logic": "mission pressure, obstacle escalation, physical consequence",
+      "scene_logic": "each scene must alter tactical position",
+      "pacing_logic": "surge, regroup, surge, payoff",
+      "character_logic": "agency under pressure, physical stakes",
+      "visual_logic": "spatial clarity, motion motivation, impact rhythm",
+      "negative_rules": ["empty_spectacle", "geography_confusion", "no_character_cost"],
+      "required_beats": ["opening_image", "pressure_trigger", "midpoint_reversal", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "surge", "regroup", "payoff"],
+      "required_validator_hooks": ["cinematography_plan", "sequence_structure", "stakes_escalation"],
+      "validator_hooks": ["cinematography_plan", "sequence_structure", "stakes_escalation"]
+    },
+    "mythology_fantasy": {
+      "story_logic": "mythic stakes, symbolic conflict, world-rule coherence",
+      "scene_logic": "scenes must respect lore and symbolic cause/effect",
+      "pacing_logic": "wonder, test, revelation, transformation",
+      "character_logic": "dharma, temptation, symbolic desire",
+      "visual_logic": "motif systems, ritual framing, image myth",
+      "negative_rules": ["lore_incoherence", "arbitrary_magic", "symbolism_without_story"],
+      "required_beats": ["opening_image", "pressure_trigger", "self_awareness", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "test", "revelation", "transformation"],
+      "required_validator_hooks": ["world_bible", "director_vision", "visual_language"],
+      "validator_hooks": ["world_bible", "director_vision", "visual_language"]
+    },
+    "mass_commercial": {
+      "story_logic": "star-driven momentum with clean emotional throughline",
+      "scene_logic": "punchy turns and high-signal character objectives",
+      "pacing_logic": "front-loaded momentum with interval-style peaks",
+      "character_logic": "heightened but readable motivations",
+      "visual_logic": "iconic frames, crowd readability, rhythm emphasis",
+      "negative_rules": ["setpiece_without_story", "tonal_chaos", "empty_heroism"],
+      "required_beats": ["opening_image", "pressure_trigger", "midpoint_reversal", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "hero_push", "interval_peak", "payoff"],
+      "required_validator_hooks": ["scene_cards", "cinematography_plan", "stakes_escalation"],
+      "validator_hooks": ["scene_cards", "cinematography_plan", "stakes_escalation"]
+    },
+    "short_film": {
+      "story_logic": "one compressed transformation or realization",
+      "scene_logic": "no decorative scenes; every scene must turn the emotional value",
+      "pacing_logic": "immediate setup, clean escalation, focused resolution",
+      "character_logic": "minimal cast with sharp function",
+      "visual_logic": "concentrated motif clarity",
+      "negative_rules": ["feature_bloat", "subplot_drift", "late_story_start"],
+      "required_beats": ["opening_image", "pressure_trigger", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "pressure", "turn", "resolution"],
+      "required_validator_hooks": ["scene_cards", "act_structure", "revision_report"],
+      "validator_hooks": ["scene_cards", "act_structure", "revision_report"]
+    },
+    "feature_film": {
+      "story_logic": "layered arcs, sustained escalation, thematic closure",
+      "scene_logic": "multi-sequence causal progression",
+      "pacing_logic": "act and sequence discipline across long form",
+      "character_logic": "multiple arc layers with thematic cohesion",
+      "visual_logic": "evolving motif and escalation grammar",
+      "negative_rules": ["middle_sprawl", "unresolved_arc_core", "tonal_collapse"],
+      "required_beats": ["opening_image", "pressure_trigger", "midpoint_reversal", "repair_choice", "closing_image"],
+      "required_scene_functions": ["setup", "escalation", "midpoint", "resolution"],
+      "required_validator_hooks": ["act_structure", "sequence_structure", "character_arc"],
+      "validator_hooks": ["act_structure", "sequence_structure", "character_arc"]
+    },
+    "web_series": {
+      "story_logic": "episode engine plus season carry-forward",
+      "scene_logic": "scenes serve episode turn and longer arc",
+      "pacing_logic": "hook, escalation, episode payoff, forward pull",
+      "character_logic": "renewable conflicts and evolving relationships",
+      "visual_logic": "repeatable visual system with escalation markers",
+      "negative_rules": ["episode_reset_without_growth", "streaming_bloat", "false_cliffhanger"],
+      "required_beats": ["opening_image", "pressure_trigger", "midpoint_reversal", "repair_choice", "closing_image"],
+      "required_scene_functions": ["hook", "episode_turn", "payoff", "forward_pull"],
+      "required_validator_hooks": ["sequence_structure", "relationship_map", "world_bible"],
+      "validator_hooks": ["sequence_structure", "relationship_map", "world_bible"]
+    }
+  }
+}

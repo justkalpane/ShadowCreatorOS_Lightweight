@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Treatment",
+  "type": "object",
+  "required": ["treatment_title", "central_premise", "emotional_promise", "protagonist_external_goal", "protagonist_internal_need", "central_conflict", "stakes", "turning_points", "ending_image"],
+  "properties": {
+    "treatment_title": {"type": "string"},
+    "central_premise": {"type": "string"},
+    "emotional_promise": {"type": "string"},
+    "protagonist_external_goal": {"type": "string"},
+    "protagonist_internal_need": {"type": "string"},
+    "central_conflict": {"type": "string"},
+    "stakes": {"type": "string"},
+    "turning_points": {"type": "array", "items": {"type": "string"}, "minItems": 3},
+    "ending_image": {"type": "string"}
+  }
+}

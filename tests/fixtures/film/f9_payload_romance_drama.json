@@ -1,0 +1,29 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 5,
+  "format": "short_film_screenplay",
+  "language": "English",
+  "genre": "romance",
+  "tone": ["tender", "hesitant", "intimate", "hopeful"],
+  "minimum_characters": 2,
+  "theme": "Love returns when pride yields to honest repair.",
+  "setting": "small monsoon apartment balcony and children's room",
+  "stakes": "a couple's trust and a child's bedtime ritual after a day of distance",
+  "emotional_pressure_trigger": "a forgotten promise and a child's question about why the room feels cold",
+  "protagonist_type": "soft-spoken partner and parent",
+  "relationship_type": "strained romantic co-parent bond",
+  "opposing_force": "hurt pride, exhaustion, and fear of emotional failure",
+  "visual_style": "rain-washed intimate realism",
+  "ending_image": "The bedtime light falls across joined hands as the family settles into earned closeness.",
+  "character_constraints": {
+    "main_character": {
+      "traits": ["soft-spoken", "warm", "controlled", "internally angry", "non-explosive"],
+      "life_context": ["parent_or_guardian_of_toddlers"],
+      "forbidden_behaviors": ["shouting", "violence", "threats", "abuse"]
+    },
+    "second_character": {
+      "role": "emotional_mirror"
+    }
+  }
+}

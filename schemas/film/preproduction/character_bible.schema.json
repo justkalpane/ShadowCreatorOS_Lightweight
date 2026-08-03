@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Bible",
+  "type": "object",
+  "required": ["major_characters", "test_case_constraints"],
+  "properties": {
+    "major_characters": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "external_goal", "internal_need", "flaw", "fear", "wound", "contradiction", "behavioral_rules", "relationship_to_other_characters", "arc_start", "arc_end"],
+        "properties": {
+          "name": {"type": "string"},
+          "role": {"type": "string"},
+          "external_goal": {"type": "string"},
+          "internal_need": {"type": "string"},
+          "flaw": {"type": "string"},
+          "fear": {"type": "string"},
+          "wound": {"type": "string"},
+          "contradiction": {"type": "string"},
+          "behavioral_rules": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "relationship_to_other_characters": {"type": "object"},
+          "arc_start": {"type": "string"},
+          "arc_end": {"type": "string"}
+        }
+      }
+    },
+    "test_case_constraints": {"type": "object"}
+  }
+}

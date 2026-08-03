@@ -1,7 +1,9 @@
 """Local film screenplay output packet validator.
 
-The validator is still not bound to runtime. Empty-payload calls remain
-non-proof-producing for existing harness compatibility.
+Empty-payload and legacy fixture calls remain non-proof-producing for existing
+harness compatibility. When the payload points at a runtime artifact bundle, the
+validator inspects the generated packet on disk instead of pretending the bundle
+is a synthetic schema object.
 """
 
 import json
@@ -91,8 +93,89 @@ def _as_packet_from_fixture(payload: dict) -> dict:
     return packet
 
 
+def _artifact_paths(payload: dict) -> dict[str, Path | None]:
+    artifact_root = payload.get("artifact_root")
+    root = Path(artifact_root) if artifact_root else None
+    return {
+        "artifact_root": root,
+        "screenplay_packet_path": Path(payload["screenplay_packet_path"]) if payload.get("screenplay_packet_path") else (root / "screenplay_packet.json" if root else None),
+        "validation_report_path": Path(payload["validation_report_path"]) if payload.get("validation_report_path") else (root / "validation_report.json" if root else None),
+        "screenplay_md_path": Path(payload["screenplay_md_path"]) if payload.get("screenplay_md_path") else (root / "screenplay.md" if root else None),
+    }
+
+
 def _is_phase_12a_fixture(payload: dict) -> bool:
     return payload.get("fixture_family") == "film_packet_validation"
+
+
+def _is_artifact_bundle(payload: dict) -> bool:
+    return any(key in payload for key in ("screenplay_packet_path", "validation_report_path", "artifact_root"))
+
+
+def _artifact_errors(payload: dict, required: list[str]) -> tuple[list[str], dict]:
+    paths = _artifact_paths(payload)
+    errors: list[str] = []
+
+    packet_path = paths["screenplay_packet_path"]
+    report_path = paths["validation_report_path"]
+    md_path = paths["screenplay_md_path"]
+
+    if not packet_path or not packet_path.is_file():
+        return ["screenplay packet artifact is missing"], {}
+
+    packet = json.loads(packet_path.read_text(encoding="utf-8"))
+
+    for field in required:
+        if field not in packet:
+            errors.append(f"missing required field: {field}")
+
+    if packet.get("route") != "FILM_SCREENPLAY_GENERATION":
+        errors.append("artifact packet must target FILM_SCREENPLAY_GENERATION")
+    if packet.get("mode") != "script_only":
+        errors.append("artifact packet must preserve script_only mode")
+    if packet.get("duration_minutes") != 5:
+        errors.append("artifact packet must preserve 5-minute duration")
+    if packet.get("estimated_duration_minutes") != 5:
+        errors.append("artifact packet must preserve estimated_duration_minutes=5")
+
+    route_state_capsule = packet.get("route_state_capsule") or {}
+    if route_state_capsule.get("route_id") != "FILM_SCREENPLAY_GENERATION":
+        errors.append("route_state_capsule must preserve FILM_SCREENPLAY_GENERATION")
+
+    route_state = packet.get("route_state") or {}
+    if route_state.get("route_id") != "FILM_SCREENPLAY_GENERATION":
+        errors.append("route_state must preserve FILM_SCREENPLAY_GENERATION")
+    if route_state.get("output_phase_started") is not True:
+        errors.append("route_state must record output phase start")
+
+    screenplay = packet.get("screenplay_body") or packet.get("screenplay") or ""
+    if not screenplay.strip():
+        errors.append("screenplay_body must not be empty for artifact validation")
+    else:
+        heading_count = sum(
+            1
+            for line in screenplay.splitlines()
+            if line.startswith(("INT.", "EXT.")) or line.strip().startswith(("INT.", "EXT."))
+        )
+        if heading_count < 3:
+            errors.append("screenplay artifact must contain at least 3 scene headings")
+
+    if not report_path or not report_path.is_file():
+        errors.append("validation report artifact is missing")
+    else:
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+        if report.get("status") not in {"VALIDATION_IN_PROGRESS", "PASS_RUNTIME_ARTIFACT_PROVEN"}:
+            errors.append("validation report status must prove the runtime artifact path")
+        route_checks = report.get("route_checks") or {}
+        if route_checks.get("route_exists") is not True or route_checks.get("script_generation_preserved") is not True:
+            errors.append("validation report must preserve route existence and script_generation")
+        if "validator_results" not in report:
+            errors.append("validation report must include validator results")
+
+    if not md_path or not md_path.is_file():
+        errors.append("screenplay markdown artifact is missing")
+
+    return errors, packet
 
 
 def _fixture_errors(payload: dict, required: list[str]) -> list[str]:
@@ -133,6 +216,32 @@ def validate(payload: dict) -> dict:
         return result
 
     required = _required_fields()
+    if _is_artifact_bundle(payload):
+        errors, packet = _artifact_errors(payload, required)
+        result.update({
+            "status": "VALIDATION_FAILED" if errors else "VALIDATION_PASSED",
+            "passed": not errors,
+            "enforced": True,
+            "payload_kind": "runtime_artifact_bundle",
+            "schema_path": str(SCHEMA_PATH.relative_to(ROOT)),
+            "required_field_count": len(required),
+            "required_fields": required,
+            "errors": errors,
+            "message": "Runtime artifact bundle validation completed without runtime binding.",
+            "artifact_root": str(payload.get("artifact_root")) if payload.get("artifact_root") is not None else None,
+            "screenplay_packet_path": str(payload.get("screenplay_packet_path")) if payload.get("screenplay_packet_path") is not None else None,
+            "validation_report_path": str(payload.get("validation_report_path")) if payload.get("validation_report_path") is not None else None,
+            "screenplay_md_path": str(payload.get("screenplay_md_path")) if payload.get("screenplay_md_path") is not None else None,
+            "screenplay_packet_summary": {
+                "route": packet.get("route"),
+                "mode": packet.get("mode"),
+                "duration_minutes": packet.get("duration_minutes"),
+                "scene_count": len(packet.get("scene_breakdown", [])),
+                "character_count": len(packet.get("character_list", [])),
+            } if packet else {},
+        })
+        return result
+
     if _is_phase_12a_fixture(payload):
         errors = _fixture_errors(payload, required)
         payload_kind = "phase_12a_fixture_descriptor"

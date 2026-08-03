@@ -1,0 +1,28 @@
+registry_id: FILM_BEST_PRACTICE_REGISTRY_V1
+phase: PHASE_13D_F7
+status: ACTIVE_LOCAL_REFERENCE
+runtime_behavior_changed: false
+paid_api_required: false
+media_generation_triggered: false
+copyright_boundary: principle_names_and_original_structures_only
+principles:
+  - id: grounded_domestic_drama
+    layer: story
+    purpose: Keep emotional stakes concrete, observable, and non-melodramatic.
+    required_packet_fields: [premise_test, treatment, beat_sheet, scene_cards]
+  - id: want_need_flaw_arc
+    layer: character
+    purpose: Connect external goal, internal need, flaw, wound, contradiction, and transformation.
+    required_packet_fields: [character_bible, character_arc, moral_dilemma]
+  - id: objective_conflict_turn
+    layer: scene
+    purpose: Every scene needs a playable objective, conflict, and turning point.
+    required_packet_fields: [scene_cards]
+  - id: visual_storytelling_motifs
+    layer: visual_language
+    purpose: Tie framing, motif, and camera motivation to emotional change.
+    required_packet_fields: [director_vision, visual_language, cinematography_plan]
+  - id: department_handoff_completeness
+    layer: production_house
+    purpose: Preproduction packets must be useful to story, direction, camera, sound, continuity, risk, and audit lanes.
+    required_packet_fields: [department_handoffs, production_risk_sheet, revision_report]

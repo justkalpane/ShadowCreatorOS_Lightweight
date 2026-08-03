@@ -1,0 +1,29 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 5,
+  "format": "short_film_screenplay",
+  "language": "English",
+  "genre": "thriller",
+  "tone": ["tense", "contained", "watchful", "protective"],
+  "minimum_characters": 2,
+  "theme": "Panic becomes danger when fear outruns care.",
+  "setting": "storm-dark apartment corridor and nursery",
+  "stakes": "a toddler with a fever and a locked front door during a storm outage",
+  "emotional_pressure_trigger": "the power cuts, the child spikes hotter, and the spare keys are missing",
+  "protagonist_type": "soft-spoken guardian under pressure",
+  "relationship_type": "strained co-guardian trust",
+  "opposing_force": "storm blackout, rising fear, and the temptation to panic",
+  "visual_style": "shadowed practical-light thriller realism",
+  "ending_image": "Emergency light warms the nursery after the crisis passes, proving calm saved the room.",
+  "character_constraints": {
+    "main_character": {
+      "traits": ["soft-spoken", "warm", "controlled", "internally angry", "non-explosive"],
+      "life_context": ["parent_or_guardian_of_toddlers"],
+      "forbidden_behaviors": ["shouting", "violence", "threats", "abuse"]
+    },
+    "second_character": {
+      "role": "emotional_mirror"
+    }
+  }
+}

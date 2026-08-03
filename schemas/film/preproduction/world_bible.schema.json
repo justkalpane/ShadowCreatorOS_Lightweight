@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Bible",
+  "type": "object",
+  "required": ["world_type", "domestic_world_context", "timeline", "locations", "geography_or_spatial_logic", "culture_or_social_context", "world_rules", "power_dynamics", "consequence_chain", "continuity_across_scenes"],
+  "properties": {
+    "world_type": {"type": "string"},
+    "domestic_world_context": {"type": "string"},
+    "timeline": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["scene_number", "time_of_day", "location"],
+        "properties": {
+          "scene_number": {"type": "integer"},
+          "time_of_day": {"type": "string"},
+          "location": {"type": "string"}
+        }
+      }
+    },
+    "locations": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "geography_or_spatial_logic": {"type": "string"},
+    "culture_or_social_context": {"type": "string"},
+    "world_rules": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "power_dynamics": {"type": "string"},
+    "consequence_chain": {"type": "array", "items": {"type": "string"}, "minItems": 3},
+    "continuity_across_scenes": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["scene_number", "location", "pressure_state", "repair_state"],
+        "properties": {
+          "scene_number": {"type": "integer"},
+          "location": {"type": "string"},
+          "pressure_state": {"type": "string"},
+          "repair_state": {"type": "string"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "payload": {
+    "route": "FILM_SCREENPLAY_GENERATION",
+    "mode": "script_only",
+    "duration_minutes": 5,
+    "format": "short_film_screenplay",
+    "language": "English",
+    "genre": "motivational_drama",
+    "tone": ["grounded", "tender", "intimate"],
+    "theme": "Real patience is proven through repair, not suppression.",
+    "setting": "small apartment kitchen",
+    "emotional_pressure_trigger": "spilled milk collides with a deadline and the toddlers start crying",
+    "toddler_stakes_detail": "two toddlers are watching whether the adult will choose care or anger",
+    "relationship_type": "domestic emotional partnership",
+    "visual_style": "soft tungsten realism",
+    "opposing_force": "domestic pressure plus controlled internal anger",
+    "external_goal": "Protect the toddlers and stabilize the room before frustration damages trust.",
+    "internal_need": "Notice the anger early enough to choose repair.",
+    "want": "Keep the children safe without letting anger set the tone.",
+    "need": "Admit the anger before it leaks into the room.",
+    "moral_dilemma": "protect authority through reaction or protect trust through repair",
+    "main_character_name": "Ariv",
+    "second_character_name": "Elna",
+    "second_character_role": "emotional_mirror"
+  },
+  "weakness_profile": [
+    "generic premise",
+    "passive protagonist",
+    "flat stakes",
+    "theme stated only in metadata",
+    "second character decorative",
+    "no real midpoint",
+    "no visual motif",
+    "no repair action"
+  ],
+  "weak_dialogue_line": "I feel bad and things are hard and we should be better tomorrow.",
+  "weak_conflict_line": "things feel a little difficult",
+  "weak_stakes_line": "the emotional temperature stays mostly the same",
+  "weak_visual_line": "plain coverage with no expressive visual logic",
+  "weak_ending_line": "They decide things are fine because the scene should end now.",
+  "expected_quality_band": "NEEDS_MAJOR_REWRITE"
+}
+

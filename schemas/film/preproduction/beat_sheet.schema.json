@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Beat Sheet",
+  "type": "array",
+  "minItems": 8,
+  "items": {
+    "type": "object",
+    "required": ["beat_id", "scene_number", "story_function", "character_action", "emotional_state_before", "emotional_state_after", "stakes_change"],
+    "properties": {
+      "beat_id": {"type": "string"},
+      "scene_number": {"type": "integer"},
+      "story_function": {"type": "string"},
+      "character_action": {"type": "string"},
+      "emotional_state_before": {"type": "string"},
+      "emotional_state_after": {"type": "string"},
+      "stakes_change": {"type": "string"}
+    }
+  }
+}

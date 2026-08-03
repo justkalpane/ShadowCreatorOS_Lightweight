@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Opposing Force",
+  "type": "object",
+  "required": ["opposing_force", "type", "external_face", "internal_face", "opposes", "relationship_pressure", "story_function", "antagonist_required"],
+  "properties": {
+    "opposing_force": {"type": "string"},
+    "type": {"type": "string"},
+    "external_face": {"type": "string"},
+    "internal_face": {"type": "string"},
+    "opposes": {"type": "string"},
+    "relationship_pressure": {"type": "string"},
+    "story_function": {"type": "string"},
+    "antagonist_required": {"type": "boolean"}
+  }
+}

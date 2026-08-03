@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Concept Note",
+  "type": "object",
+  "required": ["title", "format", "genre", "tone", "theme", "premise", "logline", "audience_promise", "film_intent_lock"],
+  "properties": {
+    "title": {"type": "string"},
+    "format": {"type": "string"},
+    "genre": {"type": "string"},
+    "tone": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "theme": {"type": "string"},
+    "premise": {"type": "string"},
+    "logline": {"type": "string"},
+    "audience_promise": {"type": "string"},
+    "film_intent_lock": {"type": "string"}
+  }
+}

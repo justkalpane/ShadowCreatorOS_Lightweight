@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Act Structure",
+  "type": "object",
+  "required": ["act_one", "act_two", "act_three"],
+  "properties": {
+    "act_one": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "act_two": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "act_three": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  }
+}

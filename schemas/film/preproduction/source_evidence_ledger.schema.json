@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source Evidence Ledger",
+  "type": "object",
+  "required": ["source_policy", "evidence_scope", "external_sources_required", "copyright_safe_contract"],
+  "properties": {
+    "source_policy": {"type": "string"},
+    "evidence_scope": {"type": "string"},
+    "external_sources_required": {"type": "boolean"},
+    "copyright_safe_contract": {"type": "string"}
+  }
+}

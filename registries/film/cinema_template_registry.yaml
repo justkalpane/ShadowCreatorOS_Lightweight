@@ -1,0 +1,14 @@
+registry_id: CINEMA_TEMPLATE_REGISTRY_V1
+phase: PHASE_13D_F7
+status: ACTIVE_LOCAL_REFERENCE
+templates:
+  concept_note: [title, format, genre, tone, premise, audience_promise]
+  premise_test: [premise, dramatic_question, emotional_engine, pass_conditions]
+  treatment: [central_premise, emotional_promise, conflict, stakes, turning_points, ending_image]
+  character_bible: [goal, need, flaw, wound, contradiction, rules, arc]
+  world_bible: [domestic_world_context, location_logic, family_pressure_context, social_context, consequence_chain]
+  scene_card: [objective, conflict, turning_point, emotional_values, continuity_dependencies]
+  director_vision: [director_note, mood_map, emotional_framing, silence_design, reveal_design]
+  cinematography_plan: [shot_types, lens_intent, lighting_mood, visual_rhythm, shot_progression]
+  department_handoff: [department, required_inputs, required_outputs, validation_need]
+  revision_report: [issues_found, changes_made, open_questions, next_pass_recommendations]

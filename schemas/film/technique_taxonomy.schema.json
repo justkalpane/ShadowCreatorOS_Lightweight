@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Film Technique Taxonomy",
+  "type": "object",
+  "required": ["taxonomy_id", "phase", "technique_families"],
+  "properties": {
+    "taxonomy_id": {"type": "string"},
+    "phase": {"type": "string"},
+    "technique_families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["family", "techniques"],
+        "properties": {
+          "family": {"type": "string"},
+          "techniques": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Department Handoffs",
+  "type": "object",
+  "required": ["development", "writing_room", "story", "character", "direction", "cinematography", "art", "costume", "sound_planning", "continuity", "production_management", "validation_audit", "packaging_distribution"],
+  "properties": {
+    "development": {"$ref": "department_packet.schema.json"},
+    "writing_room": {"$ref": "department_packet.schema.json"},
+    "story": {"$ref": "department_packet.schema.json"},
+    "character": {"$ref": "department_packet.schema.json"},
+    "direction": {"$ref": "department_packet.schema.json"},
+    "cinematography": {"$ref": "department_packet.schema.json"},
+    "art": {"$ref": "department_packet.schema.json"},
+    "costume": {"$ref": "department_packet.schema.json"},
+    "sound_planning": {"$ref": "department_packet.schema.json"},
+    "continuity": {"$ref": "department_packet.schema.json"},
+    "production_management": {"$ref": "department_packet.schema.json"},
+    "validation_audit": {"$ref": "department_packet.schema.json"},
+    "packaging_distribution": {"$ref": "department_packet.schema.json"}
+  }
+}

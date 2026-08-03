@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Language",
+  "type": "object",
+  "required": ["visual_grammar", "staging", "blocking", "scene_intention", "emotional_framing", "camera_motivation", "reveal_design", "silence_design", "visual_metaphor", "frame_power_dynamics"],
+  "properties": {
+    "visual_grammar": {"type": "string"},
+    "staging": {"type": "string"},
+    "blocking": {"type": "string"},
+    "scene_intention": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "emotional_framing": {"type": "string"},
+    "camera_motivation": {"type": "string"},
+    "reveal_design": {"type": "string"},
+    "silence_design": {"type": "string"},
+    "visual_metaphor": {"type": "string"},
+    "frame_power_dynamics": {"type": "string"}
+  }
+}

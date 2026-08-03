@@ -137,6 +137,15 @@ def _derive_name(parsed: dict[str, Any], role: str, explicit_value: str | None =
     return f"{_choose_from_seed(seed, prefixes)}{_choose_from_seed(seed[8:], middles)}{_choose_from_seed(seed[16:], suffixes)}"
 
 
+def _format_family(format_name: str, duration_minutes: int) -> str:
+    lowered = format_name.lower()
+    if "feature" in lowered or duration_minutes >= 80:
+        return "feature_film"
+    if "series" in lowered or "episode" in lowered or duration_minutes >= 40:
+        return "web_series"
+    return "short_film"
+
+
 def parse_payload(payload: dict[str, Any]) -> dict[str, Any]:
     character_constraints = payload.get("character_constraints") or {}
     main_constraints = character_constraints.get("main_character") or {}
@@ -158,12 +167,16 @@ def parse_payload(payload: dict[str, Any]) -> dict[str, Any]:
     opposing_force = _clean_text(payload.get("opposing_force"), "domestic pressure plus internal anger")
     external_goal = _clean_text(payload.get("external_goal"), f"Protect {stakes} while {pressure_trigger} disrupts the room.")
     internal_need = _clean_text(payload.get("internal_need"), "Recognize anger early and choose restraint.")
+    duration_minutes = int(payload.get("duration_minutes", 5))
+    format_name = _clean_text(payload.get("format"), "short_film_screenplay")
+    format_family = _format_family(format_name, duration_minutes)
     seed = _seed_from_payload(payload, "theme", "setting", "genre", "relationship_type", "stakes", "opposing_force")
     parsed = {
         "route": _clean_text(payload.get("route"), ROUTE_ID),
         "mode": _clean_text(payload.get("mode"), "script_only"),
-        "duration_minutes": int(payload.get("duration_minutes", 5)),
-        "format": _clean_text(payload.get("format"), "short_film_screenplay"),
+        "duration_minutes": duration_minutes,
+        "format": format_name,
+        "format_family": format_family,
         "language": _clean_text(payload.get("language"), "English"),
         "genre": genre,
         "tone": tone,
@@ -287,60 +300,64 @@ def build_premise_test(parsed: dict[str, Any], concept_note: dict[str, Any]) -> 
     }
 
 
-def build_act_structure(beat_sheet: list[dict[str, Any]]) -> dict[str, Any]:
-    scene_map = {beat["beat_id"]: beat["scene_number"] for beat in beat_sheet}
+def build_act_structure(parsed: dict[str, Any], beat_sheet: list[dict[str, Any]]) -> dict[str, Any]:
+    scene_map = {f"{beat['beat_id']}__{index}": beat["scene_number"] for index, beat in enumerate(beat_sheet, start=1)}
     stakes = [beat["stakes_change"] for beat in beat_sheet]
+    beat_ids = [f"{beat['beat_id']}__{index}" for index, beat in enumerate(beat_sheet, start=1)]
+    total = len(beat_ids)
+    first_cut = max(1, total // 3)
+    second_cut = max(first_cut + 1, (2 * total) // 3)
+    midpoint_index = min(total - 1, max(0, total // 2))
+    middle_stake = stakes[midpoint_index]
     return {
-        "act_one": [beat["beat_id"] for beat in beat_sheet[:3]],
-        "act_two": [beat["beat_id"] for beat in beat_sheet[3:6]],
-        "act_three": [beat["beat_id"] for beat in beat_sheet[6:]],
+        "act_one": beat_ids[:first_cut],
+        "act_two": beat_ids[first_cut:second_cut],
+        "act_three": beat_ids[second_cut:],
         "act_one_setup": beat_sheet[0]["story_function"],
-        "act_one_inciting_pressure": beat_sheet[2]["story_function"],
-        "act_two_escalation": beat_sheet[3]["story_function"],
-        "midpoint_shift_or_reversal": beat_sheet[4]["story_function"],
+        "act_one_inciting_pressure": beat_sheet[min(total - 1, max(1, first_cut - 1))]["story_function"],
+        "act_two_escalation": beat_sheet[min(total - 1, first_cut)]["story_function"],
+        "midpoint_shift_or_reversal": beat_sheet[midpoint_index]["story_function"],
         "act_three_choice": f"choice: {beat_sheet[-2]['story_function']}",
         "resolution": f"resolution: {beat_sheet[-1]['story_function']}",
         "scene_mapping": scene_map,
         "stakes_progression": {
             "start": stakes[0],
-            "middle": stakes[len(stakes) // 2],
+            "middle": middle_stake,
             "end": stakes[-1],
         },
+        "format_family": parsed["format_family"],
     }
 
 
-def build_sequence_structure(scene_cards: list[dict[str, Any]]) -> dict[str, Any]:
-    return {
-        "sequences": [
+def build_sequence_structure(parsed: dict[str, Any], scene_cards: list[dict[str, Any]]) -> dict[str, Any]:
+    total = len(scene_cards)
+    if parsed["format_family"] == "feature_film":
+        group_size = 2
+    elif parsed["format_family"] == "web_series":
+        group_size = 2
+    else:
+        group_size = max(1, total // 3)
+
+    groups = [scene_cards[index:index + group_size] for index in range(0, total, group_size)]
+    if len(groups) < 3:
+        groups = [scene_cards[:2], scene_cards[2:5], scene_cards[5:]]
+
+    sequences = []
+    for index, group in enumerate(groups, start=1):
+        if not group:
+            continue
+        sequences.append(
             {
-                "sequence_id": "beginning",
-                "scene_numbers": [card["scene_number"] for card in scene_cards[:2]],
-                "objective": scene_cards[0]["scene_objective"],
-                "conflict": scene_cards[1]["conflict"],
-                "turning_point": scene_cards[1]["turning_point"],
-                "function": "warm setup and pressure trigger",
-                "output_scene_numbers": [card["scene_number"] for card in scene_cards[:2]],
-            },
-            {
-                "sequence_id": "middle",
-                "scene_numbers": [card["scene_number"] for card in scene_cards[2:5]],
-                "objective": scene_cards[2]["scene_objective"],
-                "conflict": scene_cards[3]["conflict"],
-                "turning_point": scene_cards[4]["turning_point"],
-                "function": "internal anger, restraint, and self-awareness",
-                "output_scene_numbers": [card["scene_number"] for card in scene_cards[2:5]],
-            },
-            {
-                "sequence_id": "ending",
-                "scene_numbers": [card["scene_number"] for card in scene_cards[5:]],
-                "objective": scene_cards[-1]["scene_objective"],
-                "conflict": scene_cards[-1]["conflict"],
-                "turning_point": scene_cards[-1]["turning_point"],
-                "function": "repair choice and earned hope",
-                "output_scene_numbers": [card["scene_number"] for card in scene_cards[5:]],
-            },
-        ]
-    }
+                "sequence_id": f"sequence_{index}",
+                "scene_numbers": [card["scene_number"] for card in group],
+                "objective": group[0]["scene_objective"],
+                "conflict": group[0]["conflict"],
+                "turning_point": group[-1]["turning_point"],
+                "function": f"{parsed['format_family']} progression block {index}",
+                "output_scene_numbers": [card["scene_number"] for card in group],
+            }
+        )
+    return {"sequences": sequences, "format_family": parsed["format_family"]}
 
 
 def build_source_evidence_ledger() -> dict[str, Any]:
@@ -869,6 +886,7 @@ def build_validation_packet(
         "downstream_adapter_boundary": {},
         "duration_minutes": parsed["duration_minutes"],
         "format": parsed["format"],
+        "format_family": parsed["format_family"],
         "language": parsed["language"],
         "genre": parsed["genre"],
         "tone": ", ".join(parsed["tone"]) if parsed["tone"] else "",
@@ -912,7 +930,7 @@ def build_validation_packet(
             "color_palette": "soft evening amber",
         },
         "word_count": len(screenplay.split()),
-        "estimated_duration_minutes": 5,
+        "estimated_duration_minutes": parsed["duration_minutes"],
         "route_state_capsule": {},
         "route_state": {},
         "validation_report": {"status": "PENDING"},
@@ -954,8 +972,8 @@ def generate_screenplay(payload: dict[str, Any]) -> dict[str, Any]:
     beat_sheet = generate_beat_sheet(parsed, character_bible)
     character_arc = generate_character_arc(parsed, character_bible, beat_sheet)
     scene_cards = generate_scene_cards(parsed, character_bible, relationship_map, beat_sheet)
-    act_structure = build_act_structure(beat_sheet)
-    sequence_structure = build_sequence_structure(scene_cards)
+    act_structure = build_act_structure(parsed, beat_sheet)
+    sequence_structure = build_sequence_structure(parsed, scene_cards)
     world_bible = generate_world_bible(parsed, scene_cards)
     director_vision = generate_director_vision(parsed, treatment, scene_cards)
     visual_language = generate_visual_language(parsed, director_vision)
@@ -1004,7 +1022,6 @@ def build_route_state(repo_root: Path, run_dir: Path, payload_path: Path, valida
         "registries/route_slices/film_screenplay_generation.registry_slice.yaml",
         "registries/route_manifests/script_generation.yaml",
         "registries/route_slices/script_generation.registry_slice.yaml",
-        "tests/fixtures/film/controlled_5min_motivational_screenplay_payload.json",
         "validators/film/route/validate_film_route_selection.py",
         "validators/film/output_packet/validate_film_screenplay_packet.py",
         "validators/film/validation/validate_no_fake_film_pass.py",
@@ -1067,6 +1084,12 @@ def build_route_state(repo_root: Path, run_dir: Path, payload_path: Path, valida
         "tools/film_runtime/preproduction/genre_grammar_engine.py",
         "tools/film_runtime/film_screenplay_runtime_proof_runner.py",
     ]
+    try:
+        payload_rel = str(payload_path.relative_to(repo_root))
+    except ValueError:
+        payload_rel = ""
+    if payload_rel:
+        consumed.append(payload_rel)
     file_hashes = {rel: sha256_file(repo_root / rel) for rel in consumed}
     manifest_path = repo_root / "registries/route_manifests/film_screenplay_generation.yaml"
     selector_path = repo_root / "runtime/state/route_chain_mode_selector.yaml"
@@ -1151,7 +1174,7 @@ def main() -> int:
 
     route_selection_payload = {
         "fixture_family": "route_selection",
-        "input_prompt": f"Generate a 5-minute motivational short screenplay: {payload['theme']}",
+        "input_prompt": f"Generate a {payload['duration_minutes']}-minute {payload['genre'].replace('_', ' ')} screenplay: {payload['theme']}",
         "expected_route": ROUTE_ID,
         "expected_mode": "film_core",
         "should_pass_later": True,

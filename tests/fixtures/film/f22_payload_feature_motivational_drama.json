@@ -1,0 +1,29 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 118,
+  "format": "feature_film_screenplay",
+  "language": "English",
+  "genre": "motivational_drama",
+  "tone": ["grounded", "warm", "patient", "earned"],
+  "minimum_characters": 2,
+  "theme": "Real strength is not suppressing anger forever, but breaking its inheritance through repeated acts of restraint and repair.",
+  "setting": "small industrial township apartment, stairwell, balcony, and children's room during a week of financial pressure",
+  "stakes": "two toddlers learning whether care or anger defines home",
+  "emotional_pressure_trigger": "a landlord notice, a missed salary transfer, and a child asking why everyone sounds tired",
+  "protagonist_type": "soft-spoken father carrying family pressure through a long week",
+  "relationship_type": "strained but loving domestic co-parent partnership",
+  "opposing_force": "financial strain, inherited anger, and the temptation to turn quiet fear into household control",
+  "visual_style": "lived-in naturalistic realism with evening sodium spill and cramped domestic frames",
+  "ending_image": "The apartment is still small and the week is still hard, but the children fall asleep inside a room where care, restraint, and repair have started a gentler pattern.",
+  "character_constraints": {
+    "main_character": {
+      "traits": ["soft-spoken", "warm", "controlled", "internally angry", "non-explosive"],
+      "life_context": ["parent_or_guardian_of_toddlers"],
+      "forbidden_behaviors": ["shouting", "violence", "threats", "abuse"]
+    },
+    "second_character": {
+      "role": "emotional_mirror"
+    }
+  }
+}

@@ -9,6 +9,20 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 REGISTRY_PATH = REPO_ROOT / "registries/film/film_genre_rules.yaml"
+BEAT_ORDER = [
+    "opening_image",
+    "setup",
+    "pressure_trigger",
+    "internal_anger",
+    "visible_restraint",
+    "self_awareness",
+    "midpoint_reversal",
+    "secondary_pressure",
+    "restraint_under_fire",
+    "deepened_self_awareness",
+    "repair_choice",
+    "closing_image",
+]
 
 
 def load_genre_registry() -> dict[str, Any]:
@@ -43,9 +57,13 @@ def _scene_function_hits(parsed: dict[str, Any], scene_cards: list[dict[str, Any
     ).lower()
     alias_map = {
         "setup": ["setup", "opening", "warm", "establish", "show affection"],
-        "pressure": ["pressure", "threat", "fear", "fragile"],
+        "pressure": ["pressure", "threat", "fear", "fragile", "problem", "distance impossible to ignore"],
+        "escalation": ["escalation", "intensify", "widening", "under pressure", "survive renewed pressure"],
+        "midpoint": ["midpoint", "pivot", "reverse", "realizes", "changes what the conflict means"],
         "restraint": ["restraint", "pause", "contain", "tactical"],
         "repair": ["repair", "tender", "reconnect", "trust"],
+        "turn": ["turn", "changes", "pivot", "reversal", "becomes"],
+        "resolution": ["resolution", "close", "closing", "earned hope", "land", "aftermath", "hopeful", "settled", "survives", "resolves", "tenderness", "safer"],
         "suspicion": ["suspicion", "threat", "unease"],
         "reversal": ["reversal", "pivot", "reveal", "dangerous", "realizes"],
         "choice": ["choice", "decides", "return"],
@@ -67,12 +85,14 @@ def _genre_checks(parsed: dict[str, Any], beat_sheet: list[dict[str, Any]], scen
     scene_function_hits = _scene_function_hits(parsed, scene_cards, rules.get("required_scene_functions", []))
     objectives = " ".join(card.get("scene_objective", "") for card in scene_cards).lower()
     visuals = " ".join(card.get("visual_motif", "") for card in scene_cards).lower()
+    format_family = parsed.get("format_family", "short_film")
+    minimum_scene_count = 12 if format_family == "feature_film" else 8 if format_family == "web_series" else 3
     checks = {
         "required_beats_present": all(beat in beat_ids for beat in rules.get("required_beats", [])),
         "required_scene_functions_present": all(scene_function_hits.values()) if scene_function_hits else True,
         "negative_rules_avoided": not any(term.replace("_", " ") in text for term in rules.get("negative_rules", [])),
         "visual_logic_bound": bool(rules.get("visual_logic")) and bool(visuals.strip()),
-        "scene_count_supports_duration": scene_cards_count >= 3,
+        "scene_count_supports_duration": scene_cards_count >= minimum_scene_count,
     }
 
     genre = parsed.get("genre", "")
@@ -113,9 +133,11 @@ def validate_genre_grammar(parsed: dict[str, Any], beat_sheet: list[dict[str, An
     registry = load_genre_registry()
     genres = registry.get("genres", {})
     current_genre = parsed.get("genre", "motivational_drama")
+    format_family = parsed.get("format_family", "short_film")
     if current_genre not in genres:
         return {
             "genre": current_genre,
+            "format_family": format_family,
             "registry_id": registry.get("registry_id"),
             "available_genres": sorted(genres),
             "current_genre_rule_map": {},
@@ -130,19 +152,30 @@ def validate_genre_grammar(parsed: dict[str, Any], beat_sheet: list[dict[str, An
         }
 
     current_rules = genres[current_genre]
-    checks = _genre_checks(parsed, beat_sheet, scene_cards, current_rules)
-    scene_function_hits = _scene_function_hits(parsed, scene_cards, current_rules.get("required_scene_functions", []))
+    format_rules = genres.get(format_family, {})
+    combined_required_beats = list(dict.fromkeys(current_rules.get("required_beats", []) + format_rules.get("required_beats", [])))
+    combined_required_beats.sort(key=lambda beat: BEAT_ORDER.index(beat) if beat in BEAT_ORDER else len(BEAT_ORDER))
+    combined_required_scene_functions = list(dict.fromkeys(current_rules.get("required_scene_functions", []) + format_rules.get("required_scene_functions", [])))
+    combined_hooks = list(dict.fromkeys(current_rules.get("validator_hooks", current_rules.get("required_validator_hooks", [])) + format_rules.get("validator_hooks", format_rules.get("required_validator_hooks", []))))
+    combined_rules = dict(current_rules)
+    combined_rules["required_beats"] = combined_required_beats
+    combined_rules["required_scene_functions"] = combined_required_scene_functions
+    combined_rules["validator_hooks"] = combined_hooks
+    checks = _genre_checks(parsed, beat_sheet, scene_cards, combined_rules)
+    scene_function_hits = _scene_function_hits(parsed, scene_cards, combined_required_scene_functions)
     return {
         "genre": current_genre,
+        "format_family": format_family,
         "registry_id": registry.get("registry_id"),
         "available_genres": sorted(genres),
         "current_genre_rule_map": current_rules,
-        "rules": sorted(set(current_rules.get("required_beats", []) + current_rules.get("required_scene_functions", []))),
+        "format_rule_map": format_rules,
+        "rules": sorted(set(combined_required_beats + combined_required_scene_functions)),
         "checks": checks,
-        "required_beats": current_rules.get("required_beats", []),
-        "required_scene_functions": current_rules.get("required_scene_functions", []),
+        "required_beats": combined_required_beats,
+        "required_scene_functions": combined_required_scene_functions,
         "scene_function_hits": scene_function_hits,
-        "validator_hooks": current_rules.get("validator_hooks", current_rules.get("required_validator_hooks", [])),
-        "passed": bool(current_rules) and all(checks.values()),
-        "message": f"{current_genre} grammar passed" if bool(current_rules) and all(checks.values()) else f"{current_genre} grammar failed",
+        "validator_hooks": combined_hooks,
+        "passed": bool(current_rules) and bool(format_rules) and all(checks.values()),
+        "message": f"{current_genre}/{format_family} grammar passed" if bool(current_rules) and bool(format_rules) and all(checks.values()) else f"{current_genre}/{format_family} grammar failed",
     }

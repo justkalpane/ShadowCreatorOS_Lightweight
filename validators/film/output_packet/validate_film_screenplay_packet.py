@@ -133,10 +133,12 @@ def _artifact_errors(payload: dict, required: list[str]) -> tuple[list[str], dic
         errors.append("artifact packet must target FILM_SCREENPLAY_GENERATION")
     if packet.get("mode") != "script_only":
         errors.append("artifact packet must preserve script_only mode")
-    if packet.get("duration_minutes") != 5:
-        errors.append("artifact packet must preserve 5-minute duration")
-    if packet.get("estimated_duration_minutes") != 5:
-        errors.append("artifact packet must preserve estimated_duration_minutes=5")
+    duration_minutes = packet.get("duration_minutes")
+    estimated_duration = packet.get("estimated_duration_minutes")
+    if not isinstance(duration_minutes, int) or duration_minutes < 5:
+        errors.append("artifact packet must preserve a valid film duration")
+    if estimated_duration != duration_minutes:
+        errors.append("artifact packet must preserve estimated_duration_minutes matching duration_minutes")
 
     route_state_capsule = packet.get("route_state_capsule") or {}
     if route_state_capsule.get("route_id") != "FILM_SCREENPLAY_GENERATION":

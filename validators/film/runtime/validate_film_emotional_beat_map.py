@@ -43,6 +43,28 @@ REQUIRED_BEAT_FIELDS = {
     "stakes_change",
 }
 
+BEAT_FAMILIES = [
+    "opening_image",
+    "setup",
+    "pressure_trigger",
+    "secondary_pressure",
+    "internal_anger",
+    "visible_restraint",
+    "restraint_under_fire",
+    "self_awareness",
+    "deepened_self_awareness",
+    "midpoint_reversal",
+    "repair_choice",
+    "closing_image",
+]
+
+
+def _normalize_beat_id(beat_id: str) -> str:
+    for family in sorted(BEAT_FAMILIES, key=len, reverse=True):
+        if beat_id == family or beat_id.startswith(family):
+            return family
+    return beat_id
+
 
 def _result(status: str, passed: bool, message: str, errors: list[str] | None = None) -> dict[str, Any]:
     return {
@@ -76,6 +98,7 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
 
     ordered_ids: list[str] = []
     beats_by_id: dict[str, dict[str, Any]] = {}
+    normalized_ids: set[str] = set()
     for index, beat in enumerate(beat_map, start=1):
         if not isinstance(beat, dict):
             errors.append(f"beat {index} must be a structured object")
@@ -89,7 +112,18 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(beat_id, str) or not beat_id:
             errors.append(f"beat {index} missing beat_id")
             continue
-        if beat_id not in set(required_beats) | {"setup", "internal_anger", "visible_restraint", "self_awareness", "repair_choice", "midpoint_reversal"}:
+        normalized = _normalize_beat_id(beat_id)
+        if normalized not in set(required_beats) | {
+            "setup",
+            "internal_anger",
+            "visible_restraint",
+            "restraint_under_fire",
+            "self_awareness",
+            "deepened_self_awareness",
+            "repair_choice",
+            "midpoint_reversal",
+            "secondary_pressure",
+        }:
             errors.append(f"unexpected beat_id: {beat_id}")
             continue
         if beat_id in beats_by_id:
@@ -104,10 +138,11 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
             if not isinstance(beat.get(field), str) or not beat.get(field).strip():
                 errors.append(f"beat {beat_id} must include non-empty {field}")
 
-        ordered_ids.append(beat_id)
+        ordered_ids.append(normalized)
         beats_by_id[beat_id] = beat
+        normalized_ids.add(normalized)
 
-    missing_ids = [beat_id for beat_id in required_beats if beat_id not in beats_by_id]
+    missing_ids = [beat_id for beat_id in required_beats if beat_id not in normalized_ids]
     if missing_ids:
         errors.append(f"missing beat_ids: {', '.join(missing_ids)}")
 

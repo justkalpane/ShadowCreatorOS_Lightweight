@@ -42,16 +42,37 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
     packet = load_screenplay_packet(payload)
     expected_minutes = payload.get("duration_minutes", packet.get("duration_minutes"))
     text = screenplay_text(packet, payload)
+    scene_cards = packet.get("scene_cards") or []
+    sequence_count = len((packet.get("sequence_structure") or {}).get("sequences") or [])
+    format_name = str(packet.get("format", "")).lower()
     errors: list[str] = []
 
-    if expected_minutes != 5:
-        errors.append(f"duration_minutes must be 5, got {expected_minutes!r}")
+    if expected_minutes in (None, "", 0):
+        errors.append("duration_minutes is required")
 
-    if packet.get("estimated_duration_minutes") not in (None, 5):
-        errors.append("estimated_duration_minutes must be 5 or omitted")
+    if packet.get("estimated_duration_minutes") not in (None, expected_minutes):
+        errors.append("estimated_duration_minutes must match duration_minutes")
 
-    if text and packet.get("word_count"):
-        if packet["word_count"] < 240:
+    if "feature" in format_name or (isinstance(expected_minutes, int) and expected_minutes >= 80):
+        if expected_minutes < 80:
+            errors.append("feature_film duration must be at least 80 minutes")
+        if len(scene_cards) < 12:
+            errors.append("feature-length proof requires at least 12 scene cards")
+        if sequence_count < 6:
+            errors.append("feature-length proof requires at least 6 sequences")
+        if text and packet.get("word_count") and packet["word_count"] < 700:
+            errors.append("screenplay is too short for a feature-length stress proof")
+    elif "series" in format_name or "episode" in format_name or (isinstance(expected_minutes, int) and expected_minutes >= 40):
+        if len(scene_cards) < 8:
+            errors.append("expanded proof requires at least 8 scene cards")
+        if sequence_count < 4:
+            errors.append("expanded proof requires at least 4 sequences")
+        if text and packet.get("word_count") and packet["word_count"] < 420:
+            errors.append("screenplay is too short for an expanded-form proof")
+    else:
+        if expected_minutes != 5:
+            errors.append(f"duration_minutes must be 5 for short-form proof, got {expected_minutes!r}")
+        if text and packet.get("word_count") and packet["word_count"] < 240:
             errors.append("screenplay is too short for a five-minute proof")
 
     if errors:

@@ -1,0 +1,16 @@
+{
+  "fixture_id": "DH-006",
+  "fixture_family": "downstream_handoff",
+  "input_packet_summary": "Trailer request after film packet.",
+  "expected_route": "FILM_RELEASE_DISTRIBUTION",
+  "expected_result": "HANDOFF_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_film_release_adaptation.py",
+  "purpose": "Release adaptation after screenplay",
+  "risk_if_missing": "Release work leaks back into screenplay generation",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

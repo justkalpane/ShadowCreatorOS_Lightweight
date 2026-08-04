@@ -1,0 +1,30 @@
+{
+  "evidence_bundle_id": "EVB-full_video_pipeline-20260621-c04a-pilot",
+  "contract_version": "v1",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "bundle_status": "COMPLETE",
+  "artifact_paths": [
+    "/tmp/proofs/contact_sheet.png"
+  ],
+  "validator_statuses": [
+    {
+      "validator_file": "validators/validate_visual_qa_acceptance.py",
+      "status": "PASS",
+      "report_path": "/tmp/reports/visual_qa.json"
+    }
+  ],
+  "pass_claims": [
+    {
+      "claim_id": "claim-1",
+      "claim": "pilot packet ready for review",
+      "status": "PASS",
+      "pass_reason": "validator_and_artifact_bundle",
+      "artifact_paths": [
+        "/tmp/proofs/contact_sheet.png"
+      ],
+      "validator_status": "PASS"
+    }
+  ],
+  "human_review_status": "PENDING",
+  "proof_bundle_path": "/tmp/proofs/bundle"
+}

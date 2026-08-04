@@ -142,7 +142,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: M-040_Story_Momentum_Engine
 component_layer: SKILL
 component_name: M 040 Story Momentum Engine.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [script_generation, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, quality_gate, lineage_summary] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -171,7 +171,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [script_generation, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]
@@ -187,3 +187,10 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-040-story-momentum-engine.skill.md; component_id=M-040_Story_Momentum_Engine
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Bind cinematic story momentum to recurring story-twist and lesson-bridge
+  re-hooks.
+- Keep every re-hook topic-relevant and classify reconstructed or
+  mythological story details honestly.

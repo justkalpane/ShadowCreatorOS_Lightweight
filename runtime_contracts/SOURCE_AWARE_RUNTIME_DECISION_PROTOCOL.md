@@ -97,6 +97,74 @@ For prompts containing latest, current, this week, new update, today, 2026, or w
 - If web access is unavailable, ask the user to continue limited mode or provide sources.
 - Do not invent latest tools, updates, sources, dates, or claims.
 
+## SOURCE_RESEARCH_LOCK FOR REAL-WORLD PROOF CLAIMS
+
+`SOURCE_RESEARCH_LOCK` is also mandatory when a script or content output uses:
+
+- a real person or celebrity
+- a real incident
+- a brand, company, platform, model, or tool
+- a biographical or career claim
+- a factual case study
+- an article or video reference
+- a real-world example presented as proof
+
+When web access is available, these prompts require:
+
+```text
+current_data_required=true/false
+web_access_available=true
+web_access_used=true
+research_mode=web_assisted or real_time_web
+source_list_present=true
+source_list=[{url,title,date,access_status}]
+video_reference_list=[]
+unsupported_claims=[]
+current_fact_confidence=
+research_sufficiency_gate_status=
+```
+
+Gate logic:
+
+- If `unsupported_claims` is non-empty, `SOURCE_RESEARCH_LOCK` cannot be `PASS`.
+- If web evidence is required and `web_access_used=false`, final proof cannot be
+  `PASS` unless the user explicitly approved repo-only limited continuation.
+- If a known named public figure or real-world identity is used, classify the
+  proof path as real-world proof even if the draft tries to call it composite.
+- If `real_time_sources_used=true`, `source_list_present=true` is mandatory.
+- If the source list is missing, set `real_time_sources_used=false` and
+  downgrade the weakest evidence layer.
+- Repo-first intelligence remains mandatory. Web research supplements the repo
+  brain; it does not replace registry-first routing.
+
+Use:
+
+- `runtime_contracts/REAL_TIME_RESEARCH_ENFORCEMENT_CONTRACT.md`
+- `runtime_contracts/SOURCE_QUALITY_CLASSIFICATION_CONTRACT.md`
+
+Additional gate logic:
+
+- `web_access_used=true` with `real_time_sources_used=false` is
+  `WEB_ASSISTED_STATIC_REFERENCE` or `WEB_ASSISTED_LIMITED_REFERENCE`, never
+  real-time research.
+- Real-person proof scripts require multi-source validation where suitable
+  sources are available.
+- A single encyclopedia source is background context only.
+- Interview reporting is anecdotal support unless independently verified.
+- `FACT_VS_ANECDOTE_MAP` is mandatory for real-world proof claims.
+
+## SOURCE_LIMITATION_NOTES REQUIREMENT
+
+When source sufficiency is partial, the output must clearly declare:
+
+- which lines are verified
+- which claims are anecdotal
+- which claims are unsupported and downgraded
+- why the gap matters for the final script
+
+The limitation note must appear before the story or final script so the user
+can see the weakest evidence layer immediately.
+
 ## MULTI-TOOL SOURCE BREADTH REQUIREMENT
 
 Latest/current/multi-tool watchlist prompts require `PER_TOOL_SOURCE_MAP` from `runtime_contracts/SOURCE_BREADTH_AND_RULE_EVIDENCE_CONTRACT.md`.
@@ -104,4 +172,4 @@ Latest/current/multi-tool watchlist prompts require `PER_TOOL_SOURCE_MAP` from `
 - Broad watchlists cannot `PASS` with one-vendor-only sources.
 - Every named tool claim must map to a source entry.
 - Unsupported tool claims must be listed.
-- `source_breadth_status=PASS/PASS_WITH_NOTICE/PARTIAL/FAIL` must be reported.
+- `source_breadth_status=PASS/PARTIAL/FAIL/NEEDS_CONFIRMATION` must be reported.

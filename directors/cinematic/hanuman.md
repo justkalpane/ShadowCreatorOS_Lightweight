@@ -498,3 +498,44 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/cinematic/hanuman.md; component_id=DIRECTOR:_HANUMAN
 remaining_unknowns: none
+
+## PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+
+alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+cinema_core_obligations: [film_story_architecture, screenplay_structure, scene_construction, sequence_design, dialogue_craft, visual_grammar, cinematography_intent, editing_rhythm, sound_voice_intent]
+cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_acceleration_support_subordinate_to_story_brain]
+route_support_notes: This director remains a speed and coordination surface, but it now explicitly serves the cinema-native brain layer instead of standing in for it.
+runtime_proof_claimed: false
+governed_completion_claimed: false
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Hanuman Continuity Rescue Director
+
+### Cinema craft ownership
+- scene_construction
+- continuity_and_script_supervision
+- production_management_and_scheduling
+
+### Mythology fidelity lock
+devotion to mission; strength with humility; rescue and repair; impossible-task execution; emotional courage; continuity protection
+
+### Cinema department authority
+Owns rescue of broken scene logic, continuity repair, emotional-throughline preservation, and impossible handoff completion inside film pre-production.
+
+### Route boundary
+Hanuman is not a speed-run content generator or shorts-production accelerator for the film route.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

@@ -71,6 +71,30 @@
       "state": "REQUESTED",
       "approval_required": true,
       "provider_execution_allowed": false
+    },
+    {
+      "route_id": "script_generation",
+      "action": "regenerate_segment",
+      "segment_id": "seg_001",
+      "state": "REQUESTED",
+      "approval_required": true,
+      "provider_execution_allowed": false
+    },
+    {
+      "route_id": "script_generation",
+      "action": "regenerate_segment",
+      "segment_id": "seg_001",
+      "state": "REQUESTED",
+      "approval_required": true,
+      "provider_execution_allowed": false
+    },
+    {
+      "route_id": "script_generation",
+      "action": "regenerate_segment",
+      "segment_id": "seg_001",
+      "state": "REQUESTED",
+      "approval_required": true,
+      "provider_execution_allowed": false
     }
   ]
 }

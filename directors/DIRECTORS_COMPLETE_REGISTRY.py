@@ -1406,6 +1406,52 @@ COMPLETE_DIRECTORS_REGISTRY = {
     "DIR-030": MAHAVISHNU_SPEC
 }
 
+
+# ============================================================================
+# PHASE 13E_4 CINEMA 24-CRAFT DIRECTOR REGISTRY OVERLAY
+# ============================================================================
+# Additive overlay: keeps COMPLETE_DIRECTORS_REGISTRY intact for legacy callers
+# while exposing Cinema Engine director ownership truth for future selectors,
+# audits, and registry consumers. This overlay does not bind runtime behavior.
+
+CINEMA_24_CRAFT_DIRECTOR_REGISTRY = {
+    "Vyasa": {"file": "directors/research/vyasa.md", "crafts": ["screenplay_structure", "story_development"], "phase": "13E_2"},
+    "Valmiki": {"file": "directors/research/valmiki.md", "crafts": ["story_development", "scene_construction"], "phase": "13E_2"},
+    "Krishna": {"file": "directors/supreme_vision/krishna.md", "crafts": ["directorial_vision", "character_arc_and_performance"], "phase": "13E_2"},
+    "Saraswati": {"file": "directors/distribution/saraswati.md", "crafts": ["dialogue_and_language", "music_motif_and_emotional_score", "actor_voice_and_prosody"], "phase": "13E_4"},
+    "Nataraja": {"file": "directors/cinematic/nataraja.md", "crafts": ["editing_rhythm_and_pacing", "blocking_staging_and_choreography", "animation_and_style_system"], "phase": "13E_1"},
+    "Varuna": {"file": "directors/cinematic/varuna.md", "crafts": ["sound_design_and_atmosphere", "lighting_and_mood", "research_and_world_truth"], "phase": "13E_1"},
+    "Garuda": {"file": "directors/cinematic/garuda.md", "crafts": ["cinematography_and_visual_grammar", "storyboard_and_shotlist_handoff"], "phase": "13E_1"},
+    "Hanuman": {"file": "directors/cinematic/hanuman.md", "crafts": ["continuity_and_script_supervision", "scene_construction"], "phase": "13E_1"},
+    "Ganesha": {"file": "directors/research/ganesha.md", "crafts": ["production_management_and_scheduling", "docudrama_ethics_and_source_separation"], "phase": "13E_1"},
+    "Indra": {"file": "directors/cinematic/indra.md", "crafts": ["production_management_and_scheduling", "dramatic_conflict_and_stakes"], "phase": "13E_1"},
+    "Shakti": {"file": "directors/supreme_vision/shakti.md", "crafts": ["dramatic_conflict_and_stakes_support", "directorial_vision_support"], "phase": "13E_4"},
+    "Durga": {"file": "directors/strategy/durga.md", "crafts": ["dramatic_conflict_and_stakes", "docudrama_ethics_and_source_separation"], "phase": "13E_1"},
+    "Kali": {"file": "directors/strategy/kali.md", "crafts": ["dramatic_conflict_and_stakes", "post_production_and_finishing_support"], "phase": "13E_2"},
+    "Agni": {"file": "directors/production/agni.md", "crafts": ["lighting_and_mood", "post_production_and_finishing"], "phase": "13E_1"},
+    "Maya": {"file": "directors/production/maya.md", "crafts": ["production_design_and_worldbuilding", "animation_and_style_system"], "phase": "13E_1"},
+    "Brahma": {"file": "directors/supreme_vision/brahma.md", "crafts": ["production_design_and_worldbuilding", "screenplay_structure"], "phase": "13E_1"},
+    "Vishnu": {"file": "directors/supreme_vision/vishnu.md", "crafts": ["continuity_and_script_supervision", "screenplay_structure"], "phase": "13E_1"},
+    "Shiva": {"file": "directors/supreme_vision/shiva.md", "crafts": ["editing_rhythm_and_pacing", "post_production_and_finishing"], "phase": "13E_1"},
+    "Narada": {"file": "directors/strategy/narada.md", "crafts": ["research_and_world_truth_support", "distribution_packaging_isolated_downstream"], "phase": "13E_4"},
+    "Kama": {"file": "directors/distribution/kama.md", "crafts": ["distribution_packaging_isolated_downstream"], "phase": "13E_2"},
+    "Aruna": {"file": "directors/kernel/aruna.md", "crafts": ["scene_construction_support", "editing_rhythm_and_pacing_support"], "phase": "13E_2"},
+    "Yama": {"file": "directors/kernel/yama.md", "crafts": ["docudrama_ethics_and_source_separation", "runtime_proof_and_no_fake_pass_governance"], "phase": "13E_1"},
+    "Parashara": {"file": "directors/research/parashara.md", "crafts": ["research_and_world_truth", "screenplay_structure_support"], "phase": "13E_1"},
+    "Arjuna": {"file": "directors/production/arjuna.md", "crafts": ["cinematography_and_visual_grammar", "blocking_staging_and_choreography"], "phase": "13E_1"},
+}
+
+CINEMA_24_CRAFT_DIRECTOR_BOUNDARY = {
+    "runtime_behavior_changed": False,
+    "selector_modified": False,
+    "active_route_registry_modified": False,
+    "runtime_proof_claimed": False,
+    "pass_claimed": False,
+    "script_generation_preserved": True,
+    "film_screenplay_generation_preserved": True,
+    "downstream_packaging_is_not_cinema_core": True,
+}
+
 if __name__ == "__main__":
     print("=" * 100)
     print("SHADOW EMPIRE - COMPLETE DIRECTORS REGISTRY (30 DIRECTORS)")

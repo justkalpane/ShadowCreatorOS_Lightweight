@@ -1,0 +1,98 @@
+version: 1
+owner: shadow_commander
+status: ACTIVE_PHASE1
+constitutional_authority_ref: docs/01-architecture/canonical_authority_precedence.md
+purpose: >
+  Decision packets are explicit records of unresolved values, contradictions,
+  or governance choices that must not be silently guessed. A decision packet
+  may block build, block release, or be informational.
+
+decision_packets:
+  - packet_id: DP-001
+    title: Ollama model name finalization
+    class: release_governance
+    current_state: resolved_release
+    blocking_level: release
+    owner: founder
+    source_of_conflict: >
+      Historical repo notes referred to qwen2.5:7b-instruct and other possible
+      local models before the current Windows target was verified.
+    current_truth: >
+      Phase-1 now uses llama3.2:3b as the working local model on the current
+      Windows target.
+    recommended_resolution: >
+      Keep deployment docs, workflow probes, and provider notes aligned to
+      llama3.2:3b unless the installed local model changes.
+    close_condition: >
+      Actual model name is verified on target machine and all repo references align.
+
+  - packet_id: DP-002
+    title: Data Table name reconciliation
+    class: build_governance
+    current_state: resolved_p0
+    blocking_level: build
+    owner: founder
+    source_of_conflict: >
+      Live n8n Data Tables were created as se_dossier_index, se_route_runs,
+      se_error_events, se_packet_index, se_approval_queue, while bootstrap CSVs
+      in the repo still use dossier_index, route_runs, error_events, packet_index,
+      approval_queue naming.
+    current_truth: >
+      Live table names are the authoritative runtime truth. Repo bootstrap files
+      are stale and must be reconciled.
+    recommended_resolution: >
+      Adopt the se_ prefixed names across all repo bootstrap data, configs,
+      docs, and workflow lookup nodes.
+    close_condition: >
+      All repo references, bootstrap CSVs, and workflow lookups use the same
+      se_ prefixed table names.
+
+  - packet_id: DP-005
+    title: topic_candidate_board schema missing
+    class: build_governance
+    current_state: resolved_p0
+    blocking_level: build
+    owner: P0
+    source_of_conflict: >
+      CWF-110 and related topic intelligence flows imply a topic_candidate_board
+      packet/data structure, but no canonical schema exists in schemas/packets.
+    current_truth: >
+      topic_candidate_board schema has been created and bound to workflow packet family mapping.
+    recommended_resolution: >
+      Ensure all topic discovery and qualification workflows validate against this schema.
+    close_condition: >
+      Schema exists and is referenced by all relevant workflows.
+
+  - packet_id: DP-006
+    title: Live route IDs versus repo canonical route IDs
+    class: build_governance
+    current_state: resolved_p0
+    blocking_level: build
+    owner: founder
+    source_of_conflict: >
+      Live n8n route rows previously used ROUTE-001 / ROUTE-002 style IDs while
+      repo canonical route names in mode_route_registry.yaml and route_registry.yaml use
+      ROUTE_PHASE1_STANDARD / ROUTE_PHASE1_FAST / ROUTE_PHASE1_REPLAY / ROUTE_PHASE1_ANALYTICS.
+    current_truth: >
+      The GitHub repo and runtime route rows are canonically aligned on ROUTE_PHASE1_* naming.
+    recommended_resolution: >
+      Maintain canonical ROUTE_PHASE1_* IDs in live n8n route rows and runtime lookups.
+    close_condition: >
+      Runtime and repo use the same route IDs everywhere.
+
+  - packet_id: DP-007
+    title: Approval queue schema not canonically defined
+    class: build_governance
+    current_state: resolved_p0
+    blocking_level: build
+    owner: P0
+    source_of_conflict: >
+      Approval queue rows were being written and read by workflows and dashboard
+      APIs without a single canonical schema definition for se_approval_queue.
+    current_truth: >
+      A canonical se_approval_queue schema has now been defined under
+      schemas/governance/se_approval_queue.schema.json and matches dashboard API DTOs.
+    recommended_resolution: >
+      Ensure all producers and consumers conform to the schema.
+    close_condition: >
+      All approval queue interactions validate against the schema.

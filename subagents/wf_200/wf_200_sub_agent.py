@@ -34,7 +34,7 @@ if __name__ == "__main__":
 # component_id: wf_200_sub_agent
 # component_layer: SUB_AGENT
 # component_name: Wf 200 Sub Agent
-# route_families: [non_content_technical_task, general_support]
+# route_families: [script_generation, full_video_pipeline, non_content_technical_task, general_support]
 # activation_triggers: route_family in [approval_gate, repo_write_mode] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 # upstream_inputs: [stage_execution_packet, component_control_packet, lineage_packet]
 # downstream_outputs: [component_result_packet, quality_report_packet, lineage_packet]
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 # MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 # component_depth_status: PRODUCTION_DEPTH_ENRICHED
 # route_profile_applied: general_support_profile
-# route_family_resolved: [non_content_technical_task, general_support]
+# route_family_resolved: [script_generation, full_video_pipeline, non_content_technical_task, general_support]
 # activation_triggers_resolved: [supporting component, control plane, kernel, recovery]
 # required_input_packets_resolved: [stage_execution_packet, component_control_packet, lineage_packet]
 # emitted_output_packets_resolved: [component_result_packet, quality_report_packet, lineage_packet]
@@ -75,3 +75,26 @@ if __name__ == "__main__":
 # status_limits_resolved: [support components cannot claim production output alone]
 # evidence_used_for_resolution: fallback: cross-route support component; component_path=subagents/wf_200/wf_200_sub_agent.py; component_id=wf_200_sub_agent
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# route_profile_override: script_generation_parent_lane when selected by SCRIPT_GENERATION manifest.
+# behavior_laws_consumed: [SCRIPT_LANGUAGE_CONTROL, SOURCE_QUALITY_CLASSIFICATION, SCRIPT_STORY_ENGINE, DYNAMIC_TIMED_BEAT_MAP, RECURRING_HOOK_DENSITY_LAW]
+# responsibility: Require English master script, cinematic story, recurring re-hook map, and weakest-gate honesty across WF-200 child lanes.
+
+# PHASE 13E_10 SUBAGENT CINEMA DEPARTMENT LANE OVERLAY
+# phase_13e_10_status: SUBAGENT_CINEMA_DEPARTMENT_LANE_OVERLAY
+# runtime_behavior_changed: false
+# selector_modified: false
+# active_route_registry_modified: false
+# runtime_proof_claimed: false
+# pass_claimed: false
+# script_generation_preserved: true
+# film_screenplay_generation_preserved: true
+# shared_with_script_generation: true
+# film_route_id: FILM_SCREENPLAY_GENERATION
+# script_route_id: SCRIPT_GENERATION
+# cinema_department_lane: film_screenplay_parent_lane
+# cinema_craft_responsibility: story architecture, act/sequence orchestration, scene-lane coordination, source/ethics handoff, and no-fake-PASS coordination.
+# content_route_boundary: English master script, YouTube hook, recurring re-hook, and retention density remain SCRIPT_GENERATION criteria only.
+# downstream_boundary: Visual media, voice, editing, packaging, Media Factory, and publishing remain downstream after film screenplay packet closure.
+# no_fake_pass_boundary: true

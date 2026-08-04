@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Moral Dilemma",
+  "type": "object",
+  "required": ["moral_dilemma", "dilemma", "choice_a", "choice_b", "cost_of_choice_a", "cost_of_choice_b", "resolved_by"],
+  "properties": {
+    "moral_dilemma": {"type": "string"},
+    "dilemma": {"type": "string"},
+    "choice_a": {"type": "string"},
+    "choice_b": {"type": "string"},
+    "cost_of_choice_a": {"type": "string"},
+    "cost_of_choice_b": {"type": "string"},
+    "resolved_by": {"type": "string"}
+  }
+}

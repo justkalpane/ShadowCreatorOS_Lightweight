@@ -142,7 +142,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: M-039_Re_Hook_System
 component_layer: SKILL
 component_name: M 039 Re Hook System.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [script_refinement, script_generation, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, quality_gate, lineage_summary] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -171,7 +171,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [script_refinement, script_generation, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]
@@ -187,3 +187,18 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-039-re-hook-system.skill.md; component_id=M-039_Re_Hook_System
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Own `RECURRING_HOOK_DENSITY_LAW`.
+- Require dynamic 25-30 second re-hook intervals by default, no unexplained gap
+  above 30 seconds, and recurring re-hooks throughout the body for a
+  5-minute script.
+- Emit `RECURRING_REHOOK_MAP` with hook type, line, timestamp, topic
+  connection, retention reset goal, beat-map scene, editing cue, influence
+  reason, cadence shift, and Media Factory dependency.
+- Emit one machine-checkable `rehook_row_json` object per re-hook and reject
+  any headings-only, placeholder, or generic filler output that cannot be tied
+  to `FINAL_SCRIPT` and `LINE_BY_LINE_INFLUENCE_MAP`.
+- Reject re-hooks that do not create a visible change in rhythm, tension, or
+  viewer focus.

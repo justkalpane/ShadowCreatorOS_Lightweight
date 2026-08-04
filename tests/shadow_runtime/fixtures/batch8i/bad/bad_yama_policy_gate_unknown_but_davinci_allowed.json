@@ -1,0 +1,16 @@
+{
+  "asset_origin_status": "UNVERIFIED",
+  "avatar_consent_required": true,
+  "blocked_reason": "policy gating not validated",
+  "brand_risk": "HIGH",
+  "copyright_risk": "HIGH",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "job_id": "JOB-C04A-PILOT-001",
+  "likeness_risk": "HIGH",
+  "policy_gate_status": "UNKNOWN",
+  "provider_policy_status": "UNKNOWN",
+  "schema_version": "1.0.0",
+  "voice_consent_required": true,
+  "yama_gate_id": "YAMA-C04A-001"
+}

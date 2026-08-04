@@ -25,9 +25,17 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "story_rehook_supported": True,
+                "story_rehook_topic_connection_required": True,
+                "major_section_retention_reset_required": True,
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# Story momentum must provide topic-connected resets at major sections so the
+# cinematic story and teaching body remain one retention arc.
 
 
 

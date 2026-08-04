@@ -1,0 +1,17 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 95,
+  "format": "feature_film_screenplay",
+  "language": "English",
+  "genre": "thriller",
+  "tone": ["tense", "watchful", "protective", "contained"],
+  "theme": "Calm precision defeats panic when home becomes a threat zone.",
+  "setting": "aging apartment with a narrow service corridor",
+  "emotional_pressure_trigger": "a gas hiss hides behind the wall while a child coughs and the power dips twice",
+  "toddler_stakes_detail": "a child must be carried through a dangerous room without spreading panic",
+  "relationship_type": "co-parent survival partnership",
+  "main_character_name": "Ishan",
+  "second_character_name": "Mira",
+  "second_character_role": "emotional_mirror"
+}

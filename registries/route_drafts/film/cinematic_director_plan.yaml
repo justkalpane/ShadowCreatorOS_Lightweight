@@ -1,0 +1,48 @@
+phase: "12E"
+status: "DRAFT_UNREGISTERED"
+runtime_behavior_changed: false
+route_selector_modified: false
+route_registered: false
+route_bound_to_runtime: false
+governed_runtime_proof_claimed: false
+pass_claimed: false
+content_engine_preserved: true
+route_id: "CINEMATIC_DIRECTOR_PLAN"
+canonical_route_id_only: true
+future_parallel_route: true
+preserves_existing_script_generation: true
+draft_boundary:
+  not_in_registries_route_manifests: true
+  not_in_registries_route_slices: true
+  not_bound_to_route_selector: true
+  not_bound_to_runtime_state: true
+future_triggers:
+  - "user requests film screenplay generation"
+  - "user requests cinematic director planning"
+  - "user requests feature film production pipeline"
+anti_collision_rules:
+  - "SCRIPT_GENERATION remains preserved for content/platform scripts"
+  - "do not route YouTube/Shorts/social prompts into film core by default"
+  - "film route is future and parallel until explicit later registration"
+future_required_contracts:
+  - "runtime_contracts/film/route/FILM_ROUTE_INTENT_CONTRACT.md"
+  - "runtime_contracts/film/route/FILM_CONTENT_ROUTE_SEPARATION_CONTRACT.md"
+future_required_schemas:
+  - "schemas/film/route/film_route_state_capsule.schema.json"
+  - "schemas/film/output_packet/film_screenplay_output_packet.schema.json"
+future_required_validators:
+  - "validators/film/route/validate_film_route_selection.py"
+  - "validators/film/validation/validate_no_fake_film_pass.py"
+future_required_fixtures:
+  - "tests/fixtures/film_route_selection/neet_short_film.json"
+  - "tests/fixtures/no_fake_pass/github_read_not_runtime_proof.json"
+future_downstream_handoffs:
+  - "visual_media_plan"
+  - "voice_context"
+  - "editing_packaging"
+  - "media_factory_handoff"
+non_goals:
+  - "no runtime binding"
+  - "no route selector modification"
+  - "no active registry publication"
+  - "no validator or schema enforcement"

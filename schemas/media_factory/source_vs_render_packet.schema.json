@@ -1,0 +1,432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/source_vs_render_packet.schema.json",
+  "title": "Shadow Source Vs Render Packet",
+  "description": "Accepts the legacy single-frame comparison packet and the lock-preserved support-ledger compatibility packet.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/legacy_packet"
+    },
+    {
+      "$ref": "#/$defs/support_ledger"
+    }
+  ],
+  "$defs": {
+    "legacy_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_frame",
+        "rendered_frame",
+        "diff_images",
+        "quality_metrics",
+        "thresholds",
+        "human_review_required",
+        "human_override_status",
+        "auto_status",
+        "source_vs_render_report_path"
+      ],
+      "properties": {
+        "source_frame": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "rendered_frame": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "diff_images": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "quality_metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sharpness_delta",
+            "edge_density_delta",
+            "color_delta",
+            "contrast_delta",
+            "compression_artifact_flag",
+            "blur_detection_score",
+            "overlay_occlusion_flag",
+            "parallax_visibility_flag",
+            "subject_readability_score"
+          ],
+          "properties": {
+            "sharpness_delta": {
+              "type": "number",
+              "minimum": 0
+            },
+            "edge_density_delta": {
+              "type": "number",
+              "minimum": 0
+            },
+            "color_delta": {
+              "type": "number",
+              "minimum": 0
+            },
+            "contrast_delta": {
+              "type": "number",
+              "minimum": 0
+            },
+            "compression_artifact_flag": {
+              "type": "boolean"
+            },
+            "blur_detection_score": {
+              "type": "number",
+              "minimum": 0
+            },
+            "overlay_occlusion_flag": {
+              "type": "boolean"
+            },
+            "parallax_visibility_flag": {
+              "type": "boolean"
+            },
+            "subject_readability_score": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sharpness_delta_threshold",
+            "edge_density_delta_threshold",
+            "color_delta_threshold",
+            "contrast_delta_threshold",
+            "blur_detection_threshold",
+            "minimum_subject_readability_score"
+          ],
+          "properties": {
+            "sharpness_delta_threshold": {
+              "type": "number",
+              "minimum": 0
+            },
+            "edge_density_delta_threshold": {
+              "type": "number",
+              "minimum": 0
+            },
+            "color_delta_threshold": {
+              "type": "number",
+              "minimum": 0
+            },
+            "contrast_delta_threshold": {
+              "type": "number",
+              "minimum": 0
+            },
+            "blur_detection_threshold": {
+              "type": "number",
+              "minimum": 0
+            },
+            "minimum_subject_readability_score": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "human_review_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "human_override_status": {
+          "type": "string",
+          "enum": [
+            "none",
+            "approved",
+            "rejected"
+          ]
+        },
+        "human_override": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "used"
+          ],
+          "properties": {
+            "used": {
+              "type": "boolean"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "auto_status": {
+          "type": "string",
+          "enum": [
+            "PASS_WITH_HUMAN_REVIEW_REQUIRED",
+            "BLOCKED"
+          ]
+        },
+        "source_vs_render_report_path": {
+          "type": "string",
+          "pattern": "^/"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "human_override_status": {
+                "const": "approved"
+              }
+            },
+            "required": [
+              "human_override_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "human_override"
+            ],
+            "properties": {
+              "human_override": {
+                "properties": {
+                  "used": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "used",
+                  "reviewer",
+                  "reason",
+                  "timestamp"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "support_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "job_id",
+        "artifact_type",
+        "created_from_existing_local_evidence_only",
+        "providers_used",
+        "renders_created",
+        "n8n_used",
+        "davinci_used",
+        "approval_token_issued",
+        "production_pass_allowed",
+        "ready_for_pilot_execution",
+        "source_artifacts",
+        "render_artifacts",
+        "comparison_artifacts",
+        "contact_sheet_candidate",
+        "contact_sheet_png_path",
+        "render_anchor",
+        "hashes",
+        "pairs",
+        "comparison_status",
+        "validation_status",
+        "stable_proof_bundle_paths",
+        "notes"
+      ],
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "pattern": "^JOB-[A-Za-z0-9_-]+$"
+        },
+        "artifact_type": {
+          "type": "string",
+          "const": "source_vs_render_support_ledger"
+        },
+        "created_from_existing_local_evidence_only": {
+          "type": "boolean",
+          "const": true
+        },
+        "providers_used": {
+          "type": "boolean",
+          "const": false
+        },
+        "renders_created": {
+          "type": "boolean",
+          "const": false
+        },
+        "n8n_used": {
+          "type": "boolean",
+          "const": false
+        },
+        "davinci_used": {
+          "type": "boolean",
+          "const": false
+        },
+        "approval_token_issued": {
+          "type": "boolean",
+          "const": false
+        },
+        "production_pass_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "ready_for_pilot_execution": {
+          "type": "boolean",
+          "const": false
+        },
+        "source_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "render_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "comparison_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "contact_sheet_candidate": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "contact_sheet_png_path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "render_anchor": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "hashes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "pairs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "pair_id",
+              "source_path",
+              "render_path",
+              "source_sha256",
+              "render_sha256",
+              "status",
+              "proof_reference"
+            ],
+            "properties": {
+              "pair_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_path": {
+                "type": "string",
+                "pattern": "^/"
+              },
+              "render_path": {
+                "type": "string",
+                "pattern": "^/"
+              },
+              "source_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "render_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "VERIFIED",
+                  "DUPLICATE_CONFIRMED",
+                  "DUPLICATE_RISK",
+                  "REJECTED"
+                ]
+              },
+              "proof_reference": {
+                "type": "string",
+                "pattern": "^/"
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "rejected_candidates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "comparison_status": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "BLOCKED"
+          ]
+        },
+        "validation_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stable_proof_bundle_paths": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_vs_render_json",
+            "contact_sheet_png",
+            "source_render_report_md"
+          ],
+          "properties": {
+            "source_vs_render_json": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "contact_sheet_png": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "source_render_report_md": {
+              "type": "string",
+              "pattern": "^/"
+            }
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,321 @@
+route_id: MEDIA_FACTORY_HANDOFF
+route_name: Media Factory Handoff
+strict_component_route_family_required: true
+accepted_component_route_families: [media_factory_handoff, media_factory, visual_media_plan, media_factory_final_draft, visual_context, avatar_video_context, full_video_pipeline, context_engineering, editing_packaging]
+trigger_terms: [storyboard, B-roll plan, scene prompt packet, scene-level visual plan, image prompt packet, video prompt packet, Media Factory, ShadowMediaFactory, local engine handoff, local media generation, pacing metadata, video frame by frame, cinematic storyboard, shot list with prompts, visual storyboard, render packet, local render, ComfyUI, AnimateDiff, FFmpeg, DaVinci, Media Factory bridge, control panel]
+mandatory_startup_docs: [AGENTS.md, START_HERE_FOR_AGENTS.md, AGENT_READ_ORDER.md, AGENT_REPO_FIRST_OPERATING_DOCTRINE.md, AGENT_ANTI_DRIFT_RULES.md]
+mandatory_runtime_contracts: [runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md, runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md, runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md, runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md, runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md, runtime_contracts/VISUAL_MEDIA_GENERATOR_DRAFT_CONTRACT.md, runtime_contracts/MISSION_MEDIA_OUTPUT_FOLDER_CONTRACT.md, runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md, runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md, runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md, runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md, runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md, runtime_contracts/QUALITY_GATE_CONTRACT.md]
+benchmark_reference_files: [runtime_contracts/GOLD_RESULT_REFERENCE_PACK.md]
+mandatory_registries: [registries/task_intent_routing_matrix.yaml, registries/route_manifests/media_factory_handoff.yaml, registries/local_media_factory_bridge.yaml, registries/director_binding_matrix.json, agents/AGENT_RUNTIME_REGISTRY.yaml, subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml, registries/skill_registry.yaml, registries/subskill_runtime_registry.yaml, registries/provider_registry.yaml]
+mandatory_directors: [directors/production/maya.md, directors/production/vishwakarma.md, directors/cinematic/nataraja.md, directors/supreme_vision/brahma.md, directors/cinematic/varuna.md]
+mandatory_agents: [agents/vishwakarma/vishwakarma_agent.py, agents/nataraja/nataraja_agent.py, agents/brahma/brahma_agent.py, agents/varuna/varuna_agent.py, agents/maya/maya_agent.py]
+mandatory_subagents: [subagents/wf_400/wf_400_sub_agent.py, subagents/cwf_410/cwf_410_sub_agent.py, subagents/cwf_420/cwf_420_sub_agent.py]
+mandatory_skills: [skills/media_video/M-216-shot-list-generator.skill.md, skills/media_video/M-217-b-roll-sourcing-strategy.skill.md, skills/media_video/M-221-motion-graphics-storyboard.skill.md, skills/media_video/M-219-color-grading-brief.skill.md, skills/media_graphics/M-201-visual-design-brief-generator.skill.md, skills/media_graphics/M-202-color-palette-optimizer.skill.md, skills/media_production/A-402-visual-asset-planner.skill.md, skills/media_production/A-401-thumbnail-concept-designer.skill.md, skills/operations/M-174-visual-asset-generator.skill.md]
+mandatory_subskills: [skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md, skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md, skills/sub_skills/SS-105-higgsfield-cinematic-motion-director.subskill.md, skills/sub_skills/SS-106-kling-video-prompt-optimizer.subskill.md, skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md, skills/sub_skills/SS-116-notebooklm-visual-style-orchestrator.subskill.md, skills/sub_skills/SS-117-depth-anything-v2-depth-map-generator.subskill.md, skills/sub_skills/SS-118-hyperframes-html-renderer.subskill.md]
+mandatory_governance: [directors/kernel/yama.md, directors/supreme_vision/brahma.md, directors/cinematic/nataraja.md, runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md]
+mandatory_output_blocks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, MEDIA_FACTORY_SYNC_LOCK, GOVERNANCE_LOCK, SCENE_SYNC_MATRIX, SCENE_BREAKOUT_BLOCKS, PRODUCTION_ORDER_LOCK, ASSET_INVENTORY_LEDGER, ASSET_DEPENDENCY_GRAPH, CONTROL_PANEL_EXECUTION_PLAN, DAVINCI_TIMELINE_PACKET, PRODUCTION_PROOF_GATE, PROVIDER_HONESTY_GATE, TOOLS_CONNECTORS_PLUGINS_ASSESSMENT, VISUAL_ROUTE_SCOPE_AUDIT, VISUAL_MICROSHOT_GRID, CHILD_MICROSHOT_POLICY, HYPERFRAMES_SKILL_MD_PROOF, DAVINCI_ROLE_DECLARATION, FFMPEG_IMAGE_MOTION_ALT_PATH]
+depth_output_blocks:
+  visual_media_plan:
+    required: [SCENE_SYNC_MATRIX, SCENE_BREAKOUT_BLOCKS, PRODUCTION_ORDER_LOCK, ASSET_INVENTORY_LEDGER, ASSET_DEPENDENCY_GRAPH, CONTROL_PANEL_EXECUTION_PLAN, DAVINCI_TIMELINE_PACKET, PRODUCTION_PROOF_GATE, PROVIDER_HONESTY_GATE, TOOLS_CONNECTORS_PLUGINS_ASSESSMENT, VISUAL_ROUTE_SCOPE_AUDIT, VISUAL_MICROSHOT_GRID, CHILD_MICROSHOT_POLICY, HYPERFRAMES_SKILL_MD_PROOF, DAVINCI_ROLE_DECLARATION, FFMPEG_IMAGE_MOTION_ALT_PATH]
+    forbidden_without_explicit_approval: [created_files, created_folders, implementation_plan.md, task.md, prompt_packet_files, json_files, docx_files]
+    not_required: [SCENE_PROMPT_PACKETS, VIDEO_PROMPT_PACKETS, STORYBOARD_EXPORT_PLAN, MISSION_MEDIA_OUTPUT_BUNDLE, SCENE_EXECUTION_BLOCKS, LOCAL_MEDIA_FACTORY_BRIDGE_STATUS, VOICE_BATCH_PLAN, A_ROLL_BATCH_PLAN, MUSIC_SFX_BATCH_PLAN, IMAGE_BATCH_PLAN, CINEMATIC_BROLL_BATCH_PLAN, MOTION_GRAPHICS_BATCH_PLAN, ASSEMBLY_SYNC_PLAN]
+  media_factory_final_draft:
+    required: [SCENE_SYNC_MATRIX, SCENE_BREAKOUT_BLOCKS, SCENE_PROMPT_PACKETS, VIDEO_PROMPT_PACKETS, STORYBOARD_EXPORT_PLAN, PRODUCTION_ORDER_LOCK, ASSET_INVENTORY_LEDGER, ASSET_DEPENDENCY_GRAPH, CONTROL_PANEL_EXECUTION_PLAN, DAVINCI_TIMELINE_PACKET, LOCAL_MEDIA_FACTORY_BRIDGE_STATUS, PRODUCTION_PROOF_GATE, PROVIDER_HONESTY_GATE, TOOLS_CONNECTORS_PLUGINS_ASSESSMENT, VISUAL_ROUTE_SCOPE_AUDIT, VISUAL_MICROSHOT_GRID, CHILD_MICROSHOT_POLICY, HYPERFRAMES_SKILL_MD_PROOF, DAVINCI_ROLE_DECLARATION, FFMPEG_IMAGE_MOTION_ALT_PATH]
+    not_required: [MISSION_MEDIA_OUTPUT_BUNDLE, SCENE_EXECUTION_BLOCKS, VOICE_BATCH_PLAN, A_ROLL_BATCH_PLAN, MUSIC_SFX_BATCH_PLAN, IMAGE_BATCH_PLAN, CINEMATIC_BROLL_BATCH_PLAN, MOTION_GRAPHICS_BATCH_PLAN, ASSEMBLY_SYNC_PLAN]
+  visual_media_generator_draft:
+    required: [SCENE_SYNC_MATRIX, SCENE_BREAKOUT_BLOCKS, SCENE_PROMPT_PACKETS, VIDEO_PROMPT_PACKETS, STORYBOARD_EXPORT_PLAN, PRODUCTION_ORDER_LOCK, ASSET_INVENTORY_LEDGER, ASSET_DEPENDENCY_GRAPH, MISSION_MEDIA_OUTPUT_BUNDLE, VOICE_BATCH_PLAN, A_ROLL_BATCH_PLAN, MUSIC_SFX_BATCH_PLAN, IMAGE_BATCH_PLAN, CINEMATIC_BROLL_BATCH_PLAN, MOTION_GRAPHICS_BATCH_PLAN, ASSEMBLY_SYNC_PLAN, CONTROL_PANEL_EXECUTION_PLAN, DAVINCI_TIMELINE_PACKET, SCENE_EXECUTION_BLOCKS, LOCAL_MEDIA_FACTORY_BRIDGE_STATUS, PRODUCTION_PROOF_GATE, PROVIDER_HONESTY_GATE, TOOLS_CONNECTORS_PLUGINS_ASSESSMENT, VISUAL_ROUTE_SCOPE_AUDIT, VISUAL_MICROSHOT_GRID, CHILD_MICROSHOT_POLICY, HYPERFRAMES_SKILL_MD_PROOF, DAVINCI_ROLE_DECLARATION, FFMPEG_IMAGE_MOTION_ALT_PATH]
+    optional_when_proof_segment_requested: [HYPERFRAMES_30S_PROOF_PACKET]
+    declares_bundle_only_until_approved: true
+required_locks: [TASK_ROUTE_LOCK, ROUTE_DEPENDENCY_EXPANSION_LOCK, CONSUMPTION_LOCK, MEDIA_FACTORY_SYNC_LOCK, GOVERNANCE_LOCK]
+freshness_gate_required_when: [latest, current, new model, 2026]
+provider_boundary_required_when: [always]
+chat_only_allowed: true
+repo_write_allowed_after_approval: true
+full_dossier_allowed_after_explicit_request: true
+n8n_allowed_after_approval: false
+provider_execution_allowed_after_approval: false
+local_engine_execution_allowed_after_approval: true
+visual_method_assignment_law:
+  NOTEBOOKLM_VISUAL_METHOD: HyperFrames CLI through SS-116 and SS-118
+  PROGRAMMATIC_SLIDE_VISUAL_METHOD: HyperFrames CLI through SS-118
+  HTML_CSS_GSAP_VISUAL_METHOD: HyperFrames CLI through SS-118
+  A_ROLL_OVERLAY_METHOD: HeyGen chromakey foreground plus HyperFrames background/alpha overlay composited in DaVinci Resolve
+  IMAGE_MOTION_GRAPHICS_BROLL_METHOD: still image plus Depth Anything V2 mask plus DaVinci Resolve Fusion parallax through SS-117
+  CINEMATIC_BROLL_VIDEO: approved cloud/premium cinematic video lane unless a future local proof upgrades local cinematic B-roll
+  A_ROLL_AVATAR: HeyGen or approved avatar provider
+  final_assembly: DaVinci Resolve, with FFmpeg as assembly/export guard
+b_roll_minimum_percentage: 12
+locked_storyboard_format: multi_arc_table_10_columns_plus_reasoning
+locked_scene_breakout_format: one_scene_per_vertical_table_with_scene_heading
+locked_rehook_default: four_rehooks_at_max_90_second_intervals_for_5_minute_plan
+fail_rules: [scene prompt packet missing visual DNA field, SCENE_SYNC_MATRIX missing or contains only headings, media artifact claimed without evidence block, provider execution claimed without approval, local engine execution claimed without render metadata, tool_specific_translation_readiness below PACKET_READY for claimed execution]
+additional_fail_rules:
+  - requested_hyperframes_family_downgraded_without_route_downgraded_block
+  - hyperframes_first_proof_claimed_with_generic_ffmpeg_ken_burns_only
+partial_rules: [local engine readiness is DESIGNED or STUB but disclosed, storyboard export plan present but images not yet generated, pacing metadata present but video not yet rendered]
+pass_rules: [SCENE_SYNC_MATRIX emits one scene_row_json per scene, SCENE_BREAKOUT_BLOCKS preserve one scene per readable vertical breakout table, visual media plan creates no files/folders without explicit repo-write approval, visual media plan is not forced to include generator bundle or scene execution blocks, media factory final draft includes complete 15-field visual DNA prompt packets when that depth is requested, visual media generator draft includes MISSION_MEDIA_OUTPUT_BUNDLE and SCENE_EXECUTION_BLOCKS when that depth is requested, visual media generator draft includes VOICE_BATCH_PLAN A_ROLL_BATCH_PLAN MUSIC_SFX_BATCH_PLAN IMAGE_BATCH_PLAN CINEMATIC_BROLL_BATCH_PLAN MOTION_GRAPHICS_BATCH_PLAN and ASSEMBLY_SYNC_PLAN, PRODUCTION_ORDER_LOCK freezes dependency-safe generation order, PRODUCTION_ORDER_LOCK includes exact ordered production_phase_row_json rows, ASSET_DEPENDENCY_GRAPH maps every asset to dependencies and proof requirements, CONTROL_PANEL_EXECUTION_PLAN names preflight and job packet paths, CONTROL_PANEL_EXECUTION_PLAN includes control_panel_phase_row_json rows, DAVINCI_TIMELINE_PACKET maps V1/V2/V3 and A1-A5 tracks, LOCAL_MEDIA_FACTORY_BRIDGE_STATUS declares readiness per engine per lane when executable/final draft depth is requested, PRODUCTION_PROOF_GATE blocks completion without artifact proof, PROVIDER_HONESTY_GATE is explicit with no fake claims, storyboard export references exact filenames in pacing metadata when storyboard export depth is requested, RULE_CONSUMPTION_EVIDENCE_LEDGER present, EXACT_RULE_LINEAGE_MAP present, mandatory route actors individually opened before output]
+validator_false_pass_hardening:
+  self_reported_fields_non_authoritative: true
+  hard_fail_if_any_mandatory_output_block_missing: true
+  hard_fail_if_required_lock_status_not_pass: true
+  hard_fail_if_alias_route_id_contradiction_present: true
+  hard_fail_if_wrapper_output_order_invalid: true
+validator_required_checks: [scene_sync_matrix_present, production_order_lock_present, asset_dependency_graph_present, control_panel_execution_plan_present, davinci_timeline_packet_present, scene_breakout_blocks_present, production_proof_gate_present, mandatory_route_actors_individually_opened, exact_rule_lineage_map_present, weakest_layer_status_respected, visual_route_scope_audit_present, visual_microshot_grid_present, child_microshot_policy_present, tools_connectors_plugins_assessment_present, hyperframes_skill_md_proof_present, davinci_role_declaration_present, ffmpeg_image_motion_alt_path_present]
+structured_output_rule_keys: [media_factory_visual_plan_base, media_factory_final_draft_base, media_factory_generator_draft_base, provider_boundary]
+conditional_required_locks_current_terms: [MEDIA_FACTORY_SYNC_LOCK]
+create_missing_registry_binding: false
+
+# Route Trigger Aliases
+trigger_aliases:
+  - "Shadow storyboard:"
+  - "Shadow visual plan:"
+  - "Shadow scene prompt:"
+  - "Shadow Media Factory:"
+  - "Shadow render packet:"
+  - "Shadow B-roll:"
+
+# Mandatory Contracts (explicit list)
+mandatory_contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+  - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
+  - runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+  - runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+  - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+  - runtime_contracts/MEDIA_FACTORY_ROUTE_RUNTIME_BINDING_CONTRACT.md
+  - runtime_contracts/CHITRAGUPTA_AUDIT_EVENT_BINDING_CONTRACT.md
+
+# Output Blocks (explicit list)
+output_blocks:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - MEDIA_FACTORY_SYNC_LOCK
+  - GOVERNANCE_LOCK
+  - SCENE_SYNC_MATRIX
+  - SCENE_PROMPT_PACKETS
+  - VIDEO_PROMPT_PACKETS
+  - STORYBOARD_EXPORT_PLAN
+  - PRODUCTION_ORDER_LOCK
+  - ASSET_INVENTORY_LEDGER
+  - ASSET_DEPENDENCY_GRAPH
+  - CONTROL_PANEL_EXECUTION_PLAN
+  - DAVINCI_TIMELINE_PACKET
+  - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS
+  - PRODUCTION_PROOF_GATE
+  - PROVIDER_HONESTY_GATE
+
+# Validator Binding
+validator_binding:
+  validator_file: validators/validate_script_generation_output.py
+  required_checks:
+    - shadow_command_alias_detected
+    - route_manifest_loaded
+    - provider_boundary_present
+    - no_n8n_provider_media_execution
+    - scene_sync_matrix_present
+    - scene_sync_schema_validation_pass
+    - media_factory_sync_lock_status
+    - scene_sync_gate_status
+    - production_order_lock_present
+    - production_phase_rows_exact_order
+    - asset_dependency_graph_present
+    - control_panel_execution_plan_present
+    - control_panel_phase_rows_present
+    - davinci_timeline_packet_present
+    - scene_breakout_blocks_present
+    - unauthorized_repo_write_for_visual_plan_status
+    - visual_plan_depth_gate_status
+    - generator_batch_plan_status
+    - scene_breakout_format_status
+    - mission_media_output_bundle_status
+    - cloud_first_method_lock_status
+    - duration_reconciliation_status
+    - production_proof_gate_present
+    - rule_consumption_evidence_ledger_present
+    - exact_rule_lineage_map_present
+    - mandatory_route_actors_individually_opened
+    - no_silent_hyperframes_fallback_status
+    - hyperframes_30s_proof_packet_status
+    - visual_route_scope_audit_present
+    - visual_microshot_grid_present
+    - child_microshot_policy_present
+    - hyperframes_skill_md_proof_present
+    - davinci_role_declaration_present
+    - ffmpeg_image_motion_alt_path_present
+
+runtime_binding_surfaces:
+  foundation_packets:
+    required_schemas:
+      - schemas/runtime_state/evidence_bundle.schema.json
+      - schemas/runtime_state/route_state_capsule.schema.json
+      - schemas/governance/patch_transaction.schema.json
+      - schemas/media_factory/bridge_job_packet.schema.json
+    required_validators:
+      - validators/validate_evidence_bundle.py
+      - validators/validate_route_state_capsule.py
+      - validators/validate_patch_transaction.py
+      - validators/validate_bridge_job_packet.py
+  planning_packets:
+    visual_media_plan_required_schemas:
+      - schemas/media_factory/visual_media_plan_row.schema.json
+    final_draft_required_schemas:
+      - schemas/media_factory/final_visual_media_generation_draft.schema.json
+    required_validators:
+      - validators/validate_visual_media_plan_row.py
+      - validators/validate_final_visual_media_generation_draft.py
+  execution_control_packets:
+    required_schemas:
+      - schemas/media_factory/depth_map_packet.schema.json
+      - schemas/media_factory/ffmpeg_filtergraph_packet.schema.json
+      - schemas/media_factory/hyperframes_payload.schema.json
+      - schemas/media_factory/comfyui_workflow_payload.schema.json
+      - schemas/media_factory/source_vs_render_packet.schema.json
+      - schemas/media_factory/visual_qa_acceptance_packet.schema.json
+      - schemas/media_factory/pilot_cut_validation_packet.schema.json
+      - schemas/governance/audio_authorization_packet.schema.json
+      - schemas/governance/davinci_handoff_packet.schema.json
+    required_validators:
+      - validators/validate_depth_map_packet.py
+      - validators/validate_ffmpeg_filtergraph_packet.py
+      - validators/validate_hyperframes_payload.py
+      - validators/validate_comfyui_payload.py
+      - validators/validate_source_vs_render_packet.py
+      - validators/validate_visual_qa_acceptance.py
+      - validators/validate_pilot_cut_validation_packet.py
+      - validators/validate_audio_authorization_packet.py
+      - validators/validate_davinci_handoff_packet.py
+      - validators/validate_pilot_cut_manifest.py
+      - validators/validate_source_vs_render_artifact.py
+      - validators/validate_visual_qa_artifact.py
+      - validators/validate_contact_sheet.py
+      - validators/validate_human_review_packet.py
+      - validators/validate_approval_token.py
+      - validators/validate_c04a_asset_manifest.py
+      - validators/validate_approval_gate_matrix.py
+      - validators/validate_chitragupta_audit_event.py
+      - validators/validate_vayu_preflight.py
+      - validators/validate_kubera_gate.py
+      - validators/validate_yama_policy_gate.py
+      - validators/validate_creative_intent_packet.py
+      - validators/validate_packet_handoff_chain.py
+      - validators/validate_cut_level_visual_ledger.py
+      - validators/validate_full_render_unlock_packet.py
+      - validators/validate_c18_comfyui_failure_state.py
+      - validators/validate_tool_provider_boundary.py
+      - validators/validate_ffmpeg_filtergraph_governance.py
+      - validators/validate_depth_true_parallax.py
+      - validators/validate_hyperframes_composition.py
+  route_state_requirements:
+    route_state_capsule_required: true
+    evidence_bundle_required_for_pass_claims: true
+    chitragupta_audit_event_required_for_route_state_transitions: true
+    no_fake_pass_route_regression_required: true
+    route_state_transition_requires_evidence_bundle: true
+    route_state_transition_requires_audit_event: true
+    bridge_job_packet_required_for_local_handoff: true
+    patch_transaction_required_for_repo_write_claims: true
+    provider_or_audio_or_davinci_unlock_requires_validator_pass: true
+    pilot_prep_allowed: false
+    pilot_execution_allowed: false
+    full_render_allowed: false
+    audio_allowed: false
+    provider_allowed: false
+    davinci_allowed: false
+  blocked_unlocks_until_validator_pass:
+    - local_engine_execution_claim
+    - full_render_unlock
+    - audio_unlock
+    - provider_unlock
+    - davinci_unlock
+    - no_fake_pass_route_regression
+
+# Provider Boundary
+provider_boundary:
+  required: true
+  n8n_allowed_after_approval: false
+  provider_execution_allowed_after_approval: false
+  media_creation_allowed_after_approval: false
+  local_engine_execution_allowed_after_approval: true
+  local_engine_evidence_required_when_execution_claimed: true
+
+# Permanent Local Bridge
+local_media_factory_bridge:
+  bridge_registry: registries/local_media_factory_bridge.yaml
+  bridge_contract: runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+  bridge_sync_tool: tools/shadow_runtime/media_factory_bridge_sync.py
+  local_media_factory_root: /Users/apple/ShadowMediaFactory
+  control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+  capability_map: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+  sync_audit_command: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check"
+  sync_apply_command: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply"
+  preflight_required_before_render: true
+  production_pass_blocked_on_route_downgrade: true
+  drift_sync_required_after_media_factory_change: true
+  safe_to_batch_automate_cinematic_broll: false
+
+# Status Limits
+status_limits:
+  full_pass_requires_validator_binding: true
+  full_pass_requires_provider_boundary: true
+  full_pass_requires_scene_row_json_per_scene: true
+  full_pass_requires_visual_dna_all_fields: true
+  full_pass_requires_production_control_layer: true
+  documented_only_max_status: PARTIAL
+  claimed_artifact_without_evidence_max_status: BLOCKED
+
+# Onboarding Limits
+onboarding_limits:
+  safe_to_start_n8n: false
+  safe_to_declare_lightweight_os_onboarded: false
+  safe_to_claim_provider_execution: false
+  safe_to_claim_local_engine_execution_without_evidence: false
+
+# MAC-06.2B Route Depth Requirements
+mac_06_2b_route_depth_requirements:
+  required_component_contract_standard: runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md
+  required_communication_pointers: registries/communication_pointer_registry.yaml
+  required_input_packets: [director_intent_packet, scene_brief_packet, script_segment_packet]
+  required_output_packets: [scene_prompt_packet, video_prompt_packet, storyboard_export_packet, local_engine_bridge_packet, provider_handoff_packet, media_quality_gate_packet, lineage_approval_packet]
+  required_media_packets:
+    - runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/VIDEO_CONTEXT_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/MUSIC_SFX_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/EDITING_TIMELINE_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/PROVIDER_HANDOFF_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/MEDIA_QUALITY_GATE_PACKET_CONTRACT.md
+    - runtime_contracts/media_packets/LINEAGE_APPROVAL_PACKET_CONTRACT.md
+  required_schemas:
+    - schemas/media_factory/scene_sync_matrix.schema.json
+    - schemas/media_factory/scene_prompt_packet.schema.json
+    - schemas/media_factory/media_factory_packet.schema.json
+    - schemas/packets/scene_brief_packet.schema.json
+    - schemas/packets/scene_prompt_packet.schema.json
+    - schemas/packets/storyboard_export_packet.schema.json
+    - schemas/packets/depth_map_plan_packet.schema.json
+    - schemas/packets/hyperframes_render_plan_packet.schema.json
+    - schemas/packets/notebooklm_visual_plan_packet.schema.json
+  required_quality_gates: [visual_dna_compliance_score, tool_translation_readiness_score, media_quality_gate_packet, final_pass_fail]
+  validator_binding: validators/validate_script_generation_output.py
+  lineage_required: true
+  provider_boundary: provider_execution_allowed=false unless explicitly approved
+  fallback_routes: [BLOCKED_BEFORE_OUTPUT, NEEDS_HUMAN_REVIEW]
+  human_approval_points: [provider_execution, n8n_execution, media_creation, repo_write, full_dossier, local_engine_execution]
+
+# MAC-06.2D Article Pipeline Connections
+mac_06_2d_article_pipeline_connections:
+  visual_scene_prompts: runtime_contracts/media_packets/VISUAL_CONTEXT_PACKET_CONTRACT.md
+  video_motion_prompts: runtime_contracts/media_packets/VIDEO_CONTEXT_PACKET_CONTRACT.md
+  storyboard_export_plan: schemas/media_factory/scene_prompt_packet.schema.json
+  local_engine_bridge_status: runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
+  pacing_metadata_coupling: runtime_contracts/DYNAMIC_TIMED_BEAT_MAP_CONTRACT.md
+  media_factory_packet_schema: schemas/media_factory/media_factory_packet.schema.json
+  provider_honesty_gate: runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+  scene_sync_matrix_schema: schemas/media_factory/scene_sync_matrix.schema.json
+  visual_dna_compliance: runtime_contracts/MEDIA_FACTORY_FINAL_DRAFT_CONTRACT.md
+  provider_execution_enabled: false

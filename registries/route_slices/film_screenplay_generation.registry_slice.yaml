@@ -1,0 +1,62 @@
+slice_id: "film_screenplay_generation"
+route_id: "FILM_SCREENPLAY_GENERATION"
+route_family: "cinema_core"
+task_mode: "film_screenplay_generation"
+source_manifest: "registries/route_manifests/film_screenplay_generation.yaml"
+inherits_from: "route_drafts/film_screenplay_generation/film_screenplay_generation.registry_slice.draft.yaml"
+registered: true
+active_slice: true
+bound_to_route_selector: true
+runtime_behavior_changed: false
+governed_runtime_proof_claimed: false
+pass_claimed: false
+selector_binding_reconciled: true
+selector_binding_source_phase: "12L-K"
+selector_binding_reconciliation_phase: "13E_29"
+
+additional_contracts:
+  - runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md
+  - runtime_contracts/LOCAL_CLOUD_HYBRID_MEDIA_EXECUTION_CONTRACT.md
+  - runtime_contracts/NO_FAKE_PASS_GATE.md
+  - runtime_contracts/NO_FAKE_FILM_PASS_CONTRACT.md
+  - runtime_contracts/MEDIA_FACTORY_ROUTE_RUNTIME_BINDING_CONTRACT.md
+  - runtime_contracts/CHITRAGUPTA_AUDIT_EVENT_BINDING_CONTRACT.md
+
+additional_output_contracts:
+  - ROUTE_STATE_CAPSULE
+  - VALIDATION_SCORECARD
+  - LINE_BY_LINE_INFLUENCE_MAP
+  - CLAIM_TO_SCRIPT_LINE_MAP
+  - FINAL_SCRIPT
+
+validators:
+  - validators/film/route/validate_film_route_selection.py
+  - validators/film/validation/validate_no_fake_film_pass.py
+  - validators/film/validation/validate_film_content_packet_separation.py
+
+runtime_state_requirements:
+  route_state_capsule_required: true
+  evidence_bundle_required_for_pass_claims: true
+  no_fake_pass_gate_required: true
+  selector_binding_required: true
+  route_activation_requires_later_selector_patch: false
+
+downstream_allowed_routes:
+  - VISUAL_MEDIA_PLAN
+  - VOICE_CONTEXT
+  - EDITING_PACKAGING
+  - MEDIA_FACTORY_HANDOFF
+  - FULL_VIDEO_PIPELINE
+
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true
+  SCRIPT_GENERATION_PRESERVED: true
+  FILM_SCREENPLAY_GENERATION_NOT_SELECTOR_BOUND: false
+
+rollback_notes:
+  - keep route selector unchanged
+  - delete active registry files only if a later rollback is required
+  - inactive drafts remain as historical reference

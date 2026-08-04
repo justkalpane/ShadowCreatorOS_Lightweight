@@ -84,11 +84,48 @@
         },
         {
           "node_id": "sg_003",
+          "component_id": "M-039-re-hook-system",
+          "component_path": "skills/script_intelligence_army/M-039-re-hook-system.py",
+          "component_layer": "SKILL",
+          "required_input_packets": [
+            "script_strategy_packet"
+          ],
+          "emitted_output_packets": [
+            "rehook_plan_packet"
+          ],
+          "communication_pointer_ids": [
+            "PTR_REHOOK_DRAFT"
+          ],
+          "validator_rules": [
+            "route_dag_validation_pass",
+            "packet_schema_validation_pass",
+            "packet_flow_validation_pass",
+            "communication_vein_validation_pass",
+            "lifecycle_validation_pass",
+            "provider_boundary_validation_pass",
+            "recurring_rehook_reality_validation_pass"
+          ],
+          "quality_gates": [
+            "recurring_rehook_density_gate"
+          ],
+          "fallback_routes": [
+            "script_refinement"
+          ],
+          "lineage_required": true,
+          "approval_required": false,
+          "provider_boundary": "provider_execution_allowed=false",
+          "next_nodes": [
+            "sg_004"
+          ]
+        },
+        {
+          "node_id": "sg_004",
           "component_id": "S-202-first-draft-generation",
           "component_path": "skills/script_intelligence/S-202-first-draft-generation.py",
           "component_layer": "SKILL",
           "required_input_packets": [
-            "script_strategy_packet"
+            "script_strategy_packet",
+            "rehook_plan_packet"
           ],
           "emitted_output_packets": [
             "script_v1_packet"
@@ -114,11 +151,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_004"
+            "sg_005"
           ]
         },
         {
-          "node_id": "sg_004",
+          "node_id": "sg_005",
           "component_id": "S-210-final-script-packager",
           "component_path": "skills/script_intelligence/S-210-final-script-packager.py",
           "component_layer": "SKILL",
@@ -149,11 +186,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_005"
+            "sg_006"
           ]
         },
         {
-          "node_id": "sg_005",
+          "node_id": "sg_006",
           "component_id": "A-405-media-qa-validator",
           "component_path": "skills/media_production/A-405-media-qa-validator.py",
           "component_layer": "SKILL",
@@ -184,11 +221,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_006"
+            "sg_007"
           ]
         },
         {
-          "node_id": "sg_006",
+          "node_id": "sg_007",
           "component_id": "P-304-lineage-chain-validator",
           "component_path": "skills/context_engineering/P-304-lineage-chain-validator.py",
           "component_layer": "SKILL",
@@ -219,11 +256,11 @@
           "approval_required": false,
           "provider_boundary": "provider_execution_allowed=false",
           "next_nodes": [
-            "sg_007"
+            "sg_008"
           ]
         },
         {
-          "node_id": "sg_007",
+          "node_id": "sg_008",
           "component_id": "DIRECTOR:_KAMA",
           "component_path": "directors/distribution/kama.md",
           "component_layer": "DIRECTOR",

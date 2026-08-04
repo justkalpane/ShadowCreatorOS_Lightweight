@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/scene_dramaturgy/film_scene_dramaturgy_map.schema.json",
+  "title": "Film Scene Dramaturgy Map",
+  "description": "Skeleton schema for scene dramaturgy.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"scene_objective":{"type":"string","description":"Scene objective"},"obstacle":{"type":"string","description":"Obstacle"},"tactic":{"type":"string","description":"Tactic"},"turn":{"type":"string","description":"Scene turn"}},
+  "required": []
+}

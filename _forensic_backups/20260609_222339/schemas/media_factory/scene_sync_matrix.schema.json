@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/scene_sync_matrix.schema.json",
+  "title": "Shadow Media Factory Scene Sync Matrix",
+  "type": "object",
+  "required": [
+    "scene_id",
+    "start_time",
+    "end_time",
+    "duration_seconds",
+    "duration_reason",
+    "hook_marker",
+    "script",
+    "voice",
+    "image",
+    "video",
+    "music_sfx",
+    "editing",
+    "platform",
+    "influence",
+    "execution",
+    "provider_execution_allowed"
+  ],
+  "properties": {
+    "scene_id": {"type": "string", "minLength": 1},
+    "start_time": {"type": "string", "minLength": 1},
+    "end_time": {"type": "string", "minLength": 1},
+    "duration_seconds": {"type": "number", "minimum": 3, "maximum": 20},
+    "duration_reason": {"type": "string", "minLength": 1},
+    "hook_marker": {"type": "boolean"},
+    "rehook_type": {"type": "string", "minLength": 1},
+    "retention_reset_goal": {"type": "string", "minLength": 1},
+    "script": {
+      "type": "object",
+      "required": ["spoken_text", "line_intent", "retention_function"],
+      "properties": {
+        "spoken_text": {"type": "string", "minLength": 1},
+        "line_intent": {"type": "string", "minLength": 1},
+        "retention_function": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "voice": {
+      "type": "object",
+      "required": ["tone", "emotion", "pacing", "pause_points", "pronunciation_notes"],
+      "properties": {
+        "tone": {"type": "string", "minLength": 1},
+        "emotion": {"type": "string", "minLength": 1},
+        "pacing": {"type": "string", "minLength": 1},
+        "pause_points": {"type": "array"},
+        "pronunciation_notes": {"type": "array"}
+      },
+      "additionalProperties": true
+    },
+    "image": {
+      "type": "object",
+      "required": ["prompt", "style", "lighting", "composition"],
+      "properties": {
+        "prompt": {"type": "string", "minLength": 1},
+        "style": {"type": "string", "minLength": 1},
+        "lighting": {"type": "string", "minLength": 1},
+        "composition": {"type": "string", "minLength": 1},
+        "visual_creation_dna": {
+          "type": "object",
+          "description": "Full 15-field visual DNA block. Required when media_context_depth=DEEP_REQUIRED. All 15 fields must be present for MEDIA_FACTORY_HANDOFF route PASS.",
+          "properties": {
+            "subject": {"type": "string"},
+            "environment": {"type": "string"},
+            "lens_focal_logic": {"type": "string"},
+            "emotional_tone": {"type": "string"},
+            "color_palette": {"type": "string"},
+            "cinematic_delivery_standard": {"type": "string", "default": "Rec.709"},
+            "style_lock": {"type": "string"},
+            "movement_intent": {"type": "string"},
+            "negative_prompt": {"type": "string"},
+            "drift_prevention": {"type": "string"},
+            "continuity_constraints": {"type": "string"},
+            "brand_persona_consistency": {"type": "string"},
+            "safety_real_person_handling": {"type": "string"},
+            "tool_targets": {"type": "array", "items": {"type": "string"}},
+            "tool_specific_translation_readiness": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "video": {
+      "type": "object",
+      "required": ["shot_type", "camera_motion", "duration", "continuity_notes"],
+      "properties": {
+        "shot_type": {"type": "string", "minLength": 1},
+        "camera_motion": {"type": "string", "minLength": 1},
+        "duration": {"type": "number", "minimum": 3, "maximum": 20},
+        "continuity_notes": {"type": "string", "minLength": 1},
+        "visual_method": {
+          "type": "string",
+          "enum": [
+            "A_ROLL_AVATAR",
+            "A_ROLL_OVERLAY_METHOD",
+            "NOTEBOOKLM_VISUAL_METHOD",
+            "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+            "HTML_CSS_GSAP_VISUAL_METHOD",
+            "HYPERFRAME_VISUAL_METHOD",
+            "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+            "CINEMATIC_BROLL_VIDEO"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "music_sfx": {
+      "type": "object",
+      "required": ["music_mood", "sfx"],
+      "properties": {
+        "music_mood": {"type": "string", "minLength": 1},
+        "sfx": {"type": "array"},
+        "sfx_timeline_method": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["timestamp_offset", "sfx_name", "volume_db"],
+            "properties": {
+              "timestamp_offset": {"type": "number"},
+              "sfx_name": {"type": "string"},
+              "volume_db": {"type": "number"}
+            }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "editing": {
+      "type": "object",
+      "required": ["cut_type", "transition", "caption_style"],
+      "properties": {
+        "cut_type": {"type": "string", "minLength": 1},
+        "transition": {"type": "string", "minLength": 1},
+        "caption_style": {"type": "string", "minLength": 1},
+        "audio_video_offsets": {
+          "type": "object",
+          "properties": {
+            "j_cut_offset_seconds": {"type": "number"},
+            "l_cut_offset_seconds": {"type": "number"}
+          },
+          "additionalProperties": false
+        },
+        "ffmpeg_transition_method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "platform": {
+      "type": "object",
+      "required": ["target", "aspect_ratio", "safe_zone"],
+      "properties": {
+        "target": {"type": "string", "minLength": 1},
+        "aspect_ratio": {"type": "string", "minLength": 1},
+        "safe_zone": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "influence": {
+      "type": "object",
+      "required": ["why_line_exists", "emotion_triggered", "retention_goal", "topic_support"],
+      "properties": {
+        "why_line_exists": {"type": "string", "minLength": 1},
+        "emotion_triggered": {"type": "string", "minLength": 1},
+        "retention_goal": {"type": "string", "minLength": 1},
+        "topic_support": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "execution": {
+      "type": "object",
+      "required": ["local_possible", "cloud_possible", "hybrid_recommended", "fallback_provider_or_tool"],
+      "properties": {
+        "local_possible": {"type": "boolean"},
+        "cloud_possible": {"type": "boolean"},
+        "hybrid_recommended": {"type": "boolean"},
+        "fallback_provider_or_tool": {"type": "string", "minLength": 1}
+      },
+      "local_engine_target": {
+        "type": "object",
+        "description": "Local engine execution target for this scene. Required when local_possible=true.",
+        "properties": {
+          "engine_id": {"type": "string", "description": "e.g. comfyui_local | ffmpeg_local | animatediff_local"},
+          "controlnet_types": {"type": "array", "items": {"type": "string"}},
+          "ip_adapter_ref": {"type": "string"},
+          "render_resolution": {"type": "string"},
+          "render_format": {"type": "string"},
+          "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+        }
+      },
+      "additionalProperties": true
+    },
+    "provider_execution_allowed": {"const": false}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"hook_marker": {"const": true}},
+        "required": ["hook_marker"]
+      },
+      "then": {
+        "required": ["rehook_type", "retention_reset_goal"]
+      }
+    }
+  ],
+  "additionalProperties": true
+}

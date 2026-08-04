@@ -1,0 +1,86 @@
+# Phase 12H inactive draft only
+phase: "12H"
+status: "inactive_draft_only"
+active_route: false
+registered: false
+bound_to_route_selector: false
+runtime_behavior_changed: false
+governed_runtime_proof_claimed: false
+pass_claimed: false
+route_id: "FILM_SCREENPLAY_GENERATION"
+route_family: "cinema_core"
+route_mode: "film_screenplay_generation"
+preserves_content_route: "SCRIPT_GENERATION"
+route_identity:
+  canonical_route_id_only: true
+  future_parallel_route: true
+  active_in_phase_12h: false
+triggers:
+  - "write a 5-minute short film on NEET"
+  - "write a screenplay about exam leak impact"
+non_triggers:
+  - "YouTube script about NEET"
+  - "Instagram reel about NEET"
+  - "trailer for a film"
+  - "thumbnail/title for a film"
+  - "cinematic explainer for YouTube"
+mandatory_contracts:
+  - "runtime_contracts/film/route/FILM_ROUTE_INTENT_CONTRACT.md"
+  - "runtime_contracts/film/route/FILM_CONTENT_ROUTE_SEPARATION_CONTRACT.md"
+mandatory_schemas:
+  - "schemas/film/route/film_route_state_capsule.schema.json"
+  - "schemas/film/output_packet/film_screenplay_output_packet.schema.json"
+mandatory_validators:
+  - "validators/film/route/validate_film_route_selection.py"
+  - "validators/film/validation/validate_no_fake_film_pass.py"
+fixture_dependencies:
+  - "tests/fixtures/film_route_selection/neet_short_film.json"
+  - "tests/fixtures/no_fake_pass/github_read_not_runtime_proof.json"
+directors:
+  - "Phase 11U linkage addendum"
+  - "Phase 11S canon/style supplement pack"
+agents:
+  - "cinema-first film route agents"
+subagents:
+  - "cinema-first film route subagents"
+skills:
+  - "film screenplay and structure skills"
+  - "film style and production skills"
+subskills:
+  - "film microcraft and validation subskills"
+source_requirements:
+  - "source ledger for real incidents"
+  - "fact-vs-anecdote map"
+filmcraft_canon_requirements:
+  - "source-backed canon candidates"
+  - "screenwriting structure canon"
+animation_mode_requirements:
+  - "animation canon and motion language"
+style_bible_requirements:
+  - "cinema style bible"
+  - "palette and continuity law"
+real_incident_docudrama_requirements:
+  - "real incident ethics"
+  - "source-vs-render separation"
+no_fake_pass_gates:
+  - "no content-validator PASS for film packets"
+  - "no invented runtime artifact claims"
+downstream_handoff_rules:
+  - "VISUAL_MEDIA_PLAN"
+  - "VOICE_CONTEXT"
+  - "EDITING_PACKAGING"
+  - "MEDIA_FACTORY_HANDOFF"
+  - "FULL_VIDEO_PIPELINE"
+output_packet_requirements:
+  - "film screenplay output packet"
+  - "film validation scorecard"
+acceptance_gates:
+  - "fixtures exist"
+  - "schemas exist"
+  - "validators exist"
+  - "contracts exist"
+  - "active registration approved later"
+future_activation_blockers:
+  - "route selector not modified in Phase 12H"
+  - "active manifests/slices not modified in Phase 12H"
+  - "runtime behavior unchanged in Phase 12H"

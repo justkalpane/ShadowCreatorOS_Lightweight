@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/ffmpeg_filtergraph_packet.schema.json",
+  "title": "Shadow FFmpeg Filtergraph Packet",
+  "description": "Explicit filtergraph chain packet with scale, color, encode, concat, and proof requirements.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "input_assets",
+    "filtergraph_chain",
+    "scale_method",
+    "color_profile",
+    "encode_profile",
+    "concat_policy",
+    "double_encode_detected",
+    "filtergraph_dump_path",
+    "command_log_path"
+  ],
+  "properties": {
+    "input_assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "filtergraph_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "depth_stage",
+        "overlay_stage",
+        "scale_stage",
+        "color_stage",
+        "encode_stage",
+        "concat_stage"
+      ],
+      "properties": {
+        "depth_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["depth_proxy_method"],
+          "properties": {
+            "depth_proxy_method": {
+              "type": "string",
+              "enum": [
+                "none",
+                "displace",
+                "layered_parallax"
+              ]
+            }
+          }
+        },
+        "overlay_stage": {"type": "object"},
+        "scale_stage": {"type": "object"},
+        "color_stage": {"type": "object"},
+        "encode_stage": {"type": "object"},
+        "concat_stage": {"type": "object"}
+      }
+    },
+    "scale_method": {
+      "type": "string",
+      "const": "lanczos"
+    },
+    "color_profile": {
+      "type": "string",
+      "const": "bt709"
+    },
+    "encode_profile": {
+      "type": "string",
+      "const": "crf18_bt709_lanczos"
+    },
+    "concat_policy": {
+      "type": "string",
+      "const": "no_double_encode_concat"
+    },
+    "double_encode_detected": {
+      "type": "boolean",
+      "const": false
+    },
+    "filtergraph_dump_path": {"type": "string", "pattern": "^/"},
+    "command_log_path": {"type": "string", "pattern": "^/"}
+  }
+}

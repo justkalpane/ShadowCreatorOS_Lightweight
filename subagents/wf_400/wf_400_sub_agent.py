@@ -34,7 +34,7 @@ if __name__ == "__main__":
 # component_id: wf_400_sub_agent
 # component_layer: SUB_AGENT
 # component_name: Wf 400 Sub Agent
-# route_families: [non_content_technical_task, general_support]
+# route_families: [voice_context, full_video_pipeline, avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, context_engineering, general_support]
 # activation_triggers: route_family in [approval_gate, repo_write_mode] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 # upstream_inputs: [stage_execution_packet, component_control_packet, lineage_packet]
 # downstream_outputs: [component_result_packet, quality_report_packet, lineage_packet]
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 # MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 # component_depth_status: PRODUCTION_DEPTH_ENRICHED
 # route_profile_applied: general_support_profile
-# route_family_resolved: [non_content_technical_task, general_support]
+# route_family_resolved: [voice_context, full_video_pipeline, avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, context_engineering, general_support]
 # activation_triggers_resolved: [supporting component, control plane, kernel, recovery]
 # required_input_packets_resolved: [stage_execution_packet, component_control_packet, lineage_packet]
 # emitted_output_packets_resolved: [component_result_packet, quality_report_packet, lineage_packet]

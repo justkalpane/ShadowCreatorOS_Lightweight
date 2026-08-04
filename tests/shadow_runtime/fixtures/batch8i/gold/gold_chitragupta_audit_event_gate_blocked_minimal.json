@@ -1,0 +1,27 @@
+{
+  "actor": "Codex",
+  "actor_type": "CODEX",
+  "blocked_reasons": [
+    "waiting_for_validator_batch"
+  ],
+  "cut_id": "C04a",
+  "decision": "BLOCKED",
+  "event_id": "AUD-C04A-001",
+  "event_type": "GATE_BLOCKED",
+  "evidence_bundle_id": "EB-C04A-001",
+  "input_artifact_ids": [
+    "PM-C04A-001",
+    "SVR-C04A-001"
+  ],
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "notes": "Batch 8I oracle capture",
+  "output_artifact_ids": [
+    "fixture_oracle"
+  ],
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "sha256": "00a8d1691ff7f05db446525d17118b3fd212f794eb6a87e7c1e188366b81d6b1",
+  "timestamp": "2026-06-22T00:00:00Z"
+}

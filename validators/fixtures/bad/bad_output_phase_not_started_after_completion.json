@@ -1,0 +1,16 @@
+{
+  "fixture_id": "FX-BAD-010",
+  "fixture_type": "bad",
+  "stage": "route_state_output_phase",
+  "expected_validator": "validate_output_phase_lock.py",
+  "expected_result": "FAIL",
+  "route_id": "SCRIPT_GENERATION",
+  "required_files_missing_count": 0,
+  "dependencies_complete": true,
+  "output_phase_started": false,
+  "additional_repo_reads_continue": true,
+  "final_deliverable_generated": false,
+  "last_completed_lock": "DEPENDENCIES_CONSUMED",
+  "next_required_lock": "OUTPUT_PHASE_STARTED",
+  "failure_reason": "Required files are complete, but output phase never starts and repository reads continue."
+}

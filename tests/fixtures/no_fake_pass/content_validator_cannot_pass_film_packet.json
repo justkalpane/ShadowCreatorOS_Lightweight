@@ -1,0 +1,16 @@
+{
+  "fixture_id": "NF-002",
+  "fixture_family": "no_fake_pass",
+  "input_summary": "Content validator attempts to pass a film packet.",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "prohibited_claims": ["content_validator_pass_for_film_packet"],
+  "required_future_validator_or_schema": "validate_film_content_route_collision.py",
+  "purpose": "Collision enforcement",
+  "risk_if_missing": "Content validator can fake film approval",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

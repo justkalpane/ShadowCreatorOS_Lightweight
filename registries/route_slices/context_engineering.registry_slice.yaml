@@ -1,0 +1,75 @@
+slice_id: context_engineering
+route_id: CONTEXT_ENGINEERING
+task_mode: context_engineering
+source_manifest: registries/route_manifests/context_engineering.yaml
+registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/context_engineering.yaml
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+  - registries/provider_registry.yaml
+directors:
+  - directors/supreme_vision/brahma.md
+  - directors/production/vishwakarma.md
+  - directors/distribution/saraswati.md
+  - directors/cinematic/nataraja.md
+  - directors/cinematic/varuna.md
+  - directors/kernel/yama.md
+  - directors/supreme_vision/krishna.md
+agents:
+  - agents/brahma/brahma_agent.py
+  - agents/vishwakarma/vishwakarma_agent.py
+  - agents/saraswati/saraswati_agent.py
+  - agents/nataraja/nataraja_agent.py
+  - agents/varuna/varuna_agent.py
+subagents:
+  - subagents/wf_300/wf_300_sub_agent.py
+  - subagents/cwf_310/cwf_310_sub_agent.py
+  - subagents/cwf_320/cwf_320_sub_agent.py
+  - subagents/wf_400/wf_400_sub_agent.py
+skills:
+  - skills/context_engineering/P-301-execution-context-engineer.skill.md
+  - skills/context_engineering/P-302-platform-format-specialist.skill.md
+  - skills/context_engineering/P-303-asset-brief-creator.skill.md
+  - skills/context_engineering/P-304-lineage-chain-validator.skill.md
+  - skills/context_engineering/P-305-context-packet-finalizer.skill.md
+subskills:
+  - skills/sub_skills/SS-001-context-packet-sanitizer.subskill.md
+  - skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md
+  - skills/sub_skills/SS-103-nanobanana-visual-generation-optimizer.subskill.md
+  - skills/sub_skills/SS-104-sora-video-generation-orchestrator.subskill.md
+  - skills/sub_skills/SS-112-ffmpeg-render-assembly-guard.subskill.md
+contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md
+  - runtime_contracts/PROVIDER_HANDOFF_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+validators:
+  - validators/validate_mac06_1a_output.py
+output_contracts:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - QUALITY_LOCK
+  - GOVERNANCE_LOCK
+  - VOICE_GENERATION_CONTEXT
+  - IMAGE_GENERATION_CONTEXT
+  - VIDEO_GENERATION_CONTEXT
+  - EDITING_CONTEXT
+  - PROVIDER_HANDOFF_BOUNDARY
+blocked_files:
+  - downloads/chat_transcript.txt
+  - outputs/missions/** unless continue_previous_mission=true
+historical_file_policy: disallow_unless_explicit_reference_or_continue_previous_mission
+provider_boundary_required: true
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true

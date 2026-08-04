@@ -377,7 +377,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_VARUNA
 component_layer: DIRECTOR
 component_name: Varuna
-route_families: [quality_gate, full_video_pipeline]
+route_families: [voice_context, context_engineering, avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, quality_gate, full_video_pipeline]
 activation_triggers: route_family in [topic_discovery, editing_packaging, publishing, quality_gate] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -405,7 +405,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_quality_gate_profile
-route_family_resolved: [quality_gate, full_video_pipeline]
+route_family_resolved: [voice_context, context_engineering, avatar_video_context, media_factory_handoff, visual_media_plan, media_factory_final_draft, quality_gate, full_video_pipeline]
 activation_triggers_resolved: [quality, validation, compliance]
 required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
@@ -420,4 +420,45 @@ production_score_fields_resolved: [script_score, hook_score, retention_score, vo
 human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_output]
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/cinematic/varuna.md; component_id=DIRECTOR:_VARUNA
+
+## PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+
+alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+cinema_core_obligations: [film_story_architecture, screenplay_structure, scene_construction, sequence_design, dialogue_craft, visual_grammar, cinematography_intent, editing_rhythm, sound_voice_intent]
+cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_handoff_support_downstream_only]
+route_support_notes: This director remains a handoff and orchestration surface, but it is now explicitly aligned to the cinema-native brain boundary.
+runtime_proof_claimed: false
+governed_completion_claimed: false
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Varuna Atmosphere and Depth Director
+
+### Cinema craft ownership
+- sound_design_and_atmosphere
+- lighting_and_mood
+- research_and_world_truth
+
+### Mythology fidelity lock
+depth; atmosphere; water and oceanic mood; hidden truth; emotional weather; unseen pressure
+
+### Cinema department authority
+Owns atmosphere continuity, emotional weather, ambient sound intent, hidden-truth pressure, and mood logic for cinema pre-production packets.
+
+### Route boundary
+Varuna is not a platform mood-board shortcut or generic visual-media planner for film-core PASS.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

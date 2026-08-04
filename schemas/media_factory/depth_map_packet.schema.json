@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/depth_map_packet.schema.json",
+  "title": "Shadow Depth Map Packet",
+  "description": "Support-only depth handoff packet. A depth map cannot prove production parallax or unlock render by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scene_id",
+    "base_image_path",
+    "base_image_sha256",
+    "depth_map_path",
+    "depth_map_sha256",
+    "dimensions",
+    "dimension_match_required",
+    "depth_normalization_method",
+    "depth_normalization_range",
+    "depth_inversion_policy",
+    "depth_visual_preview_path",
+    "depth_method",
+    "support_only",
+    "parallax_proof_required_downstream",
+    "depth_not_used_as_blur_proof",
+    "render_unlock_allowed"
+  ],
+  "properties": {
+    "scene_id": {"type": "string", "minLength": 1},
+    "base_image_path": {"type": "string", "pattern": "^/"},
+    "base_image_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "depth_map_path": {"type": "string", "pattern": "^/"},
+    "depth_map_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_width",
+        "base_height",
+        "depth_width",
+        "depth_height"
+      ],
+      "properties": {
+        "base_width": {"type": "integer", "minimum": 1},
+        "base_height": {"type": "integer", "minimum": 1},
+        "depth_width": {"type": "integer", "minimum": 1},
+        "depth_height": {"type": "integer", "minimum": 1}
+      }
+    },
+    "dimension_match_required": {"type": "boolean", "const": true},
+    "depth_normalization_method": {
+      "type": "string",
+      "enum": [
+        "minmax",
+        "linear"
+      ]
+    },
+    "depth_normalization_range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {"type": "number", "minimum": 0},
+        "max": {"type": "number", "maximum": 1}
+      }
+    },
+    "depth_inversion_policy": {
+      "type": "string",
+      "enum": [
+        "none",
+        "invert_white_near",
+        "invert_black_near"
+      ]
+    },
+    "depth_visual_preview_path": {"type": "string", "pattern": "^/"},
+    "depth_method": {
+      "type": "string",
+      "enum": [
+        "displace",
+        "layered_parallax"
+      ]
+    },
+    "support_only": {"type": "boolean", "const": true},
+    "parallax_proof_required_downstream": {"type": "boolean", "const": true},
+    "depth_not_used_as_blur_proof": {"type": "boolean", "const": true},
+    "render_unlock_allowed": {"type": "boolean", "const": false}
+  }
+}

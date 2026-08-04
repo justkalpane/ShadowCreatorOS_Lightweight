@@ -1,0 +1,83 @@
+# REPO CONSUMPTION LEDGER
+This document traces the exact chronological consumption of repository files (routing manifests, contracts, registries, and skills) mapped to every user input and agent output in the current session.
+
+---------------------------------------------------------
+## STAGE 1: INTAKE & SCRIPT GENERATION ROUTE DISCOVERY
+---------------------------------------------------------
+**User Input 1:** "Write a 5 min youtube script on below topic... Stop scrolling, stop hallucinating... That's what yash did..."
+
+**Repo Consumption Order (Boot & Route Discovery):**
+1. `AGENTS.md` (Triggered shadow boot laws)
+2. `START_HERE_FOR_AGENTS.md`
+3. `AGENT_READ_ORDER.md`
+4. `AGENT_REPO_FIRST_OPERATING_DOCTRINE.md`
+5. `AGENT_ANTI_DRIFT_RULES.md`
+6. `runtime_contracts/ACTIVE_RUNTIME_PRECEDENCE_CONTRACT.md`
+7. `runtime_contracts/LAYMAN_COMMAND_GATEWAY_CONTRACT.md`
+8. `registries/layman_command_alias_matrix.yaml`
+9. `runtime_contracts/SHADOW_OUTPUT_MODE_CONTRACT.md`
+10. `handoff/agent_bootstrap/SHADOW_TASK_EXECUTION_WRAPPER.md` (Mandatory for wrapper-compatible environments)
+11. `registries/task_intent_routing_matrix.yaml`
+12. `registries/route_manifests/script_generation.yaml` (Selected Route)
+13. `registries/route_slices/script_generation.registry_slice.yaml` (Mandatory Slice)
+14. `runtime_contracts/ENVIRONMENT_TRIGGER_COMPATIBILITY_CONTRACT.md`
+15. `runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md`
+16. `runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md`
+17. `runtime_contracts/SCRIPT_QUALITY_ENFORCEMENT_CONTRACT.md`
+18. `runtime_contracts/GUMLOOP_BENCHMARK_OUTPUT_STANDARD.md`
+19. `runtime_contracts/CONTENT_ENGINEERING_OUTPUT_CONTRACT.md`
+20. `runtime_contracts/CONSOLIDATED_OUTPUT_CONTRACT.md`
+21. `.agents/skills/script_intelligence/S-201-hook-optimizer.skill.md`
+22. `.agents/skills/script_intelligence/S-202-first-draft-generation.skill.md`
+23. `.agents/skills/script_intelligence/S-203-retention-engineer.skill.md`
+
+**Agent Output 1:** Discovery Status Update indicating missing contracts to fulfill SCRIPT_GENERATION execution.
+
+---------------------------------------------------------
+## STAGE 2: SCRIPT GENERATION FINAL DRAFT
+---------------------------------------------------------
+**User Input 2:** "proceed to read these missing files to unlock the SCRIPT_GENERATION route"
+
+**Repo Consumption Order (Fulfilling Missing Dependencies):**
+24. `runtime_contracts/CHAT_APPROVAL_GATE_CONTRACT.md`
+25. `runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md`
+26. `runtime_contracts/NATIVE_AGENT_CAPABILITY_INVENTORY_CONTRACT.md`
+27. `runtime_contracts/TOOLS_CONNECTORS_PLUGINS_ASSESSMENT_CONTRACT.md`
+28. `registries/native_capability_routing_matrix.yaml`
+29. `registries/agent_runtime_selection_index.yaml`
+30. `runtime_contracts/BOOTSTRAP_SYNC_PROTOCOL.md`
+31. `runtime_contracts/LAYMAN_TASK_TRIGGER_CONTRACT.md`
+
+*(Web Research executed here for FACT_VS_ANECDOTE_MAP regarding Yash's 300 rupees early life facts).*
+
+**Agent Output 2:** Final Script output containing `SHADOW_BOOT_CONFIRMATION`, `ROUTE_SCOPE_FILE_AUDIT`, `SOURCE_LEDGER`, and `FINAL_SCRIPT` with Cinematic Story Block and 3 Re-hooks.
+
+---------------------------------------------------------
+## STAGE 3: VISUAL MEDIA PLAN (MODE A)
+---------------------------------------------------------
+**User Input 3:** "great now create the visual media plan for this script"
+
+**Repo Consumption Order (Media Factory Handoff):**
+32. `.agents/skills/shadow-media-factory/SKILL.md` (Loaded to consume Mode A Planning rules, Visual DNA requirements, Cost Distribution Targets, and NoteBookLM/DaVinci visual methodologies).
+
+**Agent Output 3:** Complete A-Roll vs B-Roll distribution plan, scene-by-scene storyboard table without generating artifacts (Mode A constraint).
+
+---------------------------------------------------------
+## STAGE 4: VISUAL MEDIA EXECUTABLE DRAFT (MODE B)
+---------------------------------------------------------
+**User Input 4:** "ok prepare the visual media generation draft."
+
+**Repo Consumption Order (Execution Matrix):**
+*No new files consumed.* The exact rules for Executable Phase (Mode B) were already cached and loaded from `.agents/skills/shadow-media-factory/SKILL.md` in Stage 3.
+
+**Agent Output 4:** `SCENE_SYNC_MATRIX`, 15-field `SCENE_PROMPT_PACKETS`, `CONTROL_PANEL_EXECUTION_PLAN`, and local engine readiness states.
+
+---------------------------------------------------------
+## STAGE 5: LEDGER COMPILATION
+---------------------------------------------------------
+**User Input 5:** "Great, Now give the exact repo consumption in order, for every fresh result given within this chat., i need for all the entire chat histry, you can create a .txt for that ultimately i need to understand the reop consumpotions for eveyr input and output."
+
+**Repo Consumption Order:**
+*No new files consumed.* Relying on strict chronological memory of preceding steps.
+
+**Agent Output 5:** This text file (`outputs/missions/current/repo_consumption_ledger.txt`).

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Yama Policy Gate",
+  "description": "Policy gate for likeness, copyright, brand, consent, and downstream DaVinci unlock governance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "yama_gate_id",
+    "job_id",
+    "cut_id",
+    "policy_gate_status",
+    "likeness_risk",
+    "copyright_risk",
+    "brand_risk",
+    "voice_consent_required",
+    "avatar_consent_required",
+    "provider_policy_status",
+    "asset_origin_status",
+    "blocked_reason",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "yama_gate_id": {
+      "type": "string",
+      "pattern": "^YAM-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_gate_status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "likeness_risk": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "UNKNOWN"
+      ]
+    },
+    "copyright_risk": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "UNKNOWN"
+      ]
+    },
+    "brand_risk": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "UNKNOWN"
+      ]
+    },
+    "voice_consent_required": {
+      "type": "boolean"
+    },
+    "avatar_consent_required": {
+      "type": "boolean"
+    },
+    "provider_policy_status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "asset_origin_status": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "UNVERIFIED",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "blocked_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

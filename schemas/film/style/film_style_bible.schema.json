@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_style_bible.schema.json",
+  "title": "Film Style Bible",
+  "description": "Skeleton schema for film style bible requirements.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"genre_contract":{"type":"string","description":"Genre contract"},"tone_contract":{"type":"string","description":"Tone contract"},"visual_dna":{"type":"object","description":"Visual DNA"},"aspect_ratio":{"type":"string","description":"Aspect ratio"},"lens_palette":{"type":"object","description":"Lens palette"},"camera_movement_vocabulary":{"type":"object","description":"Camera movement vocabulary"},"lighting_palette":{"type":"object","description":"Lighting palette"},"color_palette":{"type":"object","description":"Color palette"},"color_script":{"type":"object","description":"Color script"},"production_design_palette":{"type":"object","description":"Production design palette"},"costume_palette":{"type":"object","description":"Costume palette"},"performance_style":{"type":"object","description":"Performance style"},"editing_rhythm":{"type":"object","description":"Editing rhythm"},"sound_palette":{"type":"object","description":"Sound palette"},"music_motif_palette":{"type":"object","description":"Music motif palette"},"ai_prompt_style_dna":{"type":"object","description":"AI prompt style DNA"},"continuity_anti_drift_rules":{"type":"object","description":"Continuity anti-drift rules"}},
+  "required": []
+}

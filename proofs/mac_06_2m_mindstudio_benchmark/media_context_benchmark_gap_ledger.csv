@@ -1,0 +1,27 @@
+media_requirement,repo_artifact,exists,runtime_enforced,quality_gate_present,provider_boundary_safe,gap,priority,patch_required
+voice persona,voice_context_packet.schema.json,True,True,True,True,Covered at coarse level.,MEDIUM,Add richer persona taxonomy.
+voice pacing,voice_context_packet.schema.json,True,True,True,True,Pace string exists; no per-segment pacing.,HIGH,Add per-segment pacing.
+voice tone,voice_context_packet.schema.json,False,False,False,True,Tone field absent.,HIGH,Add tone required field.
+voice emotion,voice_context_packet.schema.json,True,False,True,True,Emotion map string too coarse.,HIGH,Use per-segment emotion map object.
+voice ID/provider placeholder,voice_context_packet.schema.json,False,False,False,True,Voice ID/config not required.,HIGH,Add voice_id/provider_profile disabled.
+pause map,voice_context_packet.schema.json,False,False,False,True,Pause map absent.,HIGH,Add pause_map field.
+pronunciation notes,voice_context_packet.schema.json,False,False,False,True,Pronunciation notes absent.,MEDIUM,Add pronunciation_notes.
+audio per segment,provider_handoff_packet.schema.json,True,False,True,True,Planned but not segment-file mapped.,HIGH,Add audio_asset_plan per segment.
+visual scene description,visual_context_packet.schema.json,True,True,True,True,Scene prompts exist.,MEDIUM,Bind to segment ids.
+visual style,visual_context_packet.schema.json,True,True,True,True,Style bible exists.,LOW,Add style prefix validator.
+style prefix,visual_context_packet.schema.json,False,False,False,True,Explicit style_prefix missing.,HIGH,Add style_prefix field.
+seed/consistency controls,visual_context_packet.schema.json,False,False,False,True,Seed absent.,MEDIUM,Add seed/consistency fields.
+color palette,visual_context_packet.schema.json,False,False,False,True,Palette absent in active schema.,MEDIUM,Add color_palette.
+composition,visual_context_packet.schema.json,False,False,False,True,Composition absent in active schema.,MEDIUM,Add composition.
+lighting,visual_context_packet.schema.json,False,False,False,True,Lighting absent in active schema.,MEDIUM,Add lighting.
+negative prompts,visual_context_packet.schema.json,False,False,False,True,Negative prompts absent in active schema.,MEDIUM,Add negative_prompts.
+video duration per segment,video_context_packet.schema.json,False,False,False,True,Scene plan only; duration missing.,HIGH,Add per-segment duration.
+motion/camera,video_context_packet.schema.json,True,True,True,True,Camera moves exist.,MEDIUM,Bind motion to segment ids.
+transition plan,editing_timeline_packet.schema.json,False,False,False,True,Transition schema shallow.,HIGH,Add transition array.
+audio-video sync,editing_timeline_packet.schema.json,True,False,True,True,Sync contract exists but no timestamp adjustment model.,BLOCKER,Add timestamp-driven drift correction.
+FFmpeg planning,EXECUTABLE_MEDIA_PIPELINE_PLAN_CONTRACT.md,True,False,True,True,Planning contract exists; no executable command-plan validator.,HIGH,Add ffmpeg plan schema with disabled execution.
+final assembly plan,editing_timeline_packet.schema.json,True,False,True,True,Timeline exists but not enough assets/concat fields.,HIGH,Add assembly manifest.
+review/refinement loop,approval_packet.schema.json,True,True,True,True,Approval supported.,LOW,Add review notes schema.
+segment-level regeneration,approval_store.json,True,True,True,True,Regeneration action supported.,LOW,Bind to structured segment id.
+provider handoff without execution,provider_handoff_packet.schema.json,True,True,True,True,Strong provider boundary.,LOW,Add provider typed-call variants.
+media quality scorecard,quality_scorecard.schema.json,True,True,True,True,Runtime exists.,MEDIUM,Add sync/visual/voice sub-scores.

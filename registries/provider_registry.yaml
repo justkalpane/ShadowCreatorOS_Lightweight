@@ -33,7 +33,7 @@ providers:
     escalation_workflow: WF-900
     notes: >
       Primary local model host for Phase-1. Current working model is
-      llama3.2:3b on the active Windows target.
+      llama3.2:3b on the active local target when Ollama is available.
 
   - provider_id: elevenlabs_api
     display_name: ElevenLabs API
@@ -88,3 +88,230 @@ providers:
     notes: >
       Publishing and analytics provider. Deferred until OAuth redirect URI and
       auth closure are finalized.
+
+  - provider_id: comfyui_local
+    display_name: ComfyUI (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_local_http
+    runtime_modes:
+      - local
+      - hybrid
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_models:
+      - SDXL
+      - Flux
+      - SD1.5
+      - AnimateDiff
+      - SVD
+    controlnet_support:
+      - Canny
+      - OpenPose
+      - Depth
+      - Lineart
+      - SoftEdge
+      - IP-Adapter
+    currently_wired_controlnet_support:
+      - Canny
+    requested_but_not_wired:
+      - OpenPose
+      - Depth
+      - Lineart
+      - IP-Adapter
+      - true_camera_motion
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+    capability_map: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Primary local visual factory bridge on the active Mac. Current proven
+      local lane is SD1.5 + Canny ControlNet + AnimateDiff for animated
+      storyboard / animatic preview. OpenPose, Depth, Lineart, IPAdapter, and
+      true camera motion must be treated as requested-but-not-wired unless a
+      future proof upgrades the capability map. Production cinematic B-roll is
+      not yet proven locally.
+
+  - provider_id: ffmpeg_local
+    display_name: FFmpeg (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_cli
+    runtime_modes:
+      - local
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - video_assembly_from_image_sequence
+      - audio_muxing
+      - subtitle_burn_in
+      - platform_transcoding
+      - storyboard_export
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Local video assembly and rendering engine. Primary tool for combining
+      image sequences with audio and subtitles into platform-ready MP4 output.
+      No GPU required. Active through the local ShadowMediaFactory control
+      panel and registry/proof workflow.
+
+  - provider_id: davinci_resolve_local
+    display_name: DaVinci Resolve (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: project_file_import
+    runtime_modes:
+      - local
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - color_grading
+      - final_cut_editing
+      - audio_mixing
+      - export_rec709
+      - export_prores
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Local editing and color grading engine. Handles Rec.709 delivery, color
+      grade, and final export. Current role is manual finishing and QC through
+      the local Media Factory path. Automated project handoff is not claimed
+      until proof is present.
+
+  - provider_id: depth_anything_v2_local
+    display_name: Depth Anything V2 (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_cli
+    runtime_modes:
+      - local
+      - hybrid
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - still_image_depth_mask_generation
+      - depth_map_png_export
+      - davinci_fusion_parallax_prep
+    default_model: Depth-Anything-V2-Small
+    default_encoder: vits
+    default_license: Apache-2.0
+    noncommercial_models:
+      - Depth-Anything-V2-Base
+      - Depth-Anything-V2-Large
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Local depth-map generator for IMAGE_MOTION_GRAPHICS_BROLL_METHOD. It is
+      a masking tool only: it does not generate images, video, cinematic B-roll,
+      or final composites. DaVinci Resolve Fusion owns the 2.5D parallax
+      composite after the depth mask is produced. The installed production-safe
+      default is the upstream Small checkpoint under Apache-2.0; Base/Large are
+      non-commercial lanes requiring explicit license approval.
+
+  - provider_id: hyperframes_cli_local
+    display_name: HyperFrames CLI (Local)
+    class: local_media_engine
+    status: active_local_bridge
+    phase1_allowed: true
+    auth_style: none
+    callback_style: synchronous_cli
+    runtime_modes:
+      - local
+      - hybrid
+    premium_provider: false
+    budget_gate_required: false
+    policy_gate_required: false
+    escalation_workflow: WF-900
+    supported_operations:
+      - notebooklm_dual_panel_slide_render
+      - programmatic_slide_render
+      - kinetic_text_render
+      - playstation_dashboard_panel_render
+      - image_evidence_wall_render
+      - comparison_card_render
+      - split_card_horizontal_render
+      - fullscreen_text_center_render
+      - gold_title_reveal_render
+      - timeline_roadmap_render
+      - local_image_motion_graphics_panel_render
+      - clean_broll_information_overlay_render
+      - mov_alpha_overlay_export
+      - hud_border_render
+      - fx_pack_overlay_render
+    bridge_registry_ref: registries/local_media_factory_bridge.yaml
+    readiness_status: LOCAL_ENGINE_READY
+    notes: >
+      Local deterministic HTML/CSS/GSAP renderer for NOTEBOOKLM_VISUAL_METHOD,
+      PROGRAMMATIC_SLIDE_VISUAL_METHOD, HTML_CSS_GSAP_VISUAL_METHOD, and local
+      alpha overlays on the proven `.mov` path. HyperFrames is the approved first foundation for
+      non-cinematic visual graphics panels layered over local image/video
+      B-roll, including dashboard panels, evidence walls, kinetic principle
+      cards, and NotebookLM-style note panels. It does not replace DaVinci
+      Resolve for 2.5D parallax or final assembly, and it must return proof
+      JSON plus a registry asset event before generated media is claimed.
+      HyperFrames claims must also carry a
+      `TOOLS_CONNECTORS_PLUGINS_ASSESSMENT` row plus original SS-118 / upstream
+      HyperFrames skill proof and the canonical connector blueprint contract.
+
+  - provider_id: runway_ml_api
+    display_name: Runway ML API
+    class: cloud_provider
+    status: deferred
+    phase1_allowed: false
+    auth_style: api_key
+    callback_style: polling_with_optional_webhook
+    runtime_modes:
+      - cloud
+      - hybrid
+    premium_provider: true
+    budget_gate_required: true
+    policy_gate_required: true
+    escalation_workflow: WF-900
+    supported_operations:
+      - cinematic_broll_video_generation
+      - camera_motion_video_generation
+    readiness_status: DEFERRED_PROVIDER_HANDOFF_ONLY
+    notes: >
+      Candidate cloud lane for CINEMATIC_BROLL_VIDEO. Provider execution is
+      disabled by default and requires explicit user approval, budget gate, and
+      provider proof before any artifact claim.
+
+  - provider_id: kling_ai_api
+    display_name: Kling AI API
+    class: cloud_provider
+    status: deferred
+    phase1_allowed: false
+    auth_style: api_key
+    callback_style: polling_with_optional_webhook
+    runtime_modes:
+      - cloud
+      - hybrid
+    premium_provider: true
+    budget_gate_required: true
+    policy_gate_required: true
+    escalation_workflow: WF-900
+    supported_operations:
+      - cinematic_broll_video_generation
+      - camera_motion_video_generation
+    readiness_status: DEFERRED_PROVIDER_HANDOFF_ONLY
+    notes: >
+      Candidate cloud lane for CINEMATIC_BROLL_VIDEO. Provider execution is
+      disabled by default and requires explicit user approval, budget gate, and
+      provider proof before any artifact claim.

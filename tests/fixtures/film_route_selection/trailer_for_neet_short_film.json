@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-007",
+  "fixture_family": "route_selection",
+  "input_prompt": "Create a trailer for the NEET short film.",
+  "expected_route": "FILM_RELEASE_DISTRIBUTION",
+  "expected_mode": "downstream",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_film_release_adaptation.py",
+  "purpose": "Route trailer requests downstream",
+  "risk_if_missing": "Release tasks get misrouted into screenplay generation",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

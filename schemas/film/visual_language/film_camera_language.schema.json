@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/visual_language/film_camera_language.schema.json",
+  "title": "Film Camera Language",
+  "description": "Skeleton schema for camera language.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"shot_size":{"type":"string","description":"Shot size"},"angle":{"type":"string","description":"Camera angle"},"lens":{"type":"string","description":"Lens"},"movement":{"type":"string","description":"Movement"},"framing":{"type":"string","description":"Framing"}},
+  "required": []
+}

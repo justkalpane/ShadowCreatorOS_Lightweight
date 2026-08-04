@@ -383,7 +383,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_GARUDA
 component_layer: DIRECTOR
 component_name: Garuda
-route_families: [approval_gate, repo_write_mode]
+route_families: [full_video_pipeline, editing_packaging, approval_gate, repo_write_mode]
 activation_triggers: route_family in [topic_discovery, music_sfx_context, avatar_video_context, editing_packaging] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [lineage_packet, approval_packet, media_quality_gate_packet]
 downstream_outputs: [approval_packet, execution_authorization_packet]
@@ -411,7 +411,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: approval_gate_profile
-route_family_resolved: [approval_gate, repo_write_mode]
+route_family_resolved: [full_video_pipeline, editing_packaging, approval_gate, repo_write_mode]
 activation_triggers_resolved: [approval, oauth, permission]
 required_input_packets_resolved: [lineage_packet, approval_packet, media_quality_gate_packet]
 emitted_output_packets_resolved: [approval_packet, execution_authorization_packet]
@@ -426,4 +426,46 @@ production_score_fields_resolved: [approval_clarity_score, risk_score, lineage_s
 human_approval_points_resolved: [approve_patch, approve_commit, approve_provider_execution, reject]
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/cinematic/garuda.md; component_id=DIRECTOR:_GARUDA
+
+## PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+
+alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+cinema_core_obligations: [film_story_architecture, screenplay_structure, scene_construction, sequence_design, dialogue_craft, visual_grammar, cinematography_intent, editing_rhythm, sound_voice_intent]
+cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, do_not_conflate_distribution_with_story_brain]
+route_support_notes: This director remains an execution and governance surface, but is now explicitly aligned to cinema-native brain responsibilities at the boundary layer.
+runtime_proof_claimed: false
+governed_completion_claimed: false
 remaining_unknowns: none
+remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Garuda Cinema Vision Director
+
+### Cinema craft ownership
+- cinematography_and_visual_grammar
+- storyboard_and_shotlist_handoff
+- route_collision_scouting
+
+### Mythology fidelity lock
+swift aerial vision; scout and signal intelligence; macro-to-micro perception; obstacle detection; high-speed handoff
+
+### Cinema department authority
+Owns future film route visual scouting, camera-intent review, shot-readiness handoff, and collision sensing before screenplay packets move downstream.
+
+### Route boundary
+Garuda is not a YouTube packaging, thumbnail, shorts, publishing, or CTR authority for FILM_SCREENPLAY_GENERATION.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

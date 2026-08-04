@@ -1,0 +1,4 @@
+total_runtime_seconds=305
+cinematic_broll_seconds=16
+required_cinematic_broll_seconds=37
+status=FAIL

@@ -1,0 +1,165 @@
+﻿version: 1
+registry_id: n8n_webhook_registry
+description: "Exact webhook contracts used by GUI/chat/operator runtime. Runtime profile: C:\\ShadowEmpire\\n8n_user_restore_01."
+timestamp: RUNTIME_PROFILE_RESTORE01_CORRECTED_20260506
+n8n_base_url: http://127.0.0.1:5678
+webhooks:
+  WF-000:
+    name: health_check
+    workflow_id: OhbVrpoiVgRV5IfL
+    method: POST
+    webhook_path: /webhook/OhbVrpoiVgRV5IfL/trigger%2520node/wf-000-health-check
+    path: wf-000-health-check
+    full_url: http://127.0.0.1:5678/webhook/OhbVrpoiVgRV5IfL/trigger%2520node/wf-000-health-check
+    production_enabled: true
+    trigger_mode: ingress
+    required_payload_fields: []
+    expected_response_fields: []
+    notes: Direct ingress webhook in Restore_01 n8n profile.
+  WF-001:
+    name: dossier_create
+    workflow_id: BcbfnoGMbJmTPSIA
+    method: POST
+    webhook_path: /webhook/BcbfnoGMbJmTPSIA/trigger%2520node/wf-001-dossier-create
+    path: wf-001-dossier-create
+    full_url: http://127.0.0.1:5678/webhook/BcbfnoGMbJmTPSIA/trigger%2520node/wf-001-dossier-create
+    production_enabled: true
+    trigger_mode: ingress
+    required_payload_fields:
+      - topic
+      - context
+      - mode
+    expected_response_fields:
+      - dossier_id
+      - status
+    notes: R9J-D proved HTTP 200 and dossier persistence with this Restore_01 workflow ID.
+  WF-010:
+    name: parent_orchestrator
+    workflow_id: oCLrZ3aWZkSBvrjn
+    method: POST
+    webhook_path: /webhook/wf-010-parent-orchestrator
+    path: wf-010-parent-orchestrator
+    full_url: http://127.0.0.1:5678/webhook/wf-010-parent-orchestrator
+    production_enabled: true
+    trigger_mode: ingress
+    required_payload_fields:
+      - dossier_id
+      - route_id
+    expected_response_fields:
+      - execution_status
+      - status
+    notes: R9K-B repaired live workflow paths for Restore_01 persistence.
+  WF-020:
+    name: final_approval
+    workflow_id: 9Wvgfygw2wMqZcUD
+    method: POST
+    webhook_path: /webhook/9Wvgfygw2wMqZcUD/trigger%2520node/wf-020-final-approval
+    path: wf-020-final-approval
+    full_url: http://127.0.0.1:5678/webhook/9Wvgfygw2wMqZcUD/trigger%2520node/wf-020-final-approval
+    production_enabled: true
+    trigger_mode: ingress
+    required_payload_fields:
+      - dossier_id
+      - decision
+    optional_payload_fields:
+      - reviewer
+      - reason
+    expected_response_fields:
+      - approval_decision
+      - execution_status
+      - status
+  WF-021:
+    name: replay_remodify
+    workflow_id: Ih7yfJs1ON43xKmT
+    method: POST
+    webhook_path: /webhook/Ih7yfJs1ON43xKmT/trigger%2520node/wf-021-replay-remodify
+    path: wf-021-replay-remodify
+    full_url: http://127.0.0.1:5678/webhook/Ih7yfJs1ON43xKmT/trigger%2520node/wf-021-replay-remodify
+    production_enabled: true
+    trigger_mode: ingress
+    required_payload_fields:
+      - dossier_id
+    optional_payload_fields:
+      - stage
+      - checkpoint
+      - target_workflow
+      - remodify_instructions
+      - action
+    expected_response_fields:
+      - execution_status
+      - status
+  WF-100:
+    name: topic_intelligence_pack
+    workflow_id: ecQoXsf2o3gyrDO1
+    method: INTERNAL
+    trigger_mode: child_via_parent_orchestrator
+    direct_webhook_enabled: false
+    production_enabled: true
+    required_payload_fields: []
+    expected_response_fields: []
+    notes: Called via WF-010 executeWorkflow.
+  WF-200:
+    name: script_intelligence_pack
+    workflow_id: xkxwnQrS7RPeMOkI
+    method: INTERNAL
+    trigger_mode: child_via_parent_orchestrator
+    direct_webhook_enabled: false
+    production_enabled: true
+    required_payload_fields: []
+    expected_response_fields: []
+  WF-300:
+    name: context_engineering_pack
+    workflow_id: UpkDyr7OSJoRu1XX
+    method: INTERNAL
+    trigger_mode: child_via_parent_orchestrator
+    direct_webhook_enabled: false
+    production_enabled: true
+    required_payload_fields: []
+    expected_response_fields: []
+  WF-400:
+    name: media_production_pack
+    workflow_id: do0cZuzren68K4Tu
+    method: INTERNAL
+    trigger_mode: child_via_parent_orchestrator
+    direct_webhook_enabled: false
+    production_enabled: true
+    required_payload_fields: []
+    expected_response_fields: []
+  WF-500:
+    name: publishing_distribution_pack
+    workflow_id: nPFz46PDjqipVJIq
+    method: POST
+    webhook_path: /webhook/nPFz46PDjqipVJIq/trigger%2520node/wf-500-publishing-distribution
+    path: wf-500-publishing-distribution
+    full_url: http://127.0.0.1:5678/webhook/nPFz46PDjqipVJIq/trigger%2520node/wf-500-publishing-distribution
+    production_enabled: true
+    trigger_mode: ingress_or_internal
+    required_payload_fields:
+      - dossier_id
+    expected_response_fields:
+      - execution_status
+      - status
+  WF-600:
+    name: analytics_pack
+    workflow_id: VLB5LzxoiGFfWd3h
+    method: INTERNAL
+    trigger_mode: child_via_parent_orchestrator
+    direct_webhook_enabled: false
+    production_enabled: true
+    required_payload_fields: []
+    expected_response_fields: []
+  WF-900:
+    name: error_handler
+    workflow_id: jOkYRBMeyyMDHqJ3
+    method: INTERNAL
+    trigger_mode: error_handler_only
+    direct_webhook_enabled: false
+    production_enabled: true
+    required_payload_fields:
+      - error_type
+      - dossier_id
+    expected_response_fields:
+      - recovery_plan
+      - next_action
+
+

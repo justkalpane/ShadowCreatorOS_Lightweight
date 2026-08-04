@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow C04a Asset Manifest",
+  "description": "Asset-class manifest for the C04a controlled experiment. Each asset must carry class-specific validation and hash traceability.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_id",
+    "job_id",
+    "cut_id",
+    "assets",
+    "required_asset_classes",
+    "all_required_assets_present",
+    "all_hashes_present",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string",
+      "pattern": "^CAM-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "const": "C04a"
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id",
+          "asset_class",
+          "path",
+          "sha256",
+          "status",
+          "source_packet_ref",
+          "required_for_pilot",
+          "class_specific_validation"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "asset_class": {
+            "type": "string",
+            "enum": [
+              "base_image",
+              "depth_map",
+              "hyperframes_overlay",
+              "ffmpeg_filtergraph",
+              "source_vs_render_packet",
+              "contact_sheet",
+              "visual_qa_packet",
+              "human_review_packet",
+              "approval_token",
+              "runtime_proof_bundle"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PRESENT",
+              "MISSING",
+              "VALIDATED",
+              "BLOCKED"
+            ]
+          },
+          "source_packet_ref": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^/"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              },
+              "artifact_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required_for_pilot": {
+            "type": "boolean"
+          },
+          "class_specific_validation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "validation_name",
+              "validation_status"
+            ],
+            "properties": {
+              "validation_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "validation_status": {
+                "type": "string",
+                "enum": [
+                  "PENDING",
+                  "PASS",
+                  "BLOCKED",
+                  "UNKNOWN"
+                ]
+              },
+              "notes": {
+                "type": "string"
+              },
+              "proof_ref": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "path",
+                  "sha256"
+                ],
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "pattern": "^/"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^sha256:[a-f0-9]{64}$"
+                  },
+                  "artifact_id": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "required_asset_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "base_image",
+          "depth_map",
+          "hyperframes_overlay",
+          "ffmpeg_filtergraph",
+          "source_vs_render_packet",
+          "contact_sheet",
+          "visual_qa_packet",
+          "human_review_packet",
+          "approval_token",
+          "runtime_proof_bundle"
+        ]
+      }
+    },
+    "all_required_assets_present": {
+      "type": "boolean"
+    },
+    "all_hashes_present": {
+      "type": "boolean"
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

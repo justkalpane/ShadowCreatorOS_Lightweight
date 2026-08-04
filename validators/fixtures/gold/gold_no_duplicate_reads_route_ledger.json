@@ -1,0 +1,37 @@
+{
+  "fixture_id": "FX-GOLD-008",
+  "fixture_type": "gold",
+  "stage": "route_read_ledger",
+  "expected_validator": "validate_duplicate_read_guard.py",
+  "expected_result": "PASS",
+  "route_id": "SCRIPT_GENERATION",
+  "route_manifest_path": "registries/route_manifests/script_generation.yaml",
+  "route_manifest_hash": "sha256:script-manifest-demo",
+  "dependencies_complete": true,
+  "output_phase_started": true,
+  "read_ledger": [
+    {
+      "file_path": "AGENTS.md",
+      "file_hash": "sha256:boot-demo",
+      "first_read_phase": "boot",
+      "last_read_phase": "boot",
+      "read_count": 1,
+      "reread_reason": "",
+      "route_required": true,
+      "semantic_use_required": true,
+      "semantic_use_status": "USED"
+    },
+    {
+      "file_path": "registries/route_manifests/script_generation.yaml",
+      "file_hash": "sha256:script-manifest-demo",
+      "first_read_phase": "route_lock",
+      "last_read_phase": "compaction_recovery_validation",
+      "read_count": 2,
+      "reread_reason": "compaction_recovery_validation",
+      "route_required": true,
+      "semantic_use_required": true,
+      "semantic_use_status": "USED"
+    }
+  ],
+  "acceptance_reason": "Any repeat read has an allowed reread_reason and output phase has started."
+}

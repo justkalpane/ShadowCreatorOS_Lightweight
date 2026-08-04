@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_production_design_palette.schema.json",
+  "title": "Film Production Design Palette",
+  "description": "Skeleton schema for production design palette.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"sets":{"type":"array","items":{"type":"string"},"description":"Sets"},"props":{"type":"array","items":{"type":"string"},"description":"Props"},"materials":{"type":"array","items":{"type":"string"},"description":"Materials"},"texture":{"type":"string","description":"Texture"}},
+  "required": []
+}

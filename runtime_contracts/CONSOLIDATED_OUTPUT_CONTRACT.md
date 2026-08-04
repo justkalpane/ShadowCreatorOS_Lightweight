@@ -48,6 +48,9 @@ This contract prevents default file-sprawl behavior and keeps lightweight operat
 - Critique
 - Final Output
 - Context Engineering Packet
+- Gate Visibility Log
+- Proof Trace Bundle
+- Route-State Capsule
 - Provider Handoff Boundary
 - Quality Gate
 - Lineage Summary
@@ -64,6 +67,13 @@ Every chat output or consolidated output must include:
 - Current Fact Confidence
 - Unsupported Claims
 - Research Sufficiency Gate Result
+
+## Gate and Proof Visibility
+
+When a task has gating or approval logic, the consolidated output or chat
+output must show the visible gate trail, the proof trail, and the next action.
+If the task is only partially proven, the weakest missing layer must be named
+explicitly rather than hidden in prose.
 
 ## Output Mode Clarification
 

@@ -1,0 +1,16 @@
+mission_id=yash_self_investment
+primary_lane=HyperFrames_CLI
+repo_hyperframes_dir=outputs/missions/yash_self_investment/hyperframes/
+control_panel_job_root=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment
+scene_sync_packet=outputs/missions/yash_self_investment/packets/scene_sync_matrix.json
+scene_prompt_packet=outputs/missions/yash_self_investment/packets/scene_prompt_packets.json
+video_prompt_packet=outputs/missions/yash_self_investment/packets/video_prompt_packets.json
+proof_packet=outputs/missions/yash_self_investment/packets/hyperframes_30s_proof_packet.json
+antigravity_retest_brief=outputs/missions/yash_self_investment/support/antigravity_hyperframes_retest.txt
+proof_target=outputs/missions/yash_self_investment/proofs/hyperframes_status.txt
+
+notes:
+- NotebookLM, programmatic slide, and HTML/CSS/GSAP scenes map to HyperFrames.
+- HyperFrames outputs should be stored separately from final DaVinci outputs.
+- The 30-second proof packet is proof-only and non-production; it does not override full mission scene timing.
+- Antigravity retest must use the real HyperFrames lane or emit an explicit ROUTE_DOWNGRADED block.

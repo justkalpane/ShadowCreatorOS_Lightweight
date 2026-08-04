@@ -3,3 +3,13 @@
 execution_mode=local_validation_only
 provider_execution_enabled=false
 route_registry=registries/route_dag_registry.yaml
+route_bindings=[MEDIA_FACTORY_HANDOFF]
+route_state_capsule_required=true
+evidence_bundle_required=true
+chitragupta_audit_event_required=true
+pilot_prep_allowed=false
+pilot_execution_allowed=false
+full_render_allowed=false
+audio_allowed=false
+provider_allowed=false
+davinci_allowed=false

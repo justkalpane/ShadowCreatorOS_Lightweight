@@ -1,0 +1,15 @@
+{
+  "timestamp": "20260612_145132",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "batch": "Batch 1 - Shared Claim Normalizer + Tool Ledger Evidence",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "backup_path": "backups/controlled_patch_20260612_145132/validators/run_all_validators.cjs",
+      "sha256_before": "83d7de20b9a41b2e9cf78101c0de5ab93e691989ddf3079771c09634b7ddcde6",
+      "sha256_backup": "83d7de20b9a41b2e9cf78101c0de5ab93e691989ddf3079771c09634b7ddcde6"
+    }
+  ],
+  "reason_for_backup": "Tracked runner file will be modified for Batch 1 validator inventory/probe wiring."
+}

@@ -1,0 +1,18 @@
+# Gold Fixture: Script Only Route Mode
+
+route_id=SCRIPT_GENERATION
+canonical_route_id=SCRIPT_GENERATION
+task_mode=script_only
+plain_script_request=true
+user_requested_downstream_visual_plan=false
+user_requested_media_factory=false
+route_manifest_path=registries/route_manifests/script_generation.yaml
+selected_route_slice_path=registries/route_slices/script_generation.registry_slice.yaml
+selected_route_manifest_read=true
+selected_route_slice_read=true
+output_phase_started=true
+final_script_generated=true
+FINAL_PROOF_STATUS=PASS
+
+Plain script generation is locked to `script_only`.
+

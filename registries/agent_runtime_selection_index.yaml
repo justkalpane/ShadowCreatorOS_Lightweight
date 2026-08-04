@@ -8,6 +8,35 @@ agent_runtime_selection_index:
     skill_binding: "registries/skill_registry_wf200.yaml"
     selection_use: "WF-200 script generation owner; cite for script_generation tasks."
     evidence_status: "PROVEN_BY_FILE_DISCOVERY"
+    phase_13e_19_film_lane_identity:
+      status: "ADDITIVE_AGENT_RUNTIME_SELECTION_FILM_LANE_IDENTITY"
+      source_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      selection_rule_modified: false
+      subagent_binding_modified: false
+      director_binding_modified: false
+      skill_binding_modified: false
+      task_family_modified: false
+      evidence_status_modified: false
+      pass_claimed: false
+      runtime_proof_claimed: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      shared_with_script_generation: true
+      film_route_id: "FILM_SCREENPLAY_GENERATION"
+      script_route_id: "SCRIPT_GENERATION"
+      referenced_matrix_lane: "film_screenplay_draft_lane"
+      referenced_subagent_binding: "registries/sub_agent_matrix.json#CWF-210"
+      cinema_department_lane: "film_screenplay_draft_lane"
+      cinema_agent_role: "screenplay drafting selection mirror"
+      content_route_boundary: "Existing script_generation task family and selection_use remain SCRIPT_GENERATION semantics."
+      downstream_boundary: "Storyboard, visual prompt, voice, editing, packaging, and Media Factory execution remain downstream."
+      matrix_mirror_only: true
+      no_fake_pass_boundary: true
   - agent_id: "krishna_wf200_script_debate"
     agent_name: "Krishna Script Debate Agent"
     agent_file_path: "agents/krishna/krishna_agent.py"
@@ -17,6 +46,35 @@ agent_runtime_selection_index:
     skill_binding: "registries/skill_registry_wf200.yaml"
     selection_use: "WF-200 script debate owner; cite for debate and critique tasks."
     evidence_status: "PROVEN_BY_FILE_DISCOVERY"
+    phase_13e_19_film_lane_identity:
+      status: "ADDITIVE_AGENT_RUNTIME_SELECTION_FILM_LANE_IDENTITY"
+      source_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      selection_rule_modified: false
+      subagent_binding_modified: false
+      director_binding_modified: false
+      skill_binding_modified: false
+      task_family_modified: false
+      evidence_status_modified: false
+      pass_claimed: false
+      runtime_proof_claimed: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      shared_with_script_generation: true
+      film_route_id: "FILM_SCREENPLAY_GENERATION"
+      script_route_id: "SCRIPT_GENERATION"
+      referenced_matrix_lane: "film_screenplay_critique_lane"
+      referenced_subagent_binding: "registries/sub_agent_matrix.json#CWF-220"
+      cinema_department_lane: "film_screenplay_critique_lane"
+      cinema_agent_role: "screenplay critique and debate selection mirror"
+      content_route_boundary: "Existing script_debate task family and selection_use remain SCRIPT_GENERATION-compatible debate semantics."
+      downstream_boundary: "Visual/media execution critique remains downstream packet review, not film-core screenplay PASS authority."
+      matrix_mirror_only: true
+      no_fake_pass_boundary: true
   - agent_id: "saraswati_wf200_script_refinement"
     agent_name: "Saraswati Script Refinement Agent"
     agent_file_path: "agents/saraswati/saraswati_agent.py"
@@ -26,6 +84,35 @@ agent_runtime_selection_index:
     skill_binding: "registries/skill_registry_wf200.yaml"
     selection_use: "WF-200 script refinement owner; cite for refinement/final shaping tasks."
     evidence_status: "PROVEN_BY_FILE_DISCOVERY"
+    phase_13e_19_film_lane_identity:
+      status: "ADDITIVE_AGENT_RUNTIME_SELECTION_FILM_LANE_IDENTITY"
+      source_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      selection_rule_modified: false
+      subagent_binding_modified: false
+      director_binding_modified: false
+      skill_binding_modified: false
+      task_family_modified: false
+      evidence_status_modified: false
+      pass_claimed: false
+      runtime_proof_claimed: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      shared_with_script_generation: true
+      film_route_id: "FILM_SCREENPLAY_GENERATION"
+      script_route_id: "SCRIPT_GENERATION"
+      referenced_matrix_lane: "film_screenplay_revision_lane"
+      referenced_subagent_binding: "registries/sub_agent_matrix.json#CWF-230"
+      cinema_department_lane: "film_screenplay_revision_lane"
+      cinema_agent_role: "screenplay refinement and revision selection mirror"
+      content_route_boundary: "Existing script_refinement task family and selection_use remain SCRIPT_GENERATION-compatible refinement semantics."
+      downstream_boundary: "Media sync edits, thumbnails, trailers, and release packaging remain downstream."
+      matrix_mirror_only: true
+      no_fake_pass_boundary: true
   - agent_id: "durga_wf200_quality_gate"
     agent_name: "Durga Script Quality Gate Agent"
     agent_file_path: "agents/durga/durga_agent.py"
@@ -35,6 +122,35 @@ agent_runtime_selection_index:
     skill_binding: "registries/skill_registry_wf200.yaml"
     selection_use: "WF-200 quality gate support; cite for content quality validation."
     evidence_status: "PROVEN_BY_FILE_DISCOVERY"
+    phase_13e_19_film_lane_identity:
+      status: "ADDITIVE_AGENT_RUNTIME_SELECTION_FILM_LANE_IDENTITY"
+      source_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      selection_rule_modified: false
+      subagent_binding_modified: false
+      director_binding_modified: false
+      skill_binding_modified: false
+      task_family_modified: false
+      evidence_status_modified: false
+      pass_claimed: false
+      runtime_proof_claimed: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      shared_with_script_generation: true
+      film_route_id: "FILM_SCREENPLAY_GENERATION"
+      script_route_id: "SCRIPT_GENERATION"
+      referenced_matrix_lane: "film_screenplay_output_packet_lane"
+      referenced_subagent_binding: "registries/sub_agent_matrix.json#CWF-240"
+      cinema_department_lane: "film_screenplay_output_packet_lane"
+      cinema_agent_role: "screenplay output quality gate selection mirror"
+      content_route_boundary: "Existing quality_gate task family and selection_use remain content-quality support semantics."
+      downstream_boundary: "Scene synchronization, storyboard export, visual media, voice context, editing package, and Media Factory handoff remain downstream."
+      matrix_mirror_only: true
+      no_fake_pass_boundary: true
   - agent_id: "yama_wf200_boundary_gate"
     agent_name: "Yama Boundary Gate Agent"
     agent_file_path: "agents/yama/yama_agent.py"
@@ -44,6 +160,35 @@ agent_runtime_selection_index:
     skill_binding: "registries/skill_registry_wf200.yaml"
     selection_use: "WF-200 provider/media boundary support; cite for no-execution handoff safety."
     evidence_status: "PROVEN_BY_FILE_DISCOVERY"
+    phase_13e_19_film_lane_identity:
+      status: "ADDITIVE_AGENT_RUNTIME_SELECTION_FILM_LANE_IDENTITY"
+      source_phase: "13E_19"
+      mirrors_subagent_matrix_phase: "13E_16"
+      mirrors_workflow_contract_phase: "13E_13"
+      runtime_behavior_changed: false
+      selector_modified: false
+      active_route_registry_modified: false
+      selection_rule_modified: false
+      subagent_binding_modified: false
+      director_binding_modified: false
+      skill_binding_modified: false
+      task_family_modified: false
+      evidence_status_modified: false
+      pass_claimed: false
+      runtime_proof_claimed: false
+      script_generation_preserved: true
+      film_screenplay_generation_preserved: true
+      shared_with_script_generation: true
+      film_route_id: "FILM_SCREENPLAY_GENERATION"
+      script_route_id: "SCRIPT_GENERATION"
+      referenced_matrix_lane: "film_screenplay_output_packet_lane"
+      referenced_subagent_binding: "registries/sub_agent_matrix.json#CWF-240"
+      cinema_department_lane: "film_screenplay_output_packet_lane"
+      cinema_agent_role: "screenplay output boundary and no-execution handoff selection mirror"
+      content_route_boundary: "Existing provider_handoff_packet task family and selection_use remain no-execution handoff safety semantics."
+      downstream_boundary: "Provider/media handoff remains downstream and cannot become cinema-core PASS authority."
+      matrix_mirror_only: true
+      no_fake_pass_boundary: true
   - agent_id: "agastya"
     agent_name: "agastya"
     agent_file_path: "agents/agastya/agastya_agent.py"

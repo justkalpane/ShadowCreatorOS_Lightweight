@@ -184,6 +184,7 @@ STEP 10: Emit deterministic routing decision to M-220 or WF-900/WF-021.
 - Minimum 18 tests are defined and traceable to requirements.
 - Upstream and downstream contract references are complete and non-ambiguous.
 
+
 ## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 
 This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
@@ -191,48 +192,46 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: SKL-PH3B-M-219-COLOR_GRADING_BRIEF
 component_layer: SKILL
 component_name: M 219 Color Grading Brief.Skill
-route_families: [lineage_summary, approval_gate]
-activation_triggers: route_family in [script_generation, visual_context, avatar_video_context, lineage_summary] or explicit registry selection; mark lineage_profile only when route_family is unknown.
-upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
-downstream_outputs: [lineage_packet, approval_packet]
-required_input_packets: [media_quality_gate_packet, lineage_packet, approval_packet]
-emitted_output_packets: [lineage_packet, approval_packet]
-communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-quality_gates: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
-validator_bindings: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
-fallback_behavior: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
-lineage_fields: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
-provider_boundary: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution
+route_families: [media_factory_handoff, avatar_video_context, editing_packaging]
+activation_triggers: route_family in [media_factory_handoff, avatar_video_context, editing_packaging] or explicit registry selection; activated when color grading brief, visual tone, Rec.709 palette, or cinematic color specification is required.
+upstream_inputs: [scene_prompt_packet, visual_design_brief_packet, storyboard_export_packet]
+downstream_outputs: [color_grading_packet, visual_production_packet]
+required_input_packets: [scene_prompt_packet, visual_design_brief_packet]
+emitted_output_packets: [color_grading_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE]
+quality_gates: [color_palette_consistency_gate, cinematic_standard_gate, visual_dna_compliance_gate]
+validator_bindings: [color_grading_packet_present, rec709_standard_declared, palette_fields_complete]
+fallback_behavior: NEEDS_CONFIRMATION if scene_prompt_packet is missing or color palette is undeclared.
+lineage_fields: [scene_id, color_palette_id, grading_style_ref, cinematic_delivery_standard, instance_id]
+provider_boundary: provider_execution_allowed=false; color grading execution requires local DaVinci Resolve or approved provider
 status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
-human_approval_points: [approve, revise_segment, regenerate_media, reject]
-failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
-handoff_targets: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-production_score_fields: [lineage_score, approval_clarity_score, risk_score]
+human_approval_points: [approve_color_grade, approve_palette, reject_grade]
+failure_modes: missing_scene_prompt_packet, undeclared_color_palette, missing_cinematic_standard, provider_boundary_violation.
+handoff_targets: [color_grading_packet, PTR_DIRECTOR_AGENT, PTR_FINAL_SCRIPT_IMAGE]
+production_score_fields: [color_palette_consistency_score, cinematic_compliance_score, visual_dna_score]
 skill_activation_contract: Activated by skill_activation_packet from subagent or route manifest.
-input_schema: Must declare atomic input fields before use; lineage_profile if absent upstream.
+input_schema: Must declare atomic input fields before use; fallback to lineage_profile if absent upstream.
 output_schema: Must emit atomic output packet with evidence path and validation status.
 subskill_hooks: May call subskills only through atomic_task_packet.
 quality_metric: Must emit skill_quality_score and quality_threshold.
 
-## M
-
 ## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
-route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
-activation_triggers_resolved: [lineage, trace, decision log]
-required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
-emitted_output_packets_resolved: [lineage_packet, approval_packet]
-communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-validator_bindings_resolved: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
-quality_gates_resolved: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
-fallback_behavior_resolved: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
-lineage_fields_resolved: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
-provider_boundary_resolved: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution; approval_packet_required_for_any_execution
-handoff_targets_resolved: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-production_score_fields_resolved: [lineage_score, approval_clarity_score, risk_score]
-human_approval_points_resolved: [approve, revise_segment, regenerate_media, reject]
+route_profile_applied: media_factory_color_grading_profile
+route_family_resolved: [media_factory_handoff, avatar_video_context, editing_packaging]
+activation_triggers_resolved: [storyboard request with color, color grade task, Rec.709 specification, cinematic palette task]
+required_input_packets_resolved: [scene_prompt_packet, visual_design_brief_packet]
+emitted_output_packets_resolved: [color_grading_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE]
+validator_bindings_resolved: [color_grading_packet_present, rec709_standard_declared, palette_fields_complete]
+quality_gates_resolved: [color_palette_consistency_gate, cinematic_standard_gate, visual_dna_compliance_gate]
+fallback_behavior_resolved: NEEDS_CONFIRMATION if scene_prompt_packet is missing or color palette is undeclared.
+lineage_fields_resolved: [scene_id, color_palette_id, grading_style_ref, cinematic_delivery_standard, instance_id]
+provider_boundary_resolved: provider_execution_allowed=false; color grading execution requires local DaVinci Resolve or approved provider; approval_packet_required_for_any_execution
+handoff_targets_resolved: [color_grading_packet, PTR_DIRECTOR_AGENT, PTR_FINAL_SCRIPT_IMAGE]
+production_score_fields_resolved: [color_palette_consistency_score, cinematic_compliance_score, visual_dna_score]
+human_approval_points_resolved: [approve_color_grade, approve_palette, reject_grade]
 status_limits_resolved: [no silent approval, no execution without explicit approval]
-evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/media_video/M-219-color-grading-brief.skill.md; component_id=SKL-PH3B-M-219-COLOR_GRADING_BRIEF
+evidence_used_for_resolution: path/pre-contract keyword: visual/cinematic/color/palette; component_path=skills/media_video/M-219-color-grading-brief.skill.md; component_id=SKL-PH3B-M-219-COLOR_GRADING_BRIEF
 remaining_unknowns: none

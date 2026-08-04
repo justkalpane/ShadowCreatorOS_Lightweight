@@ -1,0 +1,44 @@
+tools/shadow_runtime/schema_rationalizer.py:13:    "rehook_plan_packet",
+tools/shadow_runtime/packet_flow_runner.py:20:    if packet_name=='rehook_plan_packet':
+deployment/proofs/MAC_06_SCRIPT_MEDIA_FACTORY_ACCEPTANCE_TESTS.md:185:- `NEG-DAG-001`: `M-039` must execute before `S-202` through `rehook_plan_packet`.
+registries/skill_registry.yaml:968:    file_path: skills/script_intelligence_army/M-039-re-hook-system.skill.md
+registries/route_manifests/script_generation.yaml:60:  - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+registries/route_manifests/script_refinement.yaml:10:mandatory_skills: [skills/script_intelligence/S-203-hook-structure-audit.skill.md, skills/script_intelligence/S-204-clarity-enhancer.skill.md, skills/script_intelligence/S-206-clarity-retention-refinement.skill.md, skills/script_intelligence/S-209-emotional-rhythm-tuning.skill.md, skills/script_intelligence_army/M-039-re-hook-system.skill.md, skills/swarm_expansion/M-126-retention-repair-engine.skill.md]
+registries/task_intent_routing_matrix.yaml:284:      - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+registries/component_lifecycle_registry.yaml:4796:      "component_id": "M-039-re-hook-system",
+registries/component_lifecycle_registry.yaml:4797:      "component_path": "skills/script_intelligence_army/M-039-re-hook-system.py",
+registries/component_lifecycle_registry.yaml:4807:      "component_path": "skills/script_intelligence_army/M-039-re-hook-system.skill.md",
+registries/route_dag_registry.yaml:253:          "component_id": "M-039-re-hook-system",
+registries/route_dag_registry.yaml:254:          "component_path": "skills/script_intelligence_army/M-039-re-hook-system.py",
+registries/route_dag_registry.yaml:260:            "rehook_plan_packet"
+registries/route_dag_registry.yaml:294:            "rehook_plan_packet"
+registries/component_contract_registry.yaml:15475:  - component_id: "M-039-re-hook-system"
+registries/component_contract_registry.yaml:15476:    component_path: "skills/script_intelligence_army/M-039-re-hook-system.py"
+registries/component_contract_registry.yaml:15515:    component_path: "skills/script_intelligence_army/M-039-re-hook-system.skill.md"
+registries/communication_pointer_registry.yaml:96:    required_output_packet: rehook_plan_packet
+schemas/packets/CANONICAL_PACKET_SCHEMA_INDEX.json:9:    "rehook_plan_packet",
+schemas/packets/CANONICAL_PACKET_SCHEMA_INDEX.json:36:    "rehook_plan_packet",
+validators/validate_script_generation_output.py:168:        "skills/script_intelligence_army/M-039-re-hook-system.skill.md",
+validators/validate_script_generation_output.py:192:        "skills/script_intelligence_army/M-039-re-hook-system.py",
+validators/validate_script_generation_output.py:416:    m039_index = ids.index("M-039-re-hook-system") if "M-039-re-hook-system" in ids else -1
+validators/validate_script_generation_output.py:420:        and "rehook_plan_packet" in nodes[m039_index].get("emitted_output_packets", [])
+validators/validate_script_generation_output.py:421:        and "rehook_plan_packet" in nodes[s202_index].get("required_input_packets", [])
+validators/validate_script_generation_output.py:1458:        "SCRIPT_BODY_LANGUAGE_CHECK": {
+validators/validate_script_generation_output.py:1463:        "REHOOK_REALITY_CHECK": {
+validators/validate_script_generation_output.py:1469:        "SOURCE_LEDGER_REALITY_CHECK": {
+validators/validate_script_generation_output.py:1475:        "FACT_VS_ANECDOTE_REALITY_CHECK": {
+validators/validate_script_generation_output.py:1479:        "SCENE_SYNC_REALITY_CHECK": {
+validators/validate_script_generation_output.py:1484:        "WEAKEST_GATE_REALITY_CHECK": {
+validators/validate_script_generation_output.py:1489:        "PROPAGATION_REALITY_CHECK": {
+validators/validate_script_generation_output.py:1494:        "M039_DAG_ALIGNMENT": {
+skills/script_intelligence_army/M-039-re-hook-system.skill.md:188:evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-039-re-hook-system.skill.md; component_id=M-039_Re_Hook_System
+skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md:196:- Route recurring options to `M-039-re-hook-system`.
+skills/script_intelligence_army/M-039-re-hook-system.py:72:            "producer_component_id": "M-039-re-hook-system",
+skills/script_intelligence_army/M-039-re-hook-system.py:104:# component_id: M-039-re-hook-system
+skills/script_intelligence_army/M-039-re-hook-system.py:147:# evidence_used_for_resolution: path/pre-contract keyword: script/hook/retention; component_path=skills/script_intelligence_army/M-039-re-hook-system.py; component_id=M-039-re-hook-system
+skills/script_intelligence/S-202-first-draft-generation.py:52:    rehook_plan_packet = input_payload.get("rehook_plan_packet")
+skills/script_intelligence/S-202-first-draft-generation.py:54:        rehook_plan_packet.get("recurring_rehook_map")
+skills/script_intelligence/S-202-first-draft-generation.py:55:        if isinstance(rehook_plan_packet, dict)
+skills/script_intelligence/S-202-first-draft-generation.py:59:        not isinstance(rehook_plan_packet, dict)
+skills/script_intelligence/S-202-first-draft-generation.py:60:        or rehook_plan_packet.get("producer_component_id") != "M-039-re-hook-system"
+skills/script_intelligence/S-202-first-draft-generation.py:66:            "error": "missing or invalid M-039 rehook_plan_packet",

@@ -1,0 +1,20 @@
+version: 1
+owner: shadow_commander
+status: ACTIVE_PHASE1
+constitutional_authority_ref: docs/01-architecture/canonical_authority_precedence.md
+purpose: >
+  Build blockers are issues that prevent the repo from being treated as
+  mechanically consistent, validator-safe, or import-safe. They do not
+  necessarily stop manual experimentation, but they stop a clean governed build.
+
+blockers:
+  - blocker_id: BB-019
+    title: Live route IDs do not match repo canonical route IDs
+    severity: P0
+    state: resolved_p0
+    blocking_scope: build
+    linked_decision_packets:
+      - DP-006
+    remediation_owner: founder
+    required_fix: >
+      Live route rows and runtime lookups now use canonical ROUTE_PHASE1_* IDs.

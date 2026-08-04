@@ -1,0 +1,597 @@
+{
+  "mission_id": "yash_self_investment",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "packet_family": "VIDEO_PROMPT_PACKETS",
+  "scene_count": 24,
+  "packets": [
+    {
+      "scene_id": "1",
+      "timestamp_range": "0:00-0:12",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+      "background_motion": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+      "duration_seconds": 12,
+      "transition_out": "Hard open from black (0 frame dissolve). No transition before Scene 1.",
+      "sync_point_to_beat_map": "scene_1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2A",
+      "timestamp_range": "0:12-0:28",
+      "visual_method": "CINEMATIC_BROLL_VIDEO",
+      "camera_movement_type": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "cloud_cinematic_video_handoff",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+      "background_motion": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+      "duration_seconds": 16,
+      "transition_out": "Hard cut from Scene 1 on the word \"Picture this.\" (voice beat sync).",
+      "sync_point_to_beat_map": "scene_2A",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2B",
+      "timestamp_range": "0:28-0:42",
+      "visual_method": "CINEMATIC_BROLL_VIDEO",
+      "camera_movement_type": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "cloud_cinematic_video_handoff",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+      "background_motion": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+      "duration_seconds": 14,
+      "transition_out": "Soft dissolve (1.0s) from Scene 2A into crane shot.",
+      "sync_point_to_beat_map": "scene_2B",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2C",
+      "timestamp_range": "0:42-0:52",
+      "visual_method": "CINEMATIC_BROLL_VIDEO",
+      "camera_movement_type": "Slow dolly push-in toward the stage. Extremely gradual.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "cloud_cinematic_video_handoff",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "runway_ml_api",
+        "kling_ai_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+      "background_motion": "Slow dolly push-in toward the stage. Extremely gradual.",
+      "duration_seconds": 10,
+      "transition_out": "Soft dissolve (0.8s) from Scene 2B.",
+      "sync_point_to_beat_map": "scene_2C",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2D",
+      "timestamp_range": "0:52-1:02",
+      "visual_method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+      "camera_movement_type": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "still_2_5d_parallax",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "depth_anything_v2_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "Canny"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+      "background_motion": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+      "duration_seconds": 10,
+      "transition_out": "Whip pan micro-cut (0.3s) from Scene 2C at the word \"Counting\".",
+      "sync_point_to_beat_map": "scene_2D",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2E",
+      "timestamp_range": "1:02-1:10",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out + glow_pulse 1.5s loop`",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+      "background_motion": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out ",
+      "duration_seconds": 8,
+      "transition_out": "Hard cut from Scene 2D on the word \"And when.\" Zero-frame cut for maximum impact.",
+      "sync_point_to_beat_map": "scene_2E",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "3",
+      "timestamp_range": "1:10-1:20",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+      "background_motion": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+      "duration_seconds": 10,
+      "transition_out": "Jump-cut zoom (snap zoom 0.2s on \"NOT\").",
+      "sync_point_to_beat_map": "scene_3",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4A1",
+      "timestamp_range": "1:20-1:35",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static framing. No camera movement.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+      "background_motion": "Static framing. No camera movement.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 3.",
+      "sync_point_to_beat_map": "scene_4A1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4A2",
+      "timestamp_range": "1:35-1:50",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+      "background_motion": "Static.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 4A1.",
+      "sync_point_to_beat_map": "scene_4A2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4B1",
+      "timestamp_range": "1:50-2:03",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Out",
+      "background_motion": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+      "duration_seconds": 13,
+      "transition_out": "Soft dissolve (0.5s) from Scene 4A2.",
+      "sync_point_to_beat_map": "scene_4B1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4B2",
+      "timestamp_range": "2:03-2:15",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Slow horizontal pan continues from left panel to right panel.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br>",
+      "background_motion": "Slow horizontal pan continues from left panel to right panel.",
+      "duration_seconds": 12,
+      "transition_out": "Straight cut from Scene 4B1.",
+      "sync_point_to_beat_map": "scene_4B2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "5",
+      "timestamp_range": "2:15-2:25",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Slow camera push-in (100% → 106% over 10s).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+      "background_motion": "Slow camera push-in (100% → 106% over 10s).",
+      "duration_seconds": 10,
+      "transition_out": "Hard cut from Scene 4B2 to extreme close-up (pattern interrupt).",
+      "sync_point_to_beat_map": "scene_5",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6A1",
+      "timestamp_range": "2:25-2:40",
+      "visual_method": "NOTEBOOKLM_VISUAL_METHOD",
+      "camera_movement_type": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Conf",
+      "background_motion": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+      "duration_seconds": 15,
+      "transition_out": "Soft dissolve (0.8s) from Scene 5 into NotebookLM slide.",
+      "sync_point_to_beat_map": "scene_6A1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6A2",
+      "timestamp_range": "2:40-2:55",
+      "visual_method": "NOTEBOOKLM_VISUAL_METHOD",
+      "camera_movement_type": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames ",
+      "background_motion": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 6A1.",
+      "sync_point_to_beat_map": "scene_6A2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6B1",
+      "timestamp_range": "2:55-3:10",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+      "background_motion": "Static.",
+      "duration_seconds": 15,
+      "transition_out": "Cut back from NotebookLM slide to presenter A-roll. Warm re-entry.",
+      "sync_point_to_beat_map": "scene_6B1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6B2",
+      "timestamp_range": "3:10-3:25",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+      "background_motion": "Static.",
+      "duration_seconds": 15,
+      "transition_out": "Straight cut from Scene 6B1.",
+      "sync_point_to_beat_map": "scene_6B2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "7",
+      "timestamp_range": "3:25-3:35",
+      "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+      "camera_movement_type": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_fam",
+      "background_motion": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+      "duration_seconds": 10,
+      "transition_out": "Hard cut from Scene 6B2 (maximum pattern interrupt).",
+      "sync_point_to_beat_map": "scene_7",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8A",
+      "timestamp_range": "3:35-3:55",
+      "visual_method": "NOTEBOOKLM_VISUAL_METHOD",
+      "camera_movement_type": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "html_css_gsap_render",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_p",
+      "background_motion": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+      "duration_seconds": 20,
+      "transition_out": "Soft dissolve (0.8s) from Scene 7.",
+      "sync_point_to_beat_map": "scene_8A",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8B",
+      "timestamp_range": "3:55-4:10",
+      "visual_method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+      "camera_movement_type": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "still_2_5d_parallax",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "depth_anything_v2_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [],
+      "controlnet_guidance_types": [
+        "Canny"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate d",
+      "background_motion": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+      "duration_seconds": 15,
+      "transition_out": "Soft dissolve (0.5s) from Scene 8A.",
+      "sync_point_to_beat_map": "scene_8B",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8C1",
+      "timestamp_range": "4:10-4:22",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+      "background_motion": "Static.",
+      "duration_seconds": 12,
+      "transition_out": "Cut back to presenter A-roll from Scene 8B.",
+      "sync_point_to_beat_map": "scene_8C1",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8C2",
+      "timestamp_range": "4:22-4:35",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter making firm point gestures. Studio.",
+      "background_motion": "Static.",
+      "duration_seconds": 13,
+      "transition_out": "Straight cut from Scene 8C1.",
+      "sync_point_to_beat_map": "scene_8C2",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9A",
+      "timestamp_range": "4:35-4:47",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static with slight forward lean.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+      "background_motion": "Static with slight forward lean.",
+      "duration_seconds": 12,
+      "transition_out": "Jump cut from Scene 8C2.",
+      "sync_point_to_beat_map": "scene_9A",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9B",
+      "timestamp_range": "4:47-4:55",
+      "visual_method": "A_ROLL_OVERLAY_METHOD",
+      "camera_movement_type": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_overlay_composite",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [
+        "hyperframes_cli_local",
+        "davinci_resolve_local"
+      ],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Tal",
+      "background_motion": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+      "duration_seconds": 8,
+      "transition_out": "Dissolve (0.8s) from Scene 9A into composite overlay layout.",
+      "sync_point_to_beat_map": "scene_9B",
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9C",
+      "timestamp_range": "4:55-5:05",
+      "visual_method": "A_ROLL_AVATAR",
+      "camera_movement_type": "Static. Gentle fade to black starts at +8.5s.",
+      "frame_rate": 24,
+      "aspect_ratio": "16:9",
+      "animation_style_classification": "avatar_a_roll",
+      "cinematic_delivery_standard": "Rec.709",
+      "local_tool_targets": [],
+      "cloud_tool_targets": [
+        "heygen_api"
+      ],
+      "controlnet_guidance_types": [
+        "None"
+      ],
+      "motion_intensity": "scene-locked",
+      "subject_action": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+      "background_motion": "Static. Gentle fade to black starts at +8.5s.",
+      "duration_seconds": 10,
+      "transition_out": "Straight cut from Scene 9B. Fade to black at +8.5s.",
+      "sync_point_to_beat_map": "scene_9C",
+      "provider_execution_allowed": false
+    }
+  ],
+  "provider_execution_allowed": false,
+  "validation_status": "PASS"
+}

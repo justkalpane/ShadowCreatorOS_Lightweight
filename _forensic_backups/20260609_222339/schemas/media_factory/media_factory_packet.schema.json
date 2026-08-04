@@ -1,0 +1,388 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/media_factory_packet.schema.json",
+  "title": "Shadow Media Factory Packet",
+  "description": "Top-level packet schema for a complete Media Factory handoff produced by the MEDIA_FACTORY_HANDOFF route. Contains all lane plans, scene prompt arrays, pacing metadata, storyboard export plan, validation gates, and evidence.",
+  "type": "object",
+  "required": [
+    "packet_id",
+    "route_id",
+    "source_script_ref",
+    "scene_count",
+    "runtime_mode",
+    "production_order_lock",
+    "asset_inventory_ledger",
+    "asset_dependency_graph",
+    "control_panel_execution_plan",
+    "davinci_timeline_packet",
+    "production_proof_gate",
+    "provider_boundary",
+    "local_engine_boundary",
+    "a_roll_plan",
+    "b_roll_plan",
+    "voice_plan",
+    "music_sfx_plan",
+    "image_prompt_packets",
+    "video_prompt_packets",
+    "pacing_metadata",
+    "storyboard_export_plan",
+    "validation_gates",
+    "human_review_required",
+    "evidence",
+    "next_action"
+  ],
+  "properties": {
+    "packet_id": {"type": "string", "minLength": 1},
+    "route_id": {"type": "string", "const": "MEDIA_FACTORY_HANDOFF"},
+    "dossier_id": {"type": "string", "description": "Optional. Links this packet to a dossier mission."},
+    "source_script_ref": {"type": "string", "minLength": 1, "description": "Reference to the script segment or mission output this packet was produced from."},
+    "scene_count": {"type": "integer", "minimum": 1},
+    "runtime_mode": {
+      "type": "string",
+      "enum": ["local", "hybrid", "cloud", "planning_only"],
+      "description": "Execution posture for this packet."
+    },
+    "production_order_lock": {
+      "type": "object",
+      "required": ["timeline_anchor", "phases", "parallelization_rule", "status"],
+      "properties": {
+        "timeline_anchor": {"type": "string"},
+        "parallelization_rule": {"type": "string"},
+        "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]},
+        "phases": {
+          "type": "array",
+          "minItems": 17,
+          "items": {
+            "type": "object",
+            "required": [
+              "phase_id",
+              "phase_order",
+              "phase_name",
+              "depends_on_phase_ids",
+              "blocking_prerequisites",
+              "output_asset_classes",
+              "execution_mode",
+              "approval_gate",
+              "proof_gate",
+              "status"
+            ],
+            "properties": {
+              "phase_id": {"type": "string", "pattern": "^P\\d{2}$"},
+              "phase_order": {"type": "integer", "minimum": 1},
+              "phase_name": {"type": "string", "minLength": 1},
+              "depends_on_phase_ids": {"type": "array", "items": {"type": "string", "pattern": "^P\\d{2}$"}},
+              "blocking_prerequisites": {"type": "array", "items": {"type": "string"}},
+              "output_asset_classes": {"type": "array", "items": {"type": "string"}},
+              "execution_mode": {
+                "type": "string",
+                "enum": ["plan_only", "ready_after_approval", "blocked_until_assets_exist", "requires_confirmation", "local_after_approval", "cloud_after_approval"]
+              },
+              "approval_gate": {"type": "string", "minLength": 1},
+              "proof_gate": {"type": "string", "minLength": 1},
+              "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+            }
+          }
+        }
+      }
+    },
+    "asset_inventory_ledger": {
+      "type": "object",
+      "required": [
+        "voice_assets",
+        "music_segments",
+        "sfx_clips",
+        "character_consistency_assets",
+        "storyboard_stills",
+        "depth_parallax_stills",
+        "hyperframes_slide_assets",
+        "hyperframes_overlay_assets",
+        "cinematic_broll_clips",
+        "a_roll_batches",
+        "davinci_project_assets",
+        "thumbnail_assets"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["count", "status"],
+        "properties": {
+          "count": {"type": "integer", "minimum": 0},
+          "notes": {"type": "string"},
+          "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+        }
+      }
+    },
+    "asset_dependency_graph": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "asset_type", "depends_on", "generation_lane", "tool_or_provider", "approval_required", "expected_output_path", "proof_required", "status"],
+        "properties": {
+          "asset_id": {"type": "string"},
+          "asset_type": {"type": "string"},
+          "depends_on": {"type": "array", "items": {"type": "string"}},
+          "generation_lane": {"type": "string"},
+          "tool_or_provider": {"type": "string"},
+          "approval_required": {"type": "boolean"},
+          "expected_output_path": {"type": "string"},
+          "proof_required": {"type": "boolean"},
+          "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+        }
+      }
+    },
+    "control_panel_execution_plan": {
+      "type": "object",
+      "required": ["bridge_registry", "control_panel_cli", "job_packet_dir", "preflight_required", "render_requires_user_approval", "proof_json_required", "registry_update_required", "phases"],
+      "properties": {
+        "bridge_registry": {"type": "string"},
+        "control_panel_cli": {"type": "string"},
+        "job_packet_dir": {"type": "string"},
+        "preflight_required": {"type": "boolean", "const": true},
+        "render_requires_user_approval": {"type": "boolean", "const": true},
+        "proof_json_required": {"type": "boolean", "const": true},
+        "registry_update_required": {"type": "boolean", "const": true},
+        "phases": {
+          "type": "array",
+          "minItems": 17,
+          "items": {
+            "type": "object",
+            "required": [
+              "phase_id",
+              "plan_state",
+              "control_panel_entrypoint",
+              "preflight_dependency",
+              "downgrade_on_failure",
+              "proof_artifacts",
+              "status"
+            ],
+            "properties": {
+              "phase_id": {"type": "string", "pattern": "^P\\d{2}$"},
+              "plan_state": {
+                "type": "string",
+                "enum": ["plan_only", "preflight", "ready_after_approval", "blocked_until_required_assets_exist", "requires_confirmation", "completed_with_proof"]
+              },
+              "control_panel_entrypoint": {"type": "string", "minLength": 1},
+              "preflight_dependency": {"type": "string", "minLength": 1},
+              "downgrade_on_failure": {"type": "string", "minLength": 1},
+              "proof_artifacts": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+              "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+            }
+          }
+        }
+      }
+    },
+    "davinci_timeline_packet": {
+      "type": "object",
+      "required": ["track_map", "timeline_rows"],
+      "properties": {
+        "track_map": {
+          "type": "object",
+          "required": ["V1", "V2", "V3", "A1", "A2", "A3", "A4", "A5"],
+          "properties": {
+            "V1": {"type": "string"},
+            "V2": {"type": "string"},
+            "V3": {"type": "string"},
+            "A1": {"type": "string"},
+            "A2": {"type": "string"},
+            "A3": {"type": "string"},
+            "A4": {"type": "string"},
+            "A5": {"type": "string"}
+          }
+        },
+        "timeline_rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["scene_id", "source_asset_id", "start_time", "end_time", "track", "transition_in", "transition_out", "proof_dependency"],
+            "properties": {
+              "scene_id": {"type": "string"},
+              "source_asset_id": {"type": "string"},
+              "start_time": {"type": "string"},
+              "end_time": {"type": "string"},
+              "track": {"type": "string"},
+              "transition_in": {"type": "string"},
+              "transition_out": {"type": "string"},
+              "j_cut_or_l_cut_offset": {"type": "string"},
+              "caption_action": {"type": "string"},
+              "color_grade": {"type": "string"},
+              "safe_zone": {"type": "string"},
+              "proof_dependency": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "production_proof_gate": {
+      "type": "object",
+      "required": ["artifact_path", "proof_json_path", "registry_entry_path", "engine_or_provider_used", "source_packet_ref", "validation_result", "human_review_status", "status"],
+      "properties": {
+        "artifact_path": {"type": "string"},
+        "proof_json_path": {"type": "string"},
+        "registry_entry_path": {"type": "string"},
+        "engine_or_provider_used": {"type": "string"},
+        "source_packet_ref": {"type": "string"},
+        "validation_result": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]},
+        "human_review_status": {"type": "string"},
+        "status": {"type": "string", "enum": ["PASS", "BLOCKED", "NEEDS_USER_APPROVAL", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "provider_boundary": {
+      "type": "object",
+      "required": ["providers_called", "n8n_used", "provider_execution_allowed"],
+      "properties": {
+        "providers_called": {"type": "boolean"},
+        "n8n_used": {"type": "boolean"},
+        "provider_execution_allowed": {"const": false},
+        "media_artifacts_claimed": {"type": "boolean"}
+      }
+    },
+    "local_engine_boundary": {
+      "type": "object",
+      "required": ["local_media_generation_engine_used", "local_engine_execution_approved"],
+      "properties": {
+        "local_media_generation_engine_used": {"type": "boolean"},
+        "local_engine_execution_approved": {"type": "boolean"},
+        "engines_referenced": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "List of local engine IDs referenced in this packet."
+        }
+      }
+    },
+    "a_roll_plan": {
+      "type": "object",
+      "required": ["avatar_or_presenter", "style", "readiness_status"],
+      "properties": {
+        "avatar_or_presenter": {"type": "string"},
+        "style": {"type": "string"},
+        "safety_handling": {"type": "string"},
+        "tool_target": {"type": "string"},
+        "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "PROVIDER_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "b_roll_plan": {
+      "type": "object",
+      "required": ["scene_count", "sourcing_strategy", "readiness_status"],
+      "properties": {
+        "scene_count": {"type": "integer", "minimum": 0},
+        "sourcing_strategy": {"type": "string", "enum": ["local_generation", "cloud_provider", "stock_library", "hybrid", "manual_creation"]},
+        "primary_tool_target": {"type": "string"},
+        "storyboard_export_path": {"type": "string"},
+        "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "PROVIDER_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "voice_plan": {
+      "type": "object",
+      "required": ["style", "tool_target", "readiness_status"],
+      "properties": {
+        "style": {"type": "string"},
+        "tool_target": {"type": "string"},
+        "ssml_ready": {"type": "boolean"},
+        "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "PROVIDER_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "music_sfx_plan": {
+      "type": "object",
+      "required": ["mood", "tool_target", "readiness_status"],
+      "properties": {
+        "mood": {"type": "string"},
+        "tempo": {"type": "string"},
+        "tool_target": {"type": "string"},
+        "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "PROVIDER_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "image_prompt_packets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "scene_prompt_packet.schema.json"},
+      "description": "Array of scene-level image prompt packets. Each must conform to scene_prompt_packet.schema.json."
+    },
+    "video_prompt_packets": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "camera_movement_type", "frame_rate", "aspect_ratio", "cinematic_delivery_standard", "local_tool_targets", "duration_seconds"],
+        "properties": {
+          "scene_id": {"type": "string"},
+          "camera_movement_type": {"type": "string"},
+          "frame_rate": {"type": "number"},
+          "aspect_ratio": {"type": "string"},
+          "animation_style_classification": {"type": "string"},
+          "cinematic_delivery_standard": {"type": "string", "default": "Rec.709"},
+          "local_tool_targets": {"type": "array", "items": {"type": "string"}},
+          "controlnet_guidance_types": {"type": "array", "items": {"type": "string"}},
+          "motion_intensity": {"type": "string"},
+          "subject_action": {"type": "string"},
+          "background_motion": {"type": "string"},
+          "duration_seconds": {"type": "number", "minimum": 1},
+          "transition_out": {"type": "string"},
+          "sync_point_to_beat_map": {"type": "string"}
+        }
+      }
+    },
+    "pacing_metadata": {
+      "type": "object",
+      "required": ["json_path", "txt_path", "scene_count", "total_duration_seconds"],
+      "properties": {
+        "json_path": {"type": "string"},
+        "txt_path": {"type": "string"},
+        "scene_count": {"type": "integer"},
+        "total_duration_seconds": {"type": "number"},
+        "exact_filenames_in_json": {"type": "boolean", "const": true}
+      }
+    },
+    "storyboard_export_plan": {
+      "type": "object",
+      "required": ["export_path", "naming_convention", "scene_to_image_map_required", "pacing_metadata_coupling_required"],
+      "properties": {
+        "export_path": {"type": "string"},
+        "naming_convention": {"type": "string", "description": "e.g. shot<N>_<scene_id>_<descriptor>.png"},
+        "scene_to_image_map_required": {"const": true},
+        "pacing_metadata_coupling_required": {"const": true},
+        "image_format": {"type": "string", "default": "PNG"},
+        "image_quality": {"type": "string", "default": "original_generation_quality"},
+        "image_to_beat_map_sync": {"type": "boolean"},
+        "images_generated": {"type": "boolean"},
+        "readiness_status": {"type": "string", "enum": ["DESIGNED", "STUB", "PACKET_READY", "LOCAL_ENGINE_READY", "EXECUTABLE", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "validation_gates": {
+      "type": "object",
+      "required": ["visual_dna_compliance", "tool_translation_readiness", "scene_sync_matrix_valid", "provider_honesty_gate"],
+      "properties": {
+        "visual_dna_compliance": {"type": "string", "enum": ["PASS", "PARTIAL", "BLOCKED", "NEEDS_CONFIRMATION"]},
+        "tool_translation_readiness": {"type": "string", "enum": ["PASS", "PARTIAL", "BLOCKED", "NEEDS_CONFIRMATION"]},
+        "scene_sync_matrix_valid": {"type": "string", "enum": ["PASS", "PARTIAL", "BLOCKED", "NEEDS_CONFIRMATION"]},
+        "provider_honesty_gate": {"type": "string", "enum": ["PASS", "PARTIAL", "BLOCKED", "NEEDS_CONFIRMATION"]},
+        "final_status": {"type": "string", "enum": ["PASS", "PARTIAL", "BLOCKED", "NEEDS_CONFIRMATION"]}
+      }
+    },
+    "human_review_required": {"type": "boolean"},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "artifact_type", "generation_method", "validation_result"],
+        "properties": {
+          "artifact_id": {"type": "string"},
+          "file_path": {"type": "string"},
+          "artifact_name": {"type": "string"},
+          "artifact_type": {"type": "string", "enum": ["image", "video", "audio", "storyboard", "pacing_metadata", "json_schema", "txt_notepad"]},
+          "generation_method": {"type": "string"},
+          "engine_or_provider_used": {"type": "string"},
+          "source_prompt_packet_ref": {"type": "string"},
+          "render_metadata_path": {"type": "string"},
+          "validation_result": {"type": "string", "enum": ["PASS", "PARTIAL", "BLOCKED", "NEEDS_CONFIRMATION"]},
+          "human_review_status": {"type": "string", "enum": ["reviewed", "pending", "not_required"]}
+        }
+      }
+    },
+    "next_action": {
+      "type": "string",
+      "description": "Recommended next step: e.g. NEEDS_USER_APPROVAL_TO_EXECUTE_LOCAL_ENGINE or PACKET_READY_FOR_COMFYUI_INGESTION"
+    }
+  },
+  "additionalProperties": true
+}

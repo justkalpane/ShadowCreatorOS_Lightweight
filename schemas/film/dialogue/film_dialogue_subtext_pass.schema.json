@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/dialogue/film_dialogue_subtext_pass.schema.json",
+  "title": "Film Dialogue Subtext Pass",
+  "description": "Skeleton schema for dialogue subtext validation.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"dialogue_pass":{"type":"string","description":"Dialogue pass"},"subtext_notes":{"type":"string","description":"Subtext notes"},"voice_distinctness":{"type":"string","description":"Voice distinctness"}},
+  "required": []
+}

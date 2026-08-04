@@ -79,3 +79,10 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [no video-created claim]
 # evidence_used_for_resolution: path/pre-contract keyword: video/avatar/motion; component_path=skills/system_intelligence/M-088-scene-composition-engine.py; component_id=M-088-scene-composition-engine
 # remaining_unknowns: none
+
+# PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+# alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+# cinema_core_obligations: [scene_construction, sequence_design, visual_grammar, blocking_composition, dialogue_spacing, montage_awareness]
+# cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_scene_composition_subordinate_to_story_brain]
+# runtime_proof_claimed: false
+# governed_completion_claimed: false

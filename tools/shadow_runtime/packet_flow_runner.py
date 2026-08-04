@@ -17,6 +17,25 @@ def _mk_packet(packet_name, route_id, producer):
     if packet_name=='source_evidence_packet': p.update({'sources':['https://example.com'], 'claims':['claim']})
     if packet_name=='research_brief_packet': p.update({'brief':'x','source_evidence_refs':['x']})
     if packet_name=='script_strategy_packet': p.update({'strategy':'x','duration_target_sec':60})
+    if packet_name=='rehook_plan_packet':
+        p.update({
+            'script_duration_minutes':5,
+            'recurring_rehook_map':[
+                {
+                    'rehook_id':'rehook_1',
+                    'timestamp_seconds':75,
+                    'hook_type':'curiosity_rehook',
+                    'hook_line':'What if the habit you defend is the reason you stay stuck?',
+                    'retention_function':'reset attention before the next major section',
+                    'emotional_trigger':'productive discomfort',
+                    'topic_connection':'self-investment requires redirecting attention',
+                    'beat_map_scene_id':'scene_075',
+                    'line_influence_reference':'influence_rehook_1',
+                }
+            ],
+            'max_gap_without_rehook_seconds':90,
+            'cta_hook_required':True,
+        })
     if packet_name=='script_v1_packet': p.update({'script_text':'x','hook':'x'})
     if packet_name=='debate_critique_packet': p.update({'critique_points':['point'], 'line_refs':['L1']})
     if packet_name=='refinement_delta_packet': p.update({'changes':['change'], 'rationale':'improve clarity'})

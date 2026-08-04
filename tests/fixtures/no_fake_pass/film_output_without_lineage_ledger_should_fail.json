@@ -1,0 +1,16 @@
+{
+  "fixture_id": "NF-004",
+  "fixture_family": "no_fake_pass",
+  "input_summary": "Film output lacks lineage / consumption ledger.",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "prohibited_claims": ["route_lineage_complete"],
+  "required_future_validator_or_schema": "validate_lineage_ledger.py",
+  "purpose": "Lineage enforcement",
+  "risk_if_missing": "Repo reads are mistaken for full route consumption",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

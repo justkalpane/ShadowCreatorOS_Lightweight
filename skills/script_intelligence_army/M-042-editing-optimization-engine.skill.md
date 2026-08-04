@@ -187,3 +187,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-042-editing-optimization-engine.skill.md; component_id=M-042_Editing_Optimization_Engine
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Mark recurring re-hook beats as editing pattern interrupts with caption,
+  camera, cut, and music/SFX emphasis.
+- Require synchronized scene rows for final Media Factory drafts.

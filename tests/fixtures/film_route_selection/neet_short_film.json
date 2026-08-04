@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-001",
+  "fixture_family": "route_selection",
+  "input_prompt": "Create a short film on the NEET paper issue.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_mode": "film_core",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_film_route_selection.py",
+  "purpose": "Canonical film intent",
+  "risk_if_missing": "Film prompts drift into content route",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

@@ -25,9 +25,23 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "emotional_rehook_supported": True,
+                "rehook_scene_sync_required": True,
+                "rehook_media_fields": [
+                    "voice",
+                    "image",
+                    "video",
+                    "music_sfx",
+                    "editing",
+                ],
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# Emotional spike scenes may act as re-hooks only when the production packet
+# synchronizes voice, visuals, music/SFX, and editing around the reset.
 
 
 

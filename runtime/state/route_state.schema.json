@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreatoros.local/runtime/state/route_state.schema.json",
+  "title": "Shadow Creator OS Route State Capsule",
+  "type": "object",
+  "required": [
+    "route_id",
+    "route_manifest_path",
+    "route_manifest_hash",
+    "task_mode",
+    "route_phase",
+    "files_consumed",
+    "file_hashes",
+    "dependencies_complete",
+    "output_phase_started",
+    "last_completed_step",
+    "next_required_step",
+    "compaction_recovery_ready",
+    "historical_files_allowed",
+    "active_runtime_scope",
+    "read_ledger"
+  ],
+  "properties": {
+    "route_id": { "type": "string" },
+    "route_manifest_path": { "type": "string" },
+    "route_manifest_hash": { "type": "string", "minLength": 32 },
+    "task_mode": {
+      "type": "string",
+      "enum": [
+        "script_only",
+        "script_plus_visual_plan",
+        "script_plus_visual_generation_draft",
+        "script_plus_media_factory_handoff",
+        "full_content_packet",
+        "film_screenplay_generation",
+        "repo_drift_audit",
+        "media_factory_regression_audit"
+      ]
+    },
+    "route_phase": {
+      "type": "string",
+      "enum": [
+        "BOOT_CONFIRMED",
+        "TASK_CLASSIFIED",
+        "ROUTE_LOCKED",
+        "DEPENDENCIES_CONSUMED",
+        "OUTPUT_PHASE_STARTED",
+        "OUTPUT_GENERATED",
+        "VALIDATED",
+        "BLOCKED"
+      ]
+    },
+    "files_consumed": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "file_hashes": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "dependencies_complete": { "type": "boolean" },
+    "output_phase_started": { "type": "boolean" },
+    "last_completed_step": { "type": "string" },
+    "next_required_step": { "type": "string" },
+    "compaction_recovery_ready": { "type": "boolean" },
+    "historical_files_allowed": { "type": "boolean" },
+    "active_runtime_scope": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "read_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file_path",
+          "file_hash",
+          "first_read_phase",
+          "last_read_phase",
+          "read_count",
+          "reread_reason",
+          "route_required",
+          "semantic_use_required",
+          "semantic_use_status"
+        ],
+        "properties": {
+          "file_path": { "type": "string" },
+          "file_hash": { "type": "string" },
+          "first_read_phase": { "type": "string" },
+          "last_read_phase": { "type": "string" },
+          "read_count": { "type": "integer", "minimum": 1 },
+          "reread_reason": {
+            "type": "string",
+            "enum": [
+              "first_read",
+              "file_hash_changed",
+              "audit_mode",
+              "validator_mode",
+              "explicit_user_requested_compare",
+              "route_manifest_changed",
+              "compaction_recovery_validation"
+            ]
+          },
+          "route_required": { "type": "boolean" },
+          "semantic_use_required": { "type": "boolean" },
+          "semantic_use_status": {
+            "type": "string",
+            "enum": ["USED", "NOT_USED", "NOT_APPLICABLE", "NOT_PROVEN"]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+{
+  "fixture_id": "DH-001",
+  "fixture_family": "downstream_handoff",
+  "input_packet_summary": "Valid film packet handed to visual media planning.",
+  "expected_route": "VISUAL_MEDIA_PLAN",
+  "expected_result": "HANDOFF_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_visual_media_plan_handoff.py",
+  "purpose": "Film packet to visual media handoff",
+  "risk_if_missing": "Visual planning loses film boundary",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

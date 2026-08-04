@@ -1,0 +1,28 @@
+{
+  "packet_id": "rehook_plan_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "M-039-re-hook-system",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "script_duration_minutes": 5,
+  "recurring_rehook_map": [
+    {
+      "rehook_id": "rehook_1",
+      "timestamp_seconds": 75,
+      "hook_type": "curiosity_rehook",
+      "hook_line": "What if the habit you defend is the reason you stay stuck?",
+      "retention_function": "reset attention before the next major section",
+      "emotional_trigger": "productive discomfort",
+      "topic_connection": "self-investment requires redirecting attention",
+      "beat_map_scene_id": "scene_075",
+      "line_influence_reference": "influence_rehook_1"
+    }
+  ],
+  "max_gap_without_rehook_seconds": 90,
+  "cta_hook_required": true
+}

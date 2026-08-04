@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sequence Structure",
+  "type": "object",
+  "required": ["sequences"],
+  "properties": {
+    "sequences": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["sequence_id", "scene_numbers", "function"],
+        "properties": {
+          "sequence_id": {"type": "string"},
+          "scene_numbers": {"type": "array", "items": {"type": "integer"}, "minItems": 1},
+          "function": {"type": "string"}
+        }
+      }
+    }
+  }
+}

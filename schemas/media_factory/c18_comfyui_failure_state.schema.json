@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow C18 ComfyUI Failure State",
+  "description": "Carry-forward failure state for the C18 local-image generation gap. This state must remain visible until a future repair batch resolves it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cut_id",
+    "failure_type",
+    "tool",
+    "timeout_seconds",
+    "workflow_json_path",
+    "node_graph_hash",
+    "model",
+    "sampler",
+    "steps",
+    "cfg",
+    "seed",
+    "width",
+    "height",
+    "hires_fix",
+    "output_node",
+    "expected_output_path",
+    "actual_output_path",
+    "failure_class",
+    "fallback_route",
+    "proof_required",
+    "next_repair_batch",
+    "status",
+    "schema_version"
+  ],
+  "properties": {
+    "cut_id": {
+      "type": "string",
+      "const": "C18"
+    },
+    "failure_type": {
+      "type": "string",
+      "const": "local_image_generation_failure"
+    },
+    "tool": {
+      "type": "string",
+      "const": "ComfyUI"
+    },
+    "timeout_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "workflow_json_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "node_graph_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sampler": {
+      "type": "string",
+      "minLength": 1
+    },
+    "steps": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cfg": {
+      "type": "number",
+      "minimum": 0
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "hires_fix": {
+      "type": "boolean"
+    },
+    "output_node": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_output_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "actual_output_path": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^/"
+    },
+    "failure_class": {
+      "type": "string",
+      "enum": [
+        "COMFY_TIMEOUT_300S",
+        "COMFY_NO_OUTPUT_IMAGE",
+        "COMFY_MISSING_WORKFLOW_JSON",
+        "COMFY_HIRES_FIX_MISSING",
+        "COMFY_OOM_OR_RESOURCE_LIMIT",
+        "COMFY_OUTPUT_NOT_VALIDATED",
+        "COMFY_OUTPUT_EXISTS_BUT_NOT_ACCEPTED"
+      ]
+    },
+    "fallback_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proof_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "next_repair_batch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "BLOCKED",
+        "CARRIED_FORWARD",
+        "RESOLVED"
+      ]
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow HyperFrames Composition",
+  "description": "HyperFrames overlay composition proof with bounded opacity, safe zones, and traceable source-vs-render linkage.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "overlay_id",
+    "overlay_path",
+    "overlay_sha256",
+    "overlay_category",
+    "overlay_purpose",
+    "scene_relevance",
+    "blend_mode",
+    "alpha_mode",
+    "opacity_min",
+    "opacity_max",
+    "position",
+    "scale",
+    "z_order",
+    "safe_zone",
+    "subject_occlusion_limit",
+    "visual_noise_limit",
+    "animation_duration",
+    "frame_rate",
+    "loop_behavior",
+    "overlay_start_time",
+    "overlay_end_time",
+    "contact_sheet_proof",
+    "source_vs_render_proof",
+    "human_review_required",
+    "schema_version"
+  ],
+  "properties": {
+    "overlay_id": {
+      "type": "string",
+      "pattern": "^HFC-[A-Za-z0-9_-]+$"
+    },
+    "overlay_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "overlay_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "overlay_category": {
+      "type": "string",
+      "enum": [
+        "kinetic_text",
+        "data_card",
+        "notebooklm_panel",
+        "evidence_wall",
+        "alpha_overlay",
+        "accent"
+      ]
+    },
+    "overlay_purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scene_relevance": {
+      "type": "string",
+      "minLength": 1
+    },
+    "blend_mode": {
+      "type": "string",
+      "enum": [
+        "screen",
+        "add",
+        "normal"
+      ]
+    },
+    "alpha_mode": {
+      "type": "string",
+      "enum": [
+        "premultiplied",
+        "straight"
+      ]
+    },
+    "opacity_min": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "opacity_max": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "anchor": {
+          "type": "string",
+          "enum": [
+            "top_left",
+            "top_right",
+            "center",
+            "bottom_left",
+            "bottom_right"
+          ]
+        }
+      }
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "scale_mode": {
+          "type": "string",
+          "enum": [
+            "fit",
+            "fill",
+            "stretch"
+          ]
+        }
+      }
+    },
+    "z_order": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "safe_zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "subject_occlusion_limit": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.25
+    },
+    "visual_noise_limit": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.4
+    },
+    "animation_duration": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "frame_rate": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "loop_behavior": {
+      "type": "string",
+      "enum": [
+        "loop",
+        "once",
+        "hold_last_frame"
+      ]
+    },
+    "overlay_start_time": {
+      "type": "number",
+      "minimum": 0
+    },
+    "overlay_end_time": {
+      "type": "number",
+      "minimum": 0
+    },
+    "contact_sheet_proof": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "source_vs_render_proof": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

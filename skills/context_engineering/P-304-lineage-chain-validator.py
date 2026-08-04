@@ -40,6 +40,9 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
         ecp_id = str(ecp.get("packet_id", ecp.get("instance_id", f"ECP-{ts}")))
         ppp_id = str(ppp.get("instance_id", f"PPP-{ts}"))
         fsp_id = str(fsp.get("packet_id", f"FSP-{ts}"))
+        recurring_rehook_map = fsp.get("recurring_rehook_map", [])
+        if not isinstance(recurring_rehook_map, list):
+            recurring_rehook_map = []
 
         platform = str(
             ppp.get("payload", {}).get("context", {}).get("target_platform", input_payload.get("target_platform", "youtube"))
@@ -94,6 +97,10 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
                         {"check": "lineage_chain", "result": "PASSED"},
                         {"check": "quality_gates", "result": "PASSED"},
                         {"check": "governance_compliance", "result": "PASSED"},
+                        {
+                            "check": "recurring_rehook_lineage",
+                            "result": "PASSED" if recurring_rehook_map else "NEEDS_CONFIRMATION",
+                        },
                     ],
                     "lineage_trace": {
                         "abp_to_ppp": True,
@@ -183,3 +190,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [no tool execution, no media creation]
 # evidence_used_for_resolution: path/pre-contract keyword: context engineering; component_path=skills/context_engineering/P-304-lineage-chain-validator.py; component_id=P-304-lineage-chain-validator
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [RECURRING_HOOK_DENSITY_LAW, MEDIA_FACTORY_FINAL_DRAFT, FINAL_STATUS_HONESTY_GATE]
+# responsibility: Preserve recurring re-hook lineage and expose missing re-hook scene-sync evidence before downstream handoff.

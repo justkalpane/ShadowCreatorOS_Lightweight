@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-009",
+  "fixture_family": "route_selection",
+  "input_prompt": "Run the full video pipeline for a film screenplay.",
+  "expected_route": "FULL_VIDEO_PIPELINE",
+  "expected_mode": "downstream",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_full_video_pipeline_handoff.py",
+  "purpose": "Downstream production pipeline after film packet",
+  "risk_if_missing": "Production handoff loses separation from screenplay generation",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

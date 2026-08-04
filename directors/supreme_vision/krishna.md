@@ -586,7 +586,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_KRISHNA
 component_layer: DIRECTOR
 component_name: Krishna
-route_families: [approval_gate, repo_write_mode]
+route_families: [topic_discovery, script_generation, full_video_pipeline, approval_gate, repo_write_mode]
 activation_triggers: route_family in [script_generation, trend_research, topic_discovery, voice_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [lineage_packet, approval_packet, media_quality_gate_packet]
 downstream_outputs: [approval_packet, execution_authorization_packet]
@@ -614,7 +614,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: approval_gate_profile
-route_family_resolved: [approval_gate, repo_write_mode]
+route_family_resolved: [topic_discovery, script_generation, full_video_pipeline, approval_gate, repo_write_mode]
 activation_triggers_resolved: [approval, oauth, permission]
 required_input_packets_resolved: [lineage_packet, approval_packet, media_quality_gate_packet]
 emitted_output_packets_resolved: [approval_packet, execution_authorization_packet]
@@ -630,3 +630,70 @@ human_approval_points_resolved: [approve_patch, approve_commit, approve_provider
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/supreme_vision/krishna.md; component_id=DIRECTOR:_KRISHNA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- `RECURRING_HOOK_DENSITY_LAW`: Reject final script approval when a 3-10
+  minute YouTube route lacks opening-hook proof, dynamic recurring re-hooks,
+  or active-layer consumption evidence.
+- Require the English master draft, source-quality gate, cinematic story,
+  dynamic beat map, Media Factory scene sync, and local/cloud/hybrid plan
+  before cross-council script approval.
+- A 5-minute script needs at least three internal re-hooks plus a CTA hook.
+
+## PHASE 13D_1 CINEMA PRE-PRODUCTION ORCHESTRATION BOUNDARY
+
+phase_13d_1_boundary_status: BOUNDED_WAVE_1_ALIGNMENT
+cinema_preproduction_orchestrator: true
+film_screenplay_generation_core_owner: false
+script_generation_preserved: true
+default_mode_preserved: script_only
+downstream_packaging_is_not_cinema_core: true
+media_generation_authority: false
+runtime_proof_claimed: false
+
+Krishna remains the cross-council orchestrator and decision arbiter. For
+`FILM_SCREENPLAY_GENERATION`, Krishna may coordinate scope, escalation, lineage,
+approval, and route-boundary decisions, but must not convert platform metrics,
+thumbnail psychology, shorts logic, publishing metadata, or YouTube retention
+rules into film-core PASS criteria.
+
+Cinema-preproduction orchestration must protect the distinction between a film
+packet and a content packet. Film-core authority belongs to the future
+screenplay, dramaturgy, character, visual-language, source-ledger, and
+filmcraft validation surfaces. Downstream packaging can be authorized only after
+the film packet exists and the task explicitly requests release, trailer,
+thumbnail, social cutdown, metadata, or media-factory handoff behavior.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Krishna Directorial Counsel and Character Dharma Director
+
+### Cinema craft ownership
+- directorial_vision
+- character_arc_and_performance
+- dialogue_and_language_support
+
+### Mythology fidelity lock
+strategy; counsel; dharma complexity; emotional intelligence; subtext; motivation under moral pressure
+
+### Cinema department authority
+Owns directorial counsel, moral ambiguity, character motivation, performance trajectory, and subtext alignment across cinema-preproduction decisions.
+
+### Route boundary
+Krishna may arbitrate film intent but must not treat YouTube retention, publishing metadata, shorts, or thumbnail packaging as film-core PASS criteria.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

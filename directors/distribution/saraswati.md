@@ -414,7 +414,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_SARASWATI
 component_layer: DIRECTOR
 component_name: Saraswati
-route_families: [quality_gate, full_video_pipeline]
+route_families: [voice_context, script_refinement, script_generation, editing_packaging, context_engineering, quality_gate, full_video_pipeline]
 activation_triggers: route_family in [script_generation, music_sfx_context, visual_context, avatar_video_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -442,7 +442,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_quality_gate_profile
-route_family_resolved: [quality_gate, full_video_pipeline]
+route_family_resolved: [voice_context, script_refinement, script_generation, editing_packaging, context_engineering, quality_gate, full_video_pipeline]
 activation_triggers_resolved: [quality, validation, compliance]
 required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
@@ -458,3 +458,72 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/distribution/saraswati.md; component_id=DIRECTOR:_SARASWATI
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Preserve the approved English master language unless the user explicitly
+  requests translation/localization.
+- Ensure opening hooks, recurring re-hooks, and CTA hooks remain
+  platform-appropriate, topic-relevant, and mapped to packaging.
+- Reject silent Hindi/Hinglish drift inferred from culture, celebrity,
+  geography, mythology, or source language.
+
+## PHASE 13D_1 CINEMA PRE-PRODUCTION BOUNDARY
+
+phase_13d_1_boundary_status: BOUNDED_WAVE_1_ALIGNMENT
+cinema_core_authority: false
+film_screenplay_generation_core_authority: false
+downstream_release_authority: true
+script_generation_preserved: true
+default_mode_preserved: script_only
+media_generation_authority: false
+runtime_proof_claimed: false
+
+Saraswati remains a knowledge, language, learning, release-clarity, and
+distribution intelligence surface. For `FILM_SCREENPLAY_GENERATION`, Saraswati
+must not own screenplay authorship, scene construction, character design,
+dialogue dramaturgy, visual grammar, or filmcraft PASS criteria.
+
+Cinema-preproduction usage is limited to downstream clarity after a film packet
+exists: release framing, audience-facing explanation, subtitle/title language,
+festival/distribution notes, accessibility copy, and knowledge-preserving
+handoff language. YouTube repurposing, shorts, thumbnail, metadata, CTR, SEO,
+viral, and retention logic remain downstream packaging behavior and cannot be
+treated as cinema-core authority.
+
+If a task is still in film-core development, route ownership remains with the
+cinema screenplay / craft surfaces. Saraswati may receive the finished or
+approved film packet only after downstream packaging or distribution is
+explicitly authorized.
+
+
+## PHASE 13E_4 REMAINING 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_4_status: REMAINING_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Saraswati Dialogue, Language, Music, and Prosody Director
+
+### Cinema craft ownership
+- dialogue_and_language
+- music_motif_and_emotional_score
+- actor_voice_and_prosody
+
+### Mythology fidelity lock
+language; dialogue; music; learning; voice clarity; lyric articulation; knowledge made audible
+
+### Cinema department authority
+Owns cinematic language, line clarity, subtext expression, dialogue polish, actor prosody notes, and musical motif articulation for future film packets.
+
+### Route boundary
+Saraswati may support downstream release clarity after a film packet exists, but YouTube repurposing, thumbnails, SEO, metadata, shorts, CTR, and platform formatting cannot become film-core authority.
+
+### Phase 13E_4 limitation
+This block closes the remaining director-ownership gap identified in Phase 13E_3. It does not modify runtime behavior, route selector behavior, active route registries, schemas, validators, contracts, fixtures, or downstream platform execution.

@@ -1,0 +1,138 @@
+{
+  "project_metadata": {
+    "title": "Bengaluru Bus Terminal - Night B-Roll Concept",
+    "description": "Storyboard pacing metadata mapping creative and technical prompts to original storyboard images for local rendering.",
+    "target_frame_rate": 24,
+    "color_palette": {
+      "teal_shadows": "#0F2A33",
+      "deep_blue": "#1E3A43",
+      "slate_gray": "#2C4A4F",
+      "amber_warm": "#D0BA2E",
+      "highlight_yellow": "#F2C16D"
+    },
+    "visual_style": "Cinematic animation, early 2000s aesthetic, Rec.709 compliant grading, film grain, stylized cinematic realism, NOT photorealistic face.",
+    "source_directory": "./downloads/b_roll_storyboard"
+  },
+  "scenes": [
+    {
+      "scene_id": "shot1_wide_establisher",
+      "timestamp_range": "00:00 - 00:03",
+      "duration_seconds": 3,
+      "source_image": "shot1_wide_establisher.png",
+      "creative_brief": "A massive Bengaluru state bus terminal at night. A lonely, uncertain, yet determined starting point for a young boy arriving in a vast city.",
+      "technical_parameters": {
+        "camera_movement": "Wide master lock, observational, slow panning left-to-right to establish terminal scope.",
+        "pacing": "Slow, contemplative static entry.",
+        "focal_depth": "Deep focus, bringing both the wet foreground street reflections and distant bus queues into focus.",
+        "lighting": "Backlit terminal platforms, ambient streetlamp glow, wet pavement acting as a mirror reflecting warm amber and teal hues.",
+        "motion_graphics_overlay": "Subtle ambient rain particles falling vertically, steam vapor rising slowly from hot bus engines."
+      },
+      "local_media_engine_instructions": {
+        "controlnet_guidance": "Use Canny on shot1_wide_establisher.png to lock terminal structural lines and bus silhouettes.",
+        "denoising_strength": 0.45,
+        "motion_module_scale": 1.15,
+        "prompt_override": "Wide master shot of Bengaluru bus terminal at night, rain falling, wet ground reflections, buses arriving, ambient street lighting, cinematic film look."
+      }
+    },
+    {
+      "scene_id": "shot2_medium_shot",
+      "timestamp_range": "00:03 - 00:07",
+      "duration_seconds": 4,
+      "source_image": "shot2_medium_shot.png",
+      "creative_brief": "A young Indian teenage boy steps off the old state bus with a worn shoulder bag. He pauses, looking around, feeling the weight of the city.",
+      "technical_parameters": {
+        "camera_movement": "Dolly tracking shot, moving slightly low-angle to track his step down.",
+        "pacing": "Observer cut, matching foot movement to the pavement landing beat.",
+        "focal_depth": "Shallow depth of field, keeping the boy sharp while blurring the crowd pushing past behind him.",
+        "lighting": "Backlit by bus cabin warmth and overhead terminal amber lamp, leaving his face partially in shadow.",
+        "motion_graphics_overlay": "Raindrops dripping off the bus roof edge, passing passenger silhouettes creating brief light occlusions."
+      },
+      "local_media_engine_instructions": {
+        "controlnet_guidance": "Use OpenPose on shot2_medium_shot.png to lock the boy's posture and worn bag strap positioning.",
+        "denoising_strength": 0.5,
+        "motion_module_scale": 1.1,
+        "prompt_override": "Medium shot of young Indian boy stepping off state bus, tousled dark hair, worn shoulder bag, wet ground reflections, high-contrast backlit setup, cinematic animation."
+      }
+    },
+    {
+      "scene_id": "shot3_close_up",
+      "timestamp_range": "00:07 - 00:11",
+      "duration_seconds": 4,
+      "source_image": "shot3_close_up.png",
+      "creative_brief": "Close-up profile of the boy's face. His eyes show uncertainty but his jaw is locked in determination. Observant, absorbing details.",
+      "technical_parameters": {
+        "camera_movement": "Observational handheld micro-shake, mimicking real breathing and focal micro-adjustments.",
+        "pacing": "Extreme slow close-up hold, letting the viewer read his emotional state.",
+        "focal_depth": "Very shallow depth of field (f/1.8 profile), background bokeh from terminal lights.",
+        "lighting": "Teal shadows framing his cheek, key highlight on his jaw and side profile from amber streetlight.",
+        "motion_graphics_overlay": "Rain streaks cutting through light beams behind him, warm breath condensation visible in cold night air."
+      },
+      "local_media_engine_instructions": {
+        "controlnet_guidance": "Use IP-Adapter with shot3_close_up.png to maintain visual identity consistency without photoreal face replacement.",
+        "denoising_strength": 0.4,
+        "motion_module_scale": 1.05,
+        "prompt_override": "Close-up shot of young Indian teenage boy face, determined jaw, messy dark hair, backlit, teal shadows, amber highlights, shallow depth of field, subtle film grain."
+      }
+    },
+    {
+      "scene_id": "shot4_detail_atmospheric",
+      "timestamp_range": "00:11 - 00:15",
+      "duration_seconds": 4,
+      "source_image": "shot4_detail_atmospheric.png",
+      "creative_brief": "Close-up on wet pavement. Ripples forming in puddles, steam rising, passenger feet walking past in continuous motion.",
+      "technical_parameters": {
+        "camera_movement": "Low-angle static camera, catching low-horizon light reflections.",
+        "pacing": "Rhythmic cut, pattern interrupt focusing away from the face to ground atmosphere.",
+        "focal_depth": "Macro-focus on pavement puddles, background passenger legs out of focus.",
+        "lighting": "Reflected neon signs and headlights showing warm gold, crimson, and deep teal patterns on wet asphalt.",
+        "motion_graphics_overlay": "Active rain splash ripples on puddle surfaces, heavy atmospheric steam rising from ground level."
+      },
+      "local_media_engine_instructions": {
+        "controlnet_guidance": "Use Depth map of shot4_detail_atmospheric.png to guide rain ripple and foot placement alignment.",
+        "denoising_strength": 0.55,
+        "motion_module_scale": 1.2,
+        "prompt_override": "Detail shot of wet pavement terminal, passenger feet walking, puddle ripples, neon reflections, steam rising, cinematic film grade."
+      }
+    },
+    {
+      "scene_id": "shot5_slow_pull_back",
+      "timestamp_range": "00:15 - 00:20",
+      "duration_seconds": 5,
+      "source_image": "shot5_slow_pull_back.png",
+      "creative_brief": "Starting close to the boy's back, the camera slowly pulls back to reveal the massive scale of the terminal surrounding him.",
+      "technical_parameters": {
+        "camera_movement": "Slow dolly pull-back, expanding from medium close-up to wide overhead perspective.",
+        "pacing": "Narrative acceleration, visually showing the scale of the world he must conquer.",
+        "focal_depth": "Dynamic focal pull, shifting sharpness from the boy's shirt texture to the wider terminal platform.",
+        "lighting": "Strong contrast between his dark foreground outline and the brightly lit bus lanes behind.",
+        "motion_graphics_overlay": "Raindrops falling through light cones, bus exhaust steam clouds rolling."
+      },
+      "local_media_engine_instructions": {
+        "controlnet_guidance": "Use Lineart + Depth combination on shot5_slow_pull_back.png to preserve his relative scale during camera zoom out.",
+        "denoising_strength": 0.48,
+        "motion_module_scale": 1.25,
+        "prompt_override": "Dolly pull back shot, young Indian boy standing, looking at massive bus terminal at night, wet ground reflections, cinematic animation."
+      }
+    },
+    {
+      "scene_id": "shot6_wide_master",
+      "timestamp_range": "00:20 - 00:28",
+      "duration_seconds": 8,
+      "source_image": "shot6_wide_master.png",
+      "creative_brief": "Wide master shot. He stands in the crowd, carrying his worn bag, determinedly walking forward. The terminal continues its chaotic rhythm.",
+      "technical_parameters": {
+        "camera_movement": "Stabilized tracking shot moving forward behind him as he navigates the crowd.",
+        "pacing": "Climactic resolution pacing, stable and immersive move matching his steps.",
+        "focal_depth": "Wide focus, tracking his figure in green checkered shirt as the primary focal target.",
+        "lighting": "Overhead halogen lights casting amber highlights, teal shadow lanes running along bus platforms.",
+        "motion_graphics_overlay": "Crowd members moving in opposite directions, umbrellas catching rain streaks, bus headlamps cutting through haze."
+      },
+      "local_media_engine_instructions": {
+        "controlnet_guidance": "Use OpenPose + IP-Adapter on shot6_wide_master.png to ensure his green checkered shirt and walking stride are tracked accurately.",
+        "denoising_strength": 0.42,
+        "motion_module_scale": 1.18,
+        "prompt_override": "Wide master tracking shot, young boy walking forward in crowded Bengaluru bus terminal at night, rain, wet streets reflections, cinematic animation."
+      }
+    }
+  ]
+}

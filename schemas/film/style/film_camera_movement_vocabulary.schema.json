@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_camera_movement_vocabulary.schema.json",
+  "title": "Film Camera Movement Vocabulary",
+  "description": "Skeleton schema for camera movement vocabulary.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"movements":{"type":"array","items":{"type":"string"},"description":"Camera movements"},"motion_rules":{"type":"array","items":{"type":"string"},"description":"Motion rules"},"continuity_notes":{"type":"string","description":"Continuity notes"}},
+  "required": []
+}

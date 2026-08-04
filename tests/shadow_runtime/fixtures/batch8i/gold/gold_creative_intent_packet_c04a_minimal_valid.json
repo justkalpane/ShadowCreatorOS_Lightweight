@@ -1,0 +1,32 @@
+{
+  "Yash_self_investment_context": "Yash chooses a harder path that pays off through disciplined focus.",
+  "acceptance_rule": "technical quality cannot override a weak or generic creative premise",
+  "audience_impact": "the viewer should feel the decision lands as real and earned",
+  "b_roll_function": "support the turning point and reinforce visual credibility",
+  "camera_intent": "slow push-in with stable framing",
+  "color_mood": "calm, committed, warm",
+  "creative_intent_packet_id": "CIP-C04A-001",
+  "cut_id": "C04a",
+  "depth_intent": "true parallax to reveal dimensionality without fake depth blur",
+  "emotional_arc": "hesitation -> commitment -> relief",
+  "human_review_questions": [
+    "Does the cut feel like Yash is choosing himself?",
+    "Is the emotional turn legible within the first beat?",
+    "Does the visual metaphor support the script rather than distract?"
+  ],
+  "hyperframes_intent": "use kinetic text and evidence cards to support the line",
+  "image_motion_function": "make the commitment moment feel alive without breaking readability",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "motion_intent": "subtle, legible parallax and overlay motion",
+  "negative_creative_failures": [
+    "generic_slideshow",
+    "random_effects"
+  ],
+  "platform_packaging_role": "C04a proof cut for validation and later publication",
+  "retention_function": "hook the viewer into the self-investment payoff",
+  "schema_version": "1.0.0",
+  "script_line_ref": "M1-L42",
+  "script_purpose": "Show Yash making a self-investment decision visible through a controlled, blocked-safe visual beat.",
+  "transition_logic": "story beat to lesson bridge",
+  "visual_metaphor": "a narrow path opening into a bright frame"
+}

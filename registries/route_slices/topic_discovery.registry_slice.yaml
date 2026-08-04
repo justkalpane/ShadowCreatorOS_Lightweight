@@ -1,0 +1,72 @@
+slice_id: topic_discovery
+route_id: TOPIC_DISCOVERY
+task_mode: topic_discovery
+source_manifest: registries/route_manifests/topic_discovery.yaml
+registries:
+  - registries/task_intent_routing_matrix.yaml
+  - registries/route_manifests/topic_discovery.yaml
+  - registries/director_binding_matrix.json
+  - agents/AGENT_RUNTIME_REGISTRY.yaml
+  - subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml
+  - registries/skill_registry.yaml
+  - registries/subskill_runtime_registry.yaml
+directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/strategy/narada.md
+  - directors/strategy/chanakya.md
+  - directors/strategy/yudhishthira.md
+agents:
+  - agents/krishna/krishna_agent.py
+  - agents/aruna/aruna_agent.py
+  - agents/narada/narada_agent.py
+  - agents/chanakya/chanakya_agent.py
+  - agents/yudhishthira/yudhishthira_agent.py
+subagents:
+  - subagents/wf_100/wf_100_sub_agent.py
+  - subagents/cwf_110/cwf_110_sub_agent.py
+  - subagents/cwf_120/cwf_120_sub_agent.py
+  - subagents/cwf_130/cwf_130_sub_agent.py
+  - subagents/cwf_140/cwf_140_sub_agent.py
+skills:
+  - skills/topic_intelligence/M-001-global-trend-scanner.skill.md
+  - skills/topic_intelligence/M-002-topic-opportunity-miner.skill.md
+  - skills/topic_intelligence/M-008-topic-viability-scorer.skill.md
+  - skills/topic_intelligence/M-016-content-gap-finder.skill.md
+subskills:
+  - skills/sub_skills/SS-220-deep-research-agent.subskill.md
+  - skills/sub_skills/SS-221-source-credibility-evaluator.subskill.md
+  - skills/sub_skills/SS-222-fact-verification-engine.subskill.md
+  - skills/sub_skills/SS-223-knowledge-synthesizer.subskill.md
+  - skills/sub_skills/SS-224-contradiction-detector.subskill.md
+contracts:
+  - runtime_contracts/TASK_INTENT_ROUTING_CONTRACT.md
+  - runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+  - runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+  - runtime_contracts/DIRECTOR_SKILL_CONSUMPTION_PROTOCOL.md
+  - runtime_contracts/RESEARCH_GATE_CONTRACT.md
+  - runtime_contracts/SOURCE_AWARE_RUNTIME_DECISION_PROTOCOL.md
+  - runtime_contracts/SOURCE_INTELLIGENCE_AND_WEB_RESEARCH_CONTRACT.md
+  - runtime_contracts/QUALITY_GATE_CONTRACT.md
+validators:
+  - validators/validate_mac06_1a_output.py
+output_contracts:
+  - TASK_ROUTE_LOCK
+  - ROUTE_DEPENDENCY_EXPANSION_LOCK
+  - CONSUMPTION_LOCK
+  - SOURCE_RESEARCH_LOCK
+  - GOVERNANCE_LOCK
+  - topic_options
+  - scores
+  - reason
+  - approval_gate
+blocked_files:
+  - downloads/chat_transcript.txt
+  - outputs/missions/** unless continue_previous_mission=true
+historical_file_policy: disallow_unless_explicit_reference_or_continue_previous_mission
+provider_boundary_required: true
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true

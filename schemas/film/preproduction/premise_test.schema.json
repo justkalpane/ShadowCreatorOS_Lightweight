@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Premise Test",
+  "type": "object",
+  "required": ["premise", "dramatic_question", "emotional_engine", "pass_conditions"],
+  "properties": {
+    "premise": {"type": "string"},
+    "dramatic_question": {"type": "string"},
+    "emotional_engine": {"type": "string"},
+    "pass_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 3}
+  }
+}

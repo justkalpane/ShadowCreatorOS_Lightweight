@@ -1,0 +1,19 @@
+{
+  "blocked_reason": "cost approval pending",
+  "cost_approval_status": "REJECTED",
+  "cost_owner": "HUMAN_FOUNDER",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "job_id": "JOB-C04A-PILOT-001",
+  "kubera_gate_id": "KUBERA-C04A-002",
+  "premium_tool_required": true,
+  "provider_cost_estimate": {
+    "amount": 19.5,
+    "currency": "USD",
+    "estimated_minutes": 35.0,
+    "notes": "provider cost approved"
+  },
+  "provider_execution_allowed": false,
+  "provider_token_present": true,
+  "schema_version": "1.0.0"
+}

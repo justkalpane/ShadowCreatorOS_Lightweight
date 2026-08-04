@@ -1,0 +1,19 @@
+{
+  "blocked_reason": "token missing despite provider execution claim",
+  "cost_approval_status": "APPROVED",
+  "cost_owner": "HUMAN_FOUNDER",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "job_id": "JOB-C04A-PILOT-001",
+  "kubera_gate_id": "KUBERA-C04A-001",
+  "premium_tool_required": true,
+  "provider_cost_estimate": {
+    "amount": 0.0,
+    "currency": "USD",
+    "estimated_minutes": 0.0,
+    "notes": "provider work is still blocked"
+  },
+  "provider_execution_allowed": true,
+  "provider_token_present": true,
+  "schema_version": "1.0.0"
+}

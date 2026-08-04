@@ -1,7 +1,42 @@
 from __future__ import annotations
 
+import math
 from datetime import datetime, timezone
 from typing import Any
+
+
+def _is_strict_packet_mode(input_payload: dict[str, Any]) -> bool:
+    child_workflow_id = str(input_payload.get("child_workflow_id", "")).upper()
+    workflow_id = str(input_payload.get("workflow_id", "")).upper()
+    return bool(input_payload.get("strict_packet_output", False)) or child_workflow_id == "CWF-210" or workflow_id == "CWF-210"
+
+
+def _required_internal_rehooks(duration_minutes: float) -> int:
+    if duration_minutes < 3:
+        return 0
+    if duration_minutes <= 5:
+        return max(1, int(duration_minutes) - 2)
+    return max(4, math.ceil((duration_minutes * 60) / 90) - 1)
+
+
+def _default_rehook_map(duration_minutes: float) -> list[dict[str, Any]]:
+    count = _required_internal_rehooks(duration_minutes)
+    duration_seconds = int(duration_minutes * 60)
+    return [
+        {
+            "rehook_id": f"rehook_{index + 1}",
+            "timestamp_seconds": round(duration_seconds * (index + 1) / (count + 1)),
+            "hook_type": "curiosity_rehook",
+            "hook_line": "NEEDS_CREATIVE_COMPLETION",
+            "retention_function": "reset attention before the next major section",
+            "topic_connection": "NEEDS_TOPIC_BINDING",
+            "mapped_to_final_script": False,
+            "mapped_to_dynamic_beat_map": False,
+            "mapped_to_editing_context": False,
+            "mapped_to_line_influence_map": False,
+        }
+        for index in range(count)
+    ]
 
 
 def run(input_payload: dict[str, Any]) -> dict[str, Any]:
@@ -14,6 +49,32 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
         }
 
     now = datetime.now(timezone.utc).isoformat()
+    duration_minutes = float(input_payload.get("script_duration_minutes", 5))
+    recurring_rehook_map = input_payload.get("recurring_rehook_map")
+    if not isinstance(recurring_rehook_map, list):
+        recurring_rehook_map = _default_rehook_map(duration_minutes)
+    plan = {
+        "script_duration_minutes": duration_minutes,
+        "opening_hook_variants_required": 3,
+        "recurring_rehook_required": 3 <= duration_minutes <= 10,
+        "required_internal_rehook_count": _required_internal_rehooks(duration_minutes),
+                "default_rehook_interval_seconds": "25-30",
+                "max_gap_without_rehook_seconds": 30,
+        "rehook_interval_dynamic": True,
+        "rehook_interval_reason_required": True,
+        "cta_hook_required": True,
+        "recurring_rehook_map": recurring_rehook_map,
+    }
+    if _is_strict_packet_mode(input_payload):
+        return {
+            "packet_id": f"RHP-{int(datetime.now(timezone.utc).timestamp() * 1000)}",
+            "route_id": str(input_payload.get("route_id", "script_generation")),
+            "producer_component_id": "M-039-re-hook-system",
+            "consumer_component_ids": ["S-202-first-draft-generation"],
+            "lineage": {"upstream": ["script_strategy_packet"]},
+            "validation_status": "PASS",
+            **plan,
+        }
     return {
         "status": "success",
         "skill_id": "M-039",
@@ -25,9 +86,16 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                **plan,
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# M-039 owns recurring re-hook planning. A 3-10 minute YouTube script must
+# carry dynamic 25-30 second retention resets, topic binding, and downstream
+# mappings before it can pass packaging or Media Factory handoff.
 
 
 

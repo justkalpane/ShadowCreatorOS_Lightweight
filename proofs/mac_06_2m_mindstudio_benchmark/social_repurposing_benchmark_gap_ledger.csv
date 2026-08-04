@@ -1,0 +1,15 @@
+repurposing_requirement,repo_artifact,exists,runtime_enforced,platform_specific,gap,priority,patch_required
+YouTube URL intake,operator_execution_packet.schema.json,False,False,False,No social repurposing route accepts YouTube URL as first-class packet.,BLOCKER,Create repurposing route and source_url packet.
+transcription,transcript_packet.schema.json,True,False,False,Transcript schema exists but no active transcription DAG.,HIGH,Add transcription planning node.
+Whisper fallback,transcript_packet.schema.json,False,False,False,Whisper fallback not modeled with provider boundary.,MEDIUM,Add local/future fallback contract.
+insight extraction,source_evidence_packet.schema.json,True,False,False,Insight extraction not active in repurposing chain.,HIGH,Add insight_extraction_packet.
+quote extraction,source_evidence_packet.schema.json,True,False,False,Quote field not strongly enforced.,HIGH,Add quote refs.
+core message extraction,research_brief_packet.schema.json,True,False,False,Core message extraction absent as required field.,HIGH,Add core_message field.
+LinkedIn post structure,linkedin_packet.schema.json,True,False,True,Schema exists but no active platform DAG.,HIGH,Add LinkedIn package node.
+Instagram post structure,social_media_packet.schema.json,True,False,True,Generic social schema only; no Instagram-specific schema.,HIGH,Add Instagram packet.
+X thread structure,social_media_packet.schema.json,True,False,True,No X thread object schema.,HIGH,Add x_thread_packet.
+visual generation prompt,visual_context_packet.schema.json,True,False,False,Visual prompt not tied to repurposed quote/message.,MEDIUM,Add social visual prompt packet.
+output content package,platform_package_packet.schema.json,True,False,True,Package schema exists but active route absent.,HIGH,Create route DAG.
+platform-specific metadata,platform_metadata_packet.schema.json,True,False,True,Metadata schema exists; not wired to route.,MEDIUM,Wire to platform packaging.
+schema validation,packet_schema_validator.py,True,True,False,Generic validation strong.,LOW,Add social-specific negative fixtures.
+content specificity control,quality_scorecard.schema.json,False,False,False,Generic-output rejection not active.,HIGH,Add specificity score and fixture.

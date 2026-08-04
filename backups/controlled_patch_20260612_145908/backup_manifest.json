@@ -1,0 +1,15 @@
+{
+  "timestamp": "20260612_145908",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "batch": "Batch 2 - Route Mode Contract Validator",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "backup_path": "backups/controlled_patch_20260612_145908/validators/run_all_validators.cjs",
+      "sha256_before": "9b6a4b5fd475ec19ccc59028e3d081106933a0713bb9782ebdcba41993690ec2",
+      "sha256_backup": "9b6a4b5fd475ec19ccc59028e3d081106933a0713bb9782ebdcba41993690ec2"
+    }
+  ],
+  "reason_for_backup": "Tracked runner file will be modified for Batch 2 route mode validator wiring."
+}

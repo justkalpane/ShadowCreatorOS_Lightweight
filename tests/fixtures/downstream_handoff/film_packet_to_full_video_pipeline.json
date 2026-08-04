@@ -1,0 +1,16 @@
+{
+  "fixture_id": "DH-005",
+  "fixture_family": "downstream_handoff",
+  "input_packet_summary": "Valid film packet handed to full video pipeline.",
+  "expected_route": "FULL_VIDEO_PIPELINE",
+  "expected_result": "HANDOFF_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_full_video_pipeline_handoff.py",
+  "purpose": "Film packet to full pipeline",
+  "risk_if_missing": "Pipeline loses route separation",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

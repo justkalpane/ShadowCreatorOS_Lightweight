@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_visual_dna.schema.json",
+  "title": "Film Visual DNA",
+  "description": "Skeleton schema for visual DNA.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"visual_identity":{"type":"string","description":"Visual identity"},"reference_palette":{"type":"object","description":"Reference palette"},"composition_rules":{"type":"array","items":{"type":"string"},"description":"Composition rules"},"motion_rules":{"type":"array","items":{"type":"string"},"description":"Motion rules"}},
+  "required": []
+}

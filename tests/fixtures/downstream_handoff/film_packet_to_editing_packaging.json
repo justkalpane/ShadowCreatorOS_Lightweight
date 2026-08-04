@@ -1,0 +1,16 @@
+{
+  "fixture_id": "DH-003",
+  "fixture_family": "downstream_handoff",
+  "input_packet_summary": "Valid film packet handed to editing packaging.",
+  "expected_route": "EDITING_PACKAGING",
+  "expected_result": "HANDOFF_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_editing_packaging_handoff.py",
+  "purpose": "Film packet to editing handoff",
+  "risk_if_missing": "Editing loses screenplay context",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

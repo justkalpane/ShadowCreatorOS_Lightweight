@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/source/film_real_incident_ethics.schema.json",
+  "title": "Film Real Incident Ethics",
+  "description": "Skeleton schema for real-incident and docudrama ethics.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"source_ledger":{"type":"object","description":"Source ledger"},"fact_vs_anecdote_map":{"type":"object","description":"Fact vs anecdote map"},"uncertainty_ledger":{"type":"object","description":"Uncertainty ledger"},"allegation_language_control":{"type":"string","description":"Allegation language control"},"dramatization_boundary":{"type":"string","description":"Dramatization boundary"},"source_vs_render_separation":{"type":"string","description":"Source vs render separation"},"no_fake_archival_evidence":{"type":"boolean","description":"No fake archival evidence"},"no_invented_quotes":{"type":"boolean","description":"No invented quotes"},"current_status_freshness_check":{"type":"string","description":"Current status freshness check"},"legal_ethical_caution_notes":{"type":"string","description":"Legal and ethical caution notes"}},
+  "required": []
+}

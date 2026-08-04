@@ -1,0 +1,16 @@
+{
+  "packet_id": "script_segment_packet",
+  "route_id": "script_generation",
+  "producer_component_id": "S-210-final-script-packager",
+  "consumer_component_ids": [
+    "next_node"
+  ],
+  "lineage": {
+    "upstream": []
+  },
+  "validation_status": "PASS",
+  "segments": [
+    "x"
+  ],
+  "total_duration_sec": 60
+}

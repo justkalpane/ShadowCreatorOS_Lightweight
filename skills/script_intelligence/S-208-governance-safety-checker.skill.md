@@ -138,7 +138,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: S-208-governance-safety-checker.skill
 component_layer: SKILL
 component_name: S 208 Governance Safety Checker.Skill
-route_families: [lineage_summary, approval_gate]
+route_families: [script_generation, lineage_summary, approval_gate]
 activation_triggers: route_family in [script_generation, topic_discovery, quality_gate, lineage_summary] or explicit registry selection; mark lineage_profile only when route_family is unknown.
 upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
 downstream_outputs: [lineage_packet, approval_packet]
@@ -167,7 +167,7 @@ quality_metric: Must emit skill_quality_score and quality_threshold.
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
+route_family_resolved: [script_generation, lineage_summary, approval_gate]
 activation_triggers_resolved: [lineage, trace, decision log]
 required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
 emitted_output_packets_resolved: [lineage_packet, approval_packet]
@@ -183,3 +183,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence/S-208-governance-safety-checker.skill.md; component_id=S-208-governance-safety-checker.skill
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Block unsupported factual re-hooks, false real-time claims, silent language
+  drift, generic filler hooks, and final `PASS` inflation.
+- Require factual re-hooks in `SOURCE_LEDGER` and `FACT_VS_ANECDOTE_MAP`.

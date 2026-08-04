@@ -1,0 +1,12 @@
+{
+  "evidence_bundle_id": "EVB-full_video_pipeline-20260621-c04a-pilot",
+  "contact_sheet_path": "/tmp/contact_sheet.png",
+  "source_vs_render_packet_path": "/tmp/source_vs_render.json",
+  "human_review_packet": {},
+  "qa_status": "ready_for_review",
+  "visual_qa_required": true,
+  "contact_sheet_required": true,
+  "source_vs_render_required": true,
+  "human_review_required": true,
+  "production_pass_allowed": false
+}

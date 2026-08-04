@@ -1,0 +1,21 @@
+{
+  "timestamp": "20260612_151431",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "batch": "Batch 4 - Output Phase Lock Text Support",
+  "files_backed_up": [
+    {
+      "path": "validators/run_all_validators.cjs",
+      "backup_path": "backups/controlled_patch_20260612_151431/validators/run_all_validators.cjs",
+      "sha256_before": "91e28e0d1e27d29f3c7907602c5acbb543892b68a978d7f2cc584fb2970bbed0",
+      "sha256_backup": "91e28e0d1e27d29f3c7907602c5acbb543892b68a978d7f2cc584fb2970bbed0"
+    },
+    {
+      "path": "validators/validate_output_phase_lock.py",
+      "backup_path": "backups/controlled_patch_20260612_151431/validators/validate_output_phase_lock.py",
+      "sha256_before": "3f9257ac462473242998cf3efa07a4fff48b63cf789ec823dd594831c24055c7",
+      "sha256_backup": "3f9257ac462473242998cf3efa07a4fff48b63cf789ec823dd594831c24055c7"
+    }
+  ],
+  "reason_for_backup": "Batch 4 modifies output phase validator and runner fixture probes."
+}

@@ -25,9 +25,17 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "recurring_rehook_type": "curiosity_rehook",
+                "topic_connection_required": True,
+                "payoff_mapping_required": True,
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# Curiosity gaps used as recurring re-hooks require topic binding and a
+# payoff map so they do not become generic motivational filler.
 
 
 

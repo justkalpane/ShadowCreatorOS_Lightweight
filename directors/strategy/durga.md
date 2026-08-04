@@ -182,3 +182,35 @@ human_approval_points_resolved: [approve_patch, approve_commit, approve_provider
 status_limits_resolved: [no commit/push/provider/n8n without approval]
 evidence_used_for_resolution: path/pre-contract keyword: approval/oauth; component_path=directors/strategy/durga.md; component_id=DIRECTOR:_DURGA
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Durga Protection and Conflict Director
+
+### Cinema craft ownership
+- dramatic_conflict_and_stakes
+- docudrama_ethics_and_source_separation
+- route_boundary_protection
+
+### Mythology fidelity lock
+protective force; confrontation; battle clarity; defense; moral courage; pressure against harm
+
+### Cinema department authority
+Owns protective conflict, antagonist pressure, moral guardrails, and defense of film-core boundaries against content-engine drift.
+
+### Route boundary
+Durga does not replace the missing Kali rupture role; Kali remains a separate unresolved creation decision.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/comfyui_workflow_payload.schema.json",
+  "title": "Shadow ComfyUI Workflow Payload",
+  "description": "Logged ComfyUI workflow packet with failure classification, hires policy, and no-provider-auto-fallback boundary.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workflow_id",
+    "workflow_json_path",
+    "node_graph_hash",
+    "model_family",
+    "model",
+    "prompt",
+    "negative_prompt",
+    "sampler",
+    "steps",
+    "cfg",
+    "seed",
+    "width",
+    "height",
+    "timeout_seconds",
+    "retry_policy",
+    "downgrade_policy",
+    "fallback_provider_policy",
+    "failure_classification",
+    "provider_execution_allowed"
+  ],
+  "properties": {
+    "workflow_id": {"type": "string", "minLength": 1},
+    "workflow_json_path": {"type": "string", "pattern": "^/"},
+    "node_graph_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "model_family": {
+      "type": "string",
+      "enum": [
+        "sd15",
+        "sdxl",
+        "flux",
+        "custom"
+      ]
+    },
+    "model": {"type": "string", "minLength": 1},
+    "prompt": {"type": "string", "minLength": 1},
+    "negative_prompt": {"type": "string", "minLength": 1},
+    "sampler": {"type": "string", "minLength": 1},
+    "steps": {"type": "integer", "minimum": 1},
+    "cfg": {"type": "number", "minimum": 0},
+    "seed": {"type": "integer"},
+    "width": {"type": "integer", "minimum": 1},
+    "height": {"type": "integer", "minimum": 1},
+    "timeout_seconds": {"type": "integer", "minimum": 1},
+    "hires_fix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "upscale_factor": {"type": "number", "exclusiveMinimum": 1}
+      }
+    },
+    "retry_policy": {
+      "type": "string",
+      "enum": [
+        "no_retry",
+        "single_retry_allowed",
+        "manual_retry_only"
+      ]
+    },
+    "downgrade_policy": {
+      "type": "string",
+      "enum": [
+        "block",
+        "manual_provider_review",
+        "manual_local_review"
+      ]
+    },
+    "fallback_provider_policy": {
+      "type": "string",
+      "enum": [
+        "blocked_until_explicit_approval",
+        "manual_only"
+      ]
+    },
+    "failure_classification": {
+      "type": "string",
+      "enum": [
+        "none",
+        "COMFY_TIMEOUT_300S",
+        "COMFY_NO_OUTPUT_IMAGE",
+        "COMFY_MISSING_WORKFLOW_JSON",
+        "COMFY_HIRES_FIX_MISSING",
+        "COMFY_OOM_OR_RESOURCE_LIMIT"
+      ]
+    },
+    "output_image_path": {"type": "string", "pattern": "^/"},
+    "provider_execution_allowed": {"type": "boolean", "const": false}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "width": {"const": 1920},
+          "height": {"const": 1080}
+        },
+        "required": ["width", "height"]
+      },
+      "then": {
+        "required": ["hires_fix"],
+        "properties": {
+          "hires_fix": {
+            "properties": {
+              "enabled": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "failure_classification": {"const": "none"}
+        },
+        "required": ["failure_classification"]
+      },
+      "then": {
+        "required": ["output_image_path"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+capability,director_present,agent_present,subagent_present,skill_present,subskill_present,depth_score_0_to_5,current_weakness,required_upgrade,status
+topic selection,True,True,True,True,True,3,Topic route exists; strategic novelty scoring is partial.,Add topic opportunity score with benchmark-specific production feasibility.,PARTIAL_DEPTH
+topic qualification,True,True,True,True,True,3,Topic packets exist; qualification criteria not deep enough for multi-platform outputs.,Add qualification rubric and negative fixtures.,PARTIAL_DEPTH
+trend analysis,True,True,True,True,True,3,Trend schemas/skills exist; freshness/source diversity quality not fully tied to runtime output.,Bind trend scoring to source evidence and validator.,PARTIAL_DEPTH
+research synthesis,True,True,True,True,True,4,Research route and packets exist; insight specificity needs stronger quote/stat/example fields.,Upgrade research_brief/source_evidence schemas.,PARTIAL_DEPTH
+source validation,True,True,True,True,True,4,Source evidence exists; transcript-source and claim confidence controls need deeper enforcement.,Add claim confidence validator.,PARTIAL_DEPTH
+script strategy,True,True,True,True,True,3,Script strategy packet exists; template and audience-tone fields are shallow.,Add strategy template/audience/tone constraints.,PARTIAL_DEPTH
+hook writing,True,True,True,True,True,2,Hook gate exists by contract; actual hook craft intelligence is not deeply implemented.,Rewrite hook skill and validator for first-3-sec timing.,SHALLOW
+retention writing,True,True,True,True,True,2,Retention gates named; no durable beat-by-beat enforcement.,Add retention beat schema and boring-line detector.,SHALLOW
+debate/critique,True,True,True,True,True,3,Debate route exists; critique quality is not strongly semantic.,Add line-level critique schema and negative fixtures.,PARTIAL_DEPTH
+line-by-line script analysis,True,True,True,True,True,2,Line refs appear in packets; enforcement is shallow.,Require numbered lines and critique coverage.,SHALLOW
+final script shaping,True,True,True,True,True,3,Final script packet exists; segment-object requirements are weak.,Upgrade final/script_segment schema.,PARTIAL_DEPTH
+voice context engineering,True,True,True,True,True,3,"Voice context packet exists; missing voice_id, tone, pause map, timestamps.",Add rich voice schema and validator.,PARTIAL_DEPTH
+visual context engineering,True,True,True,True,True,3,Visual context packet exists; style/seed/brand consistency shallow.,"Add style prefix, seed, palette, layout fields.",PARTIAL_DEPTH
+video context engineering,True,True,True,True,True,3,Video context packet exists; render mode/fps/resolution fields shallow.,"Add frame_style, fps, output_format.",PARTIAL_DEPTH
+music/SFX planning,True,True,True,True,True,3,Music/SFX packet exists; intensity and loudness fields need more detail.,Add cue timing and loudness validation.,PARTIAL_DEPTH
+editing timeline planning,True,True,True,True,True,3,Editing timeline exists; FFmpeg/concat/sync plan not deep enough.,Add assembly command plan schema with disabled execution.,PARTIAL_DEPTH
+platform packaging,True,True,True,True,True,2,Platform package schema exists; LinkedIn/Instagram/X specific structures are not active.,Add social repurposing route and packet set.,SHALLOW
+provider handoff,True,True,True,True,True,4,Provider boundary enforcement is strong; typed call payloads need richer schemas.,Add provider adapter typed-call schemas.,PARTIAL_DEPTH
+media quality scoring,True,True,True,True,True,4,Quality runtime exists; benchmark-specific scores incomplete.,Add visual/voice/sync/genericity sub-scores.,PARTIAL_DEPTH
+lineage/approval,True,True,True,True,True,5,Lineage/approval state and segment regeneration action are local-runtime enforced.,Maintain; add benchmark-specific approval reasons.,PRODUCTION_DEPTH
+segment regeneration,True,True,True,True,True,4,Approval store supports regenerate_segment; segment packet lacks full segment object.,Tie regeneration to segment object ids.,PARTIAL_DEPTH
+social repurposing package,True,True,False,True,False,1,Schemas exist in fragments; no active repurposing DAG.,Create route for transcript -> insights -> platform package.,SHALLOW

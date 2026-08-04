@@ -1,0 +1,23 @@
+# ShadowCreatorOS_Lightweight — Git line ending normalization
+# All text files use LF. No CRLF in the repo.
+
+* text=auto eol=lf
+
+*.md   text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.py   text eol=lf
+*.txt  text eol=lf
+*.sh   text eol=lf
+
+# Binary files — do not normalize
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.mp4  binary
+*.mp3  binary
+*.wav  binary
+*.zip  binary
+*.pdf  binary

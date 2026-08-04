@@ -1,0 +1,27 @@
+{
+  "timestamp": "20260612_152201",
+  "repo_root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight",
+  "branch": "codex/shadow-prod-recovery",
+  "batch": "Batch 5 - Visual Template Transposed Scene Lock",
+  "files_backed_up": [
+    {
+      "path": "runtime_contracts/VISUAL_OUTPUT_TEMPLATE_LOCK_CONTRACT.md",
+      "backup_path": "backups/controlled_patch_20260612_152201/runtime_contracts/VISUAL_OUTPUT_TEMPLATE_LOCK_CONTRACT.md",
+      "sha256_before": "978f0a5b76e760427c9a1898fd397abe25ef903ce5c5c0c61b70a9feb7cadc30",
+      "sha256_backup": "978f0a5b76e760427c9a1898fd397abe25ef903ce5c5c0c61b70a9feb7cadc30"
+    },
+    {
+      "path": "validators/validate_visual_template_lock.py",
+      "backup_path": "backups/controlled_patch_20260612_152201/validators/validate_visual_template_lock.py",
+      "sha256_before": "3e81fc7520f5cb37d5ec5484b4b7e74eccd4fe88ec99697c21782b89d3e996cd",
+      "sha256_backup": "3e81fc7520f5cb37d5ec5484b4b7e74eccd4fe88ec99697c21782b89d3e996cd"
+    },
+    {
+      "path": "validators/run_all_validators.cjs",
+      "backup_path": "backups/controlled_patch_20260612_152201/validators/run_all_validators.cjs",
+      "sha256_before": "3cb02a38b070ef47d74f5b3279eee6bd1879183f1dcbd104fd66f59742933204",
+      "sha256_backup": "3cb02a38b070ef47d74f5b3279eee6bd1879183f1dcbd104fd66f59742933204"
+    }
+  ],
+  "reason_for_backup": "Batch 5 modifies visual template contract, visual template validator, and runner fixture probes."
+}

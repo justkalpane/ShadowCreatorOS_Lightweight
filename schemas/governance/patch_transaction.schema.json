@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/governance/patch_transaction.schema.json",
+  "title": "Shadow Patch Transaction",
+  "description": "Transactional proof object for controlled repo patch batches, including non-git backup discipline and forbidden-touch checks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "batch_id",
+    "repo",
+    "repo_type",
+    "precheck_status",
+    "backup_status",
+    "files_created",
+    "files_modified",
+    "forbidden_touched",
+    "tests_run",
+    "proof_bundle_path",
+    "next_batch_allowed"
+  ],
+  "properties": {
+    "batch_id": {
+      "type": "string",
+      "pattern": "^BATCH_[0-9A-Z_]+$"
+    },
+    "repo": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "repo_type": {
+      "type": "string",
+      "enum": [
+        "git_repo",
+        "non_git_repo"
+      ]
+    },
+    "precheck_status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "backup_status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "NOT_REQUIRED"
+      ]
+    },
+    "files_created": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "files_modified": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "forbidden_touched": {
+      "type": "boolean"
+    },
+    "tests_run": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "test_name",
+          "status"
+        ],
+        "properties": {
+          "test_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "BASELINE_FAIL_UNCHANGED"
+            ]
+          },
+          "report_path": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        }
+      }
+    },
+    "proof_bundle_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "next_batch_allowed": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "forbidden_touched": {
+            "const": true
+          }
+        },
+        "required": [
+          "forbidden_touched"
+        ]
+      },
+      "then": {
+        "properties": {
+          "next_batch_allowed": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "repo_type": {
+            "const": "non_git_repo"
+          }
+        },
+        "required": [
+          "repo_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "backup_status": {
+            "const": "PASS"
+          }
+        }
+      }
+    }
+  ]
+}

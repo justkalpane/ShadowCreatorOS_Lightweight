@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-320 Platform Packager Canonical",
   "description": "Packages script into platform-specific format: YouTube, blog, podcast, email.",
   "nodes": [

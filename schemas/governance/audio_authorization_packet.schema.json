@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/governance/audio_authorization_packet.schema.json",
+  "title": "Shadow Audio Authorization Packet",
+  "description": "Governance token packet for audio sync/export stages. Audio remains blocked unless visual acceptance is already approved.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "visual_acceptance_token",
+    "audio_authorization_token"
+  ],
+  "properties": {
+    "visual_acceptance_token": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_id",
+        "issuer",
+        "scope",
+        "proof_bundle_id",
+        "expires_at",
+        "status"
+      ],
+      "properties": {
+        "token_id": {"type": "string", "minLength": 1},
+        "issuer": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "enum": ["visual_acceptance"]},
+        "proof_bundle_id": {"type": "string", "minLength": 1},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "status": {"type": "string", "enum": ["active", "revoked", "expired"]}
+      }
+    },
+    "audio_authorization_token": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_id",
+        "issuer",
+        "scope",
+        "proof_bundle_id",
+        "expires_at",
+        "status"
+      ],
+      "properties": {
+        "token_id": {"type": "string", "minLength": 1},
+        "issuer": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "enum": ["audio_sync", "audio_export"]},
+        "proof_bundle_id": {"type": "string", "minLength": 1},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "status": {"type": "string", "enum": ["active", "revoked", "expired"]},
+        "revocation_reason": {"type": "string"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "visual_acceptance_token": {
+          "properties": {
+            "status": {"const": "active"}
+          }
+        },
+        "audio_authorization_token": {
+          "properties": {
+            "status": {"const": "active"}
+          }
+        }
+      }
+    }
+  ]
+}

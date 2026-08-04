@@ -1,0 +1,26 @@
+fixture_id=FX-BAD-004
+fixture_type=bad
+stage=visual_media_generation_draft
+expected_validator=validate_packet_ready_artifacts.py
+expected_result=FAIL
+
+PACKET_READY_CLAIMS
+DaVinci_Resolve=PACKET_READY
+FFmpeg=PACKET_READY
+tool_specific_translation_readiness=PACKET_READY
+final_status=PASS
+
+ARTIFACT_PROOF
+artifact_path=
+proof_json_path=
+payload_path=
+ffmpeg_command_script_path=
+davinci_project_path=
+registry_entry_path=
+
+PROVIDER_HONESTY_GATE
+providers_called=false
+local_engine_execution_approved=false
+media_artifacts_claimed=true
+
+failure_reason=PACKET_READY is claimed without artifact paths, payload paths, proof JSON, or execution approval.

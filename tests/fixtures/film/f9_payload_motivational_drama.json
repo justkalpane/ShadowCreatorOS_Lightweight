@@ -1,0 +1,29 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 5,
+  "format": "short_film_screenplay",
+  "language": "English",
+  "genre": "motivational_drama",
+  "tone": ["warm", "soft-spoken", "grounded", "hopeful"],
+  "minimum_characters": 2,
+  "theme": "Real strength is learning to pause before hurt becomes inheritance.",
+  "setting": "crowded rental apartment kitchen",
+  "stakes": "two toddlers watching whether home stays safe",
+  "emotional_pressure_trigger": "spilled milk, late bills, and an exhausted callback from preschool",
+  "protagonist_type": "soft-spoken father of toddlers",
+  "relationship_type": "domestic co-parent partnership",
+  "opposing_force": "financial strain plus inherited anger",
+  "visual_style": "soft tungsten realism",
+  "ending_image": "The kitchen ends quieter than it began, with the children safe and the repair made through tenderness.",
+  "character_constraints": {
+    "main_character": {
+      "traits": ["soft-spoken", "warm", "controlled", "internally angry", "non-explosive"],
+      "life_context": ["parent_or_guardian_of_toddlers"],
+      "forbidden_behaviors": ["shouting", "violence", "threats", "abuse"]
+    },
+    "second_character": {
+      "role": "emotional_mirror"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+route_id: SCRIPT_GENERATION
+route_scope_file_audit_required: true
+minimum_route_scope_files_for_pass: 68
+route_scope_pass_requires_file_count_by_layer:
+  startup_docs_read_min: 5
+  runtime_contracts_read_min: 17
+  registries_read_min: 7
+  directors_read_min: 6
+  agents_read_min: 6
+  subagents_read_min: 5
+  skills_read_min: 10
+  subskills_read_min: 8
+fail_rules:
+  - route_scope_status PASS with fewer than 68 route scope files read

@@ -376,7 +376,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_ARUNA
 component_layer: DIRECTOR
 component_name: Aruna
-route_families: [script_debate, script_generation]
+route_families: [topic_discovery, full_video_pipeline, script_debate, script_generation]
 activation_triggers: route_family in [approval_gate, repo_write_mode] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_v1_packet, script_segment_packet, research_brief_packet]
 downstream_outputs: [debate_critique_packet, critique_delta_packet, risk_objection_packet]
@@ -404,7 +404,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: script_debate_profile
-route_family_resolved: [script_debate, script_generation]
+route_family_resolved: [topic_discovery, full_video_pipeline, script_debate, script_generation]
 activation_triggers_resolved: [critique, debate, contradiction route]
 required_input_packets_resolved: [script_v1_packet, script_segment_packet, research_brief_packet]
 emitted_output_packets_resolved: [debate_critique_packet, critique_delta_packet, risk_objection_packet]
@@ -420,3 +420,46 @@ human_approval_points_resolved: [accept_delta, reject_delta, request_stronger_cr
 status_limits_resolved: [no rewrite without critique_delta_packet]
 evidence_used_for_resolution: path/pre-contract keyword: debate/critique; component_path=directors/kernel/aruna.md; component_id=DIRECTOR:_ARUNA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Route 3-10 minute YouTube scripts through `RECURRING_HOOK_DENSITY_LOCK`
+  before final output.
+- Block the route when the English master draft, source-quality mapping,
+  cinematic story, dynamic beat map, scene sync, hybrid execution plan, or
+  selected-layer consumption evidence is missing.
+- Enforce a dynamic 70-90 second re-hook default with no unexplained gap above
+  90 seconds.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Aruna Transition and Momentum Flow Director
+
+### Cinema craft ownership
+- scene_construction_support
+- editing_rhythm_and_pacing_support
+- director_agent_communication
+
+### Mythology fidelity lock
+dawn; transition; threshold guidance; awakening; momentum before arrival; charioteer-like flow
+
+### Cinema department authority
+Owns transition flow, handoff timing, sequence momentum, and safe passage between cinema-preproduction departments without changing selector defaults.
+
+### Route boundary
+Aruna may coordinate packet flow but must not rewrite route selector behavior, default mode, or content-route authority inside this director surface.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

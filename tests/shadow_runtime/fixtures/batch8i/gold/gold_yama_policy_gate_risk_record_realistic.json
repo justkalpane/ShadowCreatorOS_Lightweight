@@ -1,0 +1,16 @@
+{
+  "asset_origin_status": "VERIFIED",
+  "avatar_consent_required": true,
+  "blocked_reason": "policy cleared for limited review",
+  "brand_risk": "MEDIUM",
+  "copyright_risk": "MEDIUM",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "job_id": "JOB-C04A-PILOT-001",
+  "likeness_risk": "MEDIUM",
+  "policy_gate_status": "PASS",
+  "provider_policy_status": "PASS",
+  "schema_version": "1.0.0",
+  "voice_consent_required": true,
+  "yama_gate_id": "YAMA-C04A-002"
+}

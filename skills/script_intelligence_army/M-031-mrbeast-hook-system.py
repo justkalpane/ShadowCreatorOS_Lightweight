@@ -25,9 +25,17 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "opening_hook_variants_required": 3,
+                "selected_opening_hook_required": True,
+                "opening_hook_does_not_satisfy_recurring_rehooks": True,
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# M-031 owns opening hook candidates only. It must hand recurring retention
+# planning to M-039 instead of treating one selected opening hook as complete.
 
 
 

@@ -1,0 +1,26 @@
+{
+  "overlay_path": "/tmp/overlay.mov",
+  "overlay_category": "alpha_overlay",
+  "overlay_purpose": "highlight proof terms",
+  "scene_relevance": "matches the spoken emphasis",
+  "blend_mode": "screen",
+  "alpha_mode": "premultiplied",
+  "opacity": 0.4,
+  "z_index": 3,
+  "timing": {
+    "start": 0,
+    "end": 3
+  },
+  "safe_zone_coordinates": {
+    "x": 0.1,
+    "y": 0.1,
+    "width": 0.8,
+    "height": 0.3
+  },
+  "subject_occlusion_limit": 0.15,
+  "visual_noise_limit": 0.2,
+  "scene_intent": "support comprehension without clutter",
+  "proof_frame_reference": "/tmp/proof_frame.png",
+  "contact_sheet_frame_required": true,
+  "random_overlay_prevented": true
+}

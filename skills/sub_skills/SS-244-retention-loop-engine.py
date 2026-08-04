@@ -50,8 +50,18 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "input_payload": input_payload.get("input_payload", {}),
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
+            "recurring_rehook_required": True,
+            "default_rehook_interval_seconds": "25-30",
+            "max_gap_without_rehook_seconds": 30,
+            "five_minute_minimum_internal_rehooks": 3,
+            "cta_hook_required": True,
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# SS-244 validates recurring density: a five-minute YouTube script needs
+# three internal re-hooks plus a CTA hook unless a dynamic reason is recorded.
 
 # MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 # Append-only MAC-06.2B contract metadata.

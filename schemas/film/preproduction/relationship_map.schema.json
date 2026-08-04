@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Relationship Map",
+  "type": "object",
+  "required": ["relationships", "second_character_mirror_function_confirmed"],
+  "properties": {
+    "relationships": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["characters", "relationship_type", "emotional_function", "conflict_source", "support_function", "mirror_function", "scene_interaction_purpose"],
+        "properties": {
+          "characters": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+          "relationship_type": {"type": "string"},
+          "emotional_function": {"type": "string"},
+          "conflict_source": {"type": "string"},
+          "support_function": {"type": "string"},
+          "mirror_function": {"type": "string"},
+          "scene_interaction_purpose": {"type": "string"}
+        }
+      }
+    },
+    "second_character_mirror_function_confirmed": {"type": "boolean", "const": true}
+  }
+}

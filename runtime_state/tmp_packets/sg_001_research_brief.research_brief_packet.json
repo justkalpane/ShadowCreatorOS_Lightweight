@@ -6,11 +6,12 @@
     "next_node"
   ],
   "lineage": {
-    "upstream": []
+    "upstream": [],
+    "audit_note": "Legacy draft content downgraded by MAC-06 fix-all pass; packet cannot be PASS until regenerated with real content."
   },
-  "validation_status": "PASS",
-  "brief": "x",
+  "validation_status": "NEEDS_CONFIRMATION",
+  "brief": "NEEDS_CONFIRMATION_REGENERATION_REQUIRED",
   "source_evidence_refs": [
-    "x"
+    "NEEDS_CONFIRMATION_REGENERATION_REQUIRED"
   ]
 }

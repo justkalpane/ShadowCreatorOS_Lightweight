@@ -1,0 +1,16 @@
+{
+  "fixture_id": "CP-005",
+  "fixture_family": "content_preservation",
+  "input_packet_summary": "Existing content packet shape with hook, re-hook, retention, and platform packaging fields.",
+  "expected_route": "SCRIPT_GENERATION",
+  "expected_result": "CONTENT_VALIDATION_PASS",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_content_packet.py",
+  "purpose": "Preserve legacy content support",
+  "risk_if_missing": "Existing content workflows break during film split",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

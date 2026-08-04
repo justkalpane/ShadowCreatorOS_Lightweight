@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/validation/film_content_packet_separation.schema.json",
+  "title": "Film Content Packet Separation",
+  "description": "Skeleton schema for film-vs-content packet separation.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"packet_mode":{"type":"string","description":"Packet mode"},"route_id":{"type":"string","description":"Route id"},"content_route_allowed":{"type":"boolean","description":"Content route allowed"},"film_route_allowed":{"type":"boolean","description":"Film route allowed"},"platform_logic_allowed_downstream":{"type":"boolean","description":"Platform logic allowed downstream"},"content_hook_metrics_allowed_in_film_core":{"type":"boolean","description":"Content hook metrics allowed in film core"},"route_collision_status":{"type":"string","description":"Route collision status"},"anti_collision_notes":{"type":"string","description":"Anti-collision notes"}},
+  "required": []
+}

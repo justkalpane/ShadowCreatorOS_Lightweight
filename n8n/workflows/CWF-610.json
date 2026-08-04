@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "CWF-610 Performance Metrics Collector Canonical",
   "description": "Collects performance metrics: engagement rates, view duration, audience retention curves.",
   "nodes": [

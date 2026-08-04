@@ -71,7 +71,7 @@
                                          "jsCode":  "const r = $json || {};\nconst text = typeof r.output === \u0027string\u0027 ? r.output : (typeof r.text === \u0027string\u0027 ? r.text : JSON.stringify(r));\nreturn [{ json: { workflow_id: \u0027WF-950 Gemini Credential Smoke Test\u0027, credential_name: \u0027Google Gemini(PaLM) Api account\u0027, credential_type: \u0027googlePalmApi\u0027, provider_used: \u0027gemini\u0027, model_used: \u0027models/gemini-2.5-flash\u0027, response_text_present: !!(text \u0026\u0026 String(text).trim().length \u003e 0), status: (text \u0026\u0026 String(text).trim().length \u003e 0) ? \u0027pass\u0027 : \u0027fail\u0027, one_sentence_result: String(text).slice(0, 400) } }];"
                                      },
                       "id":  "normalize",
-                      "name":  "Normalize Result",
+                      "name":  "Normalize Result Completion",
                       "type":  "n8n-nodes-base.code",
                       "typeVersion":  2,
                       "position":  [
@@ -107,7 +107,7 @@
                                               "main":  [
                                                            [
                                                                {
-                                                                   "node":  "Normalize Result",
+                                                                   "node":  "Normalize Result Completion",
                                                                    "type":  "main",
                                                                    "index":  0
                                                                }
@@ -123,5 +123,14 @@
                 },
     "versionId":  "wf-950-v1",
     "id":  "WF950GemSmkTst01",
-    "active":  false
+    "active":  false,
+    "meta":  {
+                 "workflow_id":  "WF-950",
+                 "phase":  "phase_1_provider_validation",
+                 "vein":  "provider_credential_smoke_test",
+                 "purpose":  "Inactive manual Google Gemini credential smoke test. Provider execution remains disabled unless explicitly approved.",
+                 "implementation_depth":  "production_grade",
+                 "owner_director":  "Yama",
+                 "next_workflow":  "WF-900"
+             }
 }

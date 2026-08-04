@@ -1,0 +1,57 @@
+mission_id=yash_self_investment
+packet_id=hyperframes_30s_proof_packet
+packet_path=outputs/missions/yash_self_investment/packets/hyperframes_30s_proof_packet.json
+media_factory_packet=outputs/missions/yash_self_investment/packets/media_factory_packet.json
+scene_sync_packet=outputs/missions/yash_self_investment/packets/scene_sync_matrix.json
+scene_prompt_packet=outputs/missions/yash_self_investment/packets/scene_prompt_packets.json
+video_prompt_packet=outputs/missions/yash_self_investment/packets/video_prompt_packets.json
+template_registry=/Users/apple/ShadowMediaFactory/control_panel/templates/hyperframes_template_registry.json
+control_panel_cli=/Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+job_packet_dir=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/01_timeline
+repo_hyperframes_dir=outputs/missions/yash_self_investment/hyperframes/
+repo_proofs_dir=outputs/missions/yash_self_investment/proofs/
+review_output_dir=/Users/apple/ShadowMediaFactory/08_EXPORTS/review/hyperframes/
+proof_only=true
+non_production_master=true
+providers_called=false
+n8n_used=false
+
+retest_goal:
+- Prove the real HyperFrames Pro non-cinematic lane with a 10-cut 30-second segment.
+- Use at least 4 distinct HyperFrames template families from the proof packet.
+- Honor scene-reactive payloads, effect_pack_ids, border_pack_id, animation_energy_class, and text_density_class per cut.
+- Use FFmpeg only for background motion, muxing, and final proof assembly.
+
+hard_rules:
+- Do not silently downgrade to generic ffmpeg_ken_burns if a HyperFrames family is requested.
+- If fallback is required, emit ROUTE_DOWNGRADED=true plus fallback_reason, requested_hyperframes_family, replacement_method, and production_pass_allowed=false.
+- Depth Anything V2 is disabled for this proof because the goal is DaVinci-free HyperFrames acceptance.
+- Every rendered cut must end with hyperframes_proof_json and an assets.jsonl registry event before claiming success.
+- For webm_alpha_overlay cuts on this runtime, render to `.mov` only. Do not claim production-safe alpha delivery through `.webm`.
+- Keep the `webm_alpha_overlay` family name for compatibility, but treat it as a `.mov`-only output lane on this runtime.
+- At least 3 designated cuts must visibly show effect-pack or HUD/border behavior.
+
+preflight_sequence:
+1. python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py status
+2. python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py doctor
+3. Confirm hyperframes_callable=true, ffmpeg_callable=true, ffprobe_callable=true
+4. Confirm comfyui_api remains offline and is not used
+
+execution_shape:
+- Read the proof packet JSON from the repo path above.
+- Render the requested HyperFrames families from their declared project_root values.
+- Use the packet's recommended overlay output and per-cut effect/border payload fields.
+- Assemble the 10 cuts into one 30-second proof artifact.
+- Store cut-level renders under HyperFrames review outputs and update proof JSON + registry evidence.
+
+success_gate:
+- output_duration=30s
+- cut_count=10
+- distinct_template_families>=4
+- providers_called=false
+- n8n_used=false
+- proof_json_present=true
+- registry_event_present=true
+- no_silent_hyperframes_fallback=true
+- webm_alpha_overlay_container=.mov
+- visible_fx_or_hud_treatment_on_3_plus_cuts=true

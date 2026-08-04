@@ -1,0 +1,73 @@
+{
+  "approval_token_refs": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/approval_token.json"
+  ],
+  "artifact_hashes": [
+    "b7f773e6ba6bb89566ebc31d59a41a3ac5c1e5117259f68ef260d7a72984663f",
+    "d524e25eb4de838437a89c762f810ba9cb617d4a64682354c6584a95857e966d"
+  ],
+  "artifact_refs": [
+    {
+      "artifact_id": "runtime-proof-bundle",
+      "path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/runtime_proof_bundle.json",
+      "sha256": "c4b5ab4427cb45e07896f7aa1869a4b54cfe0d8a953d640697c0fd40aad3d4b3"
+    }
+  ],
+  "audit_event_ids": [
+    "AUD-C04A-001"
+  ],
+  "claims": [
+    {
+      "claim_id": "CL-BLOCK-001",
+      "claim_text": "The oracle is a blocked-safe blocked-state proof set.",
+      "forbidden_overclaim": "contract_exists_only",
+      "source_tier": "TIER_3_CHATGPT_HARDENING_DOCUMENT",
+      "what_it_does_not_prove": "It does not prove runtime approval or deployment readiness.",
+      "what_it_proves": "The batch intends blocked-safe fixture truth."
+    },
+    {
+      "claim_id": "CL-BLOCK-002",
+      "claim_text": "The bundle records fixture and schema traceability.",
+      "forbidden_overclaim": "source_presence_only",
+      "source_tier": "TIER_1_BATCH_PROOF_PACKET",
+      "what_it_does_not_prove": "It does not prove validators or routes are live.",
+      "what_it_proves": "The files are tied to schemas and work items."
+    }
+  ],
+  "command_outputs": [
+    "fixture-oracle construction command"
+  ],
+  "contact_sheet_refs": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.png"
+  ],
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "evidence_bundle_id": "EB-C04A-001",
+  "ffmpeg_logs": [],
+  "human_review_refs": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/human_review_packet.json"
+  ],
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_files": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/fixture_oracle_manifest.json"
+  ],
+  "repo_files": [
+    "schemas/runtime_state/evidence_bundle.schema.json"
+  ],
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "source_files": [
+    "/tmp/shadow_patch_batch8h_schema_foundation/03_schema_implementation_manifest.md",
+    "/tmp/shadow_patch_batch8g3_forensic_implementation_architect_blueprint/11_fixture_case_level_blueprint.md"
+  ],
+  "source_vs_render_refs": [
+    "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+  ],
+  "status": "BLOCKED",
+  "test_outputs": [
+    "json parse check pending"
+  ],
+  "validator_outputs": [
+    "validator stage pending"
+  ]
+}

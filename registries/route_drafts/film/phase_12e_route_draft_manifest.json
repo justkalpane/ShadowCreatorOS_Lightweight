@@ -1,0 +1,87 @@
+{
+  "phase": "12E",
+  "route_draft_yaml_count": 10,
+  "runtime_behavior_changed": false,
+  "route_selector_modified": false,
+  "routes_created": false,
+  "routes_registered": false,
+  "routes_bound": false,
+  "drafts_created": true,
+  "drafts_registered": false,
+  "schemas_bound": false,
+  "validators_bound": false,
+  "contracts_bound": false,
+  "governed_runtime_proof_claimed": false,
+  "route_drafts": [
+    {
+      "path": "registries/route_drafts/film/film_screenplay_generation.yaml",
+      "draft_type": "manifest",
+      "future_route_id": "FILM_SCREENPLAY_GENERATION",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/film_screenplay_generation.registry_slice.yaml",
+      "draft_type": "slice",
+      "future_route_id": "FILM_SCREENPLAY_GENERATION",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/film_story_development.yaml",
+      "draft_type": "manifest",
+      "future_route_id": "FILM_STORY_DEVELOPMENT",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/film_story_development.registry_slice.yaml",
+      "draft_type": "slice",
+      "future_route_id": "FILM_STORY_DEVELOPMENT",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/cinematic_director_plan.yaml",
+      "draft_type": "manifest",
+      "future_route_id": "CINEMATIC_DIRECTOR_PLAN",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/cinematic_director_plan.registry_slice.yaml",
+      "draft_type": "slice",
+      "future_route_id": "CINEMATIC_DIRECTOR_PLAN",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/feature_film_production_pipeline.yaml",
+      "draft_type": "manifest",
+      "future_route_id": "FEATURE_FILM_PRODUCTION_PIPELINE",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/feature_film_production_pipeline.registry_slice.yaml",
+      "draft_type": "slice",
+      "future_route_id": "FEATURE_FILM_PRODUCTION_PIPELINE",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/film_release_distribution.yaml",
+      "draft_type": "manifest",
+      "future_route_id": "FILM_RELEASE_DISTRIBUTION",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    },
+    {
+      "path": "registries/route_drafts/film/film_release_distribution.registry_slice.yaml",
+      "draft_type": "slice",
+      "future_route_id": "FILM_RELEASE_DISTRIBUTION",
+      "status": "draft_unregistered",
+      "bound_to_runtime": false
+    }
+  ]
+}

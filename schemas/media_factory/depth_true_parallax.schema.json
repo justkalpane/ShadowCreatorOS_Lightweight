@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Depth True Parallax",
+  "description": "True parallax depth proof. Blur-based pseudo-depth and depth-map-exists-only claims are forbidden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "depth_parallax_id",
+    "base_image_path",
+    "base_image_sha256",
+    "depth_map_path",
+    "depth_map_sha256",
+    "dimension_match",
+    "depth_normalization",
+    "depth_inversion_policy",
+    "foreground_midground_background_policy",
+    "motion_axis",
+    "motion_amplitude",
+    "edge_artifact_policy",
+    "occlusion_policy",
+    "displacement_method",
+    "rendered_motion_sample",
+    "source_vs_render_proof",
+    "contact_sheet_frame",
+    "human_review_required",
+    "forbidden_depth_methods",
+    "schema_version"
+  ],
+  "properties": {
+    "depth_parallax_id": {
+      "type": "string",
+      "pattern": "^DTP-[A-Za-z0-9_-]+$"
+    },
+    "base_image_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "base_image_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "depth_map_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "depth_map_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "dimension_match": {
+      "type": "boolean",
+      "const": true
+    },
+    "depth_normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "range_min",
+        "range_max"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "minmax",
+            "linear"
+          ]
+        },
+        "range_min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "range_max": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "depth_inversion_policy": {
+      "type": "string",
+      "enum": [
+        "none",
+        "invert_white_near",
+        "invert_black_near"
+      ]
+    },
+    "foreground_midground_background_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "motion_axis": {
+      "type": "string",
+      "enum": [
+        "horizontal",
+        "vertical",
+        "diagonal",
+        "radial"
+      ]
+    },
+    "motion_amplitude": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "edge_artifact_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occlusion_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displacement_method": {
+      "type": "string",
+      "enum": [
+        "displace",
+        "layered_parallax"
+      ]
+    },
+    "rendered_motion_sample": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "source_vs_render_proof": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "contact_sheet_frame": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "forbidden_depth_methods": {
+      "type": "array",
+      "const": [
+        "blur",
+        "boxblur",
+        "gblur",
+        "maskedmerge_only",
+        "depth_map_exists_only"
+      ]
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

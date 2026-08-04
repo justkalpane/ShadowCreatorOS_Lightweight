@@ -4,19 +4,52 @@ from datetime import datetime, timezone
 from typing import Any
 
 
+SKILL_ID = "M-047"
+CINEMA_CORE_AUTHORITY = False
+DOWNSTREAM_PACKAGING_ONLY = True
+FILM_ROUTE_ID = "FILM_SCREENPLAY_GENERATION"
+
+
+def _film_core_boundary(input_payload: dict[str, Any]) -> dict[str, Any] | None:
+    route_id = str(input_payload.get("route_id", "")).upper()
+    route_mode = str(input_payload.get("route_mode", ""))
+    film_packet_ready = input_payload.get("film_packet_ready") is True
+    downstream_authorized = input_payload.get("downstream_packaging_authorized") is True
+
+    if route_id == FILM_ROUTE_ID or route_mode == "film_screenplay_generation":
+        if not (film_packet_ready and downstream_authorized):
+            return {
+                "status": "blocked",
+                "error": "M-047 is downstream thumbnail/packaging logic and cannot act as film-core authority.",
+                "skill_id": SKILL_ID,
+                "route_id": route_id or FILM_ROUTE_ID,
+                "cinema_core_authority": CINEMA_CORE_AUTHORITY,
+                "downstream_packaging_only": DOWNSTREAM_PACKAGING_ONLY,
+                "required_before_use": [
+                    "film_packet_ready=true",
+                    "downstream_packaging_authorized=true",
+                ],
+            }
+    return None
+
+
 def run(input_payload: dict[str, Any]) -> dict[str, Any]:
+    boundary_result = _film_core_boundary(input_payload)
+    if boundary_result is not None:
+        return boundary_result
+
     dossier_id = input_payload.get("dossier_id")
     if not dossier_id:
         return {
             "status": "failed",
             "error": "missing dossier_id",
-            "skill_id": "M-047",
+            "skill_id": SKILL_ID,
         }
 
     now = datetime.now(timezone.utc).isoformat()
     return {
         "status": "success",
-        "skill_id": "M-047",
+        "skill_id": SKILL_ID,
         "skill_name": "Thumbnail Psychology Engine",
         "artifact_family": "thumbnail-psychology-engine_packet",
         "created_at": now,
@@ -25,6 +58,8 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "cinema_core_authority": CINEMA_CORE_AUTHORITY,
+                "downstream_packaging_only": DOWNSTREAM_PACKAGING_ONLY,
             },
         },
     }

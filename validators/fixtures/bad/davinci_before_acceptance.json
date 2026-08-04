@@ -1,0 +1,20 @@
+{
+  "visual_acceptance_token": {
+    "token_id": "tok-visual",
+    "issuer": "shadow_commander",
+    "scope": "visual_acceptance",
+    "proof_bundle_id": "proof-1",
+    "expires_at": "2026-06-30T00:00:00Z",
+    "status": "active"
+  },
+  "davinci_handoff_token": {
+    "token_id": "tok-davinci",
+    "issuer": "shadow_commander",
+    "scope": "davinci_handoff",
+    "proof_bundle_id": "proof-1",
+    "expires_at": "2026-06-30T00:00:00Z",
+    "status": "active"
+  },
+  "asset_registry_path": "/tmp/asset_registry.json",
+  "visual_audio_package_status": "incomplete"
+}

@@ -1,0 +1,25 @@
+{
+  "pilot_cut_id": "C07z",
+  "reason_selected": "Most representative high-risk parallax scene.",
+  "script_line": "The opening line.",
+  "visual_intent": "Validate depth, overlay, and ffmpeg quality together.",
+  "base_image_path": "/tmp/base.png",
+  "base_image_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+  "depth_map_path": "/tmp/depth.png",
+  "depth_map_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+  "hyperframes_overlay_path": "/tmp/overlay.mov",
+  "hyperframes_overlay_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+  "motion_profile": "slow_push_in",
+  "depth_method": "displace",
+  "ffmpeg_filtergraph_packet_path": "/tmp/ffmpeg_packet.json",
+  "encode_profile": "crf18_bt709_lanczos",
+  "contact_sheet_plan": "/tmp/contact_sheet_plan.json",
+  "source_vs_render_frame_points": [
+    "00:00:01",
+    "00:00:03"
+  ],
+  "human_review_packet": {
+    "review_status": "PENDING"
+  },
+  "full_render_unlock_allowed": false
+}

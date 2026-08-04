@@ -1,0 +1,16 @@
+{
+  "fixture_id": "NF-006",
+  "fixture_family": "no_fake_pass",
+  "input_summary": "Runtime artifact names are invented in the output.",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "prohibited_claims": ["repository_lock_id", "proof_contract_id", "context_packet_id", "prompt_package_id", "evaluation_report_id", "completion_certificate"],
+  "required_future_validator_or_schema": "validate_no_invented_runtime_artifacts.py",
+  "purpose": "Honest fixture language",
+  "risk_if_missing": "Fake runtime artifacts sneak into expected results",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

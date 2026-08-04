@@ -1,0 +1,51 @@
+# Phase 12H inactive draft only
+phase: "12H"
+status: "inactive_draft_only"
+active_slice: false
+registered: false
+bound_to_route_selector: false
+runtime_behavior_changed: false
+governed_runtime_proof_claimed: false
+pass_claimed: false
+slice_identity:
+  route_id: "FILM_SCREENPLAY_GENERATION"
+  route_family: "cinema_core"
+  future_parallel_route: true
+  active_in_phase_12h: false
+consumed_contracts:
+  - "runtime_contracts/film/route/FILM_ROUTE_INTENT_CONTRACT.md"
+  - "runtime_contracts/film/output_packet/FILM_OUTPUT_PACKET_CONTRACT.md"
+consumed_schemas:
+  - "schemas/film/route/film_route_state_capsule.schema.json"
+  - "schemas/film/output_packet/film_screenplay_output_packet.schema.json"
+consumed_validators:
+  - "validators/film/route/validate_film_route_selection.py"
+  - "validators/film/validation/validate_film_content_packet_separation.py"
+route_dependency_expansion:
+  - "preserve SCRIPT_GENERATION"
+  - "future film route is parallel only"
+fixture_references:
+  - "tests/fixtures/film_route_selection/neet_short_film.json"
+  - "tests/fixtures/no_fake_pass/content_validator_cannot_pass_film_packet.json"
+route_scope_requirements:
+  - "screenplay intent only"
+  - "no content-core leakage"
+proof_lineage_requirements:
+  - "no invented runtime proof"
+  - "no PASS claim"
+route_collision_rules:
+  - "YouTube/Shorts/social prompts stay on content routes"
+  - "trailer and packaging stay downstream-only"
+downstream_allowed_routes:
+  - "VISUAL_MEDIA_PLAN"
+  - "VOICE_CONTEXT"
+  - "EDITING_PACKAGING"
+  - "MEDIA_FACTORY_HANDOFF"
+prohibited_content_core_leakage:
+  - "hook density as PASS authority"
+  - "retention loops as film-core law"
+source_vs_render_separation:
+  - "real incidents require source backing"
+future_activation_blockers:
+  - "active selector binding not approved in Phase 12H"
+  - "active route manifests/slices not modified in Phase 12H"

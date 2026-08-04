@@ -187,3 +187,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-035-engagement-loop-builder.skill.md; component_id=M-035_Engagement_Loop_Builder
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Build recurring retention resets across all major sections.
+- Reject unexplained gaps above 30 seconds and emit mapping evidence for final
+  script, beat map, editing context, and influence map.

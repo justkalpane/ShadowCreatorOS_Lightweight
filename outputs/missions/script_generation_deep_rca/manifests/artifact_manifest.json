@@ -1,0 +1,106 @@
+{
+  "files": [
+    {
+      "bytes": 236329,
+      "path": "validators/validate_script_generation_output.py",
+      "sha256": "51f1828082ed08842b1f8329c75e69f4d4bff2d0fb247e509dc3951b63362b48"
+    },
+    {
+      "bytes": 112710,
+      "path": "validators/validate_mac06_1a_output.py",
+      "sha256": "b838a196d5f1406e88b308caf6264f1e424888ef0af4713bdf639223c4767daa"
+    },
+    {
+      "bytes": 38626,
+      "path": "validators/lib/batch3_validator_configs.py",
+      "sha256": "6fcbe86aca13513cb6c48610a80c024bebe4f0fe3600b4b773e687e19c8d42e8"
+    },
+    {
+      "bytes": 22392,
+      "path": "registries/route_manifests/script_generation.yaml",
+      "sha256": "585a507e8c341638442e383bcb653536a7e96459701b1b5750c996eecc238d92"
+    },
+    {
+      "bytes": 4114,
+      "path": "registries/route_slices/script_generation.registry_slice.yaml",
+      "sha256": "17ad1bfadb6a8e934fbb1882dcc572f7a2bc62b99d957449be45b0b231823864"
+    },
+    {
+      "bytes": 23728,
+      "path": "registries/route_manifests/media_factory_handoff.yaml",
+      "sha256": "5b2d49d3ce56f733b87a86c0f53cfbc78b48b732327128ca87e2e6306e8b31c1"
+    },
+    {
+      "bytes": 4199,
+      "path": "registries/route_slices/visual_media_plan.registry_slice.yaml",
+      "sha256": "1ba041dc2d4a5c9273a3b9167f183b96292bfd6e186c9eb98448a987ac58e132"
+    },
+    {
+      "bytes": 7348,
+      "path": "schemas/media_factory/visual_media_plan_row.schema.json",
+      "sha256": "8d7e2ac2fa9acce401e400ece082e210784179b0ba12b9af11a3135c948dd1d9"
+    },
+    {
+      "bytes": 2217,
+      "path": "validators/fixtures/gold/visual_media_plan_row_complete.json",
+      "sha256": "c08393fea18a7b892be63c6f36f8d7e32a76019097895386f828431d61a7b4e9"
+    },
+    {
+      "bytes": 2177,
+      "path": "validators/fixtures/bad/visual_plan_child_shot_over_4_seconds.json",
+      "sha256": "22b3cb7a98ed08de304048c6a106052e9ef03115e6527403d0975ec6f5430ee9"
+    },
+    {
+      "bytes": 679,
+      "path": "style_profiles/bengaluru_spoken_english.yaml",
+      "sha256": "2104f169489ab3eda171ae621add476980e38dbbb5372b40b254642f6ca0275f"
+    },
+    {
+      "bytes": 18462,
+      "path": "validators/fixtures/mac06_1a_pass_minimal_complete.txt",
+      "sha256": "1fbfae404543e1ad62aed9155ae07817df49890a5e3b312d4d2a23171d671845"
+    },
+    {
+      "bytes": 121,
+      "path": "outputs/missions/script_generation_deep_rca/source_snapshots/source_1.txt",
+      "sha256": "bf5f53e036965b0e9732b198ebd8f8337b34d5cbc24d20ae42fd2ffae1818e20"
+    },
+    {
+      "bytes": 114,
+      "path": "outputs/missions/script_generation_deep_rca/source_snapshots/source_2.txt",
+      "sha256": "82389b665b513467b94520b7ef7f73f7ee8e1461540e1019c769f5891de68043"
+    },
+    {
+      "bytes": 115,
+      "path": "outputs/missions/script_generation_deep_rca/source_snapshots/source_3.txt",
+      "sha256": "2bd291c1a2f4062af54fe764e166a140820d96b00dc26896607e00b8f9d3cb40"
+    },
+    {
+      "bytes": 223,
+      "path": "outputs/missions/script_generation_deep_rca/logs/validate_visual_generation_depth.log",
+      "sha256": "b5bd7404baf74c7fa4005c1c339ccb85a792256689c78a549ddde33ad7129781"
+    },
+    {
+      "bytes": 37695,
+      "path": "outputs/missions/script_generation_deep_rca/logs/run_all_validators_python_only.log",
+      "sha256": "1c4edc6dbcf69528bda943346165e1edd6137d1d2c0a9db9e15fa72bb8c37c4d"
+    },
+    {
+      "bytes": 6131,
+      "path": "outputs/missions/script_generation_deep_rca/logs/validate_mac06_1a_output.log",
+      "sha256": "cb3ec2446917ea0d0542da8a4172b6f8ddb2d767c6347dec8c3180235122b8bf"
+    },
+    {
+      "bytes": 40227,
+      "path": "outputs/missions/script_generation_deep_rca/logs/validate_script_generation_output_self_test.log",
+      "sha256": "7009b04daab3cc100583cf4171739a3aa6b2a1a7aac4164ad11111be009dccfd"
+    },
+    {
+      "bytes": 321935,
+      "path": "outputs/missions/script_generation_deep_rca/diffs/task_files.diff",
+      "sha256": "b3ae574a14e16f2c40fa496a4870da52cefd0914ec7c500d7de83bbd9885ee3a"
+    }
+  ],
+  "mission_id": "script_generation_deep_rca",
+  "root": "/Users/apple/Documents/ShadowCreatorOS_Lightweight"
+}

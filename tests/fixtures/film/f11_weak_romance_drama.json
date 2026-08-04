@@ -1,0 +1,41 @@
+{
+  "payload": {
+    "route": "FILM_SCREENPLAY_GENERATION",
+    "mode": "script_only",
+    "duration_minutes": 5,
+    "format": "short_film_screenplay",
+    "language": "English",
+    "genre": "romance",
+    "tone": ["intimate", "fragile", "hopeful"],
+    "theme": "Love is repaired through vulnerable honesty, not managed distance.",
+    "setting": "rainy apartment living room",
+    "emotional_pressure_trigger": "an anniversary dinner burns while an unresolved hurt resurfaces",
+    "toddler_stakes_detail": "the children can feel the emotional distance even when no one raises a voice",
+    "relationship_type": "romantic domestic partnership",
+    "visual_style": "rain-washed intimate realism",
+    "opposing_force": "old hurt and protective pride",
+    "external_goal": "Save the evening without deepening the distance.",
+    "internal_need": "Tell the truth before pride turns the silence permanent.",
+    "want": "Get through the night without another fight.",
+    "need": "Risk honesty instead of safe distance.",
+    "moral_dilemma": "protect pride through distance or risk tenderness through honesty",
+    "main_character_name": "Mirel",
+    "second_character_name": "Ansa",
+    "second_character_role": "emotional_mirror"
+  },
+  "weakness_profile": [
+    "relationship conflict vague",
+    "passive protagonist",
+    "no emotional reversal",
+    "dialogue too direct",
+    "no subtext",
+    "final reconciliation unearned"
+  ],
+  "weak_dialogue_line": "I am upset because I am upset and I need you to hear that directly.",
+  "weak_conflict_line": "they are not really on the same page",
+  "weak_stakes_line": "the relationship pressure stays about the same",
+  "weak_visual_line": "basic romantic coverage without emotional framing",
+  "weak_ending_line": "They reconcile because they decide it is time to reconcile.",
+  "expected_quality_band": "NEEDS_MAJOR_REWRITE"
+}
+

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/route/film_route_state_capsule.schema.json",
+  "title": "Film Route State Capsule",
+  "description": "Skeleton schema for film route state capsules.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"route_id":{"type":"string","description":"Selected route identifier"},"route_mode":{"type":"string","description":"Operating mode"},"route_state":{"type":"string","description":"Current route state"},"route_lineage":{"type":"object","description":"Lineage / consumption capsule"},"source_consumption":{"type":"object","description":"Source consumption summary"},"validation_state":{"type":"string","description":"Current validation state"}},
+  "required": []
+}

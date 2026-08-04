@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/pilot_cut_validation_packet.schema.json",
+  "title": "Shadow Pilot Cut Validation Packet",
+  "description": "Controlled C04a pilot manifest packet. This packet cannot unlock full render directly.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pilot_cut_id",
+    "reason_selected",
+    "script_line",
+    "visual_intent",
+    "base_image_path",
+    "base_image_sha256",
+    "depth_map_path",
+    "depth_map_sha256",
+    "hyperframes_overlay_path",
+    "hyperframes_overlay_sha256",
+    "motion_profile",
+    "depth_method",
+    "ffmpeg_filtergraph_packet_path",
+    "encode_profile",
+    "contact_sheet_plan",
+    "source_vs_render_frame_points",
+    "human_review_packet",
+    "full_render_unlock_allowed"
+  ],
+  "properties": {
+    "pilot_cut_id": {"type": "string", "const": "C04a"},
+    "reason_selected": {"type": "string", "minLength": 1},
+    "script_line": {"type": "string", "minLength": 1},
+    "visual_intent": {"type": "string", "minLength": 1},
+    "base_image_path": {"type": "string", "pattern": "^/"},
+    "base_image_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "depth_map_path": {"type": "string", "pattern": "^/"},
+    "depth_map_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "hyperframes_overlay_path": {"type": "string", "pattern": "^/"},
+    "hyperframes_overlay_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "motion_profile": {"type": "string", "minLength": 1},
+    "depth_method": {
+      "type": "string",
+      "enum": [
+        "displace",
+        "layered_parallax"
+      ]
+    },
+    "ffmpeg_filtergraph_packet_path": {"type": "string", "pattern": "^/"},
+    "encode_profile": {"type": "string", "const": "crf18_bt709_lanczos"},
+    "contact_sheet_plan": {"type": "string", "pattern": "^/"},
+    "source_vs_render_frame_points": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "human_review_packet": {"type": "object"},
+    "full_render_unlock_allowed": {"type": "boolean", "const": false}
+  }
+}

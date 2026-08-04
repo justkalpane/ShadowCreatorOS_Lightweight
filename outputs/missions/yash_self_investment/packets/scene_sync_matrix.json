@@ -1,0 +1,2709 @@
+{
+  "mission_id": "yash_self_investment",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "source_storyboard": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+  "scene_count": 24,
+  "total_duration_seconds": 305,
+  "scene_rows": [
+    {
+      "scene_id": "1",
+      "start_time": "0:00",
+      "end_time": "0:12",
+      "duration_seconds": 12,
+      "duration_reason": "12s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": true,
+      "rehook_type": "opening_hook",
+      "retention_reset_goal": "open real-person proof loop with high curiosity",
+      "script": {
+        "spoken_text": "A boy with ₹300 in his pocket stepped off a bus in Bengaluru. He didn't come with connections or a plan. He came with one skill. And that skill made him ₹1,200 Crore. Stop scrolling. Because what he did — you can do too.",
+        "line_intent": "**Hook Law:** First 12s must lock attention with a real-person proof statement. Whisper-to-declaration voice arc is the primary pattern interrupt. No B-roll here — presenter presence builds personal authority at start.",
+        "retention_function": "open real-person proof loop with high curiosity"
+      },
+      "voice": {
+        "tone": "Opens as conspiratorial whisper. Shifts to a sharp, direct declaration at 'Stop scrolling.'",
+        "emotion": "Opens as conspiratorial whisper. Shifts to a sharp, direct declaration at 'Stop scrolling.'",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+        "style": "cinematic_realism",
+        "lighting": "Warm amber backlight rims shoulders. Desaturated charcoal background.",
+        "composition": "Bottom 15% clear of watch bar.",
+        "visual_creation_dna": {
+          "subject": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+          "environment": "Medium close-up of male presenter in a black knit sweater. Clean dark studio backdrop. No overlay.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Opens as conspiratorial whisper. Shifts to a sharp, direct declaration at 'Stop scrolling.'",
+          "color_palette": "Warm amber backlight rims shoulders. Desaturated charcoal background.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=1; palette=Warm amber backlight rims shoulders. Desaturated charcoal background.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "close_up",
+        "camera_motion": "Subtle slow dolly push-in (100% → 103% scale over 12s).",
+        "duration": 12,
+        "continuity_notes": "**Hook Law:** First 12s must lock attention with a real-person proof statement. Whisper-to-declaration voice arc is the primary pattern interrupt. No B-roll here — presenter presence builds personal authority at start.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Dark cinematic drone pad (Suno: \"dark ambient cinematic underlay, low BPM drone, no melody\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] rain_ambient_loop.wav at -14dB` <br> `[+9.0s] music_stab (cut to silence) — matches 'Stop scrolling'`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "rain_ambient_loop.wav",
+            "volume_db": -14
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "rain_ambient_loop.wav",
+            "volume_db": -14
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Hard open from black (0 frame dissolve). No transition before Scene 1.",
+        "caption_style": "Montserrat ExtraBold. Gold glow on **₹300**, **Rocky Bhai**, **change your life**. No caption bar in bottom 15%.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15% clear of watch bar."
+      },
+      "influence": {
+        "why_line_exists": "**Hook Law:** First 12s must lock attention with a real-person proof statement. Whisper-to-declaration voice arc is the primary pattern interrupt. No B-roll here — presenter presence builds personal authority at start.",
+        "emotion_triggered": "Opens as conspiratorial whisper. Shifts to a sharp, direct declaration at 'Stop scrolling.'",
+        "retention_goal": "open real-person proof loop with high curiosity",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2A",
+      "start_time": "0:12",
+      "end_time": "0:28",
+      "duration_seconds": 16,
+      "duration_reason": "16s follows approved V2 storyboard pacing for CINEMATIC_BROLL_VIDEO.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Picture this. Bengaluru, 1990s. Seventeen-year-old Naveen Kumar Gowda — a boy from a small Karnataka town — steps off a government bus into the biggest city he has ever seen. He has ₹300 in his pocket. His father is a KSRTC bus driver.",
+        "line_intent": "**Story Law:** This is the CINEMATIC_SHORT_STORY_BLOCK establishing shot. Must be premium cloud video — motion, rain, crowd, and bus mechanics cannot be convincingly faked with a still. This is one of the primary B-roll spend allocations per the 12% law.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Soft cinematic narrator. Slow, measured pacing.",
+        "emotion": "Soft cinematic narrator. Slow, measured pacing.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+        "style": "cinematic_realism",
+        "lighting": "Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+        "composition": "Center-weighted safe. No text bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+          "environment": "Wide establishing shot. A 16-year-old Indian boy (no face shown — side profile / back view only per safety rules) steps off a state bus in a vast, rain-soaked Bengaluru bus terminal. Night scene. Crowds push around him. He stands still.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Soft cinematic narrator. Slow, measured pacing.",
+          "color_palette": "Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2A; palette=Deep teal shadows. Ambient orange terminal sodium lamps. Film grain overlay (6% intensity).",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "use_side_profile",
+          "tool_targets": [
+            "runway_ml_api",
+            "kling_ai_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "wide",
+        "camera_motion": "Slow dolly pull-back (subject stays centered, terminal reveals around him). Rack focus from crowd to boy.",
+        "duration": 16,
+        "continuity_notes": "**Story Law:** This is the CINEMATIC_SHORT_STORY_BLOCK establishing shot. Must be premium cloud video — motion, rain, crowd, and bus mechanics cannot be convincingly faked with a still. This is one of the primary B-roll spend allocations per the 12% law.",
+        "visual_method": "CINEMATIC_BROLL_VIDEO"
+      },
+      "music_sfx": {
+        "music_mood": "Soft emotional piano enters (Suno: \"sad emotional piano, single melody, cinematic Indian setting, no drums\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] bus_air_brakes_release.wav at -9dB` <br> `[+4.0s] rain_patter_heavy.wav at -15dB` <br> `[+12.0s] crowd_murmur_fade.wav at -18dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "bus_air_brakes_release.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 4.0,
+            "sfx_name": "rain_patter_heavy.wav",
+            "volume_db": -15
+          },
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "crowd_murmur_fade.wav",
+            "volume_db": -18
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "bus_air_brakes_release.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 4.0,
+            "sfx_name": "rain_patter_heavy.wav",
+            "volume_db": -15
+          },
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "crowd_murmur_fade.wav",
+            "volume_db": -18
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Hard cut from Scene 1 on the word \"Picture this.\" (voice beat sync).",
+        "caption_style": "Clean centered white text. Helvetica Light. No gold here — building empathy, not triumph.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center-weighted safe. No text bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Story Law:** This is the CINEMATIC_SHORT_STORY_BLOCK establishing shot. Must be premium cloud video — motion, rain, crowd, and bus mechanics cannot be convincingly faked with a still. This is one of the primary B-roll spend allocations per the 12% law.",
+        "emotion_triggered": "Soft cinematic narrator. Slow, measured pacing.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2B",
+      "start_time": "0:28",
+      "end_time": "0:42",
+      "duration_seconds": 14,
+      "duration_reason": "14s follows approved V2 storyboard pacing for CINEMATIC_BROLL_VIDEO.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "No connections. No mentor. No plan. Just a dream to perform on stage — and ₹300 standing between him and survival.",
+        "line_intent": "**B-Roll Law:** Extreme wide + crane up is a signature cinematic move that cannot be replicated with a still frame. The emotional peak of the story block — boy vs. city — requires genuine video motion for maximum retention impact. This is the second primary B-roll spend.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Staccato, firm narrator. Pauses after each word list item.",
+        "emotion": "Staccato, firm narrator. Pauses after each word list item.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+        "style": "cinematic_realism",
+        "lighting": "Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+        "composition": "Center safe. Text top 30% of frame.",
+        "visual_creation_dna": {
+          "subject": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+          "environment": "Extreme wide shot from behind the boy looking out over a vast, overwhelming night cityscape — neon lights, traffic rivers, concrete towers. He is a tiny silhouette against the infinite city.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Staccato, firm narrator. Pauses after each word list item.",
+          "color_palette": "Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2B; palette=Cold blue/teal city glow. Single warm amber streetlamp halo on boy silhouette.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "use_silhouette",
+          "tool_targets": [
+            "runway_ml_api",
+            "kling_ai_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "extreme_wide",
+        "camera_motion": "Slow crane-up (camera lifts from ground level to reveal city horizon). No pan. Pure vertical reveal.",
+        "duration": 14,
+        "continuity_notes": "**B-Roll Law:** Extreme wide + crane up is a signature cinematic move that cannot be replicated with a still frame. The emotional peak of the story block — boy vs. city — requires genuine video motion for maximum retention impact. This is the second primary B-roll spend.",
+        "visual_method": "CINEMATIC_BROLL_VIDEO"
+      },
+      "music_sfx": {
+        "music_mood": "Cello joins piano (Suno: \"cello enters piano, emotional tension builds, cinematic score\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+1.0s] city_hum_distant.wav at -18dB` <br> `[+10.0s] thunder_rumble_low.wav at -14dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 1.0,
+            "sfx_name": "city_hum_distant.wav",
+            "volume_db": -18
+          },
+          {
+            "timestamp_offset": 10.0,
+            "sfx_name": "thunder_rumble_low.wav",
+            "volume_db": -14
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 1.0,
+            "sfx_name": "city_hum_distant.wav",
+            "volume_db": -18
+          },
+          {
+            "timestamp_offset": 10.0,
+            "sfx_name": "thunder_rumble_low.wav",
+            "volume_db": -14
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Soft dissolve (1.0s) from Scene 2A into crane shot.",
+        "caption_style": "Bold white text. Staccato word reveals synced to voice pauses: \"No connections.\" → \"No mentor.\" → \"No plan.\"",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe. Text top 30% of frame."
+      },
+      "influence": {
+        "why_line_exists": "**B-Roll Law:** Extreme wide + crane up is a signature cinematic move that cannot be replicated with a still frame. The emotional peak of the story block — boy vs. city — requires genuine video motion for maximum retention impact. This is the second primary B-roll spend.",
+        "emotion_triggered": "Staccato, firm narrator. Pauses after each word list item.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2C",
+      "start_time": "0:42",
+      "end_time": "0:52",
+      "duration_seconds": 10,
+      "duration_reason": "10s follows approved V2 storyboard pacing for CINEMATIC_BROLL_VIDEO.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "For months, he performed in small plays. Earning almost nothing.",
+        "line_intent": "**B-Roll Law:** This is the story's emotional dip — the struggle. The floating dust mote + spotlight effect cannot be replicated with a still. Third concentrated cinematic B-roll spend. Running total: 16+14+10 = 40s = 13.1%.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Empathetic, solemn. Slow delivery.",
+        "emotion": "Empathetic, solemn. Slow delivery.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+        "style": "cinematic_realism",
+        "lighting": "Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+        "composition": "Bottom 15% clear.",
+        "visual_creation_dna": {
+          "subject": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+          "environment": "Interior shot. A dim, near-empty theater stage with a single spotlight circle. The boy (back view / silhouette only) stands center stage looking up at the empty seats. Dust motes float in the spotlight beam.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Empathetic, solemn. Slow delivery.",
+          "color_palette": "Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Slow dolly push-in toward the stage. Extremely gradual.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2C; palette=Warm amber spotlight. Deep gray/black empty seats. High contrast isolation.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "use_silhouette",
+          "tool_targets": [
+            "runway_ml_api",
+            "kling_ai_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Slow dolly push-in toward the stage. Extremely gradual.",
+        "duration": 10,
+        "continuity_notes": "**B-Roll Law:** This is the story's emotional dip — the struggle. The floating dust mote + spotlight effect cannot be replicated with a still. Third concentrated cinematic B-roll spend. Running total: 16+14+10 = 40s = 13.1%.",
+        "visual_method": "CINEMATIC_BROLL_VIDEO"
+      },
+      "music_sfx": {
+        "music_mood": "Heartbeat bass pulse added beneath piano. Cello continues. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] empty_theater_reverb_ambience.wav at -12dB` <br> `[+8.0s] single_spotlight_hum.wav at -20dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "empty_theater_reverb_ambience.wav",
+            "volume_db": -12
+          },
+          {
+            "timestamp_offset": 8.0,
+            "sfx_name": "single_spotlight_hum.wav",
+            "volume_db": -20
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "empty_theater_reverb_ambience.wav",
+            "volume_db": -12
+          },
+          {
+            "timestamp_offset": 8.0,
+            "sfx_name": "single_spotlight_hum.wav",
+            "volume_db": -20
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Soft dissolve (0.8s) from Scene 2B.",
+        "caption_style": "White text. \"performing in small plays\" in italic soft white.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15% clear."
+      },
+      "influence": {
+        "why_line_exists": "**B-Roll Law:** This is the story's emotional dip — the struggle. The floating dust mote + spotlight effect cannot be replicated with a still. Third concentrated cinematic B-roll spend. Running total: 16+14+10 = 40s = 13.1%.",
+        "emotion_triggered": "Empathetic, solemn. Slow delivery.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2D",
+      "start_time": "0:52",
+      "end_time": "1:02",
+      "duration_seconds": 10,
+      "duration_reason": "10s follows approved V2 storyboard pacing for IMAGE_MOTION_GRAPHICS_BROLL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Counting coins. Every. Single. Night.",
+        "line_intent": "**Image Law:** Macro still + 2.5D parallax is perfectly suited here. The emotional beat is a close detail shot (coins), not wide cinematic motion — still image achieves the same effect at zero cost. DA-V2 parallax adds dimensionality.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Tightly punched. Pauses after each word for dramatic weight.",
+        "emotion": "Tightly punched. Pauses after each word for dramatic weight.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+        "style": "cinematic_realism",
+        "lighting": "Extreme amber key. Dark vignette. High contrast grain (8%).",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+          "environment": "Macro close-up photograph of rough, working-class hands counting a small stack of coins on dark weathered wood. Still image with 2.5D depth parallax.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Tightly punched. Pauses after each word for dramatic weight.",
+          "color_palette": "Extreme amber key. Dark vignette. High contrast grain (8%).",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2D; palette=Extreme amber key. Dark vignette. High contrast grain (8%).",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "depth_anything_v2_local",
+            "davinci_resolve_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "close_up",
+        "camera_motion": "Depth Anything V2 generates depth mask: coins = foreground layer, hands = mid layer, wood grain = background layer. DaVinci Fusion animates slow parallax separation (foreground drifts +8px right, background drifts -4px left). Slow macro zoom (100% → 106%).",
+        "duration": 10,
+        "continuity_notes": "**Image Law:** Macro still + 2.5D parallax is perfectly suited here. The emotional beat is a close detail shot (coins), not wide cinematic motion — still image achieves the same effect at zero cost. DA-V2 parallax adds dimensionality.",
+        "visual_method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Coin-clink SFX sync to voice beats. <br> *SFX_TIMELINE_METHOD:* <br> `[+2.2s] coin_clink_1.wav at -4dB` — sync \"Every\" <br> `[+4.8s] coin_clink_2.wav at -3dB` — sync \"Single\" <br> `[+7.1s] coin_slide_heavy.wav at -5dB` — sync \"Night\"",
+        "sfx": [
+          {
+            "timestamp_offset": 2.2,
+            "sfx_name": "coin_clink_1.wav",
+            "volume_db": -4
+          },
+          {
+            "timestamp_offset": 4.8,
+            "sfx_name": "coin_clink_2.wav",
+            "volume_db": -3
+          },
+          {
+            "timestamp_offset": 7.1,
+            "sfx_name": "coin_slide_heavy.wav",
+            "volume_db": -5
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 2.2,
+            "sfx_name": "coin_clink_1.wav",
+            "volume_db": -4
+          },
+          {
+            "timestamp_offset": 4.8,
+            "sfx_name": "coin_clink_2.wav",
+            "volume_db": -3
+          },
+          {
+            "timestamp_offset": 7.1,
+            "sfx_name": "coin_slide_heavy.wav",
+            "volume_db": -5
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Whip pan micro-cut (0.3s) from Scene 2C at the word \"Counting\".",
+        "caption_style": "Gold text. Each word appears one-at-a-time on voice beats: **Every.** → **Single.** → **Night.** Montserrat ExtraBold.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**Image Law:** Macro still + 2.5D parallax is perfectly suited here. The emotional beat is a close detail shot (coins), not wide cinematic motion — still image achieves the same effect at zero cost. DA-V2 parallax adds dimensionality.",
+        "emotion_triggered": "Tightly punched. Pauses after each word for dramatic weight.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "2E",
+      "start_time": "1:02",
+      "end_time": "1:10",
+      "duration_seconds": 8,
+      "duration_reason": "8s follows approved V2 storyboard pacing for PROGRAMMATIC_SLIDE_VISUAL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "And when he finally broke through — the world called him Rocky Bhai. ₹300 to ₹1,200 Crore. Naveen Kumar Gowda — known as Yash.",
+        "line_intent": "**Programmatic Slide Law:** Number-reveal moments do not need cinematic footage. HyperFrames delivers pixel-perfect kinetic gold text at zero cost. Maximum impact moment — the transformation reveal.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Reverent, building to a proud crescendo on \"Yash.\"",
+        "emotion": "Reverent, building to a proud crescendo on \"Yash.\"",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+        "style": "documentary",
+        "lighting": "Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+          "environment": "Kinetic text panel on pure black background. Large gold glowing lettering scales up: **₹300 → ₹1,200 CRORE**. Secondary text beneath: \"Naveen Kumar Gowda. Known as Yash. Rocky Bhai.\"",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Reverent, building to a proud crescendo on \"Yash.\"",
+          "color_palette": "Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out ",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=2E; palette=Rich gold gradient (#FFE082 → #FFB300) on pure black canvas.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "use_silhouette",
+          "tool_targets": [
+            "hyperframes_cli_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static black backdrop. Gold letters scale from 60% → 100% over 3s. Glow pulse animation (HyperFrames GSAP keyframe). <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 3s ease-out + glow_pulse 1.5s loop`",
+        "duration": 8,
+        "continuity_notes": "**Programmatic Slide Law:** Number-reveal moments do not need cinematic footage. HyperFrames delivers pixel-perfect kinetic gold text at zero cost. Maximum impact moment — the transformation reveal.",
+        "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Triumphant orchestral strings swell (Suno: \"cinematic triumph strings swell, 8 second sting, no drums\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+5.0s] cinematic_boom_impact.wav at -3dB` — sync \"Yash\"",
+        "sfx": [
+          {
+            "timestamp_offset": 5.0,
+            "sfx_name": "cinematic_boom_impact.wav",
+            "volume_db": -3
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 5.0,
+            "sfx_name": "cinematic_boom_impact.wav",
+            "volume_db": -3
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Hard cut from Scene 2D on the word \"And when.\" Zero-frame cut for maximum impact.",
+        "caption_style": "Text IS the visual. Gold outlined \"₹300 → ₹1,200 CRORE\" glowing. No caption overlay needed.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**Programmatic Slide Law:** Number-reveal moments do not need cinematic footage. HyperFrames delivers pixel-perfect kinetic gold text at zero cost. Maximum impact moment — the transformation reveal.",
+        "emotion_triggered": "Reverent, building to a proud crescendo on \"Yash.\"",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "3",
+      "start_time": "1:10",
+      "end_time": "1:20",
+      "duration_seconds": 10,
+      "duration_reason": "10s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": true,
+      "rehook_type": "pattern_interrupt_rehook",
+      "retention_reset_goal": "reset attention before the next major section",
+      "script": {
+        "spoken_text": "That boy earning ₹300 was investing in himself every day. The question is — what are YOU not doing with yours?",
+        "line_intent": "**Re-Hook Law:** First re-hook at ~70s. Must reset viewer retention. Presenter on camera creates personal accountability pressure. The snap zoom is the pattern interrupt. Silence amplifies impact.",
+        "retention_function": "reset attention before the next major section"
+      },
+      "voice": {
+        "tone": "Challenging. Intense. Direct confrontation with viewer. Peak authority voice.",
+        "emotion": "Challenging. Intense. Direct confrontation with viewer. Peak authority voice.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+        "style": "cinematic_realism",
+        "lighting": "Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+        "composition": "Bottom 15% clear.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+          "environment": "Medium shot of presenter pointing directly at camera. Charcoal studio backdrop. Leaning slightly forward.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Challenging. Intense. Direct confrontation with viewer. Peak authority voice.",
+          "color_palette": "Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=3; palette=Charcoal backdrop. Warm amber rim light on shoulders. High contrast.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Camera reframe zoom-cut on key phrase \"NOT doing\" — snap zoom in 0.2s (from 100% to 108%).",
+        "duration": 10,
+        "continuity_notes": "**Re-Hook Law:** First re-hook at ~70s. Must reset viewer retention. Presenter on camera creates personal accountability pressure. The snap zoom is the pattern interrupt. Silence amplifies impact.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Music cuts to silence at \"The question is.\" Low tension drone enters. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] bass_drop_sub.wav at -6dB` <br> `[+5.5s] music_silence_cut.wav at 0dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "bass_drop_sub.wav",
+            "volume_db": -6
+          },
+          {
+            "timestamp_offset": 5.5,
+            "sfx_name": "music_silence_cut.wav",
+            "volume_db": 0
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "bass_drop_sub.wav",
+            "volume_db": -6
+          },
+          {
+            "timestamp_offset": 5.5,
+            "sfx_name": "music_silence_cut.wav",
+            "volume_db": 0
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Jump-cut zoom (snap zoom 0.2s on \"NOT\").",
+        "caption_style": "\"NOT DOING\" highlighted in red. Montserrat ExtraBold. All other text clean white.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15% clear."
+      },
+      "influence": {
+        "why_line_exists": "**Re-Hook Law:** First re-hook at ~70s. Must reset viewer retention. Presenter on camera creates personal accountability pressure. The snap zoom is the pattern interrupt. Silence amplifies impact.",
+        "emotion_triggered": "Challenging. Intense. Direct confrontation with viewer. Peak authority voice.",
+        "retention_goal": "reset attention before the next major section",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4A1",
+      "start_time": "1:20",
+      "end_time": "1:35",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Do you think Yash's name became 'Rocky Bhai' because he was lucky? He started in theatre. ₹300 budget. An Ekalavya path. He chose the craft.",
+        "line_intent": "**Principle Setup:** Establishes the core teaching — effort not luck. No B-roll needed. Presenter authority carries the argument.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Confident, authoritative. Teaching mode.",
+        "emotion": "Confident, authoritative. Teaching mode.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+        "style": "cinematic_realism",
+        "lighting": "Slate gray tones. Soft warm side lighting.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+          "environment": "Medium shot of presenter. Natural hand gestures — open palm wave, counting on fingers. Studio setting.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Confident, authoritative. Teaching mode.",
+          "color_palette": "Slate gray tones. Soft warm side lighting.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static framing. No camera movement.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4A1; palette=Slate gray tones. Soft warm side lighting.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static framing. No camera movement.",
+        "duration": 15,
+        "continuity_notes": "**Principle Setup:** Establishes the core teaching — effort not luck. No B-roll needed. Presenter authority carries the argument.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Motivational underscore enters low (Suno: \"motivational piano and strings, low underscore, no lyrics\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+12.0s] riser_subtle.wav at -12dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "riser_subtle.wav",
+            "volume_db": -12
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "riser_subtle.wav",
+            "volume_db": -12
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 3.",
+        "caption_style": "Clean bold white text. Gold highlight on **Ekalavya** and **craft**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Principle Setup:** Establishes the core teaching — effort not luck. No B-roll needed. Presenter authority carries the argument.",
+        "emotion_triggered": "Confident, authoritative. Teaching mode.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4A2",
+      "start_time": "1:35",
+      "end_time": "1:50",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Not because he was born talented. But because every rupee he earned — he put back into himself. Skills. Knowledge. Craft. That is what I want you to understand today. Invest in yourself.",
+        "line_intent": "**Principle Law:** Core thesis delivery. Presenter face-time builds trust before the visual framework is introduced.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Authoritative mentor. Building to a declaration.",
+        "emotion": "Authoritative mentor. Building to a declaration.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+        "style": "cinematic_realism",
+        "lighting": "Slate gray. Warm rim.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+          "environment": "Medium shot of presenter. Hands gesturing upward on \"invest.\"",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Authoritative mentor. Building to a declaration.",
+          "color_palette": "Slate gray. Warm rim.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4A2; palette=Slate gray. Warm rim.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static.",
+        "duration": 15,
+        "continuity_notes": "**Principle Law:** Core thesis delivery. Presenter face-time builds trust before the visual framework is introduced.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Motivational underscore swells gently. <br> *SFX_TIMELINE_METHOD:* <br> `[+10.0s] sweep_riser_medium.wav at -9dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 10.0,
+            "sfx_name": "sweep_riser_medium.wav",
+            "volume_db": -9
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 10.0,
+            "sfx_name": "sweep_riser_medium.wav",
+            "volume_db": -9
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 4A1.",
+        "caption_style": "Gold highlight on **invest** and **yourself**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Principle Law:** Core thesis delivery. Presenter face-time builds trust before the visual framework is introduced.",
+        "emotion_triggered": "Authoritative mentor. Building to a declaration.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4B1",
+      "start_time": "1:50",
+      "end_time": "2:03",
+      "duration_seconds": 13,
+      "duration_reason": "13s follows approved V2 storyboard pacing for PROGRAMMATIC_SLIDE_VISUAL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Every rupee Yash earned, he spent on himself — not on things that made him look good for other people. On skills. On knowledge. On his craft. That is self-investment. Everything else is just spending.",
+        "line_intent": "**HyperFrames Slide Law:** Binary comparison (bad vs good) is perfectly rendered by HyperFrames split card. Zero cost. High clarity. Pacing maintained with Ken Burns pan across panels.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Intimate, slightly warning. Like a mentor catching you before a mistake.",
+        "emotion": "Intimate, slightly warning. Like a mentor catching you before a mistake.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C62828` <br> `right_accent=#FFB300` <br> `animation=left_slides_in 0.4s, right_slides_in 0.7s`",
+        "style": "documentary",
+        "lighting": "Charcoal background. High-contrast red/gold glows.",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_",
+          "environment": "Infographic split card. <br> Left panel (Red — Bad Path): \"❌ Buy designer clothes to impress.\" <br> Right panel (Gold — Good Path): \"✅ Buy an acting class to master your craft.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Intimate, slightly warning. Like a mentor catching you before a mistake.",
+          "color_palette": "Charcoal background. High-contrast red/gold glows.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4B1; palette=Charcoal background. High-contrast red/gold glows.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "hyperframes_cli_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Slow Ken Burns horizontal pan from left → right panel (simulates viewer's eye moving from wrong to right choice).",
+        "duration": 13,
+        "continuity_notes": "**HyperFrames Slide Law:** Binary comparison (bad vs good) is perfectly rendered by HyperFrames split card. Zero cost. High clarity. Pacing maintained with Ken Burns pan across panels.",
+        "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Underscore continues. Bass note added beneath. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] card_whoosh_in.wav at -8dB` <br> `[+4.5s] paper_sweep_right.wav at -6dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "card_whoosh_in.wav",
+            "volume_db": -8
+          },
+          {
+            "timestamp_offset": 4.5,
+            "sfx_name": "paper_sweep_right.wav",
+            "volume_db": -6
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "card_whoosh_in.wav",
+            "volume_db": -8
+          },
+          {
+            "timestamp_offset": 4.5,
+            "sfx_name": "paper_sweep_right.wav",
+            "volume_db": -6
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Soft dissolve (0.5s) from Scene 4A2.",
+        "caption_style": "Gold highlight on **craft**. Text in panels IS the visual.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**HyperFrames Slide Law:** Binary comparison (bad vs good) is perfectly rendered by HyperFrames split card. Zero cost. High clarity. Pacing maintained with Ken Burns pan across panels.",
+        "emotion_triggered": "Intimate, slightly warning. Like a mentor catching you before a mistake.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "4B2",
+      "start_time": "2:03",
+      "end_time": "2:15",
+      "duration_seconds": 12,
+      "duration_reason": "12s follows approved V2 storyboard pacing for PROGRAMMATIC_SLIDE_VISUAL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Your money and your time are your two most powerful assets. And most of you are spending both of them on other people. On their validation. On their comfort. While you stay exactly where you are.",
+        "line_intent": "**Slide Series Law:** Back-to-back HyperFrames slides maintain visual variety without needing camera cuts. The pan motion between cards simulates editing pace without real footage.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Pained warning. Delivered slowly.",
+        "emotion": "Pained warning. Delivered slowly.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C62828` <br> `right_accent=#FFB300` <br> `animation=sequential_reveal 0.5s delay each`",
+        "style": "documentary",
+        "lighting": "Charcoal. Red/gold glows.",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C",
+          "environment": "Infographic split card (Part 2). <br> Left panel (Red): \"❌ Invest in people who drain you.\" <br> Right panel (Gold): \"✅ Invest in yourself — skills, knowledge, growth.\" <br> HyperFrames Config: <br> `layout=split_card_horizontal` <br> `font_family=Outfit` <br> `bg_color=#1A1A1A` <br> `left_accent=#C",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Pained warning. Delivered slowly.",
+          "color_palette": "Charcoal. Red/gold glows.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Slow horizontal pan continues from left panel to right panel.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=4B2; palette=Charcoal. Red/gold glows.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "hyperframes_cli_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Slow horizontal pan continues from left panel to right panel.",
+        "duration": 12,
+        "continuity_notes": "**Slide Series Law:** Back-to-back HyperFrames slides maintain visual variety without needing camera cuts. The pan motion between cards simulates editing pace without real footage.",
+        "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Underscore continues. Slight tension chord. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] split_card_pulse.wav at -10dB` <br> `[+9.5s] tension_rise_soft.wav at -8dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "split_card_pulse.wav",
+            "volume_db": -10
+          },
+          {
+            "timestamp_offset": 9.5,
+            "sfx_name": "tension_rise_soft.wav",
+            "volume_db": -8
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "split_card_pulse.wav",
+            "volume_db": -10
+          },
+          {
+            "timestamp_offset": 9.5,
+            "sfx_name": "tension_rise_soft.wav",
+            "volume_db": -8
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 4B1.",
+        "caption_style": "Gold highlight on **yourself**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**Slide Series Law:** Back-to-back HyperFrames slides maintain visual variety without needing camera cuts. The pan motion between cards simulates editing pace without real footage.",
+        "emotion_triggered": "Pained warning. Delivered slowly.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "5",
+      "start_time": "2:15",
+      "end_time": "2:25",
+      "duration_seconds": 10,
+      "duration_reason": "10s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": true,
+      "rehook_type": "pattern_interrupt_rehook",
+      "retention_reset_goal": "reset attention before the next major section",
+      "script": {
+        "spoken_text": "And I know what you're thinking. 'But I have responsibilities. Family. Bills.' I hear you. That's the trap.",
+        "line_intent": "**Re-Hook Law:** Second re-hook at ~135s. Extreme close-up with silence is one of the highest-retention techniques in YouTube. The whispered reveal creates emotional tension before the NotebookLM evidence section.",
+        "retention_function": "reset attention before the next major section"
+      },
+      "voice": {
+        "tone": "Empathetic whisper. Drops lower mid-sentence. \"That's the trap\" is barely audible — maximum tension.",
+        "emotion": "Empathetic whisper. Drops lower mid-sentence. \"That's the trap\" is barely audible — maximum tension.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+        "style": "cinematic_realism",
+        "lighting": "Deep shadow under eyes. Single amber eye reflection highlight.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+          "environment": "Extreme close-up of presenter's face. Eyes directly into lens. Leaning forward. Camera almost uncomfortably close.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Empathetic whisper. Drops lower mid-sentence. \"That's the trap\" is barely audible — maximum tension.",
+          "color_palette": "Deep shadow under eyes. Single amber eye reflection highlight.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Slow camera push-in (100% → 106% over 10s).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=5; palette=Deep shadow under eyes. Single amber eye reflection highlight.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "extreme_close_up",
+        "camera_motion": "Slow camera push-in (100% → 106% over 10s).",
+        "duration": 10,
+        "continuity_notes": "**Re-Hook Law:** Second re-hook at ~135s. Extreme close-up with silence is one of the highest-retention techniques in YouTube. The whispered reveal creates emotional tension before the NotebookLM evidence section.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Music cuts to absolute silence at \"But I have.\" <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] clock_tick_single.wav at -16dB` <br> `[+8.5s] bass_tension_sting.wav at -8dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "clock_tick_single.wav",
+            "volume_db": -16
+          },
+          {
+            "timestamp_offset": 8.5,
+            "sfx_name": "bass_tension_sting.wav",
+            "volume_db": -8
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "clock_tick_single.wav",
+            "volume_db": -16
+          },
+          {
+            "timestamp_offset": 8.5,
+            "sfx_name": "bass_tension_sting.wav",
+            "volume_db": -8
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Hard cut from Scene 4B2 to extreme close-up (pattern interrupt).",
+        "caption_style": "**\"THAT'S THE TRAP\"** in gold capitals. Maximum size. Flashes on screen.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Re-Hook Law:** Second re-hook at ~135s. Extreme close-up with silence is one of the highest-retention techniques in YouTube. The whispered reveal creates emotional tension before the NotebookLM evidence section.",
+        "emotion_triggered": "Empathetic whisper. Drops lower mid-sentence. \"That's the trap\" is barely audible — maximum tension.",
+        "retention_goal": "reset attention before the next major section",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6A1",
+      "start_time": "2:25",
+      "end_time": "2:40",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for NOTEBOOKLM_VISUAL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Here's the truth no one tells you. Every time you spend your energy making other people feel good about themselves — you lose. You lose money. You lose time. You lose development. And worst of all, you lose clarity on who you are.",
+        "line_intent": "**NotebookLM Law:** Evidence-based claims are always more credible inside a \"document\" visual frame. HyperFrames renders the full dual-panel layout locally at zero cost. The typing animation simulates live note-taking — creates real-time revelation effect that lifts retention.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Warning, educational. Controlled authority.",
+        "emotion": "Warning, educational. Controlled authority.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Config:** <br> `assets_needed=validation_ledger_thumb.svg, notebook_bg_canvas.png` <br> `font_family=Outfit` <br> `theme_styling=light (#FBF9F6 bg, #2C2C2C text)` <br> `active_note_glow=#FFB300` <br> `typing_animation=45 WPM` <br> `scroll_trigger=auto_scroll line_3 at +12.0s` <br> `gsap_timeline_sync=highlight_1 at +3.2s ('lose money'), highlight_2 at +8.7s ('lose development')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+        "style": "documentary",
+        "lighting": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+        "composition": "Left margin safe. No text in right 8% (panel edge).",
+        "visual_creation_dna": {
+          "subject": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Config:** <br> `assets_needed=validation_led",
+          "environment": "Dual-panel NotebookLM layout. <br> Left: Source shelf displaying \"📄 The Validation Ledger — What You Lose When You Invest in People.\" <br> Right: Active note card with animated typing cursor. Lines glow gold sequentially as voice reads. <br> **HyperFrames Config:** <br> `assets_needed=validation_led",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Warning, educational. Controlled authority.",
+          "color_palette": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6A1; palette=Warm beige (#FBF9F6). Dark gray text (#2C2C2C). Gold highlight boxes (#FFB300 at 25% opacity).",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "hyperframes_cli_local",
+            "davinci_resolve_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Browser simulation. Smooth scroll on right panel at +12s. Text lines glow gold sequentially matching voice timestamps. Rendered via **HyperFrames CLI** (headless Chrome → MP4).",
+        "duration": 15,
+        "continuity_notes": "**NotebookLM Law:** Evidence-based claims are always more credible inside a \"document\" visual frame. HyperFrames renders the full dual-panel layout locally at zero cost. The typing animation simulates live note-taking — creates real-time revelation effect that lifts retention.",
+        "visual_method": "NOTEBOOKLM_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Tension building. Low strings (Suno: \"tense low strings, educational documentary underscore, no drums\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+3.2s] slide_whoosh.wav at -9dB` <br> `[+8.7s] digital_blip_soft.wav at -12dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 3.2,
+            "sfx_name": "slide_whoosh.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 8.7,
+            "sfx_name": "digital_blip_soft.wav",
+            "volume_db": -12
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 3.2,
+            "sfx_name": "slide_whoosh.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 8.7,
+            "sfx_name": "digital_blip_soft.wav",
+            "volume_db": -12
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Soft dissolve (0.8s) from Scene 5 into NotebookLM slide.",
+        "caption_style": "Gold highlight on **lose money**, **lose development**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Left margin safe. No text in right 8% (panel edge)."
+      },
+      "influence": {
+        "why_line_exists": "**NotebookLM Law:** Evidence-based claims are always more credible inside a \"document\" visual frame. HyperFrames renders the full dual-panel layout locally at zero cost. The typing animation simulates live note-taking — creates real-time revelation effect that lifts retention.",
+        "emotion_triggered": "Warning, educational. Controlled authority.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6A2",
+      "start_time": "2:40",
+      "end_time": "2:55",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for NOTEBOOKLM_VISUAL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "When you spend years managing other people's emotions, carrying other people's dreams — you lose yourself. You become the support system for everyone else's growth — while your own growth gets stunted. Yash refused this.",
+        "line_intent": "**NotebookLM Series Law:** Second document card entering the source shelf visually communicates \"more evidence.\" The live-typing cursor for \"stunted growth\" is a micro-animation that forces viewers to read the word as it forms — peak attention spike in this segment.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Solemn warning. Slow deliberate pace.",
+        "emotion": "Solemn warning. Slow deliberate pace.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames Config:** <br> `assets_needed=career_ledger_thumb.svg` <br> `font_family=Outfit` <br> `theme_styling=light` <br> `active_note_glow=#FFB300` <br> `typing_animation=50 WPM (fakes typing 'stunted growth')` <br> `scroll_trigger=none` <br> `gsap_timeline_sync=highlight_1 at +4.5s ('lose yourself'), highlight_2 at +11.2s ('growth gets stunted')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+        "style": "documentary",
+        "lighting": "Warm beige (#FBF9F6). Dark gray text.",
+        "composition": "Left margin safe.",
+        "visual_creation_dna": {
+          "subject": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames Config:** <br> `assets_needed=career_led",
+          "environment": "Dual-panel layout continues. <br> Left: Source shelf adds \"📄 Career Adjustment Ledger — The Cost of Stunted Growth.\" <br> Right: Active note card details \"Stunted Growth Breakdown.\" Cursor blinks and types out \"stunted growth\" in real time. <br> **HyperFrames Config:** <br> `assets_needed=career_led",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Solemn warning. Slow deliberate pace.",
+          "color_palette": "Warm beige (#FBF9F6). Dark gray text.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6A2; palette=Warm beige (#FBF9F6). Dark gray text.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "hyperframes_cli_local",
+            "davinci_resolve_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Left panel: New document card slides in with a subtle push animation at +0.5s. Right panel: typing cursor animation. Text lines highlight sequentially.",
+        "duration": 15,
+        "continuity_notes": "**NotebookLM Series Law:** Second document card entering the source shelf visually communicates \"more evidence.\" The live-typing cursor for \"stunted growth\" is a micro-animation that forces viewers to read the word as it forms — peak attention spike in this segment.",
+        "visual_method": "NOTEBOOKLM_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Tension building. Dissonant low note added beneath strings. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] card_slide_in.wav at -10dB` <br> `[+4.5s] digital_blip_soft.wav at -12dB` <br> `[+11.2s] low_boom_deep.wav at -6dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "card_slide_in.wav",
+            "volume_db": -10
+          },
+          {
+            "timestamp_offset": 4.5,
+            "sfx_name": "digital_blip_soft.wav",
+            "volume_db": -12
+          },
+          {
+            "timestamp_offset": 11.2,
+            "sfx_name": "low_boom_deep.wav",
+            "volume_db": -6
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "card_slide_in.wav",
+            "volume_db": -10
+          },
+          {
+            "timestamp_offset": 4.5,
+            "sfx_name": "digital_blip_soft.wav",
+            "volume_db": -12
+          },
+          {
+            "timestamp_offset": 11.2,
+            "sfx_name": "low_boom_deep.wav",
+            "volume_db": -6
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 6A1.",
+        "caption_style": "Gold highlight on **lose yourself**, **stunted**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Left margin safe."
+      },
+      "influence": {
+        "why_line_exists": "**NotebookLM Series Law:** Second document card entering the source shelf visually communicates \"more evidence.\" The live-typing cursor for \"stunted growth\" is a micro-animation that forces viewers to read the word as it forms — peak attention spike in this segment.",
+        "emotion_triggered": "Solemn warning. Slow deliberate pace.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6B1",
+      "start_time": "2:55",
+      "end_time": "3:10",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "I know — because I've seen it. I've watched brilliant people shrink themselves. Spend their best years being everything to everyone. And wake up one day wondering: where did I go? Your potential doesn't wait. It expires.",
+        "line_intent": "**Empathy Law:** After two slides of heavy data/warnings, switching back to presenter face creates personal connection. Empathy moment is required before the next instructional arc.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Empathetic, vulnerable. Slower pace than previous scenes. First-person confession.",
+        "emotion": "Empathetic, vulnerable. Slower pace than previous scenes. First-person confession.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+        "style": "cinematic_realism",
+        "lighting": "Warm gold rim light. Slate gray background.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+          "environment": "Medium shot of presenter. Studio. Warm expression — empathy-forward body language (hand on chest briefly).",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Empathetic, vulnerable. Slower pace than previous scenes. First-person confession.",
+          "color_palette": "Warm gold rim light. Slate gray background.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6B1; palette=Warm gold rim light. Slate gray background.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static.",
+        "duration": 15,
+        "continuity_notes": "**Empathy Law:** After two slides of heavy data/warnings, switching back to presenter face creates personal connection. Empathy moment is required before the next instructional arc.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Hopeful piano melody swells (Suno: \"hopeful piano solo, warm, no strings yet\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+12.0s] string_enter_subtle.wav at -10dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "string_enter_subtle.wav",
+            "volume_db": -10
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "string_enter_subtle.wav",
+            "volume_db": -10
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Cut back from NotebookLM slide to presenter A-roll. Warm re-entry.",
+        "caption_style": "Clean white text. Gold highlight on **potential** and **expires**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Empathy Law:** After two slides of heavy data/warnings, switching back to presenter face creates personal connection. Empathy moment is required before the next instructional arc.",
+        "emotion_triggered": "Empathetic, vulnerable. Slower pace than previous scenes. First-person confession.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "6B2",
+      "start_time": "3:10",
+      "end_time": "3:25",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Yash could have spent his ₹300 buying people's approval. Impressing the city. Fitting in. Instead, he spent every rupee investing in his acting. In his voice. In himself. And that is the only investment that actually compounded.",
+        "line_intent": "**Bridge Law:** Narrative bridge between evidence (NotebookLM) and action framework. Returns the story to Yash to re-anchor emotional investment before the prescription section.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Firm resolve narrator. Building conviction.",
+        "emotion": "Firm resolve narrator. Building conviction.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+        "style": "cinematic_realism",
+        "lighting": "Warm gold rim. Slate gray.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+          "environment": "Medium shot of presenter. Studio. More resolve in posture — leans forward.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Firm resolve narrator. Building conviction.",
+          "color_palette": "Warm gold rim. Slate gray.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=6B2; palette=Warm gold rim. Slate gray.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static.",
+        "duration": 15,
+        "continuity_notes": "**Bridge Law:** Narrative bridge between evidence (NotebookLM) and action framework. Returns the story to Yash to re-anchor emotional investment before the prescription section.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Hopeful piano continues. Building slowly. <br> *SFX_TIMELINE_METHOD:* <br> `[+12.0s] riser_medium.wav at -9dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "riser_medium.wav",
+            "volume_db": -9
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 12.0,
+            "sfx_name": "riser_medium.wav",
+            "volume_db": -9
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 6B1.",
+        "caption_style": "Gold highlight on **yourself** and **compounded**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Bridge Law:** Narrative bridge between evidence (NotebookLM) and action framework. Returns the story to Yash to re-anchor emotional investment before the prescription section.",
+        "emotion_triggered": "Firm resolve narrator. Building conviction.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "7",
+      "start_time": "3:25",
+      "end_time": "3:35",
+      "duration_seconds": 10,
+      "duration_reason": "10s follows approved V2 storyboard pacing for PROGRAMMATIC_SLIDE_VISUAL_METHOD.",
+      "hook_marker": true,
+      "rehook_type": "pattern_interrupt_rehook",
+      "retention_reset_goal": "reset attention before the next major section",
+      "script": {
+        "spoken_text": "You're not broke. You're not stuck. You're just spending your investments in the wrong place.",
+        "line_intent": "**Re-Hook Law:** Third re-hook at ~205s. Text-on-black with music silence is the highest-contrast pattern interrupt available. The secondary text \"or someone else will invest in you as a tool\" is the twist that makes viewers pause and re-read — maximum rewatch signal.",
+        "retention_function": "reset attention before the next major section"
+      },
+      "voice": {
+        "tone": "Confrontational. Direct. Maximum volume and energy.",
+        "emotion": "Confrontational. Direct. Maximum volume and energy.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_family=Bebas Neue` <br> `bg_color=#000000` <br> `text_color=#FFD700` <br> `glow_color=#FFB300` <br> `animation=scale_in 1.5s ease-out + secondary_text_fade_in at +2.5s`",
+        "style": "documentary",
+        "lighting": "Gold text glow on pure black.",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_family=Bebas Neue` <br> `bg_color=#000000` ",
+          "environment": "Bold gold text on pure black background. Maximum typographic impact. <br> **Text:** \"INVEST IN YOURSELF.\" (first) → beneath after 2s: \"Or someone else will invest in you — as a tool.\" <br> HyperFrames Config: <br> `layout=fullscreen_text_center` <br> `font_family=Bebas Neue` <br> `bg_color=#000000` ",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Confrontational. Direct. Maximum volume and energy.",
+          "color_palette": "Gold text glow on pure black.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=7; palette=Gold text glow on pure black.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "hyperframes_cli_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static black backdrop. Main text scales from 70% → 100% in 1.5s. Secondary text fades in at +2.5s. HyperFrames CLI render.",
+        "duration": 10,
+        "continuity_notes": "**Re-Hook Law:** Third re-hook at ~205s. Text-on-black with music silence is the highest-contrast pattern interrupt available. The secondary text \"or someone else will invest in you as a tool\" is the twist that makes viewers pause and re-read — maximum rewatch signal.",
+        "visual_method": "PROGRAMMATIC_SLIDE_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Music cuts to complete silence at Scene 7 open. Cello drone starts at +2s. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] bass_hit_deep.wav at -4dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "bass_hit_deep.wav",
+            "volume_db": -4
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "bass_hit_deep.wav",
+            "volume_db": -4
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Hard cut from Scene 6B2 (maximum pattern interrupt).",
+        "caption_style": "Text IS the visual. Gold letters. No caption overlay.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**Re-Hook Law:** Third re-hook at ~205s. Text-on-black with music silence is the highest-contrast pattern interrupt available. The secondary text \"or someone else will invest in you as a tool\" is the twist that makes viewers pause and re-read — maximum rewatch signal.",
+        "emotion_triggered": "Confrontational. Direct. Maximum volume and energy.",
+        "retention_goal": "reset attention before the next major section",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8A",
+      "start_time": "3:35",
+      "end_time": "3:55",
+      "duration_seconds": 20,
+      "duration_reason": "20s follows approved V2 storyboard pacing for NOTEBOOKLM_VISUAL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "So what does investing in yourself actually look like? First: Invest your money in skills — not in status. That ₹5,000 you're about to spend impressing people? Spend it on something that compounds. A course. A mentor session. A book. A skill.",
+        "line_intent": "**Action Framework Law:** After three arcs of story and warning, the viewer must receive a concrete prescription. NotebookLM action frame makes the prescription feel research-backed and credible rather than preachy.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Direct, instructive. Count-listing delivery.",
+        "emotion": "Direct, instructive. Count-listing delivery.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_preview_thumb.png, skills_list_thumb.svg` <br> `font_family=Outfit` <br> `theme_styling=light` <br> `active_note_glow=#FFD54F` <br> `typing_animation=50 WPM` <br> `scroll_trigger=none` <br> `gsap_timeline_sync=highlight_1 at +4.8s ('skills, not status'), highlight_2 at +14.2s ('spend it on something that compounds')` <br> `davinci_layering=V1:slide_background_mp4, V2:HeyGen_presenter_empty`",
+        "style": "documentary",
+        "lighting": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+        "composition": "Left margin safe.",
+        "visual_creation_dna": {
+          "subject": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_preview_thumb.png, skills_list_thumb.svg`",
+          "environment": "Dual-panel NotebookLM layout (Action Mode). <br> Left: Source shelf showing \"📄 Skills Investment List\" and \"🏆 Certificate Preview.\" <br> Right: Active note detailing \"Compounding Skills Framework.\" <br> **HyperFrames Config:** <br> `assets_needed=certificate_preview_thumb.png, skills_list_thumb.svg`",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Direct, instructive. Count-listing delivery.",
+          "color_palette": "Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "documentary",
+          "movement_intent": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8A; palette=Warm beige (#FBF9F6). Dark gray text (#2C2C2C).",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "hyperframes_cli_local",
+            "davinci_resolve_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Left panel: Certificate preview card thumbnail visible at +1.0s. Right panel: Text highlights glow gold sequentially per GSAP timeline.",
+        "duration": 20,
+        "continuity_notes": "**Action Framework Law:** After three arcs of story and warning, the viewer must receive a concrete prescription. NotebookLM action frame makes the prescription feel research-backed and credible rather than preachy.",
+        "visual_method": "NOTEBOOKLM_VISUAL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Rising resolve underscore (Suno: \"confident motivational underscore, piano and strings, building momentum\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] slide_whoosh_in.wav at -9dB` <br> `[+14.2s] ding_positive.wav at -6dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "slide_whoosh_in.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 14.2,
+            "sfx_name": "ding_positive.wav",
+            "volume_db": -6
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "slide_whoosh_in.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 14.2,
+            "sfx_name": "ding_positive.wav",
+            "volume_db": -6
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Soft dissolve (0.8s) from Scene 7.",
+        "caption_style": "Gold highlight on **skills, not status** and **compounds**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Left margin safe."
+      },
+      "influence": {
+        "why_line_exists": "**Action Framework Law:** After three arcs of story and warning, the viewer must receive a concrete prescription. NotebookLM action frame makes the prescription feel research-backed and credible rather than preachy.",
+        "emotion_triggered": "Direct, instructive. Count-listing delivery.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8B",
+      "start_time": "3:55",
+      "end_time": "4:10",
+      "duration_seconds": 15,
+      "duration_reason": "15s follows approved V2 storyboard pacing for IMAGE_MOTION_GRAPHICS_BROLL_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Second: Invest your time in growth — not in distraction. Every hour on that doomscroll feed is an hour you could have spent rehearsing. Practicing. Improving. Yash chose the stage. What are you choosing?",
+        "line_intent": "**Image Law:** The side-by-side comparison is a static composition with controlled motion. No camera move is required — the contrast IS the content. DA-V2 parallax on each panel adds depth without cloud video cost. Correct tool: local still + DaVinci Fusion.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Energetic conviction. Punchy delivery on \"What are you choosing?\"",
+        "emotion": "Energetic conviction. Punchy delivery on \"What are you choosing?\"",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate depth masks for each half. DaVinci Fusion composites both panels with independent parallax animation. <br> `left_parallax=foreground_phone +6px, background_bed -3px` <br> `right_parallax=foreground_actor +8px, background_stage -4px`",
+        "style": "cinematic_realism",
+        "lighting": "Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate depth masks for each half. DaVinci Fusion",
+          "environment": "Side-by-side composite still. <br> Left (Red X): Person lying in bed doom-scrolling social media. Blue phone glow on face. <br> Right (Gold ✅): Actor/student rehearsing lines on a dim rehearsal stage. Warm spotlight. <br> Depth Anything V2 generates separate depth masks for each half. DaVinci Fusion",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Energetic conviction. Punchy delivery on \"What are you choosing?\"",
+          "color_palette": "Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8B; palette=Cool blue phone glow (left) vs warm gold actor spotlight (right).",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "depth_anything_v2_local",
+            "davinci_resolve_local"
+          ],
+          "tool_specific_translation_readiness": "LOCAL_ENGINE_READY"
+        }
+      },
+      "video": {
+        "shot_type": "two_shot",
+        "camera_motion": "Slow Ken Burns horizontal pan from left → right panel (100% → 105% scale, 15s). DaVinci Fusion: left panel slow zoom-in, right panel slow zoom-out (counterpoint motion).",
+        "duration": 15,
+        "continuity_notes": "**Image Law:** The side-by-side comparison is a static composition with controlled motion. No camera move is required — the contrast IS the content. DA-V2 parallax on each panel adds depth without cloud video cost. Correct tool: local still + DaVinci Fusion.",
+        "visual_method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Underscore tempo picks up momentum. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] whoosh_transition.wav at -9dB` <br> `[+14.0s] riser_building.wav at -7dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "whoosh_transition.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 14.0,
+            "sfx_name": "riser_building.wav",
+            "volume_db": -7
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "whoosh_transition.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 14.0,
+            "sfx_name": "riser_building.wav",
+            "volume_db": -7
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Soft dissolve (0.5s) from Scene 8A.",
+        "caption_style": "Gold highlight on **time**. \"What are you choosing?\" appears full screen in gold at +13.5s.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**Image Law:** The side-by-side comparison is a static composition with controlled motion. No camera move is required — the contrast IS the content. DA-V2 parallax on each panel adds depth without cloud video cost. Correct tool: local still + DaVinci Fusion.",
+        "emotion_triggered": "Energetic conviction. Punchy delivery on \"What are you choosing?\"",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": false,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8C1",
+      "start_time": "4:10",
+      "end_time": "4:22",
+      "duration_seconds": 12,
+      "duration_reason": "12s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Third: Protect your energy. Stop spending it on people who drain it. Your focus is your most valuable resource. Where it goes — that is where your life goes.",
+        "line_intent": "**Presenter Return Law:** After two consecutive visual slides, returning to presenter face for the third action point maintains variety and ensures the advice feels personally delivered.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Authoritative mentor. Clipped delivery. Each sentence is its own complete beat.",
+        "emotion": "Authoritative mentor. Clipped delivery. Each sentence is its own complete beat.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+        "style": "cinematic_realism",
+        "lighting": "Warm gold rim light. Slate gray.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+          "environment": "Medium shot of presenter. Studio. Firm body language — shoulders squared.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Authoritative mentor. Clipped delivery. Each sentence is its own complete beat.",
+          "color_palette": "Warm gold rim light. Slate gray.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8C1; palette=Warm gold rim light. Slate gray.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static.",
+        "duration": 12,
+        "continuity_notes": "**Presenter Return Law:** After two consecutive visual slides, returning to presenter face for the third action point maintains variety and ensures the advice feels personally delivered.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Peak energy motivational underscore continues. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] clean_cut_snap.wav at -9dB` <br> `[+10.5s] low_riser_focus.wav at -10dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "clean_cut_snap.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 10.5,
+            "sfx_name": "low_riser_focus.wav",
+            "volume_db": -10
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "clean_cut_snap.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 10.5,
+            "sfx_name": "low_riser_focus.wav",
+            "volume_db": -10
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Cut back to presenter A-roll from Scene 8B.",
+        "caption_style": "Gold highlight on **energy** and **focus**.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Presenter Return Law:** After two consecutive visual slides, returning to presenter face for the third action point maintains variety and ensures the advice feels personally delivered.",
+        "emotion_triggered": "Authoritative mentor. Clipped delivery. Each sentence is its own complete beat.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "8C2",
+      "start_time": "4:22",
+      "end_time": "4:35",
+      "duration_seconds": 13,
+      "duration_reason": "13s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "Yash was called 'arrogant' for not attending parties. For not wasting weekends. He was protecting his energy for rehearsals. And the people who called him arrogant — they're still where they were.",
+        "line_intent": "**Proof Point Law:** Backing every action prescription with a specific Yash proof prevents the advice from feeling generic. The \"arrogant\" callback reinforces real-person evidence.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Authoritative mentor. Slight edge of controlled indignation.",
+        "emotion": "Authoritative mentor. Slight edge of controlled indignation.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter making firm point gestures. Studio.",
+        "style": "cinematic_realism",
+        "lighting": "Warm gold rim. Slate gray.",
+        "composition": "Bottom 15%.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter making firm point gestures. Studio.",
+          "environment": "Medium shot of presenter making firm point gestures. Studio.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Authoritative mentor. Slight edge of controlled indignation.",
+          "color_palette": "Warm gold rim. Slate gray.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=8C2; palette=Warm gold rim. Slate gray.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static.",
+        "duration": 13,
+        "continuity_notes": "**Proof Point Law:** Backing every action prescription with a specific Yash proof prevents the advice from feeling generic. The \"arrogant\" callback reinforces real-person evidence.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Underscore continues. Slight energy build. <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] hard_cut_tap.wav at -9dB` <br> `[+4.5s] muted_crowd_drop.wav at -14dB` <br> `[+11.5s] impact_soft_dark.wav at -7dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "hard_cut_tap.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 4.5,
+            "sfx_name": "muted_crowd_drop.wav",
+            "volume_db": -14
+          },
+          {
+            "timestamp_offset": 11.5,
+            "sfx_name": "impact_soft_dark.wav",
+            "volume_db": -7
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "hard_cut_tap.wav",
+            "volume_db": -9
+          },
+          {
+            "timestamp_offset": 4.5,
+            "sfx_name": "muted_crowd_drop.wav",
+            "volume_db": -14
+          },
+          {
+            "timestamp_offset": 11.5,
+            "sfx_name": "impact_soft_dark.wav",
+            "volume_db": -7
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 8C1.",
+        "caption_style": "Gold highlight on **arrogant**. \"Still where they were\" in cold white — no gold.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15%."
+      },
+      "influence": {
+        "why_line_exists": "**Proof Point Law:** Backing every action prescription with a specific Yash proof prevents the advice from feeling generic. The \"arrogant\" callback reinforces real-person evidence.",
+        "emotion_triggered": "Authoritative mentor. Slight edge of controlled indignation.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9A",
+      "start_time": "4:35",
+      "end_time": "4:47",
+      "duration_seconds": 12,
+      "duration_reason": "12s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": true,
+      "rehook_type": "cta_rehook",
+      "retention_reset_goal": "convert viewer attention into immediate action",
+      "script": {
+        "spoken_text": "So what are you waiting for? Start today. ₹100. One course. One book. One skill. Your portfolio of you starts with the next decision you make. Not next month. Now.",
+        "line_intent": "**CTA Hook Law:** Final re-hook + CTA combined. Returning to Scene 1 framing creates a visual bookend that signals the journey is complete. Drums entering for the first time in the video creates maximum energy peak for CTA delivery.",
+        "retention_function": "convert viewer attention into immediate action"
+      },
+      "voice": {
+        "tone": "Commanding. Peak volume and energy. Direct call to action.",
+        "emotion": "Commanding. Peak volume and energy. Direct call to action.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+        "style": "cinematic_realism",
+        "lighting": "High-contrast side key. Warm gold rim.",
+        "composition": "Center safe.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+          "environment": "Medium shot of presenter leaning forward. Pointing at camera. Same framing as Scene 1 — intentional callback.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Commanding. Peak volume and energy. Direct call to action.",
+          "color_palette": "High-contrast side key. Warm gold rim.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static with slight forward lean.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=9A; palette=High-contrast side key. Warm gold rim.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static with slight forward lean.",
+        "duration": 12,
+        "continuity_notes": "**CTA Hook Law:** Final re-hook + CTA combined. Returning to Scene 1 framing creates a visual bookend that signals the journey is complete. Drums entering for the first time in the video creates maximum energy peak for CTA delivery.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Full orchestral swell. Drums enter (Suno: \"triumphant orchestral swell with drums, peak energy, 12 seconds\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+0.0s] bass_boom_impact.wav at -3dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "bass_boom_impact.wav",
+            "volume_db": -3
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.0,
+            "sfx_name": "bass_boom_impact.wav",
+            "volume_db": -3
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Jump cut from Scene 8C2.",
+        "caption_style": "Gold highlight on **portfolio**. \"NOW.\" in giant gold capitals on-screen at +11s.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Center safe."
+      },
+      "influence": {
+        "why_line_exists": "**CTA Hook Law:** Final re-hook + CTA combined. Returning to Scene 1 framing creates a visual bookend that signals the journey is complete. Drums entering for the first time in the video creates maximum energy peak for CTA delivery.",
+        "emotion_triggered": "Commanding. Peak volume and energy. Direct call to action.",
+        "retention_goal": "convert viewer attention into immediate action",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9B",
+      "start_time": "4:47",
+      "end_time": "4:55",
+      "duration_seconds": 8,
+      "duration_reason": "8s follows approved V2 storyboard pacing for A_ROLL_OVERLAY_METHOD.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "And speaking of protecting your energy — if you haven't watched my video on toxic relationships, I've linked it above. 'Toxic: A Fairy Tale for Grown-ups.' It'll change how you see the people in your life.",
+        "line_intent": "**Overlay Law:** METHOD 3 A_ROLL_OVERLAY_METHOD. HyperFrames renders the background title card as a WebM alpha export. DaVinci Resolve composites: V1 = background card, V2 = chromakeyed presenter. This is the only METHOD 3 scene — used specifically for cross-sell CTA to maintain immersive engagement.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Warm, celebratory announcer. Natural cross-sell energy.",
+        "emotion": "Warm, celebratory announcer. Natural cross-sell energy.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Talking-head presenter avatar (AR-15 isolated background/chromakey version from Batch D). Presenter appears in bottom-right corner, scaled to 35% frame size. HeyGen renders presenter with green-screen for clean key. <br> HyperFrames Config: <br> `bg_visual=dark_forest_green_toxic_smoke.mp4` <br> `title_font=Bebas Neue` <br> `title_color=#00C853` <br> `particle_type=smoke_green_drift` <br> `presenter_position=bottom_right_35pct`",
+        "style": "mixed_media",
+        "lighting": "Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+        "composition": "Top-right card safe. Presenter bottom-right.",
+        "visual_creation_dna": {
+          "subject": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Talking-head presenter avatar (AR-15 isolat",
+          "environment": "**DaVinci Multi-Track Composite:** <br> *V1 Track (Background):* Dark forest visual with glowing green toxic smoke particles. Title card \"TOXIC: A Fairy Tale for Grown-ups\" rendered via **HyperFrames CLI** (WebM alpha export). <br> *V2 Track (Foreground):* Talking-head presenter avatar (AR-15 isolat",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Warm, celebratory announcer. Natural cross-sell energy.",
+          "color_palette": "Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "mixed_media",
+          "movement_intent": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=9B; palette=Green toxic glow backlight (V1) vs warm studio lighting on presenter (V2).",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api",
+            "hyperframes_cli_local",
+            "davinci_resolve_local"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "V1 background: slow vertical push-in (100% → 104%). V2 presenter: static overlay. No camera move on presenter crop.",
+        "duration": 8,
+        "continuity_notes": "**Overlay Law:** METHOD 3 A_ROLL_OVERLAY_METHOD. HyperFrames renders the background title card as a WebM alpha export. DaVinci Resolve composites: V1 = background card, V2 = chromakeyed presenter. This is the only METHOD 3 scene — used specifically for cross-sell CTA to maintain immersive engagement",
+        "visual_method": "A_ROLL_OVERLAY_METHOD"
+      },
+      "music_sfx": {
+        "music_mood": "Guitar riff enters (Suno: \"bright guitar riff, triumphant positive energy, 8 seconds\"). <br> *SFX_TIMELINE_METHOD:* <br> `[+0.5s] spark_crackle_green.wav at -9dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "spark_crackle_green.wav",
+            "volume_db": -9
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 0.5,
+            "sfx_name": "spark_crackle_green.wav",
+            "volume_db": -9
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Dissolve (0.8s) from Scene 9A into composite overlay layout.",
+        "caption_style": "Bold green highlighted title text. \"LINKED ABOVE ↑\" annotation overlaid.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Top-right card safe. Presenter bottom-right."
+      },
+      "influence": {
+        "why_line_exists": "**Overlay Law:** METHOD 3 A_ROLL_OVERLAY_METHOD. HyperFrames renders the background title card as a WebM alpha export. DaVinci Resolve composites: V1 = background card, V2 = chromakeyed presenter. This is the only METHOD 3 scene — used specifically for cross-sell CTA to maintain immersive engagement.",
+        "emotion_triggered": "Warm, celebratory announcer. Natural cross-sell energy.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": true,
+        "cloud_possible": true,
+        "hybrid_recommended": true,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    },
+    {
+      "scene_id": "9C",
+      "start_time": "4:55",
+      "end_time": "5:05",
+      "duration_seconds": 10,
+      "duration_reason": "10s follows approved V2 storyboard pacing for A_ROLL_AVATAR.",
+      "hook_marker": false,
+      "script": {
+        "spoken_text": "From ₹300 on a Bengaluru bus to ₹1,200 Crore on screen. Yash didn't wait for permission. He invested in himself. Now it's your turn. I'll see you in the next one.",
+        "line_intent": "**Outro Law:** Returns to Yash story close — completing the narrative circle from Scene 2A. Warm exit prevents viewer feeling sold-to. Natural, human close is the strongest retention tool for subscribe conversion.",
+        "retention_function": "advance story, proof, or action framework without attention drop"
+      },
+      "voice": {
+        "tone": "Heartfelt, human close. Warm. The entire energy drops from peak back to personal connection.",
+        "emotion": "Heartfelt, human close. Warm. The entire energy drops from peak back to personal connection.",
+        "pacing": "scene-specific pacing from ElevenLabs cell",
+        "pause_points": [
+          "preserve line punctuation pauses"
+        ],
+        "pronunciation_notes": [
+          "Yash",
+          "Naveen Kumar Gowda",
+          "Bengaluru",
+          "Rocky Bhai"
+        ]
+      },
+      "image": {
+        "prompt": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+        "style": "cinematic_realism",
+        "lighting": "Soft warm key light. Golden rim highlight.",
+        "composition": "Bottom 15% clear.",
+        "visual_creation_dna": {
+          "subject": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+          "environment": "Medium shot of presenter talking directly to camera. Warm, human smile. Relaxed posture. Same slate gray background as previous presenter scenes.",
+          "lens_focal_logic": "wide for environment, standard for presenter, macro for insert details",
+          "emotional_tone": "Heartfelt, human close. Warm. The entire energy drops from peak back to personal connection.",
+          "color_palette": "Soft warm key light. Golden rim highlight.",
+          "cinematic_delivery_standard": "Rec.709",
+          "style_lock": "cinematic_realism",
+          "movement_intent": "Static. Gentle fade to black starts at +8.5s.",
+          "negative_prompt": "blurry, watermark, face_deformation, extra fingers, distorted text, off-brand colors",
+          "drift_prevention": "Maintain Yash mission visual continuity; scene_id=9C; palette=Soft warm key light. Golden rim highlight.",
+          "continuity_constraints": "Keep black/gold motivational brand, warm amber presenter rim light, and scene-specific method assignment locked.",
+          "brand_persona_consistency": "Premium motivational documentary tone; no cheap stock look; no fake provider/media claims.",
+          "safety_real_person_handling": "not_applicable",
+          "tool_targets": [
+            "heygen_api"
+          ],
+          "tool_specific_translation_readiness": "PACKET_READY"
+        }
+      },
+      "video": {
+        "shot_type": "medium",
+        "camera_motion": "Static. Gentle fade to black starts at +8.5s.",
+        "duration": 10,
+        "continuity_notes": "**Outro Law:** Returns to Yash story close — completing the narrative circle from Scene 2A. Warm exit prevents viewer feeling sold-to. Natural, human close is the strongest retention tool for subscribe conversion.",
+        "visual_method": "A_ROLL_AVATAR"
+      },
+      "music_sfx": {
+        "music_mood": "Warm resolution. Piano and strings (Suno: \"warm piano resolution, gentle fade, no drums, 10 seconds\"). Gentle fade to silence at +9s. <br> *SFX_TIMELINE_METHOD:* <br> `[+9.0s] music_fade_out.wav at -6dB`",
+        "sfx": [
+          {
+            "timestamp_offset": 9.0,
+            "sfx_name": "music_fade_out.wav",
+            "volume_db": -6
+          }
+        ],
+        "sfx_timeline_method": [
+          {
+            "timestamp_offset": 9.0,
+            "sfx_name": "music_fade_out.wav",
+            "volume_db": -6
+          }
+        ]
+      },
+      "editing": {
+        "cut_type": "storyboard_locked_cut",
+        "transition": "Straight cut from Scene 9B. Fade to black at +8.5s.",
+        "caption_style": "Gold highlight on **himself**. Subscribe/Like animation lower third appears at +5s.",
+        "audio_video_offsets": {
+          "j_cut_offset_seconds": 0,
+          "l_cut_offset_seconds": 0
+        },
+        "ffmpeg_transition_method": "DaVinci primary; FFmpeg export guard only"
+      },
+      "platform": {
+        "target": "YouTube long-form 16:9 master with Shorts/Reels cutdown possible",
+        "aspect_ratio": "16:9 master",
+        "safe_zone": "Bottom 15% clear."
+      },
+      "influence": {
+        "why_line_exists": "**Outro Law:** Returns to Yash story close — completing the narrative circle from Scene 2A. Warm exit prevents viewer feeling sold-to. Natural, human close is the strongest retention tool for subscribe conversion.",
+        "emotion_triggered": "Heartfelt, human close. Warm. The entire energy drops from peak back to personal connection.",
+        "retention_goal": "maintain narrative momentum",
+        "topic_support": "self-investment, discipline, and attention redirection"
+      },
+      "execution": {
+        "local_possible": false,
+        "cloud_possible": true,
+        "hybrid_recommended": false,
+        "fallback_provider_or_tool": "DaVinci Resolve + FFmpeg assembly guard; cloud provider only after approval"
+      },
+      "provider_execution_allowed": false
+    }
+  ],
+  "provider_execution_allowed": false,
+  "n8n_used": false,
+  "media_artifacts_claimed": false,
+  "validation_status": "PASS"
+}

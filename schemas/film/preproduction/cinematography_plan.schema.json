@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cinematography Plan",
+  "type": "object",
+  "required": ["shot_types", "close_up_grammar", "wide_shot_grammar", "rule_of_thirds", "symmetry", "negative_space", "foreground_background_layering", "lens_intent", "camera_movement_motivation", "lighting_mood", "color_contrast", "visual_rhythm", "shot_progression"],
+  "properties": {
+    "shot_types": {"type": "array", "items": {"type": "string"}, "minItems": 3},
+    "close_up_grammar": {"type": "string"},
+    "wide_shot_grammar": {"type": "string"},
+    "rule_of_thirds": {"type": "string"},
+    "symmetry": {"type": "string"},
+    "negative_space": {"type": "string"},
+    "foreground_background_layering": {"type": "string"},
+    "lens_intent": {"type": "string"},
+    "camera_movement_motivation": {"type": "string"},
+    "lighting_mood": {"type": "string"},
+    "color_contrast": {"type": "string"},
+    "visual_rhythm": {"type": "string"},
+    "shot_progression": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["scene_number", "shot_intent"],
+        "properties": {
+          "scene_number": {"type": "integer"},
+          "shot_intent": {"type": "string"}
+        }
+      }
+    }
+  }
+}

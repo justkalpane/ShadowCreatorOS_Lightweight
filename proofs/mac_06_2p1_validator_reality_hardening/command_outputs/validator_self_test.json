@@ -1,0 +1,250 @@
+{
+  "self_test_passed": true,
+  "tests": [
+    {
+      "name": "valid_full_packet",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true,
+      "errors": [],
+      "partials": []
+    },
+    {
+      "name": "neg_lang_hinglish_body_declared_english",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "language_drift:declared_english_but_script_body_is_not_english",
+        "invalid_or_unbound_rehook_rows:rehook_1:missing_from_final_script,rehook_2:missing_from_final_script,rehook_3:missing_from_final_script",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_rehook_heading_without_rows",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "recurring_rehook_map_has_no_structured_rows",
+        "structured_rehook_rows_below_duration_minimum:3",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_rehook_rows_missing_from_final_script",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "invalid_or_unbound_rehook_rows:rehook_1:missing_from_final_script",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_rehook_gap_above_90",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "calculated_rehook_gap_exceeds_90_without_justification",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "rehook_interval_reason_missing"
+      ]
+    },
+    {
+      "name": "neg_source_heading_without_rows",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "source_ledger_has_no_structured_rows",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "real_person_source_count_below_three",
+        "real_person_non_encyclopedia_source_count_below_two",
+        "real_person_source_category_count_below_three"
+      ]
+    },
+    {
+      "name": "neg_source_urls_outside_ledger_ignored",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "source_ledger_has_no_structured_rows",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "real_person_source_count_below_three",
+        "real_person_non_encyclopedia_source_count_below_two",
+        "real_person_source_category_count_below_three"
+      ]
+    },
+    {
+      "name": "neg_fact_heading_without_rows",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "fact_vs_anecdote_map_has_no_structured_rows",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_fact_anecdote_as_verified",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "anecdotal_support_used_as_verified_fact",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_scene_heading_without_rows",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "scene_sync_matrix_has_no_structured_rows",
+        "scene_sync_matrix_missing_rehook_rows",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "line_by_line_influence_map_is_shallow",
+        "line_by_line_influence_field_missing:why_line_exists",
+        "line_by_line_influence_field_missing:emotion_triggered",
+        "line_by_line_influence_field_missing:retention_function",
+        "line_by_line_influence_field_missing:topic_support",
+        "line_by_line_influence_field_missing:media_dependency"
+      ]
+    },
+    {
+      "name": "neg_scene_missing_nested_context",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "scene_sync_schema_validation_failed:scene_075.voice:missing",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_status_final_status_alias",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "mandatory_gate_not_pass:source_research_lock_status=PARTIAL"
+      ]
+    },
+    {
+      "name": "neg_unsupported_claims",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "unsupported_claims_present_but_source_research_lock_passed",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_realtime_claim_without_sources",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "real_time_research_claimed_without_real_time_sources",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_uniform_grid_without_reason",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "uniform_15_second_grid_without_justification",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": []
+    },
+    {
+      "name": "neg_one_hook_only",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "recurring_rehook_map_has_no_structured_rows",
+        "structured_rehook_rows_below_duration_minimum:3",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "recurring_rehook_count_below_duration_minimum:3"
+      ]
+    },
+    {
+      "name": "neg_media_factory_requires_scene_rows",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "errors": [
+        "scene_sync_matrix_has_no_structured_rows",
+        "scene_sync_matrix_missing_rehook_rows",
+        "final_proof_status_does_not_match_weakest_evidence_layer"
+      ],
+      "partials": [
+        "scene_sync_matrix_not_complete",
+        "media_contexts_not_synchronized",
+        "recurring_rehooks_not_mapped_to_scene_sync_matrix",
+        "line_by_line_influence_map_is_shallow",
+        "line_by_line_influence_field_missing:why_line_exists",
+        "line_by_line_influence_field_missing:emotion_triggered",
+        "line_by_line_influence_field_missing:retention_function",
+        "line_by_line_influence_field_missing:topic_support",
+        "line_by_line_influence_field_missing:media_dependency"
+      ]
+    },
+    {
+      "name": "valid_media_factory_scene_sync",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true,
+      "errors": [],
+      "partials": []
+    },
+    {
+      "name": "neg_prop_marker_only_actor",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "m039_executable_dag_alignment",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": {
+        "m039_dag_present": true,
+        "s202_executes_directly": true,
+        "m039_before_s202": true,
+        "typed_rehook_packet_bound": true
+      }
+    }
+  ]
+}

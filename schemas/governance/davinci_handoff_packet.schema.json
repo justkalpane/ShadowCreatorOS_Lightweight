@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/governance/davinci_handoff_packet.schema.json",
+  "title": "Shadow DaVinci Handoff Packet",
+  "description": "Governance token packet for DaVinci handoff. Handoff remains blocked until the visual-audio package is ready.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "visual_acceptance_token",
+    "davinci_handoff_token",
+    "asset_registry_path",
+    "visual_audio_package_status"
+  ],
+  "properties": {
+    "visual_acceptance_token": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_id",
+        "issuer",
+        "scope",
+        "proof_bundle_id",
+        "expires_at",
+        "status"
+      ],
+      "properties": {
+        "token_id": {"type": "string", "minLength": 1},
+        "issuer": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "enum": ["visual_acceptance"]},
+        "proof_bundle_id": {"type": "string", "minLength": 1},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "status": {"type": "string", "enum": ["active", "revoked", "expired"]}
+      }
+    },
+    "davinci_handoff_token": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_id",
+        "issuer",
+        "scope",
+        "proof_bundle_id",
+        "expires_at",
+        "status"
+      ],
+      "properties": {
+        "token_id": {"type": "string", "minLength": 1},
+        "issuer": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "enum": ["davinci_handoff"]},
+        "proof_bundle_id": {"type": "string", "minLength": 1},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "status": {"type": "string", "enum": ["active", "revoked", "expired"]},
+        "revocation_reason": {"type": "string"}
+      }
+    },
+    "asset_registry_path": {"type": "string", "pattern": "^/"},
+    "visual_audio_package_status": {
+      "type": "string",
+      "enum": [
+        "incomplete",
+        "ready"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "visual_acceptance_token": {
+          "properties": {
+            "status": {"const": "active"}
+          }
+        },
+        "davinci_handoff_token": {
+          "properties": {
+            "status": {"const": "active"}
+          }
+        },
+        "visual_audio_package_status": {"const": "ready"}
+      }
+    }
+  ]
+}

@@ -933,3 +933,19 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/DIRECTORS_05_TO_30_COMPLETE_SPECS.md; component_id=SUPREME_VISION_COUNCIL_1_REMAINING
 remaining_unknowns: none
+
+
+## PHASE 13E_4 CINEMA 24-CRAFT REGISTRY NOTE
+
+phase_13e_4_status: LEGACY_SPEC_REFERENCE_SUPERSEDED_FOR_CINEMA_24_CRAFT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+This bundled 30-director specification remains historical/legacy registry evidence for the older Shadow Empire content-production model. For Cinema Engine 24-craft ownership, the authoritative Phase 13E surfaces are the standalone director files plus the additive `phase_13e_4_cinema_24_craft_director_registry_overlay` in `directors/DIRECTOR_REGISTRY_MANIFEST.yaml` and `CINEMA_24_CRAFT_DIRECTOR_REGISTRY` in `directors/DIRECTORS_COMPLETE_REGISTRY.py`.
+
+This note does not remove legacy directors, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

@@ -1,0 +1,454 @@
+{
+  "chain_id": "CHAIN-C04A-002",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "job_id": "JOB-C04A-PILOT-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "packets": [
+    {
+      "artifact_hashes": [
+        "6a6a6ce36215b890be378a4546988f28da5b2e61ea0924a785d4b3ad37174b5b"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/creative_intent_packet.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [],
+      "output_packet_ids": [
+        "selected_line_visual_packet"
+      ],
+      "packet_id": "SCRI-001",
+      "packet_type": "script_intent_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "READY",
+      "validator_version": "validate_script_intent_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "20896e1086ad50dee119018a668f3974bc48f4aa5cadc5f41c461fda833f1f06"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [],
+      "output_packet_ids": [
+        "visual_density_packet"
+      ],
+      "packet_id": "SELE-002",
+      "packet_type": "selected_line_visual_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_selected_line_visual_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "8ab101bc6e0b8e05e58bfe02bfb69a320561fbd52a22c038ebf9e994d43fe2b6"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "selected_line_visual_packet"
+      ],
+      "output_packet_ids": [
+        "image_prompt_packet"
+      ],
+      "packet_id": "VISU-003",
+      "packet_type": "visual_density_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_visual_density_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "4dd2c118bd7454fa331fac394dfec449d90fd6f924103b21f278ea99da0ac3a8"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "visual_density_packet"
+      ],
+      "output_packet_ids": [
+        "base_image_packet"
+      ],
+      "packet_id": "IMAG-004",
+      "packet_type": "image_prompt_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_image_prompt_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "54d4b65290fc55097cf77896c09e7a28c34b784c84902c9ec2996af1eeba27a3"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "image_prompt_packet"
+      ],
+      "output_packet_ids": [
+        "depth_map_packet"
+      ],
+      "packet_id": "BASE-005",
+      "packet_type": "base_image_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_base_image_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "0d06d5f1dcde0a12e990b813d504b7d2baa0a8c7d503bd86efab1327ebc69679"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "base_image_packet"
+      ],
+      "output_packet_ids": [
+        "hyperframes_overlay_packet"
+      ],
+      "packet_id": "DEPT-006",
+      "packet_type": "depth_map_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_depth_map_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "b20deedc37efa85582c0eb0b81e1b986fd151f83bd70c9cf0dfaab017bd9dcfa"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "depth_map_packet"
+      ],
+      "output_packet_ids": [
+        "ffmpeg_filtergraph_packet"
+      ],
+      "packet_id": "HYPE-007",
+      "packet_type": "hyperframes_overlay_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_hyperframes_overlay_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "673a85c6161f6817c47878010fe4aaaa1a3cfc662dd0840f1fc2b66cc4e9b2e5"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "hyperframes_overlay_packet"
+      ],
+      "output_packet_ids": [
+        "segment_render_packet"
+      ],
+      "packet_id": "FFMP-008",
+      "packet_type": "ffmpeg_filtergraph_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_ffmpeg_filtergraph_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "cb10a4773976e6cd201fca69d77e31e9fa9a4105c1d1abcdc0fc9bced33665e5"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "ffmpeg_filtergraph_packet"
+      ],
+      "output_packet_ids": [
+        "source_vs_render_packet"
+      ],
+      "packet_id": "SEGM-009",
+      "packet_type": "segment_render_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_segment_render_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "c2c5e833ead9d10cde5b83a15945b98534412153eca9164001aa2f024a6a5957"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "segment_render_packet"
+      ],
+      "output_packet_ids": [
+        "contact_sheet_packet"
+      ],
+      "packet_id": "SOUR-010",
+      "packet_type": "source_vs_render_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_source_vs_render_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "97ffadeebd9d36b7d8a66772e7fe9888cd2f6754eb95d7292c9f1268289b8ad4"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "source_vs_render_packet"
+      ],
+      "output_packet_ids": [
+        "visual_qa_packet"
+      ],
+      "packet_id": "CONT-011",
+      "packet_type": "contact_sheet_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_contact_sheet_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "71efc67e8c7c07f8e6b5177f7713114e56bebb81722e2868e894823727d29574"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "contact_sheet_packet"
+      ],
+      "output_packet_ids": [
+        "human_review_packet"
+      ],
+      "packet_id": "VISU-012",
+      "packet_type": "visual_qa_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_visual_qa_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "f1cd365aa9ec116ba5450bb63bbf3bb9880121d4e855b44e6cf41b41a302ea05"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "visual_qa_packet"
+      ],
+      "output_packet_ids": [
+        "pilot_approval_packet"
+      ],
+      "packet_id": "HUMA-013",
+      "packet_type": "human_review_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_human_review_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "4aaa7c59938f5949989f8edd370bf4b1da64721340fd70827a028c5e8be2e1b1"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "human_review_packet"
+      ],
+      "output_packet_ids": [
+        "pilot_execution_packet"
+      ],
+      "packet_id": "PILO-014",
+      "packet_type": "pilot_approval_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_pilot_approval_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "38cc3095d5a1bc40a9655550caf7dc3e6f6ac17e578a504748ece1bfee14a02c"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "pilot_approval_packet"
+      ],
+      "output_packet_ids": [
+        "full_render_unlock_packet"
+      ],
+      "packet_id": "PILO-015",
+      "packet_type": "pilot_execution_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_pilot_execution_packet.py"
+    },
+    {
+      "artifact_hashes": [
+        "2451334fb94fd3bbac9fc22526be41f1503699b494dc64e138cbf702afa63394"
+      ],
+      "artifact_refs": [
+        "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/source_vs_render_report.json"
+      ],
+      "consumed_by_route": "MEDIA_FACTORY_HANDOFF",
+      "created_at": "2026-06-22T00:00:00Z",
+      "created_by": "Codex",
+      "evidence_bundle_id": "EB-C04A-001",
+      "failure_conditions": [
+        "upstream_missing",
+        "human_review_pending"
+      ],
+      "input_packet_ids": [
+        "pilot_execution_packet"
+      ],
+      "output_packet_ids": [],
+      "packet_id": "FULL-016",
+      "packet_type": "full_render_unlock_packet",
+      "route_state_update": "PILOT_PREP_BLOCKED",
+      "schema_version": "1.0.0",
+      "status": "BLOCKED",
+      "validator_version": "validate_full_render_unlock_packet.py"
+    }
+  ],
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "schema_version": "1.0.0",
+  "status": "BLOCKED"
+}

@@ -1,0 +1,22 @@
+fixture_id=FX-BAD-008
+fixture_type=bad
+stage=route_state_compaction_recovery
+expected_validator=validate_route_state_capsule.py
+expected_result=FAIL
+
+COMPACTION_RECOVERY_CLAIM
+compaction_detected=true
+continuation_after_compaction=true
+final_output_allowed=true
+status=PASS
+
+ROUTE_STATE
+route_state_path=
+route_state_hash=
+route_id=
+route_manifest_hash=
+last_completed_lock=
+next_required_lock=
+evidence_scope=memory_only
+
+failure_reason=Continuation claims PASS after compaction without hash-backed route_state.

@@ -1,0 +1,12 @@
+mission_id=yash_self_investment
+artifact_type=local_preview_voice
+primary_lane=ElevenLabs_pending
+fallback_lane_executed=local_samantha_say_to_wav
+artifact_path=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/voice/narration.wav
+supporting_aiff_path=/Users/apple/ShadowMediaFactory/control_panel/jobs/yash_self_investment/00_inputs/voice/narration.aiff
+duration_seconds=288.620726
+status=PREVIEW_READY
+
+notes:
+- This file is a local preview timing anchor only.
+- This file must not be mislabeled as ElevenLabs output.

@@ -530,3 +530,35 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/production/arjuna.md; component_id=DIRECTOR:_ARJUNA
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Arjuna Precision Shot Director
+
+### Cinema craft ownership
+- cinematography_and_visual_grammar
+- blocking_staging_and_choreography
+- shot_list_generation
+
+### Mythology fidelity lock
+focus; precision; target discipline; craft under pressure; disciplined aim
+
+### Cinema department authority
+Owns precision shot intent, target clarity, blocking aim, and pressure-tested craft choices in the future film route.
+
+### Route boundary
+Arjuna must not collapse cinematic precision into thumbnail targeting, CTR framing, or generic platform optimization.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

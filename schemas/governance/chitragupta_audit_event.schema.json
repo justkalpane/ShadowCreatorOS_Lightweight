@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Chitragupta Audit Event",
+  "description": "Immutable audit event stream for spec creation, validator runs, gate transitions, approvals, blocks, and unlock decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "actor",
+    "actor_type",
+    "route_id",
+    "mission_id",
+    "job_id",
+    "cut_id",
+    "input_artifact_ids",
+    "output_artifact_ids",
+    "decision",
+    "blocked_reasons",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "timestamp",
+    "sha256",
+    "notes",
+    "schema_version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^AUD-[A-Za-z0-9_-]+$"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "SPEC_CREATED",
+        "SPEC_REVIEWED",
+        "SCHEMA_CREATED",
+        "VALIDATOR_CREATED",
+        "FIXTURE_CREATED",
+        "VALIDATOR_RUN",
+        "ARTIFACT_REQUESTED",
+        "ARTIFACT_CREATED",
+        "ARTIFACT_HASHED",
+        "ARTIFACT_VALIDATED",
+        "GATE_BLOCKED",
+        "GATE_PASSED",
+        "HUMAN_REVIEW_REQUESTED",
+        "HUMAN_REVIEW_APPROVED",
+        "HUMAN_REVIEW_REJECTED",
+        "TOKEN_ISSUED",
+        "TOKEN_REVOKED",
+        "PILOT_PREP_ALLOWED",
+        "PILOT_EXECUTION_ALLOWED",
+        "FULL_RENDER_UNLOCKED",
+        "FULL_RENDER_BLOCKED",
+        "AUDIO_BLOCKED",
+        "PROVIDER_BLOCKED",
+        "DAVINCI_BLOCKED"
+      ]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor_type": {
+      "type": "string",
+      "enum": [
+        "HUMAN",
+        "DIRECTOR",
+        "AGENT",
+        "SUBAGENT",
+        "SYSTEM",
+        "MEDIAFACTORY",
+        "CODEX"
+      ]
+    },
+    "route_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "output_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "CREATED",
+        "REVIEWED",
+        "BLOCKED",
+        "APPROVED",
+        "ISSUED",
+        "REVOKED",
+        "PASSED",
+        "FAILED",
+        "NO_OP"
+      ]
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

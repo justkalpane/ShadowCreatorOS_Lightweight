@@ -1,0 +1,16 @@
+{
+  "fixture_id": "FP-001",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Film packet with logline, theme, premise, genre, tone, beat sheet, character arc, scene turns, dialogue subtext, visual motif, camera notes, and screenplay body.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "PASS_LATER",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_film_screenplay_packet.py",
+  "purpose": "Positive film packet baseline",
+  "risk_if_missing": "No canonical pass case for film route",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

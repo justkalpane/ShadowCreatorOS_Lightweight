@@ -1,0 +1,29 @@
+{
+  "artifact_hashes": [
+    "360ece786f82ac81d20a0e287a0d29b49e8bfb4be833c82fa4495be7b9a16d60",
+    "fe8a176e40baa0656e7775574aa236ad19c37dba0af8a598933d286c11ce5a18"
+  ],
+  "blocked_reasons_at_issue_time": [
+    "pilot_not_accepted"
+  ],
+  "evidence_bundle_id": "EB-C04A-001",
+  "evidence_bundle_sha256": "ce2f654eb9114ffb3474989a5908dfef40d268057bb52c53005d155b9ab6c880",
+  "expires_at": "2026-06-23T00:00:00Z",
+  "issued_at": "2026-06-22T00:00:00Z",
+  "issuer_id": "HUMAN-FOUNDER-001",
+  "issuer_role": "HUMAN_FOUNDER",
+  "payload_sha256": "c0be880a183ce0816187040102fd26ee95ecb5e91c5713ad36a3a7108a52a4e4",
+  "prerequisites": [
+    "human_review_packet.APPROVED",
+    "evidence_bundle.COMPLETE"
+  ],
+  "revocation_reason": "not_applicable",
+  "revocation_status": "NONE",
+  "route_state_capsule_id": "RSC-C04A-001",
+  "schema_version": "1.0.0",
+  "scope": "visual_acceptance",
+  "single_use": true,
+  "status": "DRAFT",
+  "token_id": "TOK-C04A-001",
+  "token_type": "VISUAL_ACCEPTANCE"
+}

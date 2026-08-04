@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene Cards",
+  "type": "array",
+  "minItems": 3,
+  "items": {
+    "type": "object",
+    "required": ["scene_number", "slugline", "location", "time_of_day", "characters_present", "scene_objective", "objective", "conflict", "turning_point", "emotional_value_start", "emotional_value_end", "visual_motif", "dialogue_subtext_goal", "continuity_dependencies", "beat_ids", "dialogue_lines"],
+    "properties": {
+      "scene_number": {"type": "integer"},
+      "slugline": {"type": "string"},
+      "location": {"type": "string"},
+      "time_of_day": {"type": "string"},
+      "characters_present": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+      "scene_objective": {"type": "string"},
+      "objective": {"type": "string"},
+      "conflict": {"type": "string"},
+      "turning_point": {"type": "string"},
+      "emotional_value_start": {"type": "string"},
+      "emotional_value_end": {"type": "string"},
+      "visual_motif": {"type": "string"},
+      "dialogue_subtext_goal": {"type": "string"},
+      "continuity_dependencies": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+      "beat_ids": {"type": "array", "items": {"type": "string"}},
+      "dialogue_lines": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["speaker", "line"],
+          "properties": {
+            "speaker": {"type": "string"},
+            "line": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}

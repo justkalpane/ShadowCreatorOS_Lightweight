@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FP-009",
+  "fixture_family": "film_packet_validation",
+  "input_packet_summary": "Content-mode script packet pretending to be a film packet.",
+  "expected_route": "FILM_SCREENPLAY_GENERATION",
+  "expected_result": "FAIL_LATER",
+  "should_pass_later": false,
+  "should_fail_later": true,
+  "missing_required_fields": ["film_packet_shape"],
+  "required_future_validator_or_schema": "validate_film_content_route_collision.py",
+  "purpose": "Collision failure",
+  "risk_if_missing": "Content scripts impersonate film packets",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

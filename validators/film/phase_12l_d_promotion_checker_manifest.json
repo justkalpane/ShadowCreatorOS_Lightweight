@@ -1,0 +1,34 @@
+{
+  "phase": "12L-D",
+  "checker": "validators/film/validate_film_route_promotion_gate.py",
+  "status": "unbound_checker_only",
+  "runtime_behavior_changed": false,
+  "route_selector_modified": false,
+  "active_registry_files_created": false,
+  "active_registry_files_modified": false,
+  "schemas_modified": false,
+  "contracts_modified": false,
+  "fixtures_modified": false,
+  "governed_runtime_proof_claimed": false,
+  "pass_claimed": false,
+  "required_inputs": [
+    "route_drafts/film_screenplay_generation/film_screenplay_generation.manifest.draft.yaml",
+    "route_drafts/film_screenplay_generation/film_screenplay_generation.registry_slice.draft.yaml",
+    "route_drafts/film_screenplay_generation/phase_12h_inactive_route_draft_manifest.json",
+    "PHASE_12L_B_ACTIVE_REGISTRY_INERTNESS_AUDIT.md",
+    "PHASE_12L_C_PROMOTION_PREFLIGHT_GATE.md",
+    "tests/fixtures/phase_12a_fixture_manifest.json",
+    "schemas/film/phase_12b_schema_manifest.json",
+    "validators/film/phase_12c_validator_manifest.json"
+  ],
+  "blocked_statuses": [
+    "PROMOTION_GATE_BLOCKED_MISSING_DRAFT",
+    "PROMOTION_GATE_BLOCKED_PARSE_ERROR",
+    "PROMOTION_GATE_BLOCKED_ACTIVE_FILE_ALREADY_EXISTS",
+    "PROMOTION_GATE_BLOCKED_SELECTOR_ALREADY_REFERENCES_FILM_ROUTE",
+    "PROMOTION_GATE_BLOCKED_MISSING_REQUIRED_MARKER",
+    "PROMOTION_GATE_BLOCKED_RUNTIME_PROOF_CLAIM",
+    "PROMOTION_GATE_BLOCKED_MISSING_PREP_ARTIFACT"
+  ],
+  "ready_status": "PROMOTION_GATE_READY_FOR_OWNER_DECISION"
+}

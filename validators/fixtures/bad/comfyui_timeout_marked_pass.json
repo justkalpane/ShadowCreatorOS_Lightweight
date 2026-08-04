@@ -1,0 +1,26 @@
+{
+  "workflow_id": "wf-c04a",
+  "workflow_json_path": "/tmp/workflow.json",
+  "node_graph_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "model_family": "sdxl",
+  "model": "sdxl-base",
+  "prompt": "cinematic desk study",
+  "negative_prompt": "cheap blur, generic slideshow",
+  "sampler": "euler",
+  "steps": 30,
+  "cfg": 7.0,
+  "seed": 42,
+  "width": 1920,
+  "height": 1080,
+  "timeout_seconds": 300,
+  "hires_fix": {
+    "enabled": true,
+    "upscale_factor": 1.5
+  },
+  "retry_policy": "manual_retry_only",
+  "downgrade_policy": "block",
+  "fallback_provider_policy": "blocked_until_explicit_approval",
+  "failure_classification": "COMFY_TIMEOUT_300S",
+  "output_image_path": "/tmp/output.png",
+  "provider_execution_allowed": false
+}

@@ -1,0 +1,26 @@
+{
+  "scene_id": "C04a",
+  "base_image_path": "/tmp/base.png",
+  "base_image_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "depth_map_path": "/tmp/depth.png",
+  "depth_map_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "dimensions": {
+    "base_width": 1024,
+    "base_height": 1024,
+    "depth_width": 1024,
+    "depth_height": 1024
+  },
+  "dimension_match_required": true,
+  "depth_normalization_method": "minmax",
+  "depth_normalization_range": {
+    "min": 0,
+    "max": 1
+  },
+  "depth_inversion_policy": "none",
+  "depth_visual_preview_path": "/tmp/depth_preview.png",
+  "depth_method": "blur",
+  "support_only": true,
+  "parallax_proof_required_downstream": true,
+  "depth_not_used_as_blur_proof": true,
+  "render_unlock_allowed": false
+}

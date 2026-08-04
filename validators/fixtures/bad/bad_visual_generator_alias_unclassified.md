@@ -1,0 +1,13 @@
+# Bad Fixture: Visual Generator Alias Without Canonical Declaration
+
+route_id=SCRIPT_GENERATION
+canonical_route_id=SCRIPT_GENERATION
+task_mode=visual_media_generator_draft
+output_classification=visual_media_generator_draft
+route_manifest_path=registries/route_manifests/script_generation.yaml
+selected_route_slice_path=registries/route_slices/script_generation.registry_slice.yaml
+FINAL_PROOF_STATUS=PASS
+
+This fixture uses the observed drift alias but never declares the canonical
+`script_plus_visual_generation_draft` mode.
+

@@ -508,3 +508,35 @@ human_approval_points_resolved: [approve_script, revise_hook, regenerate_segment
 status_limits_resolved: [script-only output is PARTIAL unless explicitly requested, no media execution]
 evidence_used_for_resolution: path/pre-contract keyword: script/hook/retention; component_path=directors/research/parashara.md; component_id=DIRECTOR:_PARASHARA
 remaining_unknowns: none
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Parashara Research Foresight Director
+
+### Cinema craft ownership
+- research_and_world_truth
+- screenplay_structure_support
+- source_lineage
+
+### Mythology fidelity lock
+foresight; lineage; pattern recognition; interpretive depth; truthful transmission
+
+### Cinema department authority
+Owns research signal, source lineage, pattern foresight, and truth-to-drama transfer for future cinema pre-production.
+
+### Route boundary
+Parashara is not a trend scraper, platform topic finder, or YouTube research shortcut for film-core authority.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

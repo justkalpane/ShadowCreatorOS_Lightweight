@@ -7,10 +7,12 @@ Usage:
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import subprocess
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 
@@ -46,6 +48,7 @@ REQUIRED_SECTIONS = [
     "TOPIC_QUALITY_GATE",
     "HOOK_GENERATION_GATE",
     "SCRIPT_QUALITY_GATE",
+    "VALIDATION_SCORECARD",
     "shallow_repo_routing_detected",
     "runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md",
     "runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md",
@@ -96,6 +99,7 @@ REQUIRED_SECTIONS = [
 ]
 
 INVALID_GATE_STATUSES = [
+    "PASS_WITH_NOTICE",
     "PASS_WITH_REFINEMENT",
     "READY_FOR_USER_DECISION",
 ]
@@ -160,7 +164,7 @@ GATE_STATUSES = {
     "NEEDS_CONFIRMATION",
 }
 
-PROOF_CLASSIFICATIONS = {"PASS", "PASS_WITH_NOTICE", "PARTIAL", "FAIL"}
+PROOF_CLASSIFICATIONS = {"PASS", "NEEDS_CONFIRMATION", "PARTIAL", "FAIL"}
 VALID_OUTPUT_MODES = {"PROOF_MODE", "OPERATOR_MODE", "DEBUG_MODE"}
 REQUIRED_TRUE_KEYS = [
     "shadow_boot_confirmation_present",
@@ -196,6 +200,208 @@ REQUIRED_FALSE_KEYS = [
     "loaded_true_but_not_consumed_detected",
     "manual_rerun_structured_but_partial_detected",
 ]
+
+DEFAULT_REQUIRED_WRAPPER_BLOCKS = {
+    "SHADOW_BOOT_CONFIRMATION",
+    "TASK_ROUTE_LOCK",
+    "ROUTE_DEPENDENCY_EXPANSION_LOCK",
+    "ROUTE_STATE_CAPSULE",
+    "READ_LEDGER_SUMMARY",
+    "ROUTE_SCOPE_FILE_AUDIT",
+    "CONSUMPTION_LOCK",
+    "QUALITY_LOCK",
+    "GOVERNANCE_LOCK",
+}
+ROUTE_MANIFEST_SUPPLEMENTS = {
+    "SCRIPT_GENERATION": {
+        "route_manifest_path": "registries/route_manifests/script_generation.yaml",
+        "mandatory_output_blocks": {
+            "GATE_VISIBILITY_LOG",
+            "PROOF_TRACE_BUNDLE",
+            "PER_TOOL_SOURCE_MAP",
+            "RULE_CONSUMPTION_EVIDENCE_LEDGER",
+            "EXACT_RULE_LINEAGE_MAP",
+            "TOPIC_QUALITY_GATE",
+            "HOOK_GENERATION_GATE",
+            "SCRIPT_QUALITY_GATE",
+            "CADENCE_AND_RETENTION_GATE",
+            "SCRIPT_BODY_DEPTH_LOCK",
+            "VALIDATION_SCORECARD",
+            "LINE_BY_LINE_INFLUENCE_MAP",
+            "FINAL_SCRIPT",
+        },
+    },
+    "TOPIC_DISCOVERY": {
+        "route_manifest_path": "registries/route_manifests/topic_discovery.yaml",
+        "mandatory_output_blocks": {
+            "topic_options",
+            "scores",
+            "reason",
+            "approval_gate",
+        },
+    },
+    "CONTEXT_ENGINEERING": {
+        "route_manifest_path": "registries/route_manifests/context_engineering.yaml",
+        "mandatory_output_blocks": {
+            "VOICE_GENERATION_CONTEXT",
+            "IMAGE_GENERATION_CONTEXT",
+            "VIDEO_GENERATION_CONTEXT",
+            "EDITING_CONTEXT",
+            "PROVIDER_HANDOFF_BOUNDARY",
+        },
+    },
+}
+LOCK_TO_STATUS_KEY = {
+    "TASK_ROUTE_LOCK": "task_route_lock_status",
+    "ROUTE_DEPENDENCY_EXPANSION_LOCK": "route_dependency_expansion_lock_status",
+    "CONSUMPTION_LOCK": "consumption_lock_status",
+    "SOURCE_RESEARCH_LOCK": "source_research_lock_status",
+    "QUALITY_LOCK": "quality_lock_status",
+    "GOVERNANCE_LOCK": "governance_lock_status",
+    "SOURCE_BREADTH_LOCK": "source_breadth_lock_status",
+    "RULE_CONSUMPTION_EVIDENCE_LOCK": "rule_consumption_evidence_lock_status",
+    "MEDIA_FACTORY_SYNC_LOCK": "media_factory_sync_lock_status",
+}
+ABSTRACT_OUTPUT_BLOCK_RULES = {
+    "all content engineering sections": {
+        "all_of": {
+            "CONTENT_MISSION_BRIEF",
+            "RESEARCH_AND_SOURCE_STATUS",
+            "SCRIPT_STRUCTURE",
+            "TIMED_BEAT_MAP",
+            "VOICE_GENERATION_CONTEXT",
+            "IMAGE_GENERATION_CONTEXT",
+            "VIDEO_GENERATION_CONTEXT",
+            "MUSIC_AND_SFX_CONTEXT",
+            "EDITING_CONTEXT",
+            "PLATFORM_PACKAGING",
+        }
+    },
+    "approval checkpoints": {
+        "any_of": {
+            "SHADOW_GATE_STATUS",
+            "Final Approval Gate",
+            "User Approval Log",
+            "APPROVAL_CHECKPOINTS",
+        }
+    },
+    "provider boundary": {
+        "any_of": {
+            "PROVIDER_HANDOFF_BOUNDARY",
+            "Provider Handoff Boundary",
+        }
+    },
+}
+STRUCTURED_OUTPUT_RULE_KEY_MAP = {
+    "topic_discovery_core": {
+        "all_of": {"topic_options", "scores", "reason", "approval_gate"},
+    },
+    "voice_context_core": {
+        "all_of": {"VOICE_GENERATION_CONTEXT", "PROVIDER_HANDOFF_BOUNDARY"},
+    },
+    "avatar_video_context_core": {
+        "all_of": {
+            "IMAGE_GENERATION_CONTEXT",
+            "VIDEO_GENERATION_CONTEXT",
+            "PROVIDER_HANDOFF_BOUNDARY",
+        },
+    },
+    "context_engineering_core": {
+        "all_of": {
+            "VOICE_GENERATION_CONTEXT",
+            "IMAGE_GENERATION_CONTEXT",
+            "VIDEO_GENERATION_CONTEXT",
+            "EDITING_CONTEXT",
+            "PROVIDER_HANDOFF_BOUNDARY",
+        },
+    },
+    "editing_packaging_core": {
+        "all_of": {"EDITING_CONTEXT", "PLATFORM_PACKAGING"},
+    },
+    "script_refinement_core": {
+        "all_of": {"critique", "rewrite_decision", "SCRIPT_QUALITY_GATE"},
+    },
+    "all_content_engineering_sections": {
+        "all_of": {
+            "CONTENT_MISSION_BRIEF",
+            "RESEARCH_AND_SOURCE_STATUS",
+            "SCRIPT_STRUCTURE",
+            "TIMED_BEAT_MAP",
+            "VOICE_GENERATION_CONTEXT",
+            "IMAGE_GENERATION_CONTEXT",
+            "VIDEO_GENERATION_CONTEXT",
+            "MUSIC_AND_SFX_CONTEXT",
+            "EDITING_CONTEXT",
+            "PLATFORM_PACKAGING",
+        },
+    },
+    "approval_checkpoints_present": {
+        "any_of": {"SHADOW_GATE_STATUS", "Final Approval Gate", "User Approval Log", "APPROVAL_CHECKPOINTS"},
+    },
+    "provider_boundary": {
+        "any_of": {"PROVIDER_HANDOFF_BOUNDARY", "Provider Handoff Boundary"},
+    },
+    "media_factory_visual_plan_base": {
+        "all_of": {
+            "SCENE_SYNC_MATRIX",
+            "SCENE_BREAKOUT_BLOCKS",
+            "PRODUCTION_ORDER_LOCK",
+            "ASSET_INVENTORY_LEDGER",
+            "ASSET_DEPENDENCY_GRAPH",
+            "CONTROL_PANEL_EXECUTION_PLAN",
+            "DAVINCI_TIMELINE_PACKET",
+            "PRODUCTION_PROOF_GATE",
+            "PROVIDER_HONESTY_GATE",
+        },
+    },
+    "media_factory_final_draft_base": {
+        "all_of": {
+            "SCENE_SYNC_MATRIX",
+            "SCENE_BREAKOUT_BLOCKS",
+            "SCENE_PROMPT_PACKETS",
+            "VIDEO_PROMPT_PACKETS",
+            "STORYBOARD_EXPORT_PLAN",
+            "PRODUCTION_ORDER_LOCK",
+            "ASSET_INVENTORY_LEDGER",
+            "ASSET_DEPENDENCY_GRAPH",
+            "CONTROL_PANEL_EXECUTION_PLAN",
+            "DAVINCI_TIMELINE_PACKET",
+            "LOCAL_MEDIA_FACTORY_BRIDGE_STATUS",
+            "PRODUCTION_PROOF_GATE",
+            "PROVIDER_HONESTY_GATE",
+        },
+    },
+    "media_factory_generator_draft_base": {
+        "all_of": {
+            "SCENE_SYNC_MATRIX",
+            "SCENE_BREAKOUT_BLOCKS",
+            "SCENE_PROMPT_PACKETS",
+            "VIDEO_PROMPT_PACKETS",
+            "STORYBOARD_EXPORT_PLAN",
+            "PRODUCTION_ORDER_LOCK",
+            "ASSET_INVENTORY_LEDGER",
+            "ASSET_DEPENDENCY_GRAPH",
+            "MISSION_MEDIA_OUTPUT_BUNDLE",
+            "VOICE_BATCH_PLAN",
+            "A_ROLL_BATCH_PLAN",
+            "MUSIC_SFX_BATCH_PLAN",
+            "IMAGE_BATCH_PLAN",
+            "CINEMATIC_BROLL_BATCH_PLAN",
+            "MOTION_GRAPHICS_BATCH_PLAN",
+            "ASSEMBLY_SYNC_PLAN",
+            "CONTROL_PANEL_EXECUTION_PLAN",
+            "DAVINCI_TIMELINE_PACKET",
+            "SCENE_EXECUTION_BLOCKS",
+            "LOCAL_MEDIA_FACTORY_BRIDGE_STATUS",
+            "PRODUCTION_PROOF_GATE",
+            "PROVIDER_HONESTY_GATE",
+        },
+    },
+}
+
+CURRENT_SENSITIVE_PATTERN = re.compile(r"(?i)\b(latest|current|this week|today|2026|trending|new update|source update)\b")
+WATCHLIST_PATTERN = re.compile(r"(?i)\b(watchlist|tools to watch|watch this week)\b")
+THREE_TO_TEN_MIN_PATTERN = re.compile(r"(?i)\b(3 ?- ?10 ?minute|5 ?minute|five minute)\b")
 
 
 def contains(text: str, needle: str) -> bool:
@@ -279,6 +485,592 @@ def count_hook_variants(text: str) -> int:
 def missing_or_false(text: str, key: str) -> bool:
     value = find_key_value(text, key)
     return value is None or value.lower() != "true"
+
+
+def section_present(text: str, heading: str) -> bool:
+    return re.search(rf"(?m)^\s*{re.escape(heading)}\s*$", text) is not None
+
+
+def parse_inline_list(manifest_text: str, key: str) -> set[str]:
+    match = re.search(rf"(?m)^{re.escape(key)}:\s*\[(.+?)\]\s*$", manifest_text)
+    if not match:
+        return set()
+    return {
+        item.strip().strip("'\"")
+        for item in match.group(1).split(",")
+        if item.strip()
+    }
+
+
+def parse_block_list(manifest_text: str, key: str) -> set[str]:
+    match = re.search(rf"(?m)^{re.escape(key)}:\s*\n((?:[ \t]+-\s*[^\n]*\n)+)", manifest_text)
+    if not match:
+        return set()
+    return {
+        item.strip().strip("'\"")
+        for item in re.findall(r"(?m)^\s*-\s*(.+?)\s*$", match.group(1))
+        if item.strip()
+    }
+
+
+def parse_manifest_list(manifest_text: str, key: str) -> set[str]:
+    return parse_inline_list(manifest_text, key) | parse_block_list(manifest_text, key)
+
+
+def parse_manifest_scalar(manifest_text: str, key: str) -> str | None:
+    match = re.search(rf"(?m)^{re.escape(key)}:\s*(.+?)\s*$", manifest_text)
+    if not match:
+        return None
+    return match.group(1).strip().strip("'\"")
+
+
+def parse_manifest_bool(manifest_text: str, key: str) -> bool | None:
+    value = parse_manifest_scalar(manifest_text, key)
+    if value is None:
+        return None
+    lowered = value.lower()
+    if lowered == "true":
+        return True
+    if lowered == "false":
+        return False
+    return None
+
+
+def parse_object_path_list(manifest_text: str, key: str) -> set[str]:
+    match = re.search(rf"(?ms)^{re.escape(key)}:\s*\n((?:[ \t]+.+\n)+?)(?=^\S|\Z)", manifest_text)
+    if not match:
+        return set()
+    return {
+        item.strip().strip("'\"")
+        for item in re.findall(r"(?m)^\s*path:\s*(.+?)\s*$", match.group(1))
+        if item.strip()
+    }
+
+
+def parse_yaml_scalar_any_indent(manifest_text: str, key: str) -> str | None:
+    match = re.search(rf"(?m)^[ \t]*{re.escape(key)}:\s*(.+?)\s*$", manifest_text)
+    if not match:
+        return None
+    return match.group(1).strip().strip("'\"")
+
+
+def parse_yaml_list_any_indent(manifest_text: str, key: str) -> set[str]:
+    inline = re.search(rf"(?m)^[ \t]*{re.escape(key)}:\s*\[(.+?)\]\s*$", manifest_text)
+    values: set[str] = set()
+    if inline:
+        values |= {
+            item.strip().strip("'\"")
+            for item in inline.group(1).split(",")
+            if item.strip()
+        }
+    block = re.search(
+        rf"(?m)^[ \t]*{re.escape(key)}:\s*\n((?:[ \t]+-\s*[^\n]*\n)+)",
+        manifest_text,
+    )
+    if block:
+        values |= {
+            item.strip().strip("'\"")
+            for item in re.findall(r"(?m)^\s*-\s*(.+?)\s*$", block.group(1))
+            if item.strip()
+        }
+    return values
+
+
+def expand_output_block_rules(blocks: set[str]) -> set[str]:
+    expanded: set[str] = set()
+    for block in blocks:
+        rule = ABSTRACT_OUTPUT_BLOCK_RULES.get(block.lower())
+        if rule:
+            expanded.update(rule.get("all_of", set()))
+            expanded.update(rule.get("any_of", set()))
+        else:
+            expanded.add(block)
+    return expanded
+
+
+def block_present(text: str, block: str) -> bool:
+    rule = ABSTRACT_OUTPUT_BLOCK_RULES.get(block.lower())
+    if not rule:
+        return section_present(text, block)
+    all_of = rule.get("all_of")
+    any_of = rule.get("any_of")
+    if all_of and not all(section_present(text, item) for item in all_of):
+        return False
+    if any_of:
+        return any(section_present(text, item) for item in any_of)
+    return bool(all_of)
+
+
+def structured_rule_present(text: str, rule_key: str) -> bool:
+    rule = STRUCTURED_OUTPUT_RULE_KEY_MAP.get(rule_key)
+    if not rule:
+        return False
+    all_of = rule.get("all_of")
+    any_of = rule.get("any_of")
+    if all_of and not all(section_present(text, item) for item in all_of):
+        return False
+    if any_of:
+        return any(section_present(text, item) for item in any_of)
+    return bool(all_of)
+
+
+def task_is_current_sensitive(text: str) -> bool:
+    return bool(CURRENT_SENSITIVE_PATTERN.search(text))
+
+
+def task_is_watchlist(text: str) -> bool:
+    return bool(WATCHLIST_PATTERN.search(text))
+
+
+def task_is_three_to_ten_min_script(text: str) -> bool:
+    duration = find_key_value(text, "script_duration_minutes")
+    if duration and duration.isdigit():
+        minutes = int(duration)
+        if 3 <= minutes <= 10:
+            return True
+    return bool(THREE_TO_TEN_MIN_PATTERN.search(text))
+
+
+def route_manifest_inventory(repo_root: Path) -> tuple[dict[str, dict[str, object]], dict[str, str]]:
+    manifests_by_route_id: dict[str, dict[str, object]] = {}
+    manifests_by_path: dict[str, str] = {}
+    manifest_root = repo_root / "registries/route_manifests"
+    if not manifest_root.is_dir():
+        return manifests_by_route_id, manifests_by_path
+    for manifest_path in sorted(manifest_root.glob("*.yaml")):
+        rel_path = manifest_path.relative_to(repo_root).as_posix()
+        manifest_text = manifest_path.read_text(encoding="utf-8")
+        route_id = parse_manifest_scalar(manifest_text, "route_id")
+        if not route_id:
+            continue
+        manifests_by_route_id[route_id] = {
+            "route_id": route_id,
+            "manifest_path": rel_path,
+            "mandatory_output_blocks": parse_manifest_list(manifest_text, "mandatory_output_blocks")
+            | parse_manifest_list(manifest_text, "output_blocks"),
+            "required_locks": parse_manifest_list(manifest_text, "required_locks"),
+            "trigger_aliases": parse_manifest_list(manifest_text, "trigger_aliases"),
+            "mandatory_directors": parse_manifest_list(manifest_text, "mandatory_directors")
+            | parse_object_path_list(manifest_text, "mandatory_directors"),
+            "mandatory_agents": parse_manifest_list(manifest_text, "mandatory_agents"),
+            "mandatory_subagents": parse_manifest_list(manifest_text, "mandatory_subagents"),
+            "mandatory_skills": parse_manifest_list(manifest_text, "mandatory_skills"),
+            "mandatory_subskills": parse_manifest_list(manifest_text, "mandatory_subskills"),
+            "validator_required_checks": parse_manifest_list(manifest_text, "validator_required_checks"),
+            "structured_output_rule_keys": parse_manifest_list(manifest_text, "structured_output_rule_keys"),
+            "conditional_required_locks_current_terms": parse_manifest_list(
+                manifest_text, "conditional_required_locks_current_terms"
+            ),
+            "conditional_required_locks_watchlist": parse_manifest_list(
+                manifest_text, "conditional_required_locks_watchlist"
+            ),
+            "conditional_required_locks_3_to_10_min_script": parse_manifest_list(
+                manifest_text, "conditional_required_locks_3_to_10_min_script"
+            ),
+            "hard_fail_if_any_mandatory_output_block_missing": parse_manifest_bool(
+                manifest_text, "hard_fail_if_any_mandatory_output_block_missing"
+            ),
+            "hard_fail_if_required_lock_status_not_pass": parse_manifest_bool(
+                manifest_text, "hard_fail_if_required_lock_status_not_pass"
+            ),
+            "hard_fail_if_alias_route_id_contradiction_present": parse_manifest_bool(
+                manifest_text, "hard_fail_if_alias_route_id_contradiction_present"
+            ),
+            "hard_fail_if_wrapper_output_order_invalid": parse_manifest_bool(
+                manifest_text, "hard_fail_if_wrapper_output_order_invalid"
+            ),
+            "exists": True,
+        }
+        manifests_by_path[rel_path] = route_id
+    return manifests_by_route_id, manifests_by_path
+
+
+@lru_cache(maxsize=1)
+def cached_route_manifest_inventory() -> tuple[dict[str, dict[str, object]], dict[str, str]]:
+    return route_manifest_inventory(Path(__file__).resolve().parents[1])
+
+
+def route_slice_inventory(repo_root: Path) -> tuple[dict[str, list[dict[str, object]]], dict[str, dict[str, object]]]:
+    slices_by_route_id: dict[str, list[dict[str, object]]] = {}
+    slices_by_path: dict[str, dict[str, object]] = {}
+    slice_root = repo_root / "registries/route_slices"
+    if not slice_root.is_dir():
+        return slices_by_route_id, slices_by_path
+    for slice_path in sorted(slice_root.glob("*.registry_slice.yaml")):
+        rel_path = slice_path.relative_to(repo_root).as_posix()
+        text = slice_path.read_text(encoding="utf-8")
+        route_id = parse_yaml_scalar_any_indent(text, "route_id")
+        metadata = {
+            "slice_path": rel_path,
+            "slice_id": parse_yaml_scalar_any_indent(text, "slice_id"),
+            "route_id": route_id,
+            "task_mode": parse_yaml_scalar_any_indent(text, "task_mode")
+            or parse_yaml_scalar_any_indent(text, "default_task_mode"),
+            "source_manifest": parse_yaml_scalar_any_indent(text, "source_manifest"),
+            "validators": parse_yaml_list_any_indent(text, "validators"),
+            "output_contracts": parse_yaml_list_any_indent(text, "output_contracts")
+            | parse_yaml_list_any_indent(text, "additional_output_contracts"),
+            "directors": parse_yaml_list_any_indent(text, "directors"),
+            "agents": parse_yaml_list_any_indent(text, "agents"),
+            "subagents": parse_yaml_list_any_indent(text, "subagents"),
+            "skills": parse_yaml_list_any_indent(text, "skills"),
+            "subskills": parse_yaml_list_any_indent(text, "subskills"),
+            "exists": True,
+        }
+        slices_by_path[rel_path] = metadata
+        if route_id:
+            slices_by_route_id.setdefault(route_id, []).append(metadata)
+    return slices_by_route_id, slices_by_path
+
+
+@lru_cache(maxsize=1)
+def cached_route_slice_inventory() -> tuple[dict[str, list[dict[str, object]]], dict[str, dict[str, object]]]:
+    return route_slice_inventory(Path(__file__).resolve().parents[1])
+
+
+def load_route_slice_metadata(
+    repo_root: Path, route_id: str | None, route_manifest_path: str | None, task_mode: str | None
+) -> dict[str, object]:
+    slices_by_route_id, slices_by_path = cached_route_slice_inventory()
+    if route_id is None:
+        return {"exists": False, "expected": False}
+    candidates = list(slices_by_route_id.get(route_id, []))
+    if not candidates:
+        return {"exists": False, "expected": False}
+    if route_manifest_path:
+        manifest_matches = [
+            slice_metadata
+            for slice_metadata in candidates
+            if slice_metadata.get("source_manifest") == route_manifest_path
+        ]
+        if manifest_matches:
+            candidates = manifest_matches
+    if task_mode:
+        task_matches = [
+            slice_metadata
+            for slice_metadata in candidates
+            if slice_metadata.get("task_mode") == task_mode
+        ]
+        if task_matches:
+            candidates = task_matches
+    if not candidates:
+        return {"exists": False, "expected": True}
+    selected = candidates[0]
+    return {
+        "exists": True,
+        "expected": True,
+        "slice_path": selected.get("slice_path"),
+        "source_manifest": selected.get("source_manifest"),
+        "validators": set(selected.get("validators", set())),
+        "output_contracts": set(selected.get("output_contracts", set())),
+        "directors": set(selected.get("directors", set())),
+        "agents": set(selected.get("agents", set())),
+        "subagents": set(selected.get("subagents", set())),
+        "skills": set(selected.get("skills", set())),
+        "subskills": set(selected.get("subskills", set())),
+    }
+
+
+def registry_file_set(repo_root: Path, rel_path: str, field_name: str) -> set[str]:
+    path = repo_root / rel_path
+    if not path.is_file():
+        return set()
+    text = path.read_text(encoding="utf-8")
+    return {
+        item.strip()
+        for item in re.findall(rf"(?m)^\s*(?:-\s*)?{re.escape(field_name)}:\s*(.+?)\s*$", text)
+        if item.strip()
+    }
+
+
+@lru_cache(maxsize=1)
+def cached_registered_agents() -> set[str]:
+    repo_root = Path(__file__).resolve().parents[1]
+    return registry_file_set(repo_root, "agents/AGENT_RUNTIME_REGISTRY.yaml", "file")
+
+
+@lru_cache(maxsize=1)
+def cached_registered_subagents() -> set[str]:
+    repo_root = Path(__file__).resolve().parents[1]
+    return registry_file_set(repo_root, "subagents/SUB_AGENT_RUNTIME_REGISTRY.yaml", "file")
+
+
+@lru_cache(maxsize=1)
+def cached_registered_skills() -> set[str]:
+    repo_root = Path(__file__).resolve().parents[1]
+    return registry_file_set(repo_root, "registries/skill_registry.yaml", "file_path")
+
+
+@lru_cache(maxsize=1)
+def cached_registered_subskills() -> set[str]:
+    repo_root = Path(__file__).resolve().parents[1]
+    return registry_file_set(repo_root, "registries/subskill_runtime_registry.yaml", "spec_file")
+
+
+def load_route_manifest_metadata(
+    repo_root: Path, route_id: str | None, route_manifest_path: str | None
+) -> dict[str, object]:
+    manifests_by_route_id, manifests_by_path = cached_route_manifest_inventory()
+    supplement = ROUTE_MANIFEST_SUPPLEMENTS.get(route_id or "", {})
+    manifest_rel_path = route_manifest_path
+    manifest_route_id = route_id or ""
+    if manifest_rel_path and manifest_rel_path in manifests_by_path:
+        manifest_route_id = manifests_by_path[manifest_rel_path]
+    elif manifest_route_id and manifest_route_id in manifests_by_route_id:
+        manifest_rel_path = str(manifests_by_route_id[manifest_route_id]["manifest_path"])
+    elif supplement.get("route_manifest_path"):
+        manifest_rel_path = str(supplement["route_manifest_path"])
+    if not manifest_rel_path or not manifest_route_id:
+        return {
+            "route_id": route_id,
+            "manifest_path": None,
+            "mandatory_output_blocks": set(DEFAULT_REQUIRED_WRAPPER_BLOCKS),
+            "required_locks": set(),
+            "trigger_aliases": set(),
+            "mandatory_directors": set(),
+            "mandatory_agents": set(),
+            "mandatory_subagents": set(),
+            "mandatory_skills": set(),
+            "mandatory_subskills": set(),
+            "validator_required_checks": set(),
+            "structured_output_rule_keys": set(),
+            "conditional_required_locks_current_terms": set(),
+            "conditional_required_locks_watchlist": set(),
+            "conditional_required_locks_3_to_10_min_script": set(),
+            "hard_fail_if_any_mandatory_output_block_missing": True,
+            "hard_fail_if_required_lock_status_not_pass": True,
+            "hard_fail_if_alias_route_id_contradiction_present": True,
+            "hard_fail_if_wrapper_output_order_invalid": True,
+            "exists": False,
+        }
+    manifest_metadata = manifests_by_route_id.get(manifest_route_id)
+    if not manifest_metadata:
+        return {
+            "manifest_path": str(manifest_rel_path),
+            "mandatory_output_blocks": set(DEFAULT_REQUIRED_WRAPPER_BLOCKS)
+            | set(supplement.get("mandatory_output_blocks", set())),
+            "required_locks": set(),
+            "trigger_aliases": set(),
+            "mandatory_directors": set(),
+            "mandatory_agents": set(),
+            "mandatory_subagents": set(),
+            "mandatory_skills": set(),
+            "mandatory_subskills": set(),
+            "validator_required_checks": set(),
+            "structured_output_rule_keys": set(),
+            "conditional_required_locks_current_terms": set(),
+            "conditional_required_locks_watchlist": set(),
+            "conditional_required_locks_3_to_10_min_script": set(),
+            "hard_fail_if_any_mandatory_output_block_missing": True,
+            "hard_fail_if_required_lock_status_not_pass": True,
+            "hard_fail_if_alias_route_id_contradiction_present": True,
+            "hard_fail_if_wrapper_output_order_invalid": True,
+            "exists": False,
+        }
+    return {
+        "route_id": manifest_route_id,
+        "manifest_path": str(manifest_rel_path),
+        "mandatory_output_blocks": expand_output_block_rules(
+            set(DEFAULT_REQUIRED_WRAPPER_BLOCKS)
+            | set(manifest_metadata["mandatory_output_blocks"])
+            | set(supplement.get("mandatory_output_blocks", set()))
+        ),
+        "required_locks": set(manifest_metadata["required_locks"]),
+        "trigger_aliases": set(manifest_metadata["trigger_aliases"]),
+        "mandatory_directors": set(manifest_metadata["mandatory_directors"]),
+        "mandatory_agents": set(manifest_metadata["mandatory_agents"]),
+        "mandatory_subagents": set(manifest_metadata["mandatory_subagents"]),
+        "mandatory_skills": set(manifest_metadata["mandatory_skills"]),
+        "mandatory_subskills": set(manifest_metadata["mandatory_subskills"]),
+        "validator_required_checks": set(manifest_metadata["validator_required_checks"]),
+        "structured_output_rule_keys": set(manifest_metadata["structured_output_rule_keys"]),
+        "conditional_required_locks_current_terms": set(manifest_metadata["conditional_required_locks_current_terms"]),
+        "conditional_required_locks_watchlist": set(manifest_metadata["conditional_required_locks_watchlist"]),
+        "conditional_required_locks_3_to_10_min_script": set(
+            manifest_metadata["conditional_required_locks_3_to_10_min_script"]
+        ),
+        "hard_fail_if_any_mandatory_output_block_missing": bool(
+            manifest_metadata["hard_fail_if_any_mandatory_output_block_missing"]
+        ),
+        "hard_fail_if_required_lock_status_not_pass": bool(
+            manifest_metadata["hard_fail_if_required_lock_status_not_pass"]
+        ),
+        "hard_fail_if_alias_route_id_contradiction_present": bool(
+            manifest_metadata["hard_fail_if_alias_route_id_contradiction_present"]
+        ),
+        "hard_fail_if_wrapper_output_order_invalid": bool(
+            manifest_metadata["hard_fail_if_wrapper_output_order_invalid"]
+        ),
+        "exists": True,
+    }
+
+
+def effective_required_locks(text: str, manifest_metadata: dict[str, object]) -> set[str]:
+    required = set(manifest_metadata.get("required_locks", set()))
+    if task_is_current_sensitive(text):
+        required |= set(manifest_metadata.get("conditional_required_locks_current_terms", set()))
+    if task_is_watchlist(text):
+        required |= set(manifest_metadata.get("conditional_required_locks_watchlist", set()))
+    if task_is_three_to_ten_min_script(text):
+        required |= set(manifest_metadata.get("conditional_required_locks_3_to_10_min_script", set()))
+    return required
+
+
+def validator_check_failures(
+    manifest_metadata: dict[str, object],
+    named_checks: dict[str, bool],
+) -> list[str]:
+    failures: list[str] = []
+    for check_name in sorted(set(manifest_metadata.get("validator_required_checks", set()))):
+        if not named_checks.get(check_name, False):
+            failures.append(check_name)
+    return failures
+
+
+def derive_quality_scores_present(text: str) -> bool:
+    required = [
+        "emotional_strength_score",
+        "clarity_score",
+        "retention_score",
+        "spoken_cadence_score",
+        "article_like_risk_score",
+        "overall_score",
+        "pass_threshold",
+    ]
+    return all(find_key_value(text, key) is not None for key in required)
+
+
+def derive_provider_boundary_present(text: str) -> bool:
+    return (
+        "PROVIDER_HANDOFF_BOUNDARY" in text
+        or "Provider Handoff Boundary" in text
+        or find_key_value(text, "provider_boundary_present") == "true"
+    )
+
+
+def derive_no_provider_execution(text: str) -> bool:
+    forbidden = [
+        "providers_called=true",
+        "n8n_used=true",
+        "workflow_executed=true",
+        "media_artifacts_claimed=true",
+        "provider_execution_allowed=true",
+    ]
+    return not any(marker in text for marker in forbidden)
+
+
+def derive_selected_components_are_registered(text: str, route_metadata: dict[str, object]) -> bool:
+    repo_root = Path(__file__).resolve().parents[1]
+    required_directors = set(
+        route_metadata.get("directors", route_metadata.get("mandatory_directors", set()))
+    )
+    required_agents = set(
+        route_metadata.get("agents", route_metadata.get("mandatory_agents", set()))
+    )
+    required_subagents = set(
+        route_metadata.get("subagents", route_metadata.get("mandatory_subagents", set()))
+    )
+    required_skills = set(
+        route_metadata.get("skills", route_metadata.get("mandatory_skills", set()))
+    )
+    required_subskills = set(
+        route_metadata.get("subskills", route_metadata.get("mandatory_subskills", set()))
+    )
+
+    def all_present(paths: set[str]) -> bool:
+        return all(path in text for path in paths)
+
+    def all_exist(paths: set[str]) -> bool:
+        return all((repo_root / path).is_file() for path in paths)
+
+    skill_registry = cached_registered_skills()
+    registered_skill_or_repo_skill = all(
+        (path in skill_registry) or path.startswith(".agents/skills/") or (repo_root / path).is_file()
+        for path in required_skills
+    )
+
+    return (
+        all_present(required_directors | required_agents | required_subagents | required_skills | required_subskills)
+        and all_exist(required_directors)
+        and required_agents.issubset(cached_registered_agents())
+        and required_subagents.issubset(cached_registered_subagents())
+        and registered_skill_or_repo_skill
+        and required_subskills.issubset(cached_registered_subskills())
+    )
+
+
+def route_alias_matches_text(text: str, manifest_metadata: dict[str, object]) -> bool:
+    aliases = list(manifest_metadata.get("trigger_aliases", set()))
+    return any(alias in text for alias in aliases)
+
+
+def check_required_lock_statuses(text: str, required_locks: set[str]) -> list[str]:
+    failures: list[str] = []
+    for lock_name in sorted(required_locks):
+        status_key = LOCK_TO_STATUS_KEY.get(lock_name)
+        if not status_key:
+            continue
+        if find_key_value(text, status_key) != "PASS":
+            failures.append(f"{status_key}!=PASS")
+    return failures
+
+
+def ordered_positions(text: str, items: list[str]) -> list[tuple[str, int]]:
+    positions: list[tuple[str, int]] = []
+    for item in items:
+        pos = text.find(item)
+        if pos >= 0:
+            positions.append((item, pos))
+    return positions
+
+
+def wrapper_output_order_failures(text: str) -> list[str]:
+    order = [
+        "SHADOW_BOOT_CONFIRMATION",
+        "TASK_ROUTE_LOCK",
+        "ROUTE_DEPENDENCY_EXPANSION_LOCK",
+        "ROUTE_STATE_CAPSULE",
+        "READ_LEDGER_SUMMARY",
+        "ROUTE_SCOPE_FILE_AUDIT",
+        "CONSUMPTION_LOCK",
+        "SOURCE_RESEARCH_LOCK",
+        "QUALITY_LOCK",
+        "GOVERNANCE_LOCK",
+        "DIRECTOR_CONSUMPTION_LEDGER",
+        "AGENT_CONSUMPTION_LEDGER",
+        "SUBAGENT_CONSUMPTION_LEDGER",
+        "SKILL_CONSUMPTION_LEDGER",
+        "SUBSKILL_CONSUMPTION_LEDGER",
+    ]
+    failures: list[str] = []
+    positions = ordered_positions(text, order)
+    for (left_name, left_pos), (right_name, right_pos) in zip(positions, positions[1:]):
+        if left_pos > right_pos:
+            failures.append(f"{left_name}_after_{right_name}")
+    return failures
+
+
+def derive_route_scope_complete(text: str) -> bool:
+    return (
+        "ROUTE_SCOPE_FILE_AUDIT" in text
+        and find_key_value(text, "route_manifest_read") == "true"
+        and find_key_value(text, "route_scope_complete") == "true"
+    )
+
+
+def derive_script_generated_after_all_locks(text: str) -> bool:
+    positions = [pos for pos in [text.find("FINAL_SCRIPT"), text.find("Final script")] if pos >= 0]
+    script_pos = min(positions, default=-1)
+    if script_pos < 0:
+        return False
+    required = [
+        "TASK_ROUTE_LOCK",
+        "ROUTE_DEPENDENCY_EXPANSION_LOCK",
+        "CONSUMPTION_LOCK",
+        "QUALITY_LOCK",
+        "GOVERNANCE_LOCK",
+    ]
+    return all(text.find(marker) >= 0 and text.find(marker) < script_pos for marker in required)
 
 
 def run_json_command(repo_root: Path, args: list[str]) -> tuple[bool, dict]:
@@ -371,17 +1163,7 @@ def collect_invalid_gate_values(text: str) -> list[str]:
     return [value for value in values if value not in GATE_STATUSES]
 
 
-def main() -> int:
-    if len(sys.argv) != 2:
-        print("usage: validate_mac06_1a_output.py <output.txt>")
-        return 2
-
-    path = Path(sys.argv[1])
-    if not path.is_file():
-        print(f"VALIDATION_STATUS=FAIL\nreason=file_not_found\npath={path}")
-        return 1
-
-    text = path.read_text(errors="replace")
+def _validate_text(text: str) -> int:
     missing = [section for section in REQUIRED_SECTIONS if not contains(text, section)]
     invalid_statuses = [status for status in INVALID_GATE_STATUSES if status in text]
     invalid_statuses.extend(collect_invalid_gate_values(text))
@@ -396,10 +1178,13 @@ def main() -> int:
     script_before_consumption_ledger = has_script_before_consumption_ledger(text)
     hook_variant_count = count_hook_variants(text)
     script_markers = ["FINAL_SCRIPT", "Final script", "Final Script", "final_script_created=true"]
+    route_id_value = find_key_value(text, "route_id")
+    task_mode_value = find_key_value(text, "task_mode")
+    route_manifest_path_value = find_key_value(text, "route_manifest_path")
     route_manifest_unread = explicit_false(text, "route_manifest_read")
-    route_manifest_missing = find_key_value(text, "route_manifest_path") in {None, ""} or route_manifest_unread
+    route_manifest_missing = route_manifest_path_value in {None, ""} or route_manifest_unread
     route_dependency_expansion_lock_missing = "ROUTE_DEPENDENCY_EXPANSION_LOCK" not in text or explicit_false(text, "route_dependency_expansion_lock_present")
-    route_scope_incomplete = explicit_false(text, "route_scope_complete")
+    route_scope_incomplete = not derive_route_scope_complete(text)
     mandatory_files_not_read = explicit_false(text, "mandatory_files_read_before_output")
     bootstrap_loaded_true_but_no_route_lock = explicit_true(text, "bootstrap_loaded") and "TASK_ROUTE_LOCK" not in text
     script_before_task_route_lock = marker_before(text, script_markers, ["TASK_ROUTE_LOCK"])
@@ -463,17 +1248,19 @@ def main() -> int:
     role_summary_only_detected = explicit_true(text, "role_summary_only_detected") or "evidence_depth=ROLE_SUMMARY" in text
     exact_rule_lineage_map_missing = explicit_false(text, "exact_rule_lineage_map_present") or "EXACT_RULE_LINEAGE_MAP" not in text
     rule_consumption_evidence_lock_missing = rule_consumption_evidence_status is None
-    all_core_locks_pass = all(
-        find_key_value(text, key) == "PASS"
-        for key in [
-            "task_route_lock_status",
-            "route_dependency_expansion_lock_status",
-            "consumption_lock_status",
-            "source_research_lock_status",
-            "quality_lock_status",
-            "governance_lock_status",
-        ]
+    manifest_metadata = load_route_manifest_metadata(
+        Path(__file__).resolve().parents[1],
+        route_id_value,
+        route_manifest_path_value,
     )
+    route_slice_metadata = load_route_slice_metadata(
+        Path(__file__).resolve().parents[1],
+        route_id_value,
+        route_manifest_path_value,
+        task_mode_value,
+    )
+    resolved_required_locks = effective_required_locks(text, manifest_metadata)
+    all_core_locks_pass = not check_required_lock_statuses(text, resolved_required_locks)
     depth_weak_but_downgraded = (
         (role_summary_only_detected or exact_rule_evidence_missing or exact_rule_lineage_map_missing)
         and all_core_locks_pass
@@ -524,15 +1311,9 @@ def main() -> int:
     route_components_missing = explicit_false(text, "route_components_exist") or explicit_not_true(
         text, "route_components_exist"
     )
-    selected_components_not_registered = explicit_false(text, "selected_components_are_registered") or explicit_not_true(
-        text, "selected_components_are_registered"
-    )
-    provider_boundary_missing = explicit_false(text, "provider_boundary_present") or explicit_not_true(
-        text, "provider_boundary_present"
-    )
-    false_n8n_provider_media_claims = explicit_false(text, "no_n8n_provider_media_execution") or explicit_not_true(
-        text, "no_n8n_provider_media_execution"
-    )
+    selected_components_not_registered = False
+    provider_boundary_missing = False
+    false_n8n_provider_media_claims = False
     operator_mode_claims_pass_without_lock_summary = (
         operator_mode_used
         and (find_key_value(text, "proof_classification") == "PASS")
@@ -540,9 +1321,7 @@ def main() -> int:
     )
     operator_mode_missing_compact_proof = operator_mode_used and not operator_mode_compact_proof_present
     raw_plain_task_claimed_production_proof = explicit_true(text, "raw_plain_task_claimed_production_proof")
-    component_depth_validation_required = explicit_true(text, "component_depth_validation_required") or (
-        "MAC_06_2B_COMPONENT_DEPTH_PROOF" in text
-    )
+    component_depth_validation_required = True
     universal_component_contract_present = explicit_true(text, "universal_component_contract_present") or (
         "runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md" in text
     )
@@ -563,12 +1342,12 @@ def main() -> int:
     provider_handoff_packet_present = explicit_true(text, "provider_handoff_packet_present")
     media_quality_gate_packet_present = explicit_true(text, "media_quality_gate_packet_present")
     lineage_approval_packet_present = explicit_true(text, "lineage_approval_packet_present")
-    quality_scores_present = explicit_true(text, "quality_scores_present")
+    quality_scores_present = derive_quality_scores_present(text)
     segment_level_regeneration_actions_present = explicit_true(
         text, "segment_level_regeneration_actions_present"
     )
-    runtime_structure_validation_required = explicit_true(text, "runtime_structure_validation_required")
-    structural_status = structural_runtime_status() if runtime_structure_validation_required else {}
+    runtime_structure_validation_required = True
+    structural_status = structural_runtime_status()
     route_dag_validation_pass = structural_status.get("route_dag_validation_pass", not explicit_false(text, "route_dag_validation_pass")) and not explicit_false(text, "route_dag_validation_pass")
     packet_schema_validation_pass = structural_status.get("packet_schema_validation_pass", not explicit_false(text, "packet_schema_validation_pass")) and not explicit_false(text, "packet_schema_validation_pass")
     packet_flow_validation_pass = structural_status.get("packet_flow_validation_pass", not explicit_false(text, "packet_flow_validation_pass")) and not explicit_false(text, "packet_flow_validation_pass")
@@ -639,8 +1418,35 @@ def main() -> int:
     matrix_missing = "registries/native_capability_routing_matrix.yaml" not in text
     index_missing = "registries/agent_runtime_selection_index.yaml" not in text
     task_intent_matrix_missing = "registries/task_intent_routing_matrix.yaml" not in text
-    route_id_missing = find_key_value(text, "route_id") in {None, ""}
-    route_manifest_path_value = find_key_value(text, "route_manifest_path")
+    route_id_missing = route_id_value in {None, ""}
+    derived_selected_components_are_registered = derive_selected_components_are_registered(
+        text, manifest_metadata
+    )
+    selected_components_are_registered = derived_selected_components_are_registered
+    selected_components_not_registered = not derived_selected_components_are_registered
+    route_slice_loaded = bool(route_slice_metadata.get("exists"))
+    route_slice_expected = bool(route_slice_metadata.get("expected"))
+    route_slice_source_manifest_matches_route_manifest = (
+        not route_slice_loaded
+        or route_slice_metadata.get("source_manifest") == manifest_metadata.get("manifest_path")
+    )
+    route_slice_output_contracts = set(route_slice_metadata.get("output_contracts", set()))
+    route_slice_output_contracts_present = (
+        not route_slice_loaded
+        or all(block_present(text, contract) for contract in route_slice_output_contracts)
+    )
+    current_validator_rel = Path(__file__).relative_to(Path(__file__).resolve().parents[1]).as_posix()
+    route_slice_validator_binding_present = (
+        not route_slice_loaded
+        or current_validator_rel in set(route_slice_metadata.get("validators", set()))
+        or route_id_value == "SCRIPT_GENERATION"
+    )
+    derived_provider_boundary_present = derive_provider_boundary_present(text)
+    provider_boundary_present = derived_provider_boundary_present
+    provider_boundary_missing = not derived_provider_boundary_present
+    derived_no_n8n_provider_media_execution = derive_no_provider_execution(text)
+    no_n8n_provider_media_execution = derived_no_n8n_provider_media_execution
+    false_n8n_provider_media_claims = not derived_no_n8n_provider_media_execution
     route_manifest_path_does_not_exist = bool(route_manifest_path_value) and not Path(route_manifest_path_value).is_file()
     hook_variants_insufficient = hook_variant_count < 3
     script_scores_missing = find_key_value(text, "script_overall_score") is None or find_key_value(text, "script_pass_threshold") is None
@@ -658,6 +1464,83 @@ def main() -> int:
     quality_gate_missing = any(
         marker not in text
         for marker in ["TOPIC_QUALITY_GATE", "HOOK_GENERATION_GATE", "SCRIPT_QUALITY_GATE"]
+    )
+    manifest_required_blocks = set(manifest_metadata["mandatory_output_blocks"])
+    manifest_missing_blocks = sorted(
+        block for block in manifest_required_blocks if not block_present(text, block)
+    )
+    manifest_required_blocks_missing = bool(manifest_missing_blocks)
+    manifest_exists_for_route = bool(manifest_metadata["exists"])
+    required_lock_status_failures = check_required_lock_statuses(text, resolved_required_locks)
+    route_alias_route_id_mismatch = (
+        shadow_command_alias_detected and not route_alias_matches_text(text, manifest_metadata)
+    )
+    wrapper_order_failures = wrapper_output_order_failures(text)
+    wrapper_output_order_invalid = bool(wrapper_order_failures)
+    structured_rule_failures = sorted(
+        rule_key
+        for rule_key in set(manifest_metadata.get("structured_output_rule_keys", set()))
+        if not structured_rule_present(text, rule_key)
+    )
+    named_check_state_base = {
+        "shadow_command_alias_detected": shadow_command_alias_detected,
+        "internal_wrapper_applied": internal_wrapper_applied,
+        "route_manifest_loaded": route_manifest_loaded,
+        "route_slice_loaded": route_slice_loaded,
+        "route_slice_source_manifest_matches_route_manifest": route_slice_source_manifest_matches_route_manifest,
+        "route_slice_output_contracts_present": route_slice_output_contracts_present,
+        "route_slice_validator_binding_present": route_slice_validator_binding_present,
+        "provider_boundary_present": derived_provider_boundary_present,
+        "no_n8n_provider_media_execution": derived_no_n8n_provider_media_execution,
+        "topic_options_present": section_present(text, "topic_options"),
+        "topic_scores_present": section_present(text, "scores") and section_present(text, "reason"),
+        "approval_gate_present": section_present(text, "approval_gate"),
+        "voice_generation_context_present": section_present(text, "VOICE_GENERATION_CONTEXT"),
+        "image_generation_context_present": section_present(text, "IMAGE_GENERATION_CONTEXT"),
+        "video_generation_context_present": section_present(text, "VIDEO_GENERATION_CONTEXT"),
+        "editing_context_present": section_present(text, "EDITING_CONTEXT"),
+        "platform_packaging_present": section_present(text, "PLATFORM_PACKAGING"),
+        "critique_present": section_present(text, "critique"),
+        "rewrite_decision_present": section_present(text, "rewrite_decision"),
+        "script_quality_gate_present": "SCRIPT_QUALITY_GATE" in text,
+        "scene_sync_matrix_present": section_present(text, "SCENE_SYNC_MATRIX"),
+        "production_order_lock_present": section_present(text, "PRODUCTION_ORDER_LOCK"),
+        "asset_dependency_graph_present": section_present(text, "ASSET_DEPENDENCY_GRAPH"),
+        "control_panel_execution_plan_present": section_present(text, "CONTROL_PANEL_EXECUTION_PLAN"),
+        "davinci_timeline_packet_present": section_present(text, "DAVINCI_TIMELINE_PACKET"),
+        "scene_breakout_blocks_present": section_present(text, "SCENE_BREAKOUT_BLOCKS"),
+        "production_proof_gate_present": section_present(text, "PRODUCTION_PROOF_GATE"),
+        "local_media_factory_bridge_status_present": section_present(text, "LOCAL_MEDIA_FACTORY_BRIDGE_STATUS"),
+        "provider_honesty_gate_present": section_present(text, "PROVIDER_HONESTY_GATE"),
+        "content_engineering_sections_present": structured_rule_present(text, "all_content_engineering_sections"),
+        "approval_checkpoints_present": structured_rule_present(text, "approval_checkpoints_present"),
+    }
+    pre_status_validator_required_check_failures = validator_check_failures(
+        {
+            "validator_required_checks": set(
+                manifest_metadata.get("validator_required_checks", set())
+            )
+            - {"weakest_layer_status_respected"}
+        },
+        named_check_state_base,
+    )
+    selected_components_claim_contradicted = (
+        explicit_true(text, "selected_components_are_registered")
+        and not derived_selected_components_are_registered
+    )
+    quality_scores_claim_contradicted = (
+        explicit_true(text, "quality_scores_present") and not quality_scores_present
+    )
+    provider_boundary_claim_contradicted = (
+        explicit_true(text, "provider_boundary_present") and not derived_provider_boundary_present
+    )
+    provider_execution_claim_contradicted = (
+        explicit_true(text, "no_n8n_provider_media_execution")
+        and not derived_no_n8n_provider_media_execution
+    )
+    script_generated_after_all_locks_claim_contradicted = (
+        explicit_true(text, "script_generated_after_all_locks")
+        and not derive_script_generated_after_all_locks(text)
     )
     files_created = re.search(r"(?im)^\s*[-*]?\s*`?files_created`?\s*=\s*true\b", text) is not None
     dossier_created = re.search(r"(?im)^\s*[-*]?\s*`?dossier_artifacts_created`?\s*=\s*true\b", text) is not None
@@ -707,6 +1590,7 @@ def main() -> int:
         or final_script_before_quality_lock
         or final_classification_before_governance_lock
         or hook_variants_without_scores
+        or quality_gate_without_threshold
         or selected_components_without_read_before_output
         or direct_script_after_bootstrap_without_wrapper
         or wrapper_missing_when_required
@@ -725,22 +1609,49 @@ def main() -> int:
         or registry_paths_missing
         or route_components_missing
         or selected_components_not_registered
+        or (route_slice_expected and not route_slice_loaded)
+        or (route_slice_loaded and not route_slice_source_manifest_matches_route_manifest)
+        or (route_slice_loaded and not route_slice_output_contracts_present)
+        or (route_slice_loaded and not route_slice_validator_binding_present)
         or provider_boundary_missing
         or false_n8n_provider_media_claims
         or route_manifest_path_does_not_exist
+        or not manifest_exists_for_route
         or operator_mode_missing_compact_proof
         or operator_mode_claims_pass_without_lock_summary
         or raw_plain_task_claimed_production_proof
+        or (
+            manifest_metadata["hard_fail_if_any_mandatory_output_block_missing"]
+            and (manifest_required_blocks_missing or bool(structured_rule_failures))
+        )
+        or (
+            manifest_metadata["hard_fail_if_required_lock_status_not_pass"]
+            and required_lock_status_failures
+        )
+        or bool(pre_status_validator_required_check_failures)
+        or (
+            manifest_metadata["hard_fail_if_alias_route_id_contradiction_present"]
+            and route_alias_route_id_mismatch
+        )
+        or (
+            manifest_metadata["hard_fail_if_wrapper_output_order_invalid"]
+            and wrapper_output_order_invalid
+        )
+        or selected_components_claim_contradicted
+        or quality_scores_claim_contradicted
+        or provider_boundary_claim_contradicted
+        or provider_execution_claim_contradicted
+        or script_generated_after_all_locks_claim_contradicted
         or component_depth_failure
         or runtime_structure_failure
     ):
         status = "FAIL"
     elif (
         depth_weak_but_downgraded
-        or source_breadth_status == "PASS_WITH_NOTICE"
-        or rule_consumption_evidence_status == "PASS_WITH_NOTICE"
+        or source_breadth_status == "NEEDS_CONFIRMATION"
+        or rule_consumption_evidence_status == "NEEDS_CONFIRMATION"
     ):
-        status = "PASS_WITH_NOTICE"
+        status = "NEEDS_CONFIRMATION"
     elif (
         missing
         or invalid_statuses
@@ -778,6 +1689,11 @@ def main() -> int:
         status = "PARTIAL"
 
     final_status_matches_weakest = not (final_proof == "PASS" and status != "PASS")
+    named_check_state = dict(named_check_state_base)
+    named_check_state["weakest_layer_status_respected"] = final_status_matches_weakest
+    validator_required_check_failures = validator_check_failures(manifest_metadata, named_check_state)
+    if status == "PASS" and validator_required_check_failures:
+        status = "FAIL"
 
     print(f"VALIDATION_STATUS={status}")
     print(f"missing_required_sections_count={len(missing)}")
@@ -849,8 +1765,48 @@ def main() -> int:
     print(f"registry_paths_exist={str(registry_paths_exist).lower()}")
     print(f"route_components_exist={str(route_components_exist).lower()}")
     print(f"selected_components_are_registered={str(selected_components_are_registered).lower()}")
+    print(f"route_slice_loaded={str(route_slice_loaded).lower()}")
+    print(
+        "route_slice_source_manifest_matches_route_manifest="
+        f"{str(route_slice_source_manifest_matches_route_manifest).lower()}"
+    )
+    print(
+        "route_slice_output_contracts_present="
+        f"{str(route_slice_output_contracts_present).lower()}"
+    )
+    print(
+        "route_slice_validator_binding_present="
+        f"{str(route_slice_validator_binding_present).lower()}"
+    )
     print(f"provider_boundary_present={str(provider_boundary_present).lower()}")
     print(f"no_n8n_provider_media_execution={str(no_n8n_provider_media_execution).lower()}")
+    print(f"manifest_required_blocks_missing={str(manifest_required_blocks_missing).lower()}")
+    print(f"manifest_missing_blocks_count={len(manifest_missing_blocks)}")
+    for item in manifest_missing_blocks:
+        print(f"manifest_missing_block={item}")
+    print(f"structured_rule_failure_count={len(structured_rule_failures)}")
+    for item in structured_rule_failures:
+        print(f"structured_rule_failure={item}")
+    print(f"manifest_exists_for_route={str(manifest_exists_for_route).lower()}")
+    print(f"required_lock_status_failure_count={len(required_lock_status_failures)}")
+    for item in required_lock_status_failures:
+        print(f"required_lock_status_failure={item}")
+    print(f"validator_required_check_failure_count={len(validator_required_check_failures)}")
+    for item in validator_required_check_failures:
+        print(f"validator_required_check_failure={item}")
+    print(f"route_alias_route_id_mismatch={str(route_alias_route_id_mismatch).lower()}")
+    print(f"wrapper_output_order_invalid={str(wrapper_output_order_invalid).lower()}")
+    print(f"wrapper_output_order_failure_count={len(wrapper_order_failures)}")
+    for item in wrapper_order_failures:
+        print(f"wrapper_output_order_failure={item}")
+    print(f"selected_components_claim_contradicted={str(selected_components_claim_contradicted).lower()}")
+    print(f"quality_scores_claim_contradicted={str(quality_scores_claim_contradicted).lower()}")
+    print(f"provider_boundary_claim_contradicted={str(provider_boundary_claim_contradicted).lower()}")
+    print(f"provider_execution_claim_contradicted={str(provider_execution_claim_contradicted).lower()}")
+    print(
+        "script_generated_after_all_locks_claim_contradicted="
+        f"{str(script_generated_after_all_locks_claim_contradicted).lower()}"
+    )
     print(
         "compact_or_proof_output_allowed_only_after_locks="
         f"{str(compact_or_proof_output_allowed_only_after_locks).lower()}"
@@ -956,7 +1912,647 @@ def main() -> int:
     print(f"final_proof_classification={final_proof or 'MISSING'}")
     print(f"final_status_matches_weakest_evidence_layer={str(final_status_matches_weakest).lower()}")
 
-    return 0 if status in {"PASS", "PASS_WITH_NOTICE"} and final_status_matches_weakest else 1
+    return 0 if status in {"PASS", "NEEDS_CONFIRMATION"} and final_status_matches_weakest else 1
+
+
+def main_with_path(path: Path) -> int:
+    return _validate_text(path.read_text(errors="replace"))
+
+
+def run_self_test() -> int:
+    cases = [
+        (
+            "script_route_valid_minimal",
+            """
+SHADOW_BOOT_CONFIRMATION
+AGENTS.md
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+layman_task_trigger_contract_read=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+NATIVE_AGENT_CAPABILITY_ASSESSMENT
+TASK_FRESHNESS_CLASSIFICATION
+RESEARCH_MODE_DECISION
+Research Sufficiency Gate
+TASK_TO_CAPABILITY_ROUTING
+registries/native_capability_routing_matrix.yaml
+task_intent_classified=true
+task_intent_routing_matrix_cited=true
+route_id=SCRIPT_GENERATION
+registries/task_intent_routing_matrix.yaml
+director_skill_consumption_protocol_read=true
+script_quality_enforcement_contract_read=true
+gumloop_benchmark_output_standard_read=true
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+route_manifest_path=registries/route_manifests/script_generation.yaml
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_scope_complete=true
+mandatory_files_read_before_output=true
+script_generated_after_all_locks=true
+director_consumption_ledger_present=true
+agent_consumption_ledger_present=true
+subagent_consumption_ledger_present=true
+skill_consumption_ledger_present=true
+subskill_consumption_ledger_present=true
+line_by_line_influence_map_present=true
+topic_quality_gate_present=true
+hook_generation_gate_present=true
+script_quality_gate_present=true
+shallow_repo_routing_detected=false
+chat_only_mode_used=true
+files_created=false
+dossier_artifacts_created=false
+plain_post_bootstrap_task_failed=false
+shadow_task_execution_wrapper_read=true
+wrapper_required_mode_used=true
+codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
+layman_command_gateway_used=true
+shadow_command_alias_detected=true
+raw_user_task_preserved=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+internal_wrapper_applied=true
+gateway_contract_loaded_before_alias=true
+output_mode_contract_loaded=true
+output_mode=OPERATOR_MODE
+operator_mode_used=true
+operator_mode_compact_proof_present=true
+compact_or_proof_output_allowed_only_after_locks=true
+registry_paths_exist=true
+route_components_exist=true
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+selected_components_are_registered=true
+selected_components_without_read_before_output=false
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
+exact_rule_evidence_present=true
+exact_rule_lineage_map_present=true
+per_tool_source_map_present=true
+universal_component_contract_present=true
+script_segment_packet_present=true
+voice_context_packet_present=true
+visual_context_packet_present=true
+video_context_packet_present=true
+music_sfx_packet_present=true
+editing_timeline_packet_present=true
+provider_handoff_packet_present=true
+media_quality_gate_packet_present=true
+lineage_approval_packet_present=true
+segment_level_regeneration_actions_present=true
+task_route_lock_status=PASS
+route_dependency_expansion_lock_status=PASS
+consumption_lock_status=PASS
+source_research_lock_status=PASS
+source_breadth_lock_status=PASS
+rule_consumption_evidence_lock_status=PASS
+quality_lock_status=PASS
+governance_lock_status=PASS
+Shadow script: write a youtube script
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+ROUTE_STATE_CAPSULE
+READ_LEDGER_SUMMARY
+ROUTE_SCOPE_FILE_AUDIT
+CONSUMPTION_LOCK
+SOURCE_RESEARCH_LOCK
+SOURCE_BREADTH_LOCK
+RULE_CONSUMPTION_EVIDENCE_LOCK
+SOURCE_INTEGRITY_GATE
+QUALITY_LOCK
+RECURRING_HOOK_DENSITY_LOCK
+GOVERNANCE_LOCK
+DIRECTOR_CONSUMPTION_LEDGER
+AGENT_CONSUMPTION_LEDGER
+SUBAGENT_CONSUMPTION_LEDGER
+SKILL_CONSUMPTION_LEDGER
+SUBSKILL_CONSUMPTION_LEDGER
+Registry-First Route
+Director Selection
+AGENT_RUNTIME_SELECTION
+registries/agent_runtime_selection_index.yaml
+Subagent Selection
+Skill Selection
+Subskill Selection
+TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+SHADOW_MISSION_PACKET
+SCRIPT_LANGUAGE_DECLARATION
+USER_LANGUAGE_REQUEST_CHECK
+CONTENT_MISSION_BRIEF
+RESEARCH_AND_SOURCE_STATUS
+SOURCE_LEDGER
+SOURCE_LIMITATION_NOTES
+FACT_VS_ANECDOTE_MAP
+CLAIM_EVIDENCE_STATUS
+TOPIC_QUALITY_GATE
+HOOK_VARIANTS
+HOOK_GENERATION_GATE
+SELECTED_HOOK_REASON
+score_each=present
+hook_variant_1=One
+hook_variant_2=Two
+hook_variant_3=Three
+RECURRING_REHOOK_MAP
+CINEMATIC_SHORT_STORY_BLOCK
+SOURCE_INTEGRITY_GATE
+script_overall_score=90
+script_pass_threshold=80
+SCRIPT_QUALITY_GATE
+VALIDATION_SCORECARD
+RULE_CONSUMPTION_EVIDENCE_LEDGER
+EXACT_RULE_LINEAGE_MAP
+GATE_VISIBILITY_LOG
+PROOF_TRACE_BUNDLE
+CADENCE_AND_RETENTION_GATE
+LIVE_HOST_REALTIME_BEHAVIOR_GATE
+ARTICLE_LIKE_RISK_GATE
+RECURRING_HOOK_DENSITY_LOCK
+SCRIPT_BODY_DEPTH_LOCK
+PER_TOOL_SOURCE_MAP
+LINE_BY_LINE_INFLUENCE_MAP
+SCRIPT_STRUCTURE
+DYNAMIC_TIMED_BEAT_MAP
+Final script
+FINAL_SCRIPT
+TIMED_BEAT_MAP
+VOICE_GENERATION_CONTEXT
+IMAGE_GENERATION_CONTEXT
+VIDEO_GENERATION_CONTEXT
+MUSIC_AND_SFX_CONTEXT
+EDITING_CONTEXT
+PLATFORM_PACKAGING
+Provider Handoff Boundary
+PROVIDER_HANDOFF_BOUNDARY
+QUALITY_GATE
+LINEAGE_SUMMARY
+LOCAL_CLOUD_HYBRID_EXECUTION_PLAN
+Quality Gate
+Lineage Summary
+Final Proof Classification
+Source Summary
+Compact Final Proof
+proof_classification=PASS
+directors/supreme_vision/krishna.md
+directors/kernel/aruna.md
+directors/research/vyasa.md
+directors/research/valmiki.md
+directors/distribution/saraswati.md
+directors/kernel/yama.md
+agents/krishna/krishna_agent.py
+agents/aruna/aruna_agent.py
+agents/vyasa/vyasa_agent.py
+agents/valmiki/valmiki_agent.py
+agents/saraswati/saraswati_agent.py
+agents/yama/yama_agent.py
+subagents/wf_200/wf_200_sub_agent.py
+subagents/cwf_210/cwf_210_sub_agent.py
+subagents/cwf_220/cwf_220_sub_agent.py
+subagents/cwf_230/cwf_230_sub_agent.py
+subagents/cwf_240/cwf_240_sub_agent.py
+skills/script_intelligence/S-201-hook-optimizer.skill.md
+skills/script_intelligence/S-202-first-draft-generation.skill.md
+skills/script_intelligence/S-203-retention-engineer.skill.md
+skills/script_intelligence/S-206-emotion-amplifier.skill.md
+skills/script_intelligence/S-208-governance-safety-checker.skill.md
+skills/script_intelligence/S-210-final-script-packager.skill.md
+skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
+skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+skills/script_intelligence_army/M-039-re-hook-system.skill.md
+skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
+skills/sub_skills/SS-230-content-angle-generator.subskill.md
+skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
+skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+skills/sub_skills/SS-241-open-loop-generator.subskill.md
+skills/sub_skills/SS-242-story-tension-builder.subskill.md
+skills/sub_skills/SS-243-pacing-controller.subskill.md
+skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
+emotional_strength_score=90
+clarity_score=91
+retention_score=92
+spoken_cadence_score=89
+article_like_risk_score=8
+overall_score=90
+pass_threshold=80
+""",
+            0,
+        ),
+        (
+            "route_alias_mismatch_rejected",
+            """
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+task_intent_classified=true
+task_intent_routing_matrix_cited=true
+director_skill_consumption_protocol_read=true
+script_quality_enforcement_contract_read=true
+gumloop_benchmark_output_standard_read=true
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+route_manifest_path=registries/route_manifests/topic_discovery.yaml
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_scope_complete=true
+mandatory_files_read_before_output=true
+script_generated_after_all_locks=true
+chat_only_mode_used=true
+files_created=false
+dossier_artifacts_created=false
+shadow_task_execution_wrapper_read=true
+wrapper_required_mode_used=true
+layman_command_gateway_used=true
+shadow_command_alias_detected=true
+raw_user_task_preserved=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+internal_wrapper_applied=true
+gateway_contract_loaded_before_alias=true
+output_mode_contract_loaded=true
+output_mode=OPERATOR_MODE
+operator_mode_used=true
+operator_mode_compact_proof_present=true
+compact_or_proof_output_allowed_only_after_locks=true
+registry_paths_exist=true
+route_components_exist=true
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+selected_components_are_registered=true
+selected_components_without_read_before_output=false
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
+route_id=SCRIPT_GENERATION
+Shadow topic: find me a viral topic
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+ROUTE_STATE_CAPSULE
+READ_LEDGER_SUMMARY
+ROUTE_SCOPE_FILE_AUDIT
+CONSUMPTION_LOCK
+SOURCE_RESEARCH_LOCK
+QUALITY_LOCK
+GOVERNANCE_LOCK
+DIRECTOR_CONSUMPTION_LEDGER
+AGENT_CONSUMPTION_LEDGER
+SUBAGENT_CONSUMPTION_LEDGER
+SKILL_CONSUMPTION_LEDGER
+SUBSKILL_CONSUMPTION_LEDGER
+SCRIPT_STRUCTURE
+Final script
+""",
+            1,
+        ),
+        (
+            "wrapper_order_violation_rejected",
+            """
+TASK_ROUTE_LOCK
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+task_intent_classified=true
+task_intent_routing_matrix_cited=true
+director_skill_consumption_protocol_read=true
+script_quality_enforcement_contract_read=true
+gumloop_benchmark_output_standard_read=true
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+route_manifest_path=registries/route_manifests/script_generation.yaml
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_scope_complete=true
+mandatory_files_read_before_output=true
+script_generated_after_all_locks=true
+chat_only_mode_used=true
+files_created=false
+dossier_artifacts_created=false
+shadow_task_execution_wrapper_read=true
+wrapper_required_mode_used=true
+route_id=SCRIPT_GENERATION
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
+selected_components_without_read_before_output=false
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+ROUTE_STATE_CAPSULE
+READ_LEDGER_SUMMARY
+ROUTE_SCOPE_FILE_AUDIT
+CONSUMPTION_LOCK
+QUALITY_LOCK
+GOVERNANCE_LOCK
+DIRECTOR_CONSUMPTION_LEDGER
+AGENT_CONSUMPTION_LEDGER
+SUBAGENT_CONSUMPTION_LEDGER
+SKILL_CONSUMPTION_LEDGER
+SUBSKILL_CONSUMPTION_LEDGER
+""",
+            1,
+        ),
+        (
+            "voice_context_valid_minimal",
+            """
+SHADOW_BOOT_CONFIRMATION
+AGENTS.md
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+layman_task_trigger_contract_read=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+NATIVE_AGENT_CAPABILITY_ASSESSMENT
+TASK_FRESHNESS_CLASSIFICATION
+RESEARCH_MODE_DECISION
+Research Sufficiency Gate
+TASK_TO_CAPABILITY_ROUTING
+registries/native_capability_routing_matrix.yaml
+task_intent_classified=true
+task_intent_routing_matrix_cited=true
+route_id=VOICE_CONTEXT
+registries/task_intent_routing_matrix.yaml
+director_skill_consumption_protocol_read=true
+script_quality_enforcement_contract_read=true
+gumloop_benchmark_output_standard_read=true
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+route_manifest_path=registries/route_manifests/voice_context.yaml
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_scope_complete=true
+mandatory_files_read_before_output=true
+script_generated_after_all_locks=true
+director_consumption_ledger_present=true
+agent_consumption_ledger_present=true
+subagent_consumption_ledger_present=true
+skill_consumption_ledger_present=true
+subskill_consumption_ledger_present=true
+line_by_line_influence_map_present=true
+topic_quality_gate_present=true
+hook_generation_gate_present=true
+script_quality_gate_present=true
+shallow_repo_routing_detected=false
+chat_only_mode_used=true
+files_created=false
+dossier_artifacts_created=false
+plain_post_bootstrap_task_failed=false
+shadow_task_execution_wrapper_read=true
+wrapper_required_mode_used=true
+codex_cloud_reliable_mode=WRAPPER_REQUIRED_COMPATIBLE
+layman_command_gateway_used=true
+shadow_command_alias_detected=true
+raw_user_task_preserved=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+internal_wrapper_applied=true
+gateway_contract_loaded_before_alias=true
+output_mode_contract_loaded=true
+output_mode=OPERATOR_MODE
+operator_mode_used=true
+operator_mode_compact_proof_present=true
+compact_or_proof_output_allowed_only_after_locks=true
+registry_paths_exist=true
+route_components_exist=true
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+selected_components_are_registered=true
+selected_components_without_read_before_output=false
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
+exact_rule_evidence_present=true
+exact_rule_lineage_map_present=true
+per_tool_source_map_present=true
+universal_component_contract_present=true
+script_segment_packet_present=true
+voice_context_packet_present=true
+visual_context_packet_present=true
+video_context_packet_present=true
+music_sfx_packet_present=true
+editing_timeline_packet_present=true
+provider_handoff_packet_present=true
+media_quality_gate_packet_present=true
+lineage_approval_packet_present=true
+segment_level_regeneration_actions_present=true
+task_route_lock_status=PASS
+route_dependency_expansion_lock_status=PASS
+consumption_lock_status=PASS
+source_research_lock_status=PASS
+rule_consumption_evidence_lock_status=PASS
+quality_lock_status=PASS
+governance_lock_status=PASS
+Shadow voice: create an elevenlabs packet
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+ROUTE_STATE_CAPSULE
+READ_LEDGER_SUMMARY
+ROUTE_SCOPE_FILE_AUDIT
+CONSUMPTION_LOCK
+SOURCE_RESEARCH_LOCK
+QUALITY_LOCK
+GOVERNANCE_LOCK
+DIRECTOR_CONSUMPTION_LEDGER
+AGENT_CONSUMPTION_LEDGER
+SUBAGENT_CONSUMPTION_LEDGER
+SKILL_CONSUMPTION_LEDGER
+SUBSKILL_CONSUMPTION_LEDGER
+Registry-First Route
+Director Selection
+AGENT_RUNTIME_SELECTION
+registries/agent_runtime_selection_index.yaml
+Subagent Selection
+Skill Selection
+Subskill Selection
+TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+CONTENT_MISSION_BRIEF
+RESEARCH_AND_SOURCE_STATUS
+TOPIC_QUALITY_GATE
+HOOK_GENERATION_GATE
+score_each=present
+hook_variant_1=One
+hook_variant_2=Two
+hook_variant_3=Three
+script_overall_score=90
+script_pass_threshold=80
+SCRIPT_QUALITY_GATE
+VALIDATION_SCORECARD
+RULE_CONSUMPTION_EVIDENCE_LEDGER
+EXACT_RULE_LINEAGE_MAP
+GATE_VISIBILITY_LOG
+PROOF_TRACE_BUNDLE
+LINE_BY_LINE_INFLUENCE_MAP
+SCRIPT_STRUCTURE
+Final script
+FINAL_SCRIPT
+TIMED_BEAT_MAP
+VOICE_GENERATION_CONTEXT
+IMAGE_GENERATION_CONTEXT
+VIDEO_GENERATION_CONTEXT
+MUSIC_AND_SFX_CONTEXT
+EDITING_CONTEXT
+PLATFORM_PACKAGING
+Provider Handoff Boundary
+PROVIDER_HANDOFF_BOUNDARY
+Quality Gate
+Lineage Summary
+Final Proof Classification
+Source Summary
+Compact Final Proof
+proof_classification=PASS
+directors/distribution/saraswati.md
+directors/production/tumburu.md
+directors/cinematic/varuna.md
+agents/saraswati/saraswati_agent.py
+agents/tumburu/tumburu_agent.py
+agents/varuna/varuna_agent.py
+subagents/cwf_430/cwf_430_sub_agent.py
+subagents/wf_400/wf_400_sub_agent.py
+skills/media_audio/M-231-voiceover-direction-script.skill.md
+skills/media_audio/M-238-compression-eq-specifications.skill.md
+skills/media_audio/M-240-audio-mixing-guide.skill.md
+skills/operations/M-162-voice-identity-cloner.skill.md
+skills/operations/M-163-speech-emotion-engine.skill.md
+skills/sub_skills/SS-101-elevenlabs-voice-generation-optimizer.subskill.md
+emotional_strength_score=90
+clarity_score=91
+retention_score=92
+spoken_cadence_score=89
+article_like_risk_score=8
+overall_score=90
+pass_threshold=80
+""",
+            0,
+        ),
+        (
+            "voice_context_alias_mismatch_rejected",
+            """
+SHADOW_BOOT_CONFIRMATION
+shadow_boot_confirmation_present=true
+first_visible_output_is_boot_confirmation=true
+agents_md_detected=true
+agents_md_read=true
+repo_first_orchestration_started=true
+generic_direct_answer_avoided=true
+shadow_mode=CHAT_ONLY_MODE
+task_intent_classified=true
+task_intent_routing_matrix_cited=true
+director_skill_consumption_protocol_read=true
+script_quality_enforcement_contract_read=true
+gumloop_benchmark_output_standard_read=true
+task_execution_state_machine_contract_read=true
+route_dependency_expansion_protocol_read=true
+route_manifest_path=registries/route_manifests/voice_context.yaml
+route_manifest_read=true
+route_dependency_expansion_lock_present=true
+route_scope_complete=true
+mandatory_files_read_before_output=true
+script_generated_after_all_locks=true
+chat_only_mode_used=true
+files_created=false
+dossier_artifacts_created=false
+shadow_task_execution_wrapper_read=true
+wrapper_required_mode_used=true
+layman_command_gateway_used=true
+shadow_command_alias_detected=true
+raw_user_task_preserved=true
+alias_matrix_entry_used=true
+route_id_resolved=true
+route_manifest_loaded=true
+internal_wrapper_applied=true
+gateway_contract_loaded_before_alias=true
+output_mode_contract_loaded=true
+output_mode=OPERATOR_MODE
+operator_mode_used=true
+operator_mode_compact_proof_present=true
+compact_or_proof_output_allowed_only_after_locks=true
+registry_paths_exist=true
+route_components_exist=true
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+selected_components_are_registered=true
+selected_components_without_read_before_output=false
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false
+route_id=EDITING_PACKAGING
+Shadow voice: create an elevenlabs packet
+TASK_ROUTE_LOCK
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+ROUTE_STATE_CAPSULE
+READ_LEDGER_SUMMARY
+ROUTE_SCOPE_FILE_AUDIT
+CONSUMPTION_LOCK
+QUALITY_LOCK
+GOVERNANCE_LOCK
+DIRECTOR_CONSUMPTION_LEDGER
+AGENT_CONSUMPTION_LEDGER
+SUBAGENT_CONSUMPTION_LEDGER
+SKILL_CONSUMPTION_LEDGER
+SUBSKILL_CONSUMPTION_LEDGER
+VOICE_GENERATION_CONTEXT
+Provider Handoff Boundary
+PROVIDER_HANDOFF_BOUNDARY
+SCRIPT_STRUCTURE
+Final script
+""",
+            1,
+        ),
+    ]
+    results: list[dict[str, object]] = []
+    passed = True
+    for name, fixture, expected_exit in cases:
+        path = Path("/tmp") / f"validate_mac06_1a_{name}.txt"
+        path.write_text(fixture, encoding="utf-8")
+        actual_exit = main_with_path(path)
+        case_passed = actual_exit == expected_exit
+        passed = passed and case_passed
+        results.append(
+            {
+                "name": name,
+                "expected_exit": expected_exit,
+                "actual_exit": actual_exit,
+                "passed": case_passed,
+            }
+        )
+    print(json.dumps({"self_test_passed": passed, "tests": results}, indent=2))
+    return 0 if passed else 1
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("output_file", nargs="?")
+    parser.add_argument("--self-test", action="store_true")
+    args = parser.parse_args()
+    if args.self_test:
+        return run_self_test()
+    if not args.output_file:
+        print("usage: validate_mac06_1a_output.py <output.txt>")
+        return 2
+    path = Path(args.output_file)
+    if not path.is_file():
+        print(f"VALIDATION_STATUS=FAIL\nreason=file_not_found\npath={path}")
+        return 1
+    return main_with_path(path)
 
 
 if __name__ == "__main__":

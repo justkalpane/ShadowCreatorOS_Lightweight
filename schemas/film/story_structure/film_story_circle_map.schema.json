@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/story_structure/film_story_circle_map.schema.json",
+  "title": "Film Story Circle Map",
+  "description": "Skeleton schema for story-circle mapping.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"want":{"type":"string","description":"Want"},"need":{"type":"string","description":"Need"},"loop_steps":{"type":"array","items":{"type":"string"},"description":"Story circle steps"},"return":{"type":"string","description":"Return"}},
+  "required": []
+}

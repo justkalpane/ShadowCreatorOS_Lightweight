@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-06-22T00:00:00Z",
+  "cuts": [
+    {
+      "approval_token_status": "DRAFT",
+      "base_image_status": "READY",
+      "carry_forward_required": false,
+      "contact_sheet_status": "BLOCKED",
+      "creative_intent_packet": "CIP-C04A-001",
+      "cut_id": "C04a",
+      "depth_map_status": "READY",
+      "ffmpeg_status": "BLOCKED",
+      "human_review_status": "PENDING",
+      "hyperframes_status": "READY",
+      "known": true,
+      "known_failure": false,
+      "pilot_candidate": true,
+      "script_line_ref": "M1-L42",
+      "source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/script/C04a.md",
+      "source_vs_render_status": "BLOCKED",
+      "unknowns": [],
+      "visual_intent": "pilot candidate for blocked-safe validation",
+      "visual_qa_status": "BLOCKED"
+    },
+    {
+      "approval_token_status": "DRAFT",
+      "base_image_status": "UNKNOWN",
+      "carry_forward_required": true,
+      "contact_sheet_status": "UNKNOWN",
+      "creative_intent_packet": "CIP-C18-001",
+      "cut_id": "C18",
+      "depth_map_status": "UNKNOWN",
+      "ffmpeg_status": "UNKNOWN",
+      "human_review_status": "PENDING",
+      "hyperframes_status": "UNKNOWN",
+      "known": true,
+      "known_failure": true,
+      "pilot_candidate": false,
+      "script_line_ref": "M1-L183",
+      "source_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/script/C18.md",
+      "source_vs_render_status": "UNKNOWN",
+      "unknowns": [
+        "COMFYUI timeout carried forward"
+      ],
+      "visual_intent": "carry-forward of local image generation failure",
+      "visual_qa_status": "UNKNOWN"
+    }
+  ],
+  "job_id": "JOB-C04A-PILOT-001",
+  "ledger_id": "LEDGER-C04A-001",
+  "mission_id": "Mission_Yash_Self_Investment",
+  "schema_version": "1.0.0"
+}

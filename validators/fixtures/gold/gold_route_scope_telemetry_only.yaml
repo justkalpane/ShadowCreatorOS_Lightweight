@@ -1,0 +1,22 @@
+route_id: SCRIPT_GENERATION
+route_scope_file_audit_required: true
+route_scope_file_counts_are_telemetry_only: true
+route_scope_file_count_telemetry_reference: 68
+route_scope_file_count_telemetry_by_layer:
+  startup_docs_reference: 5
+  runtime_contracts_reference: 17
+  registries_reference: 7
+  directors_reference: 6
+  agents_reference: 6
+  subagents_reference: 5
+  skills_reference: 10
+  subskills_reference: 8
+route_scope_pass_authority:
+  selected_route_manifest_read: true
+  selected_route_slice_read: true
+  mandatory_route_slice_paths_consumed: true
+  semantic_influence_map_present: true
+  dependencies_complete: true
+  output_phase_started: true
+  final_deliverable_generated: true
+  file_counts_can_block_only_when_listed_paths_missing_or_unreadable: true

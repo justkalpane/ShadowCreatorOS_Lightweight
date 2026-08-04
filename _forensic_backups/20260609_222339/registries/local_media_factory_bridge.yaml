@@ -1,0 +1,245 @@
+version: 1
+registry_id: local_media_factory_bridge
+updated_at: "2026-06-06"
+owner: shadow_commander
+purpose: >
+  Permanent local bridge registry between ShadowCreatorOS_Lightweight and the
+  deployed ShadowMediaFactory engine on the current Mac. Agents must use this
+  registry before handing off visual drafts, storyboard packets, prompt packets,
+  or render instructions to the local Media Factory.
+
+path_authority:
+  note: "Absolute paths are local Mac references, not portable repo law."
+  shadow_creator_os_root: /Users/apple/Documents/ShadowCreatorOS_Lightweight
+  local_media_factory_root: /Users/apple/ShadowMediaFactory
+  local_mac_reference_only: true
+
+runtime_paths:
+  media_factory_root: /Users/apple/ShadowMediaFactory
+  control_panel_root: /Users/apple/ShadowMediaFactory/control_panel
+  control_panel_cli: /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+  capability_map: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+  proofs_dir: /Users/apple/ShadowMediaFactory/control_panel/proofs
+  registry_dir: /Users/apple/ShadowMediaFactory/control_panel/registry
+  jobs_dir: /Users/apple/ShadowMediaFactory/control_panel/jobs
+  logs_dir: /Users/apple/ShadowMediaFactory/control_panel/logs
+  exports_dir: /Users/apple/ShadowMediaFactory/08_EXPORTS
+  review_exports_dir: /Users/apple/ShadowMediaFactory/08_EXPORTS/review
+  repo_outputs_dir: /Users/apple/ShadowMediaFactory/01_REPO_OUTPUTS
+  inbox_dir: /Users/apple/ShadowMediaFactory/00_INBOX
+  comfyui_root: /Users/apple/ShadowMediaFactory/apps/ComfyUI
+  comfyui_input_dir: /Users/apple/ShadowMediaFactory/apps/ComfyUI/input
+  comfyui_output_dir: /Users/apple/ShadowMediaFactory/apps/ComfyUI/output
+  comfyui_api_url: http://127.0.0.1:8188
+  default_storyboard_input_dir: /Users/apple/Downloads/b_roll_storyboard
+
+handoff_contract:
+  shadow_creator_os_role:
+    - "Acts as the brain: research, script, scene plan, visual draft, prompt packet, and route decision."
+    - "Writes media-aware packets only after the MEDIA_FACTORY_HANDOFF route is selected."
+    - "Does not claim generated media unless the Media Factory returns proof artifacts."
+  shadow_media_factory_role:
+    - "Acts as the local media worker: preflight, local generation, assembly, proofs, registry, export."
+    - "Executes only after explicit local-engine approval when execution is requested."
+    - "Returns proof JSON and artifact paths back to the ShadowCreatorOS agent."
+  job_packet_dir_template: /Users/apple/ShadowMediaFactory/control_panel/jobs/<job_id>/01_timeline
+  expected_shadow_os_outputs:
+    - prompt_packet.json
+    - shotlist.json
+    - scene_contract.json
+    - video_pacing_metadata.json
+    - video_pacing_metadata_notepad.txt
+  media_factory_reads_from:
+    - /Users/apple/ShadowMediaFactory/control_panel/jobs/<job_id>/01_timeline
+    - /Users/apple/Downloads/b_roll_storyboard
+    - /Users/apple/ShadowMediaFactory/00_INBOX
+  media_factory_writes_to:
+    - /Users/apple/ShadowMediaFactory/control_panel/proofs
+    - /Users/apple/ShadowMediaFactory/control_panel/registry
+    - /Users/apple/ShadowMediaFactory/08_EXPORTS
+
+control_panel_commands:
+  status: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py status"
+  doctor: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py doctor"
+  preflight_storyboard: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py preflight-storyboard --metadata <metadata_json>"
+  local_broll_proof: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-local-broll-proof --profile youtube_16_9"
+  run_animdiff: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-animdiff <args>"
+  run_wan: "python3 /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py run-wan <args>"
+
+bridge_sync_commands:
+  audit: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check"
+  apply: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply"
+  rule: "Run audit after Media Factory changes. Run apply only after user-approved repo sync."
+
+capability_truth:
+  source_of_truth: /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+  last_known_truth:
+    local_animatic_lane:
+      engine: "SD1.5 + Canny ControlNet + AnimateDiff"
+      readiness_status: LOCAL_ENGINE_READY
+      output_classification: animated_storyboard
+      production_cinematic_ready: false
+      supports_canny: true
+      supports_openpose: false
+      supports_depth: false
+      supports_lineart: false
+      supports_ipadapter: false
+      supports_true_camera_motion: false
+    wan_lane:
+      engine: "Wan2.2 TI2V 5B"
+      readiness_status: LOCAL_ENGINE_READY
+      technical_pass: true
+      production_quality_pass: false
+      production_role: experimental
+    assembly_lane:
+      engine: FFmpeg
+      readiness_status: LOCAL_ENGINE_READY
+      supports_audio_mix: true
+      supports_per_scene_sfx: false
+      production_role: assembly_export
+    davinci_lane:
+      engine: DaVinci Resolve
+      readiness_status: LOCAL_ENGINE_READY
+      production_role: manual_finishing_qc
+      automated_project_handoff_proven: false
+    hyperframes_lane:
+      engine: "HyperFrames Node.js CLI"
+      readiness_status: LOCAL_ENGINE_READY
+      production_role: html_css_deterministic_render
+      supports_alpha_webm: true
+      owning_subskills:
+        - SS-116
+        - SS-118
+      supported_visual_methods:
+        - NOTEBOOKLM_VISUAL_METHOD
+        - PROGRAMMATIC_SLIDE_VISUAL_METHOD
+        - HTML_CSS_GSAP_VISUAL_METHOD
+        - A_ROLL_OVERLAY_METHOD
+      boundary: "HyperFrames renders deterministic HTML/CSS/GSAP slides and alpha overlays; it does not replace DaVinci Resolve for 2.5D parallax or final assembly."
+    depth_anything_v2_lane:
+      engine: "Depth Anything V2"
+      readiness_status: LOCAL_ENGINE_READY
+      default_encoder: "vits"
+      default_model: "Depth-Anything-V2-Small"
+      default_license: "Apache-2.0"
+      supports_batch_images: true
+      supports_single_image: true
+      output_classification: depth_map_png
+      davinci_dependency: true
+      production_role: depth_map_generation
+      owning_subskills:
+        - SS-117
+      supported_visual_methods:
+        - IMAGE_MOTION_GRAPHICS_BROLL_METHOD
+      boundary: "Depth Anything V2 is a local depth-mask generator only; DaVinci Resolve Fusion performs the 2.5D parallax composite."
+
+honesty_gate_policy:
+  preflight_required_before_render: true
+  block_production_pass_on_route_downgrade: true
+  block_production_pass_on_missing_audio_when_requested: true
+  block_production_pass_on_visual_quality_failure: true
+  classify_sd15_canny_animatediff_as: animated_storyboard
+  classify_wan_until_visual_recovery_as: experimental
+  safe_to_batch_automate_cinematic_broll: false
+
+drift_sync_policy:
+  audit_required_after_media_factory_change: true
+  auto_apply_without_user_approval: false
+  apply_mode_updates_bridge_sync_state_only: true
+  source_paths_checked:
+    - /Users/apple/ShadowMediaFactory/control_panel/config/capability_map.json
+    - /Users/apple/ShadowMediaFactory/control_panel/bin/shadow_factory_ctl.py
+    - /Users/apple/ShadowMediaFactory/control_panel/proofs
+    - /Users/apple/ShadowMediaFactory/control_panel/registry
+  repo_sync_command: "python3 tools/shadow_runtime/media_factory_bridge_sync.py --runtime-check --apply"
+
+provider_boundary:
+  n8n_used: false
+  providers_called_by_default: false
+  approved_paid_exceptions:
+    - HeyGen
+    - ElevenLabs
+  new_paid_providers_require_approval: true
+  local_engine_execution_requires_approval: true
+  media_creation_claim_requires_proof: true
+
+agent_operating_protocol:
+  - "Load AGENTS.md and the MEDIA_FACTORY_HANDOFF route before Media Factory tasks."
+  - "Load this bridge registry and runtime_contracts/LOCAL_MEDIA_FACTORY_BRIDGE_CONTRACT.md."
+  - "Generate scene and prompt packets in ShadowCreatorOS_Lightweight."
+  - "Place or reference handoff packets using the job_packet_dir_template."
+  - "Run status/doctor/preflight before render execution when execution is approved."
+  - "If preflight downgrades a request, report animated_storyboard or experimental honestly."
+  - "Read Media Factory proof JSON and registry JSONL before claiming artifacts."
+  - "Run the bridge sync audit after Media Factory runtime changes and apply sync state only with user-approved repo-write."
+  - "Do not modify the Shadow repo from Media Factory execution unless the user explicitly approves repo-write."
+
+# BEGIN AUTO-GENERATED MEDIA FACTORY SYNC STATE
+sync_state:
+  last_sync_at: "2026-06-06T17:38:29+00:00"
+  bridge_in_sync: true
+  media_factory_changed: false
+  repo_bridge_update_required: false
+  control_panel_cli_sha256: "f9a086117804500345fc156a72a9826e013b72a4e0c6586d7981568d89d72e01"
+  capability_map_sha256: "c7556caeca92af5cdf66b8e3ed043d183290aa489a04955985797471f361284d"
+  latest_proof_sha256: "003318e67e251edc40319064605ab94963f4e3d688fa0dc6cd8052201e27a6fd"
+  latest_proof_path: "/Users/apple/ShadowMediaFactory/control_panel/proofs/depth_anything_v2_20260606_230348_proof.json"
+  path_status:
+    capability_map_exists: true
+    comfyui_root_exists: true
+    control_panel_cli_exists: true
+    control_panel_exists: true
+    depth_anything_root_exists: true
+    depth_anything_small_checkpoint_exists: true
+    depth_anything_venv_python_exists: true
+    exports_dir_exists: true
+    jobs_dir_exists: true
+    media_factory_root_exists: true
+    proofs_dir_exists: true
+    registry_dir_exists: true
+  lane_truth:
+    local_animatic_engine: "SD1.5 + Canny ControlNet + AnimateDiff"
+    local_animatic_role: "animatic_preview"
+    local_animatic_supports_canny: true
+    local_animatic_supports_openpose: false
+    local_animatic_supports_depth: false
+    local_animatic_supports_lineart: false
+    local_animatic_supports_ipadapter: false
+    local_animatic_supports_true_camera_motion: false
+    wan_engine: "Wan2.2 TI2V 5B"
+    wan_technical_pass: true
+    wan_production_quality_pass: false
+    assembly_engine: "FFmpeg"
+    assembly_supports_audio_mix: true
+    assembly_supports_per_scene_sfx: false
+    depth_anything_engine: "Depth Anything V2"
+    depth_anything_default_encoder: "vits"
+    depth_anything_default_model: "Depth-Anything-V2-Small"
+    depth_anything_default_license: "Apache-2.0"
+    depth_anything_supports_batch_images: true
+    depth_anything_output_classification: "depth_map_png"
+    depth_anything_davinci_dependency: true
+  registry_files:
+    assets.jsonl:
+      exists: true
+      line_count: 130
+      valid_jsonl: true
+      hash: "2e3ee3dca0f9a24b89d94ff244e364bbb95c2f35517efda4fedae9260afece2a"
+    scene_contracts.jsonl:
+      exists: true
+      line_count: 10
+      valid_jsonl: true
+      hash: "c5d3072e1c53e1c79c439682f4fd4d5f4e735128b181cdbd386f216aeb16da94"
+    route_decisions.jsonl:
+      exists: true
+      line_count: 16
+      valid_jsonl: true
+      hash: "b20da07da1452294e5da1893075b0e9e06c6d6b7db43a25bf9745dda2190e969"
+    retry_state.jsonl:
+      exists: true
+      line_count: 11
+      valid_jsonl: true
+      hash: "5405f3970b0ad13853cd38ccc51d68b022d6548e8f0aff47d5c5c5c3856c935f"
+  issues:
+    []
+# END AUTO-GENERATED MEDIA FACTORY SYNC STATE

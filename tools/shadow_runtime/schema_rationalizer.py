@@ -10,6 +10,7 @@ CANONICAL_ACTIVE = [
     "source_evidence_packet",
     "research_brief_packet",
     "script_strategy_packet",
+    "rehook_plan_packet",
     "script_v1_packet",
     "debate_critique_packet",
     "refinement_delta_packet",

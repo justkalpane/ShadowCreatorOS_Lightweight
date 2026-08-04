@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/visual_media_plan_row.schema.json",
+  "title": "Shadow Visual Media Plan Row",
+  "description": "Scene-level planning row for Media Factory workflows with 15-DNA visual lineage and anti-slideshow safeguards.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scene_id",
+    "timecode",
+    "script_line",
+    "scene_intent",
+    "visual_role",
+    "method",
+    "cost_level",
+    "provider_lane",
+    "proof_requirement",
+    "reasoning",
+    "visual_dna_fields_present",
+    "visual_dna_fields",
+    "camera_motion_type",
+    "depth_requirement",
+    "lineart_requirement",
+    "ipadapter_requirement",
+    "openpose_requirement",
+    "child_shot_max_seconds",
+    "child_microshot_grid",
+    "true_camera_motion_required",
+    "beat_timing_dynamic",
+    "generic_slideshow_prevented",
+    "provider_execution_claimed",
+    "local_engine_output_claimed",
+    "storyboard_not_cinematic_broll"
+  ],
+  "properties": {
+    "scene_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timecode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "duration_seconds"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "minLength": 1
+        },
+        "end": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "script_line": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scene_intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "A_ROLL_AVATAR",
+        "A_ROLL_OVERLAY_METHOD",
+        "NOTEBOOKLM_VISUAL_METHOD",
+        "PROGRAMMATIC_SLIDE_VISUAL_METHOD",
+        "HTML_CSS_GSAP_VISUAL_METHOD",
+        "HYPERFRAME_VISUAL_METHOD",
+        "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+        "CINEMATIC_BROLL_VIDEO"
+      ]
+    },
+    "cost_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "premium"
+      ]
+    },
+    "provider_lane": {
+      "type": "string",
+      "enum": [
+        "planning_only",
+        "local",
+        "provider",
+        "hybrid"
+      ]
+    },
+    "proof_requirement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reasoning": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_dna_fields_present": {
+      "type": "boolean",
+      "const": true
+    },
+    "visual_dna_fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject",
+        "environment",
+        "camera_framing",
+        "lens_focal_logic",
+        "lighting_setup",
+        "emotional_tone",
+        "color_palette",
+        "cinematic_delivery_standard",
+        "style_lock",
+        "movement_intent",
+        "negative_prompt",
+        "drift_prevention",
+        "continuity_constraints",
+        "brand_persona_consistency",
+        "safety_real_person_handling",
+        "tool_targets",
+        "tool_specific_translation_readiness"
+      ],
+      "properties": {
+        "subject": {"type": "string", "minLength": 1},
+        "environment": {"type": "string", "minLength": 1},
+        "camera_framing": {"type": "string", "minLength": 1},
+        "lens_focal_logic": {"type": "string", "minLength": 1},
+        "lighting_setup": {"type": "string", "minLength": 1},
+        "emotional_tone": {"type": "string", "minLength": 1},
+        "color_palette": {"type": "string", "minLength": 1},
+        "cinematic_delivery_standard": {"type": "string", "const": "Rec.709"},
+        "style_lock": {"type": "string", "minLength": 1},
+        "movement_intent": {"type": "string", "minLength": 1},
+        "negative_prompt": {"type": "string", "minLength": 1},
+        "drift_prevention": {"type": "string", "minLength": 1},
+        "continuity_constraints": {"type": "string", "minLength": 1},
+        "brand_persona_consistency": {"type": "string", "minLength": 1},
+        "safety_real_person_handling": {"type": "string", "minLength": 1},
+        "tool_targets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "tool_specific_translation_readiness": {"type": "string", "minLength": 1}
+      }
+    },
+    "camera_motion_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "depth_requirement": {
+      "type": "string",
+      "enum": [
+        "none",
+        "support_only_depth_map",
+        "true_parallax_required"
+      ]
+    },
+    "lineart_requirement": {
+      "type": "string",
+      "enum": [
+        "none",
+        "required",
+        "optional"
+      ]
+    },
+    "ipadapter_requirement": {
+      "type": "string",
+      "enum": [
+        "none",
+        "required",
+        "optional"
+      ]
+    },
+    "openpose_requirement": {
+      "type": "string",
+      "enum": [
+        "none",
+        "required",
+        "optional"
+      ]
+    },
+    "child_shot_max_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 4
+    },
+    "child_microshot_grid": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "child_shot_id",
+          "child_shot_duration_seconds",
+          "child_shot_method",
+          "reason",
+          "status"
+        ],
+        "properties": {
+          "child_shot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "child_shot_duration_seconds": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 4
+          },
+          "child_shot_method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "NEEDS_CONFIRMATION",
+              "NEEDS_USER_APPROVAL"
+            ]
+          }
+        }
+      }
+    },
+    "true_camera_motion_required": {
+      "type": "boolean"
+    },
+    "beat_timing_dynamic": {
+      "type": "boolean",
+      "const": true
+    },
+    "generic_slideshow_prevented": {
+      "type": "boolean",
+      "const": true
+    },
+    "provider_execution_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_engine_output_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "storyboard_not_cinematic_broll": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "method": {
+            "const": "CINEMATIC_BROLL_VIDEO"
+          }
+        },
+        "required": [
+          "method"
+        ]
+      },
+      "then": {
+        "properties": {
+          "storyboard_not_cinematic_broll": {
+            "const": false
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "storyboard_not_cinematic_broll": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

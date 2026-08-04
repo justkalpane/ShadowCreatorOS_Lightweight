@@ -1,0 +1,21 @@
+{
+  "packet_id": "storyboard_export_packet",
+  "route_id": "MEDIA_FACTORY_HANDOFF",
+  "producer_component_id": "maya_agent",
+  "consumer_component_ids": [
+    "media_factory_handoff",
+    "user_review"
+  ],
+  "lineage": {
+    "source": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md"
+  },
+  "validation_status": "PASS",
+  "mission_id": "yash_self_investment",
+  "scene_count": 24,
+  "total_duration_seconds": 305,
+  "storyboard_path": "outputs/missions/yash_self_investment/MISSION_OUTPUT.md",
+  "pacing_metadata_path": "outputs/missions/yash_self_investment/packets/scene_sync_matrix.json",
+  "scene_sync_matrix_path": "outputs/missions/yash_self_investment/packets/scene_sync_matrix.json",
+  "provider_execution_allowed": false,
+  "approval_required": true
+}

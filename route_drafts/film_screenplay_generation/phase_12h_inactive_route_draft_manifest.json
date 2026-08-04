@@ -1,0 +1,28 @@
+{
+  "phase": "12H",
+  "status": "inactive_draft_only",
+  "runtime_behavior_changed": false,
+  "route_selector_modified": false,
+  "active_route_manifest_modified": false,
+  "active_route_slice_modified": false,
+  "future_film_route_registered": false,
+  "future_film_route_bound": false,
+  "schemas_modified": false,
+  "validators_modified": false,
+  "contracts_modified": false,
+  "fixtures_modified": false,
+  "governed_runtime_proof_claimed": false,
+  "pass_claimed": false,
+  "draft_files": [
+    {
+      "path": "route_drafts/film_screenplay_generation/film_screenplay_generation.manifest.draft.yaml",
+      "kind": "manifest_draft",
+      "active": false
+    },
+    {
+      "path": "route_drafts/film_screenplay_generation/film_screenplay_generation.registry_slice.draft.yaml",
+      "kind": "registry_slice_draft",
+      "active": false
+    }
+  ]
+}

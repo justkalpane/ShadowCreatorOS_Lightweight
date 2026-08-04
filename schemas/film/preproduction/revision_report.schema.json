@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Revision Report",
+  "type": "object",
+  "required": ["revision_report"],
+  "properties": {
+    "revision_report": {
+      "type": "object",
+      "required": ["status", "changes_made", "open_questions", "blocked_items", "next_pass_recommendations"],
+      "properties": {
+        "status": {"type": "string"},
+        "changes_made": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "open_questions": {"type": "array", "items": {"type": "string"}},
+        "blocked_items": {"type": "array", "items": {"type": "string"}},
+        "next_pass_recommendations": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    }
+  }
+}

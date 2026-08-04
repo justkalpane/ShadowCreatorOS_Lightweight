@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shadowcreator.local/schemas/media_factory/hyperframes_payload.schema.json",
+  "title": "Shadow HyperFrames Payload",
+  "description": "Overlay/compositing payload with explicit visual-safety and proof-frame rules.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "overlay_path",
+    "overlay_category",
+    "overlay_purpose",
+    "scene_relevance",
+    "blend_mode",
+    "alpha_mode",
+    "opacity",
+    "z_index",
+    "timing",
+    "safe_zone_coordinates",
+    "subject_occlusion_limit",
+    "visual_noise_limit",
+    "scene_intent",
+    "proof_frame_reference",
+    "contact_sheet_frame_required",
+    "random_overlay_prevented"
+  ],
+  "properties": {
+    "overlay_path": {"type": "string", "pattern": "^/"},
+    "overlay_category": {
+      "type": "string",
+      "enum": [
+        "kinetic_text",
+        "data_card",
+        "notebooklm_panel",
+        "evidence_wall",
+        "alpha_overlay",
+        "accent"
+      ]
+    },
+    "overlay_purpose": {"type": "string", "minLength": 1},
+    "scene_relevance": {"type": "string", "minLength": 1},
+    "blend_mode": {
+      "type": "string",
+      "enum": [
+        "screen",
+        "add",
+        "normal"
+      ]
+    },
+    "alpha_mode": {
+      "type": "string",
+      "enum": [
+        "premultiplied",
+        "straight"
+      ]
+    },
+    "opacity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.72
+    },
+    "z_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "timing": {"type": "object"},
+    "safe_zone_coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "width": {"type": "number", "exclusiveMinimum": 0},
+        "height": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "subject_occlusion_limit": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.25
+    },
+    "visual_noise_limit": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.4
+    },
+    "scene_intent": {"type": "string", "minLength": 1},
+    "proof_frame_reference": {"type": "string", "pattern": "^/"},
+    "contact_sheet_frame_required": {"type": "boolean", "const": true},
+    "random_overlay_prevented": {"type": "boolean", "const": true}
+  }
+}

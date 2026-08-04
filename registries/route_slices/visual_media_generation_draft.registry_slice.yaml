@@ -1,0 +1,55 @@
+slice_id: visual_media_generation_draft
+route_id: MEDIA_FACTORY_HANDOFF
+task_mode: script_plus_visual_generation_draft
+source_manifest: registries/route_manifests/media_factory_handoff.yaml
+inherits_from: registries/route_slices/visual_media_plan.registry_slice.yaml
+additional_contracts:
+  - runtime_contracts/VISUAL_MEDIA_GENERATOR_DRAFT_CONTRACT.md
+  - runtime_contracts/MISSION_MEDIA_OUTPUT_FOLDER_CONTRACT.md
+  - runtime_contracts/HYPERFRAMES_CONNECTOR_INTEGRATION_CONTRACT.md
+additional_output_contracts:
+  - MISSION_MEDIA_OUTPUT_BUNDLE
+  - VOICE_BATCH_PLAN
+  - A_ROLL_BATCH_PLAN
+  - MUSIC_SFX_BATCH_PLAN
+  - IMAGE_BATCH_PLAN
+  - CINEMATIC_BROLL_BATCH_PLAN
+  - MOTION_GRAPHICS_BATCH_PLAN
+  - ASSEMBLY_SYNC_PLAN
+  - SCENE_EXECUTION_BLOCKS
+  - TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+validators:
+  - validators/validate_evidence_bundle.py
+  - validators/validate_route_state_capsule.py
+  - validators/validate_visual_media_plan_row.py
+  - validators/validate_final_visual_media_generation_draft.py
+  - validators/validate_bridge_job_packet.py
+runtime_state_schemas:
+  - schemas/runtime_state/evidence_bundle.schema.json
+  - schemas/runtime_state/route_state_capsule.schema.json
+packet_schemas:
+  - schemas/media_factory/visual_media_plan_row.schema.json
+  - schemas/media_factory/final_visual_media_generation_draft.schema.json
+  - schemas/media_factory/bridge_job_packet.schema.json
+runtime_packet_requirements:
+  evidence_bundle_required_for_pass_claims: true
+  route_state_capsule_required: true
+  bridge_job_packet_required_for_local_handoff: true
+  patch_transaction_required_for_repo_write_claims: false
+  blocked_execution_unlocks:
+    - local_engine_execution_claim
+    - full_render_unlock
+    - audio_unlock
+    - provider_unlock
+    - davinci_unlock
+blocked_files:
+  - downloads/chat_transcript.txt
+historical_file_policy: disallow_chat_transcripts_unless_drift_audit
+laws:
+  FULL_REPO_IS_AUTHORITY: true
+  SELECTED_ROUTE_MANIFEST_DEFINES_ACTIVE_SCOPE: true
+  UNRELATED_REPO_AREAS_DORMANT_BY_DEFAULT: true
+  FULL_REGISTRY_SCAN_ALLOWED_ONLY_IN_AUDIT_OR_REBUILD_MODE: true
+  ROUTE_STATE_CAPSULE_REQUIRED_FOR_PASS_CLAIMS: true
+  EVIDENCE_BUNDLE_REQUIRED_FOR_PASS_CLAIMS: true
+  BRIDGE_JOB_PACKET_REQUIRED_FOR_LOCAL_HANDOFF: true

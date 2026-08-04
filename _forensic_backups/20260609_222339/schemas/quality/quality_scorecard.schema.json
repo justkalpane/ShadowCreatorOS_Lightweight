@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "required": [
+    "script_score",
+    "hook_score",
+    "retention_score",
+    "emotional_score",
+    "voice_score",
+    "visual_score",
+    "video_score",
+    "audio_score",
+    "editing_score",
+    "platform_score",
+    "provider_handoff_score",
+    "lineage_score",
+    "approval_readiness_score",
+    "final_pass_fail"
+  ],
+  "properties": {
+    "script_score": {
+      "type": "number"
+    },
+    "hook_score": {
+      "type": "number"
+    },
+    "retention_score": {
+      "type": "number"
+    },
+    "emotional_score": {
+      "type": "number"
+    },
+    "voice_score": {
+      "type": "number"
+    },
+    "visual_score": {
+      "type": "number"
+    },
+    "video_score": {
+      "type": "number"
+    },
+    "audio_score": {
+      "type": "number"
+    },
+    "editing_score": {
+      "type": "number"
+    },
+    "platform_score": {
+      "type": "number"
+    },
+    "provider_handoff_score": {
+      "type": "number"
+    },
+    "lineage_score": {
+      "type": "number"
+    },
+    "approval_readiness_score": {
+      "type": "number"
+    },
+    "final_pass_fail": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Snapshot source_3
+url=https://example.com/interview
+note=interview snapshot for the script-generation proof bundle

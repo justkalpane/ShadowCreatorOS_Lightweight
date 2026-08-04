@@ -1,0 +1,13 @@
+fixture_id=FX-GOLD-004
+fixture_type=gold
+stage=visual_media_generation_draft
+expected_validator=validate_broll_ratio.py
+expected_result=PASS
+
+BROLL_RATIO_BREAKDOWN
+total_runtime_seconds=305
+cinematic_broll_seconds=40
+required_cinematic_broll_seconds=37
+broll_ratio_percent=13.1
+minimum_required_percent=12.0
+status=PASS

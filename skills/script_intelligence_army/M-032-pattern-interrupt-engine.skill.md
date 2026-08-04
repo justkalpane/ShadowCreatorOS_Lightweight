@@ -187,3 +187,9 @@ human_approval_points_resolved: [approve, revise_segment, regenerate_media, reje
 status_limits_resolved: [no silent approval, no execution without explicit approval]
 evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/script_intelligence_army/M-032-pattern-interrupt-engine.skill.md; component_id=M-032_Pattern_Interrupt_Engine
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Convert each recurring re-hook into a deliberate visual, edit, caption, or
+  sound pattern interrupt.
+- Bind every interrupt to its dynamic beat-map scene and topic connection.

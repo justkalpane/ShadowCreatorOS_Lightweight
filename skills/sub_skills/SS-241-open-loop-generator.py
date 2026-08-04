@@ -50,8 +50,16 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "input_payload": input_payload.get("input_payload", {}),
             "optimization_hints": input_payload.get("optimization_hints", []),
             "constraints": input_payload.get("constraints", {}),
+            "recurring_open_loop_required": True,
+            "default_rehook_interval_seconds": "25-30",
+            "payoff_mapping_required": True,
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# SS-241 must create and close topic-bound open loops at recurring retention
+# reset points instead of leaving generic curiosity claims unresolved.
 
 # MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 # Append-only MAC-06.2B contract metadata.

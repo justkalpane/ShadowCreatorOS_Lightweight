@@ -1,0 +1,37 @@
+{
+  "fixture_id": "FX-BAD-009",
+  "fixture_type": "bad",
+  "stage": "route_read_ledger",
+  "expected_validator": "validate_duplicate_read_guard.py",
+  "expected_result": "FAIL",
+  "route_id": "SCRIPT_GENERATION",
+  "route_manifest_path": "registries/route_manifests/script_generation.yaml",
+  "route_manifest_hash": "sha256:script-manifest-demo",
+  "dependencies_complete": true,
+  "output_phase_started": false,
+  "read_ledger": [
+    {
+      "file_path": "AGENTS.md",
+      "file_hash": "sha256:boot-demo",
+      "first_read_phase": "boot",
+      "last_read_phase": "post_route_lock",
+      "read_count": 4,
+      "reread_reason": "",
+      "route_required": true,
+      "semantic_use_required": true,
+      "semantic_use_status": "USED"
+    },
+    {
+      "file_path": "registries/route_manifests/script_generation.yaml",
+      "file_hash": "sha256:script-manifest-demo",
+      "first_read_phase": "route_lock",
+      "last_read_phase": "after_dependencies_complete",
+      "read_count": 3,
+      "reread_reason": "",
+      "route_required": true,
+      "semantic_use_required": true,
+      "semantic_use_status": "USED"
+    }
+  ],
+  "failure_reason": "Unchanged files are reread repeatedly after dependency completion without an allowed reread_reason."
+}

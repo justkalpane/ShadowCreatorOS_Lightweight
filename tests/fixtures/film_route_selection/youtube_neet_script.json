@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-004",
+  "fixture_family": "route_selection",
+  "input_prompt": "Write a YouTube video script about the NEET paper issue.",
+  "expected_route": "SCRIPT_GENERATION",
+  "expected_mode": "content",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_content_route_selection.py",
+  "purpose": "Preserve content route",
+  "risk_if_missing": "YouTube requests get misrouted to film core",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

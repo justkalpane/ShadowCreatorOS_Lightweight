@@ -1,0 +1,51 @@
+{
+  "scene_id": "C04a",
+  "timecode": {
+    "start": "00:00:00",
+    "end": "00:00:06",
+    "duration_seconds": 6
+  },
+  "script_line": "The opening line.",
+  "scene_intent": "Hook the viewer with a grounded cinematic opener.",
+  "visual_role": "proof",
+  "method": "IMAGE_MOTION_GRAPHICS_BROLL_METHOD",
+  "cost_level": "low",
+  "provider_lane": "planning_only",
+  "proof_requirement": "contact_sheet + source_vs_render",
+  "reasoning": "Needs a controlled still-image parallax proof, not a random slideshow.",
+  "visual_dna_fields_present": true,
+  "visual_dna_fields": {
+    "subject": "journal and desk",
+    "environment": "dim study",
+    "camera_framing": "medium close-up",
+    "lens_focal_logic": "50mm equivalent",
+    "lighting_setup": "soft directional lamp",
+    "emotional_tone": "reflective",
+    "color_palette": "cool tungsten contrast",
+    "cinematic_delivery_standard": "Rec.709",
+    "style_lock": "subtle documentary realism",
+    "movement_intent": "slow inward push",
+    "negative_prompt": "cheap slideshow, oversaturated blur",
+    "drift_prevention": "keep table geometry stable",
+    "continuity_constraints": "same journal prop across cut",
+    "brand_persona_consistency": "quiet, credible, self-investment tone",
+    "safety_real_person_handling": "use inspired_objects_only",
+    "tool_targets": [
+      "ffmpeg_local",
+      "depth_anything_v2",
+      "davinci_manual"
+    ],
+    "tool_specific_translation_readiness": "ready"
+  },
+  "camera_motion_type": "slow_push_in",
+  "depth_requirement": "support_only_depth_map",
+  "lineart_requirement": "none",
+  "ipadapter_requirement": "none",
+  "openpose_requirement": "none",
+  "true_camera_motion_required": false,
+  "beat_timing_dynamic": true,
+  "generic_slideshow_prevented": true,
+  "provider_execution_claimed": false,
+  "local_engine_output_claimed": false,
+  "storyboard_not_cinematic_broll": true
+}

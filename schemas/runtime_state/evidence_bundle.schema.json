@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Evidence Bundle",
+  "description": "Row-level evidence bundle for claims, artifact hashes, validator outputs, and runtime-proof linkage. Hash-only and file-exists-only PASS claims are forbidden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_bundle_id",
+    "job_id",
+    "cut_id",
+    "claims",
+    "source_files",
+    "repo_files",
+    "mission_files",
+    "command_outputs",
+    "artifact_refs",
+    "artifact_hashes",
+    "validator_outputs",
+    "test_outputs",
+    "ffmpeg_logs",
+    "source_vs_render_refs",
+    "contact_sheet_refs",
+    "human_review_refs",
+    "approval_token_refs",
+    "route_state_capsule_id",
+    "audit_event_ids",
+    "status",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "claim_text",
+          "source_tier",
+          "what_it_proves",
+          "what_it_does_not_prove",
+          "forbidden_overclaim"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_tier": {
+            "type": "string",
+            "enum": [
+              "TIER_0_LIVE_REPO_OR_RUNTIME_PROOF",
+              "TIER_1_BATCH_PROOF_PACKET",
+              "TIER_2_RAW_TRANSCRIPT_OR_CHAT_LOG",
+              "TIER_3_CHATGPT_HARDENING_DOCUMENT",
+              "TIER_4_GENERATED_READINESS_VERDICT",
+              "TIER_5_HASH_SIZE_WORDCOUNT_COPY_INTEGRITY"
+            ]
+          },
+          "what_it_proves": {
+            "type": "string",
+            "minLength": 1
+          },
+          "what_it_does_not_prove": {
+            "type": "string",
+            "minLength": 1
+          },
+          "forbidden_overclaim": {
+            "type": "string",
+            "enum": [
+              "ffprobe_only",
+              "file_exists_only",
+              "exit_code_only",
+              "contract_exists_only",
+              "keyword_hit_only",
+              "word_count_only",
+              "hash_only",
+              "section_count_only",
+              "source_presence_only"
+            ]
+          }
+        }
+      }
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "repo_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "mission_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "command_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:[a-f0-9]{64}$"
+      }
+    },
+    "validator_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "test_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "ffmpeg_logs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_vs_render_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "contact_sheet_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "human_review_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "approval_token_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "audit_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^AUD-[A-Za-z0-9_-]+$"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "COMPLETE",
+        "BLOCKED"
+      ]
+    },
+    "contract_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "route_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "COMPLETE"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "claims": {
+            "items": {
+              "properties": {
+                "forbidden_overclaim": {
+                  "enum": [
+                    "ffprobe_only",
+                    "file_exists_only",
+                    "exit_code_only",
+                    "contract_exists_only",
+                    "keyword_hit_only",
+                    "word_count_only",
+                    "hash_only",
+                    "section_count_only",
+                    "source_presence_only"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

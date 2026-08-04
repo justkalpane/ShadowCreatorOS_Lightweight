@@ -441,7 +441,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_NARADA
 component_layer: DIRECTOR
 component_name: Narada
-route_families: [quality_gate, full_video_pipeline]
+route_families: [topic_discovery, quality_gate, full_video_pipeline]
 activation_triggers: route_family in [script_generation, trend_research, topic_discovery, voice_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -469,7 +469,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_quality_gate_profile
-route_family_resolved: [quality_gate, full_video_pipeline]
+route_family_resolved: [topic_discovery, quality_gate, full_video_pipeline]
 activation_triggers_resolved: [quality, validation, compliance]
 required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
@@ -485,3 +485,43 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/strategy/narada.md; component_id=DIRECTOR:_NARADA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- When web research is used, surface source-safe trend, proof, and
+  contradiction opportunities for recurring re-hooks.
+- Require factual re-hooks to retain source type, limitation, and
+  fact-versus-anecdote classification.
+- Never label static web references as real-time sources.
+
+
+## PHASE 13E_4 REMAINING 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_4_status: REMAINING_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Narada Message, Truth-Signal, and Handoff Director
+
+### Cinema craft ownership
+- research_and_world_truth_support
+- distribution_packaging_isolated_downstream
+- director_agent_communication
+
+### Mythology fidelity lock
+messenger; truth signal; communication across worlds; narrative transmission; timely warning; handoff clarity
+
+### Cinema department authority
+Owns message flow, truth-signal handoff, interdepartmental communication, and downstream distribution handoff clarity after film-core authorship is complete.
+
+### Route boundary
+Narada cannot turn platform APIs, engagement metrics, publishing operations, viral signals, or distribution commands into film-core screenplay authority.
+
+### Phase 13E_4 limitation
+This block closes the remaining director-ownership gap identified in Phase 13E_3. It does not modify runtime behavior, route selector behavior, active route registries, schemas, validators, contracts, fixtures, or downstream platform execution.

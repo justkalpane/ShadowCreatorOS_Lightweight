@@ -184,6 +184,7 @@ STEP 10: Emit deterministic routing decision to M-203 or WF-900/WF-021.
 - Minimum 18 tests are defined and traceable to requirements.
 - Upstream and downstream contract references are complete and non-ambiguous.
 
+
 ## MAC-06.2B UNIVERSAL COMPONENT CONTRACT UPGRADE
 
 This append-only block upgrades this component to the MAC-06.2B universal component contract standard. Existing behavior above remains intact; this block adds required typed inputs, outputs, pointers, validation, fallback, and lineage expectations.
@@ -191,48 +192,46 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: SKL-PH3A-M-202-COLOR_PALETTE_OPTIMIZER
 component_layer: SKILL
 component_name: M 202 Color Palette Optimizer.Skill
-route_families: [lineage_summary, approval_gate]
-activation_triggers: route_family in [topic_discovery, visual_context, lineage_summary] or explicit registry selection; mark lineage_profile only when route_family is unknown.
-upstream_inputs: [media_quality_gate_packet, lineage_packet, approval_packet]
-downstream_outputs: [lineage_packet, approval_packet]
-required_input_packets: [media_quality_gate_packet, lineage_packet, approval_packet]
-emitted_output_packets: [lineage_packet, approval_packet]
-communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-quality_gates: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
-validator_bindings: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
-fallback_behavior: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
-lineage_fields: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
-provider_boundary: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution
+route_families: [media_factory_handoff, avatar_video_context, context_engineering]
+activation_triggers: route_family in [media_factory_handoff, avatar_video_context, context_engineering] or explicit registry selection; activated when color palette optimization, harmony analysis, brand color system, or Rec.709 palette generation is required.
+upstream_inputs: [visual_design_brief_packet, scene_brief_packet, topic_intake_packet]
+downstream_outputs: [color_palette_packet, brand_color_system_packet]
+required_input_packets: [visual_design_brief_packet, scene_brief_packet]
+emitted_output_packets: [color_palette_packet]
+communication_pointers: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE]
+quality_gates: [palette_harmony_gate, rec709_compliance_gate, brand_consistency_gate]
+validator_bindings: [color_palette_packet_present, rec709_standard_declared, harmony_score_above_threshold]
+fallback_behavior: NEEDS_CONFIRMATION if visual_design_brief_packet is missing or color harmony score is below threshold.
+lineage_fields: [palette_id, harmony_score, rec709_ref, brand_color_system_id, instance_id]
+provider_boundary: provider_execution_allowed=false; palette generation is local computation only
 status_limits: May not claim production-ready, onboarded, provider-called, media-created, or n8n-executed without external proof.
-human_approval_points: [approve, revise_segment, regenerate_media, reject]
-failure_modes: missing_input_packet, missing_output_schema, missing_validator_binding, missing_pointer, low_quality_score, provider_boundary_violation.
-handoff_targets: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-production_score_fields: [lineage_score, approval_clarity_score, risk_score]
+human_approval_points: [approve_palette, approve_brand_colors, reject_palette]
+failure_modes: missing_visual_design_brief_packet, low_harmony_score, missing_rec709_standard, provider_boundary_violation.
+handoff_targets: [color_palette_packet, brand_color_system_packet, PTR_DIRECTOR_AGENT, PTR_FINAL_SCRIPT_IMAGE]
+production_score_fields: [palette_harmony_score, rec709_compliance_score, brand_consistency_score]
 skill_activation_contract: Activated by skill_activation_packet from subagent or route manifest.
-input_schema: Must declare atomic input fields before use; lineage_profile if absent upstream.
+input_schema: Must declare atomic input fields before use; fallback to lineage_profile if absent upstream.
 output_schema: Must emit atomic output packet with evidence path and validation status.
 subskill_hooks: May call subskills only through atomic_task_packet.
 quality_metric: Must emit skill_quality_score and quality_threshold.
 
-## M
-
 ## MAC-06.2D ROUTE-SPECIFIC PRODUCTION DEPTH ENRICHMENT
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
-route_profile_applied: lineage_profile
-route_family_resolved: [lineage_summary, approval_gate]
-activation_triggers_resolved: [lineage, trace, decision log]
-required_input_packets_resolved: [media_quality_gate_packet, lineage_packet, approval_packet]
-emitted_output_packets_resolved: [lineage_packet, approval_packet]
-communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-validator_bindings_resolved: [lineage_approval_packet_present, segment_level_regeneration_actions_present, quality_scores_present]
-quality_gates_resolved: [lineage_completeness_gate, decision_trace_gate, approval_options_gate]
-fallback_behavior_resolved: NEEDS_HUMAN_REVIEW if upstream packet IDs or approval choices are missing.
-lineage_fields_resolved: [upstream_packet_ids, downstream_packet_ids, decision_log, evidence_paths]
-provider_boundary_resolved: provider_execution_allowed=false; approval may authorize future execution; default is no provider/media/n8n execution; approval_packet_required_for_any_execution
-handoff_targets_resolved: [lineage_packet, approval_packet, PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_QUALITY_LINEAGE, PTR_LINEAGE_APPROVAL]
-production_score_fields_resolved: [lineage_score, approval_clarity_score, risk_score]
-human_approval_points_resolved: [approve, revise_segment, regenerate_media, reject]
+route_profile_applied: media_factory_color_palette_profile
+route_family_resolved: [media_factory_handoff, avatar_video_context, context_engineering]
+activation_triggers_resolved: [color palette task, brand color system, Rec.709 palette, harmony optimization]
+required_input_packets_resolved: [visual_design_brief_packet, scene_brief_packet]
+emitted_output_packets_resolved: [color_palette_packet]
+communication_pointer_ids_resolved: [PTR_DIRECTOR_AGENT, PTR_AGENT_SUBAGENT, PTR_SUBAGENT_SKILL, PTR_SKILL_SUBSKILL, PTR_FINAL_SCRIPT_IMAGE]
+validator_bindings_resolved: [color_palette_packet_present, rec709_standard_declared, harmony_score_above_threshold]
+quality_gates_resolved: [palette_harmony_gate, rec709_compliance_gate, brand_consistency_gate]
+fallback_behavior_resolved: NEEDS_CONFIRMATION if visual_design_brief_packet is missing or color harmony score is below threshold.
+lineage_fields_resolved: [palette_id, harmony_score, rec709_ref, brand_color_system_id, instance_id]
+provider_boundary_resolved: provider_execution_allowed=false; palette generation is local computation only; approval_packet_required_for_any_execution
+handoff_targets_resolved: [color_palette_packet, brand_color_system_packet, PTR_DIRECTOR_AGENT, PTR_FINAL_SCRIPT_IMAGE]
+production_score_fields_resolved: [palette_harmony_score, rec709_compliance_score, brand_consistency_score]
+human_approval_points_resolved: [approve_palette, approve_brand_colors, reject_palette]
 status_limits_resolved: [no silent approval, no execution without explicit approval]
-evidence_used_for_resolution: path/pre-contract keyword: lineage/trace; component_path=skills/media_graphics/M-202-color-palette-optimizer.skill.md; component_id=SKL-PH3A-M-202-COLOR_PALETTE_OPTIMIZER
+evidence_used_for_resolution: path/pre-contract keyword: color/palette/harmony/brand; component_path=skills/media_graphics/M-202-color-palette-optimizer.skill.md; component_id=SKL-PH3A-M-202-COLOR_PALETTE_OPTIMIZER
 remaining_unknowns: none

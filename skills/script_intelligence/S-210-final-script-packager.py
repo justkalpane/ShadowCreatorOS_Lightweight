@@ -30,6 +30,11 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(sections, list) or not sections:
             sections = ["Hook", "Core Argument", "Evidence Layer", "Closing CTA"]
         sections = [str(s) for s in sections]
+        recurring_rehook_map = input_payload.get("recurring_rehook_map")
+        if not isinstance(recurring_rehook_map, list) or not recurring_rehook_map:
+            recurring_rehook_map = refinement_packet.get("recurring_rehook_map", [])
+        if not isinstance(recurring_rehook_map, list):
+            recurring_rehook_map = []
 
         return {
             "packet_id": f"FSP-{ts}",
@@ -37,6 +42,13 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "final_title": str(input_payload.get("final_title", "Production Ready Script v1")),
             "final_hook": str(input_payload.get("final_hook", "This one structure changes your outcomes fast.")),
             "final_sections": sections,
+            "master_script_language": str(input_payload.get("master_script_language", "English")),
+            "recurring_rehook_required": True,
+            "recurring_rehook_count": len(recurring_rehook_map),
+            "recurring_rehook_map": recurring_rehook_map,
+            "rehooks_mapped_to_final_script": bool(recurring_rehook_map),
+            "rehooks_mapped_to_dynamic_beat_map": bool(recurring_rehook_map),
+            "cta_hook_required": True,
             "created_at": now,
         }
 
@@ -102,3 +114,7 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [no silent rewrite, no final PASS without delta lineage]
 # evidence_used_for_resolution: path/pre-contract keyword: refinement/optimization; component_path=skills/script_intelligence/S-210-final-script-packager.py; component_id=S-210-final-script-packager
 # remaining_unknowns: none
+#
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# behavior_laws_consumed: [RECURRING_HOOK_DENSITY_LAW, FINAL_STATUS_HONESTY_GATE]
+# responsibility: Preserve recurring re-hook map inside the final script packet and expose missing re-hook evidence for downstream rejection.

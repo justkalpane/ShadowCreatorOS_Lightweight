@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/style/film_lens_palette.schema.json",
+  "title": "Film Lens Palette",
+  "description": "Skeleton schema for lens palette planning.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"focal_ranges":{"type":"array","items":{"type":"string"},"description":"Focal ranges"},"lens_character":{"type":"string","description":"Lens character"},"depth_feel":{"type":"string","description":"Depth feel"}},
+  "required": []
+}

@@ -1,0 +1,16 @@
+{
+  "fixture_id": "RS-008",
+  "fixture_family": "route_selection",
+  "input_prompt": "Create thumbnail and title for the NEET film.",
+  "expected_route": "FILM_RELEASE_PACKAGING",
+  "expected_mode": "downstream",
+  "should_pass_later": true,
+  "should_fail_later": false,
+  "required_future_validator_or_schema": "validate_film_release_packaging.py",
+  "purpose": "Route packaging tasks downstream",
+  "risk_if_missing": "Packaging tasks get mistaken for screenplay work",
+  "phase": "12A",
+  "runtime_behavior_changed": false,
+  "governed_runtime_proof_claimed": false
+}
+

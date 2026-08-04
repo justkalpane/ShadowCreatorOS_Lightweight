@@ -1,0 +1,4 @@
+{
+  "expected_validation_status": "FAIL",
+  "expected_shallow_repo_routing_marker_count_min": 1
+}

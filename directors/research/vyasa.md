@@ -33,6 +33,14 @@
 - **Delegation**: Cannot delegate (core responsibility)
 - **Escalation**: If research insufficient for narrative (<50 confidence from Valmiki) → escalate to Valmiki or mark gaps in script
 
+### Production Rejection Rules
+- Reject any 3-10 minute script draft that lacks a visible `VALIDATION_SCORECARD`
+  or a weakest-gate summary tied to the final proof classification.
+- Reject scoreless drafts that present a final script but omit recurring
+  re-hook evidence, line-by-line influence mapping, or duration fit proof.
+- Reject any narration that turns unsupported absolutes into fact unless
+  Valmiki has marked the claim as source-backed.
+
 ### Delegation Policy
 - **Can_Delegate_To**:
   - Agastya (deep narrative complexity, character development)
@@ -467,7 +475,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_VYASA
 component_layer: DIRECTOR
 component_name: Vyasa
-route_families: [provider_handoff, full_video_pipeline]
+route_families: [script_refinement, script_generation, provider_handoff, full_video_pipeline]
 activation_triggers: route_family in [script_generation, trend_research, topic_discovery, voice_context] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
 downstream_outputs: [provider_handoff_packet, media_quality_gate_packet]
@@ -495,7 +503,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: provider_handoff_profile
-route_family_resolved: [provider_handoff, full_video_pipeline]
+route_family_resolved: [script_refinement, script_generation, provider_handoff, full_video_pipeline]
 activation_triggers_resolved: [provider, tool adapter]
 required_input_packets_resolved: [voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, approval_packet]
 emitted_output_packets_resolved: [provider_handoff_packet, media_quality_gate_packet]
@@ -511,3 +519,45 @@ human_approval_points_resolved: [approve_provider_handoff, deny_provider_executi
 status_limits_resolved: [no provider-called claim without execution proof]
 evidence_used_for_resolution: path/pre-contract keyword: provider/tool adapter; component_path=directors/research/vyasa.md; component_id=DIRECTOR:_VYASA
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Build the English master script with a 45-75 second cinematic story and a
+  `RECURRING_REHOOK_MAP`.
+- Treat three hook variants as opening-hook candidates only. Embed
+  topic-relevant recurring re-hooks every 70-90 seconds by default and bind
+  them to the final script, dynamic beat map, and line influence map.
+- Reject proof-based re-hooks that are not source-safe.
+
+
+## PHASE 13E_2 DIRTY-SCOPE 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_2_status: DIRTY_SCOPE_INDEX_AWARE_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+pre_existing_dirty_hunks_preserved: true
+
+### Director ownership role
+Vyasa Screenplay Canon and Epic Structure Director
+
+### Cinema craft ownership
+- screenplay_structure
+- story_development
+- continuity_and_script_supervision_support
+
+### Mythology fidelity lock
+epic structure; authorship; narration; continuity; canon memory; layered storytelling
+
+### Cinema department authority
+Owns macro screenplay architecture, act and sequence logic, story canon, narrative lineage, and continuity transfer across the future film packet.
+
+### Route boundary
+Vyasa must separate feature screenplay structure from ordinary SCRIPT_GENERATION content scripts, hook engineering, and platform pacing laws.
+
+### Phase 13E_2 limitation
+This block aligns director ownership for the dirty-scope batch only. It does not stage or adjudicate pre-existing dirty hunks, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

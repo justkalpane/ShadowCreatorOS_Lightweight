@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/film/directorial_style/film_sound_motif_performance.schema.json",
+  "title": "Film Sound Motif Performance",
+  "description": "Skeleton schema for sound motif and performance direction.",
+  "type": "object",
+  "x_phase": "12B",
+  "x_runtime_behavior_changed": false,
+  "x_route_selector_modified": false,
+  "x_schema_enforcement_bound": false,
+  "x_validator_bound": false,
+  "x_governed_runtime_proof_claimed": false,
+  "properties": {"sound_motif":{"type":"string","description":"Sound motif"},"silence_design":{"type":"string","description":"Silence design"},"performance_beats":{"type":"array","items":{"type":"string"},"description":"Performance beats"},"music_motif":{"type":"string","description":"Music motif"}},
+  "required": []
+}

@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Creative Intent Packet",
+  "description": "Creative intent packet for C04a and related pilot-candidate cuts. Technical QA cannot override a creative-intent failure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "creative_intent_packet_id",
+    "mission_id",
+    "cut_id",
+    "script_line_ref",
+    "script_purpose",
+    "emotional_arc",
+    "Yash_self_investment_context",
+    "visual_metaphor",
+    "camera_intent",
+    "motion_intent",
+    "depth_intent",
+    "b_roll_function",
+    "image_motion_function",
+    "hyperframes_intent",
+    "transition_logic",
+    "color_mood",
+    "audience_impact",
+    "retention_function",
+    "platform_packaging_role",
+    "acceptance_rule",
+    "negative_creative_failures",
+    "human_review_questions",
+    "schema_version"
+  ],
+  "properties": {
+    "creative_intent_packet_id": {
+      "type": "string",
+      "pattern": "^CIP-[A-Za-z0-9_-]+$"
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "script_line_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "script_purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "emotional_arc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Yash_self_investment_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_metaphor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "camera_intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "motion_intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "depth_intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "b_roll_function": {
+      "type": "string",
+      "minLength": 1
+    },
+    "image_motion_function": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hyperframes_intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transition_logic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "color_mood": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience_impact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retention_function": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform_packaging_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "negative_creative_failures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "generic_slideshow",
+          "random_effects",
+          "overdesigned_overlay",
+          "base_image_quality_destroyed",
+          "motion_unrelated_to_script",
+          "depth_motion_not_visible",
+          "B_roll_not_serving_message",
+          "Yash_context_lost",
+          "self_investment_theme_lost",
+          "audience_impact_weak",
+          "visual_metaphor_absent"
+        ]
+      }
+    },
+    "human_review_questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

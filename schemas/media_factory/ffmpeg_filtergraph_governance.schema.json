@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow FFmpeg Filtergraph Governance",
+  "description": "Governance schema for the FFmpeg depth/overlay/scale/color/encode/concat chain, including forbidden methods and proof artifacts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ffmpeg_governance_id",
+    "job_id",
+    "cut_id",
+    "chains",
+    "proof_artifacts",
+    "scale_flags",
+    "crf",
+    "bt709_required",
+    "pix_fmt",
+    "no_hidden_double_encode",
+    "filtergraph_snapshot_path",
+    "command_log_path",
+    "forbidden_methods",
+    "schema_version"
+  ],
+  "properties": {
+    "ffmpeg_governance_id": {
+      "type": "string",
+      "pattern": "^FFG-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chains": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "depth_stage",
+        "overlay_stage",
+        "scale_stage",
+        "color_stage",
+        "encode_stage",
+        "concat_stage"
+      ],
+      "properties": {
+        "depth_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "depth_proxy_method",
+            "proof_path"
+          ],
+          "properties": {
+            "depth_proxy_method": {
+              "type": "string",
+              "enum": [
+                "displace",
+                "layered_parallax"
+              ]
+            },
+            "proof_path": {
+              "type": "string",
+              "pattern": "^/"
+            }
+          }
+        },
+        "overlay_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "blend_mode",
+            "alpha_mode",
+            "proof_path"
+          ],
+          "properties": {
+            "blend_mode": {
+              "type": "string",
+              "enum": [
+                "screen",
+                "add",
+                "normal"
+              ]
+            },
+            "alpha_mode": {
+              "type": "string",
+              "enum": [
+                "premultiplied",
+                "straight"
+              ]
+            },
+            "proof_path": {
+              "type": "string",
+              "pattern": "^/"
+            }
+          }
+        },
+        "scale_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scale_algorithm"
+          ],
+          "properties": {
+            "scale_algorithm": {
+              "type": "string",
+              "const": "lanczos"
+            }
+          }
+        },
+        "color_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "color_space"
+          ],
+          "properties": {
+            "color_space": {
+              "type": "string",
+              "const": "bt709"
+            }
+          }
+        },
+        "encode_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "crf",
+            "pix_fmt"
+          ],
+          "properties": {
+            "crf": {
+              "type": "integer",
+              "const": 18
+            },
+            "pix_fmt": {
+              "type": "string",
+              "const": "yuv420p"
+            }
+          }
+        },
+        "concat_stage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "no_hidden_double_encode"
+          ],
+          "properties": {
+            "no_hidden_double_encode": {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "proof_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "scale_flags": {
+      "type": "string",
+      "const": "lanczos"
+    },
+    "crf": {
+      "type": "integer",
+      "const": 18
+    },
+    "bt709_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "pix_fmt": {
+      "type": "string",
+      "const": "yuv420p"
+    },
+    "no_hidden_double_encode": {
+      "type": "boolean",
+      "const": true
+    },
+    "filtergraph_snapshot_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "command_log_path": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "forbidden_methods": {
+      "type": "array",
+      "const": [
+        "boxblur",
+        "gblur",
+        "maskedmerge_only",
+        "bilinear",
+        "default_scale",
+        "ffprobe_only_pass",
+        "file_exists_only_pass",
+        "hash_only_pass"
+      ]
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

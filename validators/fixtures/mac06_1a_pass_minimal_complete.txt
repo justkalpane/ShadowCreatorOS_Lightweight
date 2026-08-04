@@ -1,132 +1,552 @@
 SHADOW_BOOT_CONFIRMATION
+AGENTS.md
 shadow_boot_confirmation_present=true
 first_visible_output_is_boot_confirmation=true
-AGENTS.md
 agents_md_detected=true
 agents_md_read=true
 repo_first_orchestration_started=true
 layman_task_trigger_contract_read=true
 generic_direct_answer_avoided=true
 shadow_mode=CHAT_ONLY_MODE
+next_stage=Native Capability Assessment
+
 NATIVE_AGENT_CAPABILITY_ASSESSMENT
+native_agent_capability_assessment_status=PASS
+
 TASK_FRESHNESS_CLASSIFICATION
+task_freshness_classification_status=repo_only
+
 RESEARCH_MODE_DECISION
 research_mode=repo_only
 real_time_sources_used=false
+
 Research Sufficiency Gate
+research_sufficiency_gate_status=PASS
+
 TASK_TO_CAPABILITY_ROUTING
-registries/native_capability_routing_matrix.yaml
 task_intent_classified=true
-route_id=SCRIPT_GENERATION
-registries/task_intent_routing_matrix.yaml
 task_intent_routing_matrix_cited=true
-director_skill_consumption_protocol_read=true
-script_quality_enforcement_contract_read=true
-gumloop_benchmark_output_standard_read=true
-DIRECTOR_CONSUMPTION_LEDGER
-director_consumption_ledger_present=true
-AGENT_CONSUMPTION_LEDGER
-agent_consumption_ledger_present=true
-SUBAGENT_CONSUMPTION_LEDGER
-subagent_consumption_ledger_present=true
-SKILL_CONSUMPTION_LEDGER
-skill_consumption_ledger_present=true
-SUBSKILL_CONSUMPTION_LEDGER
-subskill_consumption_ledger_present=true
-MISSED_REPO_RULES
-LINE_BY_LINE_INFLUENCE_MAP
-line_by_line_influence_map_present=true
-TOPIC_QUALITY_GATE
-topic_quality_gate_present=true
-HOOK_GENERATION_GATE
-hook_generation_gate_present=true
-hook_variant_1=Open with the creator chasing tools.
-hook_variant_2=Open with the system missing.
-hook_variant_3=Open with the output failure.
-hook_variants_count=3
-SCRIPT_QUALITY_GATE
-script_quality_gate_present=true
-script_overall_score=8.6
-script_pass_threshold=8.0
-score_each=8.1,8.4,8.6
-hook_scores_present=true
-selected_hook_reason_present=true
-rewrite_performed_if_needed=true
-shallow_repo_routing_detected=false
-source_breadth_lock_status=PASS
-per_tool_source_map_present=false
-per_tool_source_map_count=0
-non_openai_tool_sources_count=0
-named_tool_claims_all_mapped=true
-unsupported_tool_claims=none
-rule_consumption_evidence_lock_status=PASS
-RULE_CONSUMPTION_EVIDENCE_LEDGER
-exact_rule_id_or_text=section-level fixture rule
-exact_rule_evidence_present=true
-role_summary_only_detected=false
-EXACT_RULE_LINEAGE_MAP
-exact_rule_lineage_map_present=true
-final_status_downgraded_if_depth_weak=false
-runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
-runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
-task_execution_state_machine_contract_read=true
-route_dependency_expansion_protocol_read=true
+route_id=SCRIPT_GENERATION
+registries/native_capability_routing_matrix.yaml
+registries/task_intent_routing_matrix.yaml
+
+Registry-First Route
+registry_first_route_status=PASS
+
+Director Selection
+director_selection_status=PASS
+selected_directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/research/vyasa.md
+  - directors/research/valmiki.md
+  - directors/distribution/saraswati.md
+  - directors/kernel/yama.md
+
+AGENT_RUNTIME_SELECTION
+AGENT_RUNTIME_SELECTION_index=registries/agent_runtime_selection_index.yaml
+agent_runtime_selection_status=PASS
+
+Subagent Selection
+subagent_selection_status=PASS
+selected_subagents:
+  - subagents/wf_200/wf_200_sub_agent.py
+  - subagents/cwf_210/cwf_210_sub_agent.py
+  - subagents/cwf_220/cwf_220_sub_agent.py
+  - subagents/cwf_230/cwf_230_sub_agent.py
+  - subagents/cwf_240/cwf_240_sub_agent.py
+
+Skill Selection
+skill_selection_status=PASS
+selected_skills:
+  - skills/script_intelligence/S-201-hook-optimizer.skill.md
+  - skills/script_intelligence/S-202-first-draft-generation.skill.md
+  - skills/script_intelligence/S-203-retention-engineer.skill.md
+  - skills/script_intelligence/S-206-emotion-amplifier.skill.md
+  - skills/script_intelligence/S-208-governance-safety-checker.skill.md
+  - skills/script_intelligence/S-210-final-script-packager.skill.md
+  - skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
+  - skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+  - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+  - skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
+
+Subskill Selection
+subskill_selection_status=PASS
+selected_subskills:
+  - skills/sub_skills/SS-230-content-angle-generator.subskill.md
+  - skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
+  - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+  - skills/sub_skills/SS-241-open-loop-generator.subskill.md
+  - skills/sub_skills/SS-242-story-tension-builder.subskill.md
+  - skills/sub_skills/SS-243-pacing-controller.subskill.md
+  - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+  - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
+
 TASK_ROUTE_LOCK
 task_route_lock_status=PASS
+route_id=SCRIPT_GENERATION
 route_manifest_path=registries/route_manifests/script_generation.yaml
-ROUTE_DEPENDENCY_EXPANSION_LOCK
 route_manifest_read=true
-gateway_contract_loaded_before_alias=true
-alias_matrix_entry_used=true
 route_id_resolved=true
 route_manifest_loaded=true
+task_intent_classified=true
+task_intent_routing_matrix_cited=true
+registries/native_capability_routing_matrix.yaml
+registries/task_intent_routing_matrix.yaml
+registries/agent_runtime_selection_index.yaml
+
+ROUTE_DEPENDENCY_EXPANSION_LOCK
+route_dependency_expansion_lock_status=PASS
+route_dependency_expansion_lock_present=true
+route_dependency_expansion_protocol_read=true
+task_execution_state_machine_contract_read=true
+script_quality_enforcement_contract_read=true
+gumloop_benchmark_output_standard_read=true
 output_mode_contract_loaded=true
+gateway_contract_loaded_before_alias=true
+alias_matrix_entry_used=true
 registry_paths_exist=true
 route_components_exist=true
 selected_components_are_registered=true
-provider_boundary_present=true
-no_n8n_provider_media_execution=true
-compact_or_proof_output_allowed_only_after_locks=true
-route_dependency_expansion_lock_present=true
-route_dependency_expansion_lock_status=PASS
 route_scope_complete=true
 mandatory_files_read_before_output=true
-missing_mandatory_files=none
+mandatory_route_slice_paths_consumed=true
+runtime_contracts/ROUTE_DEPENDENCY_EXPANSION_PROTOCOL.md
+runtime_contracts/TASK_EXECUTION_STATE_MACHINE_CONTRACT.md
+
+UNIVERSAL_COMPONENT_CONTRACT
+universal_component_contract_present=true
+runtime_contracts/UNIVERSAL_COMPONENT_CONTRACT_STANDARD.md
+script_segment_packet_present=true
+voice_context_packet_present=true
+visual_context_packet_present=true
+video_context_packet_present=true
+music_sfx_packet_present=true
+editing_timeline_packet_present=true
+provider_handoff_packet_present=true
+media_quality_gate_packet_present=true
+lineage_approval_packet_present=true
+segment_level_regeneration_actions_present=true
+
+TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
+tools_connectors_plugins_assessment_status=PASS
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+
+ROUTE_STATE_CAPSULE
+route_state_capsule_present=true
+route_state_capsule_status=PASS
+selected_route_id=SCRIPT_GENERATION
+selected_route_manifest=registries/route_manifests/script_generation.yaml
+selected_route_slice=registries/route_slices/script_generation.registry_slice.yaml
+route_state_version=1
+route_state_reason=selected_route_scope_locked
+
+READ_LEDGER_SUMMARY
+selected_directors:
+  - directors/supreme_vision/krishna.md
+  - directors/kernel/aruna.md
+  - directors/research/vyasa.md
+  - directors/research/valmiki.md
+  - directors/distribution/saraswati.md
+  - directors/kernel/yama.md
+selected_agents:
+  - agents/krishna/krishna_agent.py
+  - agents/aruna/aruna_agent.py
+  - agents/vyasa/vyasa_agent.py
+  - agents/valmiki/valmiki_agent.py
+  - agents/saraswati/saraswati_agent.py
+  - agents/yama/yama_agent.py
+selected_subagents:
+  - subagents/wf_200/wf_200_sub_agent.py
+  - subagents/cwf_210/cwf_210_sub_agent.py
+  - subagents/cwf_220/cwf_220_sub_agent.py
+  - subagents/cwf_230/cwf_230_sub_agent.py
+  - subagents/cwf_240/cwf_240_sub_agent.py
+selected_skills:
+  - skills/script_intelligence/S-201-hook-optimizer.skill.md
+  - skills/script_intelligence/S-202-first-draft-generation.skill.md
+  - skills/script_intelligence/S-203-retention-engineer.skill.md
+  - skills/script_intelligence/S-206-emotion-amplifier.skill.md
+  - skills/script_intelligence/S-208-governance-safety-checker.skill.md
+  - skills/script_intelligence/S-210-final-script-packager.skill.md
+  - skills/script_intelligence_army/M-031-mrbeast-hook-system.skill.md
+  - skills/script_intelligence_army/M-036-emotional-spike-system.skill.md
+  - skills/script_intelligence_army/M-039-re-hook-system.skill.md
+  - skills/script_intelligence_army/M-040-story-momentum-engine.skill.md
+selected_subskills:
+  - skills/sub_skills/SS-230-content-angle-generator.subskill.md
+  - skills/sub_skills/SS-231-unique-value-proposition-builder.subskill.md
+  - skills/sub_skills/SS-240-hook-variation-generator.subskill.md
+  - skills/sub_skills/SS-241-open-loop-generator.subskill.md
+  - skills/sub_skills/SS-242-story-tension-builder.subskill.md
+  - skills/sub_skills/SS-243-pacing-controller.subskill.md
+  - skills/sub_skills/SS-244-retention-loop-engine.subskill.md
+  - skills/sub_skills/SS-245-cliffhanger-designer.subskill.md
+
+ROUTE_SCOPE_FILE_AUDIT
+canonical_route_id=SCRIPT_GENERATION
+route_manifest_read=true
+selected_route_slice_read=true
+mandatory_route_slice_paths_consumed=true
+semantic_influence_map_present=true
+dependencies_complete=true
+output_phase_started=true
+final_deliverable_generated=true
+missing_required_repo_scope=None
+
 CONSUMPTION_LOCK
 consumption_lock_status=PASS
+director_consumption_ledger_present=true
+agent_consumption_ledger_present=true
+subagent_consumption_ledger_present=true
+skill_consumption_ledger_present=true
+subskill_consumption_ledger_present=true
+director_skill_consumption_protocol_read=true
+
 SOURCE_RESEARCH_LOCK
 source_research_lock_status=PASS
+research_mode=repo_only
+real_time_sources_used=false
+source_breadth_lock_status=PASS
+rule_consumption_evidence_lock_status=PASS
+per_tool_source_map_present=true
+per_tool_source_map_count=2
+non_openai_tool_sources_count=0
+named_tool_claims_all_mapped=true
+unsupported_tool_claims=none
+source_summary_present=true
+source_sufficiency_gate_status=PASS
+
+SOURCE_BREADTH_LOCK
+source_breadth_lock_status=PASS
+source_breadth_status=PASS
+
+RULE_CONSUMPTION_EVIDENCE_LOCK
+rule_consumption_evidence_lock_status=PASS
+exact_rule_evidence_present=true
+exact_rule_lineage_map_present=true
+role_summary_only_detected=false
+rule_consumption_evidence_lock_notes=exact_section_and_rule_level_evidence_present
+
+SOURCE_INTEGRITY_GATE
+source_integrity_gate_status=PASS
+source_integrity_gate_present=true
+source_to_script_alignment_present=true
+
 QUALITY_LOCK
 quality_lock_status=PASS
+emotional_strength_score=8.8
+clarity_score=9.0
+retention_score=8.9
+spoken_cadence_score=8.8
+article_like_risk_score=1.2
+overall_score=8.9
+pass_threshold=8.0
+quality_scores_present=true
+
+RECURRING_HOOK_DENSITY_LOCK
+recurring_hook_density_lock_status=PASS
+opening_hook_variants_required=3
+hook_variants_count=3
+internal_rehooks_count=4
+cta_hook_present=true
+max_gap_without_rehook_seconds=70
+recurring_rehook_map_present=true
+
 GOVERNANCE_LOCK
 governance_lock_status=PASS
-script_generated_after_all_locks=true
-loaded_true_but_not_consumed_detected=false
-manual_rerun_structured_but_partial_detected=false
-Registry-First Route
-Director Selection
-AGENT_RUNTIME_SELECTION
-registries/agent_runtime_selection_index.yaml
-Subagent Selection
-Skill Selection
-Subskill Selection
-TOOLS_CONNECTORS_PLUGINS_ASSESSMENT
-CONTENT_MISSION_BRIEF
+provider_boundary_present=true
+no_n8n_provider_media_execution=true
+governance_gate_status=PASS
+
+DIRECTOR_CONSUMPTION_LEDGER
+director_consumption_ledger_present=true
+
+AGENT_CONSUMPTION_LEDGER
+agent_consumption_ledger_present=true
+
+SUBAGENT_CONSUMPTION_LEDGER
+subagent_consumption_ledger_present=true
+
+SKILL_CONSUMPTION_LEDGER
+skill_consumption_ledger_present=true
+
+SUBSKILL_CONSUMPTION_LEDGER
+subskill_consumption_ledger_present=true
+
+SHADOW_MISSION_PACKET
+shadow_mission_packet_present=true
+mission_focus=fix_false_pass_surface_in_mac_validator_fixture
+
+SCRIPT_LANGUAGE_DECLARATION
+script_language=English
+default_master_language=English
+explicit_language_request_detected=false
+
+USER_LANGUAGE_REQUEST_CHECK
+user_requested_non_english_language=false
+language_request_status=PASS
+
 RESEARCH_AND_SOURCE_STATUS
+source_ledger_present=true
+source_limitation_notes_present=true
+fact_vs_anecdote_map_present=true
+claim_evidence_status_present=true
+source_ledger_count=2
+source_quality_status=PASS
+
+CONTENT_MISSION_BRIEF
+mission_brief=Build a five-minute live-host style YouTube script about self-investment and discipline.
+topic_angle=Stop scrolling, stop waiting, start investing in yourself.
+tone=direct, emotional, urgent, and human
+
+SOURCE_LEDGER
+source_1_url=https://en.wikipedia.org/wiki/Yash_(actor)
+source_1_use=biographical cross-check only
+source_2_url=https://www.hindustantimes.com/entertainment/others/yash-from-bus-driver-son-to-pan-india-star-kgf-journey-101652435743215.html
+source_2_use=career-journey cross-check only
+SOURCE_SNAPSHOT_LEDGER
+status=present
+
+SOURCE_LIMITATION_NOTES
+Do not turn an anecdotal self-investment arc into an unsupported literal claim about every rupee.
+
+FACT_VS_ANECDOTE_MAP
+fact=Yash is the screen name of Naveen Kumar Gowda.
+fact=Yash is associated with Kannada cinema and KGF fame.
+anecdote_or_claim_needs_care=Exact details of early cash use should not be stated as verified fact without stronger sourcing.
+mythological_parallel=Ekalavya-style self-training is a narrative parallel, not a biographical claim.
+CLAIM_TO_SCRIPT_LINE_MAP
+status=present
+BENGALURU_LANGUAGE_HARDENING_REPORT
+style_profile_path=style_profiles/bengaluru_spoken_english.yaml
+style_profile_sha256=sha256:2104f169489ab3eda171ae621add476980e38dbbb5372b40b254642f6ca0275f
+status=present
+COMPONENT_CONSUMPTION_LEDGER
+status=present
+
+CLAIM_EVIDENCE_STATUS
+claim=The script should feel like a live host speaking, not an article.
+evidence=Structure uses hook, re-hook, story bridge, and direct address rather than essay framing.
+evidence_scope=current_fixture
+evidence_path=validators/fixtures/mac06_1a_pass_minimal_complete.txt
+status=PASS
+
+HOOK_VARIANTS
+hook_variant_1=Stop scrolling, because the real flex is self-investment.
+hook_variant_2=Yash did not get built by luck; he got built by discipline.
+hook_variant_3=What if the person you are waiting for is you?
+
+SELECTED_HOOK_REASON
+selected_hook_reason=First hook is direct, tense, and short enough to reset attention fast.
+
+RECURRING_REHOOK_MAP
+rehook_1=After the opening, pivot to the cost of wasting money on people who never compound it back.
+rehook_2=Midway, use the Yash arc to show the real engine was skill-building, not gifting.
+rehook_3=Later, challenge the audience to stop waiting for rescue and start funding their own growth.
+rehook_4=Before the close, turn the pressure into a personal call to action.
+
+CINEMATIC_SHORT_STORY_BLOCK
+duration_target_seconds=60
+character=Young Yash as an ambitious, struggling performer.
+setting=Bengaluru stages, rehearsal rooms, and early career hustle.
+conflict=The pressure to stay ordinary versus the desire to become undeniable.
+turning_point=He keeps investing time and money into skill, discipline, and presence.
+cinematic_visuals=Backstage lights, worn shoes, quiet rehearsals, and a crowd that grows later.
+emotional_peak=He stops begging for validation and starts building proof.
+lesson_bridge=That same move works for anyone who stops scrolling and starts investing in themselves.
+source_references=See SOURCE_LEDGER and FACT_VS_ANECDOTE_MAP.
+unsupported_claims=Exact cash-allocation details are not stated as verified fact.
+status=PASS
+
 SCRIPT_STRUCTURE
-Final script
+structure_type=live_host_realtime_delivery
+beat_count=13
+story_bridge_present=true
+direct_address_present=true
+callout_to_audience_present=true
+
+SCRIPT_BODY_DEPTH_LOCK
+script_body_depth_lock_status=PASS
+spoken_runtime_fit=true
+five_minute_fit=true
+no_shallow_article_voice=true
+
 TIMED_BEAT_MAP
+dynamic_timed_beat_map_present=true
+beat_count=13
+timing_is_dynamic=true
+max_gap_without_rehook_seconds=70
+
+DYNAMIC_TIMED_BEAT_MAP
+dynamic_timed_beat_map_present=true
+beat_count=13
+timing_is_dynamic=true
+max_gap_without_rehook_seconds=70
+
 VOICE_GENERATION_CONTEXT
+voice_context_present=true
+delivery_style=animated_host
+tone=urgent_warm_direct
+
 IMAGE_GENERATION_CONTEXT
+image_context_present=true
+visual_style=high_contrast_cinematic
+
 VIDEO_GENERATION_CONTEXT
+video_context_present=true
+camera_language=live_host_with_cutaways
+
 MUSIC_AND_SFX_CONTEXT
+music_sfx_context_present=true
+music_mood=steadily_building
+
 EDITING_CONTEXT
+editing_context_present=true
+edit_pacing=fast_opening_then_settled
+
 PLATFORM_PACKAGING
+platform_packaging_present=true
+upload_target=YouTube
+title_angle=self_investment_over_waiting_for_rescue
+
+PROVIDER_HANDOFF_BOUNDARY
+provider_boundary_present=true
+provider_execution_allowed=false
+n8n_used=false
+media_artifacts_claimed=false
+workflow_executed=false
+
+QUALITY_GATE
+quality_gate_status=PASS
+weakest_layer_status_respected=true
+article_like_risk_below_pass_ceiling=true
+live_host_realtime_behavior_present=true
+
+LINEAGE_SUMMARY
+lineage_summary_present=true
+route_manifest_lineage=registries/route_manifests/script_generation.yaml
+route_slice_lineage=registries/route_slices/script_generation.registry_slice.yaml
+
+LOCAL_CLOUD_HYBRID_EXECUTION_PLAN
+local_cloud_hybrid_execution_plan_present=true
+local_only_drafting=true
+cloud_handoff_optional=false
+
+GATE_VISIBILITY_LOG
+gate_visibility_log_present=true
+task_route_lock=PASS
+route_dependency_expansion_lock=PASS
+consumption_lock=PASS
+source_research_lock=PASS
+source_breadth_lock=PASS
+rule_consumption_evidence_lock=PASS
+source_integrity_gate=PASS
+quality_lock=PASS
+recurring_hook_density_lock=PASS
+governance_lock=PASS
+
+PROOF_TRACE_BUNDLE
+proof_trace_bundle_present=true
+trace_route_manifest=registries/route_manifests/script_generation.yaml
+trace_route_slice=registries/route_slices/script_generation.registry_slice.yaml
+trace_validator=validators/validate_mac06_1a_output.py
+
+PER_TOOL_SOURCE_MAP
+per_tool_source_map_present=true
+per_tool_source_map_count=2
+tool_1_url=https://en.wikipedia.org/wiki/Yash_(actor)
+tool_2_url=https://www.hindustantimes.com/entertainment/others/yash-from-bus-driver-son-to-pan-india-star-kgf-journey-101652435743215.html
+
+RULE_CONSUMPTION_EVIDENCE_LEDGER
+rule_consumption_evidence_present=true
+exact_rule_id_or_text=route-scope-first proof block
+exact_rule_evidence_present=true
+
+EXACT_RULE_LINEAGE_MAP
+exact_rule_lineage_map_present=true
+lineage_rule=route_manifest -> route_slice -> validator -> fixture
+ROUTE_MANIFEST_HASH_LEDGER
+route_manifest_path=registries/route_manifests/script_generation.yaml
+route_manifest_sha256=sha256:585a507e8c341638442e383bcb653536a7e96459701b1b5750c996eecc238d92
+ROUTE_SLICE_HASH_LEDGER
+route_slice_path=registries/route_slices/script_generation.registry_slice.yaml
+route_slice_sha256=sha256:17ad1bfadb6a8e934fbb1882dcc572f7a2bc62b99d957449be45b0b231823864
+
+TOPIC_QUALITY_GATE
+topic_quality_gate_present=true
+clarity_over_article_voice=true
+attention_reset_density=PASS
+
+HOOK_GENERATION_GATE
+hook_generation_gate_present=true
+hook_scores_present=true
+hook_variant_1_score=8.4
+hook_variant_2_score=8.7
+hook_variant_3_score=8.5
+selected_hook_reason_present=true
+rewrite_performed_if_needed=true
+
+SCRIPT_QUALITY_GATE
+script_quality_gate_present=true
+script_overall_score=8.9
+script_pass_threshold=8.0
+score_each=8.7,8.8,8.9
+hook_scores_present=true
+
+CADENCE_AND_RETENTION_GATE
+cadence_and_retention_gate_present=true
+spoken_cadence_score=8.8
+retention_score=8.9
+
+LIVE_HOST_REALTIME_BEHAVIOR_GATE
+live_host_realtime_behavior_present=true
+article_like_voice_avoided=true
+direct_address_present=true
+
+ARTICLE_LIKE_RISK_GATE
+article_like_risk_gate_present=true
+article_like_risk_score=1.2
+pass_ceiling=3.0
+
+VALIDATION_SCORECARD
+validation_scorecard_present=true
+quality_lock=PASS
+source_research_lock=PASS
+provider_honesty_gate=PASS
+final_proof_classification=PASS
+
+LINE_BY_LINE_INFLUENCE_MAP
+line_by_line_influence_map_present=true
+component_or_file=registries/route_manifests/script_generation.yaml
+rule_or_contract_used=route manifest output blocks and validator requirements
+output_section=all proof blocks
+influence_type=route_scope
+validator_check=validate_mac06_1a_output.py
+status=USED
+
+Final script
+FINAL_SCRIPT
+script_generated_after_all_locks=true
+final_script_created=true
+runtime_seconds=300
+script_duration_minutes=5
+opening_hook_present=true
+internal_rehooks_count=4
+cta_hook_present=true
+final_script_before_media_context_sections_in_chat_only_mode=true
+This is the live-host proof line, not an article paragraph.
+
 Provider Handoff Boundary
 Quality Gate
 Lineage Summary
+
 Final Proof Classification
 proof_classification=PASS
 chat_only_mode_used=true
 files_created=false
 dossier_artifacts_created=false
+shallow_repo_routing_detected=false
+loaded_true_but_not_consumed_detected=false
+manual_rerun_structured_but_partial_detected=false

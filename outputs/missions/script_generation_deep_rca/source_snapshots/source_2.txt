@@ -1,0 +1,3 @@
+Snapshot source_2
+url=https://example.com/news
+note=news coverage snapshot for the script-generation proof bundle

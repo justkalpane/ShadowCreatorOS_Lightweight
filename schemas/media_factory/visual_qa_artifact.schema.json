@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Visual QA Artifact",
+  "description": "Visual QA gate artifact requiring source-vs-render evidence, contact sheet traceability, and human review before any production pass can be considered.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "visual_qa_id",
+    "job_id",
+    "cut_id",
+    "source_vs_render_artifact_id",
+    "contact_sheet_id",
+    "human_review_packet_id",
+    "qa_status",
+    "qa_error_codes",
+    "production_pass_allowed",
+    "human_review_required",
+    "source_vs_render_required",
+    "contact_sheet_required",
+    "evidence_bundle_id",
+    "route_state_capsule_id",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "visual_qa_id": {
+      "type": "string",
+      "pattern": "^VQA-[A-Za-z0-9_-]+$"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^JOB-[A-Za-z0-9_-]+$"
+    },
+    "cut_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_vs_render_artifact_id": {
+      "type": "string",
+      "pattern": "^SVR-[A-Za-z0-9_-]+$"
+    },
+    "contact_sheet_id": {
+      "type": "string",
+      "pattern": "^CSH-[A-Za-z0-9_-]+$"
+    },
+    "human_review_packet_id": {
+      "type": "string",
+      "pattern": "^HRP-[A-Za-z0-9_-]+$"
+    },
+    "qa_status": {
+      "type": "string",
+      "enum": [
+        "BLOCKED",
+        "PENDING_HUMAN_REVIEW",
+        "REJECTED",
+        "APPROVED_BY_HUMAN"
+      ]
+    },
+    "qa_error_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "production_pass_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "source_vs_render_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "contact_sheet_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "evidence_bundle_id": {
+      "type": "string",
+      "pattern": "^EVB-[A-Za-z0-9_-]+$"
+    },
+    "route_state_capsule_id": {
+      "type": "string",
+      "pattern": "^RSC-[A-Za-z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "qa_status": {
+            "const": "APPROVED_BY_HUMAN"
+          }
+        },
+        "required": [
+          "qa_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "human_review_packet_id"
+        ],
+        "properties": {
+          "production_pass_allowed": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "qa_status": {
+            "const": "PENDING_HUMAN_REVIEW"
+          }
+        },
+        "required": [
+          "qa_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "production_pass_allowed": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
+}

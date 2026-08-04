@@ -25,9 +25,22 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
             "result": {
                 "execution_mode": "replica_runtime",
                 "routing_context": "WF-200 -> CWF-210 -> CWF-230",
+                "rehook_editing_sync_required": True,
+                "rehook_pattern_interrupt_fields": [
+                    "caption_spike",
+                    "camera_or_visual_interrupt",
+                    "music_sfx_accent",
+                    "transition_cue",
+                    "platform_safe_zone",
+                ],
             },
         },
     }
+
+
+# MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+# Editing handoff must mark every re-hook as a pattern-interrupt scene with
+# caption, visual, audio, transition, and platform-safe-zone instructions.
 
 
 

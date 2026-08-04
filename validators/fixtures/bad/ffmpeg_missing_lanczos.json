@@ -1,0 +1,22 @@
+{
+  "input_assets": [
+    "/tmp/base.png"
+  ],
+  "filtergraph_chain": {
+    "depth_stage": {
+      "depth_proxy_method": "displace"
+    },
+    "overlay_stage": {},
+    "scale_stage": {},
+    "color_stage": {},
+    "encode_stage": {},
+    "concat_stage": {}
+  },
+  "scale_method": "bilinear",
+  "color_profile": "bt709",
+  "encode_profile": "crf18_bt709_lanczos",
+  "concat_policy": "no_double_encode_concat",
+  "double_encode_detected": false,
+  "filtergraph_dump_path": "/tmp/filtergraph.txt",
+  "command_log_path": "/tmp/ffmpeg_command.log"
+}

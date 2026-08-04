@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shadow Re-Hook Plan Packet",
+  "type": "object",
+  "required": [
+    "packet_id",
+    "route_id",
+    "producer_component_id",
+    "consumer_component_ids",
+    "lineage",
+    "validation_status",
+    "script_duration_minutes",
+    "recurring_rehook_map",
+    "max_gap_without_rehook_seconds",
+    "cta_hook_required"
+  ],
+  "properties": {
+    "packet_id": {"type": "string"},
+    "route_id": {"type": "string"},
+    "producer_component_id": {"type": "string"},
+    "consumer_component_ids": {"type": "array"},
+    "lineage": {"type": "object"},
+    "validation_status": {"type": "string"},
+    "script_duration_minutes": {"type": "number", "minimum": 3, "maximum": 10},
+    "recurring_rehook_map": {"type": "array", "minItems": 1},
+    "max_gap_without_rehook_seconds": {"type": "number", "maximum": 90},
+    "cta_hook_required": {"type": "boolean", "const": true}
+  },
+  "additionalProperties": false
+}

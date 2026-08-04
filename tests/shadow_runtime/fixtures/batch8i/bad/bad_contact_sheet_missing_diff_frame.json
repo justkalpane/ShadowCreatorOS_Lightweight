@@ -1,0 +1,74 @@
+{
+  "contact_sheet_id": "CS-C04A-001",
+  "contact_sheet_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet.png",
+  "contact_sheet_sha256": "d3fc4448fc1ed296b9cfb0cd9e0a24b00a8ba6e131d4b75be0dfef8e6c578bc2",
+  "created_at": "2026-06-22T00:00:00Z",
+  "cut_id": "C04a",
+  "frame_points": [
+    {
+      "diff_sha256": "8a28b274c7bc66b8b300c306bd8cb7dae75df8ec02d2b89c1e7096ebd6b701f2",
+      "frame_id": "frame_001",
+      "render_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/render/frame_001.png",
+      "render_sha256": "9f8de4e8a9d1198281182be9667d32b7354b9847f4f7c32ee825947db5050067",
+      "risk_flags": [],
+      "source_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/source/frame_001.png",
+      "source_sha256": "79ff7e1ddb861b441f7e936b5d238ad4eeae3e665a8514f648586d2ae4d763ae",
+      "timestamp": "2026-06-22T00:00:03Z",
+      "visual_note": "subject centered and readable"
+    },
+    {
+      "diff_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/diff/frame_002.png",
+      "diff_sha256": "77164067a952479293ce41270165dda4562f66c37fedf04949767c5873a10a15",
+      "frame_id": "frame_002",
+      "render_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/render/frame_002.png",
+      "render_sha256": "5b02ac0e0dd4d83033210190d402398090973bf63ef8e4cceff75dd7440347b0",
+      "risk_flags": [
+        "parallax_safe"
+      ],
+      "source_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/source/frame_002.png",
+      "source_sha256": "c4e52eb2bc55f558d1ba642046ef9a217c6242ae1c2257233d49ce064691313e",
+      "timestamp": "2026-06-22T00:00:13Z",
+      "visual_note": "parallax visible without occlusion"
+    },
+    {
+      "diff_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/diff/frame_003.png",
+      "diff_sha256": "7868e1cfd01b21d88667d3460f54aae8f0aaa68e1432245306a6481c82592703",
+      "frame_id": "frame_003",
+      "render_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/render/frame_003.png",
+      "render_sha256": "8a44cff47f9492fcedb06033edaa2fa33dd80f2729cc24f0e608789ec5549027",
+      "risk_flags": [
+        "safe_zone_ok"
+      ],
+      "source_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/source/frame_003.png",
+      "source_sha256": "5bb8f6eb78dddec82471c8424904b10546bd9c5a3982717ddcc822859688fa62",
+      "timestamp": "2026-06-22T00:00:23Z",
+      "visual_note": "overlay remains inside safe zone"
+    },
+    {
+      "diff_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/diff/frame_004.png",
+      "diff_sha256": "96275622a99e552eb7511b92c9a182321b7df962e22a55524e8eab4bcf618f53",
+      "frame_id": "frame_004",
+      "render_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/render/frame_001.png",
+      "render_sha256": "47db15e2e09cbb24ff3db6f4da2ae0d8a6631aca88a78a1d6eaff18a2c874557",
+      "risk_flags": [
+        "caption_safe"
+      ],
+      "source_frame_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/source/frame_001.png",
+      "source_sha256": "7e36e7411e0c2baa68d750ef10c7567430d079dd1aed49278a8b2d0c3ce45d40",
+      "timestamp": "2026-06-22T00:00:33Z",
+      "visual_note": "caption readability maintained"
+    }
+  ],
+  "generation_log_path": "/Users/apple/Documents/VisualMediaPreparations/Mission_Yash_Self_Investment/c04a/contact_sheet_generation.log",
+  "human_review_required": true,
+  "job_id": "JOB-C04A-PILOT-001",
+  "label_format": "cut | frame | timestamp | risk",
+  "layout": {
+    "columns": 2,
+    "notes": "C04a contact sheet layout",
+    "rows": 2,
+    "style": "grid"
+  },
+  "schema_version": "1.0.0",
+  "source_vs_render_packet_id": "SVR-C04A-001"
+}

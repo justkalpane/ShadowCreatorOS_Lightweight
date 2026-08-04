@@ -79,3 +79,10 @@ def run(input_payload: dict[str, Any]) -> dict[str, Any]:
 # status_limits_resolved: [no video-created claim]
 # evidence_used_for_resolution: path/pre-contract keyword: video/avatar/motion; component_path=skills/system_intelligence/M-089-motion-director.py; component_id=M-089-motion-director
 # remaining_unknowns: none
+
+# PHASE 13B CINEMA-NATIVE ALIGNMENT LAYER
+# alignment_status: CINEMA_NATIVE_ALIGNMENT_ENRICHED
+# cinema_core_obligations: [cinematography_intent, motion_grammar, editing_rhythm, scene_flow, camera_movement_intent]
+# cinema_native_guardrails: [preserve_SCRIPT_GENERATION_content_route, protect_FILM_SCREENPLAY_GENERATION_cinema_route, keep_motion_direction_subordinate_to_story_brain]
+# runtime_proof_claimed: false
+# governed_completion_claimed: false

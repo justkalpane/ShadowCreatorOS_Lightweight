@@ -1,0 +1,143 @@
+selector_id: ROUTE_CHAIN_MODE_SELECTOR
+version: 1
+default_mode: script_only
+
+modes:
+  script_only:
+    allowed_route_ids: [SCRIPT_GENERATION]
+    blocked_route_ids: [MEDIA_FACTORY_HANDOFF, CONTEXT_ENGINEERING, VIDEO_CONTEXT, IMAGE_CONTEXT]
+    required_output_sections:
+      - FINAL_SCRIPT
+      - SCRIPT_BODY_DEPTH_LOCK
+      - DYNAMIC_TIMED_BEAT_MAP
+      - SEMANTIC_INFLUENCE_MAP
+      - VALIDATION_SCORECARD
+    optional_downstream_routes:
+      - visual_media_plan
+      - visual_media_generation_draft
+      - media_factory_handoff
+    stop_condition: final_script_generated=true
+    validation_gates:
+      - no_media_factory_contracts_before_final_script
+      - no_historical_outputs_without_explicit_reference
+      - no_chat_transcript_without_drift_audit_mode
+      - output_phase_started
+
+  film_screenplay_generation:
+    allowed_route_ids: [FILM_SCREENPLAY_GENERATION]
+    blocked_route_ids: []
+    required_output_sections:
+      - ROUTE_STATE_CAPSULE
+      - VALIDATION_SCORECARD
+      - LINE_BY_LINE_INFLUENCE_MAP
+      - CLAIM_TO_SCRIPT_LINE_MAP
+      - FINAL_SCRIPT
+    optional_downstream_routes:
+      - visual_media_plan
+      - voice_context
+      - editing_packaging
+      - media_factory_handoff
+      - full_video_pipeline
+    stop_condition: film_screenplay_generated=true
+    validation_gates:
+      - film_route_explicitly_requested
+      - script_generation_preserved
+      - no_fake_film_pass
+      - source_vs_render_separation
+      - post_binding_validation_required
+
+  script_plus_visual_plan:
+    allowed_route_ids: [SCRIPT_GENERATION, MEDIA_FACTORY_HANDOFF]
+    blocked_route_ids: []
+    required_output_sections:
+      - FINAL_SCRIPT
+      - SCENE_SYNC_MATRIX
+      - SCENE_BREAKOUT_BLOCKS
+      - PRODUCTION_ORDER_LOCK
+      - ASSET_INVENTORY_LEDGER
+      - DAVINCI_TIMELINE_PACKET
+    optional_downstream_routes:
+      - visual_media_generation_draft
+      - media_factory_handoff
+    stop_condition: visual_media_plan_generated=true
+    validation_gates:
+      - script_generation_completed_first
+      - media_route_started_after_final_script
+
+  script_plus_visual_generation_draft:
+    allowed_route_ids: [SCRIPT_GENERATION, MEDIA_FACTORY_HANDOFF]
+    blocked_route_ids: []
+    required_output_sections:
+      - FINAL_SCRIPT
+      - MISSION_MEDIA_OUTPUT_BUNDLE
+      - VOICE_BATCH_PLAN
+      - A_ROLL_BATCH_PLAN
+      - MUSIC_SFX_BATCH_PLAN
+      - IMAGE_BATCH_PLAN
+      - CINEMATIC_BROLL_BATCH_PLAN
+      - MOTION_GRAPHICS_BATCH_PLAN
+      - ASSEMBLY_SYNC_PLAN
+    optional_downstream_routes:
+      - media_factory_handoff
+    stop_condition: visual_media_generator_draft_generated=true
+    validation_gates:
+      - script_generation_completed_first
+      - visual_plan_or_scene_sync_present
+
+  script_plus_media_factory_handoff:
+    allowed_route_ids: [SCRIPT_GENERATION, MEDIA_FACTORY_HANDOFF]
+    blocked_route_ids: []
+    required_output_sections:
+      - FINAL_SCRIPT
+      - SCENE_SYNC_MATRIX
+      - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS
+      - PROVIDER_HONESTY_GATE
+      - PRODUCTION_PROOF_GATE
+    optional_downstream_routes: []
+    stop_condition: media_factory_handoff_packet_generated=true
+    validation_gates:
+      - media_factory_route_authorized
+      - no_provider_claim_without_proof
+
+  full_content_packet:
+    allowed_route_ids: [SCRIPT_GENERATION, CONTEXT_ENGINEERING, MEDIA_FACTORY_HANDOFF]
+    blocked_route_ids: []
+    required_output_sections:
+      - FINAL_SCRIPT
+      - VOICE_GENERATION_CONTEXT
+      - IMAGE_GENERATION_CONTEXT
+      - VIDEO_GENERATION_CONTEXT
+      - MUSIC_AND_SFX_CONTEXT
+      - EDITING_CONTEXT
+      - PLATFORM_PACKAGING
+      - LOCAL_CLOUD_HYBRID_EXECUTION_PLAN
+    optional_downstream_routes:
+      - visual_media_plan
+      - visual_media_generation_draft
+    stop_condition: full_content_packet_generated=true
+    validation_gates:
+      - full_content_packet_explicitly_requested
+
+  repo_drift_audit:
+    allowed_route_ids: [REPO_AUDIT, SCRIPT_GENERATION, MEDIA_FACTORY_HANDOFF]
+    blocked_route_ids: []
+    required_output_sections:
+      - VERIFICATION_MATRIX
+      - POSITIVE_BASELINE_VS_FAILED_BEHAVIOR
+      - REPAIR_PLAN
+    optional_downstream_routes: []
+    stop_condition: audit_report_generated=true
+    validation_gates:
+      - drift_audit_mode=true
+
+  media_factory_regression_audit:
+    allowed_route_ids: [MEDIA_FACTORY_HANDOFF]
+    blocked_route_ids: []
+    required_output_sections:
+      - MEDIA_FACTORY_EVIDENCE_GATE
+      - LOCAL_MEDIA_FACTORY_BRIDGE_STATUS
+      - PRODUCTION_PROOF_GATE
+    optional_downstream_routes: []
+    stop_condition: media_factory_regression_report_generated=true
+    validation_gates:
+      - media_factory_regression_audit=true

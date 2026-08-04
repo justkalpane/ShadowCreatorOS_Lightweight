@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synopsis",
+  "type": "object",
+  "required": ["one_sentence_synopsis", "short_synopsis", "expanded_synopsis", "beginning_middle_end_summary"],
+  "properties": {
+    "one_sentence_synopsis": {"type": "string"},
+    "short_synopsis": {"type": "string"},
+    "expanded_synopsis": {"type": "string"},
+    "beginning_middle_end_summary": {
+      "type": "object",
+      "required": ["beginning", "middle", "ending"],
+      "properties": {
+        "beginning": {"type": "string"},
+        "middle": {"type": "string"},
+        "ending": {"type": "string"}
+      }
+    }
+  }
+}

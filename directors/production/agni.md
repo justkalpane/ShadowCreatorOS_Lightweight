@@ -477,7 +477,7 @@ This append-only block upgrades this component to the MAC-06.2B universal compon
 component_id: DIRECTOR:_AGNI
 component_layer: DIRECTOR
 component_name: Agni
-route_families: [quality_gate, full_video_pipeline]
+route_families: [editing_packaging, quality_gate, full_video_pipeline]
 activation_triggers: route_family in [script_generation, topic_discovery, voice_context, quality_gate] or explicit registry selection; mark approval_gate_profile only when route_family is unknown.
 upstream_inputs: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 downstream_outputs: [media_quality_gate_packet, lineage_packet]
@@ -505,7 +505,7 @@ escalation_rules: Escalate to user or governance gate when route, evidence, or p
 
 component_depth_status: PRODUCTION_DEPTH_ENRICHED
 route_profile_applied: media_quality_gate_profile
-route_family_resolved: [quality_gate, full_video_pipeline]
+route_family_resolved: [editing_packaging, quality_gate, full_video_pipeline]
 activation_triggers_resolved: [quality, validation, compliance]
 required_input_packets_resolved: [script_segment_packet, voice_context_packet, visual_context_packet, video_context_packet, music_sfx_packet, editing_timeline_packet, provider_handoff_packet]
 emitted_output_packets_resolved: [media_quality_gate_packet, lineage_packet]
@@ -521,3 +521,43 @@ human_approval_points_resolved: [approve_quality_gate, revise_segment, reject_ou
 status_limits_resolved: [no PASS if weakest evidence is PARTIAL/BLOCKED]
 evidence_used_for_resolution: path/pre-contract keyword: quality/governance; component_path=directors/production/agni.md; component_id=DIRECTOR:_AGNI
 remaining_unknowns: none
+
+## MAC-06.2O SCRIPT BEHAVIOR PROPAGATION
+
+- Convert recurring re-hooks into scene-level pattern interrupts: camera or
+  B-roll shift, caption spike, edit cut, sound accent, and platform-safe cue.
+- Require every Media Factory re-hook row to align voice, image, video,
+  music/SFX, editing, influence, and local/cloud/hybrid execution planning.
+- Provider execution remains disabled without approval.
+
+
+## PHASE 13E_1 24-CRAFT CINEMA DIRECTOR OWNERSHIP
+
+phase_13e_1_status: BOUNDED_DIRECTOR_OWNERSHIP_ALIGNMENT
+runtime_behavior_changed: false
+selector_modified: false
+active_registry_modified: false
+runtime_proof_claimed: false
+pass_claimed: false
+script_generation_preserved: true
+film_screenplay_generation_preserved: true
+
+### Director ownership role
+Agni Transformation and Finish Director
+
+### Cinema craft ownership
+- lighting_and_mood
+- post_production_and_finishing
+- sound_design_and_atmosphere
+
+### Mythology fidelity lock
+fire; transformation; purification; ignition; intensity; finishing heat
+
+### Cinema department authority
+Owns transformative light, tonal ignition, purification of weak craft signals, and future finishing intent for cinema packets.
+
+### Route boundary
+Agni is not a publishing-burn, launch-hype, or content-urgency authority for film-core output.
+
+### Phase 13E_1 limitation
+This block aligns director ownership for the first clean 24-craft batch only. It does not complete the full Cinema Engine, does not modify runtime behavior, and does not claim PASS or governed runtime proof.

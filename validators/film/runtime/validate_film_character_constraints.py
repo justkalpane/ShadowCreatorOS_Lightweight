@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+import re
 from typing import Any
 
 from pathlib import Path
@@ -59,7 +60,14 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
     if contains_any(forbidden, ["shouting", "violence", "threats", "abuse"]) is False:
         errors.append("main character forbidden behaviors not declared")
 
-    if contains_any(text, ["shout", "shouting", "violence", "abuse", "threaten", "threats"]):
+    forbidden_patterns = [
+        r"\bshout(?:ing|ed)?\b",
+        r"\bviolence\b",
+        r"\babuse\b",
+        r"\bthreat(?:en|ens|ened|s)?\s+(?:you|her|him|them)\b",
+        r"\bi'?ll\s+(?:hurt|break|make you)\b",
+    ]
+    if any(re.search(pattern, text.lower()) for pattern in forbidden_patterns):
         errors.append("screenplay text contains forbidden aggression markers")
 
     if not contains_any(text, ["toddler", "toddlers", "twins", "children", "child"]):

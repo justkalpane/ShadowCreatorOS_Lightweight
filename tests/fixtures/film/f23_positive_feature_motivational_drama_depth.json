@@ -1,0 +1,17 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 108,
+  "format": "feature_film_screenplay",
+  "language": "English",
+  "genre": "motivational_drama",
+  "tone": ["grounded", "tender", "burdened", "hopeful"],
+  "theme": "A parent breaks an inherited anger pattern through visible acts of repair.",
+  "setting": "two-bedroom apartment above a repair shop",
+  "emotional_pressure_trigger": "a toddler locks the bathroom door while the kettle screams and overdue bills slide from the counter",
+  "toddler_stakes_detail": "the toddlers are learning whether stress means danger or care",
+  "relationship_type": "married domestic partnership",
+  "main_character_name": "Ravi",
+  "second_character_name": "Leena",
+  "second_character_role": "emotional_mirror"
+}

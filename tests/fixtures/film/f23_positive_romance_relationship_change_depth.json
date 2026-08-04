@@ -1,0 +1,17 @@
+{
+  "route": "FILM_SCREENPLAY_GENERATION",
+  "mode": "script_only",
+  "duration_minutes": 98,
+  "format": "feature_film_screenplay",
+  "language": "English",
+  "genre": "romance",
+  "tone": ["intimate", "fragile", "rain-soaked", "hopeful"],
+  "theme": "Love returns when pride gives way to vulnerable action.",
+  "setting": "small apartment after a missed anniversary dinner",
+  "emotional_pressure_trigger": "their daughter wakes during a power cut while a rain leak spreads across the hallway ceiling",
+  "toddler_stakes_detail": "the child watches whether distance or tenderness defines the night",
+  "relationship_type": "romantic domestic partnership",
+  "main_character_name": "Aarav",
+  "second_character_name": "Naina",
+  "second_character_role": "emotional_mirror"
+}

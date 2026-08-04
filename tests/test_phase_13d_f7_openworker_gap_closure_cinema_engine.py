@@ -138,8 +138,10 @@ def test_openworker_gap_closure_cinema_engine_v1(tmp_path):
     assert report["status"] == "PASS_RUNTIME_ARTIFACT_PROVEN"
 
     screenplay = (artifact_root / "screenplay.md").read_text(encoding="utf-8")
-    assert "Scene objective:" in screenplay
-    assert "Turning point:" in screenplay
+    character_names = [item.get("name", "").upper() for item in packet.get("character_bible", {}).get("major_characters", [])]
+    assert screenplay.count("INT.") + screenplay.count("EXT.") >= 3
+    assert any(name and name in screenplay for name in character_names)
+    assert "Scene objective:" not in screenplay
 
     execution_log = (artifact_root / "execution.log").read_text(encoding="utf-8").lower()
     assert "provider" not in execution_log

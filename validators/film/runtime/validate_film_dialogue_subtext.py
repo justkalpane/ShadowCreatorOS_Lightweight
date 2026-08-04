@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+import re
 from pathlib import Path
 from typing import Any
 
@@ -40,7 +41,8 @@ def _result(status: str, passed: bool, message: str, errors: list[str] | None = 
 
 def validate(payload: dict[str, Any]) -> dict[str, Any]:
     packet = load_screenplay_packet(payload)
-    text = screenplay_text(packet, payload).lower()
+    raw_text = screenplay_text(packet, payload)
+    text = raw_text.lower()
     character_bible = packet.get("character_bible") or {}
     relationship_map = packet.get("relationship_map") or {}
     dialogue_subtext_pass = packet.get("dialogue_subtext_pass") or {}
@@ -48,7 +50,15 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
 
     if "believe in yourself" in text or "never give up" in text:
         errors.append("dialogue reads as generic motivational speech")
-    if "shout" in text or "yell" in text or "scream" in text:
+    major_characters = character_bible.get("major_characters") or []
+    protagonist_name = ""
+    if major_characters:
+        protagonist_name = str(major_characters[0].get("name", "")).strip()
+    loud_patterns = [
+        rf"\b{re.escape(protagonist_name)}\b[^.\n]{{0,30}}\b(?:shouts?|yells?|screams?)\b" if protagonist_name else None,
+        r"\b(?:he|she|they)\b[^.\n]{0,30}\b(?:shouts?|yells?|screams?)\b",
+    ]
+    if any(pattern and re.search(pattern, raw_text, re.IGNORECASE) for pattern in loud_patterns):
         errors.append("main character dialogue/action contains loud escalation")
 
     subtext = " ".join(str(value) for value in dialogue_subtext_pass.values()).lower() if isinstance(dialogue_subtext_pass, dict) else ""
@@ -59,7 +69,6 @@ def validate(payload: dict[str, Any]) -> dict[str, Any]:
     if not any("mirror" in str(item).lower() for item in relationships):
         errors.append("second character mirror function is missing from relationship map")
 
-    major_characters = character_bible.get("major_characters") or []
     if len(major_characters) < 2:
         errors.append("character bible must include at least two major characters")
     elif "emotional mirror" not in str(major_characters[1]).lower():

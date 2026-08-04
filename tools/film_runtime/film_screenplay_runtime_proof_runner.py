@@ -41,6 +41,13 @@ from tools.film_runtime.preproduction.synopsis_engine import generate_synopsis
 from tools.film_runtime.preproduction.treatment_engine import generate_treatment
 from tools.film_runtime.preproduction.visual_language_engine import generate_visual_language
 from tools.film_runtime.preproduction.world_bible_engine import generate_world_bible
+from tools.film_runtime.cinema_depth.emotional_escalation_engine import build_emotional_escalation_packet
+from tools.film_runtime.cinema_depth.character_arc_engine import build_character_arc_progression
+from tools.film_runtime.cinema_depth.scene_logic_engine import build_scene_logic_map
+from tools.film_runtime.cinema_depth.dialogue_voice_engine import build_dialogue_voice_map
+from tools.film_runtime.cinema_depth.genre_differentiation_engine import build_genre_depth_map
+from tools.film_runtime.cinema_depth.continuity_tracker import build_continuity_map
+from tools.film_runtime.cinema_depth.feature_density_engine import build_feature_density_report
 from validators.film.validator_registry import validator_paths
 
 ROUTE_ID = "FILM_SCREENPLAY_GENERATION"
@@ -332,7 +339,7 @@ def build_act_structure(parsed: dict[str, Any], beat_sheet: list[dict[str, Any]]
 def build_sequence_structure(parsed: dict[str, Any], scene_cards: list[dict[str, Any]]) -> dict[str, Any]:
     total = len(scene_cards)
     if parsed["format_family"] == "feature_film":
-        group_size = 2
+        group_size = 1
     elif parsed["format_family"] == "web_series":
         group_size = 2
     else:
@@ -402,6 +409,14 @@ def sync_preproduction_packet(packet: dict[str, Any]) -> None:
             "act_structure",
             "sequence_structure",
             "scene_cards",
+            "cinema_depth_packet",
+            "emotional_arc_map",
+            "character_arc_map",
+            "scene_logic_map",
+            "dialogue_voice_map",
+            "genre_depth_map",
+            "continuity_map",
+            "feature_density_report",
             "director_vision",
             "visual_language",
             "cinematography_plan",
@@ -765,19 +780,61 @@ def derive_scene_plan(parsed: dict[str, Any], characters: dict[str, Any], emotio
 def generate_screenplay_from_scene_plan(parsed: dict[str, Any], characters: dict[str, Any], scene_plan: list[dict[str, Any]]) -> str:
     main_name = characters["main"]["name"]
     second_name = characters["second"]["name"]
-    lines: list[str] = [
-        f"TITLE: {main_name} in {parsed['setting']}",
-        "",
-        f"THEME: {parsed['theme']}",
-        "",
-    ]
+    lines: list[str] = [f"TITLE: {main_name} in {parsed['setting']}", ""]
+
+    def subtext_beat(scene: dict[str, Any]) -> str:
+        scene_number = scene["scene_number"]
+        genre = parsed.get("genre")
+        if genre == "thriller":
+            beats = {
+                1: f"{second_name} says as little as possible because naming the danger too early could wake it.",
+                2: f"{main_name} wants certainty; {second_name} wants him to admit fear before it chooses for him.",
+                3: "No one says panic out loud. The room is already pronouncing it.",
+                4: f"{second_name} names the version of {main_name} she is afraid the children will memorize.",
+                5: f"{main_name} chooses usefulness over rage, and that choice is the real turn.",
+                6: "The domestic task becomes evidence of what kind of man survives pressure.",
+                7: "Protection stops looking like control and starts looking like care.",
+                8: "The second wave of danger matters because the first one changed them.",
+                9: "Calm is no longer posture; it has become method.",
+                10: f"Trust becomes tactical: {main_name} can only finish this if he lets someone stay close.",
+                11: "The children feel the repair before they understand it.",
+                12: "Relief arrives only after discipline proves it can outlast fear.",
+            }
+            return beats.get(scene_number, "The silence carries strategy as much as feeling.")
+        if genre == "romance":
+            beats = {
+                1: f"{second_name} mentions the cups, but she means the way {main_name} has been leaving without leaving.",
+                2: "They argue about routine because the wound is too old to name all at once.",
+                3: "The leak gives them a practical language for emotional damage.",
+                4: f"{main_name} is still defending himself, but shame has already entered the room.",
+                5: "Staying put becomes more intimate than apology.",
+                6: f"{second_name} refuses to rescue him from honesty.",
+                7: "They stand in the same light before they can stand in the same certainty.",
+                8: "Shared labor says what romance dialogue would cheapen if spoken too early.",
+                9: "Care becomes courtship again, only quieter this time.",
+                10: "The object on the shelf carries the accusation so neither of them has to perform it.",
+                11: "He gives up being right before he is allowed to be forgiven.",
+                12: "The reconciliation works because it stays smaller than a speech and costs more than one.",
+            }
+            return beats.get(scene_number, "Meaning travels ahead of speech.")
+        beats = {
+            1: f"{second_name} notices the pattern before she names it.",
+            2: f"{main_name} keeps his volume low so the children do not have to carry his weather.",
+            3: "The pressure becomes real the moment he realizes everyone else can already feel it.",
+            4: "Anger arrives first, but it no longer gets to be the smartest thing in the room.",
+            5: "The private turn has to happen before the public repair can be believed.",
+            6: f"{second_name} measures the change in his hands before his words.",
+            7: "He finally acts like memory is being made in front of him.",
+            8: "A smaller setback tests whether the new behavior is real or temporary.",
+            9: "The task is ordinary; the difference is who he becomes while doing it.",
+            10: "Care has to arrive before explanation or the room will not trust it.",
+            11: "The children accept the new calm long before the adults celebrate it.",
+            12: "Repair lands because the home feels different in the body, not because anyone declares it fixed.",
+        }
+        return beats.get(scene_number, "What remains unsaid still changes the room.")
 
     for scene in scene_plan:
         lines.extend([scene_header(scene["scene_number"], scene.get("heading") or scene["slugline"]), ""])
-        lines.append(f"Scene objective: {scene.get('scene_objective') or scene.get('objective')}")
-        lines.append(f"Conflict: {scene['conflict']}")
-        lines.append(f"Turning point: {scene.get('turning_point') or scene.get('turn')}")
-        lines.append("")
         for action_line in scene["action_lines"]:
             lines.append(action_line)
         lines.append("")
@@ -785,18 +842,30 @@ def generate_screenplay_from_scene_plan(parsed: dict[str, Any], characters: dict
             lines.append(f"                        {dialogue['speaker'].upper()}")
             lines.append(f"            {dialogue['line']}")
             lines.append("")
-        lines.append(
-            f"{main_name} and {second_name} move through the scene with subtext: "
-            f"{scene.get('dialogue_subtext_goal', 'care is present under the words')}"
-        )
+        lines.append(subtext_beat(scene))
         lines.append("")
 
-    lines.extend(
-        [
-            f"The final image leaves {parsed['toddler_stakes_detail']} intact and the home quieter than before.",
-            f"{main_name} chooses pause, and the room keeps that choice.",
-        ]
-    )
+    if parsed.get("genre") == "thriller":
+        lines.extend(
+            [
+                f"The final image leaves {parsed['toddler_stakes_detail']} intact, the leak answered, and the fear smaller than the care that carried it.",
+                f"{main_name} does not conquer the night; he contains it long enough for the family to outlast it.",
+            ]
+        )
+    elif parsed.get("genre") == "romance":
+        lines.extend(
+            [
+                f"The final image leaves {parsed['toddler_stakes_detail']} intact, the old object restored, and the distance reduced by what it cost to close it.",
+                f"{main_name} stays beside {second_name} without trying to own the meaning of the moment.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                f"The final image leaves {parsed['toddler_stakes_detail']} intact and the apartment quieter because the old pattern was interrupted in public.",
+                f"{main_name} does the gentler thing twice, which is how the room believes him.",
+            ]
+        )
     return "\n".join(lines)
 
 
@@ -839,6 +908,7 @@ def build_validation_packet(
     revision_report: dict[str, Any],
     source_evidence_ledger: dict[str, Any],
     genre_grammar_report: dict[str, Any],
+    cinema_depth_packet: dict[str, Any],
 ) -> dict[str, Any]:
     scene_plan = scene_cards
     screenplay = generate_screenplay_from_scene_plan(parsed, characters, scene_plan)
@@ -871,6 +941,14 @@ def build_validation_packet(
         "act_structure": act_structure,
         "sequence_structure": sequence_structure,
         "scene_cards": scene_cards,
+        "cinema_depth_packet": cinema_depth_packet,
+        "emotional_arc_map": cinema_depth_packet["emotional_depth"]["emotional_arc_map"],
+        "character_arc_map": cinema_depth_packet["character_depth"]["character_arc_map"],
+        "scene_logic_map": cinema_depth_packet["scene_logic_depth"]["scene_logic_map"],
+        "dialogue_voice_map": cinema_depth_packet["dialogue_depth"]["dialogue_voice_map"],
+        "genre_depth_map": cinema_depth_packet["genre_depth"]["genre_depth_map"],
+        "continuity_map": cinema_depth_packet["continuity_depth"]["continuity_map"],
+        "feature_density_report": cinema_depth_packet["feature_density"],
         "director_vision": director_vision,
         "visual_language": visual_language,
         "cinematography_plan": cinematography_plan,
@@ -984,6 +1062,15 @@ def generate_screenplay(payload: dict[str, Any]) -> dict[str, Any]:
     revision_report = generate_revision_report()
     source_evidence_ledger = build_source_evidence_ledger()
     genre_grammar_report = validate_genre_grammar(parsed, beat_sheet, scene_cards)
+    cinema_depth_packet = {
+        "emotional_depth": build_emotional_escalation_packet(beat_sheet, scene_cards),
+        "character_depth": build_character_arc_progression(character_arc, relationship_map, scene_cards),
+        "scene_logic_depth": build_scene_logic_map(scene_cards),
+        "dialogue_depth": build_dialogue_voice_map(scene_cards),
+        "genre_depth": build_genre_depth_map(parsed, beat_sheet, scene_cards),
+        "continuity_depth": build_continuity_map(scene_cards, beat_sheet, world_bible),
+        "feature_density": build_feature_density_report(parsed, scene_cards, sequence_structure),
+    }
     return build_validation_packet(
         parsed,
         characters,
@@ -1012,6 +1099,7 @@ def generate_screenplay(payload: dict[str, Any]) -> dict[str, Any]:
         revision_report,
         source_evidence_ledger,
         genre_grammar_report,
+        cinema_depth_packet,
     )
 
 
@@ -1052,6 +1140,13 @@ def build_route_state(repo_root: Path, run_dir: Path, payload_path: Path, valida
         "validators/film/runtime/validate_film_revision_report.py",
         "validators/film/runtime/validate_clean_film_script_boundary.py",
         "validators/film/runtime/validate_film_preproduction_packet.py",
+        "validators/film/cinema_depth/validate_emotional_escalation.py",
+        "validators/film/cinema_depth/validate_character_arc_progression.py",
+        "validators/film/cinema_depth/validate_scene_logic_depth.py",
+        "validators/film/cinema_depth/validate_dialogue_voice_subtext.py",
+        "validators/film/cinema_depth/validate_genre_differentiation.py",
+        "validators/film/cinema_depth/validate_feature_length_density.py",
+        "validators/film/cinema_depth/validate_continuity_tracking.py",
         "validators/film/validator_registry.py",
         "schemas/film/preproduction_packet.schema.json",
         "schemas/film/technique_taxonomy.schema.json",
@@ -1082,6 +1177,13 @@ def build_route_state(repo_root: Path, run_dir: Path, payload_path: Path, valida
         "tools/film_runtime/preproduction/scene_card_engine.py",
         "tools/film_runtime/preproduction/continuity_bible_engine.py",
         "tools/film_runtime/preproduction/genre_grammar_engine.py",
+        "tools/film_runtime/cinema_depth/emotional_escalation_engine.py",
+        "tools/film_runtime/cinema_depth/character_arc_engine.py",
+        "tools/film_runtime/cinema_depth/scene_logic_engine.py",
+        "tools/film_runtime/cinema_depth/dialogue_voice_engine.py",
+        "tools/film_runtime/cinema_depth/genre_differentiation_engine.py",
+        "tools/film_runtime/cinema_depth/continuity_tracker.py",
+        "tools/film_runtime/cinema_depth/feature_density_engine.py",
         "tools/film_runtime/film_screenplay_runtime_proof_runner.py",
     ]
     try:
@@ -1368,6 +1470,13 @@ def main() -> int:
     visual_language_result = run_validator("validators/film/runtime/validate_film_visual_language.py", packet_validator_payload)
     cinematography_plan_result = run_validator("validators/film/runtime/validate_film_cinematography_plan.py", packet_validator_payload)
     genre_grammar_result = run_validator("validators/film/runtime/validate_film_genre_grammar.py", packet_validator_payload)
+    emotional_escalation_result = run_validator("validators/film/cinema_depth/validate_emotional_escalation.py", packet_validator_payload)
+    character_progression_result = run_validator("validators/film/cinema_depth/validate_character_arc_progression.py", packet_validator_payload)
+    scene_logic_depth_result = run_validator("validators/film/cinema_depth/validate_scene_logic_depth.py", packet_validator_payload)
+    dialogue_voice_depth_result = run_validator("validators/film/cinema_depth/validate_dialogue_voice_subtext.py", packet_validator_payload)
+    genre_differentiation_depth_result = run_validator("validators/film/cinema_depth/validate_genre_differentiation.py", packet_validator_payload)
+    feature_density_depth_result = run_validator("validators/film/cinema_depth/validate_feature_length_density.py", packet_validator_payload)
+    continuity_tracking_depth_result = run_validator("validators/film/cinema_depth/validate_continuity_tracking.py", packet_validator_payload)
     department_handoff_result = run_validator("validators/film/runtime/validate_film_department_handoffs.py", packet_validator_payload)
     production_risk_result = run_validator("validators/film/runtime/validate_film_production_risk.py", packet_validator_payload)
     revision_report_result = run_validator("validators/film/runtime/validate_film_revision_report.py", packet_validator_payload)
@@ -1411,6 +1520,13 @@ def main() -> int:
             "visual_language": visual_language_result,
             "cinematography_plan": cinematography_plan_result,
             "genre_grammar": genre_grammar_result,
+            "emotional_escalation_depth": emotional_escalation_result,
+            "character_arc_progression_depth": character_progression_result,
+            "scene_logic_depth": scene_logic_depth_result,
+            "dialogue_voice_subtext_depth": dialogue_voice_depth_result,
+            "genre_differentiation_depth": genre_differentiation_depth_result,
+            "feature_length_density_depth": feature_density_depth_result,
+            "continuity_tracking_depth": continuity_tracking_depth_result,
             "department_handoffs": department_handoff_result,
             "production_risk": production_risk_result,
             "revision_report": revision_report_result,
@@ -1463,6 +1579,13 @@ def main() -> int:
             "visual_language": visual_language_result,
             "cinematography_plan": cinematography_plan_result,
             "genre_grammar": genre_grammar_result,
+            "emotional_escalation_depth": emotional_escalation_result,
+            "character_arc_progression_depth": character_progression_result,
+            "scene_logic_depth": scene_logic_depth_result,
+            "dialogue_voice_subtext_depth": dialogue_voice_depth_result,
+            "genre_differentiation_depth": genre_differentiation_depth_result,
+            "feature_length_density_depth": feature_density_depth_result,
+            "continuity_tracking_depth": continuity_tracking_depth_result,
             "department_handoffs": department_handoff_result,
             "production_risk": production_risk_result,
             "revision_report": revision_report_result,
@@ -1515,6 +1638,13 @@ def main() -> int:
             visual_language_result,
             cinematography_plan_result,
             genre_grammar_result,
+            emotional_escalation_result,
+            character_progression_result,
+            scene_logic_depth_result,
+            dialogue_voice_depth_result,
+            genre_differentiation_depth_result,
+            feature_density_depth_result,
+            continuity_tracking_depth_result,
             department_handoff_result,
             production_risk_result,
             revision_report_result,
@@ -1560,6 +1690,13 @@ def main() -> int:
             "visual_language": visual_language_result,
             "cinematography_plan": cinematography_plan_result,
             "genre_grammar": genre_grammar_result,
+            "emotional_escalation_depth": emotional_escalation_result,
+            "character_arc_progression_depth": character_progression_result,
+            "scene_logic_depth": scene_logic_depth_result,
+            "dialogue_voice_subtext_depth": dialogue_voice_depth_result,
+            "genre_differentiation_depth": genre_differentiation_depth_result,
+            "feature_length_density_depth": feature_density_depth_result,
+            "continuity_tracking_depth": continuity_tracking_depth_result,
             "department_handoffs": department_handoff_result,
             "production_risk": production_risk_result,
             "revision_report": revision_report_result,

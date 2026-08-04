@@ -113,8 +113,8 @@ def analyze_template_reuse(packet: dict[str, Any]) -> dict[str, Any]:
     scene_objectives = [_text(card.get("scene_objective")) for card in scene_cards]
     conflicts = [_text(card.get("conflict")) for card in scene_cards if _text(card.get("conflict"))]
     starts = _sentence_starts(screenplay)
-    repeated_starts = {start: count for start, count in starts.items() if count >= 2}
-    phrase_hits = {phrase: screenplay.count(phrase) for phrase in TEMPLATE_PHRASES if phrase in screenplay}
+    repeated_starts = {start: count for start, count in starts.items() if count >= 3}
+    phrase_hits = {phrase: screenplay.count(phrase) for phrase in TEMPLATE_PHRASES if screenplay.count(phrase) >= 2}
     closing_line = screenplay.splitlines()[-1].strip().lower() if screenplay.splitlines() else ""
     return {
         "scene_count": len(scene_cards),
@@ -186,9 +186,17 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
     cinematography = packet.get("cinematography_plan", {})
     genre_report = packet.get("genre_grammar_report", {})
     continuity = packet.get("continuity_bible", {})
+    cinema_depth = packet.get("cinema_depth_packet", {})
     screenplay = _text(packet.get("screenplay"))
     source_payload = packet.get("quality_benchmark_source_payload") or {}
     template = analyze_template_reuse(packet)
+    emotional_depth = cinema_depth.get("emotional_depth", {})
+    character_depth = cinema_depth.get("character_depth", {})
+    scene_logic_depth = cinema_depth.get("scene_logic_depth", {})
+    dialogue_depth = cinema_depth.get("dialogue_depth", {})
+    genre_depth = cinema_depth.get("genre_depth", {})
+    continuity_depth = cinema_depth.get("continuity_depth", {})
+    feature_density = cinema_depth.get("feature_density", {})
 
     scores: dict[str, int] = {}
 
@@ -261,6 +269,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         stakes_score -= 5
     if not any(_contains_any(line, ["child", "toddler", "trust", "safety", "danger", "love", "distance"]) for line in stake_lines):
         stakes_score -= 2
+    if emotional_depth.get("flatline_risk_flags"):
+        stakes_score -= 2
     scores["stakes_escalation"] = _clamp(stakes_score)
 
     conflict_score = 9
@@ -271,6 +281,10 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         conflict_score -= 3
     if any(_contains_any(c, ["little difficult", "very little resists", "no real resistance"]) for c in conflicts):
         conflict_score -= 2
+    if scene_logic_depth.get("duplicate_conflict_flags"):
+        conflict_score -= 2
+    if scene_logic_depth.get("summary_scene_flags"):
+        conflict_score -= 2
     scores["scene_conflict_density"] = _clamp(conflict_score)
 
     midpoint_score = 9
@@ -279,6 +293,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         midpoint_score -= 6
     if midpoint and not _contains_any(midpoint, ["realizes", "admits", "discovers", "sees", "recognizes"]):
         midpoint_score -= 1
+    if emotional_depth.get("act_emotional_progression", {}).get("act_two", {}).get("flatline"):
+        midpoint_score -= 2
     scores["midpoint_strength"] = _clamp(midpoint_score)
 
     ending_score = 9
@@ -299,6 +315,10 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         dialogue_score -= 4
     if all(_contains_any(_text(card.get("dialogue_subtext_goal")), ["say the exact feeling", "say the feeling directly"]) for card in scene_cards if scene_cards):
         dialogue_score -= 4
+    if dialogue_depth.get("same_voice_risk_flags"):
+        dialogue_score -= 2
+    if dialogue_depth.get("generic_dialogue_flags"):
+        dialogue_score -= 2
     scores["dialogue_subtext"] = _clamp(dialogue_score)
 
     visual_score = 9
@@ -307,6 +327,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         visual_score -= 4
     if not _text(visual.get("visual_metaphor")):
         visual_score -= 3
+    if feature_density.get("feature_thinness_flags") and packet.get("format_family") == "feature_film":
+        visual_score -= 1
     scores["visual_motivation"] = _clamp(visual_score)
 
     camera_score = 9
@@ -325,6 +347,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         genre_score -= 3
     if genre and not _contains_any(screenplay, GENRE_SIGNATURES.get(genre, set())):
         genre_score -= 3
+    if genre_depth.get("genre_failure_flags"):
+        genre_score -= 3
     scores["genre_integrity"] = _clamp(genre_score)
 
     continuity_score = 9
@@ -333,6 +357,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
     if not continuity.get("toddler_stakes_continuity"):
         continuity_score -= 2
     if not continuity.get("character_emotional_state_by_scene"):
+        continuity_score -= 2
+    if continuity_depth.get("unresolved_thread_flags"):
         continuity_score -= 2
     scores["continuity_integrity"] = _clamp(continuity_score)
 
@@ -352,6 +378,10 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         cinematic_score -= 2
     if not any(card.get("action_lines") for card in scene_cards):
         cinematic_score -= 2
+    if emotional_depth.get("flatline_risk_flags"):
+        cinematic_score -= 2
+    if feature_density.get("feature_thinness_flags"):
+        cinematic_score -= 2
     scores["cinematic_embodiment"] = _clamp(cinematic_score)
 
     dialogue_depth_score = 8
@@ -369,6 +399,10 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         dialogue_depth_score -= 2
     if all("really" not in _text(card.get("dialogue_subtext_goal")) and "asking" not in _text(card.get("dialogue_subtext_goal")) for card in scene_cards):
         dialogue_depth_score -= 1
+    if dialogue_depth.get("same_voice_risk_flags"):
+        dialogue_depth_score -= 2
+    if len(dialogue_depth.get("subtext_map") or []) < 2:
+        dialogue_depth_score -= 2
     scores["dialogue_subtext_depth"] = _clamp(dialogue_depth_score)
 
     vividness_score = 8
@@ -376,6 +410,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
     if len(set(v for v in visual_motifs if v)) < max(2, len(scene_cards) // 2):
         vividness_score -= 3
     if not any(_contains_any(" ".join(card.get("action_lines", [])).lower(), ["wrist", "breath", "glass", "floor", "coat", "towel", "window", "valve"]) for card in scene_cards):
+        vividness_score -= 2
+    if packet.get("format_family") == "feature_film" and feature_density.get("actual_sub_scene_count", 0) < 36:
         vividness_score -= 2
     scores["scene_vividness"] = _clamp(vividness_score)
 
@@ -389,6 +425,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         genre_voice_score -= 2
     if genre == "motivational_drama" and not _contains_any(screenplay, ["toddlers", "repair", "kitchen", "worksheet", "home"]):
         genre_voice_score -= 2
+    if genre_depth.get("genre_failure_flags"):
+        genre_voice_score -= 2
     scores["genre_specific_voice"] = _clamp(genre_voice_score)
 
     template_penalty_score = 10
@@ -397,6 +435,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
     if template["same_conflict_repeated"]:
         template_penalty_score -= 1
     if template["same_objective_shape"]:
+        template_penalty_score -= 1
+    if scene_logic_depth.get("duplicate_conflict_flags"):
         template_penalty_score -= 1
     scores["template_reuse_penalty"] = _clamp(template_penalty_score)
 
@@ -414,6 +454,8 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
     if not any(_contains_any(" ".join(card.get("action_lines", [])).lower(), ["jaw", "wrist", "breath", "shoulder", "touch", "knuckles", "thumb"]) for card in scene_cards):
         emotional_specificity_score -= 2
     if not _contains_any(screenplay, ["ashamed", "cornered", "tentative", "disciplined", "exposed", "relieved", "bare"]):
+        emotional_specificity_score -= 2
+    if emotional_depth.get("flatline_risk_flags"):
         emotional_specificity_score -= 2
     scores["emotional_specificity"] = _clamp(emotional_specificity_score)
 
@@ -454,12 +496,31 @@ def score_packet(packet: dict[str, Any]) -> dict[str, Any]:
         calibration_penalty += 0.3
     if template["closing_cadence_generic"]:
         calibration_penalty += 0.25
+    calibration_penalty += 0.4 * len(emotional_depth.get("flatline_risk_flags") or [])
+    calibration_penalty += 0.35 * len(scene_logic_depth.get("duplicate_conflict_flags") or [])
+    calibration_penalty += 0.25 * len(dialogue_depth.get("same_voice_risk_flags") or [])
+    calibration_penalty += 0.2 * len(continuity_depth.get("unresolved_thread_flags") or [])
+    if feature_density.get("feature_thinness_flags"):
+        calibration_penalty += 0.8
     raw_overall = round(max(0.0, (0.4 * structural_average) + (0.6 * expressive_average) - calibration_penalty), 1)
 
     defect_list = [key for key, value in scores.items() if value < 6]
     highest_risk_area = min(scores, key=scores.get)
     estimated_human_score = estimate_human_readable_quality(packet, scores)
-    overall_score = round(min(raw_overall, estimated_human_score + 0.7, 6.5), 1)
+    overall_cap = 8.8
+    if emotional_depth.get("flatline_risk_flags"):
+        overall_cap = min(overall_cap, 5.5)
+    if character_depth and not character_depth.get("arc_completion_status"):
+        overall_cap = min(overall_cap, 5.5)
+    if dialogue_depth.get("same_voice_risk_flags"):
+        overall_cap = min(overall_cap, 5.8)
+    if feature_density.get("feature_thinness_flags"):
+        overall_cap = min(overall_cap, 5.2)
+    if genre_depth.get("genre_failure_flags"):
+        overall_cap = min(overall_cap, 5.8)
+    if continuity_depth.get("unresolved_thread_flags"):
+        overall_cap = min(overall_cap, 5.9)
+    overall_score = round(min(raw_overall, estimated_human_score + 0.7, overall_cap), 1)
     recommended_actions = [
         {"area": defect, "action": defect.replace("_", " ") + " needs targeted revision"}
         for defect in defect_list

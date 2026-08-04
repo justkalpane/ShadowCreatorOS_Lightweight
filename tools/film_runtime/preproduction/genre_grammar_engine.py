@@ -56,9 +56,9 @@ def _scene_function_hits(parsed: dict[str, Any], scene_cards: list[dict[str, Any
         ]
     ).lower()
     alias_map = {
-        "setup": ["setup", "opening", "warm", "establish", "show affection"],
+        "setup": ["setup", "opening", "warm", "establish", "show affection", "seed unease", "show practiced tenderness", "expose the wound inside routine"],
         "pressure": ["pressure", "threat", "fear", "fragile", "problem", "distance impossible to ignore"],
-        "escalation": ["escalation", "intensify", "widening", "under pressure", "survive renewed pressure"],
+        "escalation": ["escalation", "intensify", "widening", "under pressure", "survive renewed pressure", "carry vulnerability back", "show the threat touching", "options shrink"],
         "midpoint": ["midpoint", "pivot", "reverse", "realizes", "changes what the conflict means"],
         "restraint": ["restraint", "pause", "contain", "tactical"],
         "repair": ["repair", "tender", "reconnect", "trust"],
@@ -66,10 +66,10 @@ def _scene_function_hits(parsed: dict[str, Any], scene_cards: list[dict[str, Any
         "resolution": ["resolution", "close", "closing", "earned hope", "land", "aftermath", "hopeful", "settled", "survives", "resolves", "tenderness", "safer"],
         "suspicion": ["suspicion", "threat", "unease"],
         "reversal": ["reversal", "pivot", "reveal", "dangerous", "realizes"],
-        "choice": ["choice", "decides", "return"],
-        "approach": ["approach", "affection", "invite"],
-        "retreat": ["retreat", "distance", "withdrawal"],
-        "confession": ["confession", "honesty", "seen"],
+        "choice": ["choice", "decides", "return", "chooses", "stay", "presence over", "connection over"],
+        "approach": ["approach", "affection", "invite", "tenderness", "shared space"],
+        "retreat": ["retreat", "distance", "withdrawal", "silence", "protecting themselves"],
+        "confession": ["confession", "honesty", "seen", "vulnerable", "being right", "risk honesty"],
     }
     hits = {}
     for name in required_scene_functions:
